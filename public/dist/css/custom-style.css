@@ -1,0 +1,12 @@
+.filter th {
+    padding: .3rem !important;
+}
+
+th, td {
+    padding: 1rem !important;
+}
+
+td {
+    vertical-align: middle !important;
+    white-space: normal !important;
+}

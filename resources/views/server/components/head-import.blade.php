@@ -29,3 +29,5 @@
 <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
 <!-- summernote -->
 <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+<!-- Custom Style -->
+<link rel="stylesheet" href="{{ asset('dist/css/custom-style.css') }}">
