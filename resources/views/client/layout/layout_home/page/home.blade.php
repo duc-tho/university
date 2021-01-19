@@ -11,7 +11,7 @@
 @section('main')
 <div id="scrollzipPoint"></div>
 <!--/banner-bottom-->
-<div class="w3_agilits_banner_bootm">
+<div class="w3_agilits_banner_bootm" style="position: fixed">
     <div class="w3_agilits_inner_bottom">
         <div class="wthree_agile_login">
             <ul>
@@ -76,17 +76,17 @@
             <div class="banner-bottom-girds">
                 <div class="agileits-banner-grid bg-w3ls-active">
                     <span class="fa fa-university banner-icon" aria-hidden="true"></span>
-                    <h4>Tuyển Sinh Đại Học</h4>
-                    <p>Itaque earum rerum hic tenetur a sapiente delectus
-                        reiciendis maiores alias consequatur aut.</p>
+                    <h4> Đại Học</h4>
+                    <p>Chuyên đào tạo các nghành chuyên về  <span style="font-weight: bold">DU LỊCH</span> </p>
                     <a class="hvr-rectangle-out w3_play_icon1" href="#" data-toggle="modal" data-target="#myModal"> Chi tiết</a>
                 </div>
                 <div class="agileits-banner-grid">
                     <span class="fa fa-tags banner-icon" aria-hidden="true"></span>
-                    <h4>Tuyển Sinh Cao Đẳng</h4>
-                    <p>Itaque earum rerum hic tenetur a sapiente delectus
-                        reiciendis maiores alias consequatur aut.</p>
-                    <a class="hvr-rectangle-out w3_play_icon1" href="#" data-toggle="modal" data-target="#myModal"> Chi tiết</a>
+                    <h4>Tuyển Sinh </h4>
+                    <p>Đăng ký tuyển sinh <span style="font-weight: bold">Trực tuyến 24/7</span></p>
+                    
+                    
+                    <a class="hvr-rectangle-out w3_play_icon1" href="{{route('tuyensinh')}}" > Đăng Ký</a>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -147,25 +147,28 @@
         <h3 class="w3ls-title">Khoa </h3>
         <div class="agileits-services-row">
             <div class="col-md-3 col-sm-6 agileits-services-grids">
-                <span class="glyphicon glyphicon-stats effect-1" aria-hidden="true"></span>
+                {{-- <span class="glyphicon glyphicon-stats effect-1" aria-hidden="true"></span> --}}
+                <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20190920102333-27618.jpg') }}" width="40%" alt=""  >
                 <h4>Kinh tế</h4>
                 <p>Itaque earum rerum hic tenetur a sapiente delectus
                     reiciendis maiores alias consequatur aut</p>
             </div>
             <div class="col-md-3 col-sm-6 agileits-services-grids">
-                <span class="glyphicon glyphicon-user effect-1" aria-hidden="true"></span>
+                <a href="{{route('khoadulich')}}">
+                <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20190920102333-27618.jpg') }}" width="40%" alt=""  >
                 <h4>Du lịch</h4>
+                </a>
                 <p>Itaque earum rerum hic tenetur a sapiente delectus
                     reiciendis maiores alias consequatur aut</p>
             </div>
             <div class="col-md-3 col-sm-6 agileits-services-grids">
-                <span class="glyphicon glyphicon-list-alt effect-1" aria-hidden="true"></span>
+                <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20190920102333-27618.jpg') }}" width="40%" alt=""  >
                 <h4>Ngoại ngữ</h4>
                 <p>Itaque earum rerum hic tenetur a sapiente delectus
                     reiciendis maiores alias consequatur aut</p>
             </div>
             <div class="col-md-3 col-sm-6 agileits-services-grids">
-                <span class="glyphicon glyphicon-check effect-1" aria-hidden="true"></span>
+                <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20190920102333-27618.jpg') }}" width="40%" alt=""  >
                 <h4>Nghệ Thuật</h4>
                 <p>Itaque earum rerum hic tenetur a sapiente delectus
                     reiciendis maiores alias consequatur aut</p>
