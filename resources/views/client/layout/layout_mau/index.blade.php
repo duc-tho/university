@@ -5,7 +5,7 @@
 @endsection
 
 @section('body')
-<h1>header</h1>
+{{-- header --}}
 @yield('main')
-<h1>footer</h1>
+{{-- footer --}}
 @endsection
