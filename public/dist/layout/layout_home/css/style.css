@@ -2049,3 +2049,6 @@ div#contact h3 {
 	display: flex;
 	justify-content: center;
 }
+.boder-radius-img{
+	border-radius: 50%;
+}
