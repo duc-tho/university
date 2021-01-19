@@ -40,7 +40,7 @@ Route::get('/khoa-du-lich/sinh-vien/cong-tac-doan', [HomeController::class, 'get
 // Route Tuyển Sinh
 Route::get('/tuyen-sinh', [HomeController::class, 'getAdmissions'])->name('tuyensinh');
 
-//Route::get('/khoa-du-lich/lien-he', [HomeController::class, 'getContact'])->name('lienhe');
+Route::get('/khoa-du-lich/lien-he', [HomeController::class, 'getContact'])->name('lienhe');
 
 
 
