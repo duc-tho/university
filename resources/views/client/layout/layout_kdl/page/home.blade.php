@@ -199,16 +199,16 @@
             <div class="col-md-3 col-sm-6 col-6 mt-md-0 mt-4">
               <a href="services.html">
                 <div class="courses-item">
-                  <span class="fa fa-flask"></span>
-                  <p>Khoa Học</p>
+                  <span class="	fa fa-book"></span>
+                  <p>Khóa Học</p>
                 </div>
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6 mt-4">
               <a href="services.html">
                 <div class="courses-item mt-2">
-                  <span class="fa fa-money"></span>
-                  <p>Ecomomics</p>
+                  <span class="	fa fa-image"></span>
+                  <p>Hình Ảnh</p>
                 </div>
               </a>
             </div>
@@ -216,23 +216,23 @@
               <a href="services.html">
                 <div class="courses-item mt-2">
                   <span class="fa fa-gg"></span>
-                  <p>Biology</p>
+                  <p>Liên Kết</p>
                 </div>
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6 mt-4">
               <a href="services.html">
                 <div class="courses-item mt-2">
-                  <span class="fa fa-desktop"></span>
-                  <p>Computing</p>
+                  <span class="fa fa-paper-plane-o"></span>
+                  <p>CheckIn</p>
                 </div>
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6 mt-4">
               <a href="services.html">
                 <div class="courses-item mt-2">
-                  <span class="fa fa-mouse-pointer"></span>
-                  <p>Web Design</p>
+                  <span class="		fa fa-object-group"></span>
+                  <p>Nhóm</p>
                 </div>
               </a>
             </div>

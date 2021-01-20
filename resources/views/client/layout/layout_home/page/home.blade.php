@@ -150,7 +150,7 @@
                 {{-- <span class="glyphicon glyphicon-stats effect-1" aria-hidden="true"></span> --}}
                 <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20170828165923-45184.jpg') }}" width="40%" alt=""  >
                 <h4>Kinh tế</h4>
-                <p>Là một trong những khoa thu hút nhiều sinh viên theo học, với bề dày đào tạo từ năm 2006. 
+                <p class="khoa-p">Là một trong những khoa thu hút nhiều sinh viên theo học, với bề dày đào tạo từ năm 2006. 
                     Những ngành được đào tạo tại Khoa được đánh giá là thu hút nguồn nhân lực nhiều nhất hiện
                      nay.</p>
             </div>
@@ -159,7 +159,7 @@
                 <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20180118145548-56466.jpg') }}"  alt=""  >
                 <h4>Du lịch</h4>
                 </a>
-                <p>Khoa Du lịch – BQLĐATL Trường Đại học Du lịch Sài Gòn ra đời mở ra cơ hội tốt hơn cho người 
+                <p class="khoa-p">Khoa Du lịch – BQLĐATL Trường Đại học Du lịch Sài Gòn ra đời mở ra cơ hội tốt hơn cho người 
                     học có điều kiện học tập ở trình độ cao thuộc các chuyên ngành du lịch, góp phần nâng
                      cao chất lượng nguồn nhân lực du lịch,</p>
             </div>
@@ -168,14 +168,14 @@
                     <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/4.jpg') }}" width="40%" alt=""  >
                     <h4>Ngoại ngữ</h4>
                 </a>
-                <p>Khoa Ngoại Ngữ – BQLĐATL Trường Đại học Du lịch Sài Gòn là tiền thân của Trường Cao đẳng 
+                <p class="khoa-p">Khoa Ngoại Ngữ – BQLĐATL Trường Đại học Du lịch Sài Gòn là tiền thân của Trường Cao đẳng 
                     Văn hóa Nghệ thuật và Du lịch Sài Gòn được thành lập cùng với sự thành lập của trường 17 
                     tháng 10 năm 2006.</p>
             </div>
             <div class="col-md-3 col-sm-6 agileits-services-grids">
                 <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20181227183820-68860.png') }}" width="40%" alt=""  >
                 <h4>Nghệ Thuật</h4>
-                <p>Khoa Nghệ thuật được thành lập từ năm 2006, gồm có 06 chuyên ngành: Đạo diễn, Diễn viên
+                <p class="khoa-p"> Khoa Nghệ thuật được thành lập từ năm 2006, gồm có 06 chuyên ngành: Đạo diễn, Diễn viên
                      kịch nói và điện ảnh, Thanh nhạc, Thiết kế Đồ họa, Thiết kế Thời trang và Quay phim.
 
                 </p>
