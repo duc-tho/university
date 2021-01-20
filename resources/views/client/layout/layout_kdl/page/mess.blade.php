@@ -1,11 +1,11 @@
 @extends('client.layout.layout_kdl.index')
-@section('title','Việc Làm')
+@section('title','Thông Báo')
 @section('main')
 <section class="w3l-service-breadcrum">
     <div class="breadcrum-bg py-sm-5 py-4">
       <div class="container py-lg-3">
-        <h2>Việc Làm Khoa Du Lịch</h2>
-        <p><a href="index.html">Trang Chủ</a> &nbsp; / &nbsp; Sinh Viên &nbsp; / &nbsp; Việc Làm</p>
+        <h2>Thông Báo Khoa Du Lịch</h2>
+        <p><a href="index.html">Trang Chủ</a> &nbsp; / &nbsp; Sinh Viên &nbsp; / &nbsp; Thông Báo</p>
       </div>
     </div>
   </section>

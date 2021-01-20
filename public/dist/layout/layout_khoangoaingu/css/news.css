@@ -1,0 +1,219 @@
+/* News css */
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -40px;
+    margin-left: -40px;
+}
+@media (min-width: 768px){
+.grid--2>*, .grid--3>*, .grid--4>* {
+    width: 50%;
+}}
+.grid>* {
+    padding-top: 40px;
+    padding-left: 40px;
+    /* width: 100%; */
+    box-sizing: border-box;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+    display: block;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+.cart a:visited {
+    color: #404040;
+}
+
+/* a:visited {
+    color: #f05123;
+} */
+.cart a {
+    color: #404040;
+    transition: all .2s;
+}
+.cart__image, .cart__image img {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+.cart__image {
+    transition: all .2s;
+    opacity: 1;
+}
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+a {
+    background-color: transparent;
+}
+a {
+    color: #f05123;
+    text-decoration: none;
+}
+a {
+    background-color: transparent;
+}
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+a {
+    background-color: transparent;
+}
+.post-icon {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    color: #fff;
+    background: rgba(0,0,0,.5);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.home.page .news .cart__content {
+    min-height: 116px;
+}
+.cart--wide .cart__content {
+    padding-left: 0;
+    padding-right: 0;
+}
+.cart__content {
+    background: #fff;
+    padding: 19px 25px 22px;
+    margin: 0;
+}
+@media (min-width: 768px){
+.entry-title {
+    text-align: left !important;
+    margin-left: 10px !important;
+    line-height: 25px;
+}}
+@media (min-width: 768px){
+.entry-title {
+    height: 60px;
+}}
+.entry-title {
+    margin: 0;
+}
+.cart__image img:hover{
+    background-color: gray;
+    opacity: 60%;
+}
+.btn.btn-lg {
+    padding: 18px 36px !important;
+}
+.cart__title {
+    /* font-size: 1.90272rem; */
+    font-size: 20px;
+    letter-spacing: -1px;
+    margin: 0;
+}
+.cart__title a:hover{
+    color: #f05123;
+}
+.entry-img a img:hover{
+    background-color:#545454 ;
+    opacity: 60%;
+}
+.news .entry-date {
+    margin-top: 15px;
+    font-style: italic;
+}
+@media (min-width: 768px){
+.entry-date {
+    text-align: left !important;
+    margin-left: 10px !important;
+}}
+.entry-date {
+    color: #888;
+    line-height: 1;
+    display: block;
+    margin-top: 15px;
+}
+.byline, .updated:not(.published) {
+    display: none;
+}
+#news_new_right {
+    background-color: #ededed;
+}
+.news_new_right_content {
+    border-bottom: 1px solid #b2b2b2;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.news_new_right_title {
+    color: #404040;
+    font-size: 15px;
+}
+.news_new_right_title:hover{
+    text-decoration: underline;
+}
+.img{
+    border: 0;
+}
+/* img {
+    height: auto;
+    max-width: 100%;
+} */
+.button--orange, .quiz__control--prev {
+    border-color: #f05123;
+    color: #f05123;
+}
+.button--orange:visited, .quiz__control--prev:visited {
+    color: #f05123;
+}
+.button:visited, .button:focus, .button:active, button:visited, button:focus, button:active, [type=reset]:visited, [type=reset]:focus, [type=reset]:active, [type=submit]:visited, [type=submit]:focus, [type=submit]:active {
+    color: #fff;
+}
+/* a:visited {
+    color: #f05123;
+} */
+.button:hover{
+    color: #f05123;
+    background-color: #fff;
+    
+}
+.button--outline, .form__content .gform_wrapper input[type=submit], .quiz__control--prev {
+    border: 1px solid rgba(255,255,255,.8);
+    background: 0 0;
+}
+.button, button, [type=reset], [type=submit] {
+    display: inline-block;
+    border: 0;
+    border-radius: 3px;
+    background: #f05123;
+    color: #fff;
+    font-size: 1.34544rem;
+    line-height: 36px;
+    padding: 0 1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    transition: all .2s;
+}
+.section h2 {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    font-size: 2.80535rem;
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: -1px;
+    color: #f05123;
+    margin: 0 0 40px;
+}

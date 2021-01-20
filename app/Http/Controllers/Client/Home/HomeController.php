@@ -22,6 +22,7 @@ class HomeController extends Controller
         ]);
     }
 
+    // <------------------>  Start Controller KhoaDuLich <--------------------------->
     public function getKDL(Request $request)
     {
         return view('client.layout.layout_kdl.page.home');
@@ -62,9 +63,9 @@ class HomeController extends Controller
         return view('client.layout.layout_kdl.page.intership');
     }
 
-    public function getJob(Request $request)
+    public function getMess(Request $request)
     {
-        return view('client.layout.layout_kdl.page.job');
+        return view('client.layout.layout_kdl.page.mess');
     }
 
     public function getContact(Request $request)
@@ -76,4 +77,41 @@ class HomeController extends Controller
     {
         return view('client.layout.layout_tuyensinh.page.home');
     }
+
+    // <------------------> End Controller KhoaDuLich <--------------------------->
+
+    // <------------------>  Start Controller KhoaNgoaiNgu <--------------------------->
+    public function getLanguages(Request $request)
+    {
+        return view('client.layout.layout_ngoaingu.page.home');
+    }
+    public function getLanguagesIntrodution(Request $request)
+    {
+        return view('client.layout.layout_ngoaingu.page.introdution');
+    }
+    public function getEducate(Request $request)
+    {
+        return view('client.layout.layout_ngoaingu.page.educate_english');
+    }
+    public function getNewLanguages(Request $request)
+    {
+        return view('client.layout.layout_ngoaingu.page.news_event');
+    }
+    public function getDetailNewsLanguages(Request $request)
+    {
+        return view('client.layout.layout_ngoaingu.page.detailnews');
+    }
+    public function getContactLanguages(Request $request)
+    {
+        return view('client.layout.layout_ngoaingu.page.contact');
+    }
+    public function getIntershipLanguages(Request $request)
+    {
+        return view('client.layout.layout_ngoaingu.page.intership');
+    }
+
+
+
+
+     // <------------------> End Controller KhoaNgoaiNgu <--------------------------->
 }

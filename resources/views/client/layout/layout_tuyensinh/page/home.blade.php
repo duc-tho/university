@@ -130,7 +130,7 @@
           <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="70">
             <img src="{{asset('dist/layout/layout_tuyensinh/img/dulich.jpg')}}" alt="Avatar" class="image">
             
-            <a href=""> 
+            <a href="{{route('khoadulich')}}" target="_blank"> 
               <div class="middle">
                 <div class="text" id="textdl">Du Lịch</div>
                 <p class="textp"> Quản Trị Lữ Hânh | Quản Trị Nhà Hàng Và Dịch Vụ | Hướng Dẫn Viên Du Lịch </p>
