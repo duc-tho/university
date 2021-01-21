@@ -514,14 +514,14 @@
           <h2>Doanh nghiệp cộng tác</h2>
         </div>
         <div id="owl-hop-tac" class="owl-carousel clients-carousel">
-          <img src="{{asset('dist/layout/layout_khoangoaingu/img/clients/client-1.png')}}" alt="">
-          <img src="{{asset('dist/layout/layout_khoangoaingu/img/clients/client-2.png')}}" alt="">
-          <img src="{{asset('dist/layout/layout_khoangoaingu/img/clients/client-3.png')}}" alt="">
-          <img src="{{asset('dist/layout/layout_khoangoaingu/img/clients/client-4.png')}}" alt="">
-          <img src="{{asset('dist/layout/layout_khoangoaingu/img/clients/client-5.png')}}" alt="">
-          <img src="{{asset('dist/layout/layout_khoangoaingu/img/clients/client-6.png')}}" alt="">
-          <img src="{{asset('dist/layout/layout_khoangoaingu/img/clients/client-7.png')}}" alt="">
-          <img src="{{asset('dist/layout/layout_khoangoaingu/img/clients/client-8.png')}}" alt="">
+          <img src="{{asset('http://daihocdulich.edu.vn/upload/link/Link-sai-gon-c-99472.png')}}" alt="">
+          <img src="{{asset('http://daihocdulich.edu.vn/upload/link/Link-sai-gon-c-39456.jpg')}}" alt="">
+          <img src="{{asset('http://daihocdulich.edu.vn/upload/link/Link-sai-gon-c-64210.jpg')}}" alt="">
+          <img src="{{asset('http://daihocdulich.edu.vn/upload/link/Link-sai-gon-c-66470.jpg')}}" alt="">
+          <img src="{{asset('http://daihocdulich.edu.vn/upload/link/Link-sai-gon-c-21823.gif')}}" alt="">
+          <img src="{{asset('http://daihocdulich.edu.vn/upload/link/Link-sai-gon-c-80240.jpg')}}" alt="">
+          <img src="{{asset('http://daihocdulich.edu.vn/upload/link/Link-sai-gon-c-72022.jpg')}}" alt="">
+          <img src="{{asset('http://daihocdulich.edu.vn/upload/link/Link-sai-gon-c-36507.jpg')}}" alt="">
         </div>
       </div>
     </section><!-- End Clients Section -->

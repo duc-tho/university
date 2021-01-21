@@ -1,21 +1,9 @@
 <footer id="footer">
-    <div class="footer-top">
+<div class="footer-top">
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-4 col-md-6 footer-links">
-            <h4>Mục lục</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Trang chủ</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Giới thiệu</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Đào tạo</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Sinh viên</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="news.html">Tin tức</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Liên hệ</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-contact">
+        <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Thông tin</h4>
             <p>
               70 Tân Thới Nhất 8
@@ -25,19 +13,41 @@
               <strong>Email:</strong> daihocdulich@dhdl.edu.vn<br>
             </p>
 
+          </div> 
+
+          <div class="col-lg-3 col-md-6 footer-link">
+            <h4>Đóng góp ý kiến</h4>
+            <form action="#" class="subscribe" method="post">
+                <input type="email" name="email" placeholder="Email" required="">
+                <button name="submit" type="submit"><i class="bx bxl-search"></i></button>
+            </form>
+            <p>Chúng tôi luôn lắng nghe ý kiến của bạn</p>
+            <p>Luông lắng nghe đóng góp để cùng phát triển</p>
           </div>
 
-          <div class="col-lg-4 col-md-6 footer-info">
-            <h3>About Eterna</h3>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Mục lục</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{route('khoangoaingu')}}">Trang chủ</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Giới thiệu</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Đào tạo</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Sinh viên</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{route('tintucngoaingu')}}">Tin tức</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Liên hệ</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>SaiGon ACT</h3>
             <ul class="footer-logo">
               <a href="index.html"><img class="text-light img-1" alt="logo" src="http://khoangoaingu.daihocdulich.edu.vn/upload/file/logo.png"></a>
             </ul>
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="youtube"><i class="bx bxl-youtube"></i></a>
               <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+             
             </div>
           </div>
 
