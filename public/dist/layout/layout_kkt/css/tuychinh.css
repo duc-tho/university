@@ -1,0 +1,34 @@
+
+.gioithieu
+{
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    color: blue;
+}
+.loigioithieu
+{
+    text-align: center;
+}
+.anh img
+{
+    padding-bottom: 7px;
+    margin-top: 10px;
+}
+.soluongnhansu img
+{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.soluongnhansu p
+{
+    text-align: center;
+}
+.sl
+{
+    font-weight: bolder;
+    font-size: 2em;
+    color: blue;
+}
