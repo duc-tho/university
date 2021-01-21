@@ -19,7 +19,7 @@
                     <h2>Teachers</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Teachers</li>
                         </ol>
                     </nav>
@@ -42,7 +42,7 @@
                         <img src="{{ asset('dist/layout/layout_kkt/images/teachers/t-1.jpg') }}" alt="Teachers">
                     </div>
                     <div class="cont">
-                        <a href="#">
+                        <a href="javascript:">
                             <h6>MarkMark alen</h6>
                         </a>
                         <span>Vice chencelor</span>
@@ -55,7 +55,7 @@
                         <img src="{{ asset('dist/layout/layout_kkt/images/teachers/t-2.jpg') }}" alt="Teachers">
                     </div>
                     <div class="cont">
-                        <a href="teachers-singel.html">
+                        <a href="{{  route('khoakinhte-thongtingiaovien') }}">
                             <h6>David card </h6>
                         </a>
                         <span>Pro chencelor</span>
@@ -68,7 +68,7 @@
                         <img src="{{ asset('dist/layout/layout_kkt/images/teachers/t-3.jpg') }}" alt="Teachers">
                     </div>
                     <div class="cont">
-                        <a href="teachers-singel.html">
+                        <a href="{{  route('khoakinhte-thongtingiaovien') }}">
                             <h6>Rebeka alig</h6>
                         </a>
                         <span>Pro chencelor</span>
@@ -81,7 +81,7 @@
                         <img src="{{ asset('dist/layout/layout_kkt/images/teachers/t-4.jpg') }}" alt="Teachers">
                     </div>
                     <div class="cont">
-                        <a href="teachers-singel.html">
+                        <a href="{{  route('khoakinhte-thongtingiaovien') }}">
                             <h6>Hanna bein</h6>
                         </a>
                         <span>Aerobics head</span>
@@ -94,7 +94,7 @@
                         <img src="{{ asset('dist/layout/layout_kkt/images/teachers/t-5.jpg') }}" alt="Teachers">
                     </div>
                     <div class="cont">
-                        <a href="teachers-singel.html">
+                        <a href="{{  route('khoakinhte-thongtingiaovien') }}">
                             <h6>David card </h6>
                         </a>
                         <span>Pro chencelor</span>
@@ -107,7 +107,7 @@
                         <img src="{{ asset('dist/layout/layout_kkt/images/teachers/t-6.jpg') }}" alt="Teachers">
                     </div>
                     <div class="cont">
-                        <a href="teachers-singel.html">
+                        <a href="{{  route('khoakinhte-thongtingiaovien') }}">
                             <h6>Mark alen</h6>
                         </a>
                         <span>Vice chencelor</span>
@@ -120,7 +120,7 @@
                         <img src="{{ asset('dist/layout/layout_kkt/images/teachers/t-7.jpg') }}" alt="Teachers">
                     </div>
                     <div class="cont">
-                        <a href="teachers-singel.html">
+                        <a href="{{  route('khoakinhte-thongtingiaovien') }}">
                             <h6>Rebeka alig</h6>
                         </a>
                         <span>Pro chencelor</span>
@@ -133,7 +133,7 @@
                         <img src="{{ asset('dist/layout/layout_kkt/images/teachers/t-8.jpg') }}" alt="Teachers">
                     </div>
                     <div class="cont">
-                        <a href="teachers-singel.html">
+                        <a href="{{  route('khoakinhte-thongtingiaovien') }}">
                             <h6>Hanna bein</h6>
                         </a>
                         <span>Aerobics head</span>
@@ -146,15 +146,15 @@
                 <nav class="courses-pagination mt-50">
                     <ul class="pagination justify-content-center">
                         <li class="page-item">
-                            <a href="#" aria-label="Previous">
+                            <a href="javascript:" aria-label="Previous">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         </li>
-                        <li class="page-item"><a class="active" href="#">1</a></li>
-                        <li class="page-item"><a href="#">2</a></li>
-                        <li class="page-item"><a href="#">3</a></li>
+                        <li class="page-item"><a class="active" href="javascript:">1</a></li>
+                        <li class="page-item"><a href="javascript:">2</a></li>
+                        <li class="page-item"><a href="javascript:">3</a></li>
                         <li class="page-item">
-                            <a href="#" aria-label="Next">
+                            <a href="javascript:" aria-label="Next">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         </li>
