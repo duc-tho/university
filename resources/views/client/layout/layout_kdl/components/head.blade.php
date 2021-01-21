@@ -2,7 +2,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="//fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-  
   {{-- link Icon font --}}
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" >
   {{-- link caroucel --}}

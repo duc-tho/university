@@ -1,5 +1,5 @@
 @extends('client.layout.layout_kdl.index')
-@section('title','Trang Chủ')
+@section('title','Trang Chủ Khoa Du Lịch')
 @section('main')
 <section class="w3l-main-slider" id="home">
   <div class="companies20-content">
@@ -25,7 +25,7 @@
               <div class="container">
                 <div class="banner-info-bg mx-auto text-center">
                   <h5>Explore The World Of Our Graduates</h5>
-                  <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="services.html">Read More</a>
+                  <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="services.html">Đọc Thêm</a>
                 </div>
               </div>
             </div>
@@ -39,7 +39,7 @@
               <div class="container">
                 <div class="banner-info-bg mx-auto text-center">
                   <h5>Exceptional People, Exceptional Care</h5>
-                  <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="services.html">Read More</a>
+                  <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="services.html">Đọc Thêm</a>
                 </div>
               </div>
             </div>
@@ -53,7 +53,7 @@
               <div class="container">
                 <div class="banner-info-bg mx-auto text-center">
                   <h5>Explore The World Of Our Graduates</h5>
-                  <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="services.html">Read More</a>
+                  <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="services.html">Đọc Thêm</a>
                 </div>
               </div>
             </div>
@@ -110,10 +110,10 @@
           <p class="more-gap editContent">Khoa du lịch của trường đã và đang lại đại diện nghành có tỉ lệ sinh viên
             tham gia trường rất cao và đỗ tốt nghiệp rất lớn.
           </p>
-          <a class="btn btn-secondary btn-theme2 mt-3" href="about.html"> Read More</a>
+          <a class="btn btn-secondary btn-theme2 mt-3" href="about.html"> Đọc Thêm</a>
         </div>
         <div class="column ccont-left col-lg-6">
-          <img src="assets/images/20181227183820-68860.png" class="img-responsive" alt="">
+          <img src="{{asset('dist/layout/layout_khoadulich/images/20181227183820-68860.png')}}" class="img-responsive" alt="">
         </div>
       </div>
     </div>
@@ -151,7 +151,7 @@
 
         <div class="column1">
           <h4 class="tagline">Tìm kiếm </h4>
-          <p>Những địa điểm du lịch lí tưởng của khoa trong năm 2020</p>
+          <p>Những địa điểm du lịch lí tưởng của khoa trong năm 2021</p>
           <form action="/" method="Get">
             <div class="">
               <input type="text" name="name" class="form-input" placeholder="Tên Địa Điểm">
@@ -199,16 +199,16 @@
             <div class="col-md-3 col-sm-6 col-6 mt-md-0 mt-4">
               <a href="services.html">
                 <div class="courses-item">
-                  <span class="fa fa-flask"></span>
-                  <p>Khoa Học</p>
+                  <span class="	fa fa-book"></span>
+                  <p>Khóa Học</p>
                 </div>
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6 mt-4">
               <a href="services.html">
                 <div class="courses-item mt-2">
-                  <span class="fa fa-money"></span>
-                  <p>Ecomomics</p>
+                  <span class="	fa fa-image"></span>
+                  <p>Hình Ảnh</p>
                 </div>
               </a>
             </div>
@@ -216,23 +216,23 @@
               <a href="services.html">
                 <div class="courses-item mt-2">
                   <span class="fa fa-gg"></span>
-                  <p>Biology</p>
+                  <p>Liên Kết</p>
                 </div>
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6 mt-4">
               <a href="services.html">
                 <div class="courses-item mt-2">
-                  <span class="fa fa-desktop"></span>
-                  <p>Computing</p>
+                  <span class="fa fa-paper-plane-o"></span>
+                  <p>CheckIn</p>
                 </div>
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6 mt-4">
               <a href="services.html">
                 <div class="courses-item mt-2">
-                  <span class="fa fa-mouse-pointer"></span>
-                  <p>Web Design</p>
+                  <span class="		fa fa-object-group"></span>
+                  <p>Nhóm</p>
                 </div>
               </a>
             </div>
@@ -296,10 +296,10 @@
         <div class="item-top col-md-6 mt-md-0 mt-4">
           <div class="item text-center">
             <div class="imgTitle">
-              <img src="assets/images/c3.jpg" class="img-responsive" alt="" />
+              <img src="{{asset('dist/layout/layout_khoadulich/images/c3.jpg')}}" class="img-responsive" alt="" />
             </div>
             <h6 class="mt-3">Nguyễn Lưu Vân Anh</h6>
-            <p class="">Sinh Viên Năm 4</p>
+            <p class="">Cựu Sinh Viên Của Trường</p>
             <p> Khoa du lịch đã cho tôi những trải nghiệm về 4 năm sinh viên thật tuyệt vời, được tận hưởng niềm vui
               cũng như những kiến thức về du lịch đã cho tôi sự tự tịn hơn rất nhiều</p>
           </div>
@@ -319,13 +319,13 @@
             <div class="price-box btn-layout bt6">
               <div class="grid grid-column-2">
                 <div class="column-6">
-                  <img src="assets/images/20170828165923-45184.jpg" alt="" class="img-fluid">
+                  <img src="{{asset('dist/layout/layout_khoadulich/images/20170828170500-78971.jpg')}}" alt="" class="img-fluid">
                 </div>
                 <div class="column1">
 
                   <div class="job-info">
                     <h6 class="pricehead"><a href="#">Khoa Du Lịch được tuyên dương </a></h6>
-                    <h5>Tháng 6/24/2020</h5>
+                    <h5>Tháng 6/24/2021</h5>
                     <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
                   </div>
                 </div>
@@ -334,13 +334,13 @@
             <div class="price-box btn-layout bt6">
               <div class="grid grid-column-2">
                 <div class="column-6">
-                  <img src="assets/images/20170828165923-45184.jpg" alt="" class="img-fluid">
+                  <img src="{{asset('dist/layout/layout_khoadulich/images/20180118145548-56466.jpg')}}" alt="" class="img-fluid">
                 </div>
                 <div class="column1">
 
                   <div class="job-info">
                     <h6 class="pricehead"><a href="#">Khoa Du Lịch được tuyên dương </a></h6>
-                    <h5>Tháng 6/24/2020</h5>
+                    <h5>Tháng 6/24/2021</h5>
                     <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
                   </div>
                 </div>
@@ -349,13 +349,13 @@
             <div class="price-box btn-layout bt6">
               <div class="grid grid-column-2">
                 <div class="column-6">
-                  <img src="assets/images/20170828165923-45184.jpg" alt="" class="img-fluid">
+                  <img src="{{asset('dist/layout/layout_khoadulich/images/5.jpg')}}" alt="" class="img-fluid">
                 </div>
                 <div class="column1">
 
                   <div class="job-info">
                     <h6 class="pricehead"><a href="#">Khoa Du Lịch được tuyên dương </a></h6>
-                    <h5>Tháng 6/24/2020</h5>
+                    <h5>Tháng 6/24/2021</h5>
                     <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
                   </div>
                 </div>
@@ -372,13 +372,13 @@
             <div class="price-box btn-layout bt6">
               <div class="grid grid-column-2">
                 <div class="column-6">
-                  <img src="assets/images/20170828165923-45184.jpg" alt="" class="img-fluid">
+                  <img src="{{asset('dist/layout/layout_khoadulich/images/20190920102331-31696.jpg')}}" alt="" class="img-fluid">
                 </div>
                 <div class="column1">
 
                   <div class="job-info">
                     <h6 class="pricehead"><a href="#">Khoa Du Lịch được tuyên dương </a></h6>
-                    <h5>Tháng 6/24/2020</h5>
+                    <h5>Tháng 6/24/2021</h5>
                     <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
                   </div>
                 </div>
@@ -387,13 +387,13 @@
             <div class="price-box btn-layout bt6">
               <div class="grid grid-column-2">
                 <div class="column-6">
-                  <img src="assets/images/20170828165923-45184.jpg" alt="" class="img-fluid">
+                  <img src="{{asset('dist/layout/layout_khoadulich/images/link-dhdl-45338.jpg')}}" alt="" class="img-fluid">
                 </div>
                 <div class="column1">
 
                   <div class="job-info">
                     <h6 class="pricehead"><a href="#">Khoa Du Lịch được tuyên dương </a></h6>
-                    <h5>Tháng 6/24/2020</h5>
+                    <h5>Tháng 6/24/2021</h5>
                     <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
                   </div>
                 </div>
@@ -408,7 +408,7 @@
 
                   <div class="job-info">
                     <h6 class="pricehead"><a href="#">Khoa Du Lịch được tuyên dương </a></h6>
-                    <h5>Tháng 6/24/2020</h5>
+                    <h5>Tháng 6/24/2021</h5>
                     <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
                   </div>
                 </div>

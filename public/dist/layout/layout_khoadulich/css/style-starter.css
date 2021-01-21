@@ -11617,7 +11617,8 @@ button.owl-next {
   color: var(--title-color); }
 
 .w3l-price-2 h6.pricehead a:hover {
-  color: var(--opposite-color); }
+  color: #067187
+}
 
 .w3l-price-2 .pricing-chart h5 {
   font-size: 16px;

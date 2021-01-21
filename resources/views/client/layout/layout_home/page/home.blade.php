@@ -11,7 +11,7 @@
 @section('main')
 <div id="scrollzipPoint"></div>
 <!--/banner-bottom-->
-<div class="w3_agilits_banner_bootm" style="position: fixed">
+<div class="w3_agilits_banner_bootm" >
     <div class="w3_agilits_inner_bottom">
         <div class="wthree_agile_login">
             <ul>
@@ -83,7 +83,7 @@
                 <div class="agileits-banner-grid">
                     <span class="fa fa-tags banner-icon" aria-hidden="true"></span>
                     <h4>Tuyển Sinh </h4>
-                    <p>Đăng ký tuyển sinh <span style="font-weight: bold">Trực tuyến 24/7</span></p>
+                    <p>Đăng ký tuyển sinh <span style="font-weight: bold">Trực tuyến 24/7 Luôn hỗ trợ sinh viên </span></p>
                     
                     
                     <a class="hvr-rectangle-out w3_play_icon1" href="{{route('tuyensinh')}}" > Đăng Ký</a>
@@ -148,34 +148,41 @@
         <div class="agileits-services-row">
             <div class="col-md-3 col-sm-6 agileits-services-grids">
                 {{-- <span class="glyphicon glyphicon-stats effect-1" aria-hidden="true"></span> --}}
-                <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20190920102333-27618.jpg') }}" width="40%" alt=""  >
+                <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20170828165923-45184.jpg') }}" width="40%" alt=""  >
                 <h4>Kinh tế</h4>
-                <p>Itaque earum rerum hic tenetur a sapiente delectus
-                    reiciendis maiores alias consequatur aut</p>
+                <p class="khoa-p">Là một trong những khoa thu hút nhiều sinh viên theo học, với bề dày đào tạo từ năm 2006. 
+                    Những ngành được đào tạo tại Khoa được đánh giá là thu hút nguồn nhân lực nhiều nhất hiện
+                     nay.</p>
             </div>
             <div class="col-md-3 col-sm-6 agileits-services-grids">
                 <a href="{{route('khoadulich')}}">
-                <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20190920102333-27618.jpg') }}" width="40%" alt=""  >
+                <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20180118145548-56466.jpg') }}"  alt=""  >
                 <h4>Du lịch</h4>
                 </a>
-                <p>Itaque earum rerum hic tenetur a sapiente delectus
-                    reiciendis maiores alias consequatur aut</p>
+                <p class="khoa-p">Khoa Du lịch – BQLĐATL Trường Đại học Du lịch Sài Gòn ra đời mở ra cơ hội tốt hơn cho người 
+                    học có điều kiện học tập ở trình độ cao thuộc các chuyên ngành du lịch, góp phần nâng
+                     cao chất lượng nguồn nhân lực du lịch,</p>
             </div>
             <div class="col-md-3 col-sm-6 agileits-services-grids">
-                <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20190920102333-27618.jpg') }}" width="40%" alt=""  >
-                <h4>Ngoại ngữ</h4>
-                <p>Itaque earum rerum hic tenetur a sapiente delectus
-                    reiciendis maiores alias consequatur aut</p>
+                <a href="{{route('khoangoaingu')}}">
+                    <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/4.jpg') }}" width="40%" alt=""  >
+                    <h4>Ngoại ngữ</h4>
+                </a>
+                <p class="khoa-p">Khoa Ngoại Ngữ – BQLĐATL Trường Đại học Du lịch Sài Gòn là tiền thân của Trường Cao đẳng 
+                    Văn hóa Nghệ thuật và Du lịch Sài Gòn được thành lập cùng với sự thành lập của trường 17 
+                    tháng 10 năm 2006.</p>
             </div>
             <div class="col-md-3 col-sm-6 agileits-services-grids">
-                <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20190920102333-27618.jpg') }}" width="40%" alt=""  >
+                <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20181227183820-68860.png') }}" width="40%" alt=""  >
                 <h4>Nghệ Thuật</h4>
-                <p>Itaque earum rerum hic tenetur a sapiente delectus
-                    reiciendis maiores alias consequatur aut</p>
+                <p class="khoa-p"> Khoa Nghệ thuật được thành lập từ năm 2006, gồm có 06 chuyên ngành: Đạo diễn, Diễn viên
+                     kịch nói và điện ảnh, Thanh nhạc, Thiết kế Đồ họa, Thiết kế Thời trang và Quay phim.
+
+                </p>
             </div>
             <div class="clearfix"> </div>
         </div>
-        <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="#"> Xem thêm về các khoa</a></div>
+        {{-- <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="#"> Xem thêm về các khoa</a></div> --}}
     </div>
 </div>
 <!--//agileits-services-->
