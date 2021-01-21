@@ -147,9 +147,11 @@
         <h3 class="w3ls-title">Khoa </h3>
         <div class="agileits-services-row">
             <div class="col-md-3 col-sm-6 agileits-services-grids">
+                <a href="{{route('khoakinhte')}}">
                 {{-- <span class="glyphicon glyphicon-stats effect-1" aria-hidden="true"></span> --}}
                 <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20170828165923-45184.jpg') }}" width="40%" alt=""  >
                 <h4>Kinh tế</h4>
+                </a>
                 <p class="khoa-p">Là một trong những khoa thu hút nhiều sinh viên theo học, với bề dày đào tạo từ năm 2006. 
                     Những ngành được đào tạo tại Khoa được đánh giá là thu hút nguồn nhân lực nhiều nhất hiện
                      nay.</p>
