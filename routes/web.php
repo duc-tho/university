@@ -40,7 +40,19 @@ Route::get('/khoa-du-lich/sinh-vien/cong-tac-doan', [HomeController::class, 'get
 // Route Tuyển Sinh
 Route::get('/tuyen-sinh', [HomeController::class, 'getAdmissions'])->name('tuyensinh');
 
-//Route::get('/khoa-du-lich/lien-he', [HomeController::class, 'getContact'])->name('lienhe');
+Route::get('/khoa-du-lich/lien-he', [HomeController::class, 'getContact'])->name('lienhe');
+
+//Route trỏ về khoa kinh tế
+Route::get('/khoa-kinh-te', function() { return view('client.layout.layout_kkt.page.home'); })->name('khoakinhte');
+Route::get('/khoa-kinh-te/gioi-thieu', function() { return view('client.layout.layout_kkt.page.gioithieu'); })->name('khoakinhte-gioithieu');
+Route::get('/khoa-kinh-te/lien-he', function() { return view('client.layout.layout_kkt.page.lienlac'); })->name('khoakinhte-lienhe');
+Route::get('/khoa-kinh-te/tin-tuc', function() { return view('client.layout.layout_kkt.page.tintuc'); })->name('khoakinhte-tintuc');
+Route::get('/khoa-kinh-te/tin-tuc/chi-tiet-tin-tuc', function() { return view('client.layout.layout_kkt.page.tintucdon'); })->name('khoakinhte-chitiettintuc');
+Route::get('/khoa-kinh-te/tin-tuc/danh-sach-tin-tuc', function() { return view('client.layout.layout_kkt.page.tintucnhom'); })->name('khoakinhte-danhsachtintuc');
+Route::get('/khoa-kinh-te/thong-tin-giao-vien', function() { return view('client.layout.layout_kkt.page.thongtingiaovien'); })->name('khoakinhte-thongtingiaovien');
+Route::get('/khoa-kinh-te/giao-vien', function() { return view('client.layout.layout_kkt.page.thongtinnhieugiaovien'); })->name('khoakinhte-danhsachgiaovien');
+Route::get('/khoa-kinh-te/khoa-hoc', function() { return view('client.layout.layout_kkt.page.khoahoc'); })->name('khoakinhte-khoahoc');
+Route::get('/khoa-kinh-te/chi-tiet-khoa-hoc', function() { return view('client.layout.layout_kkt.page.khoahocdon'); })->name('khoakinhte-chitietkhoahoc');
 
 
 
