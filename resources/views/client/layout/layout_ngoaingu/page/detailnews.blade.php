@@ -6,12 +6,12 @@
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
 
-        <ol>
-          <li><a href="index.html">Trang chủ</a></li>
+      <ol>
+          <li><a href="{{route('khoangoaingu')}}">Trang chủ</a></li>
           <li><a href="news.html">Tin tức</a></li>
           <li><a href="news-detail.html">Chi tiết tin tức</a></li>
         </ol>
-        <h2>Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</h2>
+        <h2>Học ngoại ngữ ở SaigonACT nói như người bản địa</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
@@ -22,244 +22,190 @@
 
         <div class="row">
 
-          <div class="col-lg-8 entries">
+        <div class="col-lg-8 entries">
 
-            <article class="entry entry-single">
+        <article class="entry entry-single">
 
-              <div class="entry-img">
-                <img src="{{asset('dist/layout/layout_khoangoaingu/img/blog-1.jpg')}}" alt="" class="img-fluid">
-              </div>
+          <div class="entry-img">
+            <img src="http://khoangoaingu.daihocdulich.edu.vn/admin3917/template/kindeditor/attached/image/20190713/20190713021810_54850.png" alt="" class="img-fluid">
+          </div>
 
-              <h2 class="entry-title">
-                <a href="blog-single.html">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</a>
-              </h2>
+          <h2 class="entry-title">
+            <a href="blog-single.html">Học ngoại ngữ ở SaigonACT nói như người bản địa</a>
+          </h2>
 
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">John Doe</a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a href="blog-single.html">12 Comments</a></li>
-                </ul>
-              </div>
+          <div class="entry-meta">
+            <ul>
+              <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">Truyền thông</a></li>
+              <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Ngày đăng: 13/07/2019</time></a></li>
+              <!-- <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a href="blog-single.html">12 Comments</a></li> -->
+            </ul>
+          </div>
 
-              <div class="entry-content">
-                <p>
-                  Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
-                  Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
-                </p>
+          <div class="entry-content">
+            <p>
+              Tại sao tôi có thể nói như thế. Bởi vì học sinh, sinh viên đều được học với giảng viên là người bản địa.
+            </p>
 
-                <p>
-                  Sit repellat hic cupiditate hic ut nemo. Quis nihil sunt non reiciendis. Sequi in accusamus harum vel aspernatur. Excepturi numquam nihil cumque odio. Et voluptate cupiditate.
-                </p>
+            <p>
+              Ngày 1/7/2019 vừa qua trường Saigonact đã ký kết hợp với 2 chuyên gia nước ngoài về làm việc. 1 là PGS.TS Choi Dok Jin trưởng khoa ngành Đông Phương Học. 2 là Ths. Louie De Prado trưởng khoa Quốc Tế.
+            </p>
 
-                <blockquote>
-                  <i class="icofont-quote-left quote-left"></i>
-                  <p>
-                    Et vero doloremque tempore voluptatem ratione vel aut. Deleniti sunt animi aut. Aut eos aliquam doloribus minus autem quos.
-                  </p>
-                  <i class="las la-quote-right quote-right"></i>
-                  <i class="icofont-quote-right quote-right"></i>
-                </blockquote>
-
-                <p>
-                  Sed quo laboriosam qui architecto. Occaecati repellendus omnis dicta inventore tempore provident voluptas mollitia aliquid. Id repellendus quia. Asperiores nihil magni dicta est suscipit perspiciatis. Voluptate ex rerum assumenda dolores nihil quaerat.
-                  Dolor porro tempora et quibusdam voluptas. Beatae aut at ad qui tempore corrupti velit quisquam rerum. Omnis dolorum exercitationem harum qui qui blanditiis neque.
-                  Iusto autem itaque. Repudiandae hic quae aspernatur ea neque qui. Architecto voluptatem magni. Vel magnam quod et tempora deleniti error rerum nihil tempora.
-                </p>
-
-                <h3>Et quae iure vel ut odit alias.</h3>
-                <p>
-                  Officiis animi maxime nulla quo et harum eum quis a. Sit hic in qui quos fugit ut rerum atque. Optio provident dolores atque voluptatem rem excepturi molestiae qui. Voluptatem laborum omnis ullam quibusdam perspiciatis nulla nostrum. Voluptatum est libero eum nesciunt aliquid qui.
-                  Quia et suscipit non sequi. Maxime sed odit. Beatae nesciunt nesciunt accusamus quia aut ratione aspernatur dolor. Sint harum eveniet dicta exercitationem minima. Exercitationem omnis asperiores natus aperiam dolor consequatur id ex sed. Quibusdam rerum dolores sint consequatur quidem ea.
-                  Beatae minima sunt libero soluta sapiente in rem assumenda. Et qui odit voluptatem. Cum quibusdam voluptatem voluptatem accusamus mollitia aut atque aut.
-                </p>
-                <img src="assets/img/blog-inside-post.jpg" class="img-fluid" alt="">
-
-                <h3>Ut repellat blanditiis est dolore sunt dolorum quae.</h3>
-                <p>
-                  Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
-                  Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
-                </p>
-                <p>
-                  Alias quia non aliquid. Eos et ea velit. Voluptatem maxime enim omnis ipsa voluptas incidunt. Nulla sit eaque mollitia nisi asperiores est veniam.
-                </p>
-
-              </div>
-
-              <div class="entry-footer clearfix">
-                <div class="float-left">
-                  <i class="icofont-folder"></i>
-                  <ul class="cats">
-                    <li><a href="#">Business</a></li>
-                  </ul>
-
-                  <i class="icofont-tags"></i>
-                  <ul class="tags">
-                    <li><a href="#">Creative</a></li>
-                    <li><a href="#">Tips</a></li>
-                    <li><a href="#">Marketing</a></li>
-                  </ul>
-                </div>
-
-                <div class="float-right share">
-                  <a href="" title="Share on Twitter"><i class="icofont-twitter"></i></a>
-                  <a href="" title="Share on Facebook"><i class="icofont-facebook"></i></a>
-                  <a href="" title="Share on Instagram"><i class="icofont-instagram"></i></a>
-                </div>
-
-              </div>
-
-            </article><!-- End blog entry -->
-
-            <div class="blog-author clearfix">
-              <img src="{{asset('dist/layout/layout_khoangoaingu/img/blog-author.jpg')}}" class="rounded-circle float-left" alt="">
-              <h4>Jane Smith</h4>
-              <div class="social-links">
-                <a href="https://twitters.com/#"><i class="icofont-twitter"></i></a>
-                <a href="https://facebook.com/#"><i class="icofont-facebook"></i></a>
-                <a href="https://instagram.com/#"><i class="icofont-instagram"></i></a>
-              </div>
+            <blockquote>
+              <i class="icofont-quote-left quote-left"></i>
               <p>
-                Itaque quidem optio quia voluptatibus dolorem dolor. Modi eum sed possimus accusantium. Quas repellat voluptatem officia numquam sint aspernatur voluptas. Esse et accusantium ut unde voluptas.
+                2 người sẽ tham gia giảng dạy ngoại ngữ  cho 2 trường Saigonact và thpt Bạch Đằng.
+
+              Đây là một bước tiến  mới của Trường trong việc nâng cao chất lượng giáo duc đào tạo. bên cạnh đó sinh viên sẽ được nâng cao khả năng ngoại ngữ thông qua các buổi học với người bản địa là 2 chuyên gia nước ngoài, các em sẽ được phát âm ngoại ngữ chuẩn, tự tin giao tiếp với người nước ngoài.
               </p>
-            </div><!-- End blog author bio -->
-            <div class="fb-comments" data-href="http://127.0.0.1:5500/news-detail.html" data-width="500" data-numposts="10"></div>
-            <div class="blog-comments">
-              <div class="reply-form">
-                <h4>Leave a Reply</h4>
-                <p>Your email address will not be published. Required fields are marked * </p>
-                <form action="">
-                  <div class="row">
-                    <div class="col-md-6 form-group">
-                      <input name="name" type="text" class="form-control" placeholder="Your Name*">
-                    </div>
-                    <div class="col-md-6 form-group">
-                      <input name="email" type="text" class="form-control" placeholder="Your Email*">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col form-group">
-                      <input name="website" type="text" class="form-control" placeholder="Your Website">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col form-group">
-                      <textarea name="comment" class="form-control" placeholder="Your Comment*"></textarea>
-                    </div>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Post Comment</button>
+              <i class="las la-quote-right quote-right"></i>
+              <i class="icofont-quote-right quote-right"></i>
+            </blockquote>
 
-                </form>
+            <!-- <p>
+              Sed quo laboriosam qui architecto. Occaecati repellendus omnis dicta inventore tempore provident voluptas mollitia aliquid. Id repellendus quia. Asperiores nihil magni dicta est suscipit perspiciatis. Voluptate ex rerum assumenda dolores nihil quaerat.
+              Dolor porro tempora et quibusdam voluptas. Beatae aut at ad qui tempore corrupti velit quisquam rerum. Omnis dolorum exercitationem harum qui qui blanditiis neque.
+              Iusto autem itaque. Repudiandae hic quae aspernatur ea neque qui. Architecto voluptatem magni. Vel magnam quod et tempora deleniti error rerum nihil tempora.
+            </p> -->
 
-              </div>
+            <!-- <h3>Et quae iure vel ut odit alias.</h3> -->
+            <p>
+              Đăc biệt là  học sinh THPT Bạch Đằng, khi các em mới học đã được tiếp xúc ngay với ngoại ngữ từ đó nền tảng ngoại ngữ các em sẽ vững hơn và các em khoogn còn phải tốn tiền ra trung tâm học nữa vì trong trường cũng đã có giáo viên bản địa rồi.
 
-            </div><!-- End blog comments -->
+              Còn sinh viên Saigonact sẽ có nhiều cơ hội du học miễn phí và có khả năng tìm việc đúng mong muốn sẽ cao hơn.
 
-          </div><!-- End blog entries list -->
+              Đến với hệ thống trường Saigonact các bạn yên tâm học ngoại ngữ và tự tin nói như người bản địa
+            </p>
+            <img src="http://khoangoaingu.daihocdulich.edu.vn/admin3917/template/kindeditor/attached/image/20190713/20190713021834_73383.png" class="img-fluid" alt="">
+        <!-- 
+            <h3>Ut repellat blanditiis est dolore sunt dolorum quae.</h3>
+            <p>
+              Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+              Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+            </p>
+            <p>
+              Alias quia non aliquid. Eos et ea velit. Voluptatem maxime enim omnis ipsa voluptas incidunt. Nulla sit eaque mollitia nisi asperiores est veniam.
+            </p>
 
-          <div class="col-lg-4">
-            <div class="sidebar">
+          </div> -->
 
-              <h3 class="sidebar-title">Tìm kiếm</h3>
-              <div class="sidebar-item search-form">
-                <form action="">
-                  <input type="text">
-                  <button type="submit"><i class="icofont-search"></i></button>
-                </form>
+          <div class="entry-footer clearfix">
+            <div class="float-left">
+              <i class="icofont-folder"></i>
+              <ul class="cats">
+                <li><a href="#">Tin tức</a></li>
+              </ul>
 
-              </div><!-- End sidebar search formn-->
-
-              <h3 class="sidebar-title">Tin mới</h3>
-              <div class="sidebar-item recent-posts">
-                <div class="post-item clearfix">
-                  <img src="{{asset('dist/layout/layout_khoangoaingu/img/blog-recent-1.jpg')}}" alt="">
-                  <h4><a href="blog-single.html">Nihil blanditiis at in nihil autem</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="{{asset('dist/layout/layout_khoangoaingu/img/blog-recent-2.jpg')}}" alt="">
-                  <h4><a href="blog-single.html">Quidem autem et impedit</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="{{asset('dist/layout/layout_khoangoaingu/img/blog-recent-3.jpg')}}" alt="">
-                  <h4><a href="blog-single.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="{{asset('dist/layout/layout_khoangoaingu/img/blog-recent-4.jpg')}}" alt="">
-                  <h4><a href="blog-single.html">Laborum corporis quo dara net para</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="{{asset('dist/layout/layout_khoangoaingu/img/blog-recent-5.jpg')}}" alt="">
-                  <h4><a href="blog-single.html">Et dolores corrupti quae illo quod dolor</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-              </div><!-- End sidebar recent posts-->
-
-              <!-- <h3 class="sidebar-title">Danh mục</h3>
-              <div class="sidebar-item categories">
-                <ul>
-                  <li><a href="#">General <span>(25)</span></a></li>
-                  <li><a href="#">Lifestyle <span>(12)</span></a></li>
-                  <li><a href="#">Travel <span>(5)</span></a></li>
-                  <li><a href="#">Design <span>(22)</span></a></li>
-                  <li><a href="#">Creative <span>(8)</span></a></li>
-                  <li><a href="#">Educaion <span>(14)</span></a></li>
-                </ul>
-
-              </div> -->
-              <!-- End sidebar categories-->
-
-           
-
-              <h3 class="sidebar-title">Liên Quan</h3>
-              <div class="sidebar-item tags">
-                <ul>
-                  <li><a href="#">App</a></li>
-                  <li><a href="#">IT</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Mac</a></li>
-                  <li><a href="#">Design</a></li>
-                  <li><a href="#">Office</a></li>
-                  <li><a href="#">Creative</a></li>
-                  <li><a href="#">Studio</a></li>
-                  <li><a href="#">Smart</a></li>
-                  <li><a href="#">Tips</a></li>
-                  <li><a href="#">Marketing</a></li>
-                </ul>
-
-              </div><!-- End sidebar tags-->
-            
-            <h3 class="sidebar-title">Quảng cáo</h3>
-            <div class="" >
-                <div class="banner-spot">
-                    <div class="banner-img">
-                        <a href="#">
-                            <img src="http://khoangoaingu.daihocdulich.edu.vn/upload/link/link-noi-that-g4-25281.png" class="img-fluid" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="banner-spot">
-                    <div class="banner-img">
-                        <a href="#">
-                            <img src="http://khoangoaingu.daihocdulich.edu.vn/upload/link/link-noi-that-g4-36680.png" class="img-fluid" alt="">
-                        </a>
-                    </div>
-                </div>
+              <i class="icofont-tags"></i>
+              <ul class="tags">
+                <li><a href="#">Creative</a></li>
+                <li><a href="#">Tips</a></li>
+                <li><a href="#">Marketing</a></li>
+              </ul>
             </div>
-            </div><!-- End sidebar -->
 
-          </div><!-- End blog sidebar -->
+            <div class="float-right share">
+              <a href="" title="Share on Twitter"><i class="icofont-twitter"></i></a>
+              <a href="" title="Share on Facebook"><i class="icofont-facebook"></i></a>
+              <a href="" title="Share on Instagram"><i class="icofont-instagram"></i></a>
+            </div>
+
+          </div>
+
+        </article><!-- End blog entry -->
+        <!-- End blog author bio -->
+        <div class="fb-comments" data-href="http://127.0.0.1:5500/news-detail.html" data-width="500" data-numposts="10"></div>
+      
+        <!-- End blog comments -->
+
+        </div><!-- End blog entries list -->
+
+        <div class="col-lg-4">
+        <div class="sidebar">
+
+          <h3 class="sidebar-title">Tìm kiếm</h3>
+          <div class="sidebar-item search-form">
+            <form action="">
+              <input type="text">
+              <button type="submit"><i class="icofont-search"></i></button>
+            </form>
+
+          </div><!-- End sidebar search formn-->
+
+          <h3 class="sidebar-title">Tin mới</h3>
+          <div class="sidebar-item recent-posts">
+            <div class="post-item clearfix">
+              <img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2019/05/08/phong-trung-bay-khoa-ngoai-ngu-diem-den-nam-chau-thumbnail-28993.png" alt="">
+              <h4><a href="news-detail.html">Phòng trưng bày khoa Ngoại ngữ - điểm đến năm châu</a></h4>
+              <time datetime="2021-01-01">13/07/2019</time>
+            </div>
+
+            <div class="post-item clearfix">
+              <img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2018/12/04/phong-van-hoa-anh-my-ngoi-nha-chung-cua-sinh-vien-khoa-ngoai-ngu-thumbnail-86093.jpg" alt="">
+              <h4><a href="blog-single.html">Phòng Văn hóa Anh Mỹ- Ngôi nhà chung của sinh viên Khoa Ngoại ngữ</a></h4>
+              <time datetime="2021-01-01">04/12/2018</time>
+            </div>
+
+            <div class="post-item clearfix">
+              <img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2018/10/31/cau-lac-bo-tieng-anh-dong-som-thumbnail-72795.jpg" alt="">
+              <h4><a href="blog-single.html">Câu lạc bộ tiếng Anh – Đông sớm</a></h4>
+              <time datetime="2021-01-01">31/10/2018</time>
+            </div>
+
+            <div class="post-item clearfix">
+              <img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2018/06/01/cau-lac-bo-ngoai-ngu-di-mot-ngay-dang-hoc-mot-sang-khon-thumbnail-71405.jpg" alt="">
+              <h4><a href="blog-single.html">Câu lạc bộ Ngoại Ngữ - Đi một ngày đàng học một sàng khôn</a></h4>
+              <time datetime="2021-01-01">01/06/2018</time>
+            </div>
+
+            <div class="post-item clearfix">
+              <img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2018/04/14/vi-sao-sinh-vien-nen-trang-bi-kien-thuc-ky-nang-mem-thumbnail-88715.jpg" alt="">
+              <h4><a href="blog-single.html">Vì sao sinh viên nên trang bị kiến thức kỹ năng mềm</a></h4>
+              <time datetime="2021-01-01">14/04/2018</time>
+            </div>
+
+          </div><!-- End sidebar recent posts-->
+
+          <!-- <h3 class="sidebar-title">Danh mục</h3>
+          <div class="sidebar-item categories">
+            <ul>
+              <li><a href="#">General <span>(25)</span></a></li>
+              <li><a href="#">Lifestyle <span>(12)</span></a></li>
+              <li><a href="#">Travel <span>(5)</span></a></li>
+              <li><a href="#">Design <span>(22)</span></a></li>
+              <li><a href="#">Creative <span>(8)</span></a></li>
+              <li><a href="#">Educaion <span>(14)</span></a></li>
+            </ul>
+
+          </div> -->
+          <!-- End sidebar categories-->
+
+
+
+          <!-- End sidebar tags-->
+
+<h3 class="sidebar-title">Quảng cáo</h3>
+<div class="" >
+    <div class="banner-spot">
+        <div class="banner-img">
+            <a href="#">
+                <img src="http://khoangoaingu.daihocdulich.edu.vn/upload/link/link-noi-that-g4-25281.png" class="img-fluid" alt="">
+            </a>
         </div>
+    </div>
+    <div class="banner-spot">
+        <div class="banner-img">
+            <a href="#">
+                <img src="http://khoangoaingu.daihocdulich.edu.vn/upload/link/link-noi-that-g4-36680.png" class="img-fluid" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+</div><!-- End sidebar -->
 
+</div><!-- End blog sidebar -->
+
+      </div>
       </div>
     </section><!-- End Blog Section -->
 

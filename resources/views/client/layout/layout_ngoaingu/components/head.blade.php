@@ -23,5 +23,7 @@
   <!-- Template Main CSS File -->
   <link href="{{asset('dist/layout/layout_khoangoaingu/css/style.css')}}" rel="stylesheet">
   <link href="{{asset('dist/layout/layout_khoangoaingu/css/custom-style.css')}}" rel="stylesheet">
+  <link href="{{asset('dist/layout/layout_khoangoaingu/css/customstyle-1.css')}}" rel="stylesheet">
+  <link href="{{asset('dist/layout/layout_khoangoaingu/css/intro.css')}}" rel="stylesheet">
   <link rel="stylesheet" href="{{asset('dist/layout/layout_khoangoaingu/css/animate.css')}}">
   <link rel="stylesheet" href="{{asset('dist/layout/layout_khoangoaingu/css/news.css')}}">

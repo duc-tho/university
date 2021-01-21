@@ -8,7 +8,7 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="{{route('khoangoaingu')}}">Trang chủ</a></li>
           <li>Sinh viên</li>
           <li>Thực Tập</li>
         </ol>
@@ -33,7 +33,7 @@
                </a>
               </div>
 
-              <h2 class="entry-title">
+              <h2 class="entry-title b-1">
                 <a href="{{route('chitietttkhoangoaingu')}}">HỌC TIẾNG HÀN Ở ACT SẼ CÓ RẤT NHIỀU CƠ HỘI ĐI DU LỊCH HÀN QUỐC MIỄN PHÍ</a>
               </h2>
 
@@ -63,7 +63,7 @@
                 </a>
               </div>
 
-              <h2 class="entry-title">
+              <h2 class="entry-title b-1">
                 <a href="blog-single.html">Ở đâu có cơ hội đi du học Hàn Quốc miễn phí</a>
               </h2>
 
@@ -94,7 +94,7 @@
               </a>
               </div>
 
-              <h2 class="entry-title">
+              <h2 class="entry-title b-1">
                 <a href="blog-single.html">Chủ trương của Ban Quản lý đề án thành lập trường Đại học Du lịch Sài Gòn (Saigontu) trong hoạt động Câu lạc bộ Ngoại ngữ</a>
               </h2>
 
@@ -125,7 +125,7 @@
                 </a>
               </div>
 
-              <h2 class="entry-title">
+              <h2 class="entry-title b-1">
                 <a href="blog-single.html">KẾ HOẠCH TÌM KIẾM ĐỊA CHỈ THỰC TẬP VÀ VIỆC LÀM CHO SINH VIÊN CHUẨN BỊ, VÀ SẮP TỐT NGHIỆP</a>
               </h2>
 

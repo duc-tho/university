@@ -32,7 +32,7 @@
         <ul>
           <li class="active"><a href="{{route('khoangoaingu')}}">Trang chủ</a></li>
 
-          <li class="drop-down"><a href=""> Giới thiệu</a>
+          <li class="drop-down"><a> Giới thiệu</a>
             <ul>
               <li><a href="{{route('gioithieukhoangoaingu')}}">Tổng quan sứ mênh tầm nhìn</a></li>
               <li><a href="{{route('gioithieukhoangoaingu')}}">Mục tiêu</a></li>
@@ -50,7 +50,7 @@
             </ul>
           </li>
 
-          <li class="drop-down"><a href=""> Đào tạo</a>
+          <li class="drop-down"><a> Đào tạo</a>
             <ul>
               <li><a href="{{route('daotaoanhngu')}}">Anh ngữ</a></li>
               <li><a href="{{route('daotaoanhngu')}}">Hàn ngữ</a></li>
@@ -67,7 +67,7 @@
               </li> -->
             </ul>
           </li>
-          <li class="drop-down"><a href=""> Sinh viên</a>
+          <li class="drop-down"><a> Sinh viên</a>
             <ul>
               <li><a href="{{route('thuctapkhoangoaingu')}}">Thực tập</a></li>
               <li><a href="about.html">Câu lạc bộ</a></li>

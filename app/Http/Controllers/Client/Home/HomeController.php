@@ -81,6 +81,10 @@ class HomeController extends Controller
     // <------------------> End Controller KhoaDuLich <--------------------------->
 
     // <------------------>  Start Controller KhoaNgoaiNgu <--------------------------->
+    public function getDetailPage(Request $request)
+    {
+        return views('client.layout.layout_ngoaingu.page.detailpage');
+    }
     public function getLanguages(Request $request)
     {
         return view('client.layout.layout_ngoaingu.page.home');
