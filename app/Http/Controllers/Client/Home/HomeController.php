@@ -47,7 +47,7 @@ class HomeController extends Controller
     {
         return view('client.layout.layout_kdl.page.hotel');
     }
-    
+
     public function getQtnh(Request $request)
     {
         return view('client.layout.layout_kdl.page.restaurant');
@@ -113,9 +113,9 @@ class HomeController extends Controller
     {
         return view('client.layout.layout_ngoaingu.page.intership');
     }
-
-
-
-
      // <------------------> End Controller KhoaNgoaiNgu <--------------------------->
+
+    // <------------------>  Start Controller KhoaKinhTe <--------------------------->
+    
+    // <------------------> End Controller KhoaNgoaiNgu <--------------------------->
 }
