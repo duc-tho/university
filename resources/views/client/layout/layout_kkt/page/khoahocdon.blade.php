@@ -66,11 +66,11 @@
                                 <div class="review">
                                     <span>Review</span>
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="javascript:"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="javascript:"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="javascript:"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="javascript:"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="javascript:"><i class="fa fa-star"></i></a></li>
                                         <li class="rating">(20 Reviws)</li>
                                     </ul>
                                 </div>
@@ -117,12 +117,12 @@
                             <div class="tab-pane fade" id="curriculam" role="tabpanel" aria-labelledby="curriculam-tab">
                                 <div class="curriculam-cont">
                                     <div class="title">
-                                        <h6>Learn basis javascirpt Lecture Started</h6>
+                                        <h6>Học ABCDE căn bản</h6>
                                     </div>
                                     <div class="accordion" id="accordionExample">
                                         <div class="card">
                                             <div class="card-header" id="headingOne">
-                                                <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                <a href="javascript:" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                     <ul>
                                                         <li><i class="fa fa-file-o"></i></li>
                                                         <li><span class="lecture">Lecture 1.1</span></li>
@@ -141,7 +141,7 @@
 
                                         <div class="card">
                                             <div class="card-header" id="headingTow">
-                                                <a href="#" data-toggle="collapse" class="collapsed" data-target="#collapseTow" aria-expanded="true" aria-controls="collapseTow">
+                                                <a href="javascript:" data-toggle="collapse" class="collapsed" data-target="#collapseTow" aria-expanded="true" aria-controls="collapseTow">
                                                     <ul>
                                                         <li><i class="fa fa-file-o"></i></li>
                                                         <li><span class="lecture">Lecture 1.2</span></li>
@@ -160,7 +160,7 @@
 
                                         <div class="card">
                                             <div class="card-header" id="headingThree">
-                                                <a href="#" data-toggle="collapse" class="collapsed" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                <a href="javascript:" data-toggle="collapse" class="collapsed" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                                     <ul>
                                                         <li><i class="fa fa-file-o"></i></li>
                                                         <li><span class="lecture">Lecture 1.3</span></li>
@@ -178,7 +178,7 @@
 
                                         <div class="card">
                                             <div class="card-header" id="headingFore">
-                                                <a href="#" data-toggle="collapse" class="collapsed" data-target="#collapseFore" aria-expanded="false" aria-controls="collapseFore">
+                                                <a href="javascript:" data-toggle="collapse" class="collapsed" data-target="#collapseFore" aria-expanded="false" aria-controls="collapseFore">
                                                     <ul>
                                                         <li><i class="fa fa-file-o"></i></li>
                                                         <li><span class="lecture">Lecture 1.4</span></li>
@@ -196,7 +196,7 @@
 
                                         <div class="card">
                                             <div class="card-header" id="headingFive">
-                                                <a href="#" data-toggle="collapse" class="collapsed" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                <a href="javascript:" data-toggle="collapse" class="collapsed" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                                     <ul>
                                                         <li><i class="fa fa-file-o"></i></li>
                                                         <li><span class="lecture">Lecture 1.5</span></li>
@@ -214,7 +214,7 @@
 
                                         <div class="card">
                                             <div class="card-header" id="headingSix">
-                                                <a href="#" data-toggle="collapse" class="collapsed" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                                <a href="javascript:" data-toggle="collapse" class="collapsed" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                                                     <ul>
                                                         <li><i class="fa fa-file-o"></i></li>
                                                         <li><span class="lecture">Lecture 1.6</span></li>
@@ -232,7 +232,7 @@
 
                                         <div class="card">
                                             <div class="card-header" id="headingSeven">
-                                                <a href="#" data-toggle="collapse" class="collapsed" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                                <a href="javascript:" data-toggle="collapse" class="collapsed" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
                                                     <ul>
                                                         <li><i class="fa fa-file-o"></i></li>
                                                         <li><span class="lecture">Lecture 1.7</span></li>
@@ -257,15 +257,15 @@
                                             <img src="{{ asset('dist/layout/layout_kkt/images/instructor/i-1.jpg') }}" alt="Instructor">
                                         </div>
                                         <div class="author-name">
-                                            <a href="#">
+                                            <a href="javascript:">
                                                 <h5>Sumon Hasan</h5>
                                             </a>
                                             <span>Senior WordPress Developer</span>
                                             <ul class="social">
-                                                <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                                <li><a href="javascript:"><i class="fa fa-facebook-f"></i></a></li>
+                                                <li><a href="javascript:"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="javascript:"><i class="fa fa-google-plus"></i></a></li>
+                                                <li><a href="javascript:"><i class="fa fa-instagram"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -421,8 +421,8 @@
                                 <li><i class="fa fa-user-o"></i>Students : <span>100</span></li>
                             </ul>
                             <div class="price-button pt-10">
-                                <span>Price : <b>$25</b></span>
-                                <a href="#" class="main-btn">Enroll Now</a>
+                                <span>Giá: <b>250.000đ</b></span>
+                                <a href="javascript:" class="main-btn">Đăng ký ngay</a>
                             </div>
                         </div> <!-- course features -->
                     </div>
@@ -434,11 +434,11 @@
                                     <img src="{{ asset('dist/layout/layout_kkt/images/your-make/y-1.jpg') }}" alt="Image">
                                 </div>
                                 <div class="cont">
-                                    <a href="#">
+                                    <a href="javascript:">
                                         <h4>Introduction to machine languages</h4>
                                     </a>
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-user"></i>31</a></li>
+                                        <li><a href="javascript:"><i class="fa fa-user"></i>31</a></li>
                                         <li>$50</li>
                                     </ul>
                                 </div>
@@ -448,11 +448,11 @@
                                     <img src="{{ asset('dist/layout/layout_kkt/images/your-make/y-1.jpg') }}" alt="Image">
                                 </div>
                                 <div class="cont">
-                                    <a href="#">
+                                    <a href="javascript:">
                                         <h4>How to build a basis game with java </h4>
                                     </a>
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-user"></i>31</a></li>
+                                        <li><a href="javascript:"><i class="fa fa-user"></i>31</a></li>
                                         <li>$50</li>
                                     </ul>
                                 </div>
@@ -462,11 +462,11 @@
                                     <img src="{{ asset('dist/layout/layout_kkt/images/your-make/y-1.jpg') }}" alt="Image">
                                 </div>
                                 <div class="cont">
-                                    <a href="#">
+                                    <a href="javascript:">
                                         <h4>Basic accounting from primary</h4>
                                     </a>
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-user"></i>31</a></li>
+                                        <li><a href="javascript:"><i class="fa fa-user"></i>31</a></li>
                                         <li>$50</li>
                                     </ul>
                                 </div>
@@ -502,22 +502,22 @@
                                         <li><i class="fa fa-star"></i></li>
                                     </ul>
                                     <span>(20 Reviws)</span>
-                                    <a href="courses-singel.html">
+                                    <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
                                         <h4>Learn basis javascirpt from start for beginner</h4>
                                     </a>
                                     <div class="course-teacher">
                                         <div class="thum">
-                                            <a href="#"><img src="{{ asset('dist/layout/layout_kkt/images/course/teacher/t-2.jpg') }}" alt="teacher"></a>
+                                            <a href="javascript:"><img src="{{ asset('dist/layout/layout_kkt/images/course/teacher/t-2.jpg') }}" alt="teacher"></a>
                                         </div>
                                         <div class="name">
-                                            <a href="#">
+                                            <a href="javascript:">
                                                 <h6>Mark anthem</h6>
                                             </a>
                                         </div>
                                         <div class="admin">
                                             <ul>
-                                                <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a></li>
+                                                <li><a href="javascript:"><i class="fa fa-user"></i><span>31</span></a></li>
+                                                <li><a href="javascript:"><i class="fa fa-heart"></i><span>10</span></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -543,22 +543,22 @@
                                         <li><i class="fa fa-star"></i></li>
                                     </ul>
                                     <span>(20 Reviws)</span>
-                                    <a href="courses-singel.html">
+                                    <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
                                         <h4>Learn basis javascirpt from start for beginner</h4>
                                     </a>
                                     <div class="course-teacher">
                                         <div class="thum">
-                                            <a href="#"><img src="{{ asset('dist/layout/layout_kkt/images/course/teacher/t-3.jpg') }}" alt="teacher"></a>
+                                            <a href="javascript:"><img src="{{ asset('dist/layout/layout_kkt/images/course/teacher/t-3.jpg') }}" alt="teacher"></a>
                                         </div>
                                         <div class="name">
-                                            <a href="#">
+                                            <a href="javascript:">
                                                 <h6>Mark anthem</h6>
                                             </a>
                                         </div>
                                         <div class="admin">
                                             <ul>
-                                                <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
-                                                <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a></li>
+                                                <li><a href="javascript:"><i class="fa fa-user"></i><span>31</span></a></li>
+                                                <li><a href="javascript:"><i class="fa fa-heart"></i><span>10</span></a></li>
                                             </ul>
                                         </div>
                                     </div>

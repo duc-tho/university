@@ -36,7 +36,7 @@
                         <div class="pitem item-w1 item-h1">
                             <div class="blog-box">
                                 <div class="post-media">
-                                    <a href="single.html" title="">
+                                    <a href="{{ asset('khoakinhte-danhsachtintuc') }}" title="">
                                         <img src="{{ asset('dist/layout/layout_kkt/upload/menu_01.jpg') }}" alt="" class="img-fluid">
                                         <div class="hovereffect">
                                             <span></span>
@@ -44,10 +44,10 @@
                                     </a>
                                 </div><!-- end media -->
                                 <div class="blog-meta">
-                                    <span class="bg-grey"><a href="blog-category-01.html" title="">Spa</a></span>
-                                    <h4><a href="single.html" title="">What is your favorite leather color</a></h4>
-                                    <small><a href="blog-author.html" title="">By: Jessica</a></small>
-                                    <small><a href="blog-category-01.html" title="">21 July, 2017</a></small>
+                                    <span class="bg-grey"><a href="{{ route('khoakinhte-danhsachtintuc') }}" title="">Spa</a></span>
+                                    <h4><a href="{{ asset('khoakinhte-danhsachtintuc') }}" title="">What is your favorite leather color</a></h4>
+                                    <small><a href="javascript" title="">By: Jessica</a></small>
+                                    <small><a href="{{ route('khoakinhte-danhsachtintuc') }}" title="">21 July, 2017</a></small>
                                 </div><!-- end meta -->
                             </div><!-- end blog-box -->
                         </div><!-- end col -->
@@ -55,7 +55,7 @@
                         <div class="pitem item-w1 item-h1">
                             <div class="blog-box">
                                 <div class="post-media">
-                                    <a href="single.html" title="">
+                                    <a href="{{ asset('khoakinhte-danhsachtintuc') }}" title="">
                                         <img src="{{ asset('dist/layout/layout_kkt/upload/menu_02.jpg') }}" alt="" class="img-fluid">
                                         <div class="hovereffect">
                                             <span></span>
@@ -63,10 +63,10 @@
                                     </a>
                                 </div><!-- end media -->
                                 <div class="blog-meta">
-                                    <span class="bg-grey"><a href="blog-category-01.html" title="">Beauty</a></span>
-                                    <h4><a href="single.html" title="">This year green glasses trend</a></h4>
-                                    <small><a href="blog-author.html" title="">By: Jenny</a></small>
-                                    <small><a href="blog-category-01.html" title="">19 July, 2017</a></small>
+                                    <span class="bg-grey"><a href="{{ route('khoakinhte-danhsachtintuc') }}" title="">Beauty</a></span>
+                                    <h4><a href="{{ asset('khoakinhte-danhsachtintuc') }}" title="">This year green glasses trend</a></h4>
+                                    <small><a href="javascript" title="">By: Jenny</a></small>
+                                    <small><a href="{{ route('khoakinhte-danhsachtintuc') }}" title="">19 July, 2017</a></small>
                                 </div><!-- end meta -->
                             </div><!-- end blog-box -->
                         </div><!-- end col -->
@@ -74,7 +74,7 @@
                         <div class="pitem item-w1 item-h1">
                             <div class="blog-box">
                                 <div class="post-media">
-                                    <a href="single.html" title="">
+                                    <a href="{{ asset('khoakinhte-danhsachtintuc') }}" title="">
                                         <img src="{{ asset('dist/layout/layout_kkt/upload/menu_03.jpg') }}" alt="" class="img-fluid">
                                         <div class="hovereffect">
                                             <span></span>
@@ -82,10 +82,10 @@
                                     </a>
                                 </div><!-- end media -->
                                 <div class="blog-meta">
-                                    <span class="bg-grey"><a href="blog-category-01.html" title="">Spa</a></span>
-                                    <h4><a href="single.html" title="">Put on a hat for a better look</a></h4>
-                                    <small><a href="blog-author.html" title="">By: Amanda</a></small>
-                                    <small><a href="blog-category-01.html" title="">18 July, 2017</a></small>
+                                    <span class="bg-grey"><a href="{{ route('khoakinhte-danhsachtintuc') }}" title="">Spa</a></span>
+                                    <h4><a href="{{ asset('khoakinhte-danhsachtintuc') }}" title="">Put on a hat for a better look</a></h4>
+                                    <small><a href="javascript" title="">By: Amanda</a></small>
+                                    <small><a href="{{ route('khoakinhte-danhsachtintuc') }}" title="">18 July, 2017</a></small>
                                 </div><!-- end meta -->
                             </div><!-- end blog-box -->
                         </div><!-- end col -->
@@ -93,7 +93,7 @@
                         <div class="pitem item-w1 item-h1">
                             <div class="blog-box">
                                 <div class="post-media">
-                                    <a href="single.html" title="">
+                                    <a href="{{ asset('khoakinhte-danhsachtintuc') }}" title="">
                                         <img src="{{ asset('dist/layout/layout_kkt/upload/menu_04.jpg') }}" alt="" class="img-fluid">
                                         <div class="hovereffect">
                                             <span></span>
@@ -101,10 +101,10 @@
                                     </a>
                                 </div><!-- end media -->
                                 <div class="blog-meta">
-                                    <span class="bg-grey"><a href="blog-category-01.html" title="">Beauty</a></span>
-                                    <h4><a href="single.html" title="">We have been talking about one of the pioneers of male fashion</a></h4>
-                                    <small><a href="blog-author.html" title="">By: Jessica</a></small>
-                                    <small><a href="blog-category-01.html" title="">16 July, 2017</a></small>
+                                    <span class="bg-grey"><a href="{{ route('khoakinhte-danhsachtintuc') }}" title="">Beauty</a></span>
+                                    <h4><a href="{{ asset('khoakinhte-danhsachtintuc') }}" title="">We have been talking about one of the pioneers of male fashion</a></h4>
+                                    <small><a href="javascript" title="">By: Jessica</a></small>
+                                    <small><a href="{{ route('khoakinhte-danhsachtintuc') }}" title="">16 July, 2017</a></small>
                                 </div><!-- end meta -->
                             </div><!-- end blog-box -->
                         </div><!-- end col -->
@@ -112,7 +112,7 @@
                         <div class="pitem item-w1 item-h1">
                             <div class="blog-box">
                                 <div class="post-media">
-                                    <a href="single.html" title="">
+                                    <a href="{{ asset('khoakinhte-danhsachtintuc') }}" title="">
                                         <img src="{{ asset('dist/layout/layout_kkt/upload/menu_22.jpg') }}" alt="" class="img-fluid">
                                         <div class="hovereffect">
                                             <span></span>
@@ -120,10 +120,10 @@
                                     </a>
                                 </div><!-- end media -->
                                 <div class="blog-meta">
-                                    <span class="bg-grey"><a href="blog-category-01.html" title="">Spa</a></span>
-                                    <h4><a href="single.html" title="">Things to watch out for when choosing sunglasses</a></h4>
-                                    <small><a href="blog-author.html" title="">By: Jenny</a></small>
-                                    <small><a href="blog-category-01.html" title="">14 July, 2017</a></small>
+                                    <span class="bg-grey"><a href="{{ route('khoakinhte-danhsachtintuc') }}" title="">Spa</a></span>
+                                    <h4><a href="{{ asset('khoakinhte-danhsachtintuc') }}" title="">Things to watch out for when choosing sunglasses</a></h4>
+                                    <small><a href="javascript" title="">By: Jenny</a></small>
+                                    <small><a href="{{ route('khoakinhte-danhsachtintuc') }}" title="">14 July, 2017</a></small>
                                 </div><!-- end meta -->
                             </div><!-- end blog-box -->
                         </div><!-- end col -->
@@ -131,7 +131,7 @@
                         <div class="pitem item-w1 item-h1">
                             <div class="blog-box">
                                 <div class="post-media">
-                                    <a href="single.html" title="">
+                                    <a href="{{ asset('khoakinhte-danhsachtintuc') }}" title="">
                                         <img src="{{ asset('dist/layout/layout_kkt/upload/menu_23.jpg') }}" alt="" class="img-fluid">
                                         <div class="hovereffect">
                                             <span></span>
@@ -139,10 +139,10 @@
                                     </a>
                                 </div><!-- end media -->
                                 <div class="blog-meta">
-                                    <span class="bg-grey"><a href="blog-category-01.html" title="">Spa</a></span>
-                                    <h4><a href="single.html" title="">A makeup made with honey and wax for your body</a></h4>
-                                    <small><a href="blog-author.html" title="">By: Amanda</a></small>
-                                    <small><a href="blog-category-01.html" title="">13 July, 2017</a></small>
+                                    <span class="bg-grey"><a href="{{ route('khoakinhte-danhsachtintuc') }}" title="">Spa</a></span>
+                                    <h4><a href="{{ asset('khoakinhte-danhsachtintuc') }}" title="">A makeup made with honey and wax for your body</a></h4>
+                                    <small><a href="javascript" title="">By: Amanda</a></small>
+                                    <small><a href="{{ route('khoakinhte-danhsachtintuc') }}" title="">13 July, 2017</a></small>
                                 </div><!-- end meta -->
                             </div><!-- end blog-box -->
                         </div><!-- end col -->
@@ -150,7 +150,7 @@
                         <div class="pitem item-w1 item-h1">
                             <div class="blog-box">
                                 <div class="post-media">
-                                    <a href="single.html" title="">
+                                    <a href="{{ asset('khoakinhte-danhsachtintuc') }}" title="">
                                         <img src="{{ asset('dist/layout/layout_kkt/upload/menu_24.jpg') }}" alt="" class="img-fluid">
                                         <div class="hovereffect">
                                             <span></span>
@@ -158,10 +158,10 @@
                                     </a>
                                 </div><!-- end media -->
                                 <div class="blog-meta">
-                                    <span class="bg-grey"><a href="blog-category-01.html" title="">Spa</a></span>
-                                    <h4><a href="single.html" title="">Fabulous treatment methods of nature</a></h4>
-                                    <small><a href="blog-author.html" title="">By: Martines</a></small>
-                                    <small><a href="blog-category-01.html" title="">12 July, 2017</a></small>
+                                    <span class="bg-grey"><a href="{{ route('khoakinhte-danhsachtintuc') }}" title="">Spa</a></span>
+                                    <h4><a href="{{ asset('khoakinhte-danhsachtintuc') }}" title="">Fabulous treatment methods of nature</a></h4>
+                                    <small><a href="javascript" title="">By: Martines</a></small>
+                                    <small><a href="{{ route('khoakinhte-danhsachtintuc') }}" title="">12 July, 2017</a></small>
                                 </div><!-- end meta -->
                             </div><!-- end blog-box -->
                         </div><!-- end col -->
@@ -169,7 +169,7 @@
                         <div class="pitem item-w1 item-h1">
                             <div class="blog-box">
                                 <div class="post-media">
-                                    <a href="single.html" title="">
+                                    <a href="{{ asset('khoakinhte-danhsachtintuc') }}" title="">
                                         <img src="{{ asset('dist/layout/layout_kkt/upload/menu_25.jpg') }}" alt="" class="img-fluid">
                                         <div class="hovereffect">
                                             <span></span>
@@ -177,10 +177,10 @@
                                     </a>
                                 </div><!-- end media -->
                                 <div class="blog-meta">
-                                    <span class="bg-grey"><a href="blog-category-01.html" title="">Beauty</a></span>
-                                    <h4><a href="single.html" title="">Shake your soap and candle-smelling body</a></h4>
-                                    <small><a href="blog-author.html" title="">By: Amanda</a></small>
-                                    <small><a href="blog-category-01.html" title="">11 July, 2017</a></small>
+                                    <span class="bg-grey"><a href="{{ route('khoakinhte-danhsachtintuc') }}" title="">Beauty</a></span>
+                                    <h4><a href="{{ asset('khoakinhte-danhsachtintuc') }}" title="">Shake your soap and candle-smelling body</a></h4>
+                                    <small><a href="javascript" title="">By: Amanda</a></small>
+                                    <small><a href="{{ route('khoakinhte-danhsachtintuc') }}" title="">11 July, 2017</a></small>
                                 </div><!-- end meta -->
                             </div><!-- end blog-box -->
                         </div><!-- end col -->
@@ -188,7 +188,7 @@
                         <div class="pitem item-w1 item-h1">
                             <div class="blog-box">
                                 <div class="post-media">
-                                    <a href="single.html" title="">
+                                    <a href="{{ asset('khoakinhte-danhsachtintuc') }}" title="">
                                         <img src="{{ asset('dist/layout/layout_kkt/upload/menu_26.jpg') }}" alt="" class="img-fluid">
                                         <div class="hovereffect">
                                             <span></span>
@@ -196,10 +196,10 @@
                                     </a>
                                 </div><!-- end media -->
                                 <div class="blog-meta">
-                                    <span class="bg-grey"><a href="blog-category-01.html" title="">Spa</a></span>
-                                    <h4><a href="single.html" title="">Experience a unique experience in candlelight</a></h4>
-                                    <small><a href="blog-author.html" title="">By: Amanda</a></small>
-                                    <small><a href="blog-category-01.html" title="">11 July, 2017</a></small>
+                                    <span class="bg-grey"><a href="{{ route('khoakinhte-danhsachtintuc') }}" title="">Spa</a></span>
+                                    <h4><a href="{{ asset('khoakinhte-danhsachtintuc') }}" title="">Experience a unique experience in candlelight</a></h4>
+                                    <small><a href="javascript" title="">By: Amanda</a></small>
+                                    <small><a href="{{ route('khoakinhte-danhsachtintuc') }}" title="">11 July, 2017</a></small>
                                 </div><!-- end meta -->
                             </div><!-- end blog-box -->
                         </div><!-- end col -->

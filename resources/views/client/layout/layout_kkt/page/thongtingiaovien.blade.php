@@ -19,7 +19,7 @@
                     <h2>Teachers</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Teachers</li>
                         </ol>
                     </nav>
@@ -47,10 +47,10 @@
                     </div>
                     <div class="social">
                         <ul>
-                            <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                            <li><a href="javascript:"><i class="fa fa-facebook-square"></i></a></li>
+                            <li><a href="javascript:"><i class="fa fa-twitter-square"></i></a></li>
+                            <li><a href="javascript:"><i class="fa fa-google-plus-square"></i></a></li>
+                            <li><a href="javascript:"><i class="fa fa-linkedin-square"></i></a></li>
                         </ul>
                     </div>
                     <div class="description">
@@ -110,22 +110,22 @@
                                                     <li><i class="fa fa-star"></i></li>
                                                 </ul>
                                                 <span>(20 Reviws)</span>
-                                                <a href="#">
+                                                <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
                                                     <h4>Learn basis javascirpt from start for beginner</h4>
                                                 </a>
                                                 <div class="course-teacher">
                                                     <div class="thum">
-                                                        <a href="#"><img src="{{ asset('dist/layout/layout_kkt/images/course/teacher/t-2.jpg') }}" alt="teacher"></a>
+                                                        <a href="javascript:"><img src="{{ asset('dist/layout/layout_kkt/images/course/teacher/t-2.jpg') }}" alt="teacher"></a>
                                                     </div>
                                                     <div class="name">
-                                                        <a href="#">
+                                                        <a href="javascript:">
                                                             <h6>Mark anthem</h6>
                                                         </a>
                                                     </div>
                                                     <div class="admin">
                                                         <ul>
-                                                            <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
-                                                            <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a></li>
+                                                            <li><a href="javascript:"><i class="fa fa-user"></i><span>31</span></a></li>
+                                                            <li><a href="javascript:"><i class="fa fa-heart"></i><span>10</span></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -151,22 +151,22 @@
                                                     <li><i class="fa fa-star"></i></li>
                                                 </ul>
                                                 <span>(20 Reviws)</span>
-                                                <a href="#">
+                                                <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
                                                     <h4>Learn basis javascirpt from start for beginner</h4>
                                                 </a>
                                                 <div class="course-teacher">
                                                     <div class="thum">
-                                                        <a href="#"><img src="{{ asset('dist/layout/layout_kkt/images/course/teacher/t-2.jpg') }}" alt="teacher"></a>
+                                                        <a href="javascript:"><img src="{{ asset('dist/layout/layout_kkt/images/course/teacher/t-2.jpg') }}" alt="teacher"></a>
                                                     </div>
                                                     <div class="name">
-                                                        <a href="#">
+                                                        <a href="javascript:">
                                                             <h6>Mark anthem</h6>
                                                         </a>
                                                     </div>
                                                     <div class="admin">
                                                         <ul>
-                                                            <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
-                                                            <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a></li>
+                                                            <li><a href="javascript:"><i class="fa fa-user"></i><span>31</span></a></li>
+                                                            <li><a href="javascript:"><i class="fa fa-heart"></i><span>10</span></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>

@@ -151,12 +151,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* fh5co-award  */
 .fh5co-award-1{
+  padding: 1rem;
   border-bottom: 3px solid #ebebeb;
   background-color:#736b95 ;
   background-image: linear-gradient(#736b95,#097287);
 }
 .award-title{
-  font-weight: bold; color:#ffffff ; margin-top:20px;border-bottom: 3px solid #ebebeb;
+  font-weight: bold; color:#ffffff ; margin-top:20px;
+  text-align: center;
+  /* border-bottom: 3px solid #ebebeb; */
 }
 .award-content{
   color: #ffffff;
@@ -1809,11 +1812,16 @@ section {
   margin-bottom: 60px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
+.blog .entry .b5{
+  max-height: 400px;
 
+  margin: 0px 0px 20px 20px;
+  max-height: 400px;
+}
 .blog .entry .entry-img {
   max-height: 400px;
   margin: 0px -30px 20px -30px;
-  overflow: hidden;
+  max-height: 400px;
 }
 
 .blog .entry .entry-title {
@@ -1995,6 +2003,35 @@ section {
 
 .blog .entry-single {
   margin-bottom: 30px;
+}
+.footer-link{
+  margin-bottom: 15px;
+}
+.footer-link form {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.footer-link .subscribe input[type="email"] {
+  background: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  outline: none;
+  width: 75%;
+  color: #fff;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+.footer-link .subscribe button {
+  text-align: center;
+  background: #fdc800;
+  border: none;
+  outline: none;
+  color: var(--theme-color);
+  font-size: 18px;
+  cursor: pointer;
+  width: 15%;
+  border-radius: 0 0.25rem 0.25rem 0;
 }
 
 .blog .blog-author {
