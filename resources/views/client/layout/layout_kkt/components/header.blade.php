@@ -86,8 +86,9 @@
                                 <li class="nav-item">
                                     <a href="javascript:">Đào Tạo</a>
                                     <ul class="sub-menu">
-                                        <li><a href="{{ route('khoakinhte-khoahoc') }}">Khóa Học Chính Quy</a></li>
-                                        <li><a href="{{ route('khoakinhte-khoahoc') }}">Khóa Học Ngắn Hạn</a></li>
+                                        <li><a href="{{ route('khoakinhte-chitietkhoahoc') }}">Tài Chính Ngân Hàng</a></li>
+                                        <li><a href="{{ route('khoakinhte-chitietkhoahoc') }}">Quản Trị Kinh Doanh</a></li>
+                                        <li><a href="{{ route('khoakinhte-chitietkhoahoc') }}">Kế Toán</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">

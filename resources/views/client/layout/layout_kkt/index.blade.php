@@ -3,7 +3,6 @@
 @section("head")
 @include('client.layout.layout_kkt.components.head')
 @endsection
-
 @section('body')
 <!--====== PRELOADER PART START ======-->
 <div class="preloader">

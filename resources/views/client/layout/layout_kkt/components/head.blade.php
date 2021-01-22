@@ -6,6 +6,7 @@
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Bootstrap core CSS -->
 <link href="{{asset('dist/layout/layout_kkt/css/css/bootstrap.min.css')}}" rel="stylesheet">
 

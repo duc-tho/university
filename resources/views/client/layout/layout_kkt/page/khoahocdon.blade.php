@@ -16,12 +16,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="page-banner-cont">
-                    <h2>Learn basic javascript</h2>
+                    <h2>TÀI CHÍNH NGÂN HÀNG</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Courses</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Learn basic javasript</li>
+                            <li class="breadcrumb-item"><a href="#">Trâng Chủ</a></li>
+                            <li class="breadcrumb-item"><a href="#">Đào Tạo</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Tài Chính Ngân Hàng</li>
                         </ol>
                     </nav>
                 </div> <!-- page banner cont -->
@@ -37,10 +37,10 @@
 <section id="corses-singel" class="pt-90 pb-120 gray-bg">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="corses-singel-left mt-30">
                     <div class="title">
-                        <h3>Learn basis javascirpt from start for beginner</h3>
+                        <h3>Tài Chính Ngân Hàng</h3>
                     </div> <!-- title -->
                     <div class="course-terms">
                         <ul>
@@ -49,6 +49,7 @@
                                     <div class="thum">
                                         <img src="{{ asset('dist/layout/layout_kkt/images/course/teacher/t-1.jpg') }}" alt="Teacher">
                                     </div>
+
                                     <div class="name">
                                         <span>Teacher</span>
                                         <h6>Mark anthem</h6>
@@ -76,11 +77,14 @@
                             </li>
                         </ul>
                     </div> <!-- course terms -->
-
-                    <div class="corses-singel-image pt-50">
-                        <img src="{{ asset('dist/layout/layout_kkt/images/course/cu-1.jpg') }}" alt="Courses">
+                    <br>
+               
+                    <div class="corses-singel-image ">
+                         <img src="{{ asset('dist/layout/layout_kkt/images/course/cu-1.jpg') }}" alt="Courses">
+                      
                     </div> <!-- corses singel image -->
-
+                   
+                  
                     <div class="corses-tab mt-30">
                         <ul class="nav nav-justified" id="myTab" role="tablist">
                             <li class="nav-item">
@@ -405,7 +409,7 @@
                 </div> <!-- corses singel left -->
 
             </div>
-            <div class="col-lg-4">
+            {{-- <div class="col-lg-4">
                 <div class="row">
                     <div class="col-lg-12 col-md-6">
                         <div class="course-features mt-30">
@@ -470,7 +474,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div> <!-- row -->
         <div class="row">
             <div class="col-lg-8">

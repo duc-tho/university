@@ -10,19 +10,19 @@
 
 @section('main')
 <!--====== SLIDER PART START ======-->
-
 <section id="slider-part" class="slider-active">
     <div class="single-slider bg_cover pt-150" style="background-image: url(/dist/layout/layout_kkt/images/hihkhoa_files/nganh-quan-tri-kinh-doanh-chien-luoc-cho-ban-than-ban-thumbnail-36473.jpg)" data-overlay="4">
         <div class="container">
             <div class="row">
-                <div class="col-xl-7 col-lg-9">
+                <div class="col-xl-12 ">
                     <div class="slider-cont">
                         <h1 data-animation="bounceInLeft" data-delay="1s">QUẢN TRỊ KINH DOANH</h1>
-                        <p data-animation="fadeInUp" data-delay="1.3s">Khối óc của sự logic và quyết đoán</p>
+                        <p>Quản trị kinh doanh là việc thực hiện các hành vi quản trị quá trình kinh doanh để duy trì, phát triển công việc kinh doanh của doanh nghiệp</p>
                         <ul>
-                            {{-- <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="javascript:">Đọc Thêm</a></li>
-                            <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2" href="javascript:">Tư vấn</a></li> --}}
+                            <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="javascript:">Đọc Thêm</a></li>
+                            <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2" href="javascript:">Tư vấn</a></li>
                         </ul>
+                     
                     </div>
                 </div>
             </div> <!-- row -->
@@ -32,13 +32,16 @@
     <div class="single-slider bg_cover pt-150" style="background-image: url(/dist/layout/layout_kkt/images/hihkhoa_files/nganh-tai-chinh-ngan-hang-hoc-de-lam-gi-thumbnail-99181.png)" data-overlay="4">
         <div class="container">
             <div class="row">
-                <div class="col-xl-7 col-lg-9">
+                <div class="col-xl-12  ">
                     <div class="slider-cont">
-                        <h1 data-animation="bounceInLeft" data-delay="1s">TÀI CHÍNH KẾ TOÁN</h1>
-                        <p data-animation="fadeInUp" data-delay="1.3s">Donec vitae sapien ut libearo venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt Sed fringilla mauri amet nibh.</p>
+                        <h1 data-animation="bounceInLeft" data-delay="1s">TÀI CHÍNH NGÂN HÀNG</h1>
+                        <p>Quản trị kinh doanh là việc thực hiện các hành vi quản trị quá trình kinh doanh để duy trì, phát triển công việc kinh doanh của doanh nghiệp</p>
+                        {{-- <p data-animation="fadeInUp" data-delay="1.3s">Ngành Tài chính ngân hàng có thể
+                             chia thành nhiều lĩnh vực chuyên ngành khác nhau như ngân hàng, tài chính doanh 
+                             nghiệp, tài chính thuế, tài chính bảo hiểm, tài chính công…</p> --}}
                         <ul>
-                            {{-- <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="javascript:">Đọc Thêm</a></li>
-                            <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2" href="javascript:">Tư Vấn</a></li> --}}
+                            <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="javascript:">Đọc Thêm</a></li>
+                            <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2" href="javascript:">Tư Vấn</a></li>
                         </ul>
                     </div>
                 </div>
@@ -49,13 +52,14 @@
     <div class="single-slider bg_cover pt-150" style="background-image: url(/dist/layout/layout_kkt/images/hihkhoa_files/nganh-ke-toan-su-lua-chon-nghe-nghiep-trong-thoi-ky-hoi-nhap-thumbnail-91783.jpg)" data-overlay="4">
         <div class="container">
             <div class="row">
-                <div class="col-xl-7 col-lg-9">
+                <div class="col-xl-12">
                     <div class="slider-cont">
-                        <h1 data-animation="bounceInLeft" data-delay="1s">NGÀNH KẾ TOÁN</h1>
-                        <p data-animation="fadeInUp" data-delay="1.3s">Nơi hội tụ của những nghệ nhân trong nghê thuật thu nhận và xử lý tài sản </p>
+                        <h1 data-animation="bounceInLeft" data-delay="1s">KẾ TOÁN</h1>
+                        <p>Quản trị kinh doanh là việc thực hiện các hành vi quản trị quá trình kinh doanh để duy trì, phát triển công việc kinh doanh của doanh nghiệp</p>
+                        {{-- <p data-animation="fadeInUp" data-delay="1.3s">Nơi hội tụ của những nghệ nhân trong nghê thuật thu nhận và xử lý tài sản </p> --}}
                         <ul>
-                            {{-- <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="javascript:">Đọc Thêm</a></li>
-                            <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2" href="javascript:">Tư Vấn</a></li> --}}
+                            <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="javascript:">Đọc Thêm</a></li>
+                            <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2" href="javascript:">Tư Vấn</a></li>
                         </ul>
                     </div>
                 </div>
@@ -171,8 +175,15 @@
                     <h2>Chào Mừng Đến với Khoa Kinh Tế </h2>
                 </div> <!-- section title -->
                 <div class="about-cont">
-                    <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt mauris. <br> <br> auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt mauris</p>
-                    <a href="javascript:" class="main-btn mt-55">Learn More</a>
+                    <p>Là một trong những khoa thu hút nhiều sinh viên theo học, với bề dày đào tạo từ 
+                        năm 2006. Những ngành được đào tạo tại Khoa được đánh giá là thu hút nguồn nhân 
+                        lực nhiều nhất hiện nay.</p>
+                    <p>Chương trình đào tạo được xây dựng trên cơ sở quy định của Bộ giáo dục & Đào tạo theo
+                        hệ tín chỉ, tham khảo ý kiến chuyên gia trong ngành và tham khảo chương trình đào
+                         tạo tiên tiến từ các quốc gia. Chương trình đào tạo tập trung chuyên sâu vào các 
+                         kiến thức, kỹ năng chuyên ngành, phù hợp với nhu cầu xã hội, với thiết kế nhằm đảm 
+                         bảo lượng kiến thức toàn diện cho sinh viên</p>
+                    <a href="javascript:" class="main-btn mt-55">Tìm hiểu</a></a>
                 </div>
             </div> <!-- about cont -->
             <div class="col-lg-6 offset-lg-1">
@@ -183,32 +194,35 @@
                     <ul>
                         <li>
                             <div class="singel-event">
-                                <span><i class="fa fa-calendar"></i> 2 December 2018</span>
                                 <a href="{{ route('khoakinhte-chitiettintuc') }}">
-                                    <h4>Campus clean workshop</h4>
+                                    <h4>Hội Thảo Chuyên Nghành Về Quản Trị Kinh Doanh</h4>
                                 </a>
-                                <span><i class="fa fa-clock-o"></i> 10:00 Am - 3:00 Pm</span>
-                                <span><i class="fa fa-map-marker"></i> Rc Auditorim</span>
+                                <span><i class="fa fa-calendar"></i> 12/03/2021</span>
+                                
+                                <span><i class="fa fa-clock-o"></i> 80h30 - 11h00</span>
+                                <span><i class="fa fa-map-marker"></i> Đại Học Du Lịch Văn Hóa Nghệ Thuật Sài Gòn</span>
                             </div>
                         </li>
                         <li>
-                            <div class="singel-event">
-                                <span><i class="fa fa-calendar"></i> 2 December 2018</span>
+                           <div class="singel-event">
                                 <a href="{{ route('khoakinhte-chitiettintuc') }}">
-                                    <h4>Tech Summit</h4>
+                                    <h4>Hội Thảo Chuyên Nghành Về Tài Chính Ngân Hàng</h4>
                                 </a>
-                                <span><i class="fa fa-clock-o"></i> 10:00 Am - 3:00 Pm</span>
-                                <span><i class="fa fa-map-marker"></i> Rc Auditorim</span>
+                                <span><i class="fa fa-calendar"></i> 13/03/2021</span>
+                                
+                                <span><i class="fa fa-clock-o"></i> 80h30 - 11h00</span>
+                                <span><i class="fa fa-map-marker"></i> Đại Học Du Lịch Văn Hóa Nghệ Thuật Sài Gòn</span>
                             </div>
                         </li>
                         <li>
-                            <div class="singel-event">
-                                <span><i class="fa fa-calendar"></i> 2 December 2018</span>
+                           <div class="singel-event">
                                 <a href="{{ route('khoakinhte-chitiettintuc') }}">
-                                    <h4>Enviroement conference</h4>
+                                    <h4>Hội Thảo Chuyên Nghành Về Kế Toán</h4>
                                 </a>
-                                <span><i class="fa fa-clock-o"></i> 10:00 Am - 3:00 Pm</span>
-                                <span><i class="fa fa-map-marker"></i> Rc Auditorim</span>
+                                <span><i class="fa fa-calendar"></i> 14/03/2021</span>
+                                
+                                <span><i class="fa fa-clock-o"></i> 80h30 - 11h00</span>
+                                <span><i class="fa fa-map-marker"></i> Đại Học Du Lịch Văn Hóa Nghệ Thuật Sài Gòn</span>
                             </div>
                         </li>
                     </ul>
@@ -232,14 +246,16 @@
                 <div class="col-lg-6">
                     <div class="apply-cont apply-color-1">
                         <h3>Đăng Ký Tư Vấn Tuyển Sinh</h3>
-                        <p>Gravida nibh vel velit auctor aliquetn sollicitudirem sem quibibendum auci elit cons equat ipsutis sem nibh id elituis sed odio sit amet nibh vulputate cursus equat ipsutis.</p>
+                        <p>Đội ngũ tư vấn tuyển sinh của nhà trường luôn sẵn sàng giúp đỡ sinh 
+                            viên 24/7 với sự tận tâm, nhiệt tình.</p>
                         <a href="javascript:" class="main-btn">Đăng Ký</a>
                     </div> <!-- apply cont -->
                 </div>
                 <div class="col-lg-6">
                     <div class="apply-cont apply-color-2">
                         <h3>Đăng Ký Tín Chỉ , Học Phần</h3>
-                        <p>Gravida nibh vel velit auctor aliquetn sollicitudirem sem quibibendum auci elit cons equat ipsutis sem nibh id elituis sed odio sit amet nibh vulputate cursus equat ipsutis.</p>
+                        <p>Sinh viên đăng kí tín chỉ, học phần thông qua website một cách nhanh gọn, tiện ích,
+                             </p>
                         <a href="javascript:" class="main-btn">Đăng Ký</a>
                     </div> <!-- apply cont -->
                 </div>
@@ -258,7 +274,7 @@
             <div class="col-lg-6">
                 <div class="section-title pb-45">
                     <h5>Khóa Học</h5>
-                    <h2>Khóa Học Ngắn Hạn </h2>
+                    <h2>Khóa Học Bổ Ích</h2>
                 </div> <!-- section title -->
             </div>
         </div> <!-- row -->
@@ -267,11 +283,11 @@
                 <div class="singel-course">
                     <div class="thum">
                         <div class="image">
-                            <img src="/dist/layout/layout_kkt/images/course/cu-1.jpg" alt="Course">
+                            <img src="/dist/layout/layout_kkt/images/link-dhdl-42735.jpg" alt="Course">
                         </div>
-                        <div class="price">
-                            <span>Free</span>
-                        </div>
+                        {{-- <div class="price">
+                            <span>Miễn P</span>
+                        </div> --}}
                     </div>
                     <div class="cont">
                         <ul>
@@ -281,9 +297,9 @@
                             <li><i class="fa fa-star"></i></li>
                             <li><i class="fa fa-star"></i></li>
                         </ul>
-                        <span>(20 Reviws)</span>
-                        <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
-                            <h4>Learn basis javascirpt from start for beginner</h4>
+                        <span>(120 Đánh Giá)</span>
+                        <a href="{{ route('khoakinhte-chitietkhoahoc') }}">
+                            <h4>Cẩm Nang Về Tốc Độ Tăng Trưởng Kinh Tế</h4>
                         </a>
                         <div class="course-teacher">
                             <div class="thum">
@@ -291,7 +307,7 @@
                             </div>
                             <div class="name">
                                 <a href="javascript:">
-                                    <h6>Mark anthem</h6>
+                                    <h6>Trần Võ Quang</h6>
                                 </a>
                             </div>
                             <div class="admin">
@@ -308,11 +324,11 @@
                 <div class="singel-course">
                     <div class="thum">
                         <div class="image">
-                            <img src="/dist/layout/layout_kkt/images/course/cu-2.jpg" alt="Course">
+                            <img src="/dist/layout/layout_kkt/images/link-dhdl-76744.png" alt="Course">
                         </div>
-                        <div class="price">
+                        {{-- <div class="price">
                             <span>Free</span>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="cont">
                         <ul>
@@ -322,9 +338,9 @@
                             <li><i class="fa fa-star"></i></li>
                             <li><i class="fa fa-star"></i></li>
                         </ul>
-                        <span>(20 Reviws)</span>
+                        <span>(120 Đánh Giá)</span>
                         <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
-                            <h4>Learn basis javascirpt from start for beginner</h4>
+                            <h4>Thị Trường Kinh Tế Sau Những Biến Động</h4>
                         </a>
                         <div class="course-teacher">
                             <div class="thum">
@@ -332,7 +348,7 @@
                             </div>
                             <div class="name">
                                 <a href="javascript:">
-                                    <h6>Mark anthem</h6>
+                                    <h6>Ngô Văn Luyến</h6>
                                 </a>
                             </div>
                             <div class="admin">
@@ -349,11 +365,11 @@
                 <div class="singel-course">
                     <div class="thum">
                         <div class="image">
-                            <img src="/dist/layout/layout_kkt/images/course/cu-3.jpg" alt="Course">
+                            <img src="/dist/layout/layout_kkt/images/link-dhdl-95151.jpg" alt="Course">
                         </div>
-                        <div class="price">
+                        {{-- <div class="price">
                             <span>Free</span>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="cont">
                         <ul>
@@ -363,9 +379,9 @@
                             <li><i class="fa fa-star"></i></li>
                             <li><i class="fa fa-star"></i></li>
                         </ul>
-                        <span>(20 Reviws)</span>
+                        <span>(120 Đánh Giá)</span>
                         <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
-                            <h4>Learn basis javascirpt from start for beginner</h4>
+                            <h4>Các Tổ Chức Vận Hành Quản Trị Kinh Doanh</h4>
                         </a>
                         <div class="course-teacher">
                             <div class="thum">
@@ -373,7 +389,7 @@
                             </div>
                             <div class="name">
                                 <a href="javascript:">
-                                    <h6>Mark anthem</h6>
+                                    <h6>Nguyễn Nhậm </h6>
                                 </a>
                             </div>
                             <div class="admin">
@@ -390,11 +406,11 @@
                 <div class="singel-course">
                     <div class="thum">
                         <div class="image">
-                            <img src="/dist/layout/layout_kkt/images/course/cu-4.jpg" alt="Course">
+                            <img src="/dist/layout/layout_kkt/images/link-dhdl-86243.jpg" alt="Course">
                         </div>
-                        <div class="price">
+                        {{-- <div class="price">
                             <span>Free</span>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="cont">
                         <ul>
@@ -404,9 +420,9 @@
                             <li><i class="fa fa-star"></i></li>
                             <li><i class="fa fa-star"></i></li>
                         </ul>
-                        <span>(20 Reviws)</span>
-                        <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
-                            <h4>Learn basis javascirpt from start for beginner</h4>
+                        <span>(120 Đánh Giá)</span>                       
+                         <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
+                            <h4>Quản Lí Hiệu Quả Về Kế Toán</h4>
                         </a>
                         <div class="course-teacher">
                             <div class="thum">
@@ -414,7 +430,7 @@
                             </div>
                             <div class="name">
                                 <a href="javascript:">
-                                    <h6>Mark anthem</h6>
+                                    <h6>Lê Linh Vương</h6>
                                 </a>
                             </div>
                             <div class="admin">
@@ -431,11 +447,11 @@
                 <div class="singel-course">
                     <div class="thum">
                         <div class="image">
-                            <img src="/dist/layout/layout_kkt/images/course/cu-5.jpg" alt="Course">
+                            <img src="/dist/layout/layout_kkt/images/link-dhdl-92363.jpg" alt="Course">
                         </div>
-                        <div class="price">
+                        {{-- <div class="price">
                             <span>Free</span>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="cont">
                         <ul>
@@ -445,9 +461,9 @@
                             <li><i class="fa fa-star"></i></li>
                             <li><i class="fa fa-star"></i></li>
                         </ul>
-                        <span>(20 Reviws)</span>
+                        <span>(120 Đánh Giá)</span>
                         <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
-                            <h4>Learn basis javascirpt from start for beginner</h4>
+                            <h4>Kỹ Năng Chuyên Nghành Về Kinh Tế</h4>
                         </a>
                         <div class="course-teacher">
                             <div class="thum">
@@ -455,7 +471,7 @@
                             </div>
                             <div class="name">
                                 <a href="javascript:">
-                                    <h6>Mark anthem</h6>
+                                    <h6>Nguyễn Ngô Thảo</h6>
                                 </a>
                             </div>
                             <div class="admin">
@@ -487,7 +503,7 @@
             <div class="col-lg-5 offset-lg-1 order-first order-lg-last">
                 <div class="feature pt-50">
                     <div class="feature-title">
-                        <h3>Cựu Sinh Viên Thành Đạt</h3>
+                        <h3>Sinh Viên Khoa Kinh Tế</h3>
                     </div>
                     <ul>
                         <li>
@@ -496,8 +512,8 @@
                                     <img src="/dist/layout/layout_kkt/images/all-icon/f-1.png" alt="icon">
                                 </div>
                                 <div class="cont">
-                                    <h4>Global Certificate</h4>
-                                    <p>Gravida nibh vel velit auctor aliquetn auci elit cons solliazcitudirem sem quibibendum sem nibhutis.</p>
+                                    <h4>Học Bổng</h4>
+                                    <p>Những sinh viên tiêu biểu của khoa sẽ được tuyên dương và khen thưởng học bổng .</p>
                                 </div>
                             </div> <!-- singel feature -->
                         </li>
@@ -507,8 +523,8 @@
                                     <img src="/dist/layout/layout_kkt/images/all-icon/f-2.png" alt="icon">
                                 </div>
                                 <div class="cont">
-                                    <h4>Alumni Support</h4>
-                                    <p>Gravida nibh vel velit auctor aliquetn auci elit cons solliazcitudirem sem quibibendum sem nibhutis.</p>
+                                    <h4>Phát Triển Bản Thân</h4>
+                                    <p>Sinh viên khoa kinh tế sẽ được phát triển tất cả các yếu tố về mọi mặt của kinh tế, quản trị,...</p>
                                 </div>
                             </div> <!-- singel feature -->
                         </li>
@@ -518,8 +534,8 @@
                                     <img src="/dist/layout/layout_kkt/images/all-icon/f-3.png" alt="icon">
                                 </div>
                                 <div class="cont">
-                                    <h4>Books & Library</h4>
-                                    <p>Gravida nibh vel velit auctor aliquetn auci elit cons solliazcitudirem sem quibibendum sem nibhutis.</p>
+                                    <h4>Nguồn Tài Liệu </h4>
+                                    <p>Khoa kinh tế luôn hỗ trọ sinh viên về các nguồn tài liệu bổ ích nhằm đáp ứng sự tò mò, tìm hiểu, ham học hỏi của sinh viên</p>
                                 </div>
                             </div> <!-- singel feature -->
                         </li>
@@ -544,8 +560,12 @@
                     <h2>Giảng Viên Khoa</h2>
                 </div> <!-- section title -->
                 <div class="teachers-cont">
-                    <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt mauris. <br> <br> auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt mauris</p>
-                    <a href="{{ route('khoakinhte-danhsachgiaovien') }}" class="main-btn mt-55">Career with us</a>
+                    <p>Là đội ngũ gồm nhiều giảng viên, nhân viên có nhiều kinh nghiệm lâu năm 
+                        trong giảng dạy về các chuyên nghành kinh tế, quản trị kinh doanh, kế toán,...
+                         Những sinh viên sẽ luôn được giảng viên hỗ trọ nhiệt tình, học hỏi những kiến
+                          thức mới mẻ hơn. </p>
+                    <p>Với tiêu chí đặt giáo dục lên hàng đầu, giảng viên của khoa luôn mong muốn mang đến cho sinh viên những điều tuyệt nhất.</p>
+                    <a href="{{ route('khoakinhte-danhsachgiaovien') }}" class="main-btn mt-55">Danh sách đội ngũ giảng viên </a>
                 </div> <!-- teachers cont -->
             </div>
             <div class="col-lg-6 offset-lg-1">
@@ -625,27 +645,11 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="section-title pb-40">
-                    <h5>Nhận Xét</h5>
-                    <h2>Nhận Xét Của Sinh Viên</h2>
+                    <h2>Nhận Xét Từ Sinh Viên Của Khoa</h2>
                 </div> <!-- section title -->
             </div>
         </div> <!-- row -->
         <div class="row testimonial-slied mt-40">
-            <div class="col-lg-6">
-                <div class="singel-testimonial">
-                    <div class="testimonial-thum">
-                        <img src="/dist/layout/layout_kkt/images/hihkhoa_files/back_top.png" alt="Testimonial">
-                        <div class="quote">
-                            <i class="fa fa-quote-right"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-cont">
-                        <p>Trường đào tạo rất tốt , i love "Du Lịch Sài gòn" :)) </p>
-                        <h6>Trần Nga</h6>
-                        <span>Thông Dịch viên</span>
-                    </div>
-                </div> <!-- singel testimonial -->
-            </div>
             <div class="col-lg-6">
                 <div class="singel-testimonial">
                     <div class="testimonial-thum">
@@ -655,9 +659,27 @@
                         </div>
                     </div>
                     <div class="testimonial-cont">
-                        <p>Aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet sem nibh id elit sollicitudirem </p>
-                        <h6>Rubina Helen</h6>
-                        <span>Bsc, Engineering</span>
+                        <p>Với sự nhiệt tình giảng dạy của nhân viên cũng như môi 
+                            trường đào tạo của trường tốt, nên em mới có thể thành công trong lĩnh vực
+                             kế toán cũng như trong lĩnh vực kinh tế  </p>
+                        <h6>Trần Nga Linh</h6>
+                        <span>Cựu Sinh Viên</span>
+                    </div>
+                </div> <!-- singel testimonial -->
+            </div>
+            <div class="col-lg-6">
+                <div class="singel-testimonial">
+                    <div class="testimonial-thum">
+                        <img src="/dist/layout/layout_kkt/images/testimonial/t-3.jpg"" alt="Testimonial">
+                        <div class="quote">
+                            <i class="fa fa-quote-right"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-cont">
+                        <p>Giảng viên của khoa rất tâm huyết trong việc giảng dạy, đã giúp 
+                            đỡ em rất nhiều trong việc hiểu rõ hơn rất nhiều về nhiều mặt của Nghành kinh tế . </p>
+                        <h6>Nguyễn Vi</h6>
+                        <span>Sinh Viên Năm 2</span>
                     </div>
                 </div> <!-- singel testimonial -->
             </div>
@@ -694,87 +716,104 @@
             </div>
         </div> <!-- row -->
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-8">
                 <div class="singel-news mt-30">
                     <div class="news-thum pb-25">
-                        <img src="/dist/layout/layout_kkt/images/news/n-1.jpg" alt="News">
+                        <img src="/dist/layout/layout_kkt/images/an-tuong-vong-thi-chung-ket-cuoc-thi-tim-kiem-tai-nang-mc-2017-thumbnail-60511.png" width="30%" alt="News">
                     </div>
                     <div class="news-cont">
-                        <ul>
-                            <li><a href="javascript:"><i class="fa fa-calendar"></i>2 December 2018 </a></li>
-                            <li><a href="javascript:"> <span>By</span> Adam linn</a></li>
-                        </ul>
+                        
                         <a href="{{ route('khoakinhte-chitiettintuc') }}">
-                            <h3>Tips to grade high cgpa in university life</h3>
+                            <h3>Sinh Viên Khoa Kinh Tế Thực Tập Sinh Tại  Doanh Nghiệp</h3>
                         </a>
-                        <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt .</p>
+                        <ul>
+                            <li><a href="javascript:"><i class="fa fa-calendar"></i> 12/05 2021 </a></li>
+                            <li><a href="javascript:"> <span>Tác Giả :</span> Minh Thắng</a></li>
+                        </ul>
+                        {{-- <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt .</p> --}}
                     </div>
                 </div> <!-- singel news -->
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="singel-news news-list">
                     <div class="row">
-                        <div class="col-sm-4">
+                        {{-- <div class="col-sm-4">
                             <div class="news-thum mt-30">
                                 <img src="/dist/layout/layout_kkt/images/news/ns-1.jpg" alt="News">
                             </div>
-                        </div>
-                        <div class="col-sm-8">
+                        </div> --}}
+                        <div class="col-sm-12">
                             <div class="news-cont mt-30">
+                               
+                                <a href="{{ route('khoakinhte-chitiettintuc') }}">
+                                    <h3>Sinh Viên Thực Tập Tại Doanh Nghiệp</h3>
+                                </a>
                                 <ul>
                                     <li><a href="javascript:"><i class="fa fa-calendar"></i>2 December 2018 </a></li>
-                                    <li><a href="javascript:"> <span>By</span> Adam linn</a></li>
+                                    <li><a href="javascript:"> <span>Tác Giả :</span> Minh Thắng</a></li>
                                 </ul>
-                                <a href="{{ route('khoakinhte-chitiettintuc') }}">
-                                    <h3>Intellectual communication</h3>
-                                </a>
-                                <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons vel.</p>
+                                <p>Thông báo sinh viên thực tập</p>
                             </div>
                         </div>
                     </div> <!-- row -->
                 </div> <!-- singel news -->
                 <div class="singel-news news-list">
                     <div class="row">
-                        <div class="col-sm-4">
+                        {{-- <div class="col-sm-4">
                             <div class="news-thum mt-30">
                                 <img src="/dist/layout/layout_kkt/images/news/ns-2.jpg" alt="News">
                             </div>
-                        </div>
-                        <div class="col-sm-8">
+                        </div> --}}
+                        <div class="col-sm-12">
                             <div class="news-cont mt-30">
+                                
+                                <a href="{{ route('khoakinhte-chitiettintuc') }}">
+                                    <h3>Sinh Viên Thực Hiện Báo Cáo Về Doanh Nghiệp</h3>
+                                </a>
                                 <ul>
                                     <li><a href="javascript:"><i class="fa fa-calendar"></i>2 December 2018 </a></li>
-                                    <li><a href="javascript:"> <span>By</span> Adam linn</a></li>
+                                    <li><a href="javascript:"> <span>Tác Giả :</span> Minh Thắng</a></li>
                                 </ul>
-                                <a href="{{ route('khoakinhte-chitiettintuc') }}">
-                                    <h3>Study makes you perfect</h3>
-                                </a>
-                                <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons vel.</p>
+                                <p>Báo cáo của sinh viên về doanh nghiệp</p>
                             </div>
                         </div>
                     </div> <!-- row -->
                 </div> <!-- singel news -->
                 <div class="singel-news news-list">
                     <div class="row">
-                        <div class="col-sm-4">
-                            <div class="news-thum mt-30">
-                                <img src="/dist/layout/layout_kkt/images/news/ns-3.jpg" alt="News">
-                            </div>
-                        </div>
-                        <div class="col-sm-8">
+                       
+                        <div class="col-sm-12">
                             <div class="news-cont mt-30">
+                               
+                                <a href="{{ route('khoakinhte-chitiettintuc') }}">
+                                    <h3> Thi Chứng Chỉ Tin Học Của Dinh Viên Khoa Kinh Tế</h3>
+                                </a>
                                 <ul>
                                     <li><a href="javascript:"><i class="fa fa-calendar"></i>2 December 2018 </a></li>
-                                    <li><a href="javascript:"> <span>By</span> Adam linn</a></li>
+                                    <li><a href="javascript:"><span>Tác Giả :</span> Minh Thắng</a></li>
                                 </ul>
-                                <a href="{{ route('khoakinhte-chitiettintuc') }}">
-                                    <h3>Technology edcution is now....</h3>
-                                </a>
-                                <p>Gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons vel.</p>
+                                <p>Sinh viên thi chứng chỉ tin học</p>
                             </div>
                         </div>
                     </div> <!-- row -->
                 </div> <!-- singel news -->
+
+                <div class="singel-news news-list">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="news-cont mt-30">
+                                <a href="{{ route('khoakinhte-chitiettintuc') }}">
+                                    <h3> Thi Chứng Chỉ Tin Học Của Dinh Viên Khoa Kinh Tế</h3>
+                                </a>
+                                <ul>
+                                    <li><a href="javascript:"><i class="fa fa-calendar"></i>2 December 2018 </a></li>
+                                    <li><a href="javascript:"><span>Tác Giả :</span> Minh Thắng</a></li>
+                                </ul>
+                                <p>Sinh viên thi chứng chỉ tin học</p>
+                            </div>
+                        </div>
+                    </div> <!-- row -->
+                </div>
             </div>
         </div> <!-- row -->
     </div> <!-- container -->
