@@ -69,6 +69,18 @@ Route::get('/khoa-kinh-te/giao-vien', function() { return view('client.layout.la
 Route::get('/khoa-kinh-te/khoa-hoc', function() { return view('client.layout.layout_kkt.page.khoahoc'); })->name('khoakinhte-khoahoc');
 Route::get('/khoa-kinh-te/chi-tiet-khoa-hoc', function() { return view('client.layout.layout_kkt.page.khoahocdon'); })->name('khoakinhte-chitietkhoahoc');
 
+//Route trỏ về khoa nghệ thuật
+Route::get('/khoa-nghe-thuat', function() { return view('client.layout.layout_nghethuat.page.home'); })->name('khoanghethuat');
+Route::get('/khoa-nghe-thuat/gioi-thieu', function() { return view('client.layout.layout_nghethuat.page.gioithieu'); })->name('khoanghethuat-gioithieu');
+Route::get('/khoa-nghe-thuat/lien-he', function() { return view('client.layout.layout_nghethuat.page.lienlac'); })->name('khoanghethuat-lienhe');
+Route::get('/khoa-nghe-thuat/tin-tuc', function() { return view('client.layout.layout_nghethuat.page.tintuc'); })->name('khoanghethuat-tintuc');
+Route::get('/khoa-nghe-thuat/tin-tuc/chi-tiet-tin-tuc', function() { return view('client.layout.layout_nghethuat.page.tintucdon'); })->name('khoanghethuat-chitiettintuc');
+Route::get('/khoa-nghe-thuat/tin-tuc/danh-sach-tin-tuc', function() { return view('client.layout.layout_nghethuat.page.tintucnhom'); })->name('khoanghethuat-danhsachtintuc');
+Route::get('/khoa-nghe-thuat/thong-tin-giao-vien', function() { return view('client.layout.layout_nghethuat.page.thongtingiaovien'); })->name('khoanghethuat-thongtingiaovien');
+Route::get('/khoa-nghe-thuat/giao-vien', function() { return view('client.layout.layout_nghethuat.page.thongtinnhieugiaovien'); })->name('khoanghethuat-danhsachgiaovien');
+Route::get('/khoa-nghe-thuat/khoa-hoc', function() { return view('client.layout.layout_nghethuat.page.khoahoc'); })->name('khoanghethuat-khoahoc');
+Route::get('/khoa-nghe-thuat/chi-tiet-khoa-hoc', function() { return view('client.layout.layout_nghethuat.page.khoahocdon'); })->name('khoanghethuat-chitietkhoahoc');
+
 
 
 Route::group(['namespace' => 'App\Http\Controllers\Client', 'prefix' => 'cntt'], function () {
