@@ -16,11 +16,11 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="page-banner-cont">
-                    <h2>Teachers</h2>
+                    <h2>Giảng Viên</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Teachers</li>
+                            <li class="breadcrumb-item"><a href="javascript:">Trang Chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Giảng Viên</li>
                         </ol>
                     </nav>
                 </div> <!-- page banner cont -->
@@ -39,13 +39,13 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="singel-teachers mt-30 text-center">
                     <div class="image">
-                        <img src="{{ asset('dist/layout/layout_kkt/images/teachers/t-1.jpg') }}" alt="Teachers">
+                        <img src="{{asset('dist/layout/layout_kkt/images/teachers/t-1.jpg') }}" alt="Teachers">
                     </div>
                     <div class="cont">
-                        <a href="javascript:">
-                            <h6>MarkMark alen</h6>
+                        <a href="{{  route('khoakinhte-thongtingiaovien') }}">
+                            <h6>Hoàng Hoa Văn</h6>
                         </a>
-                        <span>Vice chencelor</span>
+                        <span>Giảng Viên</span>
                     </div>
                 </div> <!-- singel teachers -->
             </div>
@@ -56,9 +56,9 @@
                     </div>
                     <div class="cont">
                         <a href="{{  route('khoakinhte-thongtingiaovien') }}">
-                            <h6>David card </h6>
+                            <h6>Lê Khôi</h6>
                         </a>
-                        <span>Pro chencelor</span>
+                        <span>Giảng Viên</span>
                     </div>
                 </div> <!-- singel teachers -->
             </div>
@@ -69,9 +69,9 @@
                     </div>
                     <div class="cont">
                         <a href="{{  route('khoakinhte-thongtingiaovien') }}">
-                            <h6>Rebeka alig</h6>
+                            <h6>Hoàng Hoa Văn</h6>
                         </a>
-                        <span>Pro chencelor</span>
+                        <span>Giảng Viên</span>
                     </div>
                 </div> <!-- singel teachers -->
             </div>
@@ -82,9 +82,9 @@
                     </div>
                     <div class="cont">
                         <a href="{{  route('khoakinhte-thongtingiaovien') }}">
-                            <h6>Hanna bein</h6>
+                            <h6>Hoàng Hoa Văn</h6>
                         </a>
-                        <span>Aerobics head</span>
+                        <span>Giảng Viên</span>
                     </div>
                 </div> <!-- singel teachers -->
             </div>
@@ -95,9 +95,9 @@
                     </div>
                     <div class="cont">
                         <a href="{{  route('khoakinhte-thongtingiaovien') }}">
-                            <h6>David card </h6>
+                            <h6>Hoàng Hoa Văn</h6>
                         </a>
-                        <span>Pro chencelor</span>
+                        <span>Giảng Viên</span>
                     </div>
                 </div> <!-- singel teachers -->
             </div>
@@ -108,9 +108,9 @@
                     </div>
                     <div class="cont">
                         <a href="{{  route('khoakinhte-thongtingiaovien') }}">
-                            <h6>Mark alen</h6>
+                            <h6>Hoàng Hoa Văn</h6>
                         </a>
-                        <span>Vice chencelor</span>
+                        <span>Giảng Viên</span>
                     </div>
                 </div> <!-- singel teachers -->
             </div>
@@ -121,9 +121,9 @@
                     </div>
                     <div class="cont">
                         <a href="{{  route('khoakinhte-thongtingiaovien') }}">
-                            <h6>Rebeka alig</h6>
+                            <h6>Hoàng Hoa Văn</h6>
                         </a>
-                        <span>Pro chencelor</span>
+                        <span>Giảng Viên</span>
                     </div>
                 </div> <!-- singel teachers -->
             </div>
@@ -134,9 +134,9 @@
                     </div>
                     <div class="cont">
                         <a href="{{  route('khoakinhte-thongtingiaovien') }}">
-                            <h6>Hanna bein</h6>
+                            <h6>Hoàng Hoa Văn</h6>
                         </a>
-                        <span>Aerobics head</span>
+                        <span>Giảng Viên</span>
                     </div>
                 </div> <!-- singel teachers -->
             </div>

@@ -43,13 +43,18 @@
     </div><!-- end header-logo -->
 </div><!-- end topbar -->
 
-<div class="header-section">
+<div class="header-section" id="background-color-new">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-lg-4 col-12">
                 <div class="logo">
                     <a href="index.html"><img src="http://daihocdulich.edu.vn/default/template/imgs/logo-02.png" alt=""></a>
                 </div><!-- end logo -->
+            </div>
+            <div class="col-lg-8">
+                <div class="logo">
+                    <p class="news-header">SAIGON ACT</p>
+                </div>
             </div>
         </div><!-- end row -->
     </div><!-- end header-logo -->

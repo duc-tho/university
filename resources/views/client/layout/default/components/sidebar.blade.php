@@ -15,7 +15,7 @@
             <div class="list-group">
                 <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="w-100 justify-content-between">
-                        <img src="{{ asset('dist/layout/default/upload/blog_square_01.jpg') }}" alt="" class="img-fluid float-left">
+                        <img src="{{ asset('dist/layout/layout_kkt/images/du-lich-hoc-duong-thoi-ky-hoi-nhap-thumbnail-96548.png')  }}" alt="" class="img-fluid float-left" >
                         <h5 class="mb-1">5 Beautiful buildings you need to before dying</h5>
                         <small>12 Jan, 2016</small>
                     </div>
@@ -23,7 +23,7 @@
 
                 <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="w-100 justify-content-between">
-                        <img src="{{ asset('dist/layout/default/upload/blog_square_02.jpg') }}" alt="" class="img-fluid float-left">
+                        <img src="{{ asset('dist/layout/layout_kkt/images/them-mot-hoi-thao-khoa-hoc-ve-du-lich-duoc-to-chuc-tai-saigonact-thumbnail-92618.png') }}" alt="" class="img-fluid float-left" >
                         <h5 class="mb-1">Let's make an introduction for creative life</h5>
                         <small>11 Jan, 2016</small>
                     </div>
@@ -31,7 +31,7 @@
 
                 <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="w-100 justify-content-between">
-                        <img src="{{ asset('dist/layout/default/upload/blog_square_03.jpg') }}" alt="" class="img-fluid float-left">
+                        <img src="{{ asset('dist/layout/layout_kkt/images/them-mot-hoi-thao-khoa-hoc-ve-du-lich-duoc-to-chuc-tai-saigonact-thumbnail-92618.png') }}" alt="" class="img-fluid float-left" >
                         <h5 class="mb-1">Did you see the most beautiful sea in the world?</h5>
                         <small>07 Jan, 2016</small>
                     </div>
@@ -39,7 +39,7 @@
 
                 <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="w-100 justify-content-between">
-                        <img src="{{ asset('dist/layout/default/upload/blog_square_03.jpg') }}" alt="" class="img-fluid float-left">
+                        <img src="{{ asset('dist/layout/layout_kkt/images/nganh-tai-chinh-ngan-hang-hoc-de-lam-gi-thumbnail-99181 (1).png') }}" alt=""  class="img-fluid float-left" >
                         <h5 class="mb-1">Did you see the most beautiful sea in the world?</h5>
                         <small>07 Jan, 2016</small>
                     </div>
@@ -47,7 +47,7 @@
 
                 <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="w-100 justify-content-between">
-                        <img src="{{ asset('dist/layout/default/upload/blog_square_03.jpg') }}" alt="" class="img-fluid float-left">
+                        <img src="{{ asset('dist/layout/layout_kkt/images/them-mot-hoi-thao-khoa-hoc-ve-du-lich-duoc-to-chuc-tai-saigonact-thumbnail-92618.png') }}" alt="" class="img-fluid float-left" >
                         <h5 class="mb-1">Did you see the most beautiful sea in the world?</h5>
                         <small>07 Jan, 2016</small>
                     </div>
@@ -55,7 +55,7 @@
 
                 <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="w-100 justify-content-between">
-                        <img src="{{ asset('dist/layout/default/upload/blog_square_03.jpg') }}" alt="" class="img-fluid float-left">
+                        <img src="{{ asset('dist/layout/layout_kkt/images/nganh-tai-chinh-ngan-hang-hoc-de-lam-gi-thumbnail-99181 (1).png') }}" alt="" class="img-fluid float-left" >
                         <h5 class="mb-1">Did you see the most beautiful sea in the world?</h5>
                         <small>07 Jan, 2016</small>
                     </div>

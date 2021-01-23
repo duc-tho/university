@@ -18,7 +18,7 @@
                     <div class="shadoweffect">
                         <div class="shadow-desc">
                             <div class="blog-meta">
-                                <span class="bg-aqua"><a href="blog-category-01.html" title="">Nghiên cứu</a></span>
+                                <span class="bg-aqua"><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Nghiên cứu</a></span>
                                 <h4><a href="single.html" title="">"Từ nguyên" và "Địa danh"</a></h4>
                                 <small><a href="single.html" title="">Đăng ngày 21/12/2020 </a></small>
                                 <small><a href="blog-author.html" title="">bởi Mei Misaki</a></small>
@@ -32,7 +32,7 @@
                     <div class="shadoweffect">
                         <div class="shadow-desc">
                             <div class="blog-meta">
-                                <span class="bg-green"><a href="blog-category-01.html" title="">Tuyển sinh</a></span>
+                                <span class="bg-green"><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Tuyển sinh</a></span>
                                 <h4><a href="single.html" title="">Lộ trình đào tạo 9 + tại Trường Saigonact</a></h4>
                             </div><!-- end meta -->
                         </div><!-- end shadow-desc -->
@@ -44,7 +44,7 @@
                     <div class="shadoweffect">
                         <div class="shadow-desc">
                             <div class="blog-meta">
-                                <span class="bg-green"><a href="blog-category-01.html" title="">Tuyển sinh</a></span>
+                                <span class="bg-green"><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Tuyển sinh</a></span>
                                 <h4><a href="single.html" title="">Chương trình học 9 +: Lợi thế của giới trẻ thời 4.0</a></h4>
                             </div><!-- end meta -->
                         </div><!-- end shadow-desc -->
@@ -59,7 +59,7 @@
                     <div class="shadoweffect">
                         <div class="shadow-desc">
                             <div class="blog-meta">
-                                <span class="bg-green"><a href="blog-category-01.html" title="">Tuyển sinh</a></span>
+                                <span class="bg-green"><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Tuyển sinh</a></span>
                                 <h4><a href="single.html" title="">CHƯƠNG TRÌNH CAO ĐẲNG 9+ DÀNH CHO HỌC SINH SAU THCS</a></h4>
                                 <small><a href="single.html" title="">Đăng ngày 21/12/2020</a></small>
                                 <small><a href="blog-author.html" title="">bởi Amanda</a></small>
@@ -73,7 +73,7 @@
                     <div class="shadoweffect">
                         <div class="shadow-desc">
                             <div class="blog-meta">
-                                <span class="bg-green"><a href="blog-category-01.html" title="">Tuyển sinh</a></span>
+                                <span class="bg-green"><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Tuyển sinh</a></span>
                                 <h4><a href="single.html" title="">Lộ trình đào tạo 9 + tại Trường Saigonact</a></h4>
                             </div><!-- end meta -->
                         </div><!-- end shadow-desc -->
@@ -85,7 +85,7 @@
                     <div class="shadoweffect">
                         <div class="shadow-desc">
                             <div class="blog-meta">
-                                <span class="bg-green"><a href="blog-category-01.html" title="">Tuyển sinh</a></span>
+                                <span class="bg-green"><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Tuyển sinh</a></span>
                                 <h4><a href="single.html" title="">Chương trình học 9 +: Lợi thế của giới trẻ thời 4.0</a></h4>
                             </div><!-- end meta -->
                         </div><!-- end shadow-desc -->
@@ -99,7 +99,7 @@
                     <div class="shadoweffect">
                         <div class="shadow-desc">
                             <div class="blog-meta">
-                                <span class="bg-aqua"><a href="blog-category-01.html" title="">Giới thiệu</a></span>
+                                <span class="bg-aqua"><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Giới thiệu</a></span>
                                 <h4><a href="single.html" title="">Saigonact – địa chỉ uy tín với hệ thống cơ sở vật chất hiện đại</a></h4>
                                 <small><a href="single.html" title="">Đăng ngày 21/12/2020</a></small>
                                 <small><a href="blog-author.html" title="">bởi Jessica</a></small>
@@ -113,7 +113,7 @@
                     <div class="shadoweffect">
                         <div class="shadow-desc">
                             <div class="blog-meta">
-                                <span class="bg-green"><a href="blog-category-01.html" title="">Tuyển sinh</a></span>
+                                <span class="bg-green"><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Tuyển sinh</a></span>
                                 <h4><a href="single.html" title="">Lộ trình đào tạo 9 + tại Trường Saigonact</a></h4>
                             </div><!-- end meta -->
                         </div><!-- end shadow-desc -->
@@ -125,7 +125,7 @@
                     <div class="shadoweffect">
                         <div class="shadow-desc">
                             <div class="blog-meta">
-                                <span class="bg-green"><a href="blog-category-01.html" title="">Tuyển sinh</a></span>
+                                <span class="bg-green"><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Tuyển sinh</a></span>
                                 <h4><a href="single.html" title="">Chương trình học 9 +: Lợi thế của giới trẻ thời 4.0</a></h4>
                             </div><!-- end meta -->
                         </div><!-- end shadow-desc -->
@@ -143,7 +143,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="section-title">
-                    <h3 class="color-aqua"><a href="blog-category-01.html" title="">Tin tức & hoạt động</a></h3>
+                    <h3 class="color-aqua"><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Tin tức & hoạt động</a></h3>
                 </div><!-- end title -->
 
                 <div class="row">
@@ -160,7 +160,7 @@
                             <div class="blog-meta big-meta">
                                 <h4><a href="single.html" title="">Một số hình ảnh về góc Giáng Sinh ấm cúng của trường</a></h4>
                                 <p></p>
-                                <small><a href="blog-category-01.html" title="">Hoạt động</a></small>
+                                <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Hoạt động</a></small>
                                 <small><a href="single.html" title="">Đăng ngày 16/12/2020</a></small>
                                 <small><a href="blog-author.html" title="">by Amanda</a></small>
                             </div><!-- end meta -->
@@ -180,7 +180,7 @@
                             <div class="blog-meta big-meta">
                                 <h4><a href="single.html" title="">CHƯƠNG TRÌNH ĐÀO TẠO NGẮN HẠN</a></h4>
                                 <p>Bên cạnh đào tạo hệ CAO ĐẲNG chính quy, Trường SAIGONACT còn có những chương trình đào tạo ngắn hạn để bổ sung kiến thức chuyên ngành, giúp người học nâng cao năng lực chuyên môn và kỹ năng mềm. </p>
-                                <small><a href="blog-category-01.html" title="">Tin tức</a></small>
+                                <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Tin tức</a></small>
                                 <small><a href="single.html" title="">Đăng ngày 16/12/2020</a></small>
                                 <small><a href="blog-author.html" title="">by Martines</a></small>
                             </div><!-- end meta -->
@@ -191,7 +191,7 @@
 
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="section-title">
-                    <h3 class="color-pink"><a href="blog-category-01.html" title="">Chương trình học</a></h3>
+                    <h3 class="color-pink"><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Chương trình học</a></h3>
                 </div><!-- end title -->
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -207,8 +207,8 @@
                             <div class="blog-meta">
                                 <h4><a href="single.html" title="">XÉT HỌC BẠ: CHÌA KHOÁ MỞ RA CÁNH CỬA HỌC TẬP !</a></h4>
                                 <p>Dù bạn khao khát được cháy bỏng với tâm hồn nghệ thuật hay bạn ước mơ Lãnh Đạo- Tất cả đều được thỏa sức tại Trường CAO ĐẲNG VĂN HÓA NGHỆ THUẬT VÀ DU LỊCH SÀI GÒN. </p>
-                                <small><a href="blog-category-01.html" title="">Chương trình học</a></small>
-                                <small><a href="blog-category-01.html" title="">21/12/2020</a></small>
+                                <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Chương trình học</a></small>
+                                <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">21/12/2020</a></small>
                             </div><!-- end meta -->
                         </div><!-- end blog-box -->
 
@@ -226,8 +226,8 @@
                             <div class="blog-meta">
                                 <h4><a href="single.html" title="">Cao đẳng hệ đào tạo 9+, con đường nhanh nhất để vào đời lập thân lập nghiệp</a></h4>
                                 <p></p>
-                                <small><a href="blog-category-01.html" title="">Chương trình học</a></small>
-                                <small><a href="blog-category-01.html" title="">21/12/2020</a></small>
+                                <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Chương trình học</a></small>
+                                <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">21/12/2020</a></small>
                             </div><!-- end meta -->
                         </div><!-- end blog-box -->
                     </div><!-- end col -->
@@ -244,8 +244,8 @@
                             </div><!-- end media -->
                             <div class="blog-meta">
                                 <h4><a href="single.html" title="">Tốt nghiệp THCS vào thẳng cao đẳng chính quy với cao đẳng hệ 9+</a></h4>
-                                <small><a href="blog-category-01.html" title="">Chương trình học </a></small>
-                                <small><a href="blog-category-01.html" title="">21/12/2020</a></small>
+                                <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Chương trình học </a></small>
+                                <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">21/12/2020</a></small>
                             </div><!-- end meta -->
                         </div><!-- end blog-box -->
 
@@ -263,8 +263,8 @@
                             <div class="blog-meta">
                                 <h4><a href="single.html" title="">Tuyển sinh 2019: Cao đẳng Văn hóa Nghệ thuật và Du lịch Sài Gòn rộng cửa cho thí sinh</a></h4>
                                 <p>Tuyển sinh năm 2019, ngoài hình thức thi tuyển thì hình thức xét tuyển học bạ được Trường Cao đẳng Văn hóa Nghệ thuật và Du lịch Sài Gòn (SaigonACT, mã trường CDD0226) lựa chọn được xem như một cơ hội mới mở rộng cánh cửa vào trường với các thí sinh và học sinh. </p>
-                                <small><a href="blog-category-01.html" title="">Chương trình học </a></small>
-                                <small><a href="blog-category-01.html" title="">21/12/2020</a></small>
+                                <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Chương trình học </a></small>
+                                <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">21/12/2020</a></small>
                             </div><!-- end meta -->
                         </div><!-- end blog-box -->
                     </div><!-- end col -->
@@ -275,7 +275,7 @@
         <hr class="invis1">
 
         <!-- #region Baner -->
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-lg-10 offset-lg-1">
                 <div class="banner-spot clearfix">
                     <div class="banner-img">
@@ -283,7 +283,7 @@
                     </div><!-- end banner-img -->
                 </div><!-- end banner -->
             </div><!-- end col -->
-        </div><!-- end row -->
+        </div><!-- end row --> --}}
         <!-- #endregion Baner -->
 
         <hr class="invis1">
@@ -292,7 +292,7 @@
             <div class="col-lg-9">
                 <div class="blog-list clearfix">
                     <div class="section-title">
-                        <h3 class="color-green"><a href="blog-category-01.html" title="">Du học & học bổng</a></h3>
+                        <h3 class="color-green"><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Du học & học bổng</a></h3>
                     </div><!-- end title -->
 
                     <div class="blog-box row">
@@ -308,7 +308,7 @@
                         <div class="blog-meta big-meta col-md-8">
                             <h4><a href="single.html" title="">THÔNG BÁO VỀ CÁC CHÍNH SÁCH HỌC BỔNG 2020 - 2021</a></h4>
                             <p>Nhằm hỗ trợ thúc đẩy và xây dựng nền tảng tri thức, kỹ năng và nhân cách cho các em sinh viên, đóng góp tích cực vào sự phát triển của nền giáo dục Việt Nam. </p>
-                            <small><a href="blog-category-01.html" title="">Học bổng</a></small>
+                            <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Học bổng</a></small>
                             <small><a href="single.html" title="">Đăng ngày 21/12/2020</a></small>
                             <small><a href="blog-author.html" title="">by Boby</a></small>
                         </div><!-- end meta -->
@@ -330,7 +330,7 @@
                             <h4><a href="single.html" title="">Tuyển sinh 2019: Chế độ học bổng ưu việt của SaigonACT</a></h4>
                             <p>Là một trường cao đẳng có bề dày hơn 13 năm thành lập, trong quá trình hoạt động và phát triển, SaigonACT không chỉ chú trọng đến chất lượng đào tạo, đến việc làm cho sinh viên sau khi tốt nghiệp mà ngay trong quá trình đào tạo, Nhà trường cũng rất quan tâm đến việc bảo đảm các chế độ, chính sách đối với người học, đặc biệt là chính sách học bổng cho thí sinh ngay từ khi đăng kí xét tuyển vào trường và cho sinh viên trong quá trình học tập tại trường.
                             </p>
-                            <small><a href="blog-category-01.html" title="">Học bổng</a></small>
+                            <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Học bổng</a></small>
                             <small><a href="single.html" title="">Đăng ngày 21/12/2020</a></small>
                             <small><a href="blog-author.html" title="">by Samanta</a></small>
                         </div><!-- end meta -->
@@ -351,7 +351,7 @@
                         <div class="blog-meta big-meta col-md-8">
                             <h4><a href="single.html" title="">Thông báo về các chính sách học bổng năm học 2019 - 2020</a></h4>
                             <p>Nhằm hỗ trợ thúc đẩy và xây dựng nền tảng tri thức, kỹ năng và nhân cách cho các em sinh viên, đóng góp tích cực vào sự phát triển của nền giáo dục Việt Nam.</p>
-                            <small><a href="blog-category-01.html" title="">Học bổng</a></small>
+                            <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Học bổng</a></small>
                             <small><a href="single.html" title="">Đăng ngày 21/12/2020</a></small>
                             <small><a href="blog-author.html" title="">by Jackie</a></small>
                         </div><!-- end meta -->
@@ -362,7 +362,7 @@
 
                 <div class="blog-list clearfix">
                     <div class="section-title">
-                        <h3 class="color-red"><a href="blog-category-01.html" title="">Hướng nghiệp - Việc làm</a></h3>
+                        <h3 class="color-red"><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Hướng nghiệp - Việc làm</a></h3>
                     </div><!-- end title -->
 
                     <div class="blog-box row">
@@ -382,7 +382,7 @@
                                 khách sạn mở ra nhiều cơ hội việc làm cho nhân lực địa phương nói riêng và nhân lực trẻ Việt Nam nói chung, do tính chất đặc thù của ngành dịch vụ này đòi hỏi sự tương tác cao giữa người với người. Mỗi mùa tuyển sinh, từ khóa về ngành lại thu hút lượng tìm kiếm khủng từ đông đảo học sinh và phu huynh. Học ngành du lịch – khách sạn trở thành một xu hướng, khiến nhiều trường phải mở thêm các khoa đào tạo mới dành riêng cho ngành này. Vậy cơ hội phát
                                 triển
                                 nghề nghiệp trong ngành Du lịch – Khách sạn ra sao? Bài viết dưới đây sẽ hi vọng sẽ giúp bạn giải quyết phần nào những thắc mắc này. </p>
-                            <small><a href="blog-category-01.html" title="">Hướng nghiệp</a></small>
+                            <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Hướng nghiệp</a></small>
                             <small><a href="single.html" title="">Đăng ngày 21/12/2020</a></small>
                             <small><a href="blog-author.html" title="">by Matilda</a></small>
                         </div><!-- end meta -->
@@ -403,7 +403,7 @@
                         <div class="blog-meta big-meta col-md-8">
                             <h4><a href="single.html" title="">NHỮNG KỸ NĂNG MỀM CẦN THIẾT CHO SINH VIÊN</a></h4>
                             <p>Bên cạnh việc nỗ lực học tập để có được tấm bằng xếp loại tốt thì sinh viên cũng cần trang bị rất nhiều kỹ năng mềm để tăng cơ hội tìm kiếm việc làm và mở rộng mối quan hệ. </p>
-                            <small><a href="blog-category-01.html" title="">Hướng nghiệp</a></small>
+                            <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Hướng nghiệp</a></small>
                             <small><a href="single.html" title="">Đăng ngày 21/12/2020</a></small>
                             <small><a href="blog-author.html" title="">by Matilda</a></small>
                         </div><!-- end meta -->
@@ -424,7 +424,7 @@
                         <div class="blog-meta big-meta col-md-8">
                             <h4><a href="single.html" title="">Bạn có hợp với ngành du lịch - nhà hàng khách sạn?</a></h4>
                             <p></p>
-                            <small><a href="blog-category-01.html" title="">Hướng nghiệp</a></small>
+                            <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Hướng nghiệp</a></small>
                             <small><a href="single.html" title="">Đăng ngày 21/12/2020</a></small>
                             <small><a href="blog-author.html" title="">by Matilda</a></small>
                         </div><!-- end meta -->
@@ -434,7 +434,7 @@
 
             <div class="col-lg-3">
                 <div class="section-title">
-                    <h3 class="color-yellow"><a href="blog-category-01.html" title="">Hình ảnh</a></h3>
+                    <h3 class="color-yellow"><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Hình ảnh</a></h3>
                 </div><!-- end title -->
 
                 <div class="blog-box">
@@ -448,8 +448,8 @@
                     </div><!-- end media -->
                     <div class="blog-meta">
                         <h4><a href="single.html" title="">Tour Xuyên Việt 2019 của các bạn sinh viên khóa 12</a></h4>
-                        <small><a href="blog-category-01.html" title="">Hoạt động</a></small>
-                        <small><a href="blog-category-01.html" title="">21/12/2020</a></small>
+                        <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Hoạt động</a></small>
+                        <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">21/12/2020</a></small>
                     </div><!-- end meta -->
                 </div><!-- end blog-box -->
 
@@ -466,8 +466,8 @@
                     </div><!-- end media -->
                     <div class="blog-meta">
                         <h4><a href="single.html" title="">Phòng thực hành Khoa Kinh tế</a></h4>
-                        <small><a href="blog-category-01.html" title="">Cơ sở vật chất</a></small>
-                        <small><a href="blog-category-01.html" title="">21/12/2020</a></small>
+                        <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Cơ sở vật chất</a></small>
+                        <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">21/12/2020</a></small>
                     </div><!-- end meta -->
                 </div><!-- end blog-box -->
 
@@ -484,8 +484,8 @@
                     </div><!-- end media -->
                     <div class="blog-meta">
                         <h4><a href="single.html" title="">Thực tập thực tế tại doanh nghiệp</a></h4>
-                        <small><a href="blog-category-01.html" title="">Thực tập</a></small>
-                        <small><a href="blog-category-01.html" title="">21/12/2020</a></small>
+                        <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Thực tập</a></small>
+                        <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">21/12/2020</a></small>
                     </div><!-- end meta -->
                 </div><!-- end blog-box -->
 
@@ -502,8 +502,8 @@
                     </div><!-- end media -->
                     <div class="blog-meta">
                         <h4><a href="single.html" title="">Lễ Tốt nghiệp ngày 06-01-2018</a></h4>
-                        <small><a href="blog-category-01.html" title="">Tốt nghiệp</a></small>
-                        <small><a href="blog-category-01.html" title="">21/12/2020</a></small>
+                        <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Tốt nghiệp</a></small>
+                        <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">21/12/2020</a></small>
                     </div><!-- end meta -->
                 </div><!-- end blog-box -->
 
@@ -513,7 +513,7 @@
 
         <hr class="invis1">
 
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-lg-10 offset-lg-1">
                 <div class="banner-spot clearfix">
                     <div class="banner-img">
@@ -521,7 +521,7 @@
                     </div><!-- end banner-img -->
                 </div><!-- end banner -->
             </div><!-- end col -->
-        </div><!-- end row -->
+        </div><!-- end row --> --}}
     </div><!-- end container -->
 </section>
 @endsection

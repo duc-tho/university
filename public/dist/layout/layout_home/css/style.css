@@ -425,6 +425,7 @@ span.simply-word {
     color: #02a388;
 }
 .baner-info span img {
+
     margin: 1em auto 0;
     text-align: center;
 }
@@ -1167,7 +1168,7 @@ div#contact h3 {
 .btn1 {
     color: #ffffff;
     font-size: 1em;
-    width: 161px;
+    width: 170px;
     border-radius: 15px;
     letter-spacing: 1px;
 	border:none;
@@ -2056,4 +2057,11 @@ div#contact h3 {
 }
 .khoa-p{
 	color: white;
+}
+.logo-background{
+	background-color: #ecf0f7;
+}
+.p-gioithieu{
+	color: black;
+	font-weight: bold;
 }

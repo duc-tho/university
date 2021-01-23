@@ -4,6 +4,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
   {{-- link Icon font --}}
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" >
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   {{-- link caroucel --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
   {{-- link css --}}

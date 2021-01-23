@@ -83,7 +83,7 @@ class HomeController extends Controller
     // <------------------>  Start Controller KhoaNgoaiNgu <--------------------------->
     public function getDetailPage(Request $request)
     {
-        return views('client.layout.layout_ngoaingu.page.detailpage');
+        return view('client.layout.layout_ngoaingu.page.detailpage');
     }
     public function getLanguages(Request $request)
     {

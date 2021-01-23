@@ -7,7 +7,7 @@
 }
 
 .logo img {
-     max-width: 324px !important;
+     max-width: 437px !important;
 }
 
 .blog-meta h4,
@@ -55,4 +55,15 @@
     margin: 5px 7px;
     opacity: 0.5;
     width: 12px;
+}
+.news-header{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #067186;
+    font-size: 70px;
+    font-weight: bold;
+    /* margin: auto; */
+    margin-left: 50px;
+    margin-top: 50px;
+    text-align: center;
+    display: block;
 }

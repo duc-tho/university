@@ -7,9 +7,10 @@
     <script src="{{asset('dist/layout/layout_kkt/js/vendor/modernizr-3.6.0.min.js')}}"></script>
     <script src="{{asset('dist/layout/layout_kkt/js/vendor/jquery-1.12.4.min.js')}}"></script>
 
+
     <!--====== Bootstrap js ======-->
 
-
+    <script src="{{asset('dist/layout/layout_kkt/js/bootstrap.min.js')}}"></script>
     <!--====== Slick js ======-->
     <script src="{{asset('dist/layout/layout_kkt/js/slick.min.js')}}"></script>
 
