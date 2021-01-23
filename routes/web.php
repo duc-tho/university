@@ -71,15 +71,15 @@ Route::get('/khoa-kinh-te/chi-tiet-khoa-hoc', function() { return view('client.l
 
 //Route trỏ về khoa nghệ thuật
 Route::get('/khoa-nghe-thuat', function() { return view('client.layout.layout_nghethuat.page.home'); })->name('khoanghethuat');
-Route::get('/khoa-nghe-thuat/gioi-thieu', function() { return view('client.layout.layout_nghethuat.page.gioithieu'); })->name('khoanghethuat-gioithieu');
-Route::get('/khoa-nghe-thuat/lien-he', function() { return view('client.layout.layout_nghethuat.page.lienlac'); })->name('khoanghethuat-lienhe');
-Route::get('/khoa-nghe-thuat/tin-tuc', function() { return view('client.layout.layout_nghethuat.page.tintuc'); })->name('khoanghethuat-tintuc');
-Route::get('/khoa-nghe-thuat/tin-tuc/chi-tiet-tin-tuc', function() { return view('client.layout.layout_nghethuat.page.tintucdon'); })->name('khoanghethuat-chitiettintuc');
-Route::get('/khoa-nghe-thuat/tin-tuc/danh-sach-tin-tuc', function() { return view('client.layout.layout_nghethuat.page.tintucnhom'); })->name('khoanghethuat-danhsachtintuc');
-Route::get('/khoa-nghe-thuat/thong-tin-giao-vien', function() { return view('client.layout.layout_nghethuat.page.thongtingiaovien'); })->name('khoanghethuat-thongtingiaovien');
-Route::get('/khoa-nghe-thuat/giao-vien', function() { return view('client.layout.layout_nghethuat.page.thongtinnhieugiaovien'); })->name('khoanghethuat-danhsachgiaovien');
-Route::get('/khoa-nghe-thuat/khoa-hoc', function() { return view('client.layout.layout_nghethuat.page.khoahoc'); })->name('khoanghethuat-khoahoc');
-Route::get('/khoa-nghe-thuat/chi-tiet-khoa-hoc', function() { return view('client.layout.layout_nghethuat.page.khoahocdon'); })->name('khoanghethuat-chitietkhoahoc');
+Route::get('/khoa-nghe-thuat/gioi-thieu', function() { return view('client.layout.layout_nghethuat.page.intro'); })->name('khoanghethuat-gioithieu');
+Route::get('/khoa-nghe-thuat/gioi-thieu/chi-tiet-gioi-thieu', function() { return view('client.layout.layout_nghethuat.page.intro-detail'); })->name('khoanghethuat-chitietgioithieu');
+Route::get('/khoa-nghe-thuat/lien-he', function() { return view('client.layout.layout_nghethuat.page.contact'); })->name('khoanghethuat-lienhe');
+Route::get('/khoa-nghe-thuat/tin-tuc', function() { return view('client.layout.layout_nghethuat.page.news'); })->name('khoanghethuat-tintuc');
+Route::get('/khoa-nghe-thuat/tin-tuc/chi-tiet-tin-tuc', function() { return view('client.layout.layout_nghethuat.page.news-detail'); })->name('khoanghethuat-chitiettintuc');
+Route::get('/khoa-nghe-thuat/thong-tin-giao-vien', function() { return view('client.layout.layout_nghethuat.page.teacher-detail'); })->name('khoanghethuat-thongtingiaovien');
+Route::get('/khoa-nghe-thuat/giao-vien', function() { return view('client.layout.layout_nghethuat.page.teacher'); })->name('khoanghethuat-danhsachgiaovien');
+Route::get('/khoa-nghe-thuat/thong-bao', function() { return view('client.layout.layout_nghethuat.page.notification'); })->name('khoanghethuat-thongbao');
+Route::get('/khoa-nghe-thuat/chi-tiet-thong-bao', function() { return view('client.layout.layout_nghethuat.page.notification-detail'); })->name('khoanghethuat-chitietthongbao');
 
 
 

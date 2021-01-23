@@ -1,3 +1,7 @@
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="fa fa-chevron-up"></i></a>
+</div>
+
 <script src="{{ asset('dist/layout/layout_nghethuat/js/jquery.min.js') }}"></script>
 <script src="{{ asset('dist/layout/layout_nghethuat/js/jquery-migrate-3.0.1.min.js') }}"></script>
 <script src="{{ asset('dist/layout/layout_nghethuat/js/popper.min.js') }}"></script>

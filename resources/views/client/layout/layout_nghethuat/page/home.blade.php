@@ -8,7 +8,12 @@
 <meta name="author" content="">
 @endsection
 
+@section('head')
+@include('client.layout.layout_nghethuat.components.head')
+@endsection
+
 @section('main')
+@include('client.layout.layout_nghethuat.components.header')
 <section class="hero-wrap js-fullheight">
     <div class="overlay"></div>
     <div class="container-fluid px-0">
@@ -693,4 +698,8 @@
         <br><br>
     </div>
 </section>
+
+@include('client.layout.layout_nghethuat.components.loader')
+@include('client.layout.layout_nghethuat.components.footer')
+@include('client.layout.layout_nghethuat.components.script')
 @endSection
