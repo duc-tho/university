@@ -342,15 +342,6 @@ p {
 	100%{ left:0px;}
 }
 
-
-
-
-
-/*=====================================================
-    2. HEADER css 
-======================================================*/
-
-
 /*===== Header top =====*/
 
 .header-top{
@@ -2466,12 +2457,11 @@ p {
 
 .corses-singel-image{}
 .corses-singel-image img{
-    width: 50%;
+    width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
-
+  
 }
 
 .corses-tab{
@@ -3766,7 +3756,11 @@ p.form-message.error {
     margin-right: auto;
 }
 
-
+.p-introdution{
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+}
 
 
 

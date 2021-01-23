@@ -13,13 +13,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                <h2><i class="fa fa-car bg-green"></i> Travel <small class="hidden-xs-down hidden-sm-down">Nulla felis eros, varius sit amet volutpat non. </small></h2>
+                <h2><i class="fa fa-car bg-green"></i> Tin Tức <small class="hidden-xs-down hidden-sm-down"></small></h2>
             </div><!-- end col -->
             <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Blog</a></li>
-                    <li class="breadcrumb-item active">Travel</li>
+                    <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
+                    <li class="breadcrumb-item"><a href="#">Tin Tức</a></li>
+                    <li class="breadcrumb-item active">Danh Mục Tin Tức</li>
                 </ol>
             </div><!-- end col -->
         </div><!-- end row -->
@@ -31,15 +31,7 @@
         <div class="row">
             <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                 <div class="page-wrapper">
-                    <div class="row">
-                        <div class="col-lg-10 offset-lg-1">
-                            <div class="banner-spot clearfix">
-                                <div class="banner-img">
-                                    <img src="upload/banner_02.jpg" alt="" class="img-fluid">
-                                </div><!-- end banner-img -->
-                            </div><!-- end banner -->
-                        </div><!-- end col -->
-                    </div><!-- end row -->
+                    <!-- end row -->
 
                     <hr class="invis">
 
@@ -48,19 +40,19 @@
                             <div class="col-md-6">
                                 <div class="blog-box">
                                     <div class="post-media">
-                                        <a href="single.html" title="">
-                                            <img src="upload/blog_travel_01.jpg" alt="" class="img-fluid">
+                                        <a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title="">
+                                            <img src="{{ asset('dist/layout/layout_kkt/images/du-lich-hoc-duong-thoi-ky-hoi-nhap-thumbnail-96548.png') }}" alt="" class="img-fluid">
                                             <div class="hovereffect">
                                                 <span></span>
                                             </div><!-- end hover -->
                                         </a>
                                     </div><!-- end media -->
                                     <div class="blog-meta big-meta">
-                                        <h4><a href="single.html" title="">We visited the ancient theater in Macedonia</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh.</p>
-                                        <small><a href="blog-category-01.html" title="">Travel</a></small>
-                                        <small><a href="single.html" title="">24 July, 2017</a></small>
-                                        <small><a href="blog-author.html" title="">by Amanda</a></small>
+                                        <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title=""> Du lịch học đường thời kỳ hội nhập</a></h4>
+                                        <p>Bạn đã tốt nghiệp THPT hoặc đã học hết phổ thông nhưng đại học không phải là sự lựa chọn của bạn. Bạn</p>
+                                        <small><a href="blog-category-01.html" title="">Tin Tức</a></small>
+                                        <small><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title="">24/12/2017</a></small>
+                                        <small><a href="blog-author.html" title="">Tác giả: Minh Lộc</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
                             </div><!-- end col -->
@@ -68,19 +60,19 @@
                             <div class="col-md-6">
                                 <div class="blog-box">
                                     <div class="post-media">
-                                        <a href="single.html" title="">
-                                            <img src="upload/blog_travel_02.jpg" alt="" class="img-fluid">
+                                        <a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title="">
+                                            <img src="{{ asset('dist/layout/layout_kkt/images/them-mot-hoi-thao-khoa-hoc-ve-du-lich-duoc-to-chuc-tai-saigonact-thumbnail-92618.png') }}" alt="" class="img-fluid">
                                             <div class="hovereffect">
                                                 <span></span>
                                             </div><!-- end hover -->
                                         </a>
                                     </div><!-- end media -->
                                     <div class="blog-meta big-meta">
-                                        <h4><a href="single.html" title="">To visit the fairy chimneys and antique cities in Turkey</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh.</p>
-                                        <small><a href="blog-category-01.html" title="">Travel</a></small>
-                                        <small><a href="single.html" title="">23 July, 2017</a></small>
-                                        <small><a href="blog-author.html" title="">by John</a></small>
+                                        <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title=""> Du lịch học đường thời kỳ hội nhập</a></h4>
+                                        <p>Bạn đã tốt nghiệp THPT hoặc đã học hết phổ thông nhưng đại học không phải là sự lựa chọn của bạn. Bạn</p>
+                                        <small><a href="blog-category-01.html" title="">Tin Tức</a></small>
+                                        <small><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title="">24/12/2017</a></small>
+                                        <small><a href="blog-author.html" title="">Tác giả: Minh Lộc</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
                             </div><!-- end col -->
@@ -88,19 +80,19 @@
                             <div class="col-md-6">
                                 <div class="blog-box">
                                     <div class="post-media">
-                                        <a href="single.html" title="">
-                                            <img src="upload/blog_travel_03.jpg" alt="" class="img-fluid">
+                                        <a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title="">
+                                            <img src="{{ asset('dist/layout/layout_kkt/images/du-lich-hoc-duong-thoi-ky-hoi-nhap-thumbnail-96548.png') }}" alt="" class="img-fluid">
                                             <div class="hovereffect">
                                                 <span></span>
                                             </div><!-- end hover -->
                                         </a>
                                     </div><!-- end media -->
                                     <div class="blog-meta big-meta">
-                                        <h4><a href="single.html" title="">Travel to the oldest city in the world in Mardin</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh.</p>
-                                        <small><a href="blog-category-01.html" title="">Travel</a></small>
-                                        <small><a href="single.html" title="">22 July, 2017</a></small>
-                                        <small><a href="blog-author.html" title="">by Martines</a></small>
+                                        <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title=""> Du lịch học đường thời kỳ hội nhập</a></h4>
+                                        <p>Bạn đã tốt nghiệp THPT hoặc đã học hết phổ thông nhưng đại học không phải là sự lựa chọn của bạn. Bạn</p>
+                                        <small><a href="blog-category-01.html" title="">Tin Tức</a></small>
+                                        <small><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title="">24/12/2017</a></small>
+                                        <small><a href="blog-author.html" title="">Tác giả: Minh Lộc</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
                             </div><!-- end col -->
@@ -108,19 +100,19 @@
                             <div class="col-md-6">
                                 <div class="blog-box">
                                     <div class="post-media">
-                                        <a href="single.html" title="">
-                                            <img src="upload/blog_travel_04.jpg" alt="" class="img-fluid">
+                                        <a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title="">
+                                            <img src="{{ asset('dist/layout/layout_kkt/images/du-lich-hoc-duong-thoi-ky-hoi-nhap-thumbnail-96548.png') }}" alt="" class="img-fluid">
                                             <div class="hovereffect">
                                                 <span></span>
                                             </div><!-- end hover -->
                                         </a>
                                     </div><!-- end media -->
                                     <div class="blog-meta big-meta">
-                                        <h4><a href="single.html" title="">We went to a city made of stone houses</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh.</p>
-                                        <small><a href="blog-category-01.html" title="">Travel</a></small>
-                                        <small><a href="single.html" title="">21 July, 2017</a></small>
-                                        <small><a href="blog-author.html" title="">by Jessica</a></small>
+                                        <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title=""> Du lịch học đường thời kỳ hội nhập</a></h4>
+                                        <p>Bạn đã tốt nghiệp THPT hoặc đã học hết phổ thông nhưng đại học không phải là sự lựa chọn của bạn. Bạn</p>
+                                        <small><a href="blog-category-01.html" title="">Tin Tức</a></small>
+                                        <small><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title="">24/12/2017</a></small>
+                                        <small><a href="blog-author.html" title="">Tác giả: Minh Lộc</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
                             </div><!-- end col -->
@@ -128,19 +120,19 @@
                             <div class="col-md-6">
                                 <div class="blog-box">
                                     <div class="post-media">
-                                        <a href="single.html" title="">
-                                            <img src="upload/blog_travel_05.jpg" alt="" class="img-fluid">
+                                        <a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title="">
+                                            <img src="{{ asset('dist/layout/layout_kkt/images/du-lich-hoc-duong-thoi-ky-hoi-nhap-thumbnail-96548.png') }}" alt="" class="img-fluid">
                                             <div class="hovereffect">
                                                 <span></span>
                                             </div><!-- end hover -->
                                         </a>
                                     </div><!-- end media -->
                                     <div class="blog-meta big-meta">
-                                        <h4><a href="single.html" title="">New mosque in Germany and we have video for you</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh.</p>
-                                        <small><a href="blog-category-01.html" title="">Travel</a></small>
-                                        <small><a href="single.html" title="">20 July, 2017</a></small>
-                                        <small><a href="blog-author.html" title="">by Helena</a></small>
+                                        <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title=""> Du lịch học đường thời kỳ hội nhập</a></h4>
+                                        <p>Bạn đã tốt nghiệp THPT hoặc đã học hết phổ thông nhưng đại học không phải là sự lựa chọn của bạn. Bạn</p>
+                                        <small><a href="blog-category-01.html" title="">Tin Tức</a></small>
+                                        <small><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title="">24/12/2017</a></small>
+                                        <small><a href="blog-author.html" title="">Tác giả: Minh Lộc</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
                             </div><!-- end col -->
@@ -148,162 +140,34 @@
                             <div class="col-md-6">
                                 <div class="blog-box">
                                     <div class="post-media">
-                                        <a href="single.html" title="">
-                                            <img src="upload/blog_travel_06.jpg" alt="" class="img-fluid">
+                                        <a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title="">
+                                            <img src="{{ asset('dist/layout/layout_kkt/images/du-lich-hoc-duong-thoi-ky-hoi-nhap-thumbnail-96548.png') }}" alt="" class="img-fluid">
                                             <div class="hovereffect">
                                                 <span></span>
                                             </div><!-- end hover -->
                                         </a>
                                     </div><!-- end media -->
                                     <div class="blog-meta big-meta">
-                                        <h4><a href="single.html" title="">A unique beauty from the night view of Istanbul</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh.</p>
-                                        <small><a href="blog-category-01.html" title="">Travel</a></small>
-                                        <small><a href="single.html" title="">19 July, 2017</a></small>
-                                        <small><a href="blog-author.html" title="">by Marry</a></small>
+                                        <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title=""> Du lịch học đường thời kỳ hội nhập</a></h4>
+                                        <p>Bạn đã tốt nghiệp THPT hoặc đã học hết phổ thông nhưng đại học không phải là sự lựa chọn của bạn. Bạn</p>
+                                        <small><a href="blog-category-01.html" title="">Tin Tức</a></small>
+                                        <small><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title="">24/12/2017</a></small>
+                                        <small><a href="blog-author.html" title="">Tác giả: Minh Lộc</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
                             </div><!-- end col -->
 
-                            <div class="col-md-6">
-                                <div class="blog-box">
-                                    <div class="post-media">
-                                        <a href="single.html" title="">
-                                            <img src="upload/blog_travel_07.jpg" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span></span>
-                                            </div><!-- end hover -->
-                                        </a>
-                                    </div><!-- end media -->
-                                    <div class="blog-meta big-meta">
-                                        <h4><a href="single.html" title="">The most beautiful bridge designs ever</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh.</p>
-                                        <small><a href="blog-category-01.html" title="">Travel</a></small>
-                                        <small><a href="single.html" title="">18 July, 2017</a></small>
-                                        <small><a href="blog-author.html" title="">by Amanda</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-                            </div><!-- end col -->
+                            <!-- end col -->
 
-                            <div class="col-md-6">
-                                <div class="blog-box">
-                                    <div class="post-media">
-                                        <a href="single.html" title="">
-                                            <img src="upload/blog_travel_08.jpg" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span></span>
-                                            </div><!-- end hover -->
-                                        </a>
-                                    </div><!-- end media -->
-                                    <div class="blog-meta big-meta">
-                                        <h4><a href="single.html" title="">A new door to the mysterious history</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh.</p>
-                                        <small><a href="blog-category-01.html" title="">Travel</a></small>
-                                        <small><a href="single.html" title="">18 July, 2017</a></small>
-                                        <small><a href="blog-author.html" title="">by Jessica</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-                            </div><!-- end col -->
+                         <!-- end col -->
 
-                            <div class="col-md-6">
-                                <div class="blog-box">
-                                    <div class="post-media">
-                                        <a href="single.html" title="">
-                                            <img src="upload/blog_travel_09.jpg" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span></span>
-                                            </div><!-- end hover -->
-                                        </a>
-                                    </div><!-- end media -->
-                                    <div class="blog-meta big-meta">
-                                        <h4><a href="single.html" title="">The story of white ages in Pamukkale</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh.</p>
-                                        <small><a href="blog-category-01.html" title="">Travel</a></small>
-                                        <small><a href="single.html" title="">17 July, 2017</a></small>
-                                        <small><a href="blog-author.html" title="">by Martin</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-                            </div><!-- end col -->
-
-                            <div class="col-md-6">
-                                <div class="blog-box">
-                                    <div class="post-media">
-                                        <a href="single.html" title="">
-                                            <img src="upload/blog_travel_10.jpg" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span></span>
-                                            </div><!-- end hover -->
-                                        </a>
-                                    </div><!-- end media -->
-                                    <div class="blog-meta big-meta">
-                                        <h4><a href="single.html" title="">Milestone stone statue of 200 years ago</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh.</p>
-                                        <small><a href="blog-category-01.html" title="">Travel</a></small>
-                                        <small><a href="single.html" title="">16 July, 2017</a></small>
-                                        <small><a href="blog-author.html" title="">by Boby</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-                            </div><!-- end col -->
-
-                            <div class="col-md-6">
-                                <div class="blog-box">
-                                    <div class="post-media">
-                                        <a href="single.html" title="">
-                                            <img src="upload/blog_travel_11.jpg" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span></span>
-                                            </div><!-- end hover -->
-                                        </a>
-                                    </div><!-- end media -->
-                                    <div class="blog-meta big-meta">
-                                        <h4><a href="single.html" title="">A short trip to the most beautiful martyrs of India</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh.</p>
-                                        <small><a href="blog-category-01.html" title="">Travel</a></small>
-                                        <small><a href="single.html" title="">15 July, 2017</a></small>
-                                        <small><a href="blog-author.html" title="">by Adam</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-                            </div><!-- end col -->
-
-                            <div class="col-md-6">
-                                <div class="blog-box">
-                                    <div class="post-media">
-                                        <a href="single.html" title="">
-                                            <img src="upload/blog_travel_12.jpg" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span></span>
-                                            </div><!-- end hover -->
-                                        </a>
-                                    </div><!-- end media -->
-                                    <div class="blog-meta big-meta">
-                                        <h4><a href="single.html" title="">The country symbolizing the birth of Buddhism</a></h4>
-                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh.</p>
-                                        <small><a href="blog-category-01.html" title="">Travel</a></small>
-                                        <small><a href="single.html" title="">14 July, 2017</a></small>
-                                        <small><a href="blog-author.html" title="">by Jack</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-                            </div><!-- end col -->
+                            <!-- end col -->
                         </div><!-- end row -->
                     </div><!-- end blog-grid-system -->
                 </div><!-- end page-wrapper -->
 
-                <hr class="invis3">
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination justify-content-start">
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div><!-- end col -->
-                </div><!-- end row -->
+               <!-- end row -->
             </div><!-- end col -->
 
             <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">

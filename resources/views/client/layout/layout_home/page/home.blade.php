@@ -24,7 +24,7 @@
 </div>
 <!--//banner-bottom-->
 <!--/banner-section-->
-<div id="demo-1" class="zs-enabled overlay-dots" data-zs-src='["http://daihocdulich.edu.vn/upload/album/59/img/20181227183634-83285.jpg","http://daihocdulich.edu.vn/upload/album/62/img/20181227184217-21754.jpg","http://daihocdulich.edu.vn/upload/album/62/img/20181227184343-36479.jpg"]' data-zs-overlay="dots" data-zs-interval="100000">
+<div id="demo-1" class="zs-enabled overlay-dots " data-zs-src='["http://daihocdulich.edu.vn/upload/album/59/img/20181227183634-83285.jpg","http://daihocdulich.edu.vn/upload/album/62/img/20181227184217-21754.jpg","http://daihocdulich.edu.vn/upload/album/62/img/20181227184343-36479.jpg"]' data-zs-overlay="dots" data-zs-interval="8000">
     <div class="demo-inner-content">
         <!--/header-w3l-->
         <div class="header-w3-agileits" id="home">
@@ -38,7 +38,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <!-- <h1><a href="index.html"><span>Đ</span>ại <span>H</span>ọc</span> <span>D</span>u <span>L</span>ịch</a></h1> -->
-                        <a href="/"><img src="http://daihocdulich.edu.vn/default/template/imgs/logo-02.png" alt="" height="50px"></a>
+                        <a href="/"><img class="logo-background" src="http://daihocdulich.edu.vn/default/template/imgs/logo-02.png" alt="" height="50px"></a>
                     </div>
                     <!-- navbar-header -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -63,7 +63,7 @@
             <h4>Ban quản lý đề án</h4>
             <h3><span>T</span>rường đại học <span>D</span>u lịch sài gòn</h3>
             <p>Nhân Bản - Cộng Đồng - Quốc Tế</p>
-            <a class="hvr-rectangle-out w3_play_icon1" href="#" data-toggle="modal" data-target="#myModal"> Xem thêm</a>
+            <a class="hvr-rectangle-out w3_play_icon1" href="{{route('home-about')}}" > Xem thêm</a>
         </div>
         <!--/banner-ingo-->
     </div>
@@ -92,10 +92,16 @@
             </div>
         </div>
         <h2 class="w3ls-title">Giới thiệu</h2>
-        <h5>Roin vel enim nec ipsum finibus.Duis euismod massa utab.</h5>
+        {{-- <h5>Roin vel enim nec ipsum finibus.Duis euismod massa utab.</h5> --}}
+        <br>
         <div class="col-md-7  w3ls-about-left">
-            <p>Duis euismod massa ut sem fringilla blandit. Proin vel enim nec ipsum finibus.Duis euismod massa ut sem fringilla blandit. Proin vel enim nec ipsum finibus.Duis euismod massa ut sem fringilla blandit. Proin vel enim nec ipsum finibus.Duis euismod massa ut sem fringilla blandit. Proin vel enim nec ipsum finibus. </p>
-            <p class="about-bottom">Duis euismod massa ut sem fringilla blandit. Proin vel enim nec ipsum finibus.Duis euismod massa ut sem fringilla blandit. Proin vel enim nec ipsum finibus.Duis euismod massa ut sem fringilla blandit. Proin vel enim nec ipsum.</p>
+            <p class="p-gioithieu">Với đặc điểm sẽ là Trường Đại học đầu tiên của Việt Nam hoạt động theo định hướng không vì lợi nhuận; khi chính thức
+                 được thành lập, Trường Đại học Du lịch Sài Gòn sẽ trở thành một Trường Đại học đào tạo đa ngành,
+                  cung cấp nguồn nhân lực chất lượng cao trong các lĩnh vực: Kinh tế, Du lịch, Ngoại ngữ, Nghệ 
+                  thuật, Báo chí, Công nghệ Thông tin, Sức khỏe Thẩm mỹ; trong đó ngành mũi nhọn sẽ là ngành Du 
+                  lịch. </p>
+               <p class="p-gioithieu">Năm học 2019 -2020, BQLĐATL Trường Đại học Du lịch Sài Gòn vẫn tuyển sinh các ngành bậc Cao đẳng với các nhóm ngành </p>
+          
         </div>
         <div class="col-md-5 w3ls-row">
             <div class="col-md-6 col-sm-6 wthree-about-left">
@@ -138,7 +144,7 @@
             <div class="clearfix"></div>
         </div>
     </div>
-    <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="#"> Tìm hiểu thêm</a></div>
+    <div  style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{route('home-about')}}"> Tìm hiểu thêm</a></div>
 </div>
 <!-- //about -->
 <!--services-->
@@ -205,7 +211,7 @@
                         <a href="http://daihocdulich.edu.vn/upload/album/64/img/20190920102334-77233.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
                             <img src="http://daihocdulich.edu.vn/upload/album/64/img/20190920102334-77233.jpg" class="img-responsive zoom-img" alt="" />
                             <div class="b-wrapper">
-                                <h5>Tour Xuyên Việt 2019</h5>
+                                <h5>Hình Ảnh</h5>
                             </div>
                         </a>
                     </div>
@@ -213,7 +219,7 @@
                         <a href="http://daihocdulich.edu.vn/upload/album/64/img/20190920102333-29119.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
                             <img src="http://daihocdulich.edu.vn/upload/album/64/img/20190920102333-29119.jpg" class="img-responsive zoom-img" alt="" />
                             <div class="b-wrapper">
-                                <h5>TechEdu</h5>
+                                <h5>Hình Ảnh</h5>
                             </div>
                         </a>
                     </div>
@@ -221,15 +227,15 @@
                         <a href="http://daihocdulich.edu.vn/upload/album/64/img/20190920102332-47960.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
                             <img src="http://daihocdulich.edu.vn/upload/album/64/img/20190920102332-47960.jpg" class="img-responsive zoom-img" alt="" />
                             <div class="b-wrapper">
-                                <h5>TechEdu</h5>
+                                <h5>Hình Ảnh</h5>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-3 portfolio-grids">
                         <a href="http://daihocdulich.edu.vn/upload/album/64/img/20190920102330-71848.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-                            <img src="http://daihocdulich.edu.vn/upload/album/64/img/20190920102330-71848.jpg" class="img-responsive zoom-img" alt="" />
+                            <img src="{{asset('dist/layout/layout_khoadulich/images/20181227183820-68860.png')}}" class="img-responsive zoom-img" alt="" />
                             <div class="b-wrapper">
-                                <h5>TechEdu</h5>
+                                <h5>Hình Ảnh</h5>
                             </div>
                         </a>
                     </div>
@@ -237,7 +243,7 @@
                         <a href="http://daihocdulich.edu.vn/upload/album/63/img/20181227184509-37602.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
                             <img src="http://daihocdulich.edu.vn/upload/album/63/img/20181227184509-37602.jpg" class="img-responsive zoom-img" alt="" />
                             <div class="b-wrapper">
-                                <h5>TechEdu</h5>
+                                <h5>Hình Ảnh</h5>
                             </div>
                         </a>
                     </div>
@@ -245,7 +251,7 @@
                         <a href="http://daihocdulich.edu.vn/upload/album/62/img/20181227184217-21754.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
                             <img src="http://daihocdulich.edu.vn/upload/album/62/img/20181227184217-21754.jpg" class="img-responsive zoom-img" alt="" />
                             <div class="b-wrapper">
-                                <h5>TechEdu</h5>
+                                <h5>Hình Ảnh</h5>
                             </div>
                         </a>
                     </div>
@@ -253,7 +259,15 @@
                         <a href="http://daihocdulich.edu.vn/upload/album/61/img/20181227184013-99658.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
                             <img src="http://daihocdulich.edu.vn/upload/album/61/img/20181227184013-99658.jpg" class="img-responsive zoom-img" alt="" />
                             <div class="b-wrapper">
-                                <h5>TechEdu</h5>
+                                <h5>Hình Ảnh</h5>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 portfolio-grids">
+                        <a href="http://daihocdulich.edu.vn/upload/album/61/img/20181227184013-99658.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
+                            <img src="{{asset('dist/layout/layout_khoadulich/images/20180118145548-56466.jpg')}}" class="img-responsive zoom-img" alt="" />
+                            <div class="b-wrapper">
+                                <h5>Hình Ảnh</h5>
                             </div>
                         </a>
                     </div>
@@ -273,7 +287,7 @@
                             <a href="http://daihocdulich.edu.vn/upload/album/64/img/20190920102333-29119.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
                                 <img src="http://daihocdulich.edu.vn/upload/album/64/img/20190920102333-29119.jpg" class="img-responsive zoom-img" alt="" />
                                 <div class="b-wrapper">
-                                    <h5>TechEdu</h5>
+                                    <h5>Hình Ảnh</h5>
                                 </div>
                             </a>
                         </div>
@@ -281,7 +295,7 @@
                             <a href="http://daihocdulich.edu.vn/upload/album/64/img/20190920102332-47960.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
                                 <img src="http://daihocdulich.edu.vn/upload/album/64/img/20190920102332-47960.jpg" class="img-responsive zoom-img" alt="" />
                                 <div class="b-wrapper">
-                                    <h5>TechEdu</h5>
+                                    <h5>Hình Ảnh</h5>
                                 </div>
                             </a>
                         </div>
@@ -289,7 +303,7 @@
                             <a href="http://daihocdulich.edu.vn/upload/album/64/img/20190920102330-71848.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
                                 <img src="http://daihocdulich.edu.vn/upload/album/64/img/20190920102330-71848.jpg" class="img-responsive zoom-img" alt="" />
                                 <div class="b-wrapper">
-                                    <h5>TechEdu</h5>
+                                    <h5>Hình Ảnh</h5>
                                 </div>
                             </a>
                         </div>
@@ -300,7 +314,7 @@
                             <a href="http://daihocdulich.edu.vn/upload/album/63/img/20181227184509-37602.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
                                 <img src="http://daihocdulich.edu.vn/upload/album/63/img/20181227184509-37602.jpg" class="img-responsive zoom-img" alt="" />
                                 <div class="b-wrapper">
-                                    <h5>TechEdu</h5>
+                                    <h5>Hình Ảnh</h5>
                                 </div>
                             </a>
                         </div>
@@ -308,7 +322,7 @@
                             <a href="http://daihocdulich.edu.vn/upload/album/62/img/20181227184217-21754.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
                                 <img src="http://daihocdulich.edu.vn/upload/album/62/img/20181227184217-21754.jpg" class="img-responsive zoom-img" alt="" />
                                 <div class="b-wrapper">
-                                    <h5>TechEdu</h5>
+                                    <h5>Hình Ảnh</h5>
                                 </div>
                             </a>
                         </div>
@@ -316,7 +330,7 @@
                             <a href="http://daihocdulich.edu.vn/upload/album/61/img/20181227184013-99658.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
                                 <img src="http://daihocdulich.edu.vn/upload/album/61/img/20181227184013-99658.jpg" class="img-responsive zoom-img" alt="" />
                                 <div class="b-wrapper">
-                                    <h5>TechEdu</h5>
+                                    <h5>Hình Ảnh</h5>
                                 </div>
                             </a>
                         </div>
@@ -325,7 +339,7 @@
                 </div>
             </div>
         </div>
-        <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="#"> Các hình ảnh khác</a></div>
+        {{-- <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="#"> Các hình ảnh khác</a></div> --}}
     </div>
 </div>
 <!--//portfolio-->
@@ -345,9 +359,8 @@
                                 <div class="testimonial-left">
                                     <img src="{{ asset('dist/layout/layout_home/images/t1.jpg') }}">
                                 </div>
-                                <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-                                    impedit quo minus id quod possimus, omnis voluptas.</p>
-                                <h5>John Frank</h5>
+                                <p>Chúng tôi luôn cố gắng hướng đến nền giáo dục mới mẻ để giúp cho sinh viên có thể tiếp nhận được những kiến thức mới mẻ nhất.</p>
+                                <h5>Lê Minh Long</h5>
                             </div>
                         </li>
                         <li>
@@ -355,9 +368,8 @@
                                 <div class="testimonial-left">
                                     <img src="{{ asset('dist/layout/layout_home/images/t2.jpg') }}">
                                 </div>
-                                <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-                                    impedit quo minus id quod possimus, omnis voluptas.</p>
-                                <h5>Michael Doe</h5>
+                                <p>Giáo dục cần phải cải cách liên tục, vì thế cách giảng dạy chúng tôi luôn luôn đổi mới qua từng kì khác nhau.</p>
+                                <h5>Phạm Minh Hồng</h5>
                             </div>
                         </li>
                         <li>
@@ -365,15 +377,14 @@
                                 <div class="testimonial-left">
                                     <img src="{{ asset('dist/layout/layout_home/images/t3.jpg') }}">
                                 </div>
-                                <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-                                    impedit quo minus id quod possimus, omnis voluptas.</p>
-                                <h5>Thomas Carl</h5>
+                                <p>Sinh viên sẽ luôn được hỗ trọ từ phía chúng tối, chúng tôi sẽ luôn có mặt giúp đỡ các tân sinh viên</p>
+                                <h5>Trương Hoàng</h5>
                             </div>
                         </li>
                     </ul>
                 </div>
             </section>
-            <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="#"> Xem thêm về các giảng viên</a></div>
+            {{-- <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="#"> Xem thêm về các giảng viên</a></div> --}}
         </div>
     </div>
 </div>
@@ -426,13 +437,18 @@
 <div class="contact-bottom w3ls-section" id="contact">
     <div class="container">
         <h3 class="w3ls-title">Liên Hệ</h3>
-        <p>Lorem ipsum dolor sit amet consec tetuer adi piscing eLorem ipsum dolor sit amet consec tetuer adi piscing.</p>
+                    {{-- <p>SAIGONTU - BQLĐATL Trường Đại học Du lịch Sài Gòn </p>
+                    <p> Cơ sở: 70 Đường Tân Thới Nhất 8 - Khu phố 5 - P.Tân Thới Nhất - Q.12 - Tp.HCM. </p> --}}
+          
+            </div>
+       
+      
         <div class="w3layouts-list">
-            <div class="col-md-4 li"><span class="fa fa-map-marker" aria-hidden="true"></span>
-                <a href="javascript:">Quận 12, Thành phố Hồ Chí Minh.</a>
+            <div class="col-md-4 li"><span class="fa fa-envelope-o list-icon" aria-hidden="true"></span>
+                <a href="javascript:">info@daihocdulich.edu.vn</a>
             </div>
             <div class="col-md-4 li"><span class="fa fa-phone" aria-hidden="true"></span>
-                <a href="javascript:">(028)38.831.793 - (028)38.831.796</a>
+               <a href="javascript:">(028)38.831.793 - (028)38.831.796</a>
             </div>
             <div class="col-md-4 li"><span class="fa fa-location-arrow" aria-hidden="true"></span><a href="mailto:info@daihocdulich.com">info@daihocdulich.com</a></div>
             <div class="clearfix"></div>

@@ -30,9 +30,6 @@
     </div> <!-- container -->
 </section>
 
-<!--====== PAGE BANNER PART ENDS ======-->
-
-<!--====== COURSES SINGEl PART START ======-->
 
 <section id="corses-singel" class="pt-90 pb-120 gray-bg">
     <div class="container">
@@ -45,59 +42,52 @@
                     <div class="course-terms">
                         <ul>
                             <li>
-                                <div class="teacher-name">
-                                    <div class="thum">
-                                        <img src="{{ asset('dist/layout/layout_kkt/images/course/teacher/t-1.jpg') }}" alt="Teacher">
-                                    </div>
-
-                                    <div class="name">
-                                        <span>Teacher</span>
-                                        <h6>Mark anthem</h6>
-                                    </div>
+                                <div class="name">
+                                    <span>Trình Độ Đào Tạo :</span>
+                                    <h6>Cao Đẳng</h6>
                                 </div>
                             </li>
                             <li>
-                                <div class="course-category">
-                                    <span>Category</span>
-                                    <h6>Programaming </h6>
+                                <div class="name">
+                                    <span>Loại Hình Đào Tạo :</span>
+                                    <h6>Chính Quy </h6>
                                 </div>
                             </li>
                             <li>
-                                <div class="review">
-                                    <span>Review</span>
-                                    <ul>
-                                        <li><a href="javascript:"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="javascript:"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="javascript:"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="javascript:"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="javascript:"><i class="fa fa-star"></i></a></li>
-                                        <li class="rating">(20 Reviws)</li>
-                                    </ul>
+                                <div class="name">
+                                    <span>Thời Gian Đào Tạo :</span>
+                                    <h6>2 năm </h6>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="name">
+                                    <span>Đối Tượng Tuyển Sinh :</span>
+                                    <h6>Theo Quy chế tuyển sinh đại học, cao đẳng hệ chính qui hiện hành
+                                         do Bộ Giáo dục và Đào tạo. </h6>
                                 </div>
                             </li>
                         </ul>
-                    </div> <!-- course terms -->
+                    </div> 
                     <br>
                
                     <div class="corses-singel-image ">
-                         <img src="{{ asset('dist/layout/layout_kkt/images/course/cu-1.jpg') }}" alt="Courses">
-                      
+                         <img src="{{ asset('dist/layout/layout_kkt/images/nganh-ke-toan-su-lua-chon-nghe-nghiep-trong-thoi-ky-hoi-nhap-thumbnail-91783.jpg') }}" alt="Courses">
                     </div> <!-- corses singel image -->
                    
                   
                     <div class="corses-tab mt-30">
                         <ul class="nav nav-justified" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
+                                <a class="active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Giới Thiệu</a>
                             </li>
                             <li class="nav-item">
-                                <a id="curriculam-tab" data-toggle="tab" href="#curriculam" role="tab" aria-controls="curriculam" aria-selected="false">Curriculam</a>
+                                <a id="curriculam-tab" data-toggle="tab" href="#curriculam" role="tab" aria-controls="curriculam" aria-selected="false">Mục Tiêu Đào Tạo</a>
                             </li>
                             <li class="nav-item">
-                                <a id="instructor-tab" data-toggle="tab" href="#instructor" role="tab" aria-controls="instructor" aria-selected="false">Instructor</a>
+                                <a id="instructor-tab" data-toggle="tab" href="#instructor" role="tab" aria-controls="instructor" aria-selected="false">Cơ Hội Việc Làm</a>
                             </li>
                             <li class="nav-item">
-                                <a id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Reviews</a>
+                                <a id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Tại Sao Chọn TC-Ngân Hàng ?</a>
                             </li>
                         </ul>
 
@@ -105,378 +95,79 @@
                             <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
                                 <div class="overview-description">
                                     <div class="singel-description pt-40">
-                                        <h6>Course Summery</h6>
-                                        <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .</p>
+                                        <p class="p-introdution">Ngành Tài Chính Ngân Hàng :</p>
+                                        <br>
+                                        <p>Khái niệm Tài chính ngân hàng là gì? Đây là ngành học khá rộng, liên quan đến tất
+                                             cả các dịch vụ giao dịch tài chính, lưu thông và vận hành tiền tệ. Cụ thể hơn,
+                                              Tài chính ngân hàng là kinh doanh về lĩnh vực tiền tệ thông qua ngân hàng và các 
+                                              công cụ tài chính được ngân hàng phát hành nhằm bảo lãnh, thanh toán, chi trả trong nội
+                                               địa và quốc tế. Sau khi tốt nghiệp, sinh viên có rất nhiều cơ hội việc làm hấp dẫn tại
+                                                các ngân hàng, tập đoàn tài chính, công ty chứng khoán, quỹ tín dụng... Ngành Tài chính
+                                                 ngân hàng có thể chia thành nhiều lĩnh vực chuyên ngành khác nhau như ngân hàng, tài
+                                                  chính doanh nghiệp, tài chính thuế, tài chính bảo hiểm, tài chính công…</p>
+                                    
                                     </div>
-                                    <div class="singel-description pt-40">
-                                        <h6>Requrements</h6>
-                                        <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus .</p>
-                                    </div>
-                                </div> <!-- overview description -->
+                                </div>
+                                   
                             </div>
                             <div class="tab-pane fade" id="curriculam" role="tabpanel" aria-labelledby="curriculam-tab">
                                 <div class="curriculam-cont">
                                     <div class="title">
-                                        <h6>Học ABCDE căn bản</h6>
+                                        <p class="p-introdution">Mục Tiêu Đào Tạo : </p>
+                                        <br>
+                                        <p>Đào tạo cử nhân Tài chính Ngân hàng có phẩm chất chính trị, nắm vững những kiến thức cơ bản 
+                                            về kinh tế xã hội, quản trị kinh doanh và tài chính ngân hàng; có năng lực nghiên cứu, 
+                                            hoạch định chính sách và giải quyết các vấn đề chuyên môn trong lĩnh vực tài chính ngân hàng.</p>
                                     </div>
-                                    <div class="accordion" id="accordionExample">
-                                        <div class="card">
-                                            <div class="card-header" id="headingOne">
-                                                <a href="javascript:" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                    <ul>
-                                                        <li><i class="fa fa-file-o"></i></li>
-                                                        <li><span class="lecture">Lecture 1.1</span></li>
-                                                        <li><span class="head">What is javascirpt</span></li>
-                                                        <li><span class="time d-none d-md-block"><i class="fa fa-clock-o"></i> <span> 00.30.00</span></span></li>
-                                                    </ul>
-                                                </a>
-                                            </div>
-
-                                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                                <div class="card-body">
-                                                    <p>Ut quis scelerisque risus, et viverra nisi. Phasellus ultricies luctus augue, eget maximus felis laoreet quis. Maecenasbibendum tempor eros.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="card">
-                                            <div class="card-header" id="headingTow">
-                                                <a href="javascript:" data-toggle="collapse" class="collapsed" data-target="#collapseTow" aria-expanded="true" aria-controls="collapseTow">
-                                                    <ul>
-                                                        <li><i class="fa fa-file-o"></i></li>
-                                                        <li><span class="lecture">Lecture 1.2</span></li>
-                                                        <li><span class="head">What is javascirpt</span></li>
-                                                        <li><span class="time d-none d-md-block"><i class="fa fa-clock-o"></i> <span> 00.30.00</span></span></li>
-                                                    </ul>
-                                                </a>
-                                            </div>
-
-                                            <div id="collapseTow" class="collapse" aria-labelledby="headingTow" data-parent="#accordionExample">
-                                                <div class="card-body">
-                                                    <p>Ut quis scelerisque risus, et viverra nisi. Phasellus ultricies luctus augue, eget maximus felis laoreet quis. Maecenasbibendum tempor eros.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="card">
-                                            <div class="card-header" id="headingThree">
-                                                <a href="javascript:" data-toggle="collapse" class="collapsed" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                    <ul>
-                                                        <li><i class="fa fa-file-o"></i></li>
-                                                        <li><span class="lecture">Lecture 1.3</span></li>
-                                                        <li><span class="head">What is javascirpt</span></li>
-                                                        <li><span class="time d-none d-md-block"><i class="fa fa-clock-o"></i> <span> 00.30.00</span></span></li>
-                                                    </ul>
-                                                </a>
-                                            </div>
-                                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                                <div class="card-body">
-                                                    <p>Ut quis scelerisque risus, et viverra nisi. Phasellus ultricies luctus augue, eget maximus felis laoreet quis. Maecenasbibendum tempor eros.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="card">
-                                            <div class="card-header" id="headingFore">
-                                                <a href="javascript:" data-toggle="collapse" class="collapsed" data-target="#collapseFore" aria-expanded="false" aria-controls="collapseFore">
-                                                    <ul>
-                                                        <li><i class="fa fa-file-o"></i></li>
-                                                        <li><span class="lecture">Lecture 1.4</span></li>
-                                                        <li><span class="head">What is javascirpt</span></li>
-                                                        <li><span class="time d-none d-md-block"><i class="fa fa-clock-o"></i> <span> 00.30.00</span></span></li>
-                                                    </ul>
-                                                </a>
-                                            </div>
-                                            <div id="collapseFore" class="collapse" aria-labelledby="headingFore" data-parent="#accordionExample">
-                                                <div class="card-body">
-                                                    <p>Ut quis scelerisque risus, et viverra nisi. Phasellus ultricies luctus augue, eget maximus felis laoreet quis. Maecenasbibendum tempor eros.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="card">
-                                            <div class="card-header" id="headingFive">
-                                                <a href="javascript:" data-toggle="collapse" class="collapsed" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                                    <ul>
-                                                        <li><i class="fa fa-file-o"></i></li>
-                                                        <li><span class="lecture">Lecture 1.5</span></li>
-                                                        <li><span class="head">What is javascirpt</span></li>
-                                                        <li><span class="time d-none d-md-block"><i class="fa fa-clock-o"></i> <span> 00.30.00</span></span></li>
-                                                    </ul>
-                                                </a>
-                                            </div>
-                                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-                                                <div class="card-body">
-                                                    <p>Ut quis scelerisque risus, et viverra nisi. Phasellus ultricies luctus augue, eget maximus felis laoreet quis. Maecenasbibendum tempor eros.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="card">
-                                            <div class="card-header" id="headingSix">
-                                                <a href="javascript:" data-toggle="collapse" class="collapsed" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                                    <ul>
-                                                        <li><i class="fa fa-file-o"></i></li>
-                                                        <li><span class="lecture">Lecture 1.6</span></li>
-                                                        <li><span class="head">What is javascirpt</span></li>
-                                                        <li><span class="time d-none d-md-block"><i class="fa fa-clock-o"></i> <span> 00.30.00</span></span></li>
-                                                    </ul>
-                                                </a>
-                                            </div>
-                                            <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
-                                                <div class="card-body">
-                                                    <p>Ut quis scelerisque risus, et viverra nisi. Phasellus ultricies luctus augue, eget maximus felis laoreet quis. Maecenasbibendum tempor eros.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="card">
-                                            <div class="card-header" id="headingSeven">
-                                                <a href="javascript:" data-toggle="collapse" class="collapsed" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                                                    <ul>
-                                                        <li><i class="fa fa-file-o"></i></li>
-                                                        <li><span class="lecture">Lecture 1.7</span></li>
-                                                        <li><span class="head">What is javascirpt</span></li>
-                                                        <li><span class="time d-none d-md-block"><i class="fa fa-clock-o"></i> <span> 00.30.00</span></span></li>
-                                                    </ul>
-                                                </a>
-                                            </div>
-                                            <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
-                                                <div class="card-body">
-                                                    <p>Ut quis scelerisque risus, et viverra nisi. Phasellus ultricies luctus augue, eget maximus felis laoreet quis. Maecenasbibendum tempor eros.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                               
                                 </div> <!-- curriculam cont -->
                             </div>
                             <div class="tab-pane fade" id="instructor" role="tabpanel" aria-labelledby="instructor-tab">
                                 <div class="instructor-cont">
-                                    <div class="instructor-author">
-                                        <div class="author-thum">
-                                            <img src="{{ asset('dist/layout/layout_kkt/images/instructor/i-1.jpg') }}" alt="Instructor">
-                                        </div>
-                                        <div class="author-name">
-                                            <a href="javascript:">
-                                                <h5>Sumon Hasan</h5>
-                                            </a>
-                                            <span>Senior WordPress Developer</span>
-                                            <ul class="social">
-                                                <li><a href="javascript:"><i class="fa fa-facebook-f"></i></a></li>
-                                                <li><a href="javascript:"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="javascript:"><i class="fa fa-google-plus"></i></a></li>
-                                                <li><a href="javascript:"><i class="fa fa-instagram"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
                                     <div class="instructor-description pt-25">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus fuga ratione molestiae unde provident quibusdam sunt, doloremque. Error omnis mollitia, ex dolor sequi. Et, quibusdam excepturi. Animi assumenda, consequuntur dolorum odio sit inventore aliquid, optio fugiat alias. Veritatis minima, dicta quam repudiandae repellat non sit, distinctio, impedit, expedita tempora numquam?</p>
+                                        <p class="p-introdution">Cơ hội việc làm cho sinh viên : </p>
+                                        <br>
+                                        <p>Sau khi tốt nghiệp ngành này, sinh viên có thể đảm nhiệm các công việc như :</p>
+                                        <p> - Chuyên viên tại các các doanh nghiệp kinh doanh, công ty kiểm toán, quỹ đầu tư, 
+                                            công ty kinh doanh bất động sản, công ty tài chính, công ty bảo hiểm, chứng khoán…</p>
+                                        <p> - Chuyên viên tại các ngân hàng thương mại (cán bộ tín dụng, nhân viên kế toán, 
+                                            kế toán viên phòng thanh toán quốc tế, nhân viên kinh doanh ngoại tệ), công ty 
+                                            chứng khoán (nhà môi giới và kinh doanh chứng khoán), tổ chức tín dụng phi ngân hàng,
+                                             cơ quan quản lý nhà nước về tài chính ngân hàng và các loại hình doanh nghiệp khác 
+                                             hoặc đảm đương công việc của trợ lý, tư vấn, tham vấn cho lãnh đạo doanh nghiệp, các
+                                              tổ chức tài chính. Giảng viên ngành Tài chính ngân hàng tại các trường đại học, cao 
+                                              đẳng, trung cấp.</p>
+                                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus fuga ratione molestiae unde provident quibusdam sunt, doloremque. Error omnis mollitia, ex dolor sequi. Et, quibusdam excepturi. Animi assumenda, consequuntur dolorum odio sit inventore aliquid, optio fugiat alias. Veritatis minima, dicta quam repudiandae repellat non sit, distinctio, impedit, expedita tempora numquam?</p> --}}
                                     </div>
                                 </div> <!-- instructor cont -->
                             </div>
                             <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
                                 <div class="reviews-cont">
                                     <div class="title">
-                                        <h6>Student Reviews</h6>
+                                        <h6></h6>
+                                        <p>Tài chính ngân hàng  là ngành học khá rộng, liên quan đến tất cả các dịch vụ giao dịch 
+                                            tài chính, lưu thông và vận hành tiền tệ. Ngành Tài chính ngân hàng có thể chia thành 
+                                            nhiều lĩnh vực chuyên ngành khác nhau như  Tín dụng ngân hàng, Quản trị ngân hàng thương mại,
+                                             Tài chính ngân hàng, Quản trị đầu tư tài chính, Thẩm định giá, Thuế, Tài chính - Bảo hiểm, 
+                                             Phân tích tài chính doanh nghiệp,...  Vậy, học ngành Tài chính ngân hàng ra trường làm gì? 
+                                             Tốt nghiệp ngành Tài chính ngân hàng sẽ làm việc ở đâu?</p>
+                                        <p>Một số công việc liên quan mà sinh viên ra trường có thể làm như:</p>
+                                        <p> -Chuyên viên tín dụng ngân hàng;</p>
+                                        <p> -Chuyên viên kế toán, kiểm toán nội bộ ngân hàng thương mại;</p>
+                                        <p> -Kế toán viên phòng thanh toán quốc tế,</p>
+                                        <p> -Nhân viên kinh doanh ngoại tệ</p>
+                                        <p> ...</p>
+                                        <p></p>
                                     </div>
-                                    <ul>
-                                        <li>
-                                            <div class="singel-reviews">
-                                                <div class="reviews-author">
-                                                    <div class="author-thum">
-                                                        <img src="{{ asset('dist/layout/layout_kkt/images/review/r-1.jpg') }}" alt="Reviews">
-                                                    </div>
-                                                    <div class="author-name">
-                                                        <h6>Bobby Aktar</h6>
-                                                        <span>April 03, 2019</span>
-                                                    </div>
-                                                </div>
-                                                <div class="reviews-description pt-20">
-                                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which.</p>
-                                                    <div class="rating">
-                                                        <ul>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
-                                                        <span>/ 5 Star</span>
-                                                    </div>
-                                                </div>
-                                            </div> <!-- singel reviews -->
-                                        </li>
-                                        <li>
-                                            <div class="singel-reviews">
-                                                <div class="reviews-author">
-                                                    <div class="author-thum">
-                                                        <img src="{{ asset('dist/layout/layout_kkt/images/review/r-2.jpg') }}" alt="Reviews">
-                                                    </div>
-                                                    <div class="author-name">
-                                                        <h6>Humayun Ahmed</h6>
-                                                        <span>April 13, 2019</span>
-                                                    </div>
-                                                </div>
-                                                <div class="reviews-description pt-20">
-                                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which.</p>
-                                                    <div class="rating">
-                                                        <ul>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
-                                                        <span>/ 5 Star</span>
-                                                    </div>
-                                                </div>
-                                            </div> <!-- singel reviews -->
-                                        </li>
-                                        <li>
-                                            <div class="singel-reviews">
-                                                <div class="reviews-author">
-                                                    <div class="author-thum">
-                                                        <img src="{{ asset('dist/layout/layout_kkt/images/review/r-3.jpg') }}" alt="Reviews">
-                                                    </div>
-                                                    <div class="author-name">
-                                                        <h6>Tania Aktar</h6>
-                                                        <span>April 20, 2019</span>
-                                                    </div>
-                                                </div>
-                                                <div class="reviews-description pt-20">
-                                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which.</p>
-                                                    <div class="rating">
-                                                        <ul>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                            <li><i class="fa fa-star"></i></li>
-                                                        </ul>
-                                                        <span>/ 5 Star</span>
-                                                    </div>
-                                                </div>
-                                            </div> <!-- singel reviews -->
-                                        </li>
-                                    </ul>
-                                    <div class="title pt-15">
-                                        <h6>Leave A Comment</h6>
-                                    </div>
-                                    <div class="reviews-form">
-                                        <form action="#">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-singel">
-                                                        <input type="text" placeholder="Fast name">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-singel">
-                                                        <input type="text" placeholder="Last Name">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="form-singel">
-                                                        <div class="rate-wrapper">
-                                                            <div class="rate-label">Your Rating:</div>
-                                                            <div class="rate">
-                                                                <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
-                                                                <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
-                                                                <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
-                                                                <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
-                                                                <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="form-singel">
-                                                        <textarea placeholder="Comment"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="form-singel">
-                                                        <button type="button" class="main-btn">Post Comment</button>
-                                                    </div>
-                                                </div>
-                                            </div> <!-- row -->
-                                        </form>
-                                    </div>
+                                   
                                 </div> <!-- reviews cont -->
                             </div>
                         </div> <!-- tab content -->
                     </div>
                 </div> <!-- corses singel left -->
-
             </div>
-            {{-- <div class="col-lg-4">
-                <div class="row">
-                    <div class="col-lg-12 col-md-6">
-                        <div class="course-features mt-30">
-                            <h4>Course Features </h4>
-                            <ul>
-                                <li><i class="fa fa-clock-o"></i>Duaration : <span>10 Hours</span></li>
-                                <li><i class="fa fa-clone"></i>Leactures : <span>09</span></li>
-                                <li><i class="fa fa-beer"></i>Quizzes : <span>05</span></li>
-                                <li><i class="fa fa-user-o"></i>Students : <span>100</span></li>
-                            </ul>
-                            <div class="price-button pt-10">
-                                <span>Giá: <b>250.000đ</b></span>
-                                <a href="javascript:" class="main-btn">Đăng ký ngay</a>
-                            </div>
-                        </div> <!-- course features -->
-                    </div>
-                    <div class="col-lg-12 col-md-6">
-                        <div class="You-makelike mt-30">
-                            <h4>You make like </h4>
-                            <div class="singel-makelike mt-20">
-                                <div class="image">
-                                    <img src="{{ asset('dist/layout/layout_kkt/images/your-make/y-1.jpg') }}" alt="Image">
-                                </div>
-                                <div class="cont">
-                                    <a href="javascript:">
-                                        <h4>Introduction to machine languages</h4>
-                                    </a>
-                                    <ul>
-                                        <li><a href="javascript:"><i class="fa fa-user"></i>31</a></li>
-                                        <li>$50</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="singel-makelike mt-20">
-                                <div class="image">
-                                    <img src="{{ asset('dist/layout/layout_kkt/images/your-make/y-1.jpg') }}" alt="Image">
-                                </div>
-                                <div class="cont">
-                                    <a href="javascript:">
-                                        <h4>How to build a basis game with java </h4>
-                                    </a>
-                                    <ul>
-                                        <li><a href="javascript:"><i class="fa fa-user"></i>31</a></li>
-                                        <li>$50</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="singel-makelike mt-20">
-                                <div class="image">
-                                    <img src="{{ asset('dist/layout/layout_kkt/images/your-make/y-1.jpg') }}" alt="Image">
-                                </div>
-                                <div class="cont">
-                                    <a href="javascript:">
-                                        <h4>Basic accounting from primary</h4>
-                                    </a>
-                                    <ul>
-                                        <li><a href="javascript:"><i class="fa fa-user"></i>31</a></li>
-                                        <li>$50</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
         </div> <!-- row -->
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-lg-8">
                 <div class="releted-courses pt-95">
                     <div class="title">
@@ -568,7 +259,7 @@
                     </div> <!-- row -->
                 </div> <!-- releted courses -->
             </div>
-        </div> <!-- row -->
+        </div> <!-- row --> --}}
     </div> <!-- container -->
 </section>
 

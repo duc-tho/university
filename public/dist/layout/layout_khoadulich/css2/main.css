@@ -5364,7 +5364,7 @@ label {
     display: inline-block;
     margin-bottom: 10px; }
     .single-post-area .social-links li a {
-      color: #cccccc;
+      color: black;
       padding: 7px;
       font-size: 14px;
       transition: all 0.2s linear; }
