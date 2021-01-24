@@ -27,11 +27,11 @@
           <div class="footer-list-29 footer-2">
             <ul>
               <h6 class="footer-title-29">Trang Chủ</h6>
-              <li><a href="contact.html">Tin Tức</a></li>
-              <li><a href="contact.html">Đào Tạo</a></li>
-              <li><a href="contact.html">Sinh Viên</a></li>
-              <li><a href="contact.html">Thông Tin Khoa</a></li>
-              <li><a href="contact.html">Khác</a></li>
+              <li><a href="{{route('tintuc')}}">Tin Tức</a></li>
+              <li><a href="{{route('gioithieu')}}">Giới Thiệu</a></li>
+              <li><a href="{{route('thongbao')}}">Thông Báo</a></li>
+              <li><a href="{{route('gioithieu')}}">Thông Tin Khoa</a></li>
+              <li><a href="####">Khác</a></li>
             </ul>
           </div>
           <div class="footer-list-29 footer-3">
@@ -48,11 +48,10 @@
           <div class="footer-list-29 footer-4">
             <ul>
               <h6 class="footer-title-29">Liên Kết Khác</h6>
-              <li><a href="index.html">Khoa Nghệ Thuật</a></li>
-              <li><a href="about.html">Khoa Ngoại Ngữ</a></li>
-              <li><a href="services.html">Khoa Du Lịch</a></li>
-              <li><a href="#"> Tin Tức</a></li>
-              <li><a href="contact.html">Liên Hệ</a></li>
+              <li><a href="{{route('khoanghethuat')}}">Khoa Nghệ Thuật</a></li>
+              <li><a href="{{route('khoangoaingu')}}">Khoa Ngoại Ngữ</a></li>
+              <li><a href="{{route('khoakinhte')}}">Khoa Kinh Tế</a></li>
+              <li><a href="{{route('khoadulich')}}">Khoa Du Lịch</a></li>
             </ul>
           </div>
         </div>

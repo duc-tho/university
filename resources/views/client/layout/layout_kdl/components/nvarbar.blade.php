@@ -84,7 +84,6 @@
             <h4 class="widget_title">Liên kết khác</h4>
             <ul class="list">
                 <li><a href="#">Sinh viên</a></li>
-                <li><a href="#">Đại học</a></li>
                 <li><a href="#">Cao đẳng</a></li>
                 <li><a href="#">Trung Cấp</a></li>
                 <li><a href="#">Khoa du lịch</a></li>
