@@ -8,7 +8,7 @@
               class="mail"> khoadulich@daihocdulich.edu.vn</a> </li>
         </div>
         <div class="social-top col-md-3 col-6">
-          <a href="contact.html" class="btn btn-secondary btn-theme4">Đăng Ký Ngay</a>
+          <a href="{{route('tuyensinh')}}" class="btn btn-secondary btn-theme4">Đăng Ký </a>
         </div>
         <div class="social-top col-md-3 col-6">
           <a href="contact.html" class="btn btn-secondary btn-theme4">Đăng nhập Hệ Thống SV</a>

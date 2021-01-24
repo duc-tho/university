@@ -11,7 +11,7 @@
               <div class="container">
                 <div class="banner-info-bg mx-auto text-center">
                   <h5>Khoa Du Lịch Đồng Hành Cùng Sinh Viên</h5>
-                  <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="services.html">Tìm Hiểu</a>
+                  <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="{{route('gioithieu')}}">Tìm Hiểu</a>
                 </div>
               </div>
             </div>
@@ -25,7 +25,7 @@
               <div class="container">
                 <div class="banner-info-bg mx-auto text-center">
                   <h5>Explore The World Of Our Graduates</h5>
-                  <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="services.html">Đọc Thêm</a>
+                  <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="{{route('gioithieu')}}">Tìm Hiểu</a>
                 </div>
               </div>
             </div>
@@ -39,7 +39,7 @@
               <div class="container">
                 <div class="banner-info-bg mx-auto text-center">
                   <h5>Exceptional People, Exceptional Care</h5>
-                  <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="services.html">Đọc Thêm</a>
+                  <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="{{route('gioithieu')}}">Tìm Hiểu</a>
                 </div>
               </div>
             </div>
@@ -53,7 +53,7 @@
               <div class="container">
                 <div class="banner-info-bg mx-auto text-center">
                   <h5>Explore The World Of Our Graduates</h5>
-                  <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="services.html">Đọc Thêm</a>
+                  <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="{{route('gioithieu')}}">Tìm Hiểu</a>
                 </div>
               </div>
             </div>
@@ -77,21 +77,21 @@
           <h4>NGHÀNH QUẢN TRỊ KHÁCH SẠN</h4>
           <p>Quản trị khách sạn là quản lý và tổ chức các hoạt động của khách sạn sao cho hiệu quả và hợp lý nhất. 
           </p>
-          <a href="services.html" class="btn btn-secondary btn-theme3 mt-4">Đọc thêm </a>
+          <a href="{{route('quantrikhachsan')}}" class="btn btn-secondary btn-theme3 mt-4">Đọc thêm </a>
         </div>
         <div class="three-grids-columns">
           <span class="fa fa-users" id="faicon"></span>
           <h4>NGÀNH QUẢN TRỊ NHÀ HÀNG VÀ DỊCH VỤ ĂN UỐNG</h4>
           <p>Quản trị dịch vụ du lịch và lữ hành là một trong những ngành học dẫn đầu về nhu cầu nhân lực, có mức lương cao. 
           </p>
-          <a href="services.html" class="btn btn-secondary btn-theme3 mt-4">Đọc thêm </a>
+          <a href="{{route('quantrinhahang')}}" class="btn btn-secondary btn-theme3 mt-4">Đọc thêm </a>
         </div>
         <div class="three-grids-columns">
           <span class="fa fa-book" id="faicon"></span>
           <h4>NGHÀNH QUẢN TRỊ DU LỊCH VÀ LỮ HÀNH</h4>
           <p>Quản trị du lịch và lữ hành là  ngành du lịch thật sự trở thành ngành kinh tế mũi nhọn, đã và đang góp phần thúc đẩy sự chuyển dịch cơ cấu kinh tế.
           </p>
-          <a href="services.html" class="btn btn-secondary btn-theme3 mt-4">Đọc thêm</a>
+          <a href="{{route('quantridulich')}}" class="btn btn-secondary btn-theme3 mt-4">Đọc thêm</a>
         </div>
       </div>
     </div>
@@ -110,7 +110,7 @@
           <p class="more-gap editContent">Khoa du lịch của trường đã và đang lại đại diện nghành có tỉ lệ sinh viên
             tham gia trường rất cao và đỗ tốt nghiệp rất lớn.
           </p>
-          <a class="btn btn-secondary btn-theme2 mt-3" href="about.html"> Đọc Thêm</a>
+          <a class="btn btn-secondary btn-theme2 mt-3" href="{{route('gioithieu')}}"> Đọc Thêm</a>
         </div>
         <div class="column ccont-left col-lg-6">
           <img src="{{asset('dist/layout/layout_khoadulich/images/20181227183820-68860.png')}}" class="img-responsive" alt="">
@@ -127,7 +127,7 @@
 
         <div class="column1">
           <div class="heading">
-            <h3 class="head text-white">Đăng ký và Ứng tuyển vào Khoa Du Lịch</h3>
+            <h3 class="head text-white">Đăng ký và Tuyển Sinh vào Khoa Du Lịch của nhà trường</h3>
             <h4>Mọi sinh viên đều có thể tham gia Khoa Du Lịch</h4>
             <p class="my-3 text-white">Năm 2016, Khoa Du Lịch đã đạt tỉ lệ sinh viên tham gia học ở khoa lớn nhất
               trường
@@ -136,7 +136,7 @@
           </div>
         </div>
         <div class="column2">
-          <a class="btn btn-secondary btn-theme2 mt-3" href="contact.html"> Ứng Tuyển</a>
+          <a class="btn btn-secondary btn-theme2 mt-3" href="{{route('tuyensinh')}}"> Ứng Tuyển</a>
         </div>
       </div>
     </div>
@@ -173,7 +173,7 @@
         <div class="column2">
           <div class="row">
             <div class="col-md-3 col-sm-6 col-6">
-              <a href="services.html">
+              <a href="###">
                 <div class="courses-item">
                   <span class="fa fa-male"></span>
                   <p>Số Lượng</p>
@@ -181,7 +181,7 @@
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6">
-              <a href="services.html">
+              <a href="###">
                 <div class="courses-item">
                   <span class="fa fa-suitcase"></span>
                   <p>Hành Lí</p>
@@ -189,7 +189,7 @@
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6 mt-md-0 mt-4">
-              <a href="services.html">
+              <a href="###">
                 <div class="courses-item">
                   <span class="fa fa-code"></span>
                   <p>Web hỗ trọ</p>
@@ -197,7 +197,7 @@
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6 mt-md-0 mt-4">
-              <a href="services.html">
+              <a href="###">
                 <div class="courses-item">
                   <span class="	fa fa-book"></span>
                   <p>Khóa Học</p>
@@ -213,7 +213,7 @@
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6 mt-4">
-              <a href="services.html">
+              <a href="###">
                 <div class="courses-item mt-2">
                   <span class="fa fa-gg"></span>
                   <p>Liên Kết</p>
@@ -221,7 +221,7 @@
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6 mt-4">
-              <a href="services.html">
+              <a href="###">
                 <div class="courses-item mt-2">
                   <span class="fa fa-paper-plane-o"></span>
                   <p>CheckIn</p>
@@ -229,7 +229,7 @@
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6 mt-4">
-              <a href="services.html">
+              <a href="###">
                 <div class="courses-item mt-2">
                   <span class="		fa fa-object-group"></span>
                   <p>Nhóm</p>
@@ -322,9 +322,8 @@
                   <img src="{{asset('dist/layout/layout_khoadulich/images/20170828170500-78971.jpg')}}" alt="" class="img-fluid">
                 </div>
                 <div class="column1">
-
                   <div class="job-info">
-                    <h6 class="pricehead"><a href="#">Khoa Du Lịch được tuyên dương </a></h6>
+                    <h6 class="pricehead"><a href="{{route('chitiettintuc')}}">Khoa Du Lịch được tuyên dương </a></h6>
                     <h5>Tháng 6/24/2021</h5>
                     <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
                   </div>
@@ -339,7 +338,7 @@
                 <div class="column1">
 
                   <div class="job-info">
-                    <h6 class="pricehead"><a href="#">Khoa Du Lịch được tuyên dương </a></h6>
+                    <h6 class="pricehead"><a href="{{route('chitiettintuc')}}">Khoa Du Lịch được tuyên dương </a></h6>
                     <h5>Tháng 6/24/2021</h5>
                     <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
                   </div>
@@ -354,7 +353,7 @@
                 <div class="column1">
 
                   <div class="job-info">
-                    <h6 class="pricehead"><a href="#">Khoa Du Lịch được tuyên dương </a></h6>
+                    <h6 class="pricehead"><a href="{{route('chitiettintuc')}}">Khoa Du Lịch được tuyên dương </a></h6>
                     <h5>Tháng 6/24/2021</h5>
                     <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
                   </div>
@@ -363,7 +362,7 @@
             </div>
           </div>
           <div class="text-right mt-4">
-            <a class="btn btn-secondary btn-theme2" href="#"> Xem tất cả</a>
+            <a class="btn btn-secondary btn-theme2" href="{{route('tintuc')}}"> Xem tất cả</a>
           </div>
         </div>
         <div class="pricing-chart col-lg-6">
@@ -416,7 +415,7 @@
             </div>
           </div>
           <div class="text-right mt-4" >
-            <a class="btn btn-secondary btn-theme2" href="#"> Xem tất cả</a>
+            <a class="btn btn-secondary btn-theme2" href="{{route('thongbao')}}"> Xem tất cả</a>
           </div>
         </div>
  
@@ -456,7 +455,7 @@
             </div>
           </div>
           <div class="text-right mt-4">
-            <a class="btn btn-secondary btn-theme2" href="#"> Xem Tất Cả</a>
+            <a class="btn btn-secondary btn-theme2" href="{{route('thongbao')}}"> Xem Tất Cả</a>
           </div>
         </div>
         <div class="w3l-faq-page col-lg-6 pl-3 pl-lg-5 mt-lg-0 mt-5">
@@ -495,7 +494,7 @@
             </div>
           </div>
           <div class="text-right mt-4">
-            <a class="btn btn-secondary btn-theme2" href="#">Xem Tất Cả</a>
+            <a class="btn btn-secondary btn-theme2" href="{{route('thongbao')}}">Xem Tất Cả</a>
           </div>
         </div>
       </div>

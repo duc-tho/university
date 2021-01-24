@@ -5,7 +5,7 @@
     <div class="breadcrum-bg py-sm-5 py-4">
       <div class="container py-lg-3">
         <h2>Ngành Quản Trị Khách Sạn</h2>
-        <p><a href="index.html">Trang Chủ</a> &nbsp; / &nbsp; Đào Tạo &nbsp; / &nbsp; Nghành Quản Trị Khách Sạn</p>
+        <p><a href="{{route('khoadulich')}}">Trang Chủ</a> &nbsp; / &nbsp; Đào Tạo &nbsp; / &nbsp; Nghành Quản Trị Khách Sạn</p>
       </div>
     </div>
   </section>

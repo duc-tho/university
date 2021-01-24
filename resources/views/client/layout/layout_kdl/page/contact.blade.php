@@ -5,7 +5,7 @@
     <div class="breadcrum-bg py-sm-5 py-4">
       <div class="container py-lg-3">
         <h2>Liên Hệ</h2>
-        <p><a href="index.html">Trang Chủ</a> &nbsp; / &nbsp; Liên Hệ</p>
+        <p><a href="{{route('khoadulich')}}">Trang Chủ</a> &nbsp; / &nbsp; Liên Hệ</p>
       </div>
     </div>
   </section>
