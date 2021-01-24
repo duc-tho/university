@@ -99,7 +99,7 @@
         </div>
     </div>
 
-    <div class="row my-5">
+    {{-- <div class="row my-5">
         <h2 class="mb-4 text-center w-100">Các đánh giá về trường</h2>
         <div id="owl-feelings" class="owl-carousel col-12">
             <div class="row">
@@ -107,12 +107,12 @@
                     <img src="http://placekitten.com/g/200/117" alt="">
                 </div>
                 <div class="col-12 col-sm-9 col-lg-7">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore laudantium corrupti libero, totam qui cumque repudiandae enim! Consequatur laudantium sapiente, saepe soluta molestias eos minima optio ut?</p>
+                    <p></p>
 
                     <h4>Author 1</h4>
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
 @endsection

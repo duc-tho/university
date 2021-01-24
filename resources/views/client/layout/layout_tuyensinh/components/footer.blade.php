@@ -5,14 +5,17 @@
         <div class="row">
           <div class="col-lg-5 col-md-6 footer-contact">
             <div class="logo mr-auto">
-              <a href="index.html"><img src="{{asset('dist/layout/layout_tuyensinh/img/logo.png')}}" alt="" class="img-fluid" width="400px"
-                  height="auto"></a>
+              {{-- <a href="index.html"><img src="{{asset('dist/layout/layout_tuyensinh/img/logo.png')}}" alt="" class="img-fluid" width="400px"
+                  height="auto"></a> --}}
+                  <h2 class="h2-contac-footer">Liên Hệ</h2>
             </div>
             <br>
             <p >
-              <strong class="cspem">Cơ Sở :</strong> <span class="cspem">70 Đường Tân Thới Nhất 8 - Khu phố 5 - P.Tân Thới Nhất - Q.12-TP.HCM </span> <br>
-              <strong class="cspem">Phone :</strong><span class="cspem">(028)38.831.793</span> <br>
-              <strong class="cspem">Email :</strong><span class="cspem">info@daihocdulich.edu.vn</span> <br>
+              <strong class="cspem"><i class="fas fa-map-marker-alt"></i> &nbsp;</strong> <span class="cspem">CS1: 70 Đường Tân Thới Nhất 8 - Khu phố 5 - P.Tân Thới Nhất - Q.12-TP.HCM </span> <br>
+              <strong class="cspem"><i class="fas fa-map-marker-alt"></i> &nbsp;</strong> <span class="cspem">CS2: 160/72 Phan Huy Ích, P.12, Q.Gò Vấp, TP.HCM</span> <br>
+              <strong class="cspem"><i class="fa fa-mortar-board"></i> &nbsp;</strong><span class="cspem">daihocdulich.edu.vn</span> <br>
+              <strong class="cspem"><i class="fas fa-phone-alt"></i> &nbsp;</strong><span class="cspem">(028)38.831.793</span> <br>
+              <strong class="cspem"><i class="far fa-envelope-open"></i>&nbsp; </strong><span class="cspem">info@daihocdulich.edu.vn</span> <br>	
             </p>
           </div>
 
@@ -30,15 +33,15 @@
           <div class="col-lg-3 col-md-6 footer-links" id="lkk">
             <h4 class="htdc">Liên Kết Khác</h4>
             <ul >
-              <li ><i class="bx bx-chevron-right" id="ndt" ></i> <a href="#">Nghành
+              <li ><i class="bx bx-chevron-right" id="ndt" ></i> <a  id="ndt">Nghành
                   Đào Tạo</a></li>
-              <li><i class="bx bx-chevron-right" id="ndt" ></i> <a href="#">Các
+              <li><i class="bx bx-chevron-right" id="ndt" ></i> <a  id="ndt">Các
                   Khoa</a></li>
-              <li><i class="bx bx-chevron-right" id="ndt" ></i> <a href="#">Giới
+              <li><i class="bx bx-chevron-right" id="ndt" ></i> <a  id="ndt">Giới
                   Thiệu</a></li>
-              <li><i class="bx bx-chevron-right" id="ndt" ></i> <a href="#">Tuyển
+              <li><i class="bx bx-chevron-right" id="ndt" ></i> <a  id="ndt">Tuyển
                   Sinh</a></li>
-              <li><i class="bx bx-chevron-right"  id="ndt"></i> <a href="#">Hợp
+              <li><i class="bx bx-chevron-right"  id="ndt"></i> <a  id="ndt">Hợp
                   Tác</a></li>
             </ul>
           </div>

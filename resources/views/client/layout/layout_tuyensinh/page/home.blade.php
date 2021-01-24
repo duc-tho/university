@@ -1,6 +1,17 @@
 @extends('client.layout.layout_tuyensinh.index')
 @section('title','Tuyển Sinh')
 @section('main')
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+  <div class="container" data-aos="fade-in">
+    <h1 class="h1-banner">TUYỂN SINH CAO ĐẲNG HỆ 2 NĂM, TRUNG CẤP CHUYÊN NGHIỆP NĂM 2021</h1>
+    {{-- <h2>SAIGON-ACT DẪN ĐẦU XU THẾ VỀ NGHÀNH DU LỊCH</h2> --}}
+ 
+    <div class="d-flex align-items-center">
+      <i class="bx bxs-right-arrow-alt get-started-icon"></i>
+      <a href="#about" class="btn-get-started scrollto">Bắt Đầu Nào</a>
+    </div>
+  </div>
+</section>
 <main id="main">
     <!-- ======= Why Us Section ======= -->
     <section id="why-us" class="why-us">
@@ -8,14 +19,11 @@
 
         <div class="row">
           <div class="col-xl-4 col-lg-5" data-aos="fade-up">
-            <div class="content">
-              <h3>Tại sao chọn Đại Học Du Lịch Sài Gòn ?</h3>
-              <p>
-                Đại học du lịch Sài Gòn đứng đầu tuyển sinh về nghành du lịch là nơi các bạn trẻ gửi gắm tương lai rất
-                nhiều, qua nhiều
-                thế hệ trẻ khác nhau, Đai Học Du Lịch Sài Gòn tự hào khi là ngồi trường được nhiều phụ huynh sinh viên
-                tin tưởng
-              </p>
+            <div class="content" >
+              <h3 class="h3-banner-name">Trường Cao Đẳng Văn Hóa Nghệ Thuật Và Du Lịch Sài Gòn</h3>
+              <p class="p-card-banner">Tư vấn trực tuyến 24/7 : <span class="span-card-banner">daihocdulich.edu.vn/tu-van</span> </p>
+              <p class="p-card-banner">Nhận và nộp hồ sơ xét tuyển trực tuyến tại : <span class="span-card-banner">daihocdulich.edu.vn/xet-tuyen</span> </p>
+
               <div class="text-center">
                 <a href="#" class="more-btn">Đọc Thêm <i class="bx bx-chevron-right"></i></a>
               </div>
@@ -27,15 +35,15 @@
                 <div class="col-xl-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                   <div class="icon-box mt-4 mt-xl-0" id="box">
                     <i class="bx bx-receipt" id="kho"></i>
-                    <h4 ">Giảng dạy trên các dự án thực tế</h4>
+                   
+                    <h4 >Giảng dạy trên các dự án thực tế chuyên nghành có khoa học</h4>
                     <!-- <p>Học đi đôi với hành </p> -->
                   </div>
                 </div>
                 <div class=" col-xl-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                       <div class="icon-box mt-4 mt-xl-0" id="box2">
                         <i class="bx bx-cube-alt" id="kho"></i>
-                        <h4>Môi trường học tập
-                          thân thiện, hiện đại</h4>
+                        <h4>Môi trường học tập thân thiện, hiện đại, tiện ích</h4>
                         <!-- <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p> -->
                       </div>
                   </div>
@@ -51,7 +59,7 @@
                     <div class="icon-box mt-4 mt-xl-0" id="box4">
                       <i class="fas fa-user-friends" id="kho"></i>
                       <h4>
-                        Đội ngũ giảng viên hơn 100 Tiến sĩ, Thạc sĩ </h4>
+                        Đội ngũ giảng viên chuyên nghiệp, trình độ chuyên môn cao </h4>
                       <!-- <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p> -->
                     </div>
                   </div>
@@ -86,34 +94,36 @@
 
             <div class="icon-box" data-aos="fade-up">
               <div class="icon"><i class="fa fa-graduation-cap"></i></div>
-              <h4 class="title"><a href="">Phương thức 1</a></h4>
+              <h4 class="title"><a >Phương thức 1</a></h4>
               <p class="description">Xét tuyển theo điểm trung bình 3 học kỳ >= 5 ( HK1, HK2 lớp
                 11 và HK1 lớp 12)</p>
             </div>
 
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="	fas fa-layer-group"></i></div>
-              <h4 class="title"><a href="">Phương thức 2</a></h4>
+              <h4 class="title"><a >Phương thức 2</a></h4>
               <p class="description">Xét tuyển theo tổng điểm các môn thi tốt nghiệp từ cao đến
                 thấp cho đến khi đủ chỉ tiêu</p>
             </div>
 
             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
               <div class="icon"><i class="bx bx-atom"></i></div>
-              <h4 class="title"><a href="">Điều kiện trúng tuyển</a></h4>
+              <h4 class="title"><a >Điều kiện trúng tuyển</a></h4>
               <p class="description">Tôt nghiêp THPT (Nếu đăng kí môn năng khiếu thì xét theo 2
                 phương thức, điều kiện trúng tuyển và thi môn năng khiếu)</p>
             </div>
 
           </div>
         </div>
-
+        {{-- <hr style=" border-radius: 5px; border: 5px solid green;"> --}}
       </div>
+      
     </section><!-- End About Section -->
 
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
+     
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -140,32 +150,35 @@
 
           <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
             <img src=" {{asset('dist/layout/layout_tuyensinh/img/ngoaingu.png')}}" alt="Avatar" class="image">
-          
+            <a href="{{route('khoangoaingu')}}" target="_blank"> 
             <div class="middle">
               <div class="text" id="textdl">Ngoại Ngữ</div>
               <p class="textp"> Tiếng Nhật | Tiếng Anh | Tiếng Hàn | Tiếng Trung </p>
             </div>
+            </a>
           </div>
 
           <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
             <img src=" {{asset('dist/layout/layout_tuyensinh/img/values-3.jpg')}}" alt="Avatar" class="image">
-          
+           
             <div class="middle">
               <div class="text" id="textdl">Công Nghệ Thông Tin</div>
               <p class="textp">Quản Trị Mạng | Tin Học Ứng Dụng | Kỹ Thuật Sữa Chữa | Lắp Ráp Máy Tính</p>
             </div>
+           
           </div>
 
           <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
             <br>
             <img src="{{asset('dist/layout/layout_tuyensinh/img/20170828165923-45184.jpg')}}" alt="Avatar" class="image">
-           
+            <a href="{{route('khoakinhte')}}" target="_blank"> 
             <div class="middle">
               <br>
               <div class="text" id="textdl">Kinh Tế</div>
               <p class="textp"> Tài Chinh Ngân Hàng | Marketing | Quản Trị Kinh Doanh | Quản Trị Nhân Sự | Kế Toán
                 | Thư Ký </p>
             </div>
+          </a>
           </div>
 
           <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
@@ -181,11 +194,12 @@
           <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
             <br>
             <img src="{{asset('dist/layout/layout_tuyensinh/img/20180118145548-56466.jpg')}}" alt="Avatar" class="image">
-            
+            <a href="{{route('khoanghethuat')}}" target="_blank"> 
             <div class="middle">
               <div class="text" id="textdl">Nghệ Thuật Và Mỹ Thuật Công Nghiệp</div>
               <p class="textp"> Thanh Nhạc | Diễn Viễn Kịch Điện Ảnh | Đạo Diễn | Quay Phim | Thiết kế đồ họa </p>
             </div>
+            </a>
           </div>
 
           <!-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="70">
@@ -244,10 +258,10 @@
           <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
             <div class="card" style="background-image: url({{asset('dist/layout/layout_tuyensinh/img/values-1.jpg')}});">
               <div class="card-body">
-                <h5 class="card-title"><a href="">Danh Sách Sinh Viên Trúng Tuyển</a></h5>
+                <h5 class="card-title"><a >Danh Sách Sinh Viên Trúng Tuyển</a></h5>
                 <p class="card-text">Danh sách trúng tuyển năm 2020 của Trường Cao Đẳng Văn Hóa Nghệ Thuật Và Du Lịch
                   Sài Gòn</p>
-                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Đọc Thêm</a></div>
+                <div class="read-more"><a href="{{route('chitietthongbaotuyensinh')}}"><i class="icofont-arrow-right"></i> Đọc Thêm</a></div>
               </div>
             </div>
           </div>
@@ -256,10 +270,12 @@
               <div class="card-body">
                 <h5 class="card-title"><a href="">Kế Hoạch Tuyển Sinh Của Trường Năm 2021</a></h5>
                 <p class="card-text">Danh sách các nghành đào tạo, phương thức tuyển sinh, kế hoạch năm học 2021</p>
-                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Đọc Thêm</a></div>
+                <div class="read-more"><a href="{{route('chitietthongbaotuyensinh')}}"><i class="icofont-arrow-right"></i> Đọc Thêm</a></div>
               </div>
             </div>
           </div>
+         
+         
           <div class="col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up" data-aos-delay="200">
             <div class="card" style="background-image: url({{asset('dist/layout/layout_tuyensinh/img/values-3.jpg')}});">
               <div class="card-body">
@@ -267,7 +283,7 @@
                     2021</a></h5>
                 <p class="card-text">Nhóm ngành đào tạo: du lịch, ngoại ngữ, công nghệ thông tin, kỹ thuật (xét
                   tuyển)...</p>
-                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Đọc Thêm</a></div>
+                <div class="read-more"><a href="{{route('thongbaotuyensinh')}}"><i class="icofont-arrow-right"></i> Đọc Thêm</a></div>
               </div>
             </div>
           </div>
@@ -277,9 +293,13 @@
                 <h5 class="card-title"><a href="">Chế Độ Học Bổng Khi Tham Gia Tuyển Sinh Của Nhà Trường Năm 2021</a>
                 </h5>
                 <p class="card-text">Học bổng giành cho sinh viên với nhiều ưu đãi hấp dẫn về học phí.</p>
-                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i>Đọc Thêm</a></div>
+                <div class="read-more"><a href="{{route('thongbaotuyensinh')}}"><i class="icofont-arrow-right"></i>Đọc Thêm</a></div>
               </div>
             </div>
+          </div>
+          <div class="col-lg-12 center-button-add" >
+            <br>
+            <a href="{{route('thongbaotuyensinh')}}"> <button class="button"><span>Xem Thêm </span></button></a>
           </div>
         </div>
 
@@ -593,7 +613,7 @@
                 <li>Tốt nghiệp THPT trừ 24 điểm trở lên (Tổ hợp 3 môn xét tuyển).</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Đăng Kí</a>
+                <a href="#contact" class="btn-buy scrollto">Đăng Kí</a>
               </div>
             </div>
           </div>
@@ -606,7 +626,7 @@
                 <li>Tốt nghiệp THPT từ 22 đến dưới 24 diểm (Tổ hợp 3 môn xét tuyển).</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Đăng Kí</a>
+                <a href="#contact" class="btn-buy scrollto">Đăng Kí</a>
               </div>
             </div>
           </div>
@@ -624,7 +644,7 @@
 
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Đăng Kí</a>
+                <a href="#contact" class="btn-buy scrollto">Đăng Kí</a>
               </div>
             </div>
           </div>
@@ -645,7 +665,7 @@
 
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Đăng Kí</a>
+                <a href="#contact" class="btn-buy scrollto">Đăng Kí</a>
               </div>
             </div>
           </div>
@@ -665,7 +685,7 @@
                 <li></li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Đăng Kí</a>
+                <a href="#contact" class="btn-buy scrollto">Đăng Kí</a>
               </div>
             </div>
           </div>
@@ -768,7 +788,7 @@
 
           <p data-aos="fade-up"></a>Xét phương thức 1 : Bảng điểm học bạ 3 học kỳ -- Xét phương thức 2 : Bảng điểm thi
             tốt nghiệp THPT</p>
-          <p data-aos="fade-up">Phiếu đăng ký xét tuyển <a href="#">(Mẫu của trường)</a>,Bảng sao Học Bạ có công chứng,
+          <p data-aos="fade-up">Phiếu đăng ký xét tuyển <a href="#####">(Mẫu của trường)</a>,Bảng sao Học Bạ có công chứng,
             03 thẻ ảnh 3x4, Giấy chứng nhận đối tượng ưu tiên (nếu có)</p>
 
         </div>

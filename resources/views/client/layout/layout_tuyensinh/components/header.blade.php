@@ -28,7 +28,7 @@
           <li class="active"><a href="#hero">Trang Chủ</a></li>
           <li><a href="#about">PT Tuyển Sinh</a></li>
           <li><a href="#services">Nghành Đào Tạo</a></li>
-          <li><a href="#values">Tin Tức - Thông Báo</a></li>
+          <li><a href="#values">Thông Báo Tuyển Sinh</a></li>
           <!-- #portfolio -->
           <li><a href="#team">Hỗ Trợ Tuyển Sinh</a></li>
           <li><a href="#pricing">Học Bổng</a></li>
@@ -38,14 +38,4 @@
 
     </div>
   </header>
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="container" data-aos="fade-in">
-      <h1>Tuyển Sinh Đại Học Du Lịch Chính Quy 2021 </h1>
-      <h2>SAIGON-ACT dẫn đầu xu thế cả nước về nghành du lịch</h2>
-   
-      <div class="d-flex align-items-center">
-        <i class="bx bxs-right-arrow-alt get-started-icon"></i>
-        <a href="#about" class="btn-get-started scrollto">Bắt Đầu Nào</a>
-      </div>
-    </div>
-  </section><!-- End Hero -->
+  <!-- End Hero -->

@@ -73,12 +73,27 @@ class HomeController extends Controller
         return view('client.layout.layout_kdl.page.contact');
     }
 
+
+    
+
+    // <------------------> End Controller KhoaDuLich <--------------------------->
+
+
+    // <------------------>  Start Controller TuyênSinh <--------------------------->
     public function getAdmissions(Request $request)
     {
         return view('client.layout.layout_tuyensinh.page.home');
     }
+    public function getNotification(Request $request)
+    {
+        return view('client.layout.layout_tuyensinh.page.notification');
+    }
+    public function getNotificationDetail(Request $request)
+    {
+        return view('client.layout.layout_tuyensinh.page.notificationdetail');
+    }
 
-    // <------------------> End Controller KhoaDuLich <--------------------------->
+    // <------------------> End Controller TuyênSinh <--------------------------->
 
     // <------------------>  Start Controller KhoaNgoaiNgu <--------------------------->
     public function getDetailPage(Request $request)

@@ -7,7 +7,7 @@
             <div class="collapse navbar-collapse justify-content-md-center" id="cloapediamenu">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link color-pink-hover" href="index.html">Trang Chủ</a>
+                        <a class="nav-link color-pink-hover" href="{{route('home-news')}}">Trang Chủ</a>
                     </li>
                     <!-- #region normal cate -->
                     <li class="nav-item dropdown has-submenu">
@@ -28,8 +28,8 @@
                             <li>
                                 <a class="dropdown-item" href="blog-author.html">Trực tuyến <span class="hidden-md-down hidden-sm-down hidden-xs-down"><i class="fa fa-angle-right"></i></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Đăng ký xét tuyển trực tuyến</a></li>
-                                    <li><a class="dropdown-item" href="#">Tư vấn tuyển sinh trực tuyến</a></li>
+                                    <li><a class="dropdown-item" href="{{route('tuyensinh')}}">Đăng ký xét tuyển trực tuyến</a></li>
+                                    <li><a class="dropdown-item" href="{{route('tuyensinh')}}">Tư vấn tuyển sinh trực tuyến</a></li>
                                 </ul>
                             </li>
                         </ul>

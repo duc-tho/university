@@ -27,8 +27,8 @@ Route::get('/lien-he', [ContactController::class, 'index'])->name('home-contact'
 
 // Route Tuyển Sinh
 Route::get('/tuyen-sinh', [HomeController::class, 'getAdmissions'])->name('tuyensinh');
-
-
+Route::get('/tuyen-sinh/thong-bao', [HomeController::class, 'getNotification'])->name('thongbaotuyensinh');
+Route::get('/tuyen-sinh/chi-tiet-thong-bao', [HomeController::class, 'getNotificationDetail'])->name('chitietthongbaotuyensinh');
 
 
 //Start Route trỏ về khoa dulịch

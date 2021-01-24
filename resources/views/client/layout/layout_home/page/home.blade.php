@@ -86,7 +86,7 @@
                     <p>Đăng ký tuyển sinh <span style="font-weight: bold">Trực tuyến 24/7 Luôn hỗ trợ sinh viên </span></p>
                     
                     
-                    <a class="hvr-rectangle-out w3_play_icon1" href="{{route('tuyensinh')}}" > Đăng Ký</a>
+                    <a class="hvr-rectangle-out w3_play_icon1" href="{{route('tuyensinh')}}" > Tuyển Sinh</a>
                 </div>
                 <div class="clearfix"></div>
             </div>
