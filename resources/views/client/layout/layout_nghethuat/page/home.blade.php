@@ -14,18 +14,18 @@
 
 @section('main')
 @include('client.layout.layout_nghethuat.components.header')
-<section class="hero-wrap js-fullheight">
+<section class="hero-wrap">
     <div class="overlay"></div>
     <div class="container-fluid px-0">
-        <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
-            <img class="one-third js-fullheight align-self-end order-md-last img-fluid" src="{{ asset('dist/layout/layout_nghethuat/images/hinh1_files/hinh1.jpg') }}" alt="">
-            <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
+        <div class="row d-md-flex no-gutters slider-text align-items-center justify-content-end">
+            <img class="one-third align-self-end order-md-last img-fluid" src="{{ asset('dist/layout/layout_nghethuat/images/hinh1_files/hinh1.jpg') }}" alt="">
+            <div class="one-forth d-flex align-items-center ftco-animate">
                 <div class="text mt-5">
                     <span class="subheading">Chào mừng đến với</span>
                     <h1>Khoa</h1>
                     <h1>Nghệ Thuật</h1>
                     <p>Khoa Nghệ thuật được thành lập từ năm 2006, gồm có 06 chuyên ngành: Đạo diễn, Diễn viên kịch nói và điện ảnh, Thanh nhạc, Thiết kế Đồ họa, Thiết kế Thời trang và Quay phim.</p>
-                    <p><a href="#" class="btn btn-primary py-3 px-4">Xem thêm</a></p>
+                    {{-- <p><a href="{{ route('khoanghethuat-gioithieu') }}" class="btn btn-primary py-3 px-4">Xem thêm</a></p> --}}
                 </div>
             </div>
         </div>
@@ -59,7 +59,7 @@
                             <p>- Xây dựng các giá trị nhân bản của dân tộc.</p>
                             <p>- Ưu tiên lợi ích cộng đồng và định hướng quốc tế hóa.</p>
                             <p>- Tôn trọng sự khác biệt, tính phản biện trong sự đa dạng.</p>
-                            <p class="button_news"><a href="introduce.html" class="btn btn-primary2 py-3 px-4">Xem thêm</a></p>
+                            <p class="button_news"><a href="{{ route('khoanghethuat-gioithieu') }}" class="btn btn-primary2 py-3 px-4">Xem thêm</a></p>
                         </div>
                     </div>
                 </div>
@@ -138,8 +138,8 @@
                     <div class="col-md-8">
                         <h2 class="heading">Ngành diễn viên kịch nói và điện ảnh</h2>
                         <p class="detall">DIỄN VIÊN LÀ GÌ? Diễn viên điện ảnh là một nghề nghiệp, một nghệ sĩ trong lĩnh vực "nghệ thuật thứ bảy". Diễn viên điện ảnh là một diễn viên làm việc với các công cụ như máy quay, đèn, đạo cụ và cùng cộng tác với đạo diễn, hoá trang, quay phim, bạn diễn (diễn viên khác) để tạo nên một tác phẩm nghệ thuật, là một bộ phim. Đó có thể là một phim truyền hình hoặc là phim chiếu rạp.</p>
-                        <a href="music_industry.html" class="btn btn-primary py-3 px-4">Chi tiết</a>
-                        <a href="teacher.html" class="btn btn-primary py-3 px-4">Giảng viên</a>
+                        <a href="{{ route('chi_tiet_nghanh_nghethuat') }}" class="btn btn-primary py-3 px-4">Chi tiết</a>
+                        <a href="{{ route('khoanghethuat-danhsachgiaovien') }}" class="btn btn-primary py-3 px-4">Giảng viên</a>
                     </div>
                 </div>
                 <div id="page-2" class="page bg-light two row">
@@ -149,8 +149,8 @@
                     <div class="col-md-8">
                         <h2 class="heading">Ngành thanh nhạc</h2>
                         <p class="detall">THANH NHẠC LÀ GÌ? Thanh nhạc là kiểu nhạc với yếu tố chủ chốt nhất là giọng hát của ca sĩ - thuộc phần trung âm (mid) của bài nhạc. Ở đây, giọng hát của ca sĩ được xem là nhạc cụ chính của bản nhạc.</p>
-                        <a href="music_industry.html" class="btn btn-primary py-3 px-4">Chi tiết</a>
-                        <a href="teacher.html" class="btn btn-primary py-3 px-4">Giảng viên</a>
+                        <a href="{{ route('chi_tiet_nghanh_nghethuat') }}" class="btn btn-primary py-3 px-4">Chi tiết</a>
+                        <a href="{{ route('khoanghethuat-danhsachgiaovien') }}" class="btn btn-primary py-3 px-4">Giảng viên</a>
                     </div>
                 </div>
                 <div id="page-3" class="page bg-light three row">
@@ -160,8 +160,8 @@
                     <div class="col-md-8">
                         <h2 class="heading">Ngành quay phim</h2>
                         <p class="detall">QUAY PHIM LÀ GÌ? Quay phim là người trực tiếp điều khiển máy quay dưới sự chỉ đạo của các cinematographer, đạo diễn hình ảnh hoặc đạo diễn chính để quay các cảnh quay. Nhìn chung, cinematographer và đạo diễn hình ảnh không trực tiếp điều khiển máy quay, nhưng đôi khi ba vị trí này chỉ do một người đảm nhiệm.</p>
-                        <a href="music_industry.html" class="btn btn-primary py-3 px-4">Chi tiết</a>
-                        <a href="teacher.html" class="btn btn-primary py-3 px-4">Giảng viên</a>
+                        <a href="{{ route('chi_tiet_nghanh_nghethuat') }}" class="btn btn-primary py-3 px-4">Chi tiết</a>
+                        <a href="{{ route('khoanghethuat-danhsachgiaovien') }}" class="btn btn-primary py-3 px-4">Giảng viên</a>
                     </div>
                 </div>
                 <div id="page-4" class="page bg-light four row">
@@ -171,8 +171,8 @@
                     <div class="col-md-8">
                         <h2 class="heading">Ngành đồ họa</h2>
                         <p class="detall">OVới sự phát triển nhanh chóng của truyền thông và quảng cáo tại Việt Nam, Thiết kế đồ họa đang trở thành một trong những ngành hấp dẫn giới trẻ, nhất là với những ai đam mê sáng tạo và thích làm việc trong môi trường năng động.</p>
-                        <a href="music_industry.html" class="btn btn-primary py-3 px-4">Chi tiết</a>
-                        <a href="teacher.html" class="btn btn-primary py-3 px-4">Giảng viên</a>
+                        <a href="{{ route('chi_tiet_nghanh_nghethuat') }}" class="btn btn-primary py-3 px-4">Chi tiết</a>
+                        <a href="{{ route('khoanghethuat-danhsachgiaovien') }}" class="btn btn-primary py-3 px-4">Giảng viên</a>
                     </div>
                 </div>
                 <div id="page-5" class="page bg-light five row">
@@ -183,8 +183,8 @@
                         <h2 class="heading">Ngành thiết kế thời trang</h2>
                         <p class="detall">THIẾT KẾ THỜI TRANG LÀ GÌ? Thiết kế Thời trang là ngành gắn liền với nền công nghiệp làm đẹp, gồm ba lĩnh vực chính: trang phục, phụ kiện, trang sức. Người làm công việc thiết kế thời trang cần phải sáng tạo, tìm tòi, nghiên cứu để cho ra đời những tác phẩm thời trang theo xu hướng thẩm mỹ của xã hội giúp làm đẹp cho con người, cho cuộc sống với cả hai hướng: hướng trình diễn nghệ thuật (trang phục biểu diễn) và hướng ứng dụng thực tế (trang phục thường
                             ngày).</p>
-                        <a href="music_industry.html" class="btn btn-primary py-3 px-4">Chi tiết</a>
-                        <a href="teacher.html" class="btn btn-primary py-3 px-4">Giảng viên</a>
+                        <a href="{{ route('chi_tiet_nghanh_nghethuat') }}" class="btn btn-primary py-3 px-4">Chi tiết</a>
+                        <a href="{{ route('khoanghethuat-danhsachgiaovien') }}" class="btn btn-primary py-3 px-4">Giảng viên</a>
                     </div>
                 </div>
                 <div id="page-6" class="page bg-light six row">
@@ -195,8 +195,8 @@
                         <h2 class="heading">Ngành may thời trang</h2>
                         <p class="detall">Thiết kế may mặc đóng vai trò vô cùng quan trọng đối với ngành công nghệ thời trang. Nhờ vào công nghệ thời trang, loài người có thể tạo ra được những sản phẩm trang phục, phụ kiện đính kèm vừa ý, dựa trên những chất liệu tốt nhất và những bản vẽ chuyên nghiệp nhất. Do đó, ngành thời trang, may mặc luôn thu hút các bạn trẻ theo học, đặc biệt là những bạn trẻ yêu thích mỹ thuật, thời trang với những phong cách mới, đầy sáng tạo để tạo ra những sản phẩm
                             thời trang nghệ thuật gắn liền với đời sống.</p>
-                        <a href="music_industry.html" class="btn btn-primary py-3 px-4">Chi tiết</a>
-                        <a href="teacher.html" class="btn btn-primary py-3 px-4">Giảng viên</a>
+                        <a href="{{ route('chi_tiet_nghanh_nghethuat') }}" class="btn btn-primary py-3 px-4">Chi tiết</a>
+                        <a href="{{ route('khoanghethuat-danhsachgiaovien') }}" class="btn btn-primary py-3 px-4">Giảng viên</a>
                     </div>
                 </div>
                 <!-- <div id="page-7" class= "page bg-light seven">
@@ -237,8 +237,8 @@
                     <div class="col-md-8">
                         <h2 class="heading">Ngành may thời trang</h2>
                         <p class="detall">Sau khi tốt nghiệp trung cấp May thời trang học viên có khả năng : Quá trình đào tạo nghề thiêt kế thời trang của trường dạy cho học viên: Phương pháp vẽ - Phương pháp nghiên cứu là con đường dẫn bạn đến với tư tưởng sáng tác thời trang - thiết kế mẫu rập để cho ra đời được những sản phẩm theo tư tưởng sáng tác của chính mình - Qui trình may sản phẩm.</p>
-                        <a href="music_industry.html" class="btn btn-primary py-3 px-4">Chi tiết</a>
-                        <a href="teacher.html" class="btn btn-primary py-3 px-4">Giảng viên</a>
+                        <a href="{{ route('chi_tiet_nghanh_nghethuat') }}" class="btn btn-primary py-3 px-4">Chi tiết</a>
+                        <a href="{{ route('khoanghethuat-danhsachgiaovien') }}" class="btn btn-primary py-3 px-4">Giảng viên</a>
                     </div>
                 </div>
                 <div id="pagee-2" class="page bg-light two row">
@@ -248,8 +248,8 @@
                     <div class="col-md-8">
                         <h2 class="heading">Ngành thiết kế đồ họa</h2>
                         <p class="detall">Sau khi tốt nghiệp trung cấp thiết kế đồ họa học viên có khả năng: - Thiết kế chế tác mẫu sản phẩm, mẫu bao bì, logo; mẫu vàng bạc đá quí, mẫu trang phục thời trang ..…</p>
-                        <a href="music_industry.html" class="btn btn-primary py-3 px-4">Chi tiết</a>
-                        <a href="teacher.html" class="btn btn-primary py-3 px-4">Giảng viên</a>
+                        <a href="{{ route('chi_tiet_nghanh_nghethuat') }}" class="btn btn-primary py-3 px-4">Chi tiết</a>
+                        <a href="{{ route('khoanghethuat-danhsachgiaovien') }}" class="btn btn-primary py-3 px-4">Giảng viên</a>
                     </div>
                 </div>
                 <div id="pagee-3" class="page bg-light three row">
@@ -259,8 +259,8 @@
                     <div class="col-md-8">
                         <h2 class="heading">Ngành thanh nhạc</h2>
                         <p class="detall">Sau khi tốt nghiệp trung cấp thanh nhạc học viên có khả năng : - Kỹ năng xử lý hơi và lấy hơi đúng chổ, cải thiện chất giọng (quá trầm hoặc quá cao), cách lên tone, ổn định vị trí âm thanh và các kỹ thuật, kỹ năng chuyên môn cần có để trở thành một ca sĩ chuyên nghiệp.</p>
-                        <a href="music_industry.html" class="btn btn-primary py-3 px-4">Chi tiết</a>
-                        <a href="teacher.html" class="btn btn-primary py-3 px-4">Giảng viên</a>
+                        <a href="{{ route('chi_tiet_nghanh_nghethuat') }}" class="btn btn-primary py-3 px-4">Chi tiết</a>
+                        <a href="{{ route('khoanghethuat-danhsachgiaovien') }}" class="btn btn-primary py-3 px-4">Giảng viên</a>
                     </div>
                 </div>
                 <div id="pagee-4" class="page bg-light four row">
@@ -271,8 +271,8 @@
                         <h2 class="heading">Ngành diễn viên kịch điện ảnh</h2>
                         <p class="detall">Bạn muốn trở thành diễn viên nổi tiếng và chuyên nghiệp được xuất hiện trên các bộ phim truyền hình, điện ảnh ăn khách, các vở diễn trên sân khấu cả nước hay trở thành những MC được nhiều người yêu thích? Bạn có đam mê được hoạt động trong lĩnh vực nghệ thuật về diễn xuất, muốn được trải nghiệm cuộc sống qua nhiều dạng vai khác nhau để mang lại tiếng cười cũng như khơi gợi niềm cảm xúc trong mỗi khán giả? Hãy đăng ký chuyên ngành Diễn viên Kịch – Điện
                             ảnh.</p>
-                        <a href="music_industry.html" class="btn btn-primary py-3 px-4">Chi tiết</a>
-                        <a href="teacher.html" class="btn btn-primary py-3 px-4">Giảng viên</a>
+                        <a href="{{ route('chi_tiet_nghanh_nghethuat') }}" class="btn btn-primary py-3 px-4">Chi tiết</a>
+                        <a href="{{ route('khoanghethuat-danhsachgiaovien') }}" class="btn btn-primary py-3 px-4">Giảng viên</a>
                     </div>
                 </div>
             </div>
@@ -335,58 +335,58 @@
             <div class="col-md-12 text-center heading-section heading-section-white ftco-animate">
                 <!-- <span class="subheading">Testimonial</span> -->
                 <h2 class="mb-3">Thông Báo</h2>
-                <a href="notice.html" class="btn btn-primary1 py-3 px-4">Xem thêm</a>
+                <a href="{{ route('khoanghethuat-thongbao') }}" class="btn btn-primary1 py-3 px-4">Xem thêm</a>
             </div>
         </div>
         <div class="row ftco-animate">
             <div class="col-md-12">
                 <div class="carousel-testimony owl-carousel ftco-owl">
                     <div class="item">
-                        <div class="testimony-wrap py-4">
+                        <div class="testimony-wrap p-4">
                             <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
                             <div class="text">
-                                <a href="music_industry.html" class="title_tb"><b>Thông báo Chương trình Công tác học sinh, sinh viên Trường Cao đẳng Văn hóa Nghệ thuật và Du lịch Sài Gòn Năm học 2019 - 2020</b></a>
+                                <a href="{{ route('khoanghethuat-chitietthongbao') }}" class="title_tb"><b>Thông báo Chương trình Công tác học sinh, sinh viên Trường Cao đẳng Văn hóa Nghệ thuật và Du lịch Sài Gòn Năm học 2019 - 2020</b></a>
                                 <!-- <p class="mbb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> -->
                                 <p><span class="fa fa-clock-o hour"></span> 18/05/2019</p>
                             </div>
                         </div>
                     </div>
                     <div class="item">
-                        <div class="testimony-wrap py-4">
+                        <div class="testimony-wrap p-4">
                             <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
                             <div class="text">
-                                <b><a href="music_industry.html" class="title_tb">Thông báo Xét tuyển và Thi tuyển Hệ Cao đẳng năm 2017</a></b>
+                                <b><a href="{{ route('khoanghethuat-chitietthongbao') }}" class="title_tb">Thông báo Xét tuyển và Thi tuyển Hệ Cao đẳng năm 2017</a></b>
                                 <!-- <p class="mbb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> -->
                                 <p><span class="fa fa-clock-o hour"></span> 23/08/2017</p>
                             </div>
                         </div>
                     </div>
                     <div class="item">
-                        <div class="testimony-wrap py-4">
+                        <div class="testimony-wrap p-4">
                             <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
                             <div class="text">
-                                <b><a href="music_industry.html" class="title_tb">Far far away</a></b>
+                                <b><a href="{{ route('khoanghethuat-chitietthongbao') }}" class="title_tb">Far far away</a></b>
                                 <!-- <p class="mbb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> -->
                                 <p><span class="fa fa-clock-o hour"></span> 23/10/2019</p>
                             </div>
                         </div>
                     </div>
                     <div class="item">
-                        <div class="testimony-wrap py-4">
+                        <div class="testimony-wrap p-4">
                             <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
                             <div class="text">
-                                <b><a href="music_industry.html" class="title_tb">Chủ tịch UBND TP.HCM công nhận Ban Quản lý Đề án thành lập Trường Đại học Du lịch Sài Gòn</a></b>
+                                <b><a href="{{ route('khoanghethuat-chitietthongbao') }}" class="title_tb">Chủ tịch UBND TP.HCM công nhận Ban Quản lý Đề án thành lập Trường Đại học Du lịch Sài Gòn</a></b>
                                 <!-- <p class="mbb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> -->
                                 <p><span class="fa fa-clock-o hour"></span>23/08/2017</p>
                             </div>
                         </div>
                     </div>
                     <div class="item">
-                        <div class="testimony-wrap py-4">
+                        <div class="testimony-wrap p-4">
                             <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                            <div class="text">
-                                <b><a href="music_industry.html" class="title_tb">Far far away</a></b>
-                                <!-- <p class="mbb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> -->
+                            <div class="text d-flex flex-column justify-content-between">
+                                <b><a href="{{ route('khoanghethuat-chitietthongbao') }}" class="title_tb">Far far away</a></b>
+                                <!-- <p class="mbb-4">Far far away, behind the word mou ntains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> -->
                                 <p><span class="fa fa-clock-o hour"></span> 23/10/2019</p>
                             </div>
                         </div>
@@ -411,7 +411,7 @@
                 <div class="project img ftco-animate d-flex justify-content-center align-items-end" style="background-image: url({{ asset('dist/layout/layout_nghethuat/images/hinh1_files/khoa-nghe-thuat-om-tron-bo-giai-thuong-cua-act-gottalent-2019-thumbnail-33023.jpg') }});">
                     <div class="overlay"></div>
                     <div class="text p-4">
-                        <a href="detail_news.html">
+                        <a href="{{ route('khoanghethuat-chitiettintuc') }}">
                             <h6>
                                 <p class="tittle-news">Khoa Nghệ thuật ôm trọn bộ giải thưởng của ACT GOTTALENT 2019</p>
                             </h6>
@@ -425,7 +425,7 @@
                 <div class="project img ftco-animate d-flex justify-content-center align-items-end" style="background-image: url({{ asset('dist/layout/layout_nghethuat/images/hinh1_files/sinh-vien-chuyen-nganh-dien-vien-kich-noi-va-dien-anh-day-an-tuong-va-chuyen-nghiep-trong-bai-thi-cuoi-ky-mon-mua-va-hinh-the-thumbnail-99373.jpg') }});">
                     <div class="overlay"></div>
                     <div class="text p-4">
-                        <a href="detail_news.html">
+                        <a href="{{ route('khoanghethuat-chitiettintuc') }}">
                             <h6>
                                 <p class="tittle-news">Sinh viên ngành Diễn viên kịch nói và điện ảnh đầy ấn tượng và chuyên nghiệp trong bài thi cuối kỳ môn Múa và Hình thể</p>
                             </h6>
@@ -439,7 +439,7 @@
                 <div class="project img ftco-animate d-flex justify-content-center align-items-end" style="background-image: url({{ asset('dist/layout/layout_nghethuat/images/hinh1_files/tt-sk2.jpg') }});">
                     <div class="overlay"></div>
                     <div class="text p-4">
-                        <a href="detail_news.html">
+                        <a href="{{ route('khoanghethuat-chitiettintuc') }}">
                             <h6>
                                 <p class="tittle-news">Ngành Thiết kế đồ họa và sự lựa chọn hoàn hảo</p>
                             </h6>
@@ -454,7 +454,7 @@
                 <div class="project img ftco-animate d-flex justify-content-center align-items-end" style="background-image: url({{ asset('dist/layout/layout_nghethuat/images/hinh1_files/tt-sk1.jpg') }});">
                     <div class="overlay"></div>
                     <div class="text p-4">
-                        <a href="detail_news.html">
+                        <a href="{{ route('khoanghethuat-chitiettintuc') }}">
                             <h6>
                                 <p class="tittle-news">Học Đạo diễn sân khấu tại Trường Cao đẳng Văn hóa Nghệ thuật và Du lịch Sài Gòn</p>
                             </h6>
@@ -468,7 +468,7 @@
                 <div class="project img ftco-animate d-flex justify-content-center align-items-end" style="background-image: url({{ asset('dist/layout/layout_nghethuat/images/hinh1_files/suc-hut-tu-gian-hang-tuyen-sinh-truong-cao-dang-van-hoa-nghe-thuat-va-du-lich-sai-gon-tai-can-tho-thumbnail-64536.jpg') }});">
                     <div class="overlay"></div>
                     <div class="text p-4">
-                        <a href="detail_news.html">
+                        <a href="{{ route('khoanghethuat-chitiettintuc') }}">
                             <h6>
                                 <p class="tittle-news">Sức hút từ gian hàng tuyển sinh trường Cao đẳng Văn hóa Nghệ thuật và Du lịch Sài Gòn tại Cần Thơ</p>
                             </h6>
@@ -482,7 +482,7 @@
                 <div class="project img ftco-animate d-flex justify-content-center align-items-end" style="background-image: url({{ asset('dist/layout/layout_nghethuat/images/hinh1_files/tt-sk3.jpg') }});">
                     <div class="overlay"></div>
                     <div class="text p-4">
-                        <a href="detail_news.html">
+                        <a href="{{ route('khoanghethuat-chitiettintuc') }}">
                             <h6>
                                 <p class="tittle-news">Nghệ sỹ không còn là “Xướng ca vô loài”</p>
                             </h6>
@@ -497,7 +497,7 @@
                 <div class="project img ftco-animate d-flex justify-content-center align-items-end" style="background-image: url({{ asset('dist/layout/layout_nghethuat/images//hinh1_files/tt-sk4.jpg') }});">
                     <div class="overlay"></div>
                     <div class="text p-4">
-                        <a href="detail_news.html">
+                        <a href="{{ route('khoanghethuat-chitiettintuc') }}">
                             <h6>
                                 <p class="tittle-news">Lễ bảo vệ đồ án tốt nghiệp của sinh viên Khoa Nghệ thuật</p>
                             </h6>
@@ -511,7 +511,7 @@
                 <div class="project img ftco-animate d-flex justify-content-center align-items-end" style="background-image: url({{ asset('dist/layout/layout_nghethuat/images/hinh1_files/tt-sk5.jpg') }});">
                     <div class="overlay"></div>
                     <div class="text p-4">
-                        <a href="detail_news.html">
+                        <a href="{{ route('khoanghethuat-chitiettintuc') }}">
                             <h6>
                                 <p class="tittle-news">Học Thanh nhạc tại trường Saigonact và cơ hội việc làm</p>
                             </h6>
@@ -525,7 +525,7 @@
         </div>
         <div class="row no-gutters justify-content-center pb-5">
             <div class="col-md-12 heading-section text-center ftco-animate">
-                <p class="button_news"><a href="news.html" class="btn btn-primary2 py-3 px-4">Xem thêm</a></p>
+                <p class="button_news"><a href="{{ route('khoanghethuat-tintuc') }}" class="btn btn-primary2 py-3 px-4">Xem thêm</a></p>
             </div>
         </div>
     </div>

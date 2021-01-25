@@ -71,6 +71,7 @@ Route::get('/khoa-kinh-te/chi-tiet-khoa-hoc', function() { return view('client.l
 
 //Route trỏ về khoa nghệ thuật
 Route::get('/khoa-nghe-thuat', function() { return view('client.layout.layout_nghethuat.page.home'); })->name('khoanghethuat');
+Route::get('/khoa-nghe-thuat/gioi-thieu-nghanh', function() { return view('client.layout.layout_nghethuat.page.branch'); })->name('chi_tiet_nghanh_nghethuat');
 Route::get('/khoa-nghe-thuat/gioi-thieu', function() { return view('client.layout.layout_nghethuat.page.intro'); })->name('khoanghethuat-gioithieu');
 Route::get('/khoa-nghe-thuat/gioi-thieu/chi-tiet-gioi-thieu', function() { return view('client.layout.layout_nghethuat.page.intro-detail'); })->name('khoanghethuat-chitietgioithieu');
 Route::get('/khoa-nghe-thuat/lien-he', function() { return view('client.layout.layout_nghethuat.page.contact'); })->name('khoanghethuat-lienhe');

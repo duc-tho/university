@@ -185,8 +185,7 @@
                     <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20181227183820-68860.png') }}" width="40%" alt="">
                     <h4>Nghệ Thuật</h4>
                 </a>
-                <p class="khoa-p"> Khoa Nghệ thuật được thành lập từ năm 2006, gồm có 06 chuyên ngành: Đạo diễn, Diễn viên
-                    kịch nói và điện ảnh, Thanh nhạc, Thiết kế Đồ họa, Thiết kế Thời trang và Quay phim.
+                <p class="khoa-p"> Khoa Nghệ thuật được thành lập từ năm 2006, gồm có 06 chuyên ngành: Đạo diễn, Diễn viên kịch nói và điện ảnh, Thanh nhạc, Thiết kế Đồ họa, Thiết kế Thời trang và Quay phim.
 
                 </p>
             </div>
