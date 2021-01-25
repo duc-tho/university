@@ -29,18 +29,18 @@
             <h4>Mục lục</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="{{route('khoangoaingu')}}">Trang chủ</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Giới thiệu</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Đào tạo</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Sinh viên</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{route('gioithieukhoangoaingu')}}">Giới thiệu</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{route('daotaoanhngu')}}">Đào tạo Anh Ngữ</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{route('thuctapkhoangoaingu')}}">Sinh Viên Thực Tập</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{route('tintucngoaingu')}}">Tin tức</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Liên hệ</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{route('lienhekhoangoaingu')}}">Liên hệ</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>SaiGon ACT</h3>
             <ul class="footer-logo">
-              <a href="index.html"><img class="text-light img-1" alt="logo" src="http://khoangoaingu.daihocdulich.edu.vn/upload/file/logo.png"></a>
+              <a href="/"><img class="text-light img-1" alt="logo" src="http://khoangoaingu.daihocdulich.edu.vn/upload/file/logo.png"></a>
             </ul>
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>

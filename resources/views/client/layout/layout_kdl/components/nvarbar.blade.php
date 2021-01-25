@@ -16,18 +16,25 @@
         <aside class="single_sidebar_widget popular_post_widget">
             <h3 class="widget_title">Thông Báo</h3>
             <div class="testimonial-info">
-                <p id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học</p>
+                <a href="{{route('chitiettintuc')}}">
+                    <p id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học</p>
+                </a>
+               
                 <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5> 
                 <br>
             </div>
         
             <div class="testimonial-info">
-                <p id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học, Đăng ký các môn thi lại </p>
+                <a href="{{route('chitiettintuc')}}">
+                    <p id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học, Đăng ký các môn thi lại </p>
+                </a>
                 <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5> 
                 <br>
             </div>
             <div class="testimonial-info">
-                <p id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học, Đăng ký các môn thi lại </p>
+                <a href="{{route('chitiettintuc')}}">
+                    <p id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học, Đăng ký các môn thi lại </p>
+                </a>
                 <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5> 
                 <br>
             </div>
@@ -40,17 +47,23 @@
         <aside class="single_sidebar_widget post_category_widget">
             <h4 class="widget_title">Bảng Tin Khoa</h4>
             <div class="testimonial-info">
-                <p id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học</p>
+                <a href="{{route('chitiettintuc')}}">
+                    <p id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học</p>
+                </a>
                 <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5> 
                 <br>
             </div>
             <div class="testimonial-info">
+                <a href="{{route('chitiettintuc')}}">
                 <p id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học</p>
+                </a>
                 <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5> 
                 <br>
             </div>
             <div class="testimonial-info">
-                <div id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học</p>
+                <a href="{{route('chitiettintuc')}}">
+                    <div id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học</p>
+                </a>
                     <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5> 
                     <br>
                 </div>
@@ -83,17 +96,14 @@
         <aside class="single-sidebar-widget tag_cloud_widget">
             <h4 class="widget_title">Liên kết khác</h4>
             <ul class="list">
-                <li><a href="#">Sinh viên</a></li>
-                <li><a href="#">Cao đẳng</a></li>
-                <li><a href="#">Trung Cấp</a></li>
-                <li><a href="#">Khoa du lịch</a></li>
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Tin tức - Sự kiện</a></li>
-                <li><a href="#">Liên Hệ</a></li>
-                <li><a href="#">Thực Tập</a></li>
-                <li><a href="#">Đoàn</a></li>
-                <li><a href="#">Đào tạo</a></li>
-                <li><a href="#">Thông tin</a></li>
+                <li><a href="{{route('khoadulich')}}">Trang chủ</a></li>
+                <li><a href="{{route('thuctap')}}">Thực Tập</a></li>
+                <li><a href="{{route('thongbao')}}">Thông Báo</a></li>
+                <li><a href="{{route('gioithieu')}}">Giới Thiệu</a></li>
+                <li><a href="{{route('tintuc')}}">Tin tức</a></li>
+                <li><a href="{{route('lienhe')}}">Liên Hệ</a></li>
+                <li><a href="{{route('quantrikhachsan')}}">Nghành Quản Trị Khách Sạn</a></li>
+             
             </ul>
         </aside>
     </div>

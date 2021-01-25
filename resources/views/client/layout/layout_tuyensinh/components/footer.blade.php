@@ -33,15 +33,15 @@
           <div class="col-lg-3 col-md-6 footer-links" id="lkk">
             <h4 class="htdc">Liên Kết Khác</h4>
             <ul >
-              <li ><i class="bx bx-chevron-right" id="ndt" ></i> <a  id="ndt">Nghành
+              <li ><i class="bx bx-chevron-right" id="ndt" ></i> <a href="javascript:" id="ndt">Nghành
                   Đào Tạo</a></li>
-              <li><i class="bx bx-chevron-right" id="ndt" ></i> <a  id="ndt">Các
+              <li><i class="bx bx-chevron-right" id="ndt" ></i> <a href="javascript:" id="ndt">Các
                   Khoa</a></li>
-              <li><i class="bx bx-chevron-right" id="ndt" ></i> <a  id="ndt">Giới
+              <li><i class="bx bx-chevron-right" id="ndt" ></i> <a href="javascript:" id="ndt">Giới
                   Thiệu</a></li>
-              <li><i class="bx bx-chevron-right" id="ndt" ></i> <a  id="ndt">Tuyển
+              <li><i class="bx bx-chevron-right" id="ndt" ></i> <a href="javascript:" id="ndt">Tuyển
                   Sinh</a></li>
-              <li><i class="bx bx-chevron-right"  id="ndt"></i> <a  id="ndt">Hợp
+              <li><i class="bx bx-chevron-right"  id="ndt"></i> <a href="javascript:" id="ndt">Hợp
                   Tác</a></li>
             </ul>
           </div>

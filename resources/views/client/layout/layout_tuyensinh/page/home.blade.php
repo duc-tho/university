@@ -24,9 +24,9 @@
               <p class="p-card-banner">Tư vấn trực tuyến 24/7 : <span class="span-card-banner">daihocdulich.edu.vn/tu-van</span> </p>
               <p class="p-card-banner">Nhận và nộp hồ sơ xét tuyển trực tuyến tại : <span class="span-card-banner">daihocdulich.edu.vn/xet-tuyen</span> </p>
 
-              <div class="text-center">
+              {{-- <div class="text-center">
                 <a href="#" class="more-btn">Đọc Thêm <i class="bx bx-chevron-right"></i></a>
-              </div>
+              </div> --}}
             </div>
           </div>
           <div class="col-xl-8 col-lg-7 d-flex">
