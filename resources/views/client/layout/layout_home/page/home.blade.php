@@ -11,7 +11,7 @@
 @section('main')
 <div id="scrollzipPoint"></div>
 <!--/banner-bottom-->
-<div class="w3_agilits_banner_bootm" >
+<div class="w3_agilits_banner_bootm">
     <div class="w3_agilits_inner_bottom">
         <div class="wthree_agile_login">
             <ul>
@@ -63,7 +63,7 @@
             <h4>Ban quản lý đề án</h4>
             <h3><span>T</span>rường đại học <span>D</span>u lịch sài gòn</h3>
             <p>Nhân Bản - Cộng Đồng - Quốc Tế</p>
-            <a class="hvr-rectangle-out w3_play_icon1" href="{{route('home-about')}}" > Xem thêm</a>
+            <a class="hvr-rectangle-out w3_play_icon1" href="{{route('home-about')}}"> Xem thêm</a>
         </div>
         <!--/banner-ingo-->
     </div>
@@ -77,16 +77,16 @@
                 <div class="agileits-banner-grid bg-w3ls-active">
                     <span class="fa fa-university banner-icon" aria-hidden="true"></span>
                     <h4> Đại Học</h4>
-                    <p>Chuyên đào tạo các nghành chuyên về  <span style="font-weight: bold">DU LỊCH</span> </p>
+                    <p>Chuyên đào tạo các nghành chuyên về <span style="font-weight: bold">DU LỊCH</span> </p>
                     <a class="hvr-rectangle-out w3_play_icon1" href="#" data-toggle="modal" data-target="#myModal"> Chi tiết</a>
                 </div>
                 <div class="agileits-banner-grid">
                     <span class="fa fa-tags banner-icon" aria-hidden="true"></span>
                     <h4>Tuyển Sinh </h4>
                     <p>Đăng ký tuyển sinh <span style="font-weight: bold">Trực tuyến 24/7 Luôn hỗ trợ sinh viên </span></p>
-                    
-                    
-                    <a class="hvr-rectangle-out w3_play_icon1" href="{{route('tuyensinh')}}" > Tuyển Sinh</a>
+
+
+                    <a class="hvr-rectangle-out w3_play_icon1" href="{{route('tuyensinh')}}"> Tuyển Sinh</a>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -96,12 +96,12 @@
         <br>
         <div class="col-md-7  w3ls-about-left">
             <p class="p-gioithieu">Với đặc điểm sẽ là Trường Đại học đầu tiên của Việt Nam hoạt động theo định hướng không vì lợi nhuận; khi chính thức
-                 được thành lập, Trường Đại học Du lịch Sài Gòn sẽ trở thành một Trường Đại học đào tạo đa ngành,
-                  cung cấp nguồn nhân lực chất lượng cao trong các lĩnh vực: Kinh tế, Du lịch, Ngoại ngữ, Nghệ 
-                  thuật, Báo chí, Công nghệ Thông tin, Sức khỏe Thẩm mỹ; trong đó ngành mũi nhọn sẽ là ngành Du 
-                  lịch. </p>
-               <p class="p-gioithieu">Năm học 2019 -2020, BQLĐATL Trường Đại học Du lịch Sài Gòn vẫn tuyển sinh các ngành bậc Cao đẳng với các nhóm ngành </p>
-          
+                được thành lập, Trường Đại học Du lịch Sài Gòn sẽ trở thành một Trường Đại học đào tạo đa ngành,
+                cung cấp nguồn nhân lực chất lượng cao trong các lĩnh vực: Kinh tế, Du lịch, Ngoại ngữ, Nghệ
+                thuật, Báo chí, Công nghệ Thông tin, Sức khỏe Thẩm mỹ; trong đó ngành mũi nhọn sẽ là ngành Du
+                lịch. </p>
+            <p class="p-gioithieu">Năm học 2019 -2020, BQLĐATL Trường Đại học Du lịch Sài Gòn vẫn tuyển sinh các ngành bậc Cao đẳng với các nhóm ngành </p>
+
         </div>
         <div class="col-md-5 w3ls-row">
             <div class="col-md-6 col-sm-6 wthree-about-left">
@@ -144,7 +144,7 @@
             <div class="clearfix"></div>
         </div>
     </div>
-    <div  style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{route('home-about')}}"> Tìm hiểu thêm</a></div>
+    <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{route('home-about')}}"> Tìm hiểu thêm</a></div>
 </div>
 <!-- //about -->
 <!--services-->
@@ -154,37 +154,39 @@
         <div class="agileits-services-row">
             <div class="col-md-3 col-sm-6 agileits-services-grids">
                 <a href="{{route('khoakinhte')}}" target="_blank">
-                {{-- <span class="glyphicon glyphicon-stats effect-1" aria-hidden="true"></span> --}}
-                <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20170828165923-45184.jpg') }}" width="40%" alt=""  >
-                <h4>Kinh tế</h4>
+                    {{-- <span class="glyphicon glyphicon-stats effect-1" aria-hidden="true"></span> --}}
+                    <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20170828165923-45184.jpg') }}" width="40%" alt="">
+                    <h4>Kinh tế</h4>
                 </a>
-                <p class="khoa-p">Là một trong những khoa thu hút nhiều sinh viên theo học, với bề dày đào tạo từ năm 2006. 
+                <p class="khoa-p">Là một trong những khoa thu hút nhiều sinh viên theo học, với bề dày đào tạo từ năm 2006.
                     Những ngành được đào tạo tại Khoa được đánh giá là thu hút nguồn nhân lực nhiều nhất hiện
-                     nay.</p>
+                    nay.</p>
             </div>
             <div class="col-md-3 col-sm-6 agileits-services-grids">
                 <a href="{{route('khoadulich')}}">
-                <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20180118145548-56466.jpg') }}"  alt=""  >
-                <h4>Du lịch</h4>
+                    <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20180118145548-56466.jpg') }}" alt="">
+                    <h4>Du lịch</h4>
                 </a>
-                <p class="khoa-p">Khoa Du lịch – BQLĐATL Trường Đại học Du lịch Sài Gòn ra đời mở ra cơ hội tốt hơn cho người 
+                <p class="khoa-p">Khoa Du lịch – BQLĐATL Trường Đại học Du lịch Sài Gòn ra đời mở ra cơ hội tốt hơn cho người
                     học có điều kiện học tập ở trình độ cao thuộc các chuyên ngành du lịch, góp phần nâng
-                     cao chất lượng nguồn nhân lực du lịch,</p>
+                    cao chất lượng nguồn nhân lực du lịch,</p>
             </div>
             <div class="col-md-3 col-sm-6 agileits-services-grids">
                 <a href="{{route('khoangoaingu')}}">
-                    <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/4.jpg') }}" width="40%" alt=""  >
+                    <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/4.jpg') }}" width="40%" alt="">
                     <h4>Ngoại ngữ</h4>
                 </a>
-                <p class="khoa-p">Khoa Ngoại Ngữ – BQLĐATL Trường Đại học Du lịch Sài Gòn là tiền thân của Trường Cao đẳng 
-                    Văn hóa Nghệ thuật và Du lịch Sài Gòn được thành lập cùng với sự thành lập của trường 17 
+                <p class="khoa-p">Khoa Ngoại Ngữ – BQLĐATL Trường Đại học Du lịch Sài Gòn là tiền thân của Trường Cao đẳng
+                    Văn hóa Nghệ thuật và Du lịch Sài Gòn được thành lập cùng với sự thành lập của trường 17
                     tháng 10 năm 2006.</p>
             </div>
             <div class="col-md-3 col-sm-6 agileits-services-grids">
-                <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20181227183820-68860.png') }}" width="40%" alt=""  >
-                <h4>Nghệ Thuật</h4>
+                <a href="{{ route('khoanghethuat') }}">
+                    <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20181227183820-68860.png') }}" width="40%" alt="">
+                    <h4>Nghệ Thuật</h4>
+                </a>
                 <p class="khoa-p"> Khoa Nghệ thuật được thành lập từ năm 2006, gồm có 06 chuyên ngành: Đạo diễn, Diễn viên
-                     kịch nói và điện ảnh, Thanh nhạc, Thiết kế Đồ họa, Thiết kế Thời trang và Quay phim.
+                    kịch nói và điện ảnh, Thanh nhạc, Thiết kế Đồ họa, Thiết kế Thời trang và Quay phim.
 
                 </p>
             </div>
@@ -437,38 +439,38 @@
 <div class="contact-bottom w3ls-section" id="contact">
     <div class="container">
         <h3 class="w3ls-title">Liên Hệ</h3>
-                    {{-- <p>SAIGONTU - BQLĐATL Trường Đại học Du lịch Sài Gòn </p>
+        {{-- <p>SAIGONTU - BQLĐATL Trường Đại học Du lịch Sài Gòn </p>
                     <p> Cơ sở: 70 Đường Tân Thới Nhất 8 - Khu phố 5 - P.Tân Thới Nhất - Q.12 - Tp.HCM. </p> --}}
-          
-            </div>
-       
-      
-        <div class="w3layouts-list">
-            <div class="col-md-4 li"><span class="fa fa-envelope-o list-icon" aria-hidden="true"></span>
-                <a href="javascript:">info@daihocdulich.edu.vn</a>
-            </div>
-            <div class="col-md-4 li"><span class="fa fa-phone" aria-hidden="true"></span>
-               <a href="javascript:">(028)38.831.793 - (028)38.831.796</a>
-            </div>
-            <div class="col-md-4 li"><span class="fa fa-location-arrow" aria-hidden="true"></span><a href="mailto:info@daihocdulich.com">info@daihocdulich.com</a></div>
-            <div class="clearfix"></div>
-        </div>
 
-        <div class="col-md-6 col-sm-6  col-xs-6 agileits_w3layouts-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.7605346937735!2d106.60891711411696!3d10.829628961172398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752bcecbda1797%3A0xad6d40a324baae76!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIFbEg24gaMOzYSBOZ2jhu4cgdGh14bqtdCB2w6AgRHUgbOG7i2NoIFPDoGkgR8Oybg!5e0!3m2!1svi!2s!4v1609376289562!5m2!1svi!2s" style="border:0;" allowfullscreen></iframe>
+    </div>
+
+
+    <div class="w3layouts-list">
+        <div class="col-md-4 li"><span class="fa fa-envelope-o list-icon" aria-hidden="true"></span>
+            <a href="javascript:">info@daihocdulich.edu.vn</a>
         </div>
-        <div class="col-md-6 col-sm-6 col-xs-6 contact-right-w3l">
-            <form action="#" method="post">
-                <input type="text" class="name" name="name" placeholder="Tên" required="">
-                <input type="text" class="name" name="name" placeholder="Họ" required="">
-                <input type="email" class="name" name="name" placeholder="Email" required="">
-                <input type="text" class="name" name="name" placeholder="Chủ đề" required="">
-                <textarea placeholder="Nội Dung" required=""></textarea>
-                <input type="submit" value="Gửi">
-            </form>
+        <div class="col-md-4 li"><span class="fa fa-phone" aria-hidden="true"></span>
+            <a href="javascript:">(028)38.831.793 - (028)38.831.796</a>
         </div>
+        <div class="col-md-4 li"><span class="fa fa-location-arrow" aria-hidden="true"></span><a href="mailto:info@daihocdulich.com">info@daihocdulich.com</a></div>
         <div class="clearfix"></div>
     </div>
+
+    <div class="col-md-6 col-sm-6  col-xs-6 agileits_w3layouts-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.7605346937735!2d106.60891711411696!3d10.829628961172398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752bcecbda1797%3A0xad6d40a324baae76!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIFbEg24gaMOzYSBOZ2jhu4cgdGh14bqtdCB2w6AgRHUgbOG7i2NoIFPDoGkgR8Oybg!5e0!3m2!1svi!2s!4v1609376289562!5m2!1svi!2s" style="border:0;" allowfullscreen></iframe>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-6 contact-right-w3l">
+        <form action="#" method="post">
+            <input type="text" class="name" name="name" placeholder="Tên" required="">
+            <input type="text" class="name" name="name" placeholder="Họ" required="">
+            <input type="email" class="name" name="name" placeholder="Email" required="">
+            <input type="text" class="name" name="name" placeholder="Chủ đề" required="">
+            <textarea placeholder="Nội Dung" required=""></textarea>
+            <input type="submit" value="Gửi">
+        </form>
+    </div>
+    <div class="clearfix"></div>
+</div>
 </div>
 <!-- //contact -->
 <div class="contact-bottom w3ls-section" id="contact">
