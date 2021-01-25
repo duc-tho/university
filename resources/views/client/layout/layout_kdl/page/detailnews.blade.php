@@ -3,12 +3,12 @@
 @section('main')
 <section class="w3l-service-breadcrum">
     <div class="breadcrum-bg py-sm-5 py-4">
-      <div class="container py-lg-3">
-        <h2>Tin tức Khoa Du Lịch</h2>
-        <p><a href="{{route('khoadulich')}}">Trang Chủ</a> &nbsp; / &nbsp; Tin Tức</p>
-      </div>
+        <div class="container py-lg-3">
+            <h2>Tin tức Khoa Du Lịch</h2>
+            <p><a href="{{route('khoadulich')}}">Trang Chủ</a> &nbsp; / &nbsp; Tin Tức</p>
+        </div>
     </div>
-  </section>
+</section>
 <!-- End Header Area -->
 
 
@@ -26,26 +26,26 @@
                     <div class="col-lg-3  col-md-3">
                         <div class="blog_info text-right">
                             <div class="post_tag">
-                                <a href="#">Thông tin,</a>
-                                <a class="active" href="#">Du lịch,</a>
-                                <a href="#">Việc làm,</a>
-                                <a href="#">Sự kiện</a>
+                                <a href="javascript:">Thông tin,</a>
+                                <a class="active" href="javascript:">Du lịch,</a>
+                                <a href="javascript:">Việc làm,</a>
+                                <a href="javascript:">Sự kiện</a>
                             </div>
                             <ul class="blog_meta list">
-                                <li><a href="#">Tác giả : Ngọc Lập<i class="fas fa-user-alt"></i></a></li>
-                                <li><a href="#">Ngày : 05/01/2020<i class="far fa-calendar-alt"></i></a></li>
-                                <li><a href="#">Lượt xem : 1.2 view <i class="fas fa-eye"></i></a></li>
-                                <li><a href="#">Bình luận :120 <i class="fas fa-comments"></i></a></li>
+                                <li><a href="javascript:">Tác giả : Ngọc Lập<i class="fas fa-user-alt"></i></a></li>
+                                <li><a href="javascript:">Ngày : 05/01/2020<i class="far fa-calendar-alt"></i></a></li>
+                                <li><a href="javascript:">Lượt xem : 1.2 view <i class="fas fa-eye"></i></a></li>
+                                <li><a href="javascript:">Bình luận :120 <i class="fas fa-comments"></i></a></li>
                             </ul>
                             <ul class="social-links">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-github"></i></a></li>
-                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                <li><a href="javascript:"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="javascript:"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="javascript:"><i class="fa fa-github"></i></a></li>
+                                <li><a href="javascript:"><i class="fa fa-behance"></i></a></li>
                             </ul>
                         </div>
                     </div>
-                   
+
                     <div class="col-lg-9 col-md-9 blog_details">
                         <h2>Học ngắn hạn tại SAIGONACT: Nhiều lựa chọn cho người học</h2>
                         <br>
@@ -68,18 +68,18 @@
                             materials yourself at a fraction of the camp price. However, who has the willpower to
                             actually sit through a self-imposed MCSE training.
                         </div>
-                        
+
                     </div>
                 </div>
-               
+
                 <div class="comments-area">
-                   
+
                     <div class="comment-list">
                         <div class="fb-comments" data-href="http://localhost:81/web_TRAVEL/details_news.html" data-width="680" data-numposts="6"></div>
                     </div>
 
                 </div>
-               
+
             </div>
             @include('client.layout.layout_kdl.components.nvarbar')
         </div>

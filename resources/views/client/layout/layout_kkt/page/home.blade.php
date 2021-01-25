@@ -19,10 +19,10 @@
                         <h1 data-animation="bounceInLeft" data-delay="1s">QUẢN TRỊ KINH DOANH</h1>
                         <p>Quản trị kinh doanh là việc thực hiện các hành vi quản trị quá trình kinh doanh để duy trì, phát triển công việc kinh doanh của doanh nghiệp</p>
                         <ul>
-                            <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="javascript:">Đọc Thêm</a></li>
+                            <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="{{  route('khoakinhte-chitietkhoahoc') }}">Đọc Thêm</a></li>
                             <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2" href="javascript:">Tư vấn</a></li>
                         </ul>
-                     
+
                     </div>
                 </div>
             </div> <!-- row -->
@@ -37,10 +37,10 @@
                         <h1 data-animation="bounceInLeft" data-delay="1s">TÀI CHÍNH NGÂN HÀNG</h1>
                         <p>Quản trị kinh doanh là việc thực hiện các hành vi quản trị quá trình kinh doanh để duy trì, phát triển công việc kinh doanh của doanh nghiệp</p>
                         {{-- <p data-animation="fadeInUp" data-delay="1.3s">Ngành Tài chính ngân hàng có thể
-                             chia thành nhiều lĩnh vực chuyên ngành khác nhau như ngân hàng, tài chính doanh 
+                             chia thành nhiều lĩnh vực chuyên ngành khác nhau như ngân hàng, tài chính doanh
                              nghiệp, tài chính thuế, tài chính bảo hiểm, tài chính công…</p> --}}
                         <ul>
-                            <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="javascript:">Đọc Thêm</a></li>
+                            <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="{{  route('khoakinhte-chitietkhoahoc') }}">Đọc Thêm</a></li>
                             <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2" href="javascript:">Tư Vấn</a></li>
                         </ul>
                     </div>
@@ -58,7 +58,7 @@
                         <p>Quản trị kinh doanh là việc thực hiện các hành vi quản trị quá trình kinh doanh để duy trì, phát triển công việc kinh doanh của doanh nghiệp</p>
                         {{-- <p data-animation="fadeInUp" data-delay="1.3s">Nơi hội tụ của những nghệ nhân trong nghê thuật thu nhận và xử lý tài sản </p> --}}
                         <ul>
-                            <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="javascript:">Đọc Thêm</a></li>
+                            <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="{{  route('khoakinhte-chitietkhoahoc') }}">Đọc Thêm</a></li>
                             <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2" href="javascript:">Tư Vấn</a></li>
                         </ul>
                     </div>
@@ -175,15 +175,15 @@
                     <h2>Chào Mừng Đến với Khoa Kinh Tế </h2>
                 </div> <!-- section title -->
                 <div class="about-cont">
-                    <p>Là một trong những khoa thu hút nhiều sinh viên theo học, với bề dày đào tạo từ 
-                        năm 2006. Những ngành được đào tạo tại Khoa được đánh giá là thu hút nguồn nhân 
+                    <p>Là một trong những khoa thu hút nhiều sinh viên theo học, với bề dày đào tạo từ
+                        năm 2006. Những ngành được đào tạo tại Khoa được đánh giá là thu hút nguồn nhân
                         lực nhiều nhất hiện nay.</p>
                     <p>Chương trình đào tạo được xây dựng trên cơ sở quy định của Bộ giáo dục & Đào tạo theo
                         hệ tín chỉ, tham khảo ý kiến chuyên gia trong ngành và tham khảo chương trình đào
-                         tạo tiên tiến từ các quốc gia. Chương trình đào tạo tập trung chuyên sâu vào các 
-                         kiến thức, kỹ năng chuyên ngành, phù hợp với nhu cầu xã hội, với thiết kế nhằm đảm 
-                         bảo lượng kiến thức toàn diện cho sinh viên</p>
-                    <a href="javascript:" class="main-btn mt-55">Tìm hiểu</a></a>
+                        tạo tiên tiến từ các quốc gia. Chương trình đào tạo tập trung chuyên sâu vào các
+                        kiến thức, kỹ năng chuyên ngành, phù hợp với nhu cầu xã hội, với thiết kế nhằm đảm
+                        bảo lượng kiến thức toàn diện cho sinh viên</p>
+                    <a href="{{ route('khoakinhte-gioithieu') }}" class="main-btn mt-55">Tìm hiểu</a></a>
                 </div>
             </div> <!-- about cont -->
             <div class="col-lg-6 offset-lg-1">
@@ -198,29 +198,29 @@
                                     <h4>Hội Thảo Chuyên Nghành Về Quản Trị Kinh Doanh</h4>
                                 </a>
                                 <span><i class="fa fa-calendar"></i> 12/03/2021</span>
-                                
+
                                 <span><i class="fa fa-clock-o"></i> 80h30 - 11h00</span>
                                 <span><i class="fa fa-map-marker"></i> Đại Học Du Lịch Văn Hóa Nghệ Thuật Sài Gòn</span>
                             </div>
                         </li>
                         <li>
-                           <div class="singel-event">
+                            <div class="singel-event">
                                 <a href="{{ route('khoakinhte-chitiettintuc') }}">
                                     <h4>Hội Thảo Chuyên Nghành Về Tài Chính Ngân Hàng</h4>
                                 </a>
                                 <span><i class="fa fa-calendar"></i> 13/03/2021</span>
-                                
+
                                 <span><i class="fa fa-clock-o"></i> 80h30 - 11h00</span>
                                 <span><i class="fa fa-map-marker"></i> Đại Học Du Lịch Văn Hóa Nghệ Thuật Sài Gòn</span>
                             </div>
                         </li>
                         <li>
-                           <div class="singel-event">
+                            <div class="singel-event">
                                 <a href="{{ route('khoakinhte-chitiettintuc') }}">
                                     <h4>Hội Thảo Chuyên Nghành Về Kế Toán</h4>
                                 </a>
                                 <span><i class="fa fa-calendar"></i> 14/03/2021</span>
-                                
+
                                 <span><i class="fa fa-clock-o"></i> 80h30 - 11h00</span>
                                 <span><i class="fa fa-map-marker"></i> Đại Học Du Lịch Văn Hóa Nghệ Thuật Sài Gòn</span>
                             </div>
@@ -246,16 +246,16 @@
                 <div class="col-lg-6">
                     <div class="apply-cont apply-color-1">
                         <h3>Đăng Ký Tư Vấn Tuyển Sinh</h3>
-                        <p>Đội ngũ tư vấn tuyển sinh của nhà trường luôn sẵn sàng giúp đỡ sinh 
+                        <p>Đội ngũ tư vấn tuyển sinh của nhà trường luôn sẵn sàng giúp đỡ sinh
                             viên 24/7 với sự tận tâm, nhiệt tình.</p>
-                        <a href="javascript:" class="main-btn">Đăng Ký</a>
+                        <a href="{{ route('tuyensinh') }}" class="main-btn">Đăng Ký</a>
                     </div> <!-- apply cont -->
                 </div>
                 <div class="col-lg-6">
                     <div class="apply-cont apply-color-2">
                         <h3>Đăng Ký Tín Chỉ , Học Phần</h3>
                         <p>Sinh viên đăng kí tín chỉ, học phần thông qua website một cách nhanh gọn, tiện ích,
-                             </p>
+                        </p>
                         <a href="javascript:" class="main-btn">Đăng Ký</a>
                     </div> <!-- apply cont -->
                 </div>
@@ -420,8 +420,8 @@
                             <li><i class="fa fa-star"></i></li>
                             <li><i class="fa fa-star"></i></li>
                         </ul>
-                        <span>(120 Đánh Giá)</span>                       
-                         <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
+                        <span>(120 Đánh Giá)</span>
+                        <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
                             <h4>Quản Lí Hiệu Quả Về Kế Toán</h4>
                         </a>
                         <div class="course-teacher">
@@ -560,10 +560,10 @@
                     <h2>Giảng Viên Khoa</h2>
                 </div> <!-- section title -->
                 <div class="teachers-cont">
-                    <p>Là đội ngũ gồm nhiều giảng viên, nhân viên có nhiều kinh nghiệm lâu năm 
+                    <p>Là đội ngũ gồm nhiều giảng viên, nhân viên có nhiều kinh nghiệm lâu năm
                         trong giảng dạy về các chuyên nghành kinh tế, quản trị kinh doanh, kế toán,...
-                         Những sinh viên sẽ luôn được giảng viên hỗ trọ nhiệt tình, học hỏi những kiến
-                          thức mới mẻ hơn. </p>
+                        Những sinh viên sẽ luôn được giảng viên hỗ trọ nhiệt tình, học hỏi những kiến
+                        thức mới mẻ hơn. </p>
                     <p>Với tiêu chí đặt giáo dục lên hàng đầu, giảng viên của khoa luôn mong muốn mang đến cho sinh viên những điều tuyệt nhất.</p>
                     <a href="{{ route('khoakinhte-danhsachgiaovien') }}" class="main-btn mt-55">Danh sách đội ngũ giảng viên </a>
                 </div> <!-- teachers cont -->
@@ -659,9 +659,9 @@
                         </div>
                     </div>
                     <div class="testimonial-cont">
-                        <p>Với sự nhiệt tình giảng dạy của nhân viên cũng như môi 
+                        <p>Với sự nhiệt tình giảng dạy của nhân viên cũng như môi
                             trường đào tạo của trường tốt, nên em mới có thể thành công trong lĩnh vực
-                             kế toán cũng như trong lĩnh vực kinh tế  </p>
+                            kế toán cũng như trong lĩnh vực kinh tế </p>
                         <h6>Trần Nga Linh</h6>
                         <span>Cựu Sinh Viên</span>
                     </div>
@@ -670,13 +670,13 @@
             <div class="col-lg-6">
                 <div class="singel-testimonial">
                     <div class="testimonial-thum">
-                        <img src="/dist/layout/layout_kkt/images/testimonial/t-3.jpg"" alt="Testimonial">
+                        <img src="/dist/layout/layout_kkt/images/testimonial/t-3.jpg"" alt=" Testimonial">
                         <div class="quote">
                             <i class="fa fa-quote-right"></i>
                         </div>
                     </div>
                     <div class="testimonial-cont">
-                        <p>Giảng viên của khoa rất tâm huyết trong việc giảng dạy, đã giúp 
+                        <p>Giảng viên của khoa rất tâm huyết trong việc giảng dạy, đã giúp
                             đỡ em rất nhiều trong việc hiểu rõ hơn rất nhiều về nhiều mặt của Nghành kinh tế . </p>
                         <h6>Nguyễn Vi</h6>
                         <span>Sinh Viên Năm 2</span>
@@ -722,9 +722,9 @@
                         <img src="/dist/layout/layout_kkt/images/an-tuong-vong-thi-chung-ket-cuoc-thi-tim-kiem-tai-nang-mc-2017-thumbnail-60511.png" width="30%" alt="News">
                     </div>
                     <div class="news-cont">
-                        
+
                         <a href="{{ route('khoakinhte-chitiettintuc') }}">
-                            <h3>Sinh Viên Khoa Kinh Tế Thực Tập Sinh Tại  Doanh Nghiệp</h3>
+                            <h3>Sinh Viên Khoa Kinh Tế Thực Tập Sinh Tại Doanh Nghiệp</h3>
                         </a>
                         <ul>
                             <li><a href="javascript:"><i class="fa fa-calendar"></i> 12/05 2021 </a></li>
@@ -744,7 +744,7 @@
                         </div> --}}
                         <div class="col-sm-12">
                             <div class="news-cont mt-30">
-                               
+
                                 <a href="{{ route('khoakinhte-chitiettintuc') }}">
                                     <h3>Sinh Viên Thực Tập Tại Doanh Nghiệp</h3>
                                 </a>
@@ -766,7 +766,7 @@
                         </div> --}}
                         <div class="col-sm-12">
                             <div class="news-cont mt-30">
-                                
+
                                 <a href="{{ route('khoakinhte-chitiettintuc') }}">
                                     <h3>Sinh Viên Thực Hiện Báo Cáo Về Doanh Nghiệp</h3>
                                 </a>
@@ -781,10 +781,10 @@
                 </div> <!-- singel news -->
                 <div class="singel-news news-list">
                     <div class="row">
-                       
+
                         <div class="col-sm-12">
                             <div class="news-cont mt-30">
-                               
+
                                 <a href="{{ route('khoakinhte-chitiettintuc') }}">
                                     <h3> Thi Chứng Chỉ Tin Học Của Dinh Viên Khoa Kinh Tế</h3>
                                 </a>
