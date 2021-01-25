@@ -60,7 +60,7 @@
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{{route('thuctap')}}">Thực tập</a>
               <a class="dropdown-item" href="{{route('thongbao')}}">Thông Báo</a>
-              <a class="dropdown-item" href="{{route('thongbao')}}">Bảng Tin Khoa</a>
+              {{-- <a class="dropdown-item" href="{{route('thongbao')}}">Bảng Tin Khoa</a> --}}
               <a class="dropdown-item" href="#">Đăng Nhập hệ thống sinh viên</a>
             </div>
           </li>

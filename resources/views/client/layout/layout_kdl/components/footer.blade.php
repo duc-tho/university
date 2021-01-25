@@ -39,7 +39,9 @@
             <h6 class="footer-title-29">Gửi yêu cầu </h6>
             <form action="#" class="subscribe" method="post">
               <input type="email" name="email" placeholder="Email" required="">
+             
               <button><span class="fa fa-envelope-o"></span></button>
+              
             </form>
             <p>Chúng tôi luôn lắng nghe ý kiến của bạn</p>
             <p>Luông lắng nghe đóng góp để cùng phát triển</p>

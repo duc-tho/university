@@ -7,8 +7,8 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Trang chủ </a></li>
-          <li><a href="contact.html"> Liên hệ</a></li>
+          <li><a href="{{route('khoangoaingu')}}">Trang chủ </a></li>
+          <li><a href="javascript:"> Liên hệ</a></li>
         </ol>
         <h2>Liên hệ</h2>
 

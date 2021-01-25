@@ -17,7 +17,7 @@
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown text-light">WELCOME TO <span>KHOA NGOẠI NGỮ</span></h2>
                 <p class="animate__animated animate__fadeInUp">Best choice to learn at SaiGon University.</p>
-                <a href="" class="btn-get-started animate__animated animate__fadeInUp">Tìm hiểu thêm</a>
+                <a href="{{route('gioithieukhoangoaingu')}}" class="btn-get-started animate__animated animate__fadeInUp">Tìm hiểu thêm</a>
               </div>
             </div>
           </div>
@@ -28,7 +28,7 @@
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">WELCOME TO <span>KHOA NGOẠI NGỮ</span></h2>
                 <p class="animate__animated animate__fadeInUp">Best choice to learn at SaiGon University.</p>
-                <a href="" class="btn-get-started animate__animated animate__fadeInUp">Tìm hiểu thêm</a>
+                <a href="{{route('gioithieukhoangoaingu')}}" class="btn-get-started animate__animated animate__fadeInUp">Tìm hiểu thêm</a>
               </div>
             </div>
           </div>
@@ -39,7 +39,7 @@
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">WELCOME TO <span>KHOA NGOẠI NGỮ</span></h2>
                 <p class="animate__animated animate__fadeInUp">Best choice to learn at SaiGon University.</p>
-                <a href="" class="btn-get-started animate__animated animate__fadeInUp">Tìm hiểu thêm</a>
+                <a href="{{route('gioithieukhoangoaingu')}}" class="btn-get-started animate__animated animate__fadeInUp">Tìm hiểu thêm</a>
               </div>
             </div>
           </div>
@@ -70,28 +70,28 @@
           <div class="col-lg-3">
             <div class="icon-box">
               <i class="icofont-computer"></i>
-              <h3><a href="">Anh Ngữ</a></h3>
+              <h3><a href="{{route('daotaoanhngu')}}">Anh Ngữ</a></h3>
               <p>Học Anh ngữ mở rộng con dường tìm kiếm cờ hội làm việc trong các môi trường nước ngoài chuyên nghiệp</p>
             </div>
           </div>
           <div class="col-lg-3 mt-4 mt-lg-0">
             <div class="icon-box">
               <i class="icofont-image"></i>
-              <h3><a href="">Nhật Ngữ</a></h3>
+              <h3><a href="{{route('daotaoanhngu')}}">Nhật Ngữ</a></h3>
               <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tar</p>
             </div>
           </div>
           <div class="col-lg-3 mt-4 mt-lg-0">
             <div class="icon-box">
               <i class="icofont-tasks-alt"></i>
-              <h3><a href="">Trung Ngữ</a></h3>
+              <h3><a href="{{route('daotaoanhngu')}}">Trung Ngữ</a></h3>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
             </div>
           </div>
           <div class="col-lg-3 mt-4 mt-lg-0">
             <div class="icon-box">
               <i class="icofont-tasks-alt"></i>
-              <h3><a href="">Hàn Ngữ</a></h3>
+              <h3><a href="{{route('daotaoanhngu')}}">Hàn Ngữ</a></h3>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
             </div>
           </div>
@@ -116,15 +116,15 @@
               đáp ứng được yêu cầu xã hội và của nền kinh tế hội nhập quốc tế.
             </p>
             <ul>
-              <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="icofont-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="icofont-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              <li><i class="icofont-check-circled"></i> Đào tạo chuẩn quốc tế</li>
+              <li><i class="icofont-check-circled"></i> Luôn đảm bảo việc làm cho sinh viên khi ra trường</li>
+              <li><i class="icofont-check-circled"></i> Sinh viên được trang bị những kiến thức cũng như chuyên môn cao trong chuyên nghành</li>
             </ul>
-            <p>
+            {{-- <p>
               Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
               velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
               culpa qui officia deserunt mollit anim id est laborum
-            </p>
+            </p> --}}
           </div>
         </div>
 
@@ -145,13 +145,13 @@
             <div class="col-md-8 col-sm-6 col-xs-12">
               <div class="grid grid--2">
                 <article id="post-37885" class="post-37885 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc-chung cart cart--wide"> 
-                  <a class="cart__image" href="http://khoangoaingu.daihocdulich.edu.vn/-hoc-ngoai-ngu-o-saigonact-noi-nhu-nguoi-ban-dia-150/">
+                  <a class="cart__image" href="{{route('chitietttkhoangoaingu')}}">
                      <img width="373" height="206" src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2019/07/13/hoc-ngoai-ngu-o-saigonact-noi-nhu-nguoi-ban-dia-thumbnail-26188.jpg" sizes="(max-width: 373px) 100vw, 373px"> 
                     <i class="post-icon fa fa-align-justify"></i> 
                   </a>
                   <header class="entry-header cart__content">
                     <h3 class="cart__title entry-title">
-                      <a href="http://khoangoaingu.daihocdulich.edu.vn/-hoc-ngoai-ngu-o-saigonact-noi-nhu-nguoi-ban-dia-150/" title="Học ngoại ngữ ở SaigonACT nói như người bản địa">Học ngoại ngữ ở SaigonACT nói như người bản địa</a>
+                      <a href="{{route('chitietttkhoangoaingu')}}" title="Học ngoại ngữ ở SaigonACT nói như người bản địa">Học ngoại ngữ ở SaigonACT nói như người bản địa</a>
                     </h3> 
                     <span class="posted-on">
                       <time class="entry-date published" datetime="2021-01-15T13:41:37+07:00">2 ngày trước</time>
@@ -163,13 +163,13 @@
                   </header>
                 </article>
                 <article id="post-37885" class="post-37885 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc-chung cart cart--wide"> 
-                  <a class="cart__image" href="http://khoangoaingu.daihocdulich.edu.vn/-hoc-ngoai-ngu-o-saigonact-noi-nhu-nguoi-ban-dia-150/">
+                  <a class="cart__image" href="{{route('chitietttkhoangoaingu')}}">
                      <img width="373" height="206" src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2019/07/13/hoc-ngoai-ngu-o-saigonact-noi-nhu-nguoi-ban-dia-thumbnail-26188.jpg" sizes="(max-width: 373px) 100vw, 373px"> 
                     <i class="post-icon fa fa-align-justify"></i> 
                   </a>
                   <header class="entry-header cart__content">
                     <h3 class="cart__title entry-title">
-                      <a href="http://khoangoaingu.daihocdulich.edu.vn/-hoc-ngoai-ngu-o-saigonact-noi-nhu-nguoi-ban-dia-150/" title="Học ngoại ngữ ở SaigonACT nói như người bản địa">Học ngoại ngữ ở SaigonACT nói như người bản địa</a>
+                      <a href="{{route('chitietttkhoangoaingu')}}" title="Học ngoại ngữ ở SaigonACT nói như người bản địa">Học ngoại ngữ ở SaigonACT nói như người bản địa</a>
                     </h3> 
                     <span class="posted-on">
                       <time class="entry-date published" datetime="2021-01-15T13:41:37+07:00">2 ngày trước</time>
@@ -181,31 +181,31 @@
                   </header>
                 </article>
                 <article id="post-37885" class="post-37885 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc-chung cart cart--wide"> 
-                  <a class="cart__image" href="http://khoangoaingu.daihocdulich.edu.vn/-hoc-ngoai-ngu-o-saigonact-noi-nhu-nguoi-ban-dia-150/">
+                  <a class="cart__image" href="{{route('chitietttkhoangoaingu')}}">
                      <img width="373" height="206" src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2019/07/13/hoc-ngoai-ngu-o-saigonact-noi-nhu-nguoi-ban-dia-thumbnail-26188.jpg" sizes="(max-width: 373px) 100vw, 373px"> 
                     <i class="post-icon fa fa-align-justify"></i> 
                   </a>
                   <header class="entry-header cart__content">
                     <h3 class="cart__title entry-title">
-                      <a href="http://khoangoaingu.daihocdulich.edu.vn/-hoc-ngoai-ngu-o-saigonact-noi-nhu-nguoi-ban-dia-150/" title="Học ngoại ngữ ở SaigonACT nói như người bản địa">Học ngoại ngữ ở SaigonACT nói như người bản địa</a>
+                      <a href="{{route('chitietttkhoangoaingu')}}" title="Học ngoại ngữ ở SaigonACT nói như người bản địa">Học ngoại ngữ ở SaigonACT nói như người bản địa</a>
                     </h3> 
                     <span class="posted-on">
                       <time class="entry-date published" datetime="2021-01-15T13:41:37+07:00">2 ngày trước</time>
                       <time class="updated" datetime="2021-01-15T13:42:26+07:00">15/01/2021</time>
                     </span>
                     <span class="byline"> bởi <span class="author vcard">
-                      <a class="url fn n" href="https://daihoc.fpt.edu.vn/author/yennth/">Nguyễn Thị Hồng Yến</a></span>
+                      <a class="url fn n" href="{{route('chitietttkhoangoaingu')}}">Nguyễn Thị Hồng Yến</a></span>
                     </span>
                   </header>
                 </article>
                 <article id="post-37885" class="post-37885 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc-chung cart cart--wide"> 
-                  <a class="cart__image" href="http://khoangoaingu.daihocdulich.edu.vn/-hoc-ngoai-ngu-o-saigonact-noi-nhu-nguoi-ban-dia-150/">
+                  <a class="cart__image" href="{{route('chitietttkhoangoaingu')}}">
                      <img width="373" height="206" src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2019/07/13/hoc-ngoai-ngu-o-saigonact-noi-nhu-nguoi-ban-dia-thumbnail-26188.jpg" sizes="(max-width: 373px) 100vw, 373px"> 
                     <i class="post-icon fa fa-align-justify"></i> 
                   </a>
                   <header class="entry-header cart__content">
                     <h3 class="cart__title entry-title">
-                      <a href="http://khoangoaingu.daihocdulich.edu.vn/-hoc-ngoai-ngu-o-saigonact-noi-nhu-nguoi-ban-dia-150/" title="Học ngoại ngữ ở SaigonACT nói như người bản địa">Học ngoại ngữ ở SaigonACT nói như người bản địa</a>
+                      <a href="{{route('chitietttkhoangoaingu')}}" title="Học ngoại ngữ ở SaigonACT nói như người bản địa">Học ngoại ngữ ở SaigonACT nói như người bản địa</a>
                     </h3> 
                     <span class="posted-on">
                       <time class="entry-date published" datetime="2021-01-15T13:41:37+07:00">2 ngày trước</time>
@@ -219,7 +219,7 @@
               </div>
             </div>
             <div id="news_new_right" class="col-md-4 col-sm-6 col-xs-12"> 
-              <a href="https://daihoc.fpt.edu.vn/tet-nay-cung-dai-hoc-fpt-lan-toa-yeu-thuong-den-tre-em-tp-can-tho/">
+              <a href="{{route('chitietttkhoangoaingu')}}">
                 <div class="news_new_right_content" id="news_new_item_0">
                   <div class="news_new_right_title"> Tết này, cùng Đại học FPT lan toả yêu thương đến trẻ em TP. Cần Thơ
                     <img src="https://daihoc.fpt.edu.vn/templates/fpt-university/images/new_arrow.png">
@@ -227,14 +227,14 @@
                   <div class="news_new_right_post_time">14/01/2021</div>
                 </div> 
               </a> 
-              <a href="https://daihoc.fpt.edu.vn/thay-co-mach-nuoc-thi-sinh-tham-gia-fpt-edu-hackathon-2021/">
+              <a href="{{route('chitietttkhoangoaingu')}}">
                 <div class="news_new_right_content" id="news_new_item_1">
                   <div class="news_new_right_title"> Thầy cô mách nước thí sinh tham gia FPT Edu Hackathon 2021
                     <img src="https://daihoc.fpt.edu.vn/templates/fpt-university/images/new_arrow.png"></div>
                     <div class="news_new_right_post_time">13/01/2021</div>
                   </div> 
                 </a> 
-                <a href="https://daihoc.fpt.edu.vn/cuu-quan-quan-fpt-edu-hackathon-truong-f-chia-se-bi-quyet-dua-duong-dai/">
+                <a href="{{route('chitietttkhoangoaingu')}}">
                   <div class="news_new_right_content" id="news_new_item_2">
                     <div class="news_new_right_title"> Cựu Quán quân FPT Edu Hackathon trường F chia sẻ bí quyết “đua đường dài”
                       <img src="https://daihoc.fpt.edu.vn/templates/fpt-university/images/new_arrow.png">
@@ -242,7 +242,7 @@
                       <div class="news_new_right_post_time">12/01/2021</div>
                   </div> 
                 </a> 
-                <a href="https://daihoc.fpt.edu.vn/chia-se-khoanh-khac-dau-xuan-voi-cuoc-thi-online-vi-tet-trong-ban-la/">
+                <a href="{{route('chitietttkhoangoaingu')}}">
                   <div class="news_new_right_content" id="news_new_item_3">
                     <div class="news_new_right_title"> Chia sẻ khoảnh khắc đầu xuân với cuộc thi online “Vị Tết trong bạn là …?”
                       <img src="https://daihoc.fpt.edu.vn/templates/fpt-university/images/new_arrow.png">
@@ -251,7 +251,7 @@
                     <div class="news_new_right_post_time">12/01/2021</div>
                   </div> 
                 </a> 
-                <a href="https://daihoc.fpt.edu.vn/ban-se-hack-duoc-nhung-gi-khi-tham-gia-fpt-edu-hackathon-2021/">
+                <a href="{{route('chitietttkhoangoaingu')}}">
                   <div class="news_new_right_content" id="news_new_item_4">
                     <div class="news_new_right_title"> Bạn sẽ “hack” được những gì khi tham gia FPT EDU HACKATHON 2021?
                       <img src="https://daihoc.fpt.edu.vn/templates/fpt-university/images/new_arrow.png">
@@ -259,14 +259,14 @@
                     <div class="news_new_right_post_time">10/01/2021</div>
                   </div> 
                 </a> 
-                <a href="https://daihoc.fpt.edu.vn/dai-hoc-fpt-ha-noi-to-chuc-le-bao-ve-de-tai-nghien-cuu-khoa-hoc-cap-truong/">
+                <a href="{{route('chitietttkhoangoaingu')}}">
                   <div class="news_new_right_content" id="news_new_item_5">
                     <div class="news_new_right_title"> Đại học FPT Hà Nội tổ chức Lễ bảo vệ đề tài Nghiên cứu khoa học cấp trường
                       <img src="https://daihoc.fpt.edu.vn/templates/fpt-university/images/new_arrow.png"></div>
                       <div class="news_new_right_post_time">10/01/2021</div>
                     </div> 
                   </a> 
-                  <a href="https://daihoc.fpt.edu.vn/khoi-dong-nam-moi-voi-cuoc-thi-lap-trinh-thuat-toan-%f0%9d%9f%b4-%f0%9d%97%9b%f0%9d%97%a2%f0%9d%97%a8%f0%9d%97%a5%f0%9d%97%a6-%f0%9d%97%96%f0%9d%97%a2%f0%9d%97%97%f0%9d%97%98-%f0%9d%97%96/">
+                  <a href="{{route('chitietttkhoangoaingu')}}">
                     <div class="news_new_right_content" id="news_new_item_6">
                       <div class="news_new_right_title"> Khởi động năm mới với cuộc thi lập trình thuật toán “𝟴 𝗛𝗢𝗨𝗥𝗦 – 𝗖𝗢𝗗𝗘 𝗖𝗛𝗔𝗦𝗘𝗥𝗦”
                         <img src="https://daihoc.fpt.edu.vn/templates/fpt-university/images/new_arrow.png"></div>
@@ -275,7 +275,7 @@
                   </a>
             </div>
             <div class="col-md-12 col-sm-12 col-xs-12 text-center" style="padding-top: 15px;"> 
-              <a class="button button--outline button--orange" href="https://daihoc.fpt.edu.vn/tin-tuc/">XEM THÊM TIN TỨC</a>
+              <a class="button button--outline button--orange" href="{{route('tintucngoaingu')}}">XEM THÊM TIN TỨC</a>
             </div>
         </div>
       </div>
@@ -377,46 +377,45 @@
         <div class="container proj-bottom" >
           <div class="row">
             <div class="col-md-4 col-sm-6 fh5co-project fadeIn animate-box animated-fast" data-animate-effect="fadeIn">
-              <a href="#"><img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2019/07/18/tieng-trung-quoc-nganh-hoc-chua-bao-gio-het-hot-thumbnail-44420.png" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+              <a href="{{route('chitietttkhoangoaingu')}}"><img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2019/07/18/tieng-trung-quoc-nganh-hoc-chua-bao-gio-het-hot-thumbnail-44420.png" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
                 <h3>Tiếng Trung Quốc - Ngành học chưa bao giờ hết hot</h3>
                 <span>Xem chi tiết</span>
               </a>
             </div>
             <div class="col-md-4 col-sm-6 fh5co-project fadeIn animate-box animated-fast" data-animate-effect="fadeIn">
-              <a href="#"><img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2019/05/30/tai-sao-nen-hoc-tieng-trung-thumbnail-67983.png" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+              <a href="{{route('chitietttkhoangoaingu')}}"><img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2019/05/30/tai-sao-nen-hoc-tieng-trung-thumbnail-67983.png" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
                 <h3>Tại sao nên học tiếng Trung</h3>
                 <span>Xem chi tiết</span>
               </a>
             </div>
             <div class="col-md-4 col-sm-6 fh5co-project fadeIn animate-box animated-fast" data-animate-effect="fadeIn">
-              <a href="#">
+              <a href="{{route('chitietttkhoangoaingu')}}">
                 <img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2019/05/17/ky-nang-noi-tieng-anh-thumbnail-47615.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
                 <h3>Kỹ năng nói tiếng Anh</h3>
                 <span>Xem chi tiết</span>
               </a>
             </div>
             <div class="col-md-4 col-sm-6 fh5co-project fadeIn animate-box animated-fast" data-animate-effect="fadeIn">
-              <a href="#"><img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2018/08/02/van-hoa-nhat-ban-thumbnail-52187.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+              <a href="{{route('chitietttkhoangoaingu')}}"><img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2018/08/02/van-hoa-nhat-ban-thumbnail-52187.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
                 <h3>Văn hóa Nhật Bản</h3>
                 <span>Xem chi tiết</span>
               </a>
             </div>
             <div class="col-md-4 col-sm-6 fh5co-project fadeIn animate-box animated-fast" data-animate-effect="fadeIn">
-              <a href="#"><img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2018/05/17/phuong-phap-hoc-ngoai-ngu-nhanh-va-hieu-qua-thumbnail-88759.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+              <a href="{{route('chitietttkhoangoaingu')}}"><img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2018/05/17/phuong-phap-hoc-ngoai-ngu-nhanh-va-hieu-qua-thumbnail-88759.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
                 <h3>Phương pháp học ngoại ngữ hiệu quả</h3>
                 <span>Xem chi tiết</span>
               </a>
             </div>
             <div class="col-md-4 col-sm-6 fh5co-project fadeIn animate-box animated-fast" data-animate-effect="fadeIn">
-              <a href="#"><img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2017/09/14/cu-nhan-nganh-tieng-nhat-khong-so-that-nghiep-thumbnail-23520.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+              <a href="{{route('chitietttkhoangoaingu')}}"><img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2017/09/14/cu-nhan-nganh-tieng-nhat-khong-so-that-nghiep-thumbnail-23520.jpg" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
                 <h3>Cử nhân ngành tiếng Nhật - Không sợ thất nghiệp</h3>
                 <span>Xem chi tiế<th></th></span>
               </a>
             </div>
             <div class="col-md-12 text-right button-more">
-              <a class="text-right" href="http://khoangoaingu.daihocdulich.edu.vn/tin-chuyen-nganh-47/">Xem thêm
-                <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                <i class="icofont-rounded-double-right" aria-hidden="true"></i>
+              <a class="text-right" href="{{route('tintucngoaingu')}}">
+                <button class="button"><span>Xem thêm </span></button>
               </a>
             </div>
           </div>
@@ -427,7 +426,7 @@
     <!-- end box -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    {{-- <section id="services" class="services">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -486,7 +485,8 @@
         </div>
 
       </div>
-    </section><!-- End Services Section -->
+    </section>
+    <!-- End Services Section --> --}}
 
 
     <div id="fh5co-started" style="background-image:url(http://khoangoaingu.daihocdulich.edu.vn/upload/link/link-noi-that-g4-14028.png)">
@@ -500,7 +500,7 @@
         </div>
         <div class="row animate-box">
           <div class="col-md-8 col-md-offset-2 text-center">
-            <p><a href="#" class="btn btn-default btn-lg">Đăng ký tuyển sinh</a></p>
+            <p><a href="{{route('tuyensinh')}}" class="btn btn-default btn-lg">Đăng ký tuyển sinh</a></p>
           </div>
         </div>
       </div>

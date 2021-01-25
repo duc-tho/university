@@ -181,7 +181,7 @@
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6">
-              <a href="###">
+              <a href="javascript:">
                 <div class="courses-item">
                   <span class="fa fa-suitcase"></span>
                   <p>Hành Lí</p>
@@ -189,7 +189,7 @@
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6 mt-md-0 mt-4">
-              <a href="###">
+              <a href="javascript:">
                 <div class="courses-item">
                   <span class="fa fa-code"></span>
                   <p>Web hỗ trọ</p>
@@ -197,7 +197,7 @@
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6 mt-md-0 mt-4">
-              <a href="###">
+              <a href="javascript:">
                 <div class="courses-item">
                   <span class="	fa fa-book"></span>
                   <p>Khóa Học</p>
@@ -205,7 +205,7 @@
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6 mt-4">
-              <a href="services.html">
+              <a href="javascript:">
                 <div class="courses-item mt-2">
                   <span class="	fa fa-image"></span>
                   <p>Hình Ảnh</p>
@@ -213,7 +213,7 @@
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6 mt-4">
-              <a href="###">
+              <a href="javascript:">
                 <div class="courses-item mt-2">
                   <span class="fa fa-gg"></span>
                   <p>Liên Kết</p>
@@ -221,7 +221,7 @@
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6 mt-4">
-              <a href="###">
+              <a href="javascript:">
                 <div class="courses-item mt-2">
                   <span class="fa fa-paper-plane-o"></span>
                   <p>CheckIn</p>
@@ -229,7 +229,7 @@
               </a>
             </div>
             <div class="col-md-3 col-sm-6 col-6 mt-4">
-              <a href="###">
+              <a href="javascript:">
                 <div class="courses-item mt-2">
                   <span class="		fa fa-object-group"></span>
                   <p>Nhóm</p>
@@ -376,7 +376,7 @@
                 <div class="column1">
 
                   <div class="job-info">
-                    <h6 class="pricehead"><a href="#">Khoa Du Lịch được tuyên dương </a></h6>
+                    <h6 class="pricehead"><a href="{{route('chitiettintuc')}}">Khoa Du Lịch được tuyên dương </a></h6>
                     <h5>Tháng 6/24/2021</h5>
                     <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
                   </div>
@@ -391,7 +391,7 @@
                 <div class="column1">
 
                   <div class="job-info">
-                    <h6 class="pricehead"><a href="#">Khoa Du Lịch được tuyên dương </a></h6>
+                    <h6 class="pricehead"><a href="{{route('chitiettintuc')}}">Khoa Du Lịch được tuyên dương </a></h6>
                     <h5>Tháng 6/24/2021</h5>
                     <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
                   </div>
@@ -406,7 +406,7 @@
                 <div class="column1">
 
                   <div class="job-info">
-                    <h6 class="pricehead"><a href="#">Khoa Du Lịch được tuyên dương </a></h6>
+                    <h6 class="pricehead"><a href="{{route('chitiettintuc')}}">Khoa Du Lịch được tuyên dương </a></h6>
                     <h5>Tháng 6/24/2021</h5>
                     <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
                   </div>
@@ -431,7 +431,7 @@
               </div>
             </div>
             <div class="events-top-right">
-              <h6 class="pricehead"><a href="#">
+              <h6 class="pricehead"><a href="{{route('chitiettintuc')}}">
                   SỰ KIỆN TỔ CHỨC THAM QUAN CHIẾN TÍCH SƠN MỸ</a></h6>
               <p class="mb-2 mt-3">Sinh viên sẽ được đi tham quan khu chiến tích sơn mỹ để mở rộng kiến thức...</p>
               <li>05:00 - 21:00 </li>
@@ -447,7 +447,7 @@
               </div>
             </div>
             <div class="events-top-right">
-              <h6 class="pricehead"><a href="#">
+              <h6 class="pricehead"><a href="{{route('chitiettintuc')}}">
                   CỐ ĐÔ HUẾ</a></h6>
               <p class="mb-2 mt-3">Sự kiện đặc biệt, nhà trường tổ chứ đi cố đô Huế cho sinh viên ....</p>
               <li>05:00 - 22:00 </li>
@@ -470,7 +470,7 @@
               </div>
             </div>
             <div class="events-top-right">
-              <h6 class="pricehead"><a href="#">
+              <h6 class="pricehead"><a href="{{route('chitiettintuc')}}">
                   SỰ KIỆN TỔ CHỨC THAM QUAN CHIẾN TÍCH SƠN MỸ</a></h6>
               <p class="mb-2 mt-3">Sinh viên sẽ được đi tham quan khu chiến tích sơn mỹ để mở rộng kiến thức...</p>
               <li>05:00 - 21:00 </li>
@@ -486,7 +486,7 @@
               </div>
             </div>
             <div class="events-top-right">
-              <h6 class="pricehead"><a href="#">
+              <h6 class="pricehead"><a href="{{route('chitiettintuc')}}">
                   CỐ ĐÔ HUẾ</a></h6>
               <p class="mb-2 mt-3">Sự kiện đặc biệt, nhà trường tổ chứ đi cố đô Huế cho sinh viên ....</p>
               <li>05:00 - 22:00 </li>

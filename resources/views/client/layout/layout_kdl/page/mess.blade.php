@@ -24,7 +24,8 @@
                             <div class="blog_post">
                                 {{-- <img src=" {{asset('dist/layout/layout_khoadulich/images/20170828165923-45184.jpg')}}" width="100%" alt=""> --}}
                                 <div class="blog_details">
-                                    <a href="single-blog.html">
+                                    <a href="{{route('chitiettintuc')}}">
+                                        
                                         <h2>Tuyển dụng hướng dẫn viên du lịch mới ra trường</h2>
                                         <br>
                                     </a>
@@ -37,7 +38,7 @@
                                         <span><a href="#"><i class="fas fa-eye"></i> Lượt xem : 1.2 view |  </a></span>
                                         <span><a href="#"><i class="fas fa-comments"></i> Bình luận :120  </a></span>
                                     </p>    
-                                    <a href="single-blog.html" class="white_bg_btn">Xem thêm</a>
+                                    <a href="{{route('chitiettintuc')}}" class="white_bg_btn">Xem thêm</a>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +48,7 @@
                             <div class="blog_post">
                                 {{-- <img src=" {{asset('dist/layout/layout_khoadulich/images/20170828165923-45184.jpg')}}" width="100%" alt=""> --}}
                                 <div class="blog_details">
-                                    <a href="single-blog.html">
+                                    <a href="{{route('chitiettintuc')}}">
                                         <h2>Sự kiện sinh viên đi tham quan dã ngoại</h2>
                                         <br>
                                     </a>
@@ -60,7 +61,7 @@
                                         <span><a href="#"><i class="fas fa-eye"></i> Lượt xem : 1.2 view |  </a></span>
                                         <span><a href="#"><i class="fas fa-comments"></i> Bình luận :120  </a></span>
                                     </p>    
-                                    <a href="single-blog.html" class="white_bg_btn">Xem thêm</a>
+                                    <a href="{{route('chitiettintuc')}}" class="white_bg_btn">Xem thêm</a>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +71,7 @@
                             <div class="blog_post">
                                 {{-- <img src=" {{asset('dist/layout/layout_khoadulich/images/20170828165923-45184.jpg')}}" width="100%" alt=""> --}}
                                 <div class="blog_details">
-                                    <a href="single-blog.html">
+                                    <a href="{{route('chitiettintuc')}}">
                                         <h2>Sự kiện sinh viên đi tham quan dã ngoại</h2>
                                         <br>
                                     </a>
@@ -83,7 +84,7 @@
                                         <span><a href="#"><i class="fas fa-eye"></i> Lượt xem : 1.2 view |  </a></span>
                                         <span><a href="#"><i class="fas fa-comments"></i> Bình luận :120  </a></span>
                                     </p>    
-                                    <a href="single-blog.html" class="white_bg_btn">Xem thêm</a>
+                                    <a href="{{route('chitiettintuc')}}" class="white_bg_btn">Xem thêm</a>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +94,7 @@
                             <div class="blog_post">
                                 {{-- <img src=" {{asset('dist/layout/layout_khoadulich/images/20170828165923-45184.jpg')}}" width="100%" alt=""> --}}
                                 <div class="blog_details">
-                                    <a href="single-blog.html">
+                                    <a href="{{route('chitiettintuc')}}">
                                         <h2>Sự kiện sinh viên đi tham quan dã ngoại</h2>
                                         <br>
                                     </a>
@@ -106,7 +107,7 @@
                                         <span><a href="#"><i class="fas fa-eye"></i> Lượt xem : 1.2 view |  </a></span>
                                         <span><a href="#"><i class="fas fa-comments"></i> Bình luận :120  </a></span>
                                     </p>    
-                                    <a href="single-blog.html" class="white_bg_btn">Xem thêm</a>
+                                    <a href="{{route('chitiettintuc')}}" class="white_bg_btn">Xem thêm</a>
                                 </div>
                             </div>
                         </div>
@@ -116,7 +117,7 @@
                             <div class="blog_post">
                                 {{-- <img src=" {{asset('dist/layout/layout_khoadulich/images/20170828165923-45184.jpg')}}" width="100%" alt=""> --}}
                                 <div class="blog_details">
-                                    <a href="single-blog.html">
+                                    <a href="{{route('chitiettintuc')}}">
                                         <h2>Sự kiện sinh viên đi tham quan dã ngoại</h2>
                                         <br>
                                     </a>
@@ -129,7 +130,7 @@
                                         <span><a href="#"><i class="fas fa-eye"></i> Lượt xem : 1.2 view |  </a></span>
                                         <span><a href="#"><i class="fas fa-comments"></i> Bình luận :120  </a></span>
                                     </p>    
-                                    <a href="single-blog.html" class="white_bg_btn">Xem thêm</a>
+                                    <a href="{{route('chitiettintuc')}}" class="white_bg_btn">Xem thêm</a>
                                 </div>
                             </div>
                         </div>
