@@ -32,8 +32,7 @@
                                         </a>
                                         <p>Nhằm mở mang kiến thức cũng như tầm nhìn cho sinh viên trường đã tổ chức 1 chuyến
                                             đi tham quan cho sinh viên khoa du lịch, thực hiện mong muốn được học hỏi thêm
-                                            kinh
-                                            nghiệm từ chuyến đi thực tế này.</p>
+                                            kinh nghiệm từ chuyến đi thực tế này.</p>
                                         <p>
                                             <span><a href="javascript:"><i class="fas fa-user-alt"></i>Tác giả : Ngọc Lập |
                                                 </a></span>

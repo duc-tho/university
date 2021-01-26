@@ -23,6 +23,7 @@
                 <div class="text mt-5">
                     <span class="subheading">Chào mừng đến với</span>
                     <h1>Khoa</h1>
+                    
                     <h1>Nghệ Thuật</h1>
                     <p>Khoa Nghệ thuật được thành lập từ năm 2006, gồm có 06 chuyên ngành: Đạo diễn, Diễn viên kịch nói và điện ảnh, Thanh nhạc, Thiết kế Đồ họa, Thiết kế Thời trang và Quay phim.</p>
                     {{-- <p><a href="{{ route('khoanghethuat-gioithieu') }}" class="btn btn-primary py-3 px-4">Xem thêm</a></p> --}}
