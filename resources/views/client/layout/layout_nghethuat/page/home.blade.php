@@ -17,9 +17,9 @@
 <section class="hero-wrap">
     <div class="overlay"></div>
     <div class="container-fluid px-0">
-        <div class="row d-md-flex no-gutters slider-text align-items-center justify-content-end">
-            <img class="one-third align-self-end order-md-last img-fluid" src="{{ asset('dist/layout/layout_nghethuat/images/hinh1_files/hinh1.jpg') }}" alt="">
-            <div class="one-forth d-flex align-items-center ftco-animate">
+        <div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
+            <img class="one-third js-fullheight align-self-end order-md-last img-fluid" src="{{ asset('dist/layout/layout_nghethuat/images/hinh1.jpg') }}" alt="">
+            <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
                 <div class="text mt-5">
                     <span class="subheading">Chào mừng đến với</span>
                     <h1>Khoa</h1>
