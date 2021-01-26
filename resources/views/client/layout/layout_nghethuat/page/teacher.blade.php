@@ -24,60 +24,70 @@
         <div class="row animate-box">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                 <h2>Giảng Viên</h2>
-                <p>Ngành ABC</p>
+                <p>Khoa Nghệ Thuật</p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 text-center animate-box">
                 <div class="product">
+                    <a href="{{route('khoanghethuat-thongtingiaovien')}}">
                     <div class="product-grid">
                         <img class="img_teacher" src="{{ asset('dist/layout/layout_nghethuat/images/person_1.jpg') }}">
                     </div>
                     <div class="desc">
-                        <h3><a href="teacher_single.html">Hauteville Concrete Rocking Chair</a></h3>
+                        <h3>Lộc Văn Ương</h3>
                     </div>
+                </a>
                 </div>
             </div>
             <div class="col-md-4 text-center animate-box">
                 <div class="product">
+                    <a href="{{route('khoanghethuat-thongtingiaovien')}}">
                     <div class="product-grid">
                         <img class="img_teacher" src="{{ asset('dist/layout/layout_nghethuat/images/person_2.jpg') }}">
                     </div>
                     <div class="desc">
-                        <h3><a href="teacher_single.html">Pavilion Speaker</a></h3>
+                        <h3>Phan Phượng</h3>
                     </div>
+                </a>
                 </div>
             </div>
             <div class="col-md-4 text-center animate-box">
                 <div class="product">
+                    <a href="{{route('khoanghethuat-thongtingiaovien')}}">
                     <div class="product-grid">
                         <img class="img_teacher" src="{{ asset('dist/layout/layout_nghethuat/images/person_3.jpg') }}">
                     </div>
                     <div class="desc">
-                        <h3><a href="teacher_single.html">Ligomancer</a></h3>
+                        <h3>Pháp Chính</h3>
                     </div>
+                </a>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 text-center animate-box">
                 <div class="product">
+                    <a href="{{route('khoanghethuat-thongtingiaovien')}}">
                     <div class="product-grid">
                         <img class="img_teacher" src="{{ asset('dist/layout/layout_nghethuat/images/person_4.jpg') }}">
                     </div>
                     <div class="desc">
-                        <h3><a href="teacher_single.html">Alato Cabinet</a></h3>
+                        <h3>Từ Thứ</h3>
                     </div>
+                </a>
                 </div>
             </div>
             <div class="col-md-4 text-center animate-box">
                 <div class="product">
+                    <a href="{{route('khoanghethuat-thongtingiaovien')}}">
                     <div class="product-grid">
                         <img class="img_teacher" src="{{ asset('dist/layout/layout_nghethuat/images/person_1.jpg') }}">
                     </div>
                     <div class="desc">
-                        <h3><a href="teacher_single.html">Earing Wireless</a></h3>
+                        <h3>Lưu Bị</h3>
                     </div>
+                </a>
                 </div>
             </div>
             <div class="col-md-4 text-center animate-box">
@@ -86,7 +96,7 @@
                         <img class="img_teacher" src="{{ asset('dist/layout/layout_nghethuat/images/person_2.jpg') }}">
                     </div>
                     <div class="desc">
-                        <h3><a href="teacher_single.html">Sculptural Coffee Table</a></h3>
+                        <h3><a href="{{route('khoanghethuat-thongtingiaovien')}}">Ngô Bịnh/a></h3>
                     </div>
                 </div>
             </div>

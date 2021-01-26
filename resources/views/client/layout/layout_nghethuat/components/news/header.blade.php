@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="logo">
-                    <a href="index.html"><img src="{{ asset('dist/layout/layout_nghethuat/images/hinh1_files/logo.png') }}" alt=""></a>
+                    <a href="/"><img src="{{ asset('dist/layout/layout_nghethuat/images/hinh1_files/logo.png') }}" alt=""></a>
                 </div><!-- end logo -->
             </div>
             <div class="col-md-6">
@@ -31,20 +31,20 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdown02">
                             <li class="dropdown-item">Cao đẳng<span class="hidden-md-down hidden-sm-down hidden-xs-down"><i class="fa fa-angle-right"></i></span>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="music_industry.html">Ngành diễn viên kịch nói và điện ảnh</a></li>
-                                    <li><a class="dropdown-item" href="music_industry.html">Ngành thanh nhạc</a></li>
-                                    <li><a class="dropdown-item" href="music_industry.html">Ngành quay phim</a></li>
-                                    <li><a class="dropdown-item" href="music_industry.html">Ngành đồ họa</a></li>
-                                    <li><a class="dropdown-item" href="music_industry.html">Ngành thiết kế thời trang</a></li>
-                                    <li><a class="dropdown-item" href="music_industry.html">Ngành may thời trang</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('chi_tiet_nghanh_nghethuat') }}">Ngành diễn viên kịch nói và điện ảnh</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('chi_tiet_nghanh_nghethuat') }}">Ngành thanh nhạc</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('chi_tiet_nghanh_nghethuat') }}">Ngành quay phim</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('chi_tiet_nghanh_nghethuat') }}">Ngành đồ họa</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('chi_tiet_nghanh_nghethuat') }}">Ngành thiết kế thời trang</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('chi_tiet_nghanh_nghethuat') }}">Ngành may thời trang</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown-item">Trung cấp<span class="hidden-md-down hidden-sm-down hidden-xs-down"><i class="fa fa-angle-right"></i></span>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="music_industry.html">Ngành may thời trang</a></li>
-                                    <li><a class="dropdown-item" href="music_industry.html">Ngành thiết kế đồ họa</a></li>
-                                    <li><a class="dropdown-item" href="music_industry.html">Ngành thanh nhạc</a></li>
-                                    <li><a class="dropdown-item" href="music_industry.html">Ngành diễn viên kịch điện ảnh</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('chi_tiet_nghanh_nghethuat') }}">Ngành may thời trang</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('chi_tiet_nghanh_nghethuat') }}">Ngành thiết kế đồ họa</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('chi_tiet_nghanh_nghethuat') }}">Ngành thanh nhạc</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('chi_tiet_nghanh_nghethuat') }}">Ngành diễn viên kịch điện ảnh</a></li>
                                 </ul>
                             </li>
                             <!-- <li><a class="dropdown-item" href="blog-author.html">Blog Author</a></li>
@@ -56,16 +56,16 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link color-pink-hover" href="news.html">TIN TỨC - SỰ KIỆN</a>
+                        <a class="nav-link color-pink-hover" href="{{ route('khoanghethuat-tintuc') }}">TIN TỨC - SỰ KIỆN</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link color-pink-hover" href="teacher.html">GIẢNG VIÊN</a>
+                        <a class="nav-link color-pink-hover" href="{{ route('khoanghethuat-danhsachgiaovien') }}">GIẢNG VIÊN</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link color-pink-hover" href="notice.html">THÔNG BÁO</a>
+                        <a class="nav-link color-pink-hover" href="">THÔNG BÁO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link color-pink-hover" href="contact.html">LIÊN HỆ</a>
+                        <a class="nav-link color-pink-hover" href="{{ route('khoanghethuat-lienhe') }}">LIÊN HỆ</a>
                     </li>
                 </ul>
             </div>

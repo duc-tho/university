@@ -134,7 +134,7 @@
             <div class="col-md-9">
                 <div id="page-1" class="page bg-light one row">
                     <div class="col-md-4">
-                        <img src="{{ asset('dist/layout/layout_nghethuat/images/book-1.jpg') }}" width="100%" height="100%">
+                        <img src="{{ asset('dist/layout/layout_nghethuat/images/link-dhdl-50981.png') }}" width="100%" height="100%">
                     </div>
                     <div class="col-md-8">
                         <h2 class="heading">Ngành diễn viên kịch nói và điện ảnh</h2>
@@ -145,7 +145,7 @@
                 </div>
                 <div id="page-2" class="page bg-light two row">
                     <div class="col-md-4">
-                        <img src="{{ asset('dist/layout/layout_nghethuat/images/book-2.jpg') }}" width="100%" height="100%">
+                        <img src="{{ asset('dist/layout/layout_nghethuat/images/link-dhdl-32794.jpg') }}" width="100%" height="100%">
                     </div>
                     <div class="col-md-8">
                         <h2 class="heading">Ngành thanh nhạc</h2>
@@ -156,7 +156,7 @@
                 </div>
                 <div id="page-3" class="page bg-light three row">
                     <div class="col-md-4">
-                        <img src="{{ asset('dist/layout/layout_nghethuat/images/book-3.jpg') }}" width="100%" height="100%">
+                        <img src="{{ asset('dist/layout/layout_nghethuat/images/link-dhdl-59448.jpg') }}" width="100%" height="100%">
                     </div>
                     <div class="col-md-8">
                         <h2 class="heading">Ngành quay phim</h2>
@@ -167,7 +167,7 @@
                 </div>
                 <div id="page-4" class="page bg-light four row">
                     <div class="col-md-4">
-                        <img src="{{ asset('dist/layout/layout_nghethuat/images/book-4.jpg') }}" width="100%" height="100%">
+                        <img src="{{ asset('dist/layout/layout_nghethuat/images/gioithieu.jpg') }}" width="100%" height="100%">
                     </div>
                     <div class="col-md-8">
                         <h2 class="heading">Ngành đồ họa</h2>
@@ -178,7 +178,7 @@
                 </div>
                 <div id="page-5" class="page bg-light five row">
                     <div class="col-md-4">
-                        <img src="{{ asset('dist/layout/layout_nghethuat/images/book-5.jpg') }}" width="100%" height="100%">
+                        <img src="{{ asset('dist/layout/layout_nghethuat/images/tu-tin-voi-black-white-thumbnail-56570.png') }}" width="100%" height="100%">
                     </div>
                     <div class="col-md-8">
                         <h2 class="heading">Ngành thiết kế thời trang</h2>
@@ -190,7 +190,7 @@
                 </div>
                 <div id="page-6" class="page bg-light six row">
                     <div class="col-md-4">
-                        <img src="{{ asset('dist/layout/layout_nghethuat/images/book-6.jpg') }}" width="100%" height="100%">
+                        <img src="{{ asset('dist/layout/layout_nghethuat/images/tu-tin-voi-black-white-thumbnail-56570.png') }}" width="100%" height="100%">
                     </div>
                     <div class="col-md-8">
                         <h2 class="heading">Ngành may thời trang</h2>
@@ -233,7 +233,7 @@
             <div class="col-md-9">
                 <div id="pagee-1" class="page bg-light one row">
                     <div class="col-md-4">
-                        <img src="{{ asset('dist/layout/layout_nghethuat/images/book-1.jpg') }}" width="100%" height="100%">
+                        <img src="{{ asset('dist/layout/layout_nghethuat/images/tu-tin-voi-black-white-thumbnail-56570.png') }}" width="100%" height="100%">
                     </div>
                     <div class="col-md-8">
                         <h2 class="heading">Ngành may thời trang</h2>
@@ -244,7 +244,7 @@
                 </div>
                 <div id="pagee-2" class="page bg-light two row">
                     <div class="col-md-4">
-                        <img src="{{ asset('dist/layout/layout_nghethuat/images/book-2.jpg') }}" width="100%" height="100%">
+                        <img src="{{ asset('dist/layout/layout_nghethuat/images/20180118145548-56466.jpg') }}" width="100%" height="100%">
                     </div>
                     <div class="col-md-8">
                         <h2 class="heading">Ngành thiết kế đồ họa</h2>
@@ -255,7 +255,7 @@
                 </div>
                 <div id="pagee-3" class="page bg-light three row">
                     <div class="col-md-4">
-                        <img src="{{ asset('dist/layout/layout_nghethuat/images/book-3.jpg') }}" width="100%" height="100%">
+                        <img src="{{ asset('dist/layout/layout_nghethuat/images/20190920102332-47960.jpg') }}" width="100%" height="100%">
                     </div>
                     <div class="col-md-8">
                         <h2 class="heading">Ngành thanh nhạc</h2>
@@ -266,7 +266,7 @@
                 </div>
                 <div id="pagee-4" class="page bg-light four row">
                     <div class="col-md-4">
-                        <img src="{{ asset('dist/layout/layout_nghethuat/images/book-4.jpg') }}" width="100%" height="100%">
+                        <img src="{{ asset('dist/layout/layout_nghethuat/images/dem-dien-bao-cao-thuc-tap-tot-nghiep-cua-sinh-vien-lop-k112dv1-thumbnail-34516.jpg') }}" width="100%" height="100%">
                     </div>
                     <div class="col-md-8">
                         <h2 class="heading">Ngành diễn viên kịch điện ảnh</h2>
@@ -366,7 +366,7 @@
                         <div class="testimony-wrap p-4">
                             <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
                             <div class="text">
-                                <b><a href="{{ route('khoanghethuat-chitietthongbao') }}" class="title_tb">Far far away</a></b>
+                                <b><a href="{{ route('khoanghethuat-chitietthongbao') }}" class="title_tb">Thông báo Xét tuyển và Thi tuyển Hệ Cao đẳng năm 2017</a></b>
                                 <!-- <p class="mbb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> -->
                                 <p><span class="fa fa-clock-o hour"></span> 23/10/2019</p>
                             </div>
@@ -386,7 +386,7 @@
                         <div class="testimony-wrap p-4">
                             <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
                             <div class="text d-flex flex-column justify-content-between">
-                                <b><a href="{{ route('khoanghethuat-chitietthongbao') }}" class="title_tb">Far far away</a></b>
+                                <b><a href="{{ route('khoanghethuat-chitietthongbao') }}" class="title_tb">Thông báo Xét tuyển và Thi tuyển Hệ Cao đẳng năm 2017</a></b>
                                 <!-- <p class="mbb-4">Far far away, behind the word mou ntains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> -->
                                 <p><span class="fa fa-clock-o hour"></span> 23/10/2019</p>
                             </div>

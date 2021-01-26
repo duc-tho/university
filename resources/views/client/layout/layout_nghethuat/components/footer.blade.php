@@ -30,9 +30,9 @@
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">Liên kết</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#"></span>Khoa Du Lịch</a></li>
-                        <li><a href="#"></span>Khoa Kinh Tế</a></li>
-                        <li><a href="#"></span>Khoa Ngoại Ngữ</a></li>
+                        <li><a href="{{ route('khoadulich') }}"></span>Khoa Du Lịch</a></li>
+                        <li><a href="{{ route('khoakinhte') }}"></span>Khoa Kinh Tế</a></li>
+                        <li><a href="{{ route('khoangoaingu') }}"></span>Khoa Ngoại Ngữ</a></li>
                     </ul>
                 </div>
             </div>

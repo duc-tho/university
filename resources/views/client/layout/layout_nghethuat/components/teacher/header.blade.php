@@ -6,13 +6,13 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav nav ml-auto">
-                <li class="nav-item"><a href="index.html" class="nav-link"><span>Trang chủ</span></a></li>
-                <li class="nav-item"><a href="#about-section" class="nav-link"><span>Giới thiệu</span></a></li>
+                <li class="nav-item"><a href="{{ route('khoanghethuat') }}" class="nav-link"><span>Trang chủ</span></a></li>
+                <li class="nav-item"><a href="{{ route('khoanghethuat-gioithieu') }}" class="nav-link"><span>Giới thiệu</span></a></li>
                 <li class="nav-item"><a href="#chapter-section" class="nav-link"><span>Đào tạo</span></a></li>
-                <li class="nav-item"><a href="#testimonial-section" class="nav-link"><span>Thông báo</span></a></li>
-                <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Tin tức - sự kiện</span></a></li>
+                <li class="nav-item"><a href="{{ route('khoanghethuat-thongbao') }}" class="nav-link"><span>Thông báo</span></a></li>
+                <li class="nav-item"><a href="{{ route('khoanghethuat-tintuc') }}" class="nav-link"><span>Tin tức - sự kiện</span></a></li>
                 <!-- <li class="nav-item"><a href="#author-section" class="nav-link"><span>abc</span></a></li> -->
-                <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Liên hệ</span></a></li>
+                <li class="nav-item"><a href="{{ route('khoanghethuat-lienhe') }}" class="nav-link"><span>Liên hệ</span></a></li>
             </ul>
         </div>
     </div>
