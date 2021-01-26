@@ -1,7 +1,5 @@
 @extends('client.layout.layout_nghethuat.index')
-
-@section('title', 'Tin tức 1')
-
+@section('title', 'Thông Tin Giảng Viên')
 @section('head')
 @include('client.layout.layout_nghethuat.components.teacher.head')
 @endsection
@@ -116,7 +114,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

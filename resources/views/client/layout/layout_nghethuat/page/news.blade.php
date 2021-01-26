@@ -248,83 +248,8 @@
                     </div><!-- end col -->
                 </div><!-- end row -->
             </div><!-- end col -->
-            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-                <div class="sidebar">
-                    <div class="widget">
-                        <h2 class="widget-title">Tìm kiếm</h2>
-                        <form class="form-inline search-form">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search on the site">
-                            </div>
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-                        </form>
-                    </div><!-- end widget -->
-                    <div class="widget">
-                        <h2 class="widget-title">Thông báo</h2>
-                        <div class="blog-list-widget">
-                            <div class="list-group">
-                                <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                    <div class="w-100 justify-content-between">
-                                        <img src="{{ asset('dist/layout/layout_nghethuat/upload/blog_square_01.jpg') }}" alt="" class="img-fluid float-left">
-                                        <h5 class="mb-1">5 Beautiful buildings you need to before dying</h5>
-                                        <small>12 Jan, 2016</small>
-                                    </div>
-                                </a>
-                                <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                    <div class="w-100 justify-content-between">
-                                        <img src="{{ asset('dist/layout/layout_nghethuat/upload/blog_square_02.jpg') }}" alt="" class="img-fluid float-left">
-                                        <h5 class="mb-1">Let's make an introduction for creative life</h5>
-                                        <small>11 Jan, 2016</small>
-                                    </div>
-                                </a>
-                                <a href="single.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                                    <div class="w-100 last-item justify-content-between">
-                                        <img src="{{ asset('dist/layout/layout_nghethuat/upload/blog_square_03.jpg') }}" alt="" class="img-fluid float-left">
-                                        <h5 class="mb-1">Did you see the most beautiful sea in the world?</h5>
-                                        <small>07 Jan, 2016</small>
-                                    </div>
-                                </a>
-                            </div>
-                        </div><!-- end blog-list -->
-                    </div><!-- end widget -->
-                    <div class="widget">
-                        <h2 class="widget-title">Quảng cáo</h2>
-                        <div class="banner-spot clearfix">
-                            <div class="banner-img">
-                                <img src="{{ asset('dist/layout/layout_nghethuat/upload/banner_03.jpg') }}" alt="" class="img-fluid">
-                            </div><!-- end banner-img -->
-                        </div><!-- end banner -->
-                    </div><!-- end widget -->
-                    <div class="widget">
-                        <h2 class="widget-title">Instagram Feed</h2>
-                        <div class="instagram-wrapper clearfix">
-                            <a class="" href="#"><img src="{{ asset('dist/layout/layout_nghethuat/upload/insta_01.jpeg') }}" alt="" class="img-fluid"></a>
-                            <a href="#"><img src="{{ asset('dist/layout/layout_nghethuat/upload/insta_02.jpeg') }}" alt="" class="img-fluid"></a>
-                            <a href="#"><img src="{{ asset('dist/layout/layout_nghethuat/upload/insta_03.jpeg') }}" alt="" class="img-fluid"></a>
-                            <a href="#"><img src="{{ asset('dist/layout/layout_nghethuat/upload/insta_04.jpeg') }}" alt="" class="img-fluid"></a>
-                            <a href="#"><img src="{{ asset('dist/layout/layout_nghethuat/upload/insta_05.jpeg') }}" alt="" class="img-fluid"></a>
-                            <a href="#"><img src="{{ asset('dist/layout/layout_nghethuat/upload/insta_06.jpeg') }}" alt="" class="img-fluid"></a>
-                            <a href="#"><img src="{{ asset('dist/layout/layout_nghethuat/upload/insta_07.jpeg') }}" alt="" class="img-fluid"></a>
-                            <a href="#"><img src="{{ asset('dist/layout/layout_nghethuat/upload/insta_08.jpeg') }}" alt="" class="img-fluid"></a>
-                            <a href="#"><img src="{{ asset('dist/layout/layout_nghethuat/upload/insta_09.jpeg') }}" alt="" class="img-fluid"></a>
-                        </div><!-- end Instagram wrapper -->
-                    </div><!-- end widget -->
-                    <div class="widget">
-                        <h2 class="widget-title">Liên quan</h2>
-                        <div class="link-widget">
-                            <ul>
-                                <li><a href="news.html">Hoạt động sinh viên<span>(21)</span></a></li>
-                                <li><a href="news.html">Tin chuyên ngành<span>(15)</span></a></li>
-                                <li><a href="news.html">Bảng tin khoa<span>(31)</span></a></li>
-                                <li><a href="news.html">Tạp chí khoa học<span>(22)</span></a></li>
-                                <li><a href="news.html">Bảng vàng thành tích<span>(66)</span></a></li>
-                                <!-- <li><a href="#">Entertaintment <span>(11)</span></a></li>
-                                <li><a href="#">Food & Drink <span>(87)</span></a></li> -->
-                            </ul>
-                        </div><!-- end link-widget -->
-                    </div><!-- end widget -->
-                </div><!-- end sidebar -->
-            </div><!-- end col -->
+            @include('client.layout.layout_nghethuat.components.news.sibarnews')
+            <!-- end col -->
         </div><!-- end row -->
     </div><!-- end container -->
 </section>
