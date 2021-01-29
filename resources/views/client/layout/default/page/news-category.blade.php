@@ -47,7 +47,7 @@
                                             </div><!-- end hover -->
                                         </a>
                                     </div><!-- end media -->
-                                    <div class="blog-meta big-meta">
+                                    <div class="blog-meta big-meta">z
                                         <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}" title=""> Du lịch học đường thời kỳ hội nhập</a></h4>
                                         <p>Bạn đã tốt nghiệp THPT hoặc đã học hết phổ thông nhưng đại học không phải là sự lựa chọn của bạn. Bạn</p>
                                         <small><a href="blog-category-01.html" title="">Tin Tức</a></small>

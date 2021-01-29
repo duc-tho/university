@@ -1,6 +1,6 @@
 @extends('client.layout.layout_nghethuat.index')
 
-@section('title', 'Khoa nghệ thật')
+@section('title', 'Khoa Nghệ Thuật')
 
 @section('meta')
 <meta name="keywords" content="">
@@ -23,6 +23,7 @@
                 <div class="text mt-5">
                     <span class="subheading">Chào mừng đến với</span>
                     <h1>Khoa</h1>
+
                     <h1>Nghệ Thuật</h1>
                     <p>Khoa Nghệ thuật được thành lập từ năm 2006, gồm có 06 chuyên ngành: Đạo diễn, Diễn viên kịch nói và điện ảnh, Thanh nhạc, Thiết kế Đồ họa, Thiết kế Thời trang và Quay phim.</p>
                     {{-- <p><a href="{{ route('khoanghethuat-gioithieu') }}" class="btn btn-primary py-3 px-4">Xem thêm</a></p> --}}
@@ -548,9 +549,9 @@
                             <div class="col-md-12 heading-section ftco-animate">
                                 <span class="subheading">Bạn muốn biết thêm thông tin?</span>
                                 <h2 class="mb-4">ĐĂNG KÝ TƯ VẤN</h2>
-                                <div class="row no-gutters block-9">
-                                    <div class="col-md-12 order-md-last d-flex">
-                                        <form action="#" class="bg-light p-4 p-md-12 contact-form">
+                                <div class="row no-gutters block-9 ">
+                                    <div class="col-md-12 order-md-last d-flex ">
+                                        <form action="#" class="bg-light p-4 p-md-12 contact-form w-100">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="Họ tên...">
                                             </div>

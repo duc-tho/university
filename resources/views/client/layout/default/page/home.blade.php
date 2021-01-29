@@ -158,7 +158,7 @@
                                 </a>
                             </div><!-- end media -->
                             <div class="blog-meta big-meta">
-                                <h4><a href="single.html" title="">Một số hình ảnh về góc Giáng Sinh ấm cúng của trường</a></h4>
+                                <h4><a href="z" title="">Một số hình ảnh về góc Giáng Sinh ấm cúng của trường</a></h4>
                                 <p></p>
                                 <small><a href="{{route('home-category','danh-muc-tin-tuc')}}" title="">Hoạt động</a></small>
                                 <small><a href="single.html" title="">Đăng ngày 16/12/2020</a></small>
