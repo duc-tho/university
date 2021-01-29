@@ -21,7 +21,7 @@
     <div class="container d-flex">
         <div class="row">
             <div class="col-lg-5 col-md-5 col-sm-6 logo mr-auto">
-                <a href="{{ route('khoangoaingu') }}">
+                <a href="/">
                     <img class="text-light" alt="logo" src="http://khoangoaingu.daihocdulich.edu.vn/upload/file/logo.png" style="width:250px; height: auto;">
                 </a>
             </div>
