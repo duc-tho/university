@@ -17,7 +17,7 @@
             </div><!-- end col -->
             <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('home-about-detail', 'chi-tiet-gioi-thieu') }}">Trang chủ</a></li>
                     <li class="breadcrumb-item active">Giới thiệu</li>
                 </ol>
             </div><!-- end col -->
@@ -38,7 +38,7 @@
             </video>
         </div>
         <div class="col-md-6 col-lg-4">
-            <a href="#">
+            <a href="{{ route('home-about-detail', 'chi-tiet-gioi-thieu') }}">
                 <div class="card">
                     <img class="card-img-top img-fluid" src="http://daihocdulich.edu.vn/upload/news/2019/03/28/qui-dat-va-co-so-vat-chat-truong-cao-dang-van-hoa-nghe-thuat-va-du-lich-sai-gon-saigonact-thumbnail-55190.jpg" alt="Card image cap">
                     <div class="card-body">
@@ -48,7 +48,7 @@
             </a>
         </div>
         <div class="col-md-6 col-lg-4">
-            <a href="#">
+            <a href="{{ route('home-about-detail', 'chi-tiet-gioi-thieu') }}">
                 <div class="card">
                     <img class="card-img-top img-fluid" src="http://daihocdulich.edu.vn/upload/news/2019/03/28/qui-dat-va-co-so-vat-chat-truong-cao-dang-van-hoa-nghe-thuat-va-du-lich-sai-gon-saigonact-thumbnail-55190.jpg" alt="Card image cap">
                     <div class="card-body">
@@ -58,7 +58,7 @@
             </a>
         </div>
         <div class="col-md-6 col-lg-4">
-            <a href="#">
+            <a href="{{ route('home-about-detail', 'chi-tiet-gioi-thieu') }}">
                 <div class="card">
                     <img class="card-img-top img-fluid" src="http://daihocdulich.edu.vn/upload/news/2019/03/28/qui-dat-va-co-so-vat-chat-truong-cao-dang-van-hoa-nghe-thuat-va-du-lich-sai-gon-saigonact-thumbnail-55190.jpg" alt="Card image cap">
                     <div class="card-body">
@@ -68,7 +68,7 @@
             </a>
         </div>
         <div class="col-md-6 col-lg-4">
-            <a href="#">
+            <a href="{{ route('home-about-detail', 'chi-tiet-gioi-thieu') }}">
                 <div class="card">
                     <img class="card-img-top img-fluid" src="http://daihocdulich.edu.vn/upload/news/2019/03/28/qui-dat-va-co-so-vat-chat-truong-cao-dang-van-hoa-nghe-thuat-va-du-lich-sai-gon-saigonact-thumbnail-55190.jpg" alt="Card image cap">
                     <div class="card-body">
@@ -78,7 +78,7 @@
             </a>
         </div>
         <div class="col-md-6 col-lg-4">
-            <a href="#">
+            <a href="{{ route('home-about-detail', 'chi-tiet-gioi-thieu') }}">
                 <div class="card">
                     <img class="card-img-top img-fluid" src="http://daihocdulich.edu.vn/upload/news/2019/03/28/qui-dat-va-co-so-vat-chat-truong-cao-dang-van-hoa-nghe-thuat-va-du-lich-sai-gon-saigonact-thumbnail-55190.jpg" alt="Card image cap">
                     <div class="card-body">
@@ -88,7 +88,7 @@
             </a>
         </div>
         <div class="col-md-6 col-lg-4">
-            <a href="#">
+            <a href="{{ route('home-about-detail', 'chi-tiet-gioi-thieu') }}">
                 <div class="card">
                     <img class="card-img-top img-fluid" src="http://daihocdulich.edu.vn/upload/news/2019/03/28/qui-dat-va-co-so-vat-chat-truong-cao-dang-van-hoa-nghe-thuat-va-du-lich-sai-gon-saigonact-thumbnail-55190.jpg" alt="Card image cap">
                     <div class="card-body">

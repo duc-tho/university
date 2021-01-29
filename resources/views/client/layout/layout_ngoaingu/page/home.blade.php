@@ -120,7 +120,7 @@
                                 class="img-fluid" alt="">
                         </div>
                         <div class="col-lg-6 pt-4 pt-lg-0 content">
-                            <h3>Mục tiêu của Khoa</h3>
+                            <h3>Chào Mừng Đến Khoa Ngoại Ngữ</h3>
                             <p class="font-italic">
                                 Đào tạo Cử nhân tiếng Anh và Đông Phương học có đủ kiến thức, kỹ năng nghề nghiệp, phẩm chất
                                 chính trị,
@@ -326,8 +326,8 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12 text-center" style="padding-top: 15px;">
-                            <a class="button button--outline button--orange" href="{{ route('tintucngoaingu') }}">XEM THÊM
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center" >
+                            <a class="button button--outline button--orange button-addread-new" href="{{ route('tintucngoaingu') }}">XEM THÊM
                                 TIN TỨC</a>
                         </div>
                     </div>

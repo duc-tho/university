@@ -397,32 +397,32 @@
         <div class="w3_testimonials_grids w3_testimonials_grids">
             <div id="owl-demo" class="owl-carousel">
                 <div class="item w3_agileits_testimonials_grid">
-                    <a href="javascript:"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/16/mot-so-hinh-anh-ve-goc-giang-sinh-am-cung-cua-truong-thumbnail-68258.jpg" alt=" " class="img-responsive" /></a>
-                    <h4><a href="javascript:">Một số hình ảnh về góc Giáng Sinh ấm cúng của trường</a></h4>
+                    <a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/16/mot-so-hinh-anh-ve-goc-giang-sinh-am-cung-cua-truong-thumbnail-68258.jpg" alt=" " class="img-responsive" /></a>
+                    <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">Một số hình ảnh về góc Giáng Sinh ấm cúng của trường</a></h4>
                     <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
                         <i class="fa fa-clock-o" aria-hidden="true"></i> 29/12/2020 &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> 39
                     </div>
-                    <p>Donec quis turpis pellentesque justo pulvinar sceleris.</p>
+                    <p>Hình ảnh về giáng sinh 2020</p>
                 </div>
                 <div class="item w3_agileits_testimonials_grid">
-                    <a href="javascript:"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/21/xet-hoc-ba-chia-khoa-mo-ra-canh-cua-hoc-tap--thumbnail-11234.jpg" alt="" class="img-responsive" /></a>
-                    <h4><a href="javascript:">XÉT HỌC BẠ: CHÌA KHOÁ MỞ RA CÁNH CỬA HỌC TẬP !</a></h4>
+                    <a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/21/xet-hoc-ba-chia-khoa-mo-ra-canh-cua-hoc-tap--thumbnail-11234.jpg" alt="" class="img-responsive" /></a>
+                    <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">XÉT HỌC BẠ: CHÌA KHOÁ MỞ RA CÁNH CỬA HỌC TẬP !</a></h4>
                     <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
                         <i class="fa fa-clock-o" aria-hidden="true"></i> 29/12/2020 &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> 39
                     </div>
                     <p>Dù bạn khao khát được cháy bỏng với tâm hồn nghệ thuật hay bạn ước mơ Lãnh Đạo- Tất cả đều được thỏa sức tại Trường CAO ĐẲNG VĂN HÓA NGHỆ THUẬT VÀ DU LỊCH SÀI GÒN. </p>
                 </div>
                 <div class="item w3_agileits_testimonials_grid">
-                    <a href="javascript:"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/14/dang-ki-nhanh-tay-chop-ngay-co-hoi--thumbnail-49874.jpg" alt=" " class="img-responsive" /></a>
-                    <h4><a href="javascript:">Đăng kí nhanh tay ! Chớp ngay cơ hội !</a></h4>
+                    <a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/14/dang-ki-nhanh-tay-chop-ngay-co-hoi--thumbnail-49874.jpg" alt=" " class="img-responsive" /></a>
+                    <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">Đăng kí nhanh tay ! Chớp ngay cơ hội !</a></h4>
                     <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
                         <i class="fa fa-clock-o" aria-hidden="true"></i> 29/12/2020 &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> 39
                     </div>
                     <p>Chọn trường là chọn con đường tương lai của bản thân. Vì thế hãy chọn bước chuẩn bị tốt nhất cho chính bạn </p>
                 </div>
                 <div class="item w3_agileits_testimonials_grid">
-                    <a href="javascript:"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/10/chuong-trinh-dao-tao-ngan-han-thumbnail-85717.jpg" alt=" " class="img-responsive" /></a>
-                    <h4><a href="javascript:">CHƯƠNG TRÌNH ĐÀO TẠO NGẮN HẠN</a></h4>
+                    <a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/10/chuong-trinh-dao-tao-ngan-han-thumbnail-85717.jpg" alt=" " class="img-responsive" /></a>
+                    <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">CHƯƠNG TRÌNH ĐÀO TẠO NGẮN HẠN</a></h4>
                     <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
                         <i class="fa fa-clock-o" aria-hidden="true"></i> 29/12/2020 &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> 39
                     </div>
@@ -507,10 +507,13 @@
         <h3 class="w3ls-title">Đăng ký tư vấn tuyển sinh!</h3>
         <p>Nhập Email để nhận tư vấn tuyển sinh.</p>
         <div class="subscribe-grid">
-            <form action="#" method="post">
-                <input type="email" placeholder="Email" name="Subscribe" required="">
-                <button class="btn1">Đăng ký</button>
-            </form>
+
+                {{-- <input type="email" placeholder="Email" name="Subscribe" required=""> --}}
+                <a href="{{route('tuyensinh')}}">
+                    <button class="btn1">Đăng ký</button>
+                </a>
+
+
         </div>
     </div>
 </div>
@@ -529,29 +532,29 @@
             <div class="col-sm-4 col-md-3">
                 <h4 class="ndt__footer__title">Phòng</h4>
                 <ul class="ndt__footer__link">
-                    <li> <a href="#">Văn phòng hiệu trưởng</a> </li>
-                    <li> <a href="#">Phòng Tổ chức hành chính</a> </li>
-                    <li> <a href="#">Phòng Quản trị</a> </li>
-                    <li> <a href="#">Phòng Thanh tra</a> </li>
-                    <li> <a href="#">Phòng Công tác HS - SV</a> </li>
-                    <li> <a href="#">Phòng Khảo thí</a> </li>
-                    <li> <a href="#">Phòng Kế toán</a> </li>
-                    <li> <a href="#">Phòng Đào tạo</a> </li>
-                    <li> <a href="#">Phòng Công nghệ thông tin</a> </li>
+                    <li> <a href="javascript:">Văn phòng hiệu trưởng</a> </li>
+                    <li> <a href="javascript:">Phòng Tổ chức hành chính</a> </li>
+                    <li> <a href="javascript:">Phòng Quản trị</a> </li>
+                    <li> <a href="javascript:">Phòng Thanh tra</a> </li>
+                    <li> <a href="javascript:">Phòng Công tác HS - SV</a> </li>
+                    <li> <a href="javascript:">Phòng Khảo thí</a> </li>
+                    <li> <a href="javascript:">Phòng Kế toán</a> </li>
+                    <li> <a href="javascript:">Phòng Đào tạo</a> </li>
+                    <li> <a href="javascript:">Phòng Công nghệ thông tin</a> </li>
                 </ul>
             </div>
             <div class="col-sm-4 col-md-3">
                 <h4 class="ndt__footer__title">Phòng</h4>
                 <ul class="ndt__footer__link">
-                    <li> <a href="#">Văn phòng hiệu trưởng</a> </li>
-                    <li> <a href="#">Phòng Tổ chức hành chính</a> </li>
-                    <li> <a href="#">Phòng Quản trị</a> </li>
-                    <li> <a href="#">Phòng Thanh tra</a> </li>
-                    <li> <a href="#">Phòng Công tác HS - SV</a> </li>
-                    <li> <a href="#">Phòng Khảo thí</a> </li>
-                    <li> <a href="#">Phòng Kế toán</a> </li>
-                    <li> <a href="#">Phòng Đào tạo</a> </li>
-                    <li> <a href="#">Phòng Công nghệ thông tin</a> </li>
+                    <li> <a href="javascript:">Văn phòng hiệu trưởng</a> </li>
+                    <li> <a href="javascript:">Phòng Tổ chức hành chính</a> </li>
+                    <li> <a href="javascript:">Phòng Quản trị</a> </li>
+                    <li> <a href="javascript:">Phòng Thanh tra</a> </li>
+                    <li> <a href="javascript:">Phòng Công tác HS - SV</a> </li>
+                    <li> <a href="javascript:">Phòng Khảo thí</a> </li>
+                    <li> <a href="javascript:">Phòng Kế toán</a> </li>
+                    <li> <a href="javascript:">Phòng Đào tạo</a> </li>
+                    <li> <a href="javascript:">Phòng Công nghệ thông tin</a> </li>
                 </ul>
             </div>
             <div class="col-sm-4 col-md-3"></div>
@@ -562,7 +565,7 @@
 <!-- footer -->
 <div class="agileits_w3layouts-footer">
     <div class="col-md-6 col-sm-8 agileinfo-copyright">
-        <p>© 2021 Bản quền thuộc về Trường Đại Học Du Lịch Sài Gòn | Thiết kế bởi khoa CNTT</p>
+        <p>© 2021 Bản quền thuộc về Trường Đại Học Du Lịch Sài Gòn </p>
     </div>
     <div class="col-md-6 col-sm-4 agileinfo-icons">
         <ul>
