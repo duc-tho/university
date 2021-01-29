@@ -134,7 +134,7 @@ a {
     opacity: 60%;
 }
 .news .entry-date {
-    margin-top: 15px;
+    margin-top: 20px;
     font-style: italic;
 }
 @media (min-width: 768px){
@@ -201,7 +201,8 @@ a {
     border-radius: 3px;
     background: #067186;
     color: #fff;
-    font-size: 1.34544rem;
+    /* font-size: 1.34544rem; */
+    font-size: 1.0rem;
     line-height: 36px;
     padding: 0 1em;
     font-weight: 700;

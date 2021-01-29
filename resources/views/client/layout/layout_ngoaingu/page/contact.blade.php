@@ -32,7 +32,7 @@
             <div class="info-box  mb-4">
               <i class="bx bx-envelope"></i>
               <h3>Email </h3>
-              <p>sgacr@dhdl.edu.vn</p>
+              <p>sgact@dhdl.edu.vn</p>
             </div>
           </div>
 
