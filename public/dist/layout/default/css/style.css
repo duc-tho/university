@@ -39,7 +39,7 @@ p,
 .navbar-inverse .navbar-nav .nav-link,
 .header .dropdown-menu,
 .navbar-nav .nav-link {
-    font-family: 'Roboto', serif;
+    font-family: "Roboto", serif;
 }
 
 h1,
@@ -66,37 +66,37 @@ h6:hover a {
 h1 {
     font-size: 32px;
     line-height: 40px;
-    margin-bottom: 23px
+    margin-bottom: 23px;
 }
 
 h2 {
     font-size: 27px;
     line-height: 38px;
-    margin-bottom: 20px
+    margin-bottom: 20px;
 }
 
 h3 {
     font-size: 22px;
     line-height: 30px;
-    margin-bottom: 17px
+    margin-bottom: 17px;
 }
 
 h4 {
     font-size: 19px;
     line-height: 29px;
-    margin-bottom: 14px
+    margin-bottom: 14px;
 }
 
 h5 {
     font-size: 17px;
     line-height: 25px;
-    margin-bottom: 11px
+    margin-bottom: 11px;
 }
 
 h6 {
     font-size: 16px;
     line-height: 24px;
-    margin-bottom: 11px
+    margin-bottom: 11px;
 }
 
 a {
@@ -129,7 +129,6 @@ a {
     padding: 2rem;
 }
 
-
 /* HEADER
 **************************************/
 
@@ -158,7 +157,7 @@ a {
     vertical-align: middle;
     content: "\f107";
     border: 0;
-    font-family: 'FontAwesome';
+    font-family: "FontAwesome";
 }
 
 .navbar-toggleable-md .navbar-nav .nav-link {
@@ -276,7 +275,7 @@ a {
 }
 
 .dropdown-menu .dropdown-menu {
-    margin-top: -1px !important
+    margin-top: -1px !important;
 }
 
 .mega-menu-content {
@@ -315,7 +314,6 @@ a {
     width: 100%;
 }
 
-
 /* Style the tab */
 
 div.tab {
@@ -325,7 +323,6 @@ div.tab {
     width: 20%;
     background-color: #edeff2;
 }
-
 
 /* Style the buttons inside the tab */
 
@@ -339,11 +336,11 @@ div.tab button {
     outline: none;
     text-align: right;
     cursor: pointer;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -ms-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     color: #121212;
     font-size: 15px;
     font-weight: 500;
@@ -351,7 +348,6 @@ div.tab button {
     line-height: 1;
     text-transform: capitalize;
 }
-
 
 /* Change background color of buttons on hover */
 
@@ -366,7 +362,6 @@ div.tab button.active {
 div.tab button:hover {
     border-top: 0;
 }
-
 
 /* Style the tab content */
 
@@ -383,7 +378,8 @@ div.tab button:hover {
 }
 
 .header .navbar-nav .has-submenu.menu-large ul li {
-    background: url(/dist/layout/default/images/menubg.jpg) repeat-y center center #ffffff !important;
+    background: url(/dist/layout/default/images/menubg.jpg) repeat-y center
+        center #ffffff !important;
 }
 
 .tab-details {
@@ -397,7 +393,6 @@ div.tab button:hover {
     padding: 2rem 1.5rem 0;
     width: 80%;
 }
-
 
 /* SECTIONS
 **************************************/
@@ -538,11 +533,11 @@ div.tab button:hover {
 
 .post-media img,
 .masonry-box img {
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -ms-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
@@ -584,7 +579,6 @@ div.tab button:hover {
     padding: 0.1rem 1rem;
 }
 
-
 /* FOOTER
 **************************************/
 
@@ -598,7 +592,8 @@ div.tab button:hover {
 
 .footer {
     padding: 4rem 0 4rem;
-    background: url(/dist/layout/default/images/footer.png) repeat-x center bottom #edeff2;
+    background: url(/dist/layout/default/images/footer.png) repeat-x center
+        bottom #edeff2;
 }
 
 .footer.wb {
@@ -607,7 +602,7 @@ div.tab button:hover {
 
 .footer.wb .hovereffect {
     opacity: 0.1;
-    background-color: rgba(0, 0, 0, 0.0.1);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .demos h4 a {
@@ -690,14 +685,13 @@ div.tab button:hover {
     bottom: -100px;
     right: 25px;
     cursor: pointer;
-    -webkit-transition: all .7s ease-in-out;
-    -moz-transition: all .7s ease-in-out;
-    -o-transition: all .7s ease-in-out;
-    -ms-transition: all .7s ease-in-out;
-    transition: all .7s ease-in-out;
+    -webkit-transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+    -ms-transition: all 0.7s ease-in-out;
+    transition: all 0.7s ease-in-out;
     overflow: auto;
 }
-
 
 /* PAGES
 **************************************/
@@ -832,7 +826,6 @@ div.tab button:hover {
     margin: 0;
 }
 
-
 /* BLOG
 **************************************/
 
@@ -860,22 +853,22 @@ div.tab button:hover {
 .gp-button.btn-primary:hover,
 .gp-button.btn-primary:focus,
 .gp-button.btn-primary {
-    border-color: #DA5333 !important;
-    background-color: #DA5333 !important;
+    border-color: #da5333 !important;
+    background-color: #da5333 !important;
 }
 
 .fb-button.btn-primary:focus,
 .fb-button.btn-primary:hover,
 .fb-button.btn-primary {
-    background-color: #3B5998 !important;
-    border-color: #3B5998 !important;
+    background-color: #3b5998 !important;
+    border-color: #3b5998 !important;
 }
 
 .tw-button.btn-primary:hover,
 .tw-button.btn-primary:focus,
 .tw-button.btn-primary {
-    background-color: #00B6F1 !important;
-    border-color: #00B6F1 !important;
+    background-color: #00b6f1 !important;
+    border-color: #00b6f1 !important;
 }
 
 .tw-button i,
@@ -971,7 +964,7 @@ div.tab button:hover {
 }
 
 .comments-list p {
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
 }
 
 .tag-cloud-single a,
@@ -1065,7 +1058,7 @@ div.tab button:hover {
 .check {
     padding-bottom: 0;
     margin-bottom: 25px;
-    list-style: none
+    list-style: none;
 }
 
 .check li:before {
@@ -1081,7 +1074,8 @@ div.tab button:hover {
 }
 
 .banner-spot {
-    background: #edeff2 url("/dist/layout/default/images/ads-bg.png") no-repeat scroll center right / auto 100%;
+    background: #edeff2 url("/dist/layout/default/images/ads-bg.png") no-repeat
+        scroll center right / auto 100%;
     clear: both;
     display: block;
     height: auto;
@@ -1133,7 +1127,7 @@ div.tab button:hover {
 }
 
 .blog-meta small:last-child:after {
-    content: ""
+    content: "";
 }
 
 hr.invis {
@@ -1168,15 +1162,27 @@ hr.invis3 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 30%);
-    background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 30%);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 30%);
+    background: -moz-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.1) 30%
+    );
+    background: -webkit-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.1) 30%
+    );
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.1) 30%
+    );
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000', GradientType=1);
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -ms-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
@@ -1216,17 +1222,29 @@ hr.invis3 {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.2);
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -ms-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     zoom: 1;
     filter: alpha(opacity=0);
     opacity: 0.5;
-    background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 50%);
-    background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 50%);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 50%);
+    background: -moz-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.1) 50%
+    );
+    background: -webkit-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.1) 50%
+    );
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.1) 50%
+    );
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000', GradientType=1);
 }
 
@@ -1250,11 +1268,11 @@ hr.invis3 {
     height: 90px;
     display: block;
     content: url(/dist/layout/default/images/hover.png);
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -ms-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
@@ -1319,7 +1337,6 @@ hr.invis3 {
     margin-top: 1rem;
 }
 
-
 /* WIDGETS
 **************************************/
 
@@ -1370,7 +1387,7 @@ hr.invis3 {
 
 .form-wrapper textarea {
     min-height: 120px !important;
-    padding-top: 1rem
+    padding-top: 1rem;
 }
 
 .search-form .form-control {
@@ -1402,7 +1419,7 @@ hr.invis3 {
     color: #a3a5a8 !important;
     width: 45px;
     line-height: 45px;
-    margin-left: 0
+    margin-left: 0;
 }
 
 .sidebar .widget ul {
@@ -1540,7 +1557,10 @@ hr.invis3 {
     width: 100%;
 }
 
-.form-wrapper .newsletter-widget .form-inline .form-control::-webkit-input-placeholder {
+.form-wrapper
+    .newsletter-widget
+    .form-inline
+    .form-control::-webkit-input-placeholder {
     color: #a2abb1;
     opacity: 1;
 }
@@ -1570,7 +1590,10 @@ hr.invis3 {
     opacity: 1;
 }
 
-.top-search .newsletter-widget .form-inline .form-control:-ms-input-placeholder {
+.top-search
+    .newsletter-widget
+    .form-inline
+    .form-control:-ms-input-placeholder {
     color: #555555;
     opacity: 1;
 }
@@ -1607,7 +1630,7 @@ hr.invis3 {
 }
 
 .newsletter-widget .btn i {
-    padding-left: 0.5rem
+    padding-left: 0.5rem;
 }
 
 .btn {
@@ -1655,7 +1678,7 @@ hr.invis3 {
     background: #fff;
     z-index: 11000;
     position: fixed;
-    display: block
+    display: block;
 }
 
 .preloader {
@@ -1672,8 +1695,112 @@ hr.invis3 {
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    border-radius: 50%
+    border-radius: 50%;
 }
-#background-color-new{
-	background-color: #ecf0f7
+#background-color-new {
+    background-color: #ecf0f7;
+}
+/* css hover teacher */
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: 0.5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.blog-box:hover .image {
+    opacity: 0.3;
+}
+
+.blog-box:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: left;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.des-teacher {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+}
+.des2-teacher {
+    text-align: center;
+    font-size: 20px;
+    color: #067186;
+}
+
+.teacher-info h4 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    font-weight: bold;
+}
+
+.teacher-info p {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.teacher-info li {
+    font-size: 1.2rem;
+}
+
+.modal-content {
+    width: 60%;
 }

@@ -15,18 +15,18 @@
               <strong class="cspem"><i class="fas fa-map-marker-alt"></i> &nbsp;</strong> <span class="cspem">CS2: 160/72 Phan Huy Ích, P.12, Q.Gò Vấp, TP.HCM</span> <br>
               <strong class="cspem"><i class="fa fa-mortar-board"></i> &nbsp;</strong><span class="cspem">daihocdulich.edu.vn</span> <br>
               <strong class="cspem"><i class="fas fa-phone-alt"></i> &nbsp;</strong><span class="cspem">(028)38.831.793</span> <br>
-              <strong class="cspem"><i class="far fa-envelope-open"></i>&nbsp; </strong><span class="cspem">info@daihocdulich.edu.vn</span> <br>	
+              <strong class="cspem"><i class="far fa-envelope-open"></i>&nbsp; </strong><span class="cspem">info@daihocdulich.edu.vn</span> <br>
             </p>
           </div>
 
           <!-- <div class="col-lg-2 col-md-6 footer-links">
             <h4>Đường Dẫn</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Trang Chủ</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="javascript:">Trang Chủ</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="javascript:">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="javascript:">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="javascript:">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="javascript:">Privacy policy</a></li>
             </ul>
           </div> -->
 
@@ -49,8 +49,8 @@
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4 class="htdc">Hãy Theo Dõi Chúng Tôi</h4>
             <p id="ndt">Luôn đồng hành cùng mọi sinh viên trên mọi chặng đường</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Gửi">
+            <form >
+              <input required type="email" name="email"><input type="submit" value="Gửi">
             </form>
           </div>
 
@@ -73,13 +73,13 @@
         </div> -->
       </div>
       <div class="social-links text-center text-lg-right pt-3 pt-lg-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="javascript:" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="javascript:" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="javascript:" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="javascript:" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="javascript:" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
-   
+
   </footer>
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+  <a href="javascript:" class="back-to-top"><i class="icofont-simple-up"></i></a>

@@ -21,7 +21,7 @@ class HomeController extends Controller
             'mock' => $data
         ]);
     }
-
+    
     // <------------------>  Start Controller KhoaDuLich <--------------------------->
     public function getKDL(Request $request)
     {
@@ -74,7 +74,7 @@ class HomeController extends Controller
     }
 
 
-    
+
 
     // <------------------> End Controller KhoaDuLich <--------------------------->
 
@@ -131,6 +131,6 @@ class HomeController extends Controller
      // <------------------> End Controller KhoaNgoaiNgu <--------------------------->
 
     // <------------------>  Start Controller KhoaKinhTe <--------------------------->
-    
+
     // <------------------> End Controller KhoaNgoaiNgu <--------------------------->
 }

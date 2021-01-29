@@ -48,7 +48,7 @@
         <div class="row">
             <div class="col-lg-4 col-12">
                 <div class="logo">
-                    <a href="index.html"><img src="http://daihocdulich.edu.vn/default/template/imgs/logo-02.png" alt=""></a>
+                    <a href="/"><img src="http://daihocdulich.edu.vn/default/template/imgs/logo-02.png" alt=""></a>
                 </div><!-- end logo -->
             </div>
             <div class="col-lg-8">

@@ -55,10 +55,7 @@
                     <div class="clearfix"> </div>
                 </nav>
             </div>
-
         </div>
-        <!--//header-w3l-->
-        <!--/banner-info-->
         <div class="baner-info">
             <h4>Ban quản lý đề án</h4>
             <h3><span>T</span>rường đại học <span>D</span>u lịch sài gòn</h3>
@@ -84,13 +81,13 @@
                     <span class="fa fa-tags banner-icon" aria-hidden="true"></span>
                     <h4>Tuyển Sinh </h4>
                     <p>Đăng ký tuyển sinh <span style="font-weight: bold">Trực tuyến 24/7 Luôn hỗ trợ sinh viên </span></p>
-
-
                     <a class="hvr-rectangle-out w3_play_icon1" href="{{route('tuyensinh')}}"> Tuyển Sinh</a>
                 </div>
                 <div class="clearfix"></div>
             </div>
         </div>
+
+        
         <h2 class="w3ls-title">Giới thiệu</h2>
         {{-- <h5>Roin vel enim nec ipsum finibus.Duis euismod massa utab.</h5> --}}
         <br>
@@ -347,50 +344,6 @@
 <!--//main-header-->
 <script type="text/javascript" src="{{ asset('dist/layout/layout_home/js/jquery.zoomslider.min.js') }}"></script>
 <!-- testimonial -->
-<div class="wthree-testi w3ls-section" id="testimonials">
-    <!-- container -->
-    <div class="container">
-        <h3 class="w3ls-title">Giảng Viên</h3>
-        <div class="w3_wthree-testi_grids text-center">
-            <section class="slider">
-                <div class="flexslider">
-                    <ul class="slides">
-                        <li>
-                            <div class="wthree-testi_grid">
-                                <div class="testimonial-left">
-                                    <img src="{{ asset('dist/layout/layout_home/images/t1.jpg') }}">
-                                </div>
-                                <p>Chúng tôi luôn cố gắng hướng đến nền giáo dục mới mẻ để giúp cho sinh viên có thể tiếp nhận được những kiến thức mới mẻ nhất.</p>
-                                <h5>Lê Minh Long</h5>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="wthree-testi_grid">
-                                <div class="testimonial-left">
-                                    <img src="{{ asset('dist/layout/layout_home/images/t2.jpg') }}">
-                                </div>
-                                <p>Giáo dục cần phải cải cách liên tục, vì thế cách giảng dạy chúng tôi luôn luôn đổi mới qua từng kì khác nhau.</p>
-                                <h5>Phạm Minh Hồng</h5>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="wthree-testi_grid">
-                                <div class="testimonial-left">
-                                    <img src="{{ asset('dist/layout/layout_home/images/t3.jpg') }}">
-                                </div>
-                                <p>Sinh viên sẽ luôn được hỗ trọ từ phía chúng tối, chúng tôi sẽ luôn có mặt giúp đỡ các tân sinh viên</p>
-                                <h5>Trương Hoàng</h5>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            {{-- <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="#"> Xem thêm về các giảng viên</a></div> --}}
-        </div>
-    </div>
-</div>
-<!-- //testimonial -->
-<!-- team -->
 <div class="testimonials w3ls-section" id="team">
     <div class="container">
         <h3 class="w3ls-title">Tin Tức</h3>
@@ -433,6 +386,52 @@
         <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{ route('home-news') }}"> Các tin tức khác</a></div>
     </div>
 </div>
+<img src="" alt="">
+<div class="wthree-testi w3ls-section" id="testimonials">
+    <!-- container -->
+    <div class="container">
+        <h3 class="w3ls-title">Giảng Viên</h3>
+        <div class="w3_wthree-testi_grids text-center">
+            <section class="slider">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <div class="wthree-testi_grid">
+                                <div class="testimonial-left">
+                                    <img src="{{ asset('dist/layout/layout_home/images/t1.jpg') }}">
+                                </div>
+                                <p>Chúng tôi luôn cố gắng hướng đến nền giáo dục mới mẻ để giúp cho sinh viên có thể tiếp nhận được những kiến thức mới mẻ nhất.</p>
+                                <h5>Lê Minh Long</h5>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wthree-testi_grid">
+                                <div class="testimonial-left">
+                                    <img src="{{ asset('dist/layout/layout_home/images/t2.jpg') }}">
+                                </div>
+                                <p>Giáo dục cần phải cải cách liên tục, vì thế cách giảng dạy chúng tôi luôn luôn đổi mới qua từng kì khác nhau.</p>
+                                <h5>Phạm Minh Hồng</h5>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="wthree-testi_grid">
+                                <div class="testimonial-left">
+                                    <img src="{{ asset('dist/layout/layout_home/images/t3.jpg') }}">
+                                </div>
+                                <p>Sinh viên sẽ luôn được hỗ trọ từ phía chúng tối, chúng tôi sẽ luôn có mặt giúp đỡ các tân sinh viên</p>
+                                <h5>Trương Hoàng</h5>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{route('home-teacher')}}"> Cán Bộ Giảng Viên</a></div>
+        </div>
+    </div>
+</div>
+<!-- //testimonial -->
+<!-- team -->
+
 <!-- //team -->
 <!-- contact -->
 <div class="contact-bottom w3ls-section" id="contact">

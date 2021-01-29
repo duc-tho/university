@@ -9,6 +9,7 @@
 @endsection
 
 @section('main')
+@include('client.layout.default.components.headernews')
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v9.0&appId=440819316956327&autoLogAppEvents=1" nonce="VShJsKfQ"></script>
 <section class="section wb">
@@ -17,7 +18,7 @@
             <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                 <div class="page-wrapper">
                     <div class="blog-title-area">
-                       
+
 
                         <span class="color-aqua"><a href="blog-category-01.html" title="">Tin Tức</a></span>
 
@@ -75,7 +76,7 @@
 
                     <hr class="invis1">
 
-                  
+
 
                     <div class="custombox clearfix">
                         <h4 class="small-title">Tin liên quan</h4>

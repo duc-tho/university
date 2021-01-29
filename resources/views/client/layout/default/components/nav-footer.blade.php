@@ -6,9 +6,9 @@
                     <h2 class="widget-title">Sinh Viên</h2>
                     <div class="link-widget">
                         <ul>
-                            <li><a href="#">Thông báo</a></li>
-                            <li><a href="#">Tra cứu</a></li>
-                            <li><a href="#">Việc làm</a></li>
+                            <li><a href="javascript:">Thông báo</a></li>
+                            <li><a href="javascript:">Tra cứu</a></li>
+                            <li><a href="javascript:">Việc làm</a></li>
                         </ul>
                     </div>
                 </div><!-- end widget -->
@@ -19,15 +19,15 @@
                     <h2 class="widget-title">Phòng</h2>
                     <div class="link-widget">
                         <ul>
-                            <li><a href="#">Văn phòng hiệu trưởng</a></li>
-                            <li><a href="#">Phòng Tổ chức hành chính</a></li>
-                            <li><a href="#">Phòng Quản trị</a></li>
-                            <li><a href="#">Phòng Thanh tra</a></li>
-                            <li><a href="#">Phòng Công tác HS - SV</a></li>
-                            <li><a href="#">Phòng Khảo thí</a></li>
-                            <li><a href="#">Phòng Kế toán</a></li>
-                            <li><a href="#">Phòng Đào tạo</a></li>
-                            <li><a href="#">Phòng Công nghệ thông tin</a></li>
+                            <li><a href="javascript:">Văn phòng hiệu trưởng</a></li>
+                            <li><a href="javascript:">Phòng Tổ chức hành chính</a></li>
+                            <li><a href="javascript:">Phòng Quản trị</a></li>
+                            <li><a href="javascript:">Phòng Thanh tra</a></li>
+                            <li><a href="javascript:">Phòng Công tác HS - SV</a></li>
+                            <li><a href="javascript:">Phòng Khảo thí</a></li>
+                            <li><a href="javascript:">Phòng Kế toán</a></li>
+                            <li><a href="javascript:">Phòng Đào tạo</a></li>
+                            <li><a href="javascript:">Phòng Công nghệ thông tin</a></li>
                         </ul>
                     </div>
                     <!-- <div class="blog-list-widget">
@@ -83,10 +83,10 @@
                     <h2 class="widget-title">Trung tâm</h2>
                     <div class="link-widget">
                         <ul>
-                            <li><a href="#">Trung tam thực tập</a></li>
-                            <li><a href="#">Trung tâm học liệu</a></li>
-                            <li><a href="#">Trung tâm ngoại ngữ tin học</a></li>
-                            <li><a href="#">Trung tâm tuyển sinh</a></li>
+                            <li><a href="javascript:">Trung tam thực tập</a></li>
+                            <li><a href="javascript:">Trung tâm học liệu</a></li>
+                            <li><a href="javascript:">Trung tâm ngoại ngữ tin học</a></li>
+                            <li><a href="javascript:">Trung tâm tuyển sinh</a></li>
                         </ul>
                     </div><!-- end link-widget -->
                 </div><!-- end widget -->
@@ -97,12 +97,12 @@
                     <h2 class="widget-title">Chủ đề</h2>
                     <div class="link-widget">
                         <ul>
-                            <li><a href="#">Cơ sở vật chất <span>(21)</span></a></li>
-                            <li><a href="#">Hoạt động <span>(15)</span></a></li>
-                            <li><a href="#">Thực tập <span>(31)</span></a></li>
-                            <li><a href="#">Khai giảng các năm <span>(22)</span></a></li>
-                            <li><a href="#">Gới thiệu <span>(66)</span></a></li>
-                            <li><a href="#">Tuyển sinh <span>(11)</span></a></li>
+                            <li><a href="javascript:">Cơ sở vật chất <span>(21)</span></a></li>
+                            <li><a href="javascript:">Hoạt động <span>(15)</span></a></li>
+                            <li><a href="javascript:">Thực tập <span>(31)</span></a></li>
+                            <li><a href="javascript:">Khai giảng các năm <span>(22)</span></a></li>
+                            <li><a href="javascript:">Gới thiệu <span>(66)</span></a></li>
+                            <li><a href="javascript:">Tuyển sinh <span>(11)</span></a></li>
                         </ul>
                     </div><!-- end link-widget -->
                 </div><!-- end widget -->

@@ -9,6 +9,7 @@
 @endsection
 
 @section('main')
+@include('client.layout.default.components.header')
 <div class="page-title wb">
     <div class="container">
         <div class="row">
@@ -34,7 +35,7 @@
         <div class="col-lg-6">
             <video controls class="img-responsive" autoplay muted style="height: 284px; width: 100%;">
                 <source src="{{ asset('dist/layout/layout_home/video/Intro_SaiGonACT.mp4') }}" type="video/mp4">
-                Your browser does not support the video tag.
+                {{-- Your browser does not support the video tag. --}}
             </video>
         </div>
         <div class="col-md-6 col-lg-4">

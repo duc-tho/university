@@ -5,7 +5,7 @@
   <div class="container" data-aos="fade-in">
     <h1 class="h1-banner">TUYỂN SINH CAO ĐẲNG HỆ 2 NĂM, TRUNG CẤP CHUYÊN NGHIỆP NĂM 2021</h1>
     {{-- <h2>SAIGON-ACT DẪN ĐẦU XU THẾ VỀ NGHÀNH DU LỊCH</h2> --}}
- 
+
     <div class="d-flex align-items-center">
       <i class="bx bxs-right-arrow-alt get-started-icon"></i>
       <a href="#about" class="btn-get-started scrollto">Bắt Đầu Nào</a>
@@ -35,7 +35,7 @@
                 <div class="col-xl-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                   <div class="icon-box mt-4 mt-xl-0" id="box">
                     <i class="bx bx-receipt" id="kho"></i>
-                   
+
                     <h4 >Giảng dạy trên các dự án thực tế chuyên nghành có khoa học</h4>
                     <!-- <p>Học đi đôi với hành </p> -->
                   </div>
@@ -117,13 +117,13 @@
         </div>
         {{-- <hr style=" border-radius: 5px; border: 5px solid green;"> --}}
       </div>
-      
+
     </section><!-- End About Section -->
 
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
-     
+
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -138,10 +138,12 @@
         <div class="row">
 
           <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="70">
+            <br>
             <img src="{{asset('dist/layout/layout_tuyensinh/img/dulich.jpg')}}" alt="Avatar" class="image">
-            
-            <a href="{{route('khoadulich')}}" target="_blank"> 
+
+            <a href="{{route('khoadulich')}}" target="_blank">
               <div class="middle">
+                <br>
                 <div class="text" id="textdl">Du Lịch</div>
                 <p class="textp"> Quản Trị Lữ Hânh | Quản Trị Nhà Hàng Và Dịch Vụ | Hướng Dẫn Viên Du Lịch </p>
               </div>
@@ -149,9 +151,11 @@
           </div>
 
           <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
+            <br>
             <img src=" {{asset('dist/layout/layout_tuyensinh/img/ngoaingu.png')}}" alt="Avatar" class="image">
-            <a href="{{route('khoangoaingu')}}" target="_blank"> 
+            <a href="{{route('khoangoaingu')}}" target="_blank">
             <div class="middle">
+                <br>
               <div class="text" id="textdl">Ngoại Ngữ</div>
               <p class="textp"> Tiếng Nhật | Tiếng Anh | Tiếng Hàn | Tiếng Trung </p>
             </div>
@@ -159,19 +163,21 @@
           </div>
 
           <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
+            <br>
             <img src=" {{asset('dist/layout/layout_tuyensinh/img/values-3.jpg')}}" alt="Avatar" class="image">
-           
+
             <div class="middle">
+                <br>
               <div class="text" id="textdl">Công Nghệ Thông Tin</div>
               <p class="textp">Quản Trị Mạng | Tin Học Ứng Dụng | Kỹ Thuật Sữa Chữa | Lắp Ráp Máy Tính</p>
             </div>
-           
+
           </div>
 
           <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
             <br>
             <img src="{{asset('dist/layout/layout_tuyensinh/img/20170828165923-45184.jpg')}}" alt="Avatar" class="image">
-            <a href="{{route('khoakinhte')}}" target="_blank"> 
+            <a href="{{route('khoakinhte')}}" target="_blank">
             <div class="middle">
               <br>
               <div class="text" id="textdl">Kinh Tế</div>
@@ -184,7 +190,7 @@
           <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
             <br>
             <img src="{{asset('dist/layout/layout_tuyensinh/img/values-4.jpg')}}" alt="Avatar" class="image">
-            
+
             <di0v class="middle">
               <div class="text" id="textdl">Kỹ Thuật</div>
               <p class="textp"> Kỹ Thuật Máy Lạnh Và Điều Hòa | Điện Công Nghiệp </p>
@@ -194,7 +200,7 @@
           <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
             <br>
             <img src="{{asset('dist/layout/layout_tuyensinh/img/20180118145548-56466.jpg')}}" alt="Avatar" class="image">
-            <a href="{{route('khoanghethuat')}}" target="_blank"> 
+            <a href="{{route('khoanghethuat')}}" target="_blank">
             <div class="middle">
               <div class="text" id="textdl">Nghệ Thuật Và Mỹ Thuật Công Nghiệp</div>
               <p class="textp"> Thanh Nhạc | Diễn Viễn Kịch Điện Ảnh | Đạo Diễn | Quay Phim | Thiết kế đồ họa </p>
@@ -274,8 +280,8 @@
               </div>
             </div>
           </div>
-         
-         
+
+
           <div class="col-md-6 d-flex align-items-stretch mt-4" data-aos="fade-up" data-aos-delay="200">
             <div class="card" style="background-image: url({{asset('dist/layout/layout_tuyensinh/img/values-3.jpg')}});">
               <div class="card-body">
@@ -767,7 +773,7 @@
                   class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-5" class="collapse" data-parent=".faq-list">
                 <p>
-                  Nhà trường sẽ luôn cập nhập thông tin khi có kết quả cho 
+                  Nhà trường sẽ luôn cập nhập thông tin khi có kết quả cho
                 </p>
               </div>
             </li>
@@ -788,7 +794,7 @@
 
           <p data-aos="fade-up"></a>Xét phương thức 1 : Bảng điểm học bạ 3 học kỳ -- Xét phương thức 2 : Bảng điểm thi
             tốt nghiệp THPT</p>
-          <p data-aos="fade-up">Phiếu đăng ký xét tuyển <a href="#####">(Mẫu của trường)</a>,Bảng sao Học Bạ có công chứng,
+          <p data-aos="fade-up">Phiếu đăng ký xét tuyển <a href="javascript:">(Mẫu của trường)</a>,Bảng sao Học Bạ có công chứng,
             03 thẻ ảnh 3x4, Giấy chứng nhận đối tượng ưu tiên (nếu có)</p>
 
         </div>

@@ -14,7 +14,7 @@
 <div id="wrapper">
     @include('client.layout.default.components.header-top-bar')
 
-    @include('client.layout.default.components.header')
+   
 
     @yield('main')
 

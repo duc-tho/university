@@ -10,9 +10,20 @@
                         <a class="nav-link color-pink-hover" href="/">SAIGON_ACT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link color-pink-hover" href="{{route('home-about')}}">Trang Chủ</a>
+                        <a class="nav-link color-pink-hover" href="{{route('home-news')}}">Trang Chủ</a>
                     </li>
-                    <!-- #region normal cate -->
+                    <li class="nav-item dropdown has-submenu">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Thể Loại</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                            <li><a class="dropdown-item" href="{{route('home-category','danh-muc-tin-tuc')}}"">Nghiên Cứu</span></a></li>
+                            <li><a class="dropdown-item" href="{{route('home-category','danh-muc-tin-tuc')}}"">Tuyển Sinh</span></a></li>
+                            <li><a class="dropdown-item" href="{{route('home-category','danh-muc-tin-tuc')}}"">Tin Tức và Hoạt Động</span></a></li>
+                            <li><a class="dropdown-item" href="{{route('home-category','danh-muc-tin-tuc')}}"">Chương Trình Học</span></a></li>
+                            <li><a class="dropdown-item" href="{{route('home-category','danh-muc-tin-tuc')}}"">Du Học Và Học Bổng</span></a></li>
+                            <li><a class="dropdown-item" href="{{route('home-category','danh-muc-tin-tuc')}}"">Thông Báo</span></a></li>
+                            <li><a class="dropdown-item" href="{{route('home-category','danh-muc-tin-tuc')}}"">Tin Tức</span></a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item dropdown has-submenu">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tuyển sinh</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown02">
@@ -42,20 +53,6 @@
                             </li>
                         </ul>
                     </li>
-
-                    {{-- <li class="nav-item">
-                        <a class="nav-link color-red-hover" href="javascript:">Tin tức</a>
-                    </li> --}}
-                    <li class="nav-item">
-                        <a class="nav-link color-aqua-hover" href="javascript:">Sinh viên</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link color-green-hover" href="javascript:">Doanh nghiệp</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link color-grey-hover" href="javascript:">Quốc tế</a>
-                    </li>
-                    <!-- #endregion normal cate -->
                 </ul>
             </div>
         </nav>

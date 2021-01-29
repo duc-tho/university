@@ -4,6 +4,7 @@ use App\Http\Controllers\Client\Home\AboutController;
 use App\Http\Controllers\Client\Home\ContactController;
 use App\Http\Controllers\Client\Home\HomeController;
 use App\Http\Controllers\Client\Home\NewsController;
+use App\Http\Controllers\Client\Home\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,7 @@ Route::get('/tin-tuc/{category}', [NewsController::class, 'category'])->name('ho
 Route::get('/tin-tuc/{category}/{name}', [NewsController::class, 'detail'])->name('home-news-detail');
 Route::get('/gioi-thieu', [AboutController::class, 'index'])->name('home-about');
 Route::get('/gioi-thieu/{name}', [AboutController::class, 'detail'])->name('home-about-detail');
+Route::get('/giang-vien', [TeacherController::class, 'getTeacher'])->name('home-teacher');
 Route::get('/lien-he', [ContactController::class, 'index'])->name('home-contact');
 
 // Route Tuyển Sinh

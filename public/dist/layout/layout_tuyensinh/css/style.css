@@ -618,7 +618,7 @@ section {
   font-size: 18px;
   color: #000000;
   margin-bottom: 15px;
-  
+
 }
 
 .about .icon-boxes h3 {
@@ -1525,10 +1525,10 @@ section {
 
 .contact .info-box i {
   font-size: 32px;
-  color: #ff5821;
+  color: #000000;
   border-radius: 50%;
   padding: 8px;
-  border: 2px dotted #ffded4;
+  border: 2px dotted #067186;
   float: left;
 }
 
@@ -2333,12 +2333,12 @@ section {
   background: #81c5d3;
   color: #fff;
   text-decoration: none;
-  
+
 }
 
 .nav-menu, .nav-menu {
   width: 215%;
-  padding-left: 29px; 
+  padding-left: 29px;
 }
 #header{
   padding-right: 160px;
@@ -2409,7 +2409,7 @@ section {
   font-weight: bold;
 }
 #suppo{
-  color: white; 
+  color: white;
   font-size: 18px;
 }
 #hb{

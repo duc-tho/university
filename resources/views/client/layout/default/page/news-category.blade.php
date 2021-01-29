@@ -9,6 +9,7 @@
 @endsection
 
 @section('main')
+@include('client.layout.default.components.headernews')
 <div class="page-title wb">
     <div class="container">
         <div class="row">
