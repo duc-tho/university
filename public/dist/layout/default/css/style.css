@@ -1804,3 +1804,10 @@ hr.invis3 {
 .modal-content {
     width: 60%;
 }
+.p-giangvien-khoa{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #067186;
+    
+}

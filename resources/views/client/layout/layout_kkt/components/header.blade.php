@@ -99,7 +99,7 @@
                                     </ul> --}}
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('khoakinhte-danhsachgiaovien') }}">Giảng Viên</a>
+                                    <a href="{{ route('home-teacher') }}">Giảng Viên</a>
                                     {{-- <ul class="sub-menu">
                                         <li><a href="teachers.html">teachers</a></li>
                                         <li><a href="teachers-singel.html">teacher Singel</a></li>

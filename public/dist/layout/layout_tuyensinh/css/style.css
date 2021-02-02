@@ -371,10 +371,9 @@ h1, h2, h3, h4, h5, h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  /* width: 100%; */
   height: 60vh;
-  /* background: url("../img/hero-bg.jpg")  center center no-repeat; */
-	background:url(http://khoadulich.daihocdulich.edu.vn/admin3917/template/kindeditor/attached/image/20180515/20180515065719_94716.jpg) no-repeat 100%;
+  ;
+  background:url(https://daihocdulich.edu.vn:443/upload/slide/slide-sai-gon-c-68446.jpg) no-repeat 100%;
   background-size: cover;
   position: relative;
   z-index: 1;

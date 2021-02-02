@@ -40,13 +40,16 @@
                         </div><!-- end post-sharing -->
                     </div><!-- end title -->
                     <div class="single-post-media">
-                        <img src="{{ asset('dist/layout/layout_nghethuat/upload/menu_08.jpg') }}" alt="" class="img-fluid">
+                        <img src="{{ asset('dist/layout/layout_nghethuat/images/khoa-nghe-thuat-om-tron-bo-giai-thuong-cua-act-gottalent-2019-thumbnail-33023.jpg') }}" alt="" class="img-fluid">
                     </div><!-- end media -->
                     <div class="blog-content">
                         <div class="pp">
-                            <p></p>
+                            <p>Chúc mừng các hotboy, hotgirl của Khoa Nghệ thuật đã ôm trọn bộ giải của cuộc thi ACT GOTTALENT 2019 được diễn ra vào ngày 06/5/2019 do Phòng CTHS SV tổ chức.</p>
+                            <p>Giải III được trao cho nhóm nhảy Nulo dance. Nhóm đã chọn phong cách nhảy từ thập niên 90 là sự kết hợp của các sinh viên Khoa Nghệ thuật, Khoa Du lịch là tiết mục được đánh giá cao. Tuy chưa được giải cao nhất nhưng nó thể hiện sự đoàn kết, gắn bó của sinh viên các Khoa, thể hiện sự đam mê nghệ thuật của sinh viên toàn trường.</p>
+                            <p>Giải II được trao cho bạn Tăng Phải Toàn lớp K132TN  với bộ thiết kế thời trang THE QUEEN. Bộ thiết kế thời trang lấy cảm hứng từ vẻ đẹp của các Nữ thần trong thần thoại Hy Lạp. Bộ thiết kế thời trang với chất liệu bọc Nilon đã khiến cho người xem ngỡ ngàng. Với thông điệp muốn mọi người hạn chế sử dụng túi nilon trong sinh hoạt và phân loại rác đúng cách.</p>
+                            <p>Quán quân trong đêm chung kết là cặp hotboy của K132TN1 sinh viên Võ Văn Lý và  Trương Xuân Tài. Với ca khúc Làm cha của Quách Beem đã làm cho hội trưởng trở nên lắng động. Giọng hát trầm ấm của 2 sinh viên thể hiện góp phần đẩy cao cảm xúc cho người xem.</p>
                         </div><!-- end pp -->
-                        <img src="{{ asset('dist/layout/layout_nghethuat/upload/menu_05.jpg') }}" alt="" class="img-fluid img-fullwidth">
+                        <img src="{{ asset('dist/layout/layout_nghethuat/images/dinhhuongphattrien.jpg') }}" alt="" class="img-fluid img-fullwidth">
                         <!-- end pp -->
                     </div><!-- end content -->
                     <!-- end title -->
@@ -63,15 +66,15 @@
                                 <div class="blog-box">
                                     <div class="post-media">
                                         <a href="single.html" title="">
-                                            <img src="{{ asset('dist/layout/layout_nghethuat/upload/menu_06.jpg') }}" alt="" class="img-fluid">
+                                            <img src="{{ asset('dist/layout/layout_nghethuat/images/gioithieu.jpg') }}" alt="" class="img-fluid">
                                             <div class="hovereffect">
                                                 <span class=""></span>
                                             </div><!-- end hover -->
                                         </a>
                                     </div><!-- end media -->
                                     <div class="blog-meta">
-                                        <h4><a href="single.html" title="">We are guests of ABC Design Studio</a></h4>
-                                        <small><a href="blog-category-01.html" title="">Trends</a></small>
+                                        <h4><a href="single.html" title="">Nhận Giải về Lĩnh Vực Nghệ Thuật</a></h4>
+                                        <small><a href="blog-category-01.html" title="">Tin Tức</a></small>
                                         <small><a href="blog-category-01.html" title="">21 July, 2017</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->
@@ -80,16 +83,16 @@
                             <div class="col-lg-6">
                                 <div class="blog-box">
                                     <div class="post-media">
-                                        <a href="single.html" title="">
-                                            <img src="{{ asset('dist/layout/layout_nghethuat/upload/menu_07.jpg') }}" alt="" class="img-fluid">
+                                        <a href="{{ route('khoanghethuat-chitiettintuc') }}" title="">
+                                            <img src="{{ asset('dist/layout/layout_nghethuat/images/tt-sk1.jpg') }}" alt="" class="img-fluid">
                                             <div class="hovereffect">
                                                 <span class=""></span>
                                             </div><!-- end hover -->
                                         </a>
                                     </div><!-- end media -->
                                     <div class="blog-meta">
-                                        <h4><a href="single.html" title="">Nostalgia at work with family</a></h4>
-                                        <small><a href="blog-category-01.html" title="">News</a></small>
+                                        <h4><a href="{{ route('khoanghethuat-chitiettintuc') }}" title="">Kịch Diễn Tuổi Trẻ</a></h4>
+                                        <small><a href="blog-category-01.html" title="">Tin Tức</a></small>
                                         <small><a href="blog-category-01.html" title="">20 July, 2017</a></small>
                                     </div><!-- end meta -->
                                 </div><!-- end blog-box -->

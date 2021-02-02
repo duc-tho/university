@@ -7,14 +7,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 @endsection
-
 @section('main')
-
     <div class="page-title wb">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                    <h2><i class="fa fa-address-card bg-pink"></i> Giảng Viên Các Khoa <small
+                    <h2><i class="fa fa-address-card bg-pink"></i>Danh Sách Giảng Viên Các Khoa <small
                             class="hidden-xs-down hidden-sm-down">06/01/2021</small></h2>
                 </div><!-- end col -->
                 <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
@@ -36,6 +34,10 @@
                         <hr class="invis">
                         <div class="blog-grid-system">
                             <div class="row">
+
+                                <div class="col-lg-12">
+                                    <p class="p-giangvien-khoa"> Giảng Viên Khoa Du Lịch</p>
+                                </div>
                                 <div class="col-lg-3">
                                     <br>
                                     <div class="card">
@@ -104,6 +106,10 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-lg-12">
+                                    <br>
+                                    <p class="p-giangvien-khoa"> Giảng Viên Khoa Kinh Tế</p>
+                                </div>
                                 <div class="col-lg-3">
                                     <br>
                                     <div class="card">
@@ -155,7 +161,44 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="col-lg-12">
+                                    <br>
+                                    <p class="p-giangvien-khoa"> Giảng Viên Khoa Ngoại Ngữ</p>
+                                </div>
+                                <div class="col-lg-3">
+                                    <br>
+                                    <div class="card">
+                                        <div class="blog-box">
+                                            <div class="post-media">
+                                                <img src="{{ asset('dist/layout/default/images/t4.jpg') }}"
+                                                    class="w3-circle" alt="Avatar" style="width:100%">
+                                            </div>
+                                            <br>
+                                            <p class="des-teacher">Lưu Minh Tân</p>
+                                            <p class="des2-teacher">Trợ Lý</p>
+                                            <div class="middle">
+                                                <button id="myBtn" class="btn btn-primary">Xem Chi Tiết</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <br>
+                                    <div class="card">
+                                        <div class="blog-box">
+                                            <div class="post-media">
+                                                <img src="{{ asset('dist/layout/default/images/t-3.jpg') }}"
+                                                    class="w3-circle" alt="Avatar" style="width:100%">
+                                            </div>
+                                            <br>
+                                            <p class="des-teacher">Lưu Quan Độ</p>
+                                            <p class="des2-teacher">Kế Toán</p>
+                                            <div class="middle">
+                                                <button id="myBtn" class="btn btn-primary">Xem Chi Tiết</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -170,7 +213,7 @@
         <div class="modal-content p-0">
             <div class="modal-header" style="background: #067186;">
                 <h5 class="modal-title text-light">Lý lịch khoa học tóm tắt</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
                     <span aria-hidden="true" class="text-light">&times;</span>
                 </button>
             </div>

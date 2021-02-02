@@ -59,10 +59,10 @@
                         <a class="nav-link color-pink-hover" href="{{ route('khoanghethuat-tintuc') }}">TIN TỨC - SỰ KIỆN</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link color-pink-hover" href="{{ route('khoanghethuat-danhsachgiaovien') }}">GIẢNG VIÊN</a>
+                        <a class="nav-link color-pink-hover" href="{{ route('home-teacher') }}">GIẢNG VIÊN</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link color-pink-hover" href="">THÔNG BÁO</a>
+                        <a class="nav-link color-pink-hover" href="{{ route('khoanghethuat-tintuc') }}">THÔNG BÁO</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link color-pink-hover" href="{{ route('khoanghethuat-lienhe') }}">LIÊN HỆ</a>

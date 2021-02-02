@@ -63,6 +63,9 @@
             </div>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{route('home-teacher')}}">Giảng Viên</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{route('lienhe')}}">Liên Hệ</a>
           </li>
         </ul>
