@@ -8,20 +8,53 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, $khoa)
     {
-        // dd(Faculty::all());
+        dd(Faculty::all());
         $layout_name = 'layout_home';
 
-        $data = [
-            'A', 'B', 'C', 'D'
-        ];
-
-        return view('client.layout.'.$layout_name.'.page.home', [
-            'mock' => $data
+        return view('client.layout.' . $layout_name . '.page.home', [
+            // 'layout_name' => ,
+            // 'phone' => ,
+            // 'email' => ,
+            // 'logo' => ,
+            // 'hotline' => ,
+            // 'menu' => ,
+            // 'slogan_top' => ,
+            // 'slogan_main' => ,
+            // 'sub_bottom' => ,
+            // 'slogan_route' => ,
+            // 'slide' => ,
+            // 'admission_title' => ,
+            // 'admission_description' => ,
+            // 'admission_route' => ,
+            // 'intro_short' => ,
+            // 'intro_image' => ,
+            // 'intro_video' => ,
+            // 'intro_route' => ,
+            // 'intro_statistic' => ,
+            // 'faculty_name' => ,
+            // 'faculty_image' => ,
+            // 'faculty_intro_short' => ,
+            // 'faculty_route' => ,
+            // 'specialized_title' => ,
+            // 'specialized_intro' => ,
+            // 'specialized_image' => ,
+            // 'specialized_route' => ,
+            // 'student_comment_content' => ,
+            // 'student_comment_name' => ,
+            // 'student_comment_type' => ,
+            // 'image' => ,
+            // 'teacher_name' => ,
+            // 'teacher_intro' => ,
+            // 'teacher_degree' => ,
+            // 'teacher_image' => ,
+            // 'news' => ,
+            // 'google_map_link' => ,
+            // 'collab_logo' => ,
         ]);
     }
-    
+
     // <------------------>  Start Controller KhoaDuLich <--------------------------->
     public function getKDL(Request $request)
     {
@@ -128,7 +161,7 @@ class HomeController extends Controller
     {
         return view('client.layout.layout_ngoaingu.page.intership');
     }
-     // <------------------> End Controller KhoaNgoaiNgu <--------------------------->
+    // <------------------> End Controller KhoaNgoaiNgu <--------------------------->
 
     // <------------------>  Start Controller KhoaKinhTe <--------------------------->
 
