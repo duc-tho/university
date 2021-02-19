@@ -370,6 +370,35 @@
                             <div class="h3 award-content">Võ Duy Bảo</div>
                             <div class="award-content">Khóa 186 - Khoa Công nghệ thông tin</div>
                         </div>
+                        <!-- <div class="red-2">
+                            <div>
+                                <form action="method">
+                                    <input type="submit" placeholder="hello">
+                                    <br>
+                                    <p class="i-d" id="id-1">
+                                        <h2>tôi không bik gì hết đừng ai hỏi tôi chuyện gì nha</h2>
+                                    </p>
+                                    <br>
+                                    <p class="i-d" id="id-1">
+                                        <h2>Tôi cần những gì để có thể chiến thằng tắt cả </h2>
+                                    </p>
+                                    <br>
+                                    <p> </p>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-4 col-md-4 col-xs-12">
+                                    <div class="row">
+                                        <input type="text">
+                                        <button class="btn btn-default">
+                                            <li>Hello</li>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
                 <!--End of SVTB  -->

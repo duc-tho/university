@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\SlideController;
 use App\Http\Controllers\Client\Home\AboutController;
 use App\Http\Controllers\Client\Home\ContactController;
 use App\Http\Controllers\Client\Home\HomeController;
 use App\Http\Controllers\Client\Home\NewsController;
 use App\Http\Controllers\Client\Home\TeacherController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -104,4 +106,9 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin'],
             return view('server.pages.demo.demo2');
         })->name('adminDemo2');
     });
+    Route::group(['prefix' => 'slide'], function () {
+        Route::get('/', [SlideController::class,'index'])->name('adminSlide');
+    });
+    //Route slide
+    
 });
