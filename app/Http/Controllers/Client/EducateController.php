@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class EducateController extends Controller
 {
-    //
+    public function detail(Request $request, $khoa)
+    {
+        return;
+    }
 }

@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    public function redirect(Request $request, $khoa)
+    {
+        return;
+    }
+
     public function index(Request $request, $khoa)
     {
         dd(Faculty::all());

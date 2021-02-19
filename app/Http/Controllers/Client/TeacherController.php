@@ -7,8 +7,13 @@ use Illuminate\Http\Request;
 
 class TeacherController extends Controller
 {
-    public function getTeacher(Request $request)
+    public function index(Request $request, $khoa)
     {
-        return view('client.layout.default.page.teacher');
+        return;
+    }
+
+    public function detail(Request $request, $khoa)
+    {
+        return;
     }
 }

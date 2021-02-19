@@ -1,10 +1,14 @@
 <?php
 
-use App\Http\Controllers\Client\Home\AboutController;
-use App\Http\Controllers\Client\Home\ContactController;
-use App\Http\Controllers\Client\Home\HomeController;
-use App\Http\Controllers\Client\Home\NewsController;
-use App\Http\Controllers\Client\Home\TeacherController;
+use App\Http\Controllers\Client\CourseController;
+use App\Http\Controllers\Client\EducateController;
+use App\Http\Controllers\Client\AboutController;
+use App\Http\Controllers\Client\ContactController;
+use App\Http\Controllers\Client\HomeController;
+use App\Http\Controllers\Client\NewsController;
+use App\Http\Controllers\Client\TeacherController;
+use App\Http\Controllers\Client\NotificationController;
+use App\Http\Controllers\Client\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*

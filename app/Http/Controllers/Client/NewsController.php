@@ -15,7 +15,7 @@ class NewsController extends Controller
             'A', 'B', 'C', 'D'
         ];
 
-        return view('client.layout.'.$layout_name.'.page.home', [
+        return view('client.layout.' . $layout_name . '.page.home', [
             'mock' => $data
         ]);
     }
@@ -28,12 +28,12 @@ class NewsController extends Controller
             'A', 'B', 'C', 'D'
         ];
 
-        return view('client.layout.'.$layout_name.'.page.news-detail', [
+        return view('client.layout.' . $layout_name . '.page.news-detail', [
             'mock' => $data
         ]);
     }
 
-    public function category(Request $request)
+    public function list(Request $request)
     {
         $layout_name = 'default';
 
@@ -41,7 +41,7 @@ class NewsController extends Controller
             'A', 'B', 'C', 'D'
         ];
 
-        return view('client.layout.'.$layout_name.'.page.news-category', [
+        return view('client.layout.' . $layout_name . '.page.news-category', [
             'mock' => $data
         ]);
     }
