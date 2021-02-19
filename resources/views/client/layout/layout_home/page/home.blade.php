@@ -87,7 +87,7 @@
             </div>
         </div>
 
-        
+
         <h2 class="w3ls-title">Giới thiệu</h2>
         {{-- <h5>Roin vel enim nec ipsum finibus.Duis euismod massa utab.</h5> --}}
         <br>
@@ -106,7 +106,7 @@
             </div>
             <div class="col-md-6 col-sm-6 w3ls-row alert wthree-about-right">
                 <video controls class="img-responsive" style="max-width: 120%;" autoplay muted>
-                    <source src="{{ asset('dist/layout/layout_home/video/Intro_SaiGonACT.mp4') }}" type="video/mp4">
+                    <source src="{{ asset('dist/layout/layout_nghethuat/images/videoschool.mp4') }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>

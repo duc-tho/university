@@ -1,5 +1,5 @@
 @extends('client.layout.layout_ngoaingu.index')
-@section('title', 'Trang Chủ Khoa Ngoại Ngữ')
+@section('title', 'Khoa Ngoại Ngữ')
 @section('main')
     <main id="page">
         <!-- ======= Hero Section ======= -->
@@ -17,8 +17,8 @@
                                 <div class="carousel-content">
                                     <h2 class="animate__animated animate__fadeInDown text-light">WELCOME TO <span>KHOA NGOẠI
                                             NGỮ</span></h2>
-                                    <p class="animate__animated animate__fadeInUp">Best choice to learn at SaiGon
-                                        University.</p>
+                                    {{-- <p class="animate__animated animate__fadeInUp">Best choice to learn at SaiGon
+                                        University.</p> --}}
                                     <a href="{{ route('gioithieukhoangoaingu') }}"
                                         class="btn-get-started animate__animated animate__fadeInUp">Tìm hiểu thêm</a>
                                 </div>
@@ -31,8 +31,8 @@
                                 <div class="carousel-content">
                                     <h2 class="animate__animated animate__fadeInDown">WELCOME TO <span>KHOA NGOẠI NGỮ</span>
                                     </h2>
-                                    <p class="animate__animated animate__fadeInUp">Best choice to learn at SaiGon
-                                        University.</p>
+                                    {{-- <p class="animate__animated animate__fadeInUp">Best choice to learn at SaiGon
+                                        University.</p> --}}
                                     <a href="javascript:" class="btn-get-started animate__animated animate__fadeInUp">Tìm
                                         hiểu thêm</a>
                                 </div>
@@ -131,7 +131,7 @@
                             <ul>
                                 <li><i class="icofont-check-circled"></i> Cung cấp cho sinh viên kiến thức rộng tương đối rộng về ngôn ngữ Anh, văn hóa, xã hội và văn học Anh-Mỹ.</li>
                                 <li><i class="icofont-check-circled"></i> Rèn luyện và phát triển các kỹ năng giao tiếp tiếng Anh ở mức đối tương đối thành thạo trong các tình huống giao tiếp xã hội và chuyên môn thông thường.</li>
-                                <li><i class="icofont-check-circled"></i> Bảo đảm cho sinh viên đạt được trình độ nghiệp vụ đủ để hoạt động và công tác có hiệu quả trong các lĩnh vực chuyên môn như các lĩnh vực hoạt động nghiệp vụ, 
+                                <li><i class="icofont-check-circled"></i> Bảo đảm cho sinh viên đạt được trình độ nghiệp vụ đủ để hoạt động và công tác có hiệu quả trong các lĩnh vực chuyên môn như các lĩnh vực hoạt động nghiệp vụ,
                                 kinh doanh, kinh tế và xã hội, lễ tân, khách sạn,…</li>
                             </ul>
                             <p>
@@ -512,6 +512,7 @@
                         <img src="{{ asset('http://daihocdulich.edu.vn/upload/link/Link-sai-gon-c-36507.jpg') }}" alt="">
                     </div>
                 </div>
+                <div>
             </section><!-- End Clients Section -->
         </main><!-- End #main -->
     @stop

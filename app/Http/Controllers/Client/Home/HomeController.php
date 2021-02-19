@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client\Home;
 use App\Http\Controllers\Controller;
 use App\Models\Faculty;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -21,7 +22,7 @@ class HomeController extends Controller
             'mock' => $data
         ]);
     }
-    
+
     // <------------------>  Start Controller KhoaDuLich <--------------------------->
     public function getKDL(Request $request)
     {
@@ -92,7 +93,23 @@ class HomeController extends Controller
     {
         return view('client.layout.layout_tuyensinh.page.notificationdetail');
     }
-
+    public function postAdmissionsRegister(Request $request)
+    {
+        // $data = $request->all();
+        // dd($data);
+        $data['info'] = $request->all();
+        $email = $request->email;
+        Mail::send('client.layout.layout_tuyensinh.email',$data, function($message)use($email){
+            $message->from('ngoclap858@gmail.com','Lương Ngọc Lập');
+            $message->to($email, $email);
+            $message->cc('ngoclap585@gmail.com','Lương Ngọc Lập');
+            $message->subject('Xác nhận đăng kí thông tin tuyển sinh SAIGON_ACT');
+        });
+        return redirect('client.layout.layout_tuyensinh.page.home');
+    }
+    public function getComplete(){
+        return view('client.layout.layout_tuyensinh.complete');
+    }
     // <------------------> End Controller TuyênSinh <--------------------------->
 
     // <------------------>  Start Controller KhoaNgoaiNgu <--------------------------->
