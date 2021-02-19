@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Client\Home;
+namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Models\Faculty;
@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function redirect(Request $request, $khoa)
+    public function redirect(Request $request)
     {
-        return;
+        return redirect()->route('trang-chu', ['trang-chu']);
     }
 
     public function index(Request $request, $khoa)
     {
-        dd(Faculty::all());
+        // dd(Faculty::all());
         $layout_name = 'layout_home';
 
         return view('client.layout.' . $layout_name . '.page.home', [

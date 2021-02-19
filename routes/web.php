@@ -22,6 +22,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route Tuyển Sinh
+Route::get('/tuyen-sinh', [HomeController::class, 'getAdmissions'])->name('tuyensinh');
+Route::get('/tuyen-sinh/thong-bao', [HomeController::class, 'getNotification'])->name('thongbaotuyensinh');
+Route::get('/tuyen-sinh/chi-tiet-thong-bao', [HomeController::class, 'getNotificationDetail'])->name('chitietthongbaotuyensinh');
+
+// Giáo Viên
+Route::get('/giao-vien', [TeacherController::class, 'index'])->name('giao-vien');
+Route::get('/giao-vien/thong-tin-giao-vien', [TeacherController::class, 'detail'])->name('giao-vien-chi-tiet');
+
 // Home
 Route::get('/', [HomeController::class, 'redirect'])->name('trang-chu-chuyen-huong');
 Route::get('/{khoa}', [HomeController::class, 'index'])->name('trang-chu');
@@ -44,10 +53,6 @@ Route::get('/{khoa}/dao-tao/nghanh-quan-tri-khach-san', [EducateController::clas
 // Sinh Viên
 Route::get('/{khoa}/sinh-vien/thuc-tap', [StudentController::class, 'list'])->name('sinh-vien-danh-muc');
 Route::get('/{khoa}/sinh-vien/thong-bao/asd', [StudentController::class, 'detail'])->name('sinh-vien-chi-tiet');
-
-// Giáo Viên
-Route::get('/{khoa}/giao-vien', [TeacherController::class, 'index'])->name('giao-vien-danh-sach');
-Route::get('/{khoa}/thong-tin-giao-vien', [TeacherController::class, 'detail'])->name('giao-vien-chi-tiet');
 
 // Khóa Học
 Route::get('/{khoa}/khoa-hoc', [CourseController::class, 'index'])->name('khoa-hoc');

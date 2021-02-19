@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Client\Home;
+namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class TeacherController extends Controller
 {
-    public function index(Request $request, $khoa)
+    public function index(Request $request)
     {
-        return;
+        return view('client.layout.default.page.teacher');
     }
 
-    public function detail(Request $request, $khoa)
+    public function detail(Request $request)
     {
         return;
     }

@@ -60,7 +60,7 @@
             <h4>Ban quản lý đề án</h4>
             <h3><span>T</span>rường đại học <span>D</span>u lịch sài gòn</h3>
             <p>Nhân Bản - Cộng Đồng - Quốc Tế</p>
-            <a class="hvr-rectangle-out w3_play_icon1" href="{{route('home-about')}}"> Xem thêm</a>
+            <a class="hvr-rectangle-out w3_play_icon1" href="{{route('gioi-thieu', ['trang-chu'])}}"> Xem thêm</a>
         </div>
         <!--/banner-ingo-->
     </div>
@@ -87,7 +87,7 @@
             </div>
         </div>
 
-        
+
         <h2 class="w3ls-title">Giới thiệu</h2>
         {{-- <h5>Roin vel enim nec ipsum finibus.Duis euismod massa utab.</h5> --}}
         <br>
@@ -141,7 +141,7 @@
             <div class="clearfix"></div>
         </div>
     </div>
-    <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{route('home-about')}}"> Tìm hiểu thêm</a></div>
+    <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{route('gioi-thieu', ['trang-chu'])}}"> Tìm hiểu thêm</a></div>
 </div>
 <!-- //about -->
 <!--services-->
@@ -150,7 +150,7 @@
         <h3 class="w3ls-title">Khoa </h3>
         <div class="agileits-services-row">
             <div class="col-md-3 col-sm-6 agileits-services-grids">
-                <a href="{{route('khoakinhte')}}" target="_blank">
+                <a href="{{-- route('khoakinhte') --}}" target="_blank">
                     {{-- <span class="glyphicon glyphicon-stats effect-1" aria-hidden="true"></span> --}}
                     <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20170828165923-45184.jpg') }}" width="40%" alt="">
                     <h4>Kinh tế</h4>
@@ -160,7 +160,7 @@
                     nay.</p>
             </div>
             <div class="col-md-3 col-sm-6 agileits-services-grids">
-                <a href="{{route('khoadulich')}}">
+                <a href="{{-- route('khoadulich') --}}">
                     <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20180118145548-56466.jpg') }}" alt="">
                     <h4>Du lịch</h4>
                 </a>
@@ -169,7 +169,7 @@
                     cao chất lượng nguồn nhân lực du lịch,</p>
             </div>
             <div class="col-md-3 col-sm-6 agileits-services-grids">
-                <a href="{{route('khoangoaingu')}}">
+                <a href="{{-- route('khoangoaingu') --}}">
                     <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/4.jpg') }}" width="40%" alt="">
                     <h4>Ngoại ngữ</h4>
                 </a>
@@ -178,7 +178,7 @@
                     tháng 10 năm 2006.</p>
             </div>
             <div class="col-md-3 col-sm-6 agileits-services-grids">
-                <a href="{{ route('khoanghethuat') }}">
+                <a href="{{-- route('khoanghethuat') --}}">
                     <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20181227183820-68860.png') }}" width="40%" alt="">
                     <h4>Nghệ Thuật</h4>
                 </a>
@@ -350,32 +350,32 @@
         <div class="w3_testimonials_grids w3_testimonials_grids">
             <div id="owl-demo" class="owl-carousel">
                 <div class="item w3_agileits_testimonials_grid">
-                    <a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/16/mot-so-hinh-anh-ve-goc-giang-sinh-am-cung-cua-truong-thumbnail-68258.jpg" alt=" " class="img-responsive" /></a>
-                    <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">Một số hình ảnh về góc Giáng Sinh ấm cúng của trường</a></h4>
+                    <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/16/mot-so-hinh-anh-ve-goc-giang-sinh-am-cung-cua-truong-thumbnail-68258.jpg" alt=" " class="img-responsive" /></a>
+                    <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">Một số hình ảnh về góc Giáng Sinh ấm cúng của trường</a></h4>
                     <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
                         <i class="fa fa-clock-o" aria-hidden="true"></i> 29/12/2020 &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> 39
                     </div>
                     <p>Hình ảnh về giáng sinh 2020</p>
                 </div>
                 <div class="item w3_agileits_testimonials_grid">
-                    <a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/21/xet-hoc-ba-chia-khoa-mo-ra-canh-cua-hoc-tap--thumbnail-11234.jpg" alt="" class="img-responsive" /></a>
-                    <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">XÉT HỌC BẠ: CHÌA KHOÁ MỞ RA CÁNH CỬA HỌC TẬP !</a></h4>
+                    <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/21/xet-hoc-ba-chia-khoa-mo-ra-canh-cua-hoc-tap--thumbnail-11234.jpg" alt="" class="img-responsive" /></a>
+                    <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">XÉT HỌC BẠ: CHÌA KHOÁ MỞ RA CÁNH CỬA HỌC TẬP !</a></h4>
                     <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
                         <i class="fa fa-clock-o" aria-hidden="true"></i> 29/12/2020 &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> 39
                     </div>
                     <p>Dù bạn khao khát được cháy bỏng với tâm hồn nghệ thuật hay bạn ước mơ Lãnh Đạo- Tất cả đều được thỏa sức tại Trường CAO ĐẲNG VĂN HÓA NGHỆ THUẬT VÀ DU LỊCH SÀI GÒN. </p>
                 </div>
                 <div class="item w3_agileits_testimonials_grid">
-                    <a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/14/dang-ki-nhanh-tay-chop-ngay-co-hoi--thumbnail-49874.jpg" alt=" " class="img-responsive" /></a>
-                    <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">Đăng kí nhanh tay ! Chớp ngay cơ hội !</a></h4>
+                    <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/14/dang-ki-nhanh-tay-chop-ngay-co-hoi--thumbnail-49874.jpg" alt=" " class="img-responsive" /></a>
+                    <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">Đăng kí nhanh tay ! Chớp ngay cơ hội !</a></h4>
                     <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
                         <i class="fa fa-clock-o" aria-hidden="true"></i> 29/12/2020 &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> 39
                     </div>
                     <p>Chọn trường là chọn con đường tương lai của bản thân. Vì thế hãy chọn bước chuẩn bị tốt nhất cho chính bạn </p>
                 </div>
                 <div class="item w3_agileits_testimonials_grid">
-                    <a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/10/chuong-trinh-dao-tao-ngan-han-thumbnail-85717.jpg" alt=" " class="img-responsive" /></a>
-                    <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">CHƯƠNG TRÌNH ĐÀO TẠO NGẮN HẠN</a></h4>
+                    <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/10/chuong-trinh-dao-tao-ngan-han-thumbnail-85717.jpg" alt=" " class="img-responsive" /></a>
+                    <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">CHƯƠNG TRÌNH ĐÀO TẠO NGẮN HẠN</a></h4>
                     <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
                         <i class="fa fa-clock-o" aria-hidden="true"></i> 29/12/2020 &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> 39
                     </div>
@@ -383,7 +383,7 @@
                 </div>
             </div>
         </div>
-        <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{ route('home-news') }}"> Các tin tức khác</a></div>
+        <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{ route('tin-tuc', ['trang-chu']) }}"> Các tin tức khác</a></div>
     </div>
 </div>
 <img src="" alt="">
@@ -425,7 +425,7 @@
                     </ul>
                 </div>
             </section>
-            <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{route('home-teacher')}}"> Cán Bộ Giảng Viên</a></div>
+            <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{route('giao-vien')}}"> Cán Bộ Giảng Viên</a></div>
         </div>
     </div>
 </div>
@@ -507,10 +507,10 @@
         <p>Nhập Email để nhận tư vấn tuyển sinh.</p>
         <div class="subscribe-grid">
 
-                {{-- <input type="email" placeholder="Email" name="Subscribe" required=""> --}}
-                <a href="{{route('tuyensinh')}}">
-                    <button class="btn1">Đăng ký</button>
-                </a>
+            {{-- <input type="email" placeholder="Email" name="Subscribe" required=""> --}}
+            <a href="{{route('tuyensinh')}}">
+                <button class="btn1">Đăng ký</button>
+            </a>
 
 
         </div>

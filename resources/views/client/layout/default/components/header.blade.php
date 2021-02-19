@@ -10,27 +10,27 @@
                         <a class="nav-link color-pink-hover" href="/">SAIGON_ACT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link color-pink-hover" href="{{route('home-about')}}">Trang Chủ</a>
+                        <a class="nav-link color-pink-hover" href="{{route('gioi-thieu', ['trang-chu'])}}">Trang Chủ</a>
                     </li>
                     <!-- #region normal cate -->
                     <li class="nav-item dropdown has-submenu">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tuyển sinh</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown02">
-                            <li><a class="dropdown-item" href="{{route('home-category','danh-muc-tin-tuc')}}"">Cao đẳng <span class="hidden-md-down hidden-sm-down hidden-xs-down"><i class="fa fa-angle-right"></i></span></a>
+                            <li><a class="dropdown-item" href="{{route('tin-tuc-danh-muc',['trang-chu', 'danh-muc-tin-tuc'])}}"">Cao đẳng <span class=" hidden-md-down hidden-sm-down hidden-xs-down"><i class="fa fa-angle-right"></i></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{{route('khoadulich')}}">Khoa Du Lịch</a></li>
-                                    <li><a class="dropdown-item" href="{{route('khoakinhte')}}">Khoa Kinh Tế</a></li>
-                                    <li><a class="dropdown-item" href="{{route('khoangoaingu')}}">Khoa Ngoại Ngữ</a></li>
-                                    <li><a class="dropdown-item" href="{{route('khoanghethuat')}}">Khoa Nghệ Thuật</a></li>
+                                    <li><a class="dropdown-item" href="{{-- route('khoadulich') --}}">Khoa Du Lịch</a></li>
+                                    <li><a class="dropdown-item" href="{{-- route('khoakinhte') --}}">Khoa Kinh Tế</a></li>
+                                    <li><a class="dropdown-item" href="{{-- route('khoangoaingu') --}}">Khoa Ngoại Ngữ</a></li>
+                                    <li><a class="dropdown-item" href="{{-- route('khoanghethuat') --}}">Khoa Nghệ Thuật</a></li>
 
                                 </ul>
                             </li>
-                            <li><a class="dropdown-item" href="{{route('home-category','danh-muc-tin-tuc')}}"">Trung Cấp <span class="hidden-md-down hidden-sm-down hidden-xs-down"><i class="fa fa-angle-right"></i></span></a>
+                            <li><a class="dropdown-item" href="{{route('tin-tuc-danh-muc',['trang-chu', 'danh-muc-tin-tuc'])}}"">Trung Cấp <span class=" hidden-md-down hidden-sm-down hidden-xs-down"><i class="fa fa-angle-right"></i></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{{route('khoadulich')}}">Khoa Du Lịch</a></li>
-                                    <li><a class="dropdown-item" href="{{route('khoakinhte')}}">Khoa Kinh Tế</a></li>
-                                    <li><a class="dropdown-item" href="{{route('khoangoaingu')}}">Khoa Ngoại Ngữ</a></li>
-                                    <li><a class="dropdown-item" href="{{route('khoanghethuat')}}">Khoa Nghệ Thuật</a></li>
+                                    <li><a class="dropdown-item" href="{{-- route('khoadulich') --}}">Khoa Du Lịch</a></li>
+                                    <li><a class="dropdown-item" href="{{-- route('khoakinhte') --}}">Khoa Kinh Tế</a></li>
+                                    <li><a class="dropdown-item" href="{{-- route('khoangoaingu') --}}">Khoa Ngoại Ngữ</a></li>
+                                    <li><a class="dropdown-item" href="{{-- route('khoanghethuat') --}}">Khoa Nghệ Thuật</a></li>
                                 </ul>
                             </li>
                             <li>
