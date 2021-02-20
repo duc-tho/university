@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\SlideController;
 use App\Http\Controllers\Client\Home\AboutController;
 use App\Http\Controllers\Client\Home\ContactController;
 use App\Http\Controllers\Client\Home\HomeController;
@@ -35,7 +36,7 @@ Route::group(['prefix' =>'tuyen-sinh'], function(){
     Route::get('/thong-bao', [HomeController::class, 'getNotification'])->name('thongbaotuyensinh');
     Route::get('/chi-tiet-thong-bao', [HomeController::class, 'getNotificationDetail'])->name('chitietthongbaotuyensinh');
 });
-Route::get('complete',[HomeController::class, 'getComplete']);
+Route::get('complete', [HomeController::class, 'getComplete']);
 
 //Start Route trỏ về khoa dulịch
 Route::get('/khoa-du-lich', [HomeController::class, 'getKDL'])->name('khoadulich');
@@ -64,29 +65,71 @@ Route::get('/khoa-ngoai-ngu/sinh-vien', [HomeController::class, 'getIntershipLan
 Route::get('/khoa-du-lich/lien-he', [HomeController::class, 'getContact'])->name('lienhe');
 
 //Route trỏ về khoa kinh tế
-Route::get('/khoa-kinh-te', function() { return view('client.layout.layout_kkt.page.home'); })->name('khoakinhte');
-Route::get('/khoa-kinh-te/gioi-thieu', function() { return view('client.layout.layout_kkt.page.gioithieu'); })->name('khoakinhte-gioithieu');
-Route::get('/khoa-kinh-te/lien-he', function() { return view('client.layout.layout_kkt.page.lienlac'); })->name('khoakinhte-lienhe');
-Route::get('/khoa-kinh-te/tin-tuc', function() { return view('client.layout.layout_kkt.page.tintuc'); })->name('khoakinhte-tintuc');
-Route::get('/khoa-kinh-te/tin-tuc/chi-tiet-tin-tuc', function() { return view('client.layout.layout_kkt.page.tintucdon'); })->name('khoakinhte-chitiettintuc');
-Route::get('/khoa-kinh-te/tin-tuc/danh-sach-tin-tuc', function() { return view('client.layout.layout_kkt.page.tintucnhom'); })->name('khoakinhte-danhsachtintuc');
-Route::get('/khoa-kinh-te/thong-tin-giao-vien', function() { return view('client.layout.layout_kkt.page.thongtingiaovien'); })->name('khoakinhte-thongtingiaovien');
-Route::get('/khoa-kinh-te/giao-vien', function() { return view('client.layout.layout_kkt.page.thongtinnhieugiaovien'); })->name('khoakinhte-danhsachgiaovien');
-Route::get('/khoa-kinh-te/khoa-hoc', function() { return view('client.layout.layout_kkt.page.khoahoc'); })->name('khoakinhte-khoahoc');
-Route::get('/khoa-kinh-te/chi-tiet-khoa-hoc', function() { return view('client.layout.layout_kkt.page.khoahocdon'); })->name('khoakinhte-chitietkhoahoc');
+Route::get('/khoa-kinh-te', function () {
+    return view('client.layout.layout_kkt.page.home');
+})->name('khoakinhte');
+Route::get('/khoa-kinh-te/gioi-thieu', function () {
+    return view('client.layout.layout_kkt.page.gioithieu');
+})->name('khoakinhte-gioithieu');
+Route::get('/khoa-kinh-te/lien-he', function () {
+    return view('client.layout.layout_kkt.page.lienlac');
+})->name('khoakinhte-lienhe');
+Route::get('/khoa-kinh-te/tin-tuc', function () {
+    return view('client.layout.layout_kkt.page.tintuc');
+})->name('khoakinhte-tintuc');
+Route::get('/khoa-kinh-te/tin-tuc/chi-tiet-tin-tuc', function () {
+    return view('client.layout.layout_kkt.page.tintucdon');
+})->name('khoakinhte-chitiettintuc');
+Route::get('/khoa-kinh-te/tin-tuc/danh-sach-tin-tuc', function () {
+    return view('client.layout.layout_kkt.page.tintucnhom');
+})->name('khoakinhte-danhsachtintuc');
+Route::get('/khoa-kinh-te/thong-tin-giao-vien', function () {
+    return view('client.layout.layout_kkt.page.thongtingiaovien');
+})->name('khoakinhte-thongtingiaovien');
+Route::get('/khoa-kinh-te/giao-vien', function () {
+    return view('client.layout.layout_kkt.page.thongtinnhieugiaovien');
+})->name('khoakinhte-danhsachgiaovien');
+Route::get('/khoa-kinh-te/khoa-hoc', function () {
+    return view('client.layout.layout_kkt.page.khoahoc');
+})->name('khoakinhte-khoahoc');
+Route::get('/khoa-kinh-te/chi-tiet-khoa-hoc', function () {
+    return view('client.layout.layout_kkt.page.khoahocdon');
+})->name('khoakinhte-chitietkhoahoc');
 
 //Route trỏ về khoa nghệ thuật
-Route::get('/khoa-nghe-thuat', function() { return view('client.layout.layout_nghethuat.page.home'); })->name('khoanghethuat');
-Route::get('/khoa-nghe-thuat/gioi-thieu-nghanh', function() { return view('client.layout.layout_nghethuat.page.branch'); })->name('chi_tiet_nghanh_nghethuat');
-Route::get('/khoa-nghe-thuat/gioi-thieu', function() { return view('client.layout.layout_nghethuat.page.intro'); })->name('khoanghethuat-gioithieu');
-Route::get('/khoa-nghe-thuat/gioi-thieu/chi-tiet-gioi-thieu', function() { return view('client.layout.layout_nghethuat.page.intro-detail'); })->name('khoanghethuat-chitietgioithieu');
-Route::get('/khoa-nghe-thuat/lien-he', function() { return view('client.layout.layout_nghethuat.page.contact'); })->name('khoanghethuat-lienhe');
-Route::get('/khoa-nghe-thuat/tin-tuc', function() { return view('client.layout.layout_nghethuat.page.news'); })->name('khoanghethuat-tintuc');
-Route::get('/khoa-nghe-thuat/tin-tuc/chi-tiet-tin-tuc', function() { return view('client.layout.layout_nghethuat.page.news-detail'); })->name('khoanghethuat-chitiettintuc');
-Route::get('/khoa-nghe-thuat/thong-tin-giao-vien', function() { return view('client.layout.layout_nghethuat.page.teacher-detail'); })->name('khoanghethuat-thongtingiaovien');
-Route::get('/khoa-nghe-thuat/giao-vien', function() { return view('client.layout.layout_nghethuat.page.teacher'); })->name('khoanghethuat-danhsachgiaovien');
-Route::get('/khoa-nghe-thuat/thong-bao', function() { return view('client.layout.layout_nghethuat.page.notification'); })->name('khoanghethuat-thongbao');
-Route::get('/khoa-nghe-thuat/chi-tiet-thong-bao', function() { return view('client.layout.layout_nghethuat.page.notification-detail'); })->name('khoanghethuat-chitietthongbao');
+Route::get('/khoa-nghe-thuat', function () {
+    return view('client.layout.layout_nghethuat.page.home');
+})->name('khoanghethuat');
+Route::get('/khoa-nghe-thuat/gioi-thieu-nghanh', function () {
+    return view('client.layout.layout_nghethuat.page.branch');
+})->name('chi_tiet_nghanh_nghethuat');
+Route::get('/khoa-nghe-thuat/gioi-thieu', function () {
+    return view('client.layout.layout_nghethuat.page.intro');
+})->name('khoanghethuat-gioithieu');
+Route::get('/khoa-nghe-thuat/gioi-thieu/chi-tiet-gioi-thieu', function () {
+    return view('client.layout.layout_nghethuat.page.intro-detail');
+})->name('khoanghethuat-chitietgioithieu');
+Route::get('/khoa-nghe-thuat/lien-he', function () {
+    return view('client.layout.layout_nghethuat.page.contact');
+})->name('khoanghethuat-lienhe');
+Route::get('/khoa-nghe-thuat/tin-tuc', function () {
+    return view('client.layout.layout_nghethuat.page.news');
+})->name('khoanghethuat-tintuc');
+Route::get('/khoa-nghe-thuat/tin-tuc/chi-tiet-tin-tuc', function () {
+    return view('client.layout.layout_nghethuat.page.news-detail');
+})->name('khoanghethuat-chitiettintuc');
+Route::get('/khoa-nghe-thuat/thong-tin-giao-vien', function () {
+    return view('client.layout.layout_nghethuat.page.teacher-detail');
+})->name('khoanghethuat-thongtingiaovien');
+Route::get('/khoa-nghe-thuat/giao-vien', function () {
+    return view('client.layout.layout_nghethuat.page.teacher');
+})->name('khoanghethuat-danhsachgiaovien');
+Route::get('/khoa-nghe-thuat/thong-bao', function () {
+    return view('client.layout.layout_nghethuat.page.notification');
+})->name('khoanghethuat-thongbao');
+Route::get('/khoa-nghe-thuat/chi-tiet-thong-bao', function () {
+    return view('client.layout.layout_nghethuat.page.notification-detail');
+})->name('khoanghethuat-chitietthongbao');
 
 
 
@@ -94,18 +137,22 @@ Route::group(['namespace' => 'App\Http\Controllers\Client', 'prefix' => 'cntt'],
     // Route::get('/tin-tuc',[HomeController::class, 'index'])->name('cnttNews');
 });
 
+
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin'], function () {
     Route::get('/', function () {
         return view('server.pages.home.index');
     })->name('adminHome');
 
     Route::group(['prefix' => 'demo'], function () {
-        Route::get('/demo-1', function() {
+        Route::get('/demo-1', function () {
             return view('server.pages.demo.demo1');
         })->name('adminDemo1');
-
-        Route::get('/demo-2', function() {
+        Route::get('/demo-2', function () {
             return view('server.pages.demo.demo2');
         })->name('adminDemo2');
+    });
+
+    Route::group(['prefix' => 'slide'], function () {
+        Route::get('/', [SlideController::class, 'index'])->name('adminSlide');
     });
 });

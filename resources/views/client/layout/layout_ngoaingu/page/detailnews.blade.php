@@ -109,6 +109,12 @@
                         <!-- End blog comments -->
 
                     </div><!-- End blog entries list -->
+                    <div class="col-lg-4 entries">
+                        <div class="row">
+                            define_syslog_variables
+                            <div>func_get_arg("")</div>
+                        </div>
+                    </div>
 
                     @include('client.layout.layout_ngoaingu.components.navabar')
                 </div>

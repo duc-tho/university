@@ -67,6 +67,29 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item {{ request()->is('admin/slide*') ? 'menu-open' : '' }}">
+                    <a href="javascript:" class="nav-link {{ request()->is('admin/demo*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-table"></i>
+                        <p>
+                            Slide
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('adminSlide') }}" class="nav-link  {{ request()->is('admin/slide/index*') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Trang chủ quản lý slide</p>
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a href="{{ route('adminDemo2') }}" class="nav-link {{ request()->is('admin/demo/demo-2*') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Demo Page 2</p>
+                            </a>
+                        </li> -->
+                    </ul>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
