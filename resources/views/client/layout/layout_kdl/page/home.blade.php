@@ -1,5 +1,5 @@
 @extends('client.layout.layout_kdl.index')
-@section('title', 'Trang Chủ Khoa Du Lịch')
+@section('title', 'Khoa Du Lịch')
 @section('main')
     <section class="w3l-main-slider" id="home">
         <div class="companies20-content">
@@ -175,7 +175,8 @@
                                     <option>Núi</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-secondary btn-theme2">Tìm Kiếm</button>
+                            {{-- <a href="javascript:" class="btn btn-secondary btn-theme2 ">Tìm Kiếm</a> --}}
+                            <button type="button" class="btn btn-secondary btn-theme2">Tìm Kiếm</button>
                         </form>
                     </div>
                     <div class="column2">
@@ -239,7 +240,7 @@
                             <div class="col-md-3 col-sm-6 col-6 mt-4">
                                 <a href="javascript:">
                                     <div class="courses-item mt-2">
-                                        <span class="		fa fa-object-group"></span>
+                                        <span class="fa fa-object-group"></span>
                                         <p>Nhóm</p>
                                     </div>
                                 </a>
@@ -387,11 +388,11 @@
                         <h3 class="">Thông Báo</h3>
                         <div class="tatest-top mt-md-5 mt-4">
                             <div class="price-box btn-layout bt6">
-                                <div class="grid grid-column-2">
-                                    <div class="column-6">
+                                {{-- <div class="grid grid-column-2"> --}}
+                                    {{-- <div class="column-6">
                                         <img src="{{ asset('dist/layout/layout_khoadulich/images/20190920102331-31696.jpg') }}"
                                             alt="" class="img-fluid">
-                                    </div>
+                                    </div> --}}
                                     <div class="column1">
                                         <div class="job-info">
                                             <h6 class="pricehead"><a href="{{ route('chitiettintuc') }}">Khoa Du Lịch được
@@ -399,15 +400,15 @@
                                             <h5>Tháng 6/24/2021</h5>
                                             <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
                                         </div>
-                                    </div>
+                                    {{-- </div> --}}
                                 </div>
                             </div>
                             <div class="price-box btn-layout bt6">
-                                <div class="grid grid-column-2">
-                                    <div class="column-6">
+                                {{-- <div class="grid grid-column-2"> --}}
+                                    {{-- <div class="column-6">
                                         <img src="{{ asset('dist/layout/layout_khoadulich/images/link-dhdl-45338.jpg') }}"
                                             alt="" class="img-fluid">
-                                    </div>
+                                    </div> --}}
                                     <div class="column1">
 
                                         <div class="job-info">
@@ -417,14 +418,14 @@
                                             <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
                                         </div>
                                     </div>
-                                </div>
+                                {{-- </div> --}}
                             </div>
                             <div class="price-box btn-layout bt6">
-                                <div class="grid grid-column-2">
-                                    <div class="column-6">
+                                {{-- <div class="grid grid-column-2"> --}}
+                                    {{-- <div class="column-6">
                                         <img src="{{ asset('dist/layout/layout_khoadulich/images/20170828165923-45184.jpg') }}"
                                             alt="" class="img-fluid">
-                                    </div>
+                                    </div> --}}
                                     <div class="column1">
 
                                         <div class="job-info">
@@ -434,7 +435,24 @@
                                             <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
                                         </div>
                                     </div>
-                                </div>
+                                {{-- </div> --}}
+                            </div>
+                            <div class="price-box btn-layout bt6">
+                                {{-- <div class="grid grid-column-2"> --}}
+                                    {{-- <div class="column-6">
+                                        <img src="{{ asset('dist/layout/layout_khoadulich/images/20170828165923-45184.jpg') }}"
+                                            alt="" class="img-fluid">
+                                    </div> --}}
+                                    <div class="column1">
+
+                                        <div class="job-info">
+                                            <h6 class="pricehead"><a href="{{ route('chitiettintuc') }}">Khoa Du Lịch được
+                                                    tuyên dương </a></h6>
+                                            <h5>Tháng 6/24/2021</h5>
+                                            <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
+                                        </div>
+                                    </div>
+                                {{-- </div> --}}
                             </div>
                         </div>
                         <div class="text-right mt-4">
@@ -517,6 +535,9 @@
                                 <li>05:00 - 22:00 </li>
                                 <li class="melb">Việt Nam, Huế</li>
                             </div>
+                        </div>
+                        <div class="text-right mt-4">
+                            <a class="btn btn-secondary btn-theme2" href="{{ route('thongbao') }}"> Xem Tất Cả</a>
                         </div>
                     </div>
                 </div>

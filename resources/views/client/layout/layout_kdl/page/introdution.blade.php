@@ -228,6 +228,16 @@
                     </div>
                 </div>
             </div>
+
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <a href="{{route('home-teacher')}}">
+                        <button class="button"><span>Giảng Viên</span></button>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
     @stop

@@ -41,7 +41,7 @@
                     <div class="overlay"></div>
                     <div class="img d-flex align-self-stretch align-items-center" style="border: solid 3px black;">
                         <video width="100%" height="100%" controls>
-                            <source src="dist/layout/layout_kkt/images/videoschool.mp4" type="video/mp4">
+                            <source src="{{ asset('dist/layout/layout_nghethuat/images/videoschool.mp4') }}" type="video/mp4">
                         </video>
                     </div>
                 </div>

@@ -22,7 +22,9 @@
         <div class="row">
             <div class="col-lg-5 col-md-5 col-sm-6 logo mr-auto">
                 <a href="/">
-                    <img class="text-light" alt="logo" src="http://khoangoaingu.daihocdulich.edu.vn/upload/file/logo.png" style="width:250px; height: auto;">
+                    <img class="text-light" alt="logo"
+                        src="http://khoangoaingu.daihocdulich.edu.vn/upload/file/logo.png"
+                        style="width:250px; height: auto;">
                 </a>
             </div>
 
@@ -30,14 +32,14 @@
             <div class="col-lg-7 col-md-7 col-sm-6">
                 <nav class="nav-menu d-none d-lg-block" style="padding-left: 150px;position: fixed;">
                     <ul>
-                        <li class="active"><a href="{{route('khoangoaingu')}}">Trang chủ</a></li>
+                        <li class="active"><a href="{{ route('khoangoaingu') }}">Trang chủ</a></li>
 
                         <li class="drop-down"><a> Giới thiệu</a>
                             <ul>
-                                <li><a href="{{route('gioithieukhoangoaingu')}}">Tổng quan sứ mênh tầm nhìn</a></li>
-                                <li><a href="{{route('gioithieukhoangoaingu')}}">Mục tiêu</a></li>
-                                <li><a href="{{route('gioithieukhoangoaingu')}}">Cơ cấu tổ chức</a></li>
-                                <li><a href="{{route('gioithieukhoangoaingu')}}">Ban chủ nhiệm</a></li>
+                                <li><a href="{{ route('gioithieukhoangoaingu') }}">Tổng quan sứ mênh tầm nhìn</a></li>
+                                <li><a href="{{ route('gioithieukhoangoaingu') }}">Mục tiêu</a></li>
+                                <li><a href="{{ route('gioithieukhoangoaingu') }}">Cơ cấu tổ chức</a></li>
+                                <li><a href="{{ route('gioithieukhoangoaingu') }}">Ban chủ nhiệm</a></li>
                                 <li class="drop-down"><a href="javascript:">Đội ngũ giảng viên</a>
                                     {{-- <ul>
                   <li><a href="javascript:">Deep Drop Down 1</a></li>
@@ -52,10 +54,10 @@
 
                         <li class="drop-down"><a> Đào tạo</a>
                             <ul>
-                                <li><a href="{{route('daotaoanhngu')}}">Anh ngữ</a></li>
-                                <li><a href="{{route('daotaoanhngu')}}">Hàn ngữ</a></li>
-                                <li><a href="{{route('daotaoanhngu')}}">Trung ngữ</a></li>
-                                <li><a href="{{route('daotaoanhngu')}}">Nhật ngữ</a></li>
+                                <li><a href="{{ route('daotaoanhngu') }}">Anh ngữ</a></li>
+                                <li><a href="{{ route('daotaoanhngu') }}">Hàn ngữ</a></li>
+                                <li><a href="{{ route('daotaoanhngu') }}">Trung ngữ</a></li>
+                                <li><a href="{{ route('daotaoanhngu') }}">Nhật ngữ</a></li>
                                 <!-- <li class="drop-down"><a href="javascript:">Drop Down 2</a>
                 <ul>
                   <li><a href="javascript:">Deep Drop Down 1</a></li>
@@ -69,7 +71,7 @@
                         </li>
                         <li class="drop-down"><a> Sinh viên</a>
                             <ul>
-                                <li><a href="{{route('thuctapkhoangoaingu')}}">Thực tập</a></li>
+                                <li><a href="{{ route('thuctapkhoangoaingu') }}">Thực tập</a></li>
                                 <li><a href="javascript:">Câu lạc bộ</a></li>
                                 <li><a href="javascript:">Công tác đoàn</a></li>
                                 <li><a href="javascript:">Cựu sinh viên</a></li>
@@ -80,14 +82,14 @@
                             </ul>
                         </li>
 
-                        <li><a href="{{route('tintucngoaingu')}}">Tin tức - Sự kiện</a></li>
+                        <li><a href="{{ route('tintucngoaingu') }}">Tin tức - Sự kiện</a></li>
                         {{-- <li class="drop-down"><a href="javascript:">Bảng viên</a>
             <ul>
               <li><a href="about.html">Giảng viên</a></li>
               <li><a href="team.html">Sinh viên</a></li>
             </ul>
           </li> --}}
-                        <li><a href="{{route('lienhekhoangoaingu')}}">Liên hệ</a></li>
+                        <li><a href="{{ route('lienhekhoangoaingu') }}">Liên hệ</a></li>
                     </ul>
                 </nav><!-- .nav-menu -->
 

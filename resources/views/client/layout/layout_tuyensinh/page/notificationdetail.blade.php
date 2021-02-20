@@ -1,55 +1,60 @@
 @extends('client.layout.layout_tuyensinh.index')
-@section('title','Thông Báo Tuyển Sinh')
+@section('title', 'Thông Báo Tuyển Sinh')
 @section('main')
-<main id="main">
+    <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
-        <ol>
-          <li><a href="{{route("tuyensinh")}}">Trang Chủ</a></li>
-          <li><a href="blog.html">Thông Báo Tuyển Sinh</a></li>
-        </ol>
-        <h2>Thông báo về kết quả xét tuyển học bạ THPT 2020 - Đợt 1</h2>
-      </div>
-    </section><!-- End Breadcrumbs -->
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="{{ route('tuyensinh') }}">Trang Chủ</a></li>
+                    <li><a href="blog.html">Thông Báo Tuyển Sinh</a></li>
+                </ol>
+                <h2>Thông báo về kết quả xét tuyển học bạ THPT 2020 - Đợt 1</h2>
+            </div>
+        </section><!-- End Breadcrumbs -->
 
-    <!-- ======= Blog Section ======= -->
-    <section id="blog" class="blog">
-      <div class="container">
+        <!-- ======= Blog Section ======= -->
+        <section id="blog" class="blog">
+            <div class="container">
 
-        <div class="row">
+                <div class="row">
 
-          <div class="col-lg-12 entries">
+                    <div class="col-lg-12 entries">
 
-            <article class="entry entry-single">
+                        <article class="entry entry-single">
 
-              <div class="entry-img">
-                <img src="assets/img/blog-1.jpg" alt="" class="img-fluid">
-              </div>
+                            <div class="entry-img">
+                                <img src="assets/img/blog-1.jpg" alt="" class="img-fluid">
+                            </div>
 
-              <h2 class="entry-title">
-                <a href="blog-single.html">Thông báo về kết quả xét tuyển học bạ THPT 2020 - Đợt 1</a>
-              </h2>
+                            <h2 class="entry-title">
+                                <a href="blog-single.html">Thông báo về kết quả xét tuyển học bạ THPT 2020 - Đợt 1</a>
+                            </h2>
 
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">Minh Long</a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">01/01/2020</time></a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a href="blog-single.html">12 Bình Luận</a></li>
-                </ul>
-              </div>
+                            <div class="entry-meta">
+                                <ul>
+                                    <li class="d-flex align-items-center"><i class="icofont-user"></i> <a
+                                            href="blog-single.html">Minh Long</a></li>
+                                    <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a
+                                            href="blog-single.html"><time datetime="2020-01-01">01/01/2020</time></a></li>
+                                    <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a
+                                            href="blog-single.html">12 Bình Luận</a></li>
+                                </ul>
+                            </div>
 
-              <div class="entry-content">
-                <p>
-                    Thông báo kết quả xét tuyển học bạ THPT 2020 - Đợt 1
-                  </p>
-                <img src="{{asset('dist/layout/layout_tuyensinh/img/20200705041626_23662.jpg')}}" width="100%" class="img-fluid" alt="">
-                <br>
-                  <p>Nhà trường sẽ còn nhiều đợt xét tuyển sinh viên, thông báo sẽ luôn được cập nhập liên tục tại trang web của trường</p>
-              </div>
+                            <div class="entry-content">
+                                <p>
+                                    Thông báo kết quả xét tuyển học bạ THPT 2020 - Đợt 1
+                                </p>
+                                <img src="{{ asset('dist/layout/layout_tuyensinh/img/20200705041626_23662.jpg') }}"
+                                    width="100%" class="img-fluid" alt="">
+                                <br>
+                                <p>Nhà trường sẽ còn nhiều đợt xét tuyển sinh viên, thông báo sẽ luôn được cập nhập liên tục
+                                    tại trang web của trường</p>
+                            </div>
 
-              {{-- <div class="entry-footer clearfix">
+                            {{-- <div class="entry-footer clearfix">
                 <div class="float-left">
                   <i class="icofont-folder"></i>
                   <ul class="cats">
@@ -72,15 +77,15 @@
 
               </div> --}}
 
-            </article><!-- End blog entry -->
+                        </article><!-- End blog entry -->
 
-          <!-- End blog author bio -->
+                        <!-- End blog author bio -->
 
-          <!-- End blog comments -->
+                        <!-- End blog comments -->
 
-          </div><!-- End blog entries list -->
+                    </div><!-- End blog entries list -->
 
-          {{-- <div class="col-lg-4">
+                    {{-- <div class="col-lg-4">
 
             <div class="sidebar">
 
@@ -163,10 +168,10 @@
 
           </div><!-- End blog sidebar --> --}}
 
-        </div>
+                </div>
 
-      </div>
-    </section><!-- End Blog Section -->
+            </div>
+        </section><!-- End Blog Section -->
 
-  </main><!-- End #main -->
+    </main><!-- End #main -->
 @stop
