@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\SlideController;
+use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\FacultyController;
+use App\Http\Controllers\Admin\HomeAdminController;
 use App\Http\Controllers\Client\Home\AboutController;
 use App\Http\Controllers\Client\Home\ContactController;
 use App\Http\Controllers\Client\Home\HomeController;
@@ -28,17 +31,15 @@ Route::get('/gioi-thieu/{name}', [AboutController::class, 'detail'])->name('home
 Route::get('/giang-vien', [TeacherController::class, 'getTeacher'])->name('home-teacher');
 Route::get('/lien-he', [ContactController::class, 'index'])->name('home-contact');
 
-// Route Tuyển Sinh
-Route::group(['prefix' => 'tuyen-sinh'], function () {
+// Route Tuyển Sinhz
+
+Route::group(['prefix' =>'tuyen-sinh'], function(){
     Route::get('/', [HomeController::class, 'getAdmissions'])->name('tuyensinh');
     Route::post('/', [HomeController::class, 'postAdmissionsRegister'])->name('formregister');
     Route::get('/thong-bao', [HomeController::class, 'getNotification'])->name('thongbaotuyensinh');
     Route::get('/chi-tiet-thong-bao', [HomeController::class, 'getNotificationDetail'])->name('chitietthongbaotuyensinh');
 });
 Route::get('complete', [HomeController::class, 'getComplete']);
-
-
-
 
 //Start Route trỏ về khoa dulịch
 Route::get('/khoa-du-lich', [HomeController::class, 'getKDL'])->name('khoadulich');
@@ -135,20 +136,47 @@ Route::get('/khoa-nghe-thuat/chi-tiet-thong-bao', function () {
 
 
 
-// Route::group(['namespace' => 'App\Http\Controllers\Client\Home', 'prefix' => 'tuyen-sinh'], function () {
-//     Route::get('/',[AdmissionsController::class, 'postRegister'])->name('formregister');
-
+// Route::group(['namespace' => 'App\Http\Controllers\Client', 'prefix' => 'cntt'], function () {
+//     Route::get('/tin-tuc',[HomeController::class, 'index'])->name('cnttNews');
 // });
 
-// Route::get('/tuyen-sinh', function() {
-//     return view('client.layout.layout_tuyensinh.page.home');
-// })->name('formregister');
 
+Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
 
-Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin'], function () {
-    Route::get('/', function () {
-        return view('server.pages.home.index');
-    })->name('adminHome');
+    Route::group(['prefix' => 'admin031100','middleware' => 'CheckLogedIn' ], function () {
+        Route::get('/', [LoginController::class, 'getLogin'])->name('admin');
+        Route::post('/', [LoginController::class, 'postLogin']);
+    });
+
+    Route::get('logout', [HomeAdminController::class, 'getLogout'])->name('logout');
+
+    Route::group(['prefix' => 'admin', 'middleware' => 'CheckLogedOut'], function () {
+        Route::get('/home', [HomeAdminController::class, 'getHome'])->name('AdminHome');
+
+        Route::group(['prefix' => 'faculty'], function () {
+            Route::get('/', [FacultyController::class, 'getFaculty'])->name('Faculty');
+
+            Route::get('add',  [FacultyController::class, 'getAddFaculty'])->name('GetAddFaculty');
+
+            Route::post('add',  [FacultyController::class, 'postAddFaculty'])->name('PostAddFaculty');
+
+            Route::get('/edit/{id}',  [FacultyController::class, 'getEditFaculty'])
+                ->name('GetEditFaculty')
+                ->where(['id' => '[0-9]+']);
+
+            Route::post('/edit/{id}', [FacultyController::class, 'postEditFaculty'])
+                ->name('PostEditFaculty')
+                ->where(['id' => '[0-9]+']);
+
+            Route::get('/delete/{id}', [FacultyController::class, 'deleteFaculty'])
+                ->name('DeleteFaculty')
+                ->where(['id' => '[0-9]+']);
+        });
+
+        Route::group(['prefix' => 'slide'], function () {
+            Route::get('/', [SlideController::class, 'index'])->name('adminSlide');
+        });
+    });
 
     Route::group(['prefix' => 'demo'], function () {
         Route::get('/demo-1', function () {
@@ -159,7 +187,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin'],
         })->name('adminDemo2');
     });
 
-    Route::group(['prefix' => 'slide'], function () {
-        Route::get('/', [SlideController::class, 'index'])->name('adminSlide');
-    });
+
 });
+

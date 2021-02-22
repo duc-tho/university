@@ -100,7 +100,7 @@ class HomeController extends Controller
         $data['info'] = $request->all();
         $email = $request->email;
         Mail::send('client.layout.layout_tuyensinh.email',$data, function($message)use($email){
-            $message->from('ngoclap858@gmail.com','Lương Ngọc Lập');
+            $message->from('thopk007113@gmail.com','Ngô Đức Thọ');
             $message->to($email, $email);
             $message->cc('ngoclap585@gmail.com','Lương Ngọc Lập');
             $message->subject('Xác nhận đăng kí thông tin tuyển sinh SAIGON_ACT');
