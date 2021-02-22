@@ -40,7 +40,9 @@ class Faculty extends Model
      *
      * @var string
      */
-    protected $table = 'faculty';
+    protected $table = "faculty";
+    protected $primaryKey = "id";
+    protected $guarded =[];
 
     /**
      * The "type" of the auto-incrementing ID.
