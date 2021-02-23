@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ChangeUsersTablePasswordLength extends Migration
+class EditImageTableAddImageField extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class ChangeUsersTablePasswordLength extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->text('password')->change();
+        Schema::table('image', function (Blueprint $table) {
+            $table->text('image')->nullable();
         });
     }
 
@@ -25,8 +25,8 @@ class ChangeUsersTablePasswordLength extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('password')->change();
+        Schema::table('image', function (Blueprint $table) {
+            $table->dropColumn('image');
         });
     }
 }
