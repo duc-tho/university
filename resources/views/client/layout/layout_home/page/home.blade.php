@@ -15,8 +15,8 @@
     <div class="w3_agilits_inner_bottom">
         <div class="wthree_agile_login">
             <ul>
-                <li><i class="fa fa-phone" aria-hidden="true"></i> (028)38.831.793</li>
-                <li><i class="fa fa-envelope-o list-icon" aria-hidden="true"></i><a href="mailto:info@daihocdulich.com">info@daihocdulich.com</a></li>
+                <li><i class="fa fa-phone" aria-hidden="true"></i> {{ $phone }}</li>
+                <li><i class="fa fa-envelope-o list-icon" aria-hidden="true"></i><a href="mailto:info@daihocdulich.com">{{ $email }}</a></li>
             </ul>
         </div>
 
@@ -57,10 +57,10 @@
             </div>
         </div>
         <div class="baner-info">
-            <h4>Ban quản lý đề án</h4>
-            <h3><span>T</span>rường đại học <span>D</span>u lịch sài gòn</h3>
-            <p>Nhân Bản - Cộng Đồng - Quốc Tế</p>
-            <a class="hvr-rectangle-out w3_play_icon1" href="{{route('home-about')}}"> Xem thêm</a>
+            <h4>{{ $slogan_top }}</h4>
+            <h3>{{ $slogan_main }}</h3>
+            <p>{{ $slogan_bottom }}</p>
+            <a class="hvr-rectangle-out w3_play_icon1" href="{{ route('gioi-thieu', [$faculty['slug']]) }}"> Xem thêm</a>
         </div>
         <!--/banner-ingo-->
     </div>
@@ -92,56 +92,34 @@
         {{-- <h5>Roin vel enim nec ipsum finibus.Duis euismod massa utab.</h5> --}}
         <br>
         <div class="col-md-7  w3ls-about-left">
-            <p class="p-gioithieu">Với đặc điểm sẽ là Trường Đại học đầu tiên của Việt Nam hoạt động theo định hướng không vì lợi nhuận; khi chính thức
-                được thành lập, Trường Đại học Du lịch Sài Gòn sẽ trở thành một Trường Đại học đào tạo đa ngành,
-                cung cấp nguồn nhân lực chất lượng cao trong các lĩnh vực: Kinh tế, Du lịch, Ngoại ngữ, Nghệ
-                thuật, Báo chí, Công nghệ Thông tin, Sức khỏe Thẩm mỹ; trong đó ngành mũi nhọn sẽ là ngành Du
-                lịch. </p>
-            <p class="p-gioithieu">Năm học 2019 -2020, BQLĐATL Trường Đại học Du lịch Sài Gòn vẫn tuyển sinh các ngành bậc Cao đẳng với các nhóm ngành </p>
-
+            {!! $intro_short !!}
         </div>
         <div class="col-md-5 w3ls-row">
             <div class="col-md-6 col-sm-6 wthree-about-left">
-                <img src="http://daihocdulich.edu.vn/upload/news/2020/12/10/trung-tam-ngoai-ngu-tin-hoc-cua-truong-saigonact-thumbnail-54925.jpg" class="img-responsive" alt="" />
+                <img src="{{ $intro_image }}" class="img-responsive" alt="" />
             </div>
             <div class="col-md-6 col-sm-6 w3ls-row alert wthree-about-right">
                 <video controls class="img-responsive" style="max-width: 120%;" autoplay muted>
-                    <source src="{{ asset('dist/layout/layout_nghethuat/images/videoschool.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
+                    <source src="{{ asset($intro_video) }}" type="video/mp4">
+                    Trình duyệt cùa bạn không hỗ trợ xem loại video này!
                 </video>
             </div>
             <div class="clearfix"> </div>
         </div>
         <div class="clearfix"> </div>
         <div class="stats-info agileits-w3layouts">
+            @foreach ($intro_statistic as $item)
             <div class="col-sm-3 col-xs-6 stats-grid">
-                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='4' data-delay='.5' data-increment="1">4</div>
+                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='{{ $item['value'] }}' data-delay='.5' data-increment="{{ ceil($item['value'] / 120) }}">{{ $item['value'] }}</div>
                 <div class="stats-img stat2">
-                    <p>Khoa</p>
+                    <p>{{ $item['name'] }}</p>
                 </div>
             </div>
-            <div class="col-sm-3 col-xs-6 stats-grid">
-                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='1700' data-delay='.5' data-increment="7">735</div>
-                <div class="stats-img stat2">
-                    <p>Sinh viên</p>
-                </div>
-            </div>
-            <div class="col-sm-3 col-xs-6 stats-grid stat1">
-                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='15' data-delay='.5' data-increment="1">15</div>
-                <div class="stats-img stat2">
-                    <p>Giải Thưởng</p>
-                </div>
-            </div>
-            <div class="col-sm-3 col-xs-6 stats-grid stat1">
-                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='8' data-delay='.5' data-increment="1">8</div>
-                <div class="stats-img stat2">
-                    <p>Đối Tác</p>
-                </div>
-            </div>
+            @endforeach
             <div class="clearfix"></div>
         </div>
     </div>
-    <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{route('home-about')}}"> Tìm hiểu thêm</a></div>
+    <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{route('gioi-thieu', ['trang-chu'])}}"> Tìm hiểu thêm</a></div>
 </div>
 <!-- //about -->
 <!--services-->
@@ -149,43 +127,16 @@
     <div class="container">
         <h3 class="w3ls-title">Khoa </h3>
         <div class="agileits-services-row">
+            @foreach ($all_faculty as $item)
             <div class="col-md-3 col-sm-6 agileits-services-grids">
-                <a href="{{route('khoakinhte')}}" target="_blank">
+                <a href="{{ route('trang-chu', [$item['slug']]) }}" target="_blank">
                     {{-- <span class="glyphicon glyphicon-stats effect-1" aria-hidden="true"></span> --}}
-                    <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20170828165923-45184.jpg') }}" width="40%" alt="">
-                    <h4>Kinh tế</h4>
+                    <img class="boder-radius-img" src="{{asset($item['image']) }}" width="40%" alt="">
+                    <h4>{{ $item['name'] }}</h4>
                 </a>
-                <p class="khoa-p">Là một trong những khoa thu hút nhiều sinh viên theo học, với bề dày đào tạo từ năm 2006.
-                    Những ngành được đào tạo tại Khoa được đánh giá là thu hút nguồn nhân lực nhiều nhất hiện
-                    nay.</p>
+                <p class="khoa-p">{{ $item['intro_summary'] }}</p>
             </div>
-            <div class="col-md-3 col-sm-6 agileits-services-grids">
-                <a href="{{route('khoadulich')}}">
-                    <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20180118145548-56466.jpg') }}" alt="">
-                    <h4>Du lịch</h4>
-                </a>
-                <p class="khoa-p">Khoa Du lịch – BQLĐATL Trường Đại học Du lịch Sài Gòn ra đời mở ra cơ hội tốt hơn cho người
-                    học có điều kiện học tập ở trình độ cao thuộc các chuyên ngành du lịch, góp phần nâng
-                    cao chất lượng nguồn nhân lực du lịch,</p>
-            </div>
-            <div class="col-md-3 col-sm-6 agileits-services-grids">
-                <a href="{{route('khoangoaingu')}}">
-                    <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/4.jpg') }}" width="40%" alt="">
-                    <h4>Ngoại ngữ</h4>
-                </a>
-                <p class="khoa-p">Khoa Ngoại Ngữ – BQLĐATL Trường Đại học Du lịch Sài Gòn là tiền thân của Trường Cao đẳng
-                    Văn hóa Nghệ thuật và Du lịch Sài Gòn được thành lập cùng với sự thành lập của trường 17
-                    tháng 10 năm 2006.</p>
-            </div>
-            <div class="col-md-3 col-sm-6 agileits-services-grids">
-                <a href="{{ route('khoanghethuat') }}">
-                    <img class="boder-radius-img" src="{{asset('dist/layout/layout_khoadulich/images/20181227183820-68860.png') }}" width="40%" alt="">
-                    <h4>Nghệ Thuật</h4>
-                </a>
-                <p class="khoa-p"> Khoa Nghệ thuật được thành lập từ năm 2006, gồm có 06 chuyên ngành: Đạo diễn, Diễn viên kịch nói và điện ảnh, Thanh nhạc, Thiết kế Đồ họa, Thiết kế Thời trang và Quay phim.
-
-                </p>
-            </div>
+            @endforeach
             <div class="clearfix"> </div>
         </div>
         {{-- <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="#"> Xem thêm về các khoa</a></div> --}}
@@ -350,32 +301,32 @@
         <div class="w3_testimonials_grids w3_testimonials_grids">
             <div id="owl-demo" class="owl-carousel">
                 <div class="item w3_agileits_testimonials_grid">
-                    <a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/16/mot-so-hinh-anh-ve-goc-giang-sinh-am-cung-cua-truong-thumbnail-68258.jpg" alt=" " class="img-responsive" /></a>
-                    <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">Một số hình ảnh về góc Giáng Sinh ấm cúng của trường</a></h4>
+                    <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/16/mot-so-hinh-anh-ve-goc-giang-sinh-am-cung-cua-truong-thumbnail-68258.jpg" alt=" " class="img-responsive" /></a>
+                    <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">Một số hình ảnh về góc Giáng Sinh ấm cúng của trường</a></h4>
                     <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
                         <i class="fa fa-clock-o" aria-hidden="true"></i> 29/12/2020 &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> 39
                     </div>
                     <p>Hình ảnh về giáng sinh 2020</p>
                 </div>
                 <div class="item w3_agileits_testimonials_grid">
-                    <a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/21/xet-hoc-ba-chia-khoa-mo-ra-canh-cua-hoc-tap--thumbnail-11234.jpg" alt="" class="img-responsive" /></a>
-                    <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">XÉT HỌC BẠ: CHÌA KHOÁ MỞ RA CÁNH CỬA HỌC TẬP !</a></h4>
+                    <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/21/xet-hoc-ba-chia-khoa-mo-ra-canh-cua-hoc-tap--thumbnail-11234.jpg" alt="" class="img-responsive" /></a>
+                    <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">XÉT HỌC BẠ: CHÌA KHOÁ MỞ RA CÁNH CỬA HỌC TẬP !</a></h4>
                     <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
                         <i class="fa fa-clock-o" aria-hidden="true"></i> 29/12/2020 &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> 39
                     </div>
                     <p>Dù bạn khao khát được cháy bỏng với tâm hồn nghệ thuật hay bạn ước mơ Lãnh Đạo- Tất cả đều được thỏa sức tại Trường CAO ĐẲNG VĂN HÓA NGHỆ THUẬT VÀ DU LỊCH SÀI GÒN. </p>
                 </div>
                 <div class="item w3_agileits_testimonials_grid">
-                    <a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/14/dang-ki-nhanh-tay-chop-ngay-co-hoi--thumbnail-49874.jpg" alt=" " class="img-responsive" /></a>
-                    <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">Đăng kí nhanh tay ! Chớp ngay cơ hội !</a></h4>
+                    <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/14/dang-ki-nhanh-tay-chop-ngay-co-hoi--thumbnail-49874.jpg" alt=" " class="img-responsive" /></a>
+                    <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">Đăng kí nhanh tay ! Chớp ngay cơ hội !</a></h4>
                     <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
                         <i class="fa fa-clock-o" aria-hidden="true"></i> 29/12/2020 &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> 39
                     </div>
                     <p>Chọn trường là chọn con đường tương lai của bản thân. Vì thế hãy chọn bước chuẩn bị tốt nhất cho chính bạn </p>
                 </div>
                 <div class="item w3_agileits_testimonials_grid">
-                    <a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/10/chuong-trinh-dao-tao-ngan-han-thumbnail-85717.jpg" alt=" " class="img-responsive" /></a>
-                    <h4><a href="{{route('home-news-detail', ['danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">CHƯƠNG TRÌNH ĐÀO TẠO NGẮN HẠN</a></h4>
+                    <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/10/chuong-trinh-dao-tao-ngan-han-thumbnail-85717.jpg" alt=" " class="img-responsive" /></a>
+                    <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">CHƯƠNG TRÌNH ĐÀO TẠO NGẮN HẠN</a></h4>
                     <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
                         <i class="fa fa-clock-o" aria-hidden="true"></i> 29/12/2020 &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> 39
                     </div>
@@ -383,7 +334,7 @@
                 </div>
             </div>
         </div>
-        <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{ route('home-news') }}"> Các tin tức khác</a></div>
+        <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{ route('tin-tuc', ['trang-chu']) }}"> Các tin tức khác</a></div>
     </div>
 </div>
 <img src="" alt="">
@@ -425,7 +376,7 @@
                     </ul>
                 </div>
             </section>
-            <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{route('home-teacher')}}"> Cán Bộ Giảng Viên</a></div>
+            <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{route('giao-vien')}}"> Cán Bộ Giảng Viên</a></div>
         </div>
     </div>
 </div>
@@ -507,10 +458,10 @@
         <p>Nhập Email để nhận tư vấn tuyển sinh.</p>
         <div class="subscribe-grid">
 
-                {{-- <input type="email" placeholder="Email" name="Subscribe" required=""> --}}
-                <a href="{{route('tuyensinh')}}">
-                    <button class="btn1">Đăng ký</button>
-                </a>
+            {{-- <input type="email" placeholder="Email" name="Subscribe" required=""> --}}
+            <a href="{{route('tuyensinh')}}">
+                <button class="btn1">Đăng ký</button>
+            </a>
 
 
         </div>

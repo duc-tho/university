@@ -15,12 +15,14 @@ yarn-error.log
 *.rar
 
 # ignore Plugin
-/public/plugins
+/public/dist/plugins
 
 # ignore layout resource
 # /public/dist/layout
 
 # ignore upload files
 /public/uploads
+/public/dist/admin/cssLoginAdmin
 /public/dist/layout/layout_home/video
 /public/dist/layout/layout_nghethuat
+/public/plugins

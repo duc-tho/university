@@ -9,6 +9,8 @@ use App\Models\Faculty;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
+use function App\Providers\upload_file;
+
 class FacultyController extends Controller
 {
     public function getFaculty()
@@ -22,7 +24,6 @@ class FacultyController extends Controller
     }
     public function postAddFaculty(AddFacultyRequest $request)
     {
-        $filename = $request->img->getClientOriginalName();
         $faculty = new Faculty();
         $faculty->name = $request->name;
         $faculty->slug = str::slug($request->slug);
@@ -35,8 +36,7 @@ class FacultyController extends Controller
         $faculty->created_by = $request->created_by;
         $faculty->updated_by = $request->updated_by;
         $faculty->status = $request->status;
-        $faculty->image = $filename;
-        $request->img->storeAs('public/dist/upload/image/faculty', $filename);
+        $faculty->image = upload_file($request->img,'dist/upload/image/faculty');
         $faculty->save();
         return back();
     }
@@ -60,12 +60,9 @@ class FacultyController extends Controller
         $arr['intro_summary'] = $request->summary;
         $arr['intro'] = $request->introdution;
         if ($request->hasFile('img')) {
-            $img = $request->img->getClientOriginalName();
-            $arr['image'] = $img;
-            $request->img->storeAs('public/dist/upload/image/faculty', $img);
+            $arr['image'] = upload_file($request->img,'dist/upload/image/faculty');
         }
         $faculty::where('id', $id)->update($arr);
-        // return redirect()->back()->with(["toastrInfo" => ["type" => "success", "messenger" => "Lưu thành công"]]);
         return redirect('admin/faculty');
     }
     public function deleteFaculty($id)

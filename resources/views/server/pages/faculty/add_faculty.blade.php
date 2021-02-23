@@ -19,29 +19,29 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label>Tên Khoa : </label>
-                                        <input required type="text" id="name" name="name" class="form-control" placeholder="Nhập Tên Khoa...">
+                                        <input required type="text" id="name" name="name" value="{{old('name')}}" class="form-control" placeholder="Nhập Tên Khoa...">
                                     </div>
                                     <div class="form-group">
                                         <label>Slug : </label>
-                                        <input required type="text" id="slug" name="slug" class="form-control" placeholder="Slug...">
+                                        <input required type="text" id="slug" name="slug"  value="{{old('slug')}}"  class="form-control" placeholder="Slug...">
                                     </div>
                                     <div class="form-group">
                                         <label>Meta Từ Khóa : </label>
-                                        <input required type="text" id="keywords" name="keywords" class="form-control" placeholder="Nhập Meta Keywords...">
+                                        <input required type="text" id="keywords" name="keywords"  value="{{old('keywords')}}"  class="form-control" placeholder="Nhập Meta Keywords...">
                                     </div>
                                     <div class="form-group">
                                         <label>Meta Mô tả : </label>
-                                        <input required type="text" id="descriptions" name="descriptions" class="form-control" placeholder="Nhập Meta Descriptions...">
+                                        <input required type="text" id="descriptions" name="descriptions"  value="{{old('descriptions')}}"  class="form-control" placeholder="Nhập Meta Descriptions...">
                                     </div>
 
                                     <div class="form-group">
                                         <label>Tên Layout : </label>
-                                        <input required type="text" id="layoutname" name="layout_name" class="form-control" placeholder="Nhập tên layout...">
+                                        <input required type="text" id="layoutname" name="layout_name" value="{{old('layout_name')}}"  class="form-control" placeholder="Nhập tên layout...">
                                     </div>
 
                                     <div class="form-group">
                                         <label>Trang Layout : </label>
-                                        <input required type="text" id="layoutpage" name="layout_page" class="form-control" placeholder="Nhập trang layout...">
+                                        <input required type="text" id="layoutpage" name="layout_page" value="{{old('layout_page')}}"  class="form-control" placeholder="Nhập trang layout...">
                                     </div>
 
                                     <div class="form-group">
@@ -54,12 +54,12 @@
 
                                     <div class="form-group">
                                         <label>Ngày Tạo : </label>
-                                        <input required type="date" id="created_by" name="created_by" class="form-control" placeholder="Nhập trang layout...">
+                                        <input required type="date" id="created_by" name="created_by" value="{{old('created_by')}}" class="form-control" placeholder="Nhập trang layout...">
                                     </div>
 
                                     <div class="form-group">
                                         <label>Ngày Đăng : </label>
-                                        <input required type="date" id="updated_by" name="updated_by" class="form-control" placeholder="Nhập trang layout...">
+                                        <input required type="date" id="updated_by" name="updated_by"  value="{{old('updated_by')}}" class="form-control" placeholder="Nhập trang layout...">
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label>Tóm Lược Giới Thiệu: </label>
-                                        <textarea required class="ckeditor" required name="summary"></textarea>
+                                        <textarea required class="ckeditor" required name="summary" id="summary" >{{ old('summary') }}</textarea>
                                         <script type="text/javascript">
                                             var editor = CKEDITOR.replace('summary', {
                                                     language: 'vi',
@@ -82,7 +82,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Nội dung Giới Thiệu: </label>
-                                        <textarea required class="ckeditor" required name="introdution"></textarea>
+                                        <textarea required class="ckeditor" required name="introdution" id="introdution" >{{ old('introdution') }}</textarea>
                                         <script type="text/javascript">
                                             var editor = CKEDITOR.replace('introdution', {
                                                     language: 'vi',
@@ -95,7 +95,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Ảnh Khoa :</label>
-                                        <input required id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)">
+                                        <input required id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)" ">
                                         <img id="image" class="thumbnail" width="200px" src="{{asset('/dist/img/imgdefault.png') }}">
                                     </div>
 

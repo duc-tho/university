@@ -112,6 +112,9 @@
                                             <td class="text-center">{{ $faculty->id }}</td>
                                             <td>Khoa {{ $faculty->name }}</td>
                                             
+                                            <td>
+                                                <img width="200px" src="{{asset($faculty->image)}}" class="thumbnail">
+                                            </td>
                                             <td class="text-center">{!! $faculty->intro_summary !!}</td>
                                             <td class="text-center">{{ $faculty->created_by }}</td>
                                             <td class="text-center">{{ $faculty->updated_by }}</td>
@@ -171,6 +174,4 @@
             </div>
         </div><!-- /.container-fluid -->
     </div>
-
-    <!--/.main-->
 @endsection
