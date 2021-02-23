@@ -144,7 +144,7 @@ Route::get('/{khoa}/chi-tiet-thong-bao', [NotificationController::class, 'detail
 // });
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
-    Route::group(['prefix' => 'admin031100', 'middleware' => 'CheckLogedIn'], function () {
+    Route::group(['prefix' => 'admin', 'middleware' => 'CheckLogedIn'], function () {
         Route::get('/', [LoginController::class, 'getLogin'])->name('admin');
         Route::post('/', [LoginController::class, 'postLogin']);
     });
