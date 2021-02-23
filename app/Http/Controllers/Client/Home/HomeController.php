@@ -100,9 +100,9 @@ class HomeController extends Controller
         $data['info'] = $request->all();
         $email = $request->email;
         Mail::send('client.layout.layout_tuyensinh.email',$data, function($message)use($email){
-            $message->from('thopk007113@gmail.com','Ngô Đức Thọ');
+            $message->from('info@daihocdulich.edu.vn','Cao Đẳng Sài Gòn');
             $message->to($email, $email);
-            $message->cc('ngoclap585@gmail.com','Lương Ngọc Lập');
+            $message->cc('info@daihocdulich.edu.vn','Cao Đẳng Sài Gòn');
             $message->subject('Xác nhận đăng kí thông tin tuyển sinh SAIGON_ACT');
         });
         return redirect('client.layout.layout_tuyensinh.page.home');
