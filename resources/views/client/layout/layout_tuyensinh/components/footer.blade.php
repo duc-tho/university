@@ -10,17 +10,12 @@
                     </div>
                     <br>
                     <p>
-                        <strong class="cspem"><i class="fas fa-map-marker-alt"></i> &nbsp;</strong> <span
-                            class="cspem">CS1: 70 Đường Tân Thới Nhất 8 - Khu phố 5 - P.Tân Thới Nhất - Q.12-TP.HCM
+                        <strong class="cspem"><i class="fas fa-map-marker-alt"></i> &nbsp;</strong> <span class="cspem">CS1: 70 Đường Tân Thới Nhất 8 - Khu phố 5 - P.Tân Thới Nhất - Q.12-TP.HCM
                         </span> <br>
-                        <strong class="cspem"><i class="fas fa-map-marker-alt"></i> &nbsp;</strong> <span
-                            class="cspem">CS2: 160/72 Phan Huy Ích, P.12, Q.Gò Vấp, TP.HCM</span> <br>
-                        <strong class="cspem"><i class="fa fa-mortar-board"></i> &nbsp;</strong><span
-                            class="cspem">daihocdulich.edu.vn</span> <br>
-                        <strong class="cspem"><i class="fas fa-phone-alt"></i> &nbsp;</strong><span
-                            class="cspem">(028)38.831.793</span> <br>
-                        <strong class="cspem"><i class="far fa-envelope-open"></i>&nbsp; </strong><span
-                            class="cspem">info@daihocdulich.edu.vn</span> <br>
+                        <strong class="cspem"><i class="fas fa-map-marker-alt"></i> &nbsp;</strong> <span class="cspem">CS2: 160/72 Phan Huy Ích, P.12, Q.Gò Vấp, TP.HCM</span> <br>
+                        <strong class="cspem"><i class="fa fa-mortar-board"></i> &nbsp;</strong><span class="cspem">daihocdulich.edu.vn</span> <br>
+                        <strong class="cspem"><i class="fas fa-phone-alt"></i> &nbsp;</strong><span class="cspem">(028)38.831.793</span> <br>
+                        <strong class="cspem"><i class="far fa-envelope-open"></i>&nbsp; </strong><span class="cspem">info@daihocdulich.edu.vn</span> <br>
                     </p>
                 </div>
 
@@ -29,16 +24,11 @@
                 <div class="col-lg-3 col-md-6 footer-links" id="lkk">
                     <h4 class="htdc">Liên Kết Khác</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right" id="ndt"></i><a href="/"
-                            id="ndt">Trang Chủ</a></li>
-                        <li><i class="bx bx-chevron-right" id="ndt"></i><a href="{{ route('khoadulich') }}"
-                                id="ndt">Khoa Du Lịch</a></li>
-                        <li><i class="bx bx-chevron-right" id="ndt"></i> <a href="{{ route('khoakinhte') }}"
-                                id="ndt">Khoa Kinh Tế</a></li>
-                        <li><i class="bx bx-chevron-right" id="ndt"></i> <a href="{{ route('khoangoaingu') }}"
-                                id="ndt">Khoa Ngoại Ngữ</a></li>
-                        <li><i class="bx bx-chevron-right" id="ndt"></i> <a href="{{ route('khoanghethuat') }}"
-                                id="ndt">Khoa Nghệ Thuật</a></li>
+                        <li><i class="bx bx-chevron-right" id="ndt"></i><a href="/" id="ndt">Trang Chủ</a></li>
+                        <li><i class="bx bx-chevron-right" id="ndt"></i><a href="{{-- route('khoadulich') --}}" id="ndt">Khoa Du Lịch</a></li>
+                        <li><i class="bx bx-chevron-right" id="ndt"></i> <a href="{{-- route('khoakinhte') --}}" id="ndt">Khoa Kinh Tế</a></li>
+                        <li><i class="bx bx-chevron-right" id="ndt"></i> <a href="{{-- route('khoangoaingu') --}}" id="ndt">Khoa Ngoại Ngữ</a></li>
+                        <li><i class="bx bx-chevron-right" id="ndt"></i> <a href="{{-- route('khoanghethuat') --}}" id="ndt">Khoa Nghệ Thuật</a></li>
 
                     </ul>
                 </div>
