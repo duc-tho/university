@@ -60,6 +60,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route('Teacher') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Giảng Viên</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('adminSlide') }}" class="nav-link {{ request()->is('admin/demo/demo-2*') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Slide</p>
@@ -67,23 +73,15 @@
                         </li>
                     </ul>
                 </li>
-
-                {{-- <li class="nav-item {{ request()->is('admin/slide*') ? 'menu-open' : '' }}">
-                    <a href="javascript:" class="nav-link {{ request()->is('admin/demo*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-table"></i>
+                <li class="nav-item">
+                    <a href="{{route('User')}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-user-alt"></i>
                         <p>
-                            Slide
-                            <i class="right fas fa-angle-left"></i>
+                            Quản Trị Người Dùng
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('adminSlide') }}" class="nav-link  {{ request()->is('admin/slide/index*') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Trang chủ quản lý slide</p>
-                        </li>
-                    </ul>
-                </li> --}}
+                </li>
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

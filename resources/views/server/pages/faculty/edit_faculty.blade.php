@@ -96,7 +96,7 @@
                                     <div class="form-group">
                                         <label>Ảnh Khoa :</label>
                                         <input id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)">
-                                        <img id="image" class="thumbnail" width="200px" src="{{Storage::url('public/dist/upload/image/faculty/'.$faculty->image)}}">
+                                        <img id="image" class="thumbnail" width="200px" src="{{asset($faculty->image)}}">
                                     </div>
 
                                 </div>

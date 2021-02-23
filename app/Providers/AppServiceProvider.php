@@ -23,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        function upload_file($file, $save_path)
+        {
+            return $file->store($save_path, ['disk' => 'public_file']);
+        }
     }
 }

@@ -3,7 +3,9 @@
 use App\Http\Controllers\Admin\SlideController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\FacultyController;
+use App\Http\Controllers\Admin\Teacher_reController;
 use App\Http\Controllers\Admin\HomeAdminController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Client\Home\AboutController;
 use App\Http\Controllers\Client\Home\ContactController;
 use App\Http\Controllers\Client\Home\HomeController;
@@ -172,6 +174,47 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
                 ->name('DeleteFaculty')
                 ->where(['id' => '[0-9]+']);
         });
+
+        Route::group(['prefix' => 'teacher'], function () {
+            Route::get('/', [Teacher_reController::class, 'getTeacher'])->name('Teacher');
+
+            Route::get('add',  [Teacher_reController::class, 'getAddTeacher'])->name('GetAddTeacher');
+
+            Route::post('add',  [Teacher_reController::class, 'postAddTeacher'])->name('PostAddTeacher');
+
+            Route::get('/edit/{id}',  [Teacher_reController::class, 'getEditTeacher'])
+                ->name('GetEditTeacher')
+                ->where(['id' => '[0-9]+']);
+
+            Route::post('/edit/{id}', [Teacher_reController::class, 'postEditTeacher'])
+                ->name('PostEditTeacher')
+                ->where(['id' => '[0-9]+']);
+
+            Route::get('/delete/{id}', [Teacher_reController::class, 'deleteTeacher'])
+                ->name('DeleteTeacher')
+                ->where(['id' => '[0-9]+']);
+        });
+
+        Route::group(['prefix' => 'user'], function () {
+            Route::get('/', [UserController::class, 'getUser'])->name('User');
+
+            Route::get('add',  [UserController::class, 'getAddUser'])->name('GetAddUser');
+
+            Route::post('add',  [UserController::class, 'postAddUser'])->name('PostAddUser');
+
+            Route::get('/edit/{id}',  [UserController::class, 'getEditUser'])
+                ->name('GetEditUser')
+                ->where(['id' => '[0-9]+']);
+
+            Route::post('/edit/{id}', [UserController::class, 'postEditUser'])
+                ->name('PostEditUser')
+                ->where(['id' => '[0-9]+']);
+
+            Route::get('/delete/{id}', [UserController::class, 'deleteUser'])
+                ->name('DeleteUser')
+                ->where(['id' => '[0-9]+']);
+        });
+
 
         Route::group(['prefix' => 'slide'], function () {
             Route::get('/', [SlideController::class, 'index'])->name('adminSlide');
