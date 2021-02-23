@@ -26,12 +26,12 @@
           </div>
           <div class="footer-list-29 footer-2">
             <ul>
-              <h6 class="footer-title-29">Trang Chủ</h6>
+              <h6 class="footer-title-29">Đường Dẫn</h6>
               <li><a href="{{route('tintuc')}}">Tin Tức</a></li>
               <li><a href="{{route('gioithieu')}}">Giới Thiệu</a></li>
               <li><a href="{{route('thongbao')}}">Thông Báo</a></li>
               <li><a href="{{route('gioithieu')}}">Thông Tin Khoa</a></li>
-              <li><a href="####">Khác</a></li>
+              {{-- <li><a href="####">Khác</a></li> --}}
             </ul>
           </div>
           <div class="footer-list-29 footer-3">
@@ -39,9 +39,9 @@
             <h6 class="footer-title-29">Gửi yêu cầu </h6>
             <form action="#" class="subscribe" method="post">
               <input type="email" name="email" placeholder="Email" required="">
-             
+
               <button><span class="fa fa-envelope-o"></span></button>
-              
+
             </form>
             <p>Chúng tôi luôn lắng nghe ý kiến của bạn</p>
             <p>Luông lắng nghe đóng góp để cùng phát triển</p>

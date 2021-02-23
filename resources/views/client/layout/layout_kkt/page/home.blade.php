@@ -565,7 +565,7 @@
                         Những sinh viên sẽ luôn được giảng viên hỗ trọ nhiệt tình, học hỏi những kiến
                         thức mới mẻ hơn. </p>
                     <p>Với tiêu chí đặt giáo dục lên hàng đầu, giảng viên của khoa luôn mong muốn mang đến cho sinh viên những điều tuyệt nhất.</p>
-                    <a href="{{ route('khoakinhte-danhsachgiaovien') }}" class="main-btn mt-55">Danh sách đội ngũ giảng viên </a>
+                    <a href="{{ route('home-teacher') }}" class="main-btn mt-55">Danh sách đội ngũ giảng viên </a>
                 </div> <!-- teachers cont -->
             </div>
             <div class="col-lg-6 offset-lg-1">
@@ -578,9 +578,9 @@
                                 </div>
                                 <div class="cont">
                                     <a href="{{  route('khoakinhte-thongtingiaovien') }}">
-                                        <h6>Mark alen</h6>
+                                        <h6>Minh Khoa</h6>
                                     </a>
-                                    <span>Vice chencelor</span>
+                                    <span>Giảng Viên</span>
                                 </div>
                             </div> <!-- singel teachers -->
                         </div>
@@ -591,9 +591,9 @@
                                 </div>
                                 <div class="cont">
                                     <a href="{{  route('khoakinhte-thongtingiaovien') }}">
-                                        <h6>David card</h6>
+                                        <h6>Đinh Lộc</h6>
                                     </a>
-                                    <span>Pro chencelor</span>
+                                    <span>Giảng Viên</span>
                                 </div>
                             </div> <!-- singel teachers -->
                         </div>
@@ -604,9 +604,9 @@
                                 </div>
                                 <div class="cont">
                                     <a href="{{  route('khoakinhte-thongtingiaovien') }}">
-                                        <h6>Rebeka alig</h6>
+                                        <h6>Minh Mộc</h6>
                                     </a>
-                                    <span>Pro chencelor</span>
+                                    <span>Trợ Lí Giảng Viên</span>
                                 </div>
                             </div> <!-- singel teachers -->
                         </div>
@@ -617,9 +617,9 @@
                                 </div>
                                 <div class="cont">
                                     <a href="{{  route('khoakinhte-thongtingiaovien') }}">
-                                        <h6>Hanna bein</h6>
+                                        <h6>Hà Lan</h6>
                                     </a>
-                                    <span>Aerobics head</span>
+                                    <span>Giảng Viên</span>
                                 </div>
                             </div> <!-- singel teachers -->
                         </div>
@@ -692,9 +692,9 @@
                         </div>
                     </div>
                     <div class="testimonial-cont">
-                        <p>Aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet sem nibh id elit sollicitudirem </p>
-                        <h6>Rubina Helen</h6>
-                        <span>Bsc, Engineering</span>
+                        <p>Được học ở một môi trường nhiệt tình, chuyên về du lịch em cảm thấy rất vui và cũng rất tự hào khi được học ở một trường như vậy </p>
+                        <h6>Nguyễn Đinh Văn</h6>
+                        <span>Sinh Viên Năm 2</span>
                     </div>
                 </div> <!-- singel testimonial -->
             </div>

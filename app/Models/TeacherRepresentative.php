@@ -22,14 +22,15 @@ class TeacherRepresentative extends Model
 {
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'teacher_representative';
-
+    protected $primaryKey = "id";
+    protected $guarded =[];
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';

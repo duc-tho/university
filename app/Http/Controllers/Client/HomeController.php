@@ -14,6 +14,7 @@ use App\Models\Slide;
 use App\Models\Specialized;
 use App\Models\Statistics;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -131,7 +132,7 @@ class HomeController extends Controller
             'all_faculty' => $all_faculty,
             'specialized' => $specialized,
 
-            
+
             // 'student_comment_content' => ,
             // 'student_comment_name' => ,
             // 'student_comment_type' => ,
@@ -219,7 +220,24 @@ class HomeController extends Controller
     {
         return view('client.layout.layout_tuyensinh.page.notificationdetail');
     }
-
+    public function postAdmissionsRegister(Request $request)
+    {
+        // $data = $request->all();
+        // dd($data);
+        $data['info'] = $request->all();
+        $email = $request->email;
+        Mail::send('client.layout.layout_tuyensinh.email', $data, function ($message) use ($email) {
+            $message->from('thopk007113@gmail.com', 'Ngô Đức Thọ');
+            $message->to($email, $email);
+            $message->cc('ngoclap585@gmail.com', 'Lương Ngọc Lập');
+            $message->subject('Xác nhận đăng kí thông tin tuyển sinh SAIGON_ACT');
+        });
+        return redirect('client.layout.layout_tuyensinh.page.home');
+    }
+    public function getComplete()
+    {
+        return view('client.layout.layout_tuyensinh.complete');
+    }
     // <------------------> End Controller TuyênSinh <--------------------------->
 
     // <------------------>  Start Controller KhoaNgoaiNgu <--------------------------->
