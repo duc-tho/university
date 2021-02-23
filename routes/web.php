@@ -48,7 +48,7 @@ Route::get('/{khoa}/gioi-thieu/{name}', [AboutController::class, 'detail'])->nam
 Route::get('/{khoa}/lien-he', [ContactController::class, 'index'])->name('lien-he');
 
 // Đào Tạo
-Route::get('/{khoa}/dao-tao/nghanh-quan-tri-khach-san', [EducateController::class, 'detail'])->name('dao-tao-chi-tiet');
+Route::get('/{khoa}/dao-tao/{nganh}', [EducateController::class, 'detail'])->name('dao-tao-chi-tiet');
 
 // Sinh Viên
 Route::get('/{khoa}/sinh-vien/thuc-tap', [StudentController::class, 'list'])->name('sinh-vien-danh-muc');
