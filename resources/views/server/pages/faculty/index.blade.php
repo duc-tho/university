@@ -84,17 +84,21 @@
                                         <th class="text-center sorting">
                                             <a> Tên Khoa</a>
                                         </th>
-                                        <th class="text-center sorting">
-                                            <a> Hình ảnh</a>
-                                        </th>
+                                       
                                         <th class="text-center sorting">
                                             <a>Giới Thiệu Tóm Tắt</a>
+                                        </th>
+                                        <th class="text-center sorting">
+                                            <a>Người tạo</a>
                                         </th>
                                         <th class="text-center sorting_desc">
                                             <a>Ngày tạo</a>
                                         </th>
                                         <th class="text-center sorting_desc">
                                             <a>Ngày đăng</a>
+                                        </th>
+                                        <th class="text-center sorting">
+                                            <a>Ẩn / Hiện</a>
                                         </th>
                                         <th class="text-center sorting">
                                             <a><i class="fa fa-bolt"></i></a>
@@ -107,16 +111,17 @@
                                         <tr role="row">
                                             <td class="text-center">{{ $faculty->id }}</td>
                                             <td>Khoa {{ $faculty->name }}</td>
-                                            <td>
-                                                <img width="200px" src="{{Storage::url('public/dist/upload/image/faculty/'.$faculty->image)}}" class="thumbnail">
-                                            </td>
+                                            
                                             <td class="text-center">{!! $faculty->intro_summary !!}</td>
                                             <td class="text-center">{{ $faculty->created_by }}</td>
                                             <td class="text-center">{{ $faculty->updated_by }}</td>
                                             <td class="text-center">
                                                 <label class="status switch switch-primary" data-toggle="tooltip" title=""
                                                     data-original-title="Xuất bản">
-                                                    <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                                    <div class="mt-check-garden nutanhien">
+                                                    <input id="1" type="checkbox" >
+                                                    <label for="1"> </label></div>
+                                                    <!-- <input data-id="1579" type="checkbox" checked=""><span></span></label> -->
                                                 <a href="{{asset('admin/faculty/edit/'.$faculty->id)}}" class="btn btn-warning btn-xs" >
                                                     <i class="fa fa-flag" aria-hidden="true"></i>
                                                     Sửa</a>
