@@ -28,6 +28,94 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
+    Route::group(['prefix' => 'admin', 'middleware' => 'CheckLogedIn'], function () {
+        Route::get('/', [LoginController::class, 'getLogin'])->name('admin');
+        Route::post('/', [LoginController::class, 'postLogin']);
+    });
+
+    Route::get('logout', [HomeAdminController::class, 'getLogout'])->name('logout');
+
+    Route::group(['prefix' => 'admin', 'middleware' => 'CheckLogedOut'], function () {
+        Route::get('/home', [HomeAdminController::class, 'getHome'])->name('AdminHome');
+
+        Route::group(['prefix' => 'faculty'], function () {
+            Route::get('/', [FacultyController::class, 'getFaculty'])->name('Faculty');
+
+            Route::get('add',  [FacultyController::class, 'getAddFaculty'])->name('GetAddFaculty');
+
+            Route::post('add',  [FacultyController::class, 'postAddFaculty'])->name('PostAddFaculty');
+
+            Route::get('/edit/{id}',  [FacultyController::class, 'getEditFaculty'])
+                ->name('GetEditFaculty')
+                ->where(['id' => '[0-9]+']);
+
+            Route::post('/edit/{id}', [FacultyController::class, 'postEditFaculty'])
+                ->name('PostEditFaculty')
+                ->where(['id' => '[0-9]+']);
+
+            Route::get('/delete/{id}', [FacultyController::class, 'deleteFaculty'])
+                ->name('DeleteFaculty')
+                ->where(['id' => '[0-9]+']);
+        });
+
+        Route::group(['prefix' => 'teacher'], function () {
+            Route::get('/', [Teacher_reController::class, 'getTeacher'])->name('Teacher');
+
+            Route::get('add',  [Teacher_reController::class, 'getAddTeacher'])->name('GetAddTeacher');
+
+            Route::post('add',  [Teacher_reController::class, 'postAddTeacher'])->name('PostAddTeacher');
+
+            Route::get('/edit/{id}',  [Teacher_reController::class, 'getEditTeacher'])
+                ->name('GetEditTeacher')
+                ->where(['id' => '[0-9]+']);
+
+            Route::post('/edit/{id}', [Teacher_reController::class, 'postEditTeacher'])
+                ->name('PostEditTeacher')
+                ->where(['id' => '[0-9]+']);
+
+            Route::get('/delete/{id}', [Teacher_reController::class, 'deleteTeacher'])
+                ->name('DeleteTeacher')
+                ->where(['id' => '[0-9]+']);
+        });
+
+        Route::group(['prefix' => 'user'], function () {
+            Route::get('/', [UserController::class, 'getUser'])->name('User');
+
+            Route::get('add',  [UserController::class, 'getAddUser'])->name('GetAddUser');
+
+            Route::post('add',  [UserController::class, 'postAddUser'])->name('PostAddUser');
+
+            Route::get('/edit/{id}',  [UserController::class, 'getEditUser'])
+                ->name('GetEditUser')
+                ->where(['id' => '[0-9]+']);
+
+            Route::post('/edit/{id}', [UserController::class, 'postEditUser'])
+                ->name('PostEditUser')
+                ->where(['id' => '[0-9]+']);
+
+            Route::get('/delete/{id}', [UserController::class, 'deleteUser'])
+                ->name('DeleteUser')
+                ->where(['id' => '[0-9]+']);
+        });
+
+
+        Route::group(['prefix' => 'slide'], function () {
+            Route::get('/', [SlideController::class, 'index'])->name('adminSlide');
+        });
+    });
+
+    Route::group(['prefix' => 'demo'], function () {
+        Route::get('/demo-1', function () {
+            return view('server.pages.demo.demo1');
+        })->name('adminDemo1');
+
+        Route::get('/demo-2', function () {
+            return view('server.pages.demo.demo2');
+        })->name('adminDemo2');
+    });
+});
+
 // Route Tuyển Sinh
 Route::group(['prefix' => 'tuyen-sinh'], function () {
     Route::get('/', [HomeController::class, 'getAdmissions'])->name('tuyensinh');
@@ -142,91 +230,3 @@ Route::get('/{khoa}/chi-tiet-thong-bao', [NotificationController::class, 'detail
 // Route::group(['namespace' => 'App\Http\Controllers\Client', 'prefix' => 'cntt'], function () {
 //     // Route::get('/tin-tuc',[HomeController::class, 'index'])->name('cnttNews');
 // });
-
-Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
-    Route::group(['prefix' => 'admin031100', 'middleware' => 'CheckLogedIn'], function () {
-        Route::get('/', [LoginController::class, 'getLogin'])->name('admin');
-        Route::post('/', [LoginController::class, 'postLogin']);
-    });
-
-    Route::get('logout', [HomeAdminController::class, 'getLogout'])->name('logout');
-
-    Route::group(['prefix' => 'admin', 'middleware' => 'CheckLogedOut'], function () {
-        Route::get('/home', [HomeAdminController::class, 'getHome'])->name('AdminHome');
-
-        Route::group(['prefix' => 'faculty'], function () {
-            Route::get('/', [FacultyController::class, 'getFaculty'])->name('Faculty');
-
-            Route::get('add',  [FacultyController::class, 'getAddFaculty'])->name('GetAddFaculty');
-
-            Route::post('add',  [FacultyController::class, 'postAddFaculty'])->name('PostAddFaculty');
-
-            Route::get('/edit/{id}',  [FacultyController::class, 'getEditFaculty'])
-                ->name('GetEditFaculty')
-                ->where(['id' => '[0-9]+']);
-
-            Route::post('/edit/{id}', [FacultyController::class, 'postEditFaculty'])
-                ->name('PostEditFaculty')
-                ->where(['id' => '[0-9]+']);
-
-            Route::get('/delete/{id}', [FacultyController::class, 'deleteFaculty'])
-                ->name('DeleteFaculty')
-                ->where(['id' => '[0-9]+']);
-        });
-
-        Route::group(['prefix' => 'teacher'], function () {
-            Route::get('/', [Teacher_reController::class, 'getTeacher'])->name('Teacher');
-
-            Route::get('add',  [Teacher_reController::class, 'getAddTeacher'])->name('GetAddTeacher');
-
-            Route::post('add',  [Teacher_reController::class, 'postAddTeacher'])->name('PostAddTeacher');
-
-            Route::get('/edit/{id}',  [Teacher_reController::class, 'getEditTeacher'])
-                ->name('GetEditTeacher')
-                ->where(['id' => '[0-9]+']);
-
-            Route::post('/edit/{id}', [Teacher_reController::class, 'postEditTeacher'])
-                ->name('PostEditTeacher')
-                ->where(['id' => '[0-9]+']);
-
-            Route::get('/delete/{id}', [Teacher_reController::class, 'deleteTeacher'])
-                ->name('DeleteTeacher')
-                ->where(['id' => '[0-9]+']);
-        });
-
-        Route::group(['prefix' => 'user'], function () {
-            Route::get('/', [UserController::class, 'getUser'])->name('User');
-
-            Route::get('add',  [UserController::class, 'getAddUser'])->name('GetAddUser');
-
-            Route::post('add',  [UserController::class, 'postAddUser'])->name('PostAddUser');
-
-            Route::get('/edit/{id}',  [UserController::class, 'getEditUser'])
-                ->name('GetEditUser')
-                ->where(['id' => '[0-9]+']);
-
-            Route::post('/edit/{id}', [UserController::class, 'postEditUser'])
-                ->name('PostEditUser')
-                ->where(['id' => '[0-9]+']);
-
-            Route::get('/delete/{id}', [UserController::class, 'deleteUser'])
-                ->name('DeleteUser')
-                ->where(['id' => '[0-9]+']);
-        });
-
-
-        Route::group(['prefix' => 'slide'], function () {
-            Route::get('/', [SlideController::class, 'index'])->name('adminSlide');
-        });
-    });
-
-    Route::group(['prefix' => 'demo'], function () {
-        Route::get('/demo-1', function () {
-            return view('server.pages.demo.demo1');
-        })->name('adminDemo1');
-
-        Route::get('/demo-2', function () {
-            return view('server.pages.demo.demo2');
-        })->name('adminDemo2');
-    });
-});
