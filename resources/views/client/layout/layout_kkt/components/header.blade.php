@@ -1,22 +1,20 @@
 <!--====== HEADER PART START ======-->
 
 <header id="header-part">
-
     <div class="header-top d-none d-lg-block">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="header-contact text-lg-left text-center">
                         <ul>
-                            <li><img src="{{ asset('dist/layout/layout_kkt/images/all-icon/map.png') }}" alt="icon"><span>70 Tân Thới Nhất , Khu Phố 5 , P.Tân Thới Nhất , Quận 12 </span></li>
-                            <li><img src="{{ asset('dist/layout/layout_kkt/images/all-icon/email.png') }}" alt="icon"><span>info@daihocdulich.edu.vn</span></li>
+                            <li><img src="{{ asset('dist/layout/layout_kkt/images/all-icon/map.png') }}" alt="icon"><span>{{ $address }}</span></li>
+                            <li><img src="{{ asset('dist/layout/layout_kkt/images/all-icon/email.png') }}" alt="icon"><span>{{ $email }}</span></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="header-opening-time text-lg-right text-center">
-                        <p>Giờ hoạt động : Thứ 2 đến Thứ 6 : 8h đến 17h</p>
-                        <p>Thứ 7 : 8h đến 12h</p>
+                        <p>{{$time}}</p>
                     </div>
                 </div>
             </div> <!-- row -->
@@ -29,7 +27,7 @@
                 <div class="col-lg-4 col-md-4">
                     <div class="logo">
                         <a href="/">
-                            <img src="{{ asset('dist/layout/layout_kkt/images/hihkhoa_files/logo.png') }}" alt="Logo">
+                            <img src="{{ asset($logo) }}" alt="Logo">
                         </a>
                     </div>
                 </div>
@@ -40,8 +38,8 @@
                                 <img src="{{ asset('dist/layout/layout_kkt/images/all-icon/support.png') }}" alt="icon">
                             </div>
                             <div class="cont">
-                                <p>Đường dây hỗ trợ</p>
-                                <span>(028)38.831.793 - (028)38.831.796 </span>
+                                <p>{{ $hotline }}</p>
+
                             </div>
                         </div>
                         <br>
@@ -50,8 +48,8 @@
                                 <img src="{{ asset('dist/layout/layout_kkt/images/all-icon/support.png') }}" alt="icon">
                             </div>
                             <div class="cont">
-                                <p>Đường dây nóng</p>
-                                <span>0914.411.012 </span>
+                                <p>{{ $spline }}</p>
+
                             </div>
                         </div>
                     </div>

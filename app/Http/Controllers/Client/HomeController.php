@@ -112,6 +112,10 @@ class HomeController extends Controller
             'slogan_main' => getSettingValue($settings, 'slogan_main'),
             'slogan_bottom' => getSettingValue($settings, 'slogan_bottom'),
             'slogan_route' => getSettingValue($settings, 'slogan_route'), //
+            'address' => getSettingValue($settings, 'address'),
+            'time' => getSettingValue($settings, 'time'),
+            'hotline' => getSettingValue($settings, 'hotline'),
+            'spline' => getSettingValue($settings, 'spline'),
 
             'admission_title' => getSettingValue($settings, 'email'),
             'admission_description' => getSettingValue($settings, 'email'),
