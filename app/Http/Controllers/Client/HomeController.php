@@ -6,13 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\CollabLogo;
 use App\Models\Faculty;
+use App\Models\FooterLinkCategory;
 use App\Models\Image;
 use App\Models\ImageCategory;
 use App\Models\News;
 use App\Models\Settings;
 use App\Models\Slide;
+use App\Models\Socials;
 use App\Models\Specialized;
 use App\Models\Statistics;
+use App\Models\TeacherRepresentative;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -90,9 +93,15 @@ class HomeController extends Controller
         // Lấy tin tức
         $news = News::where(['status' => 1])->paginate(10);
 
+        if (!$news->isEmpty()) foreach ($news as $key => $item) {
+            $item['category'] = $item->category;
+        }
+
         // Lấy hình ảnh và danh mục hình
-        $image_category = ImageCategory::all();
-        $image = Image::all();
+        $image_category = ImageCategory::where(['status' => 1])->get();
+        if (!$image_category->isEmpty()) foreach ($image_category as $key => $item) {
+            $item['image_item'] = $item->images;
+        }
 
         // Lấy menu
         $menu = Category::where([
@@ -103,6 +112,19 @@ class HomeController extends Controller
         if (!$menu->isEmpty()) showCategories($menu);
         else $menu = null;
 
+        // lấy giáo viên tiêu biểu
+        $teacher = TeacherRepresentative::where(['status' => 1])->get();
+
+        // lấy các liên kết qua trang khác ở footer
+        $footer_link = FooterLinkCategory::where(['status' => 1])->get();
+
+        if (!$footer_link->isEmpty()) foreach ($footer_link as $key => $item) {
+            $item['child'] = $item->footerLinks;
+        }
+
+        // Lấy các icon mạng xã hội
+        $socials_icon = Socials::where(['status' => 1])->get();
+
         return view('client.layout.' . $layout_name . '.page.home', [
             'phone' => getSettingValue($settings, 'phone'),
             'email' => getSettingValue($settings, 'email'),
@@ -111,115 +133,32 @@ class HomeController extends Controller
             'slogan_top' => getSettingValue($settings, 'slogan_top'),
             'slogan_main' => getSettingValue($settings, 'slogan_main'),
             'slogan_bottom' => getSettingValue($settings, 'slogan_bottom'),
-            'slogan_route' => getSettingValue($settings, 'slogan_route'), //
-
-            'admission_title' => getSettingValue($settings, 'email'),
-            'admission_description' => getSettingValue($settings, 'email'),
-            'admission_route' => getSettingValue($settings, 'email'),
-
             'intro_image' => getSettingValue($settings, 'intro_image'),
             'intro_video' => getSettingValue($settings, 'intro_video'),
-            'intro_route' => getSettingValue($settings, 'intro_route'),
+            'intro_route' => getSettingValue($settings, 'intro_route') == null ? route('gioi-thieu', [$faculty['slug']]) : getSettingValue($settings, 'intro_route'),
             'google_map_link' => getSettingValue($settings, 'google_map_link'),
-
             'intro_short' => $faculty['intro_summary'],
             'intro_statistic' => $statistic,
-
             'menu' => $menu,
-
             'slide' => $slide,
             'faculty' => $faculty,
             'all_faculty' => $all_faculty,
             'specialized' => $specialized,
 
-
             // 'student_comment_content' => ,
             // 'student_comment_name' => ,
             // 'student_comment_type' => ,
 
-            'teacher' => '',
-
-            // 'teacher_name' => ,
-            // 'teacher_intro' => ,
-            // 'teacher_degree' => ,
-            // 'teacher_image' => ,
-
-            'image' => $image,
+            'teacher' => $teacher,
+            'image' => $image_category,
             'news' => $news,
             'collab_logo' => $collab_logo,
+            'footer_link' => $footer_link,
+            'copyright' => getSettingValue($settings, 'copyright'),
+            'socials_icon' => $socials_icon,
         ]);
     }
 
-    // <------------------>  Start Controller KhoaDuLich <--------------------------->
-    public function getKDL(Request $request)
-    {
-        return view('client.layout.layout_kdl.page.home');
-    }
-
-    public function getIntrodution(Request $request)
-    {
-        return view('client.layout.layout_kdl.page.introdution');
-    }
-
-    public function getNews(Request $request)
-    {
-        return view('client.layout.layout_kdl.page.news');
-    }
-
-    public function getDetailNews(Request $request)
-    {
-        return view('client.layout.layout_kdl.page.detailnews');
-    }
-
-    public function getQtks(Request $request)
-    {
-        return view('client.layout.layout_kdl.page.hotel');
-    }
-
-    public function getQtnh(Request $request)
-    {
-        return view('client.layout.layout_kdl.page.restaurant');
-    }
-
-    public function getQtdl(Request $request)
-    {
-        return view('client.layout.layout_kdl.page.travel');
-    }
-
-    public function getIntership(Request $request)
-    {
-        return view('client.layout.layout_kdl.page.intership');
-    }
-
-    public function getMess(Request $request)
-    {
-        return view('client.layout.layout_kdl.page.mess');
-    }
-
-    public function getContact(Request $request)
-    {
-        return view('client.layout.layout_kdl.page.contact');
-    }
-
-
-
-
-    // <------------------> End Controller KhoaDuLich <--------------------------->
-
-
-    // <------------------>  Start Controller TuyênSinh <--------------------------->
-    public function getAdmissions(Request $request)
-    {
-        return view('client.layout.layout_tuyensinh.page.home');
-    }
-    public function getNotification(Request $request)
-    {
-        return view('client.layout.layout_tuyensinh.page.notification');
-    }
-    public function getNotificationDetail(Request $request)
-    {
-        return view('client.layout.layout_tuyensinh.page.notificationdetail');
-    }
     public function postAdmissionsRegister(Request $request)
     {
         // $data = $request->all();
@@ -234,48 +173,15 @@ class HomeController extends Controller
         });
         return redirect('client.layout.layout_tuyensinh.page.home');
     }
+
+    public function getAdmissions()
+    {
+        return view('client.layout.layout_tuyensinh.page.home');
+    }
+
     public function getComplete()
     {
         return view('client.layout.layout_tuyensinh.complete');
     }
     // <------------------> End Controller TuyênSinh <--------------------------->
-
-    // <------------------>  Start Controller KhoaNgoaiNgu <--------------------------->
-    public function getDetailPage(Request $request)
-    {
-        return view('client.layout.layout_ngoaingu.page.detailpage');
-    }
-    public function getLanguages(Request $request)
-    {
-        return view('client.layout.layout_ngoaingu.page.home');
-    }
-    public function getLanguagesIntrodution(Request $request)
-    {
-        return view('client.layout.layout_ngoaingu.page.introdution');
-    }
-    public function getEducate(Request $request)
-    {
-        return view('client.layout.layout_ngoaingu.page.educate_english');
-    }
-    public function getNewLanguages(Request $request)
-    {
-        return view('client.layout.layout_ngoaingu.page.news_event');
-    }
-    public function getDetailNewsLanguages(Request $request)
-    {
-        return view('client.layout.layout_ngoaingu.page.detailnews');
-    }
-    public function getContactLanguages(Request $request)
-    {
-        return view('client.layout.layout_ngoaingu.page.contact');
-    }
-    public function getIntershipLanguages(Request $request)
-    {
-        return view('client.layout.layout_ngoaingu.page.intership');
-    }
-    // <------------------> End Controller KhoaNgoaiNgu <--------------------------->
-
-    // <------------------>  Start Controller KhoaKinhTe <--------------------------->
-
-    // <------------------> End Controller KhoaNgoaiNgu <--------------------------->
 }
