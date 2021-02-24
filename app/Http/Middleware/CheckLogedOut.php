@@ -18,7 +18,7 @@ class CheckLogedOut
     public function handle(Request $request, Closure $next)
     {
         if(Auth::guest()){
-            return redirect()->intended('admin031100');
+            return redirect()->intended('admin');
         }
         return $next($request);
     }

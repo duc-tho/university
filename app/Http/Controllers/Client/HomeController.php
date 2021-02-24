@@ -222,12 +222,10 @@ class HomeController extends Controller
     }
     public function postAdmissionsRegister(Request $request)
     {
-        // $data = $request->all();
-        // dd($data);
         $data['info'] = $request->all();
         $email = $request->email;
         Mail::send('client.layout.layout_tuyensinh.email', $data, function ($message) use ($email) {
-            $message->from('thopk007113@gmail.com', 'Ngô Đức Thọ');
+            $message->from('ngoclap585@gmail.com', 'Lương Ngọc Lập');
             $message->to($email, $email);
             $message->cc('ngoclap585@gmail.com', 'Lương Ngọc Lập');
             $message->subject('Xác nhận đăng kí thông tin tuyển sinh SAIGON_ACT');

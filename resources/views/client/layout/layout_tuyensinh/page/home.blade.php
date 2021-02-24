@@ -18,35 +18,35 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-xl-4 col-lg-5" data-aos="fade-up">
+                {{-- <div class="col-xl-4 col-lg-5" data-aos="fade-up">
                     <div class="content">
                         <h3 class="h3-banner-name">Trường Cao Đẳng Văn Hóa Nghệ Thuật Và Du Lịch Sài Gòn</h3>
                         <p class="p-card-banner">Tư vấn trực tuyến 24/7 : <span class="span-card-banner">daihocdulich.edu.vn/tu-van</span> </p>
-                        <p class="p-card-banner">Nhận và nộp hồ sơ xét tuyển trực tuyến tại : <span class="span-card-banner">daihocdulich.edu.vn/xet-tuyen</span> </p>
+                        <p class="p-card-banner">Nhận và nộp hồ sơ xét tuyển trực tuyến tại : <span class="span-card-banner">daihocdulich.edu.vn/xet-tuyen</span> </p> --}}
 
                         {{-- <div class="text-center">
                 <a href="#" class="more-btn">Đọc Thêm <i class="bx bx-chevron-right"></i></a>
               </div> --}}
-                    </div>
-                </div>
-                <div class="col-xl-8 col-lg-7 d-flex">
+                    {{-- </div>
+                </div> --}}
+                <div class="col-xl-12 col-lg-7 d-flex">
                     <div class="icon-boxes d-flex flex-column justify-content-center">
                         <div class="row">
-                            <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                            <div class="col-xl-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                                 <div class="icon-box mt-4 mt-xl-0" id="box">
                                     <i class="bx bx-receipt" id="kho"></i>
                                     <h4>Giảng dạy trên các dự án thực tế chuyên nghành có khoa học</h4>
                                     <!-- <p>Học đi đôi với hành </p> -->
                                 </div>
                             </div>
-                            {{-- <div class=" col-xl-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                            <div class=" col-xl-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                                     <div class="icon-box mt-4 mt-xl-0" id="box2">
                                         <i class="bx bx-cube-alt" id="kho"></i>
                                         <h4>Môi trường học tập thân thiện, hiện đại, tiện ích</h4>
                                         <!-- <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p> -->
                                     </div>
-                                </div> --}}
-                            <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                                </div>
+                            <div class="col-xl-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                                 <div class="icon-box mt-4 mt-xl-0" id="box3">
                                     <i class="	fab fa-codepen" id="kho"></i>
                                     <h4>Chú trọng rèn luyện kỹ năng
@@ -54,7 +54,7 @@
                                     <!-- <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p> -->
                                 </div>
                             </div>
-                            <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                            <div class="col-xl-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
                                 <div class="icon-box mt-4 mt-xl-0" id="box4">
                                     <i class="fas fa-user-friends" id="kho"></i>
                                     <h4>
@@ -259,7 +259,7 @@
     </section><!-- End Services Section -->
 
     <!-- ======= Values Section ======= -->
-    <section id="values" class="values">
+    {{-- <section id="values" class="values">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
@@ -317,7 +317,7 @@
             </div>
 
         </div>
-    </section><!-- End Values Section -->
+    </section><!-- End Values Section --> --}}
 
     <!-- ======= Testimonials Section ======= -->
 
@@ -518,7 +518,7 @@
     <!-- End Portfolio Section-->
 
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team section-bg">
+    {{-- <section id="team" class="team section-bg">
         <div class="container">
 
             <div class="section-title">
@@ -610,7 +610,7 @@
             </div>
 
         </div>
-    </section>
+    </section> --}}
     <!-- End Team Section -->
 
     <!-- ======= Pricing Section ======= -->
@@ -717,7 +717,7 @@
     </section><!-- End Pricing Section -->
 
     <!-- ======= F.A.Q Section ======= -->
-    <section id="faq" class="faq section-bg">
+    {{-- <section id="faq" class="faq section-bg">
         <div class="container">
 
             <div class="section-title">
@@ -787,7 +787,7 @@
             </div>
 
         </div>
-    </section><!-- End F.A.Q Section -->
+    </section><!-- End F.A.Q Section --> --}}
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -897,15 +897,23 @@
     </div>
 </main><!-- End #main -->
 
-
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6034bffe918aa2612741ad9a/1ev70rv7h';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-
-
         <img src="{{ asset('dist/layout/layout_tuyensinh/img/z2273728659739_4388ed7cd00c760a40ea47af77f43c99.jpg') }}" width="120%">
-
-
 
     </div>
 </div>
