@@ -28,3 +28,42 @@ function checkURL($url)
     ) return 'javascript:';
     else return $url;
 }
+
+// Lấy setting
+function getSettingValue($settings, $key)
+{
+    foreach ($settings as $item) if ($item['name'] === $key) return $item['value'];
+}
+
+// Lấy menu
+function getCategories($categories, $parent_id = 0)
+{
+    foreach ($categories as $key => $item) {
+        if ($item['parent_id'] == $parent_id) {
+            if ($parent_id !== 0) {
+                foreach ($categories as $parent) {
+                    if ($parent['id'] == $item['parent_id']) {
+                        $temp = [];
+                        if ($parent['child']) {
+                            $temp = $parent['child'];
+                            array_push($temp, $item);
+                            $parent['child'] = $temp;
+                        } else {
+                            $temp = [];
+                            array_push($temp, $item);
+                            $parent['child'] = $temp;
+                        }
+                    }
+                }
+                unset($categories[$key]);
+            }
+            getCategories($categories, $item['id']);
+        }
+    }
+}
+
+// Chuyển thởi gian từ db sang DMY
+function ConvertDatabaseTimeToDMY($date_str)
+{
+    return date("d-m-Y", strtotime($date_str));
+}
