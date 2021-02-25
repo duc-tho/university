@@ -14,6 +14,6 @@ class HomeAdminController extends Controller
     }
     public function getLogout(){
         Auth::logout();
-        return redirect()->intended('admin031100');
+        return redirect()->intended('admin');
     }
 }

@@ -627,7 +627,7 @@ p.about-bottom {
 }
 img.img-responsive {
    -webkit-transition: .5s all;
-	-moz-transition: .5s all; 
+	-moz-transition: .5s all;
     transition: .5s all;
 }
 .wthree-about-agiletext {
@@ -646,12 +646,12 @@ a.more {
     display: inline-block;
     margin-top: 1.5em;
 	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px; 
+	-moz-border-radius: 4px;
     border-radius: 4px;
     border-bottom:4px solid transparent;
 }
 a.more:hover {
-    background:#00BCD4; 
+    background:#00BCD4;
     border-bottom-color:#04a6bb;
 }
 a.close {
@@ -724,7 +724,7 @@ div#agileits-services {
 .agileits-services-grids:hover h6 {
     width: 55%;
     background: #2954a2;
-} 
+}
 /*-- Effect 1--*/
 .agileits-services-grids span {
     font-size: 1.8em;
@@ -781,14 +781,14 @@ div#agileits-services {
 .wthree-testi {
     background: url(../images/testi.jpg) no-repeat center;
     background-size: cover;
-}  
+}
 .wthree-testi  h3,div#agileits-services h3 ,.subscribe h3{
     color: #fff;
 }
 .wthree-testi  h3.w3ls-title:after,div#agileits-services  h3.w3ls-title:after{
     background: rgba(226, 223, 223, 0.2);
 }
-.w3_wthree-testi_grids { 
+.w3_wthree-testi_grids {
 	margin: 0 auto;
 	width: 80%;
 }
@@ -843,7 +843,7 @@ div#agileits-services {
 .wthree .flex-direction-nav a.flex-next:before,.wthree .flex-direction-nav a:before {
     font-size: 25px;
 }
-/*-- //testimonial --*/ 
+/*-- //testimonial --*/
 /*team*/
 .w3_testimonials_grids{
 	margin:1em 0 0;
@@ -941,7 +941,7 @@ li.resp-tab-item:hover {
 }
 .resp-tabs-container {
 	padding: 0px;
-	clear: left;	
+	clear: left;
 }
 h2.resp-accordion {
 	cursor: pointer;
@@ -1060,7 +1060,7 @@ div#contact h3 {
 }
 .w3layouts-list a {
     color: #fff;
-	font-size:1em;	
+	font-size:1em;
     padding: 1.3em;
 }
 .agileits_w3layouts-map {
@@ -1075,13 +1075,13 @@ div#contact h3 {
 }
 .contact-right-w3l:-moz-placeholder { /* Firefox 18- */
    color: #fff;
-} 
+}
 .contact-right-w3l ::-moz-placeholder {  /* Firefox 19+ */
-    color: #fff;  
-} 
-.contact-main :-ms-input-placeholder {  
     color: #fff;
-}	
+}
+.contact-main :-ms-input-placeholder {
+    color: #fff;
+}
 .contact-right-w3l input[type="text"], .contact-right-w3l input[type="email"] {
     font-size: 1em;
     border: none;
@@ -1230,7 +1230,7 @@ div#contact h3 {
 	bottom: 79px;
     right: 2%;
 	overflow: hidden;
-	z-index: 999; 
+	z-index: 999;
 	width: 35px;
 	height: 35px;
 	border: none;
@@ -1295,7 +1295,7 @@ div#contact h3 {
 	.subscribe-grid form {
 		width: 72%;
 	}
-}	
+}
 @media screen and (max-width: 1050px){
 	.agileits-banner-grid {
        padding:2em 1em;
@@ -1314,7 +1314,7 @@ div#contact h3 {
 	div#about {
 		padding-top: 19em;
 	}
-}	
+}
 @media screen and (max-width: 991px){
 	.inner-header-agile {
 		padding: 0 3em;
@@ -1329,7 +1329,7 @@ div#contact h3 {
 	}
 	.wthree-about-left {
 		padding-top: 6em;
-	}	
+	}
 	.wthree-about-right {
 		top: 19px;
 		left: 39%;
@@ -1429,7 +1429,7 @@ div#contact h3 {
 		padding-top: 0em;
 	}
 	.agileits-services-grids p {
-		 padding: 0; 
+		 padding: 0;
 	}
 	.baner-info h3 {
 		font-size: 3em;
@@ -1503,13 +1503,13 @@ div#contact h3 {
 		text-align: center;
 	}
 	.navbar-collapse {
-		padding: 15px !important; 
+		padding: 15px !important;
 	}
 	.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
 		background-color: #2954a2;
 	}
 	.navbar-default .navbar-toggle {
-		border:none; 
+		border:none;
 	}
 	.navbar-default .navbar-toggle .icon-bar {
 		background-color: #f4792c;
@@ -1582,7 +1582,7 @@ div#contact h3 {
 	.b-wrapper h5 {
 		padding: 42% 0;
 	}
-	
+
 	div#contact {
 		padding-top: 0em;
 	}
@@ -1791,14 +1791,14 @@ div#contact h3 {
 	.stats-info.agileits-w3layouts {
 		margin: 3em 0 0;
 	}
-}	
+}
 @media screen and (max-width: 414px){
 	.w3_agilits_banner_bootm {
 		padding-bottom: 2.3em;
 		text-align: center;
 		float: none;
 	}
-	
+
 	.w3_agilits_inner_bottom {
 		padding: 0 1em;
 	}
@@ -1867,7 +1867,7 @@ div#contact h3 {
 	}
 	.baner-info h4 {
 		letter-spacing: 1px;
-	}	
+	}
 	.baner-info h3 {
 		font-size: 2em;
 	}
@@ -1955,7 +1955,7 @@ div#contact h3 {
 }
 /* -- //Responsive code -- */
 
-/* Custom */	
+/* Custom */
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form,
 .header-w3-agileits-bg-light {
@@ -1990,7 +1990,7 @@ div#contact h3 {
 
 .ndt__footer__link {
 	list-style: none;
-	
+
 }
 
 /* custom */
