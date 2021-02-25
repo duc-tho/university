@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\CollabLogo;
+use App\Models\Contact;
 use App\Models\Faculty;
 use App\Models\FooterLinkCategory;
-use App\Models\Image;
 use App\Models\ImageCategory;
 use App\Models\News;
 use App\Models\Settings;
@@ -29,41 +29,6 @@ class HomeController extends Controller
 
     public function index(Request $request, $khoa)
     {
-        // Lấy setting
-        function getSettingValue($settings, $key)
-        {
-            foreach ($settings as $item) if ($item['name'] === $key) return $item['value'];
-        }
-
-        // Lấy menu
-        function showCategories($categories, $parent_id = 0)
-        {
-            foreach ($categories as $key => $item) {
-                if ($item['parent_id'] == $parent_id) {
-                    if ($parent_id !== 0) {
-                        foreach ($categories as $parent) {
-                            if ($parent['id'] == $item['parent_id']) {
-                                $temp = [];
-                                if ($parent['child']) {
-                                    $temp = $parent['child'];
-                                    array_push($temp, $item);
-                                    $parent['child'] = $temp;
-                                } else {
-                                    $temp = [];
-                                    array_push($temp, $item);
-                                    $parent['child'] = $temp;
-                                }
-                            }
-                        }
-                        unset($categories[$key]);
-                    }
-                    showCategories($categories, $item['id']);
-                }
-            }
-        }
-
-        //-------------------------------------------------------------------------------------------------------------
-
         // Lấy thông tin khoa và kiểm tra xem khoa có tồn tại hay không
         $faculty = Faculty::where(['status' => 1, 'slug' => $khoa])->first();
         abort_if(!$faculty, 404);
@@ -110,7 +75,7 @@ class HomeController extends Controller
             'show_on_menu' => '1'
         ])->get();
 
-        if (!$menu->isEmpty()) showCategories($menu);
+        if (!$menu->isEmpty()) getCategories($menu);
         else $menu = null;
 
         // lấy giáo viên tiêu biểu
@@ -129,11 +94,18 @@ class HomeController extends Controller
         // Lấy các icon mạng xã hội
         $socials_icon = Socials::where(['status' => 1])->get();
 
+        // lấy thông tin liên hệ
+        $contact = Contact::where(['faculty_id' => $faculty_id])->first();
+
         return view('client.layout.' . $layout_name . '.page.home', [
-            'phone' => getSettingValue($settings, 'phone'),
-            'email' => getSettingValue($settings, 'email'),
+            'phone' => $contact['phone'],
+            'email' => $contact['email'],
+            'hotline' => $contact['hotline'],
+            'google_map_link' => $contact['map_embed'],
+            'website_link' => $contact['website_link'],
+            'contact_title' => $contact['contact_title'],
+
             'logo' => getSettingValue($settings, 'logo'),
-            'hotline' => getSettingValue($settings, 'hotline'),
             'slogan_top' => getSettingValue($settings, 'slogan_top'),
             'slogan_main' => getSettingValue($settings, 'slogan_main'),
             'slogan_bottom' => getSettingValue($settings, 'slogan_bottom'),
@@ -154,7 +126,6 @@ class HomeController extends Controller
             'name' => getSettingValue($specialized,'name'),
             'intro' => getSettingValue($specialized,'intro'),
             //End Khoa Du Lịch
-
 
 
             'admission_title' => getSettingValue($settings, 'email'),
@@ -179,7 +150,6 @@ class HomeController extends Controller
             // 'student_comment_name' => ,
             // 'student_comment_type' => ,
 
-            
             'teacher' => $teacher,
             'student' => $student,
             'image' => $image_category,
