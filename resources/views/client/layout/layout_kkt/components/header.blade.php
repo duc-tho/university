@@ -76,37 +76,37 @@
                                 <li class="nav-item">
                                     <a href="javascript:">Trang Chủ</a>
                                     <ul class="sub-menu">
-                                        <li><a href="{{ route('home') }}">Đại Học Du Lịch</a></li>
-                                        <li><a href="{{ route('khoakinhte') }}">Khoa Kinh tế</a></li>
+                                        <li><a href="{{-- route('home') --}}">Đại Học Du Lịch</a></li>
+                                        <li><a href="{{-- route('khoakinhte') --}}">Khoa Kinh tế</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('khoakinhte-gioithieu') }}">Giới Thiệu</a>
+                                    <a href="{{-- route('khoakinhte-gioithieu') --}}">Giới Thiệu</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="javascript:">Đào Tạo</a>
                                     <ul class="sub-menu">
-                                        <li><a href="{{ route('khoakinhte-chitietkhoahoc') }}">Tài Chính Ngân Hàng</a></li>
-                                        <li><a href="{{ route('khoakinhte-chitietkhoahoc') }}">Quản Trị Kinh Doanh</a></li>
-                                        <li><a href="{{ route('khoakinhte-chitietkhoahoc') }}">Kế Toán</a></li>
+                                        <li><a href="{{-- route('khoakinhte-chitietkhoahoc') --}}">Tài Chính Ngân Hàng</a></li>
+                                        <li><a href="{{-- route('khoakinhte-chitietkhoahoc') --}}">Quản Trị Kinh Doanh</a></li>
+                                        <li><a href="{{-- route('khoakinhte-chitietkhoahoc') --}}">Kế Toán</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('khoakinhte-tintuc') }}">Tin Tức - Sự Kiện</a>
+                                    <a href="{{-- route('khoakinhte-tintuc') --}}">Tin Tức - Sự Kiện</a>
                                     {{-- <ul class="sub-menu">
                                         <li><a href="tintucnhom.html">Events</a></li>
                                         <li><a href="tintucdon.html">Event Singel</a></li>
                                     </ul> --}}
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('home-teacher') }}">Giảng Viên</a>
+                                    <a href="{{-- route('home-teacher') --}}">Giảng Viên</a>
                                     {{-- <ul class="sub-menu">
                                         <li><a href="teachers.html">teachers</a></li>
                                         <li><a href="teachers-singel.html">teacher Singel</a></li>
                                     </ul> --}}
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('khoakinhte-lienhe') }}">Liên Lạc</a>
+                                    <a href="{{-- route('khoakinhte-lienhe') --}}">Liên Lạc</a>
                                 </li>
                             </ul>
                         </div>

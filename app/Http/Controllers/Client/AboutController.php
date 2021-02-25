@@ -14,11 +14,16 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request , $khoa)
     {
         // Lấy thông tin khoa và kiểm tra xem khoa có tồn tại hay không
-        $faculty = Faculty::where(['status' => 1, 'slug' => 'trang-chu'])->first();
+        // $faculty = Faculty::where(['status' => 1, 'slug' => 'trang-chu'])->first();
+        // abort_if(!$faculty, 404);
+        $faculty = Faculty::where(['status' => 1, 'slug' => $khoa])->first();
         abort_if(!$faculty, 404);
+        $faculty_id = $faculty['id'];
+
+        $layout_name = $faculty['layout_name'];
 
         $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty['id']])->get();
 
@@ -51,7 +56,7 @@ class AboutController extends Controller
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty['id']])->first();
 
-        return view('client.layout.default.page.about', [
+        return view('client.layout.'.$layout_name.'.page.about', [
             'phone' => $contact['phone'],
             'email' => $contact['email'],
             'hotline' => $contact['hotline'],
@@ -114,7 +119,7 @@ class AboutController extends Controller
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty['id']])->first();
 
-        return view('client.layout.default.page.about-detail', [
+        return view('client.layout.'.$layout_name.'.about-detail', [
             'phone' => $contact['phone'],
             'email' => $contact['email'],
             'hotline' => $contact['hotline'],
