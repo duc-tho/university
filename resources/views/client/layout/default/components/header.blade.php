@@ -7,7 +7,7 @@
             <div class="collapse navbar-collapse justify-content-md-center" id="cloapediamenu">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link color-pink-hover" href="{{route('gioi-thieu', ['trang-chu'])}}">Trang Chủ</a>
+                        <a class="nav-link color-pink-hover" href="{{route('trang-chu', [$faculty['slug']])}}">Trang Chủ</a>
                     </li>
                     <!-- #region normal cate -->
                     <li class="nav-item dropdown has-submenu">

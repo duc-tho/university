@@ -18,14 +18,14 @@
                     <div class="blog-title-area">
                         <ol class="breadcrumb hidden-xs-down">
                             <li class="breadcrumb-item"><a href="{{ route('trang-chu-chuyen-huong') }}">Trang chủ</a></li>
-                            <li class="breadcrumb-item"><a href="{{ route('gioi-thieu', ['trang-chu']) }}">Giới thiệu</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('gioi-thieu', [$faculty['slug']]) }}">Giới thiệu</a></li>
                             <li class=" breadcrumb-item active">{{ $about_detail['title'] }}</li>
                         </ol>
 
                         <h3 class="h4">{{ $about_detail['intro_title'] ?? $about_detail['title'] }}</h3>
 
                         <div class="blog-meta big-meta">
-                            <small><a href="{{ route('gioi-thieu-chi-tiet', ['trang-chu', 'gioi-thieu-chi-tiet']) }}" title="">Đăng ngày {{ ConvertDatabaseTimeToDMY($about_detail['created_at']) }}</a></small>
+                            <small><a href="javascript:" title="">Đăng ngày {{ ConvertDatabaseTimeToDMY($about_detail['created_at']) }}</a></small>
                             <small><a href="#" title=""><i class="fa fa-eye"></i> {{ $about_detail['view_count'] }}</a></small>
                         </div>
                     </div>
