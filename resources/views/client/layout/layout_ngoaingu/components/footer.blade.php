@@ -28,15 +28,15 @@
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Mục lục</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('khoangoaingu') }}">Trang chủ</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('gioithieukhoangoaingu') }}">Giới
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{-- route('khoangoaingu') --}}">Trang chủ</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{-- route('gioithieukhoangoaingu') --}}">Giới
                                 thiệu</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('daotaoanhngu') }}">Đào tạo Anh
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{-- route('daotaoanhngu') --}}">Đào tạo Anh
                                 Ngữ</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('thuctapkhoangoaingu') }}">Sinh Viên
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{-- route('thuctapkhoangoaingu') --}}">Sinh Viên
                                 Thực Tập</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('tintucngoaingu') }}">Tin tức</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{ route('lienhekhoangoaingu') }}">Liên hệ</a>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{-- route('tintucngoaingu') --}}">Tin tức</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{-- route('lienhekhoangoaingu') --}}">Liên hệ</a>
                         </li>
                     </ul>
                 </div>
