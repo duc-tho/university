@@ -121,11 +121,7 @@ class AboutController extends Controller
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty['id']])->first();
 
-<<<<<<< HEAD
         return view('client.layout.' . $layout_name . '.page.about-detail', [
-=======
-        return view('client.layout.'.$layout_name.'.about-detail', [
->>>>>>> ffacfd39352c038c16013456fd8e5a07b5404128
             'phone' => $contact['phone'],
             'faculty' => $faculty,
             'email' => $contact['email'],
