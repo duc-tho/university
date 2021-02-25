@@ -14,13 +14,9 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-6 hidden-xs-down">
                 <div class="topsocial">
-                    <a href="javascript:0" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
-                    <a href="javascript:0" data-toggle="tooltip" data-placement="bottom" title="Youtube"><i class="fa fa-youtube"></i></a>
-                    <a href="javascript:0" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-                    <a href="javascript:0" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
-                    <a href="javascript:0" data-toggle="tooltip" data-placement="bottom" title="Flickr"><i class="fa fa-flickr"></i></a>
-                    <a href="javascript:0" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
-                    <a href="javascript:0" data-toggle="tooltip" data-placement="bottom" title="Google+"><i class="fa fa-google-plus"></i></a>
+                    @foreach ($socials_icon as $item)
+                    <a href="{{ checkURL($item['link']) }}" data-toggle="tooltip" data-placement="bottom" title="{{ $item['name'] }}"><i class="fa fa-{{ $item['fa_icon'] }} text-secondary"></i></a>
+                    @endforeach
                 </div><!-- end social -->
             </div><!-- end col -->
 
@@ -43,17 +39,17 @@
     </div><!-- end header-logo -->
 </div><!-- end topbar -->
 
-<div class="header-section" id="background-color-new">
+<div class="header-section py-5" id="background-color-new">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-12">
+            <div class="col-lg-6 col-12">
                 <div class="logo">
-                    <a href="/"><img src="http://daihocdulich.edu.vn/default/template/imgs/logo-02.png" alt=""></a>
+                    <a href="/"><img src="http://daihocdulich.edu.vn/default/template/imgs/logo-02.png" alt="" style="width: 50%;"></a>
                 </div><!-- end logo -->
             </div>
-            <div class="col-lg-8">
-                <div class="logo">
-                    <p class="news-header">SAIGON ACT</p>
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <div class="logo d-none d-lg-block">
+                    <p class="news-header m-0" style="font-size: 50px;">SAIGON ACT</p>
                 </div>
             </div>
         </div><!-- end row -->

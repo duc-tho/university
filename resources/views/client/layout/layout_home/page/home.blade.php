@@ -31,11 +31,10 @@ array_push($slide_arr, '"'.asset($item['link']).'"');
 }
 
 $slide_str = join(', ', $slide_arr);
-$slide_str = str_replace($slide_str, '\\', '/');
-
+$slide_str = str_replace('\\', '/', $slide_str);
 @endphp
 
-<div id="demo-1" class="zs-enabled overlay-dots " data-zs-src='["http://daihocdulich.edu.vn/upload/album/59/img/20181227183634-83285.jpg","http://daihocdulich.edu.vn/upload/album/62/img/20181227184217-21754.jpg","http://daihocdulich.edu.vn/upload/album/62/img/20181227184343-36479.jpg"]' data-zs-overlay="dots" data-zs-interval="8000">
+<div id="demo-1" class="zs-enabled overlay-dots " data-zs-src='[{{ $slide_str }}]' data-zs-overlay="dots" data-zs-interval="8000">
     <div class="demo-inner-content">
         <!--/header-w3l-->
         <div class="header-w3-agileits" id="home">
@@ -49,7 +48,7 @@ $slide_str = str_replace($slide_str, '\\', '/');
                             <span class="icon-bar"></span>
                         </button>
                         <!-- <h1><a href="index.html"><span>Đ</span>ại <span>H</span>ọc</span> <span>D</span>u <span>L</span>ịch</a></h1> -->
-                        <a href="/"><img class="logo-background" src="http://daihocdulich.edu.vn/default/template/imgs/logo-02.png" alt="" height="50px"></a>
+                        <a href="/"><img class="logo-background visible hidden-md" src="http://daihocdulich.edu.vn/default/template/imgs/logo-02.png" alt="" height="50px"></a>
                     </div>
                     <!-- navbar-header -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

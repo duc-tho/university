@@ -24,14 +24,14 @@ class AboutCategory extends Model
 {
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'about_category';
 
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -39,7 +39,7 @@ class AboutCategory extends Model
     /**
      * @var array
      */
-    protected $fillable = ['faculty_id', 'title', 'image', 'slug', 'intro', 'created_at', 'updated_at', 'created_by', 'updated_by', 'display_order', 'status'];
+    protected $fillable = ['faculty_id', 'title', 'image', 'slug', 'intro', 'created_at', 'updated_at', 'created_by', 'updated_by', 'display_order', 'status', 'view_count'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
