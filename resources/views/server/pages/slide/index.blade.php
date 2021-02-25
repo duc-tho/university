@@ -11,9 +11,10 @@
             <div class="col-12">
                 <div class="card card-primary card-outline">
                     <div class="card-header p-2 d-flex align-items-center justify-content-between">
+                        <a href="{{route('GetAddSlide')}}">
                         <button type="submit" class="btn btn-info btn-sm">
                             <i class="fas fa-plus"></i> Thêm slide
-                        </button>
+                        </button></a>
                         <div class="ml-auto d-inline-block">
                             <div class="input-group input-group-sm">
                                 <select class="form-control custon-select" style="width:auto !important" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
@@ -241,7 +242,10 @@
                                    
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="1" type="checkbox" >
+                                        <label for="1"> </label></div></label>
+                                        <!-- <input data-id="1579" type="checkbox" checked=""><span></span></label> -->
                                         <a href="#" class="btn btn-warning btn-xs" title="" style="overflow: hidden;position: relative;" data-toggle="tooltip" data-original-title="Sửa"><i class="fa fa-flag"  aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs" title="" style="overflow: hidden;position: relative;" data-toggle="tooltip" data-original-title="Xóa"><i class="fa fa-trash"  aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -266,8 +270,10 @@
 
                                     
                                     <td class="text-center">
-                                        <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                    <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="2" type="checkbox" >
+                                        <label for="2"> </label></div></label>
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -292,7 +298,9 @@
                                    
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="3" type="checkbox" >
+                                        <label for="3"> </label></div></label>
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -315,7 +323,9 @@
                                     <td class="text-center">2021-01-07</td>
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="4" type="checkbox" >
+                                        <label for="4"> </label></div></label>
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -337,7 +347,9 @@
                                     <td class="text-center">2021-01-07</td>
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="5" type="checkbox" >
+                                        <label for="5"> </label></div></label>
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -356,7 +368,9 @@
                                     <td class="text-center">2020-12-28</td>
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="6" type="checkbox" >
+                                        <label for="6"> </label></div></label>
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -373,7 +387,9 @@
                                     <td class="text-center">2020-12-24</td>
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="7" type="checkbox" >
+                                        <label for="7"> </label></div></label>
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -390,7 +406,9 @@
                                     <td class="text-center">2020-12-22</td>
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="8" type="checkbox" >
+                                        <label for="8"> </label></div></label>
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -407,7 +425,9 @@
                                     <td class="text-center">2020-12-21</td>
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="9" type="checkbox" >
+                                        <label for="9"> </label></div></label>
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -423,7 +443,9 @@
                                     <td class="text-center">2020-12-21</td>
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="10" type="checkbox" >
+                                        <label for="10"> </label></div></label>
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>

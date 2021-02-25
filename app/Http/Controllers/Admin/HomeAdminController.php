@@ -16,4 +16,6 @@ class HomeAdminController extends Controller
         Auth::logout();
         return redirect()->intended('admin031100');
     }
+
+    
 }

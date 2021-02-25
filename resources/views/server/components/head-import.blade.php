@@ -37,5 +37,5 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JNKKKK/MoreToggles.css@0.2.1/output/moretoggles.min.css">
 <style>.nutanhien
 {
-    font-size:40%;
+    font-size:35%;
 }</style>

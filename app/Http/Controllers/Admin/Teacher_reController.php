@@ -7,7 +7,7 @@ use App\Models\Faculty;
 use App\Models\TeacherRepresentative;
 use App\Http\Requests\AddTeacherRequest;
 use App\Http\Requests\EditTeacherRequest;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; 
 
 use function App\Providers\upload_file;
 
@@ -17,6 +17,7 @@ class Teacher_reController extends Controller
     {
         $data['teacherlist'] = TeacherRepresentative::where(["status" => "1"])->orderBy("id", "desc")->paginate(10);
         $data['facultylist'] = Faculty::all();
+        
         return view('server.pages.teacher.index',$data);
     }
     public function getAddTeacher()
@@ -67,5 +68,8 @@ class Teacher_reController extends Controller
         TeacherRepresentative::destroy($id);
         // return redirect()->back()->with(["toastrInfo" => ["type" => "success", "messenger" => "Xóa thành công"]]);
         return back();
+    }
+    public function Appear($id){
+
     }
 }
