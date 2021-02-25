@@ -9,8 +9,8 @@
 @endsection
 
 @section('main')
-@include('client.layout.default.components.headernews')
-<section class="section first-section">
+@include('client.layout.default.components.header')
+{{-- <section class="section first-section">
     <div class="container-fluid">
         <div class="masonry-blog clearfix">
             <div class="left-side">
@@ -20,263 +20,248 @@
                         <div class="shadow-desc">
                             <div class="blog-meta">
                                 <span class="bg-aqua"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Nghiên cứu</a></span>
-                                <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">"Từ nguyên" và "Địa danh"</a></h4>
-                                <small><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Đăng ngày 21/12/2020 </a></small>
-                                <small><a href="blog-author.html" title="">bởi Mei Misaki</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end shadow-desc -->
-                    </div><!-- end shadow -->
-                </div><!-- end post-media -->
+<h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">"Từ nguyên" và "Địa danh"</a></h4>
+<small><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Đăng ngày 21/12/2020 </a></small>
+<small><a href="blog-author.html" title="">bởi Mei Misaki</a></small>
+</div><!-- end meta -->
+</div><!-- end shadow-desc -->
+</div><!-- end shadow -->
+</div><!-- end post-media -->
 
-                <div class="masonry-box small-box post-media">
-                    <img src="http://daihocdulich.edu.vn/upload/news/2020/11/22/chuong-trinh-cao-dang-9-danh-cho-hoc-sinh-sau-thcs-thumbnail-81546.jpg" alt="" class="img-fluid">
-                    <div class="shadoweffect">
-                        <div class="shadow-desc">
-                            <div class="blog-meta">
-                                <span class="bg-green"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Tuyển sinh</a></span>
-                                <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Lộ trình đào tạo 9 + tại Trường Saigonact</a></h4>
-                            </div><!-- end meta -->
-                        </div><!-- end shadow-desc -->
-                    </div><!-- end shadow -->
-                </div><!-- end post-media -->
+<div class="masonry-box small-box post-media">
+    <img src="http://daihocdulich.edu.vn/upload/news/2020/11/22/chuong-trinh-cao-dang-9-danh-cho-hoc-sinh-sau-thcs-thumbnail-81546.jpg" alt="" class="img-fluid">
+    <div class="shadoweffect">
+        <div class="shadow-desc">
+            <div class="blog-meta">
+                <span class="bg-green"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Tuyển sinh</a></span>
+                <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Lộ trình đào tạo 9 + tại Trường Saigonact</a></h4>
+            </div><!-- end meta -->
+        </div><!-- end shadow-desc -->
+    </div><!-- end shadow -->
+</div><!-- end post-media -->
 
-                <div class="masonry-box small-box post-media">
-                    <img src="http://daihocdulich.edu.vn/upload/news/2020/10/21/chuong-trinh-hoc-9-loi-the-cua-gioi-tre-thoi-40-thumbnail-15001.jpg" alt="" class="img-fluid">
-                    <div class="shadoweffect">
-                        <div class="shadow-desc">
-                            <div class="blog-meta">
-                                <span class="bg-green"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Tuyển sinh</a></span>
-                                <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Chương trình học 9 +: Lợi thế của giới trẻ thời 4.0</a></h4>
-                            </div><!-- end meta -->
-                        </div><!-- end shadow-desc -->
-                    </div><!-- end shadow -->
-                </div><!-- end post-media -->
+<div class="masonry-box small-box post-media">
+    <img src="http://daihocdulich.edu.vn/upload/news/2020/10/21/chuong-trinh-hoc-9-loi-the-cua-gioi-tre-thoi-40-thumbnail-15001.jpg" alt="" class="img-fluid">
+    <div class="shadoweffect">
+        <div class="shadow-desc">
+            <div class="blog-meta">
+                <span class="bg-green"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Tuyển sinh</a></span>
+                <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Chương trình học 9 +: Lợi thế của giới trẻ thời 4.0</a></h4>
+            </div><!-- end meta -->
+        </div><!-- end shadow-desc -->
+    </div><!-- end shadow -->
+</div><!-- end post-media -->
 
-            </div><!-- end left-side -->
+</div><!-- end left-side -->
 
-            <div class="center-side">
-                <div class="masonry-box post-media">
-                    <img src="http://daihocdulich.edu.vn/upload/news/2020/11/11/lo-trinh-dao-tao-9-tai-truong-act-thumbnail-57260.jpg" alt="" class="img-fluid">
-                    <div class="shadoweffect">
-                        <div class="shadow-desc">
-                            <div class="blog-meta">
-                                <span class="bg-green"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Tuyển sinh</a></span>
-                                <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">CHƯƠNG TRÌNH CAO ĐẲNG 9+ DÀNH CHO HỌC SINH SAU THCS</a></h4>
-                                <small><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Đăng ngày 21/12/2020</a></small>
-                                <small><a href="blog-author.html" title="">bởi Amanda</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end shadow-desc -->
-                    </div><!-- end shadow -->
-                </div><!-- end post-media -->
+<div class="center-side">
+    <div class="masonry-box post-media">
+        <img src="http://daihocdulich.edu.vn/upload/news/2020/11/11/lo-trinh-dao-tao-9-tai-truong-act-thumbnail-57260.jpg" alt="" class="img-fluid">
+        <div class="shadoweffect">
+            <div class="shadow-desc">
+                <div class="blog-meta">
+                    <span class="bg-green"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Tuyển sinh</a></span>
+                    <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">CHƯƠNG TRÌNH CAO ĐẲNG 9+ DÀNH CHO HỌC SINH SAU THCS</a></h4>
+                    <small><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Đăng ngày 21/12/2020</a></small>
+                    <small><a href="blog-author.html" title="">bởi Amanda</a></small>
+                </div><!-- end meta -->
+            </div><!-- end shadow-desc -->
+        </div><!-- end shadow -->
+    </div><!-- end post-media -->
 
-                <div class="masonry-box small-box post-media">
-                    <img src="http://daihocdulich.edu.vn/upload/news/2020/11/22/chuong-trinh-cao-dang-9-danh-cho-hoc-sinh-sau-thcs-thumbnail-81546.jpg" alt="" class="img-fluid">
-                    <div class="shadoweffect">
-                        <div class="shadow-desc">
-                            <div class="blog-meta">
-                                <span class="bg-green"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Tuyển sinh</a></span>
-                                <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Lộ trình đào tạo 9 + tại Trường Saigonact</a></h4>
-                            </div><!-- end meta -->
-                        </div><!-- end shadow-desc -->
-                    </div><!-- end shadow -->
-                </div><!-- end post-media -->
+    <div class="masonry-box small-box post-media">
+        <img src="http://daihocdulich.edu.vn/upload/news/2020/11/22/chuong-trinh-cao-dang-9-danh-cho-hoc-sinh-sau-thcs-thumbnail-81546.jpg" alt="" class="img-fluid">
+        <div class="shadoweffect">
+            <div class="shadow-desc">
+                <div class="blog-meta">
+                    <span class="bg-green"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Tuyển sinh</a></span>
+                    <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Lộ trình đào tạo 9 + tại Trường Saigonact</a></h4>
+                </div><!-- end meta -->
+            </div><!-- end shadow-desc -->
+        </div><!-- end shadow -->
+    </div><!-- end post-media -->
 
-                <div class="masonry-box small-box post-media">
-                    <img src="http://daihocdulich.edu.vn/upload/news/2020/10/21/chuong-trinh-hoc-9-loi-the-cua-gioi-tre-thoi-40-thumbnail-15001.jpg" alt="" class="img-fluid">
-                    <div class="shadoweffect">
-                        <div class="shadow-desc">
-                            <div class="blog-meta">
-                                <span class="bg-green"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Tuyển sinh</a></span>
-                                <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Chương trình học 9 +: Lợi thế của giới trẻ thời 4.0</a></h4>
-                            </div><!-- end meta -->
-                        </div><!-- end shadow-desc -->
-                    </div><!-- end shadow -->
-                </div><!-- end post-media -->
-            </div><!-- end left-side -->
+    <div class="masonry-box small-box post-media">
+        <img src="http://daihocdulich.edu.vn/upload/news/2020/10/21/chuong-trinh-hoc-9-loi-the-cua-gioi-tre-thoi-40-thumbnail-15001.jpg" alt="" class="img-fluid">
+        <div class="shadoweffect">
+            <div class="shadow-desc">
+                <div class="blog-meta">
+                    <span class="bg-green"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Tuyển sinh</a></span>
+                    <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Chương trình học 9 +: Lợi thế của giới trẻ thời 4.0</a></h4>
+                </div><!-- end meta -->
+            </div><!-- end shadow-desc -->
+        </div><!-- end shadow -->
+    </div><!-- end post-media -->
+</div><!-- end left-side -->
 
-            <div class="right-side hidden-md-down">
-                <div class="masonry-box post-media">
-                    <img src="http://daihocdulich.edu.vn/upload/news/2020/10/04/lanh-dao-nha-truong-thumbnail-53550.jpg" alt="" class="img-fluid">
-                    <div class="shadoweffect">
-                        <div class="shadow-desc">
-                            <div class="blog-meta">
-                                <span class="bg-aqua"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Giới thiệu</a></span>
-                                <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Saigonact – địa chỉ uy tín với hệ thống cơ sở vật chất hiện đại</a></h4>
-                                <small><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Đăng ngày 21/12/2020</a></small>
-                                <small><a href="blog-author.html" title="">bởi Jessica</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end shadow-desc -->
-                    </div><!-- end shadow -->
-                </div><!-- end post-media -->
+<div class="right-side hidden-md-down">
+    <div class="masonry-box post-media">
+        <img src="http://daihocdulich.edu.vn/upload/news/2020/10/04/lanh-dao-nha-truong-thumbnail-53550.jpg" alt="" class="img-fluid">
+        <div class="shadoweffect">
+            <div class="shadow-desc">
+                <div class="blog-meta">
+                    <span class="bg-aqua"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Giới thiệu</a></span>
+                    <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Saigonact – địa chỉ uy tín với hệ thống cơ sở vật chất hiện đại</a></h4>
+                    <small><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Đăng ngày 21/12/2020</a></small>
+                    <small><a href="blog-author.html" title="">bởi Jessica</a></small>
+                </div><!-- end meta -->
+            </div><!-- end shadow-desc -->
+        </div><!-- end shadow -->
+    </div><!-- end post-media -->
 
-                <div class="masonry-box small-box post-media">
-                    <img src="http://daihocdulich.edu.vn/upload/news/2020/11/22/chuong-trinh-cao-dang-9-danh-cho-hoc-sinh-sau-thcs-thumbnail-81546.jpg" alt="" class="img-fluid">
-                    <div class="shadoweffect">
-                        <div class="shadow-desc">
-                            <div class="blog-meta">
-                                <span class="bg-green"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Tuyển sinh</a></span>
-                                <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Lộ trình đào tạo 9 + tại Trường Saigonact</a></h4>
-                            </div><!-- end meta -->
-                        </div><!-- end shadow-desc -->
-                    </div><!-- end shadow -->
-                </div><!-- end post-media -->
+    <div class="masonry-box small-box post-media">
+        <img src="http://daihocdulich.edu.vn/upload/news/2020/11/22/chuong-trinh-cao-dang-9-danh-cho-hoc-sinh-sau-thcs-thumbnail-81546.jpg" alt="" class="img-fluid">
+        <div class="shadoweffect">
+            <div class="shadow-desc">
+                <div class="blog-meta">
+                    <span class="bg-green"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Tuyển sinh</a></span>
+                    <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Lộ trình đào tạo 9 + tại Trường Saigonact</a></h4>
+                </div><!-- end meta -->
+            </div><!-- end shadow-desc -->
+        </div><!-- end shadow -->
+    </div><!-- end post-media -->
 
-                <div class="masonry-box small-box post-media">
-                    <img src="http://daihocdulich.edu.vn/upload/news/2020/10/21/chuong-trinh-hoc-9-loi-the-cua-gioi-tre-thoi-40-thumbnail-15001.jpg" alt="" class="img-fluid">
-                    <div class="shadoweffect">
-                        <div class="shadow-desc">
-                            <div class="blog-meta">
-                                <span class="bg-green"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Tuyển sinh</a></span>
-                                <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Chương trình học 9 +: Lợi thế của giới trẻ thời 4.0</a></h4>
-                            </div><!-- end meta -->
-                        </div><!-- end shadow-desc -->
-                    </div><!-- end shadow -->
-                </div><!-- end post-media -->
-            </div><!-- end right-side -->
+    <div class="masonry-box small-box post-media">
+        <img src="http://daihocdulich.edu.vn/upload/news/2020/10/21/chuong-trinh-hoc-9-loi-the-cua-gioi-tre-thoi-40-thumbnail-15001.jpg" alt="" class="img-fluid">
+        <div class="shadoweffect">
+            <div class="shadow-desc">
+                <div class="blog-meta">
+                    <span class="bg-green"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Tuyển sinh</a></span>
+                    <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Chương trình học 9 +: Lợi thế của giới trẻ thời 4.0</a></h4>
+                </div><!-- end meta -->
+            </div><!-- end shadow-desc -->
+        </div><!-- end shadow -->
+    </div><!-- end post-media -->
+</div><!-- end right-side -->
 
 
-        </div><!-- end masonry -->
-    </div>
-</section>
+</div><!-- end masonry -->
+</div>
+</section> --}}
 
 <section class="section">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="section-title">
-                    <h3 class="color-aqua"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Tin tức & hoạt động</a></h3>
+                    <h3 class="color-aqua"><a href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category[0]['slug']]) }}" title="">{{ $category[0]['title'] }}</a></h3>
                 </div><!-- end title -->
 
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="blog-box">
+                        @foreach ($category[0]['news'] as $key => $item)
+                        @if ($key < 2) <div class="blog-box">
                             <div class="post-media">
-                                <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">
-                                    <img src="http://daihocdulich.edu.vn/upload/news/2020/12/16/mot-so-hinh-anh-ve-goc-giang-sinh-am-cung-cua-truong-thumbnail-68258.jpg" alt="" class="img-fluid">
+                                <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category[0]['slug'], $item['slug']]) }}" title="">
+                                    <img src="{{ asset($item['image']) }}" alt="" class="img-fluid">
                                     <div class="hovereffect">
                                         <span></span>
                                     </div><!-- end hover -->
                                 </a>
                             </div><!-- end media -->
                             <div class="blog-meta big-meta">
-                                <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Một số hình ảnh về góc Giáng Sinh ấm cúng của trường</a></h4>
+                                <h4><a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category[0]['slug'], $item['slug']]) }}" title="{{ $item['title'] }}">{{ $item['title'] }}</a></h4>
                                 <p></p>
-                                <small><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Hoạt động</a></small>
-                                <small><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Đăng ngày 16/12/2020</a></small>
-                                <small><a href="blog-author.html" title="">by Amanda</a></small>
+                                <small><a href="{{route('tin-tuc-danh-muc', [$faculty['slug'], $category[0]['slug']])}}" title="{{ $category[0]['title'] }}">{{ $category[0]['title'] }}</a></small>
+                                <small><a href="javascript:" title="">Đăng ngày {{ ConvertDatabaseTimeToDMY($item['created_at']) }}</a></small>
+                                <small><a href="javascript:" title="">bởi {{ $item['created_by'] ?? '?' }}</a></small>
                             </div><!-- end meta -->
-                        </div><!-- end blog-box -->
+                    </div><!-- end blog-box -->
 
-                        <hr class="invis">
+                    <hr class="invis">
+                    @endif
+                    @endforeach
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end col -->
 
-                        <div class="blog-box">
-                            <div class="post-media">
-                                <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">
-                                    <img src="http://daihocdulich.edu.vn/upload/news/2020/12/10/chuong-trinh-dao-tao-ngan-han-thumbnail-85717.jpg" alt="" class="img-fluid">
-                                    <div class="hovereffect">
-                                        <span></span>
-                                    </div><!-- end hover -->
-                                </a>
-                            </div><!-- end media -->
-                            <div class="blog-meta big-meta">
-                                <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">CHƯƠNG TRÌNH ĐÀO TẠO NGẮN HẠN</a></h4>
-                                <p>Bên cạnh đào tạo hệ CAO ĐẲNG chính quy, Trường SAIGONACT còn có những chương trình đào tạo ngắn hạn để bổ sung kiến thức chuyên ngành, giúp người học nâng cao năng lực chuyên môn và kỹ năng mềm. </p>
-                                <small><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Tin tức</a></small>
-                                <small><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Đăng ngày 16/12/2020</a></small>
-                                <small><a href="blog-author.html" title="">by Martines</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-                    </div><!-- end col -->
-                </div><!-- end row -->
-            </div><!-- end col -->
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="section-title">
+                <h3 class="color-pink"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Chương trình học</a></h3>
+            </div><!-- end title -->
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="blog-box">
+                        <div class="post-media">
+                            <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">
+                                <img src="http://daihocdulich.edu.vn/upload/news/2020/12/21/xet-hoc-ba-chia-khoa-mo-ra-canh-cua-hoc-tap--thumbnail-11234.jpg" alt="" class="img-fluid">
+                                <div class="hovereffect">
+                                    <span></span>
+                                </div><!-- end hover -->
+                            </a>
+                        </div><!-- end media -->
+                        <div class="blog-meta">
+                            <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">XÉT HỌC BẠ: CHÌA KHOÁ MỞ RA CÁNH CỬA HỌC TẬP !</a></h4>
+                            <p>Dù bạn khao khát được cháy bỏng với tâm hồn nghệ thuật hay bạn ước mơ Lãnh Đạo- Tất cả đều được thỏa sức tại Trường CAO ĐẲNG VĂN HÓA NGHỆ THUẬT VÀ DU LỊCH SÀI GÒN. </p>
+                            <small><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Chương trình học</a></small>
+                            <small><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">21/12/2020</a></small>
+                        </div><!-- end meta -->
+                    </div><!-- end blog-box -->
 
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <div class="section-title">
-                    <h3 class="color-pink"><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Chương trình học</a></h3>
-                </div><!-- end title -->
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="blog-box">
-                            <div class="post-media">
-                                <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">
-                                    <img src="http://daihocdulich.edu.vn/upload/news/2020/12/21/xet-hoc-ba-chia-khoa-mo-ra-canh-cua-hoc-tap--thumbnail-11234.jpg" alt="" class="img-fluid">
-                                    <div class="hovereffect">
-                                        <span></span>
-                                    </div><!-- end hover -->
-                                </a>
-                            </div><!-- end media -->
-                            <div class="blog-meta">
-                                <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">XÉT HỌC BẠ: CHÌA KHOÁ MỞ RA CÁNH CỬA HỌC TẬP !</a></h4>
-                                <p>Dù bạn khao khát được cháy bỏng với tâm hồn nghệ thuật hay bạn ước mơ Lãnh Đạo- Tất cả đều được thỏa sức tại Trường CAO ĐẲNG VĂN HÓA NGHỆ THUẬT VÀ DU LỊCH SÀI GÒN. </p>
-                                <small><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Chương trình học</a></small>
-                                <small><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">21/12/2020</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
+                    <hr class="invis">
 
-                        <hr class="invis">
+                    <div class="blog-box">
+                        <div class="post-media">
+                            <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">
+                                <img src="http://daihocdulich.edu.vn/upload/news/2019/07/25/cao-dang-he-dao-tao-9-con-duong-nhanh-nhat-de-vao-doi-lap-than-lap-nghiep-thumbnail-32139.png" alt="" class="img-fluid">
+                                <div class="hovereffect">
+                                    <span></span>
+                                </div><!-- end hover -->
+                            </a>
+                        </div><!-- end media -->
+                        <div class="blog-meta">
+                            <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Cao đẳng hệ đào tạo 9+, con đường nhanh nhất để vào đời lập thân lập nghiệp</a></h4>
+                            <p></p>
+                            <small><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Chương trình học</a></small>
+                            <small><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">21/12/2020</a></small>
+                        </div><!-- end meta -->
+                    </div><!-- end blog-box -->
+                </div><!-- end col -->
 
-                        <div class="blog-box">
-                            <div class="post-media">
-                                <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">
-                                    <img src="http://daihocdulich.edu.vn/upload/news/2019/07/25/cao-dang-he-dao-tao-9-con-duong-nhanh-nhat-de-vao-doi-lap-than-lap-nghiep-thumbnail-32139.png" alt="" class="img-fluid">
-                                    <div class="hovereffect">
-                                        <span></span>
-                                    </div><!-- end hover -->
-                                </a>
-                            </div><!-- end media -->
-                            <div class="blog-meta">
-                                <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Cao đẳng hệ đào tạo 9+, con đường nhanh nhất để vào đời lập thân lập nghiệp</a></h4>
-                                <p></p>
-                                <small><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Chương trình học</a></small>
-                                <small><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">21/12/2020</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-                    </div><!-- end col -->
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="blog-box">
+                        <div class="post-media">
+                            <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">
+                                <img src="http://daihocdulich.edu.vn/upload/news/2019/07/25/tot-nghiep-thcs-vao-thang-cao-dang-chinh-quy-voi-cao-dang-he-9-thumbnail-31613.jpg" alt="" class="img-fluid">
+                                <div class="hovereffect">
+                                    <span></span>
+                                </div><!-- end hover -->
+                            </a>
+                        </div><!-- end media -->
+                        <div class="blog-meta">
+                            <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Tốt nghiệp THCS vào thẳng cao đẳng chính quy với cao đẳng hệ 9+</a></h4>
+                            <small><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Chương trình học </a></small>
+                            <small><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">21/12/2020</a></small>
+                        </div><!-- end meta -->
+                    </div><!-- end blog-box -->
 
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <div class="blog-box">
-                            <div class="post-media">
-                                <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">
-                                    <img src="http://daihocdulich.edu.vn/upload/news/2019/07/25/tot-nghiep-thcs-vao-thang-cao-dang-chinh-quy-voi-cao-dang-he-9-thumbnail-31613.jpg" alt="" class="img-fluid">
-                                    <div class="hovereffect">
-                                        <span></span>
-                                    </div><!-- end hover -->
-                                </a>
-                            </div><!-- end media -->
-                            <div class="blog-meta">
-                                <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Tốt nghiệp THCS vào thẳng cao đẳng chính quy với cao đẳng hệ 9+</a></h4>
-                                <small><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Chương trình học </a></small>
-                                <small><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">21/12/2020</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
+                    <hr class="invis">
 
-                        <hr class="invis">
+                    <div class="blog-box">
+                        <div class="post-media">
+                            <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">
+                                <img src="http://daihocdulich.edu.vn/upload/news/2019/04/12/tuyen-sinh-2019-cao-dang-van-hoa-nghe-thuat-va-du-lich-sai-gon-rong-cua-cho-thi-sinh-thumbnail-97584.jpg" alt="" class="img-fluid">
+                                <div class="hovereffect">
+                                    <span></span>
+                                </div><!-- end hover -->
+                            </a>
+                        </div><!-- end media -->
+                        <div class="blog-meta">
+                            <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Tuyển sinh 2019: Cao đẳng Văn hóa Nghệ thuật và Du lịch Sài Gòn rộng cửa cho thí sinh</a></h4>
+                            <p>Tuyển sinh năm 2019, ngoài hình thức thi tuyển thì hình thức xét tuyển học bạ được Trường Cao đẳng Văn hóa Nghệ thuật và Du lịch Sài Gòn (SaigonACT, mã trường CDD0226) lựa chọn được xem như một cơ hội mới mở rộng cánh cửa vào trường với các thí sinh và học sinh. </p>
+                            <small><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Chương trình học </a></small>
+                            <small><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">21/12/2020</a></small>
+                        </div><!-- end meta -->
+                    </div><!-- end blog-box -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end col -->
+    </div><!-- end row -->
 
-                        <div class="blog-box">
-                            <div class="post-media">
-                                <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">
-                                    <img src="http://daihocdulich.edu.vn/upload/news/2019/04/12/tuyen-sinh-2019-cao-dang-van-hoa-nghe-thuat-va-du-lich-sai-gon-rong-cua-cho-thi-sinh-thumbnail-97584.jpg" alt="" class="img-fluid">
-                                    <div class="hovereffect">
-                                        <span></span>
-                                    </div><!-- end hover -->
-                                </a>
-                            </div><!-- end media -->
-                            <div class="blog-meta">
-                                <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','tin-tuc-danh-muc', 'chi-tiet-tin-tuc'])}}" title="">Tuyển sinh 2019: Cao đẳng Văn hóa Nghệ thuật và Du lịch Sài Gòn rộng cửa cho thí sinh</a></h4>
-                                <p>Tuyển sinh năm 2019, ngoài hình thức thi tuyển thì hình thức xét tuyển học bạ được Trường Cao đẳng Văn hóa Nghệ thuật và Du lịch Sài Gòn (SaigonACT, mã trường CDD0226) lựa chọn được xem như một cơ hội mới mở rộng cánh cửa vào trường với các thí sinh và học sinh. </p>
-                                <small><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">Chương trình học </a></small>
-                                <small><a href="{{route('tin-tuc-danh-muc', ['trang-chu','tin-tuc-danh-muc'])}}" title="">21/12/2020</a></small>
-                            </div><!-- end meta -->
-                        </div><!-- end blog-box -->
-                    </div><!-- end col -->
-                </div><!-- end row -->
-            </div><!-- end col -->
-        </div><!-- end row -->
+    <hr class="invis1">
 
-        <hr class="invis1">
-
-        <!-- #region Baner -->
-        {{-- <div class="row">
+    <!-- #region Baner -->
+    {{-- <div class="row">
             <div class="col-lg-10 offset-lg-1">
                 <div class="banner-spot clearfix">
                     <div class="banner-img">
