@@ -2,6 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
+use App\Models\Image;
+use App\Models\ImageCategory;
+use App\Models\Specialized;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,15 +28,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        /**
-         * Upload file function
-         * @param mixed $file
-         * @param string $save_path
-         * @return string $public_path_of_upload_file
-         */
-        function upload_file($file, $save_path)
-        {
-            return $file->store($save_path, ['disk' => 'public_file']);
-        }
+        $data['images'] = Image::all();
+        view()->share($data);
+        $data['image_category'] = ImageCategory::all();
+        view()->share($data);
     }
 }

@@ -1,41 +1,41 @@
-<section id="topbar" class="d-none d-lg-block">
+<section id="topbar" class="d-none d-lg-block " >
     <div class="container d-flex">
-      <div class="contact-info mr-auto">
-        <ul>
-          <li><i class="icofont-envelope"></i><a href="mailto:contact@example.com">info@daihocdulich.edu.vn </a></li>
-          <li><i class="icofont-phone"></i> (028)38.831.793 - (028)38.831.796 </li>
-          <li><i class="icofont-clock-time icofont-flip-horizontal"></i> Thứ Hai - Thứ 7, 8h - 16h15</li>
-        </ul>
-      </div>
-      <div class="cta">
-        <a href="#contact" class="scrollto">Đăng Ký </a>
-      </div>
+        <div class="contact-info mr-auto">
+            <ul>
+                <li><i class="icofont-envelope"></i><a href="mailto:contact@example.com">info@daihocdulich.edu.vn </a>
+                </li>
+                <li><i class="icofont-phone"></i>(028)38.831.793 - (028)38.831.796 </li>
+                <li><i class="icofont-clock-time icofont-flip-horizontal"></i> Thứ Hai - Thứ 7, 8h - 16h15</li>
+            </ul>
+        </div>
+        <div class="cta">
+            <a href="#contact" class="scrollto">Đăng Ký </a>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
+<!-- ======= Header ======= -->
+<header id="header">
     <div class="container d-flex">
 
-      <div class="logo mr-auto">
-        <!-- <h1 class="text-light"><a href="index.html"><span>Flexor</span></a></h1> -->
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="/"><img src="{{asset('dist/layout/layout_tuyensinh/img/logo.png')}}" alt="dddddd" class="img-fluid" width="400px" height="auto"></a>
-      </div>
+        <div class="logo mr-auto">
+            <a href="/"><img src="{{ asset('dist/layout/layout_tuyensinh/img/logodean.png') }}" alt="Logo"
+                    class="img-fluid"></a>
+                    <span>
+                        <a href="/"><img src="{{ asset('dist/layout/layout_tuyensinh/img/logocaodang.png') }}" alt="Logo"
+                            class="img-fluid"></a>
+                    </span>
+        </div>
+        {{-- <nav class="nav-menu d-none d-lg-block">
+            <ul>
+                <li class="active"><a href="#hero">Trang Chủ</a></li>
+                <li><a href="#about">Phương Thức Tuyển Sinh</a></li>
+                <li><a href="#services">Nghành Đào Tạo</a></li>
+                <li><a href="#pricing">Học Bổng</a></li>
 
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="#hero">Trang Chủ</a></li>
-          <li><a href="#about">PT Tuyển Sinh</a></li>
-          <li><a href="#services">Nghành Đào Tạo</a></li>
-          <li><a href="#values">Thông Báo Tuyển Sinh</a></li>
-          <!-- #portfolio -->
-          <li><a href="#team">Hỗ Trợ Tuyển Sinh</a></li>
-          <li><a href="#pricing">Học Bổng</a></li>
-
-        </ul>
-      </nav><!-- .nav-menu -->
+            </ul>
+        </nav><!-- .nav-menu --> --}}
 
     </div>
-  </header>
-  <!-- End Hero -->
+</header>
+<!-- End Hero -->

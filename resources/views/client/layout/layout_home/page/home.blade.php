@@ -24,6 +24,17 @@
 </div>
 <!--//banner-bottom-->
 <!--/banner-section-->
+@php
+$slide_arr = [];
+foreach ($slide as $key => $item) {
+array_push($slide_arr, '"'.asset($item['link']).'"');
+}
+
+$slide_str = join(', ', $slide_arr);
+$slide_str = str_replace($slide_str, '\\', '/');
+
+@endphp
+
 <div id="demo-1" class="zs-enabled overlay-dots " data-zs-src='["http://daihocdulich.edu.vn/upload/album/59/img/20181227183634-83285.jpg","http://daihocdulich.edu.vn/upload/album/62/img/20181227184217-21754.jpg","http://daihocdulich.edu.vn/upload/album/62/img/20181227184343-36479.jpg"]' data-zs-overlay="dots" data-zs-interval="8000">
     <div class="demo-inner-content">
         <!--/header-w3l-->
@@ -60,7 +71,7 @@
             <h4>{{ $slogan_top }}</h4>
             <h3>{{ $slogan_main }}</h3>
             <p>{{ $slogan_bottom }}</p>
-            <a class="hvr-rectangle-out w3_play_icon1" href="{{ route('gioi-thieu', [$faculty['slug']]) }}"> Xem thêm</a>
+            <a class="hvr-rectangle-out w3_play_icon1" href="{{ route('tuyensinh') }}"> Ứng tuyển ngay</a>
         </div>
         <!--/banner-ingo-->
     </div>
@@ -69,7 +80,7 @@
 <!--about -->
 <div id="about" class="wthree-about w3ls-section">
     <div class="container">
-        <div class="agileits-banner-grids text-center">
+        {{-- <div class="agileits-banner-grids text-center">
             <div class="banner-bottom-girds">
                 <div class="agileits-banner-grid bg-w3ls-active">
                     <span class="fa fa-university banner-icon" aria-hidden="true"></span>
@@ -82,44 +93,44 @@
                     <h4>Tuyển Sinh </h4>
                     <p>Đăng ký tuyển sinh <span style="font-weight: bold">Trực tuyến 24/7 Luôn hỗ trợ sinh viên </span></p>
                     <a class="hvr-rectangle-out w3_play_icon1" href="{{route('tuyensinh')}}"> Tuyển Sinh</a>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+</div> --}}
 
 
-        <h2 class="w3ls-title">Giới thiệu</h2>
-        {{-- <h5>Roin vel enim nec ipsum finibus.Duis euismod massa utab.</h5> --}}
-        <br>
-        <div class="col-md-7  w3ls-about-left">
-            {!! $intro_short !!}
-        </div>
-        <div class="col-md-5 w3ls-row">
-            <div class="col-md-6 col-sm-6 wthree-about-left">
-                <img src="{{ $intro_image }}" class="img-responsive" alt="" />
-            </div>
-            <div class="col-md-6 col-sm-6 w3ls-row alert wthree-about-right">
-                <video controls class="img-responsive" style="max-width: 120%;" autoplay muted>
-                    <source src="{{ asset($intro_video) }}" type="video/mp4">
-                    Trình duyệt cùa bạn không hỗ trợ xem loại video này!
-                </video>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-        <div class="clearfix"> </div>
-        <div class="stats-info agileits-w3layouts">
-            @foreach ($intro_statistic as $item)
-            <div class="col-sm-3 col-xs-6 stats-grid">
-                <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='{{ $item['value'] }}' data-delay='.5' data-increment="{{ ceil($item['value'] / 120) }}">{{ $item['value'] }}</div>
-                <div class="stats-img stat2">
-                    <p>{{ $item['name'] }}</p>
-                </div>
-            </div>
-            @endforeach
-            <div class="clearfix"></div>
+<h2 class="w3ls-title">Giới thiệu</h2>
+{{-- <h5>Roin vel enim nec ipsum finibus.Duis euismod massa utab.</h5> --}}
+<br>
+<div class="col-md-7  w3ls-about-left">
+    {!! $intro_short !!}
+</div>
+<div class="col-md-5 w3ls-row">
+    <div class="col-md-6 col-sm-6 wthree-about-left">
+        <img src="{{ $intro_image }}" class="img-responsive" alt="" />
+    </div>
+    <div class="col-md-6 col-sm-6 w3ls-row alert wthree-about-right">
+        <video controls class="img-responsive" style="max-width: 120%;" autoplay muted>
+            <source src="{{ asset($intro_video) }}" type="video/mp4">
+            Trình duyệt cùa bạn không hỗ trợ xem loại video này!
+        </video>
+    </div>
+    <div class="clearfix"> </div>
+</div>
+<div class="clearfix"> </div>
+<div class="stats-info agileits-w3layouts">
+    @foreach ($intro_statistic as $item)
+    <div class="col-sm-3 col-xs-6 stats-grid">
+        <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='{{ $item['value'] }}' data-delay='.5' data-increment="{{ ceil($item['value'] / 120) }}">{{ $item['value'] }}</div>
+        <div class="stats-img stat2">
+            <p>{{ $item['name'] }}</p>
         </div>
     </div>
-    <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{route('gioi-thieu', ['trang-chu'])}}"> Tìm hiểu thêm</a></div>
+    @endforeach
+    <div class="clearfix"></div>
+</div>
+</div>
+<div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{ $intro_route }}"> Tìm hiểu thêm</a></div>
 </div>
 <!-- //about -->
 <!--services-->
@@ -150,141 +161,27 @@
         <div class="sap_tabs">
             <div id="horizontalTab">
                 <ul class="resp-tabs-list">
-                    <li class="resp-tab-item"><span>Tất cả</span></li>
-                    <li class="resp-tab-item"><span>Hoạt Động</span></li>
-                    <li class="resp-tab-item"><span>Cơ sở vật chất</span></li>
+                    @foreach ($image as $item)
+                    <li class="resp-tab-item"><span>{{ $item->title }}</span></li>
+                    @endforeach
                 </ul>
-                <div class="clearfix"> </div>
-                <div class="tab-1 resp-tab-content">
-                    <div class="col-md-3 portfolio-grids">
-                        <a href="http://daihocdulich.edu.vn/upload/album/64/img/20190920102334-77233.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-                            <img src="http://daihocdulich.edu.vn/upload/album/64/img/20190920102334-77233.jpg" class="img-responsive zoom-img" alt="" />
-                            <div class="b-wrapper">
-                                <h5>Hình Ảnh</h5>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 portfolio-grids">
-                        <a href="http://daihocdulich.edu.vn/upload/album/64/img/20190920102333-29119.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-                            <img src="http://daihocdulich.edu.vn/upload/album/64/img/20190920102333-29119.jpg" class="img-responsive zoom-img" alt="" />
-                            <div class="b-wrapper">
-                                <h5>Hình Ảnh</h5>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 portfolio-grids">
-                        <a href="http://daihocdulich.edu.vn/upload/album/64/img/20190920102332-47960.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-                            <img src="http://daihocdulich.edu.vn/upload/album/64/img/20190920102332-47960.jpg" class="img-responsive zoom-img" alt="" />
-                            <div class="b-wrapper">
-                                <h5>Hình Ảnh</h5>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 portfolio-grids">
-                        <a href="http://daihocdulich.edu.vn/upload/album/64/img/20190920102330-71848.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-                            <img src="{{asset('dist/layout/layout_khoadulich/images/20181227183820-68860.png')}}" class="img-responsive zoom-img" alt="" />
-                            <div class="b-wrapper">
-                                <h5>Hình Ảnh</h5>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 portfolio-grids">
-                        <a href="http://daihocdulich.edu.vn/upload/album/63/img/20181227184509-37602.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-                            <img src="http://daihocdulich.edu.vn/upload/album/63/img/20181227184509-37602.jpg" class="img-responsive zoom-img" alt="" />
-                            <div class="b-wrapper">
-                                <h5>Hình Ảnh</h5>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 portfolio-grids">
-                        <a href="http://daihocdulich.edu.vn/upload/album/62/img/20181227184217-21754.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-                            <img src="http://daihocdulich.edu.vn/upload/album/62/img/20181227184217-21754.jpg" class="img-responsive zoom-img" alt="" />
-                            <div class="b-wrapper">
-                                <h5>Hình Ảnh</h5>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 portfolio-grids">
-                        <a href="http://daihocdulich.edu.vn/upload/album/61/img/20181227184013-99658.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-                            <img src="http://daihocdulich.edu.vn/upload/album/61/img/20181227184013-99658.jpg" class="img-responsive zoom-img" alt="" />
-                            <div class="b-wrapper">
-                                <h5>Hình Ảnh</h5>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 portfolio-grids">
-                        <a href="http://daihocdulich.edu.vn/upload/album/61/img/20181227184013-99658.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-                            <img src="{{asset('dist/layout/layout_khoadulich/images/20180118145548-56466.jpg')}}" class="img-responsive zoom-img" alt="" />
-                            <div class="b-wrapper">
-                                <h5>Hình Ảnh</h5>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
+                <div class="clearfix"></div>
                 <div class="resp-tabs-container">
+                    @foreach ($image as $image_category)
                     <div class="tab-1 resp-tab-content">
+                        @foreach ($image_category['image_item'] as $image_item)
                         <div class="col-md-3 portfolio-grids">
-                            <a href="http://daihocdulich.edu.vn/upload/album/64/img/20190920102334-77233.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-                                <img src="http://daihocdulich.edu.vn/upload/album/64/img/20190920102334-77233.jpg" class="img-responsive zoom-img" alt="" />
+                            <a href="{{ asset($image_item['image']) }}" data-lightbox="example-set" data-title="{{ $image_item['description'] }}">
+                                <img src="{{ asset($image_item['image']) }}" class="img-responsive zoom-img" alt="" />
                                 <div class="b-wrapper">
-                                    <h5>Tour Xuyên Việt 2019</h5>
+                                    <h5>{{ $image_item['title'] }}</h5>
                                 </div>
                             </a>
                         </div>
-                        <div class="col-md-3 portfolio-grids">
-                            <a href="http://daihocdulich.edu.vn/upload/album/64/img/20190920102333-29119.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-                                <img src="http://daihocdulich.edu.vn/upload/album/64/img/20190920102333-29119.jpg" class="img-responsive zoom-img" alt="" />
-                                <div class="b-wrapper">
-                                    <h5>Hình Ảnh</h5>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-3 portfolio-grids">
-                            <a href="http://daihocdulich.edu.vn/upload/album/64/img/20190920102332-47960.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-                                <img src="http://daihocdulich.edu.vn/upload/album/64/img/20190920102332-47960.jpg" class="img-responsive zoom-img" alt="" />
-                                <div class="b-wrapper">
-                                    <h5>Hình Ảnh</h5>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-3 portfolio-grids">
-                            <a href="http://daihocdulich.edu.vn/upload/album/64/img/20190920102330-71848.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-                                <img src="http://daihocdulich.edu.vn/upload/album/64/img/20190920102330-71848.jpg" class="img-responsive zoom-img" alt="" />
-                                <div class="b-wrapper">
-                                    <h5>Hình Ảnh</h5>
-                                </div>
-                            </a>
-                        </div>
+                        @endforeach
                         <div class="clearfix"></div>
                     </div>
-                    <div class="tab-1 resp-tab-content">
-                        <div class="col-md-3 portfolio-grids">
-                            <a href="http://daihocdulich.edu.vn/upload/album/63/img/20181227184509-37602.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-                                <img src="http://daihocdulich.edu.vn/upload/album/63/img/20181227184509-37602.jpg" class="img-responsive zoom-img" alt="" />
-                                <div class="b-wrapper">
-                                    <h5>Hình Ảnh</h5>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-3 portfolio-grids">
-                            <a href="http://daihocdulich.edu.vn/upload/album/62/img/20181227184217-21754.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-                                <img src="http://daihocdulich.edu.vn/upload/album/62/img/20181227184217-21754.jpg" class="img-responsive zoom-img" alt="" />
-                                <div class="b-wrapper">
-                                    <h5>Hình Ảnh</h5>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-3 portfolio-grids">
-                            <a href="http://daihocdulich.edu.vn/upload/album/61/img/20181227184013-99658.jpg" data-lightbox="example-set" data-title="Lorem Ipsum is simply dummy the when an unknown galley of type and scrambled it to make a type specimen.">
-                                <img src="http://daihocdulich.edu.vn/upload/album/61/img/20181227184013-99658.jpg" class="img-responsive zoom-img" alt="" />
-                                <div class="b-wrapper">
-                                    <h5>Hình Ảnh</h5>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -300,44 +197,22 @@
         <h3 class="w3ls-title">Tin Tức</h3>
         <div class="w3_testimonials_grids w3_testimonials_grids">
             <div id="owl-demo" class="owl-carousel">
+                @foreach ($news as $item)
                 <div class="item w3_agileits_testimonials_grid">
-                    <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/16/mot-so-hinh-anh-ve-goc-giang-sinh-am-cung-cua-truong-thumbnail-68258.jpg" alt=" " class="img-responsive" /></a>
-                    <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">Một số hình ảnh về góc Giáng Sinh ấm cúng của trường</a></h4>
+                    <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $item['category']['slug'], $item['slug']]) }}"><img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="img-responsive" /></a>
+                    <h4><a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $item['category']['slug'], $item['slug']]) }}">{{ $item['title'] }}</a></h4>
                     <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
-                        <i class="fa fa-clock-o" aria-hidden="true"></i> 29/12/2020 &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> 39
+                        <i class="fa fa-clock-o" aria-hidden="true"></i> {{ date("d-m-Y", strtotime($item['created_at'])) }} &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> {{ $item['view_count'] }}
                     </div>
-                    <p>Hình ảnh về giáng sinh 2020</p>
+                    <p>{{ $item['description'] }}</p>
                 </div>
-                <div class="item w3_agileits_testimonials_grid">
-                    <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/21/xet-hoc-ba-chia-khoa-mo-ra-canh-cua-hoc-tap--thumbnail-11234.jpg" alt="" class="img-responsive" /></a>
-                    <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">XÉT HỌC BẠ: CHÌA KHOÁ MỞ RA CÁNH CỬA HỌC TẬP !</a></h4>
-                    <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
-                        <i class="fa fa-clock-o" aria-hidden="true"></i> 29/12/2020 &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> 39
-                    </div>
-                    <p>Dù bạn khao khát được cháy bỏng với tâm hồn nghệ thuật hay bạn ước mơ Lãnh Đạo- Tất cả đều được thỏa sức tại Trường CAO ĐẲNG VĂN HÓA NGHỆ THUẬT VÀ DU LỊCH SÀI GÒN. </p>
-                </div>
-                <div class="item w3_agileits_testimonials_grid">
-                    <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/14/dang-ki-nhanh-tay-chop-ngay-co-hoi--thumbnail-49874.jpg" alt=" " class="img-responsive" /></a>
-                    <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">Đăng kí nhanh tay ! Chớp ngay cơ hội !</a></h4>
-                    <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
-                        <i class="fa fa-clock-o" aria-hidden="true"></i> 29/12/2020 &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> 39
-                    </div>
-                    <p>Chọn trường là chọn con đường tương lai của bản thân. Vì thế hãy chọn bước chuẩn bị tốt nhất cho chính bạn </p>
-                </div>
-                <div class="item w3_agileits_testimonials_grid">
-                    <a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}"><img src="http://daihocdulich.edu.vn/upload/news/2020/12/10/chuong-trinh-dao-tao-ngan-han-thumbnail-85717.jpg" alt=" " class="img-responsive" /></a>
-                    <h4><a href="{{route('tin-tuc-chi-tiet', ['trang-chu','danh-muc-tin-tuc', 'chi-tiet-tin-tuc'])}}">CHƯƠNG TRÌNH ĐÀO TẠO NGẮN HẠN</a></h4>
-                    <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
-                        <i class="fa fa-clock-o" aria-hidden="true"></i> 29/12/2020 &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> 39
-                    </div>
-                    <p>Bên cạnh đào tạo hệ CAO ĐẲNG chính quy, Trường SAIGONACT còn có những chương trình đào tạo ngắn hạn để bổ sung kiến thức chuyên ngành, giúp người học nâng cao năng lực chuyên môn và kỹ năng mềm. </p>
-                </div>
+                @endforeach
             </div>
         </div>
-        <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{ route('tin-tuc', ['trang-chu']) }}"> Các tin tức khác</a></div>
+        <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{ route('tin-tuc', [$faculty['slug']]) }}"> Các tin tức khác</a></div>
     </div>
 </div>
-<img src="" alt="">
+{{-- <img src="" alt=""> --}}
 <div class="wthree-testi w3ls-section" id="testimonials">
     <!-- container -->
     <div class="container">
@@ -346,33 +221,17 @@
             <section class="slider">
                 <div class="flexslider">
                     <ul class="slides">
+                        @foreach ($teacher as $item)
                         <li>
                             <div class="wthree-testi_grid">
                                 <div class="testimonial-left">
-                                    <img src="{{ asset('dist/layout/layout_home/images/t1.jpg') }}">
+                                    <img src="{{ $item['image'] }}">
                                 </div>
-                                <p>Chúng tôi luôn cố gắng hướng đến nền giáo dục mới mẻ để giúp cho sinh viên có thể tiếp nhận được những kiến thức mới mẻ nhất.</p>
-                                <h5>Lê Minh Long</h5>
+                                <p>{{ $item['intro'] }}</p>
+                                <h5>{{ $item['name'] }}</h5>
                             </div>
                         </li>
-                        <li>
-                            <div class="wthree-testi_grid">
-                                <div class="testimonial-left">
-                                    <img src="{{ asset('dist/layout/layout_home/images/t2.jpg') }}">
-                                </div>
-                                <p>Giáo dục cần phải cải cách liên tục, vì thế cách giảng dạy chúng tôi luôn luôn đổi mới qua từng kì khác nhau.</p>
-                                <h5>Phạm Minh Hồng</h5>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="wthree-testi_grid">
-                                <div class="testimonial-left">
-                                    <img src="{{ asset('dist/layout/layout_home/images/t3.jpg') }}">
-                                </div>
-                                <p>Sinh viên sẽ luôn được hỗ trọ từ phía chúng tối, chúng tôi sẽ luôn có mặt giúp đỡ các tân sinh viên</p>
-                                <h5>Trương Hoàng</h5>
-                            </div>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
             </section>
@@ -396,17 +255,17 @@
 
     <div class="w3layouts-list">
         <div class="col-md-4 li"><span class="fa fa-envelope-o list-icon" aria-hidden="true"></span>
-            <a href="javascript:">info@daihocdulich.edu.vn</a>
+            <a href="javascript:">{{ $email }}</a>
         </div>
         <div class="col-md-4 li"><span class="fa fa-phone" aria-hidden="true"></span>
-            <a href="javascript:">(028)38.831.793 - (028)38.831.796</a>
+            <a href="javascript:">{{ $phone }} - {{ $hotline }}</a>
         </div>
-        <div class="col-md-4 li"><span class="fa fa-location-arrow" aria-hidden="true"></span><a href="mailto:info@daihocdulich.com">info@daihocdulich.com</a></div>
+        <div class="col-md-4 li"><span class="fa fa-location-arrow" aria-hidden="true"></span><a href="mailto:info@daihocdulich.com">{{ $email }}</a></div>
         <div class="clearfix"></div>
     </div>
 
     <div class="col-md-6 col-sm-6  col-xs-6 agileits_w3layouts-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.7605346937735!2d106.60891711411696!3d10.829628961172398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752bcecbda1797%3A0xad6d40a324baae76!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIFbEg24gaMOzYSBOZ2jhu4cgdGh14bqtdCB2w6AgRHUgbOG7i2NoIFPDoGkgR8Oybg!5e0!3m2!1svi!2s!4v1609376289562!5m2!1svi!2s" style="border:0;" allowfullscreen></iframe>
+        <iframe src="{{ $google_map_link }}" style="border:0;" allowfullscreen></iframe>
     </div>
     <div class="col-md-6 col-sm-6 col-xs-6 contact-right-w3l">
         <form action="#" method="post">
@@ -427,35 +286,19 @@
         <h3 class="w3ls-title">Hợp Tác</h3>
         <div class="container">
             <div id="owl-collab" class="owl-carousel owl-theme" data-interval="50" data-delay="100" data-ride="carousel">
-                <img src="{{ asset('dist/layout/layout_home/images/files/Link-sai-gon-c-66470.jpg') }}" height="100%" style="padding: 50px;" alt="">
-                <img src="{{ asset('dist/layout/layout_home/images/files/Link-sai-gon-c-21823.gif') }}" height="100%" style="padding: 50px;" alt="">
-                <img src="{{ asset('dist/layout/layout_home/images/files/Link-sai-gon-c-24394.jpg') }}" height="100%" style="padding: 50px;" alt="">
-                <img src="{{ asset('dist/layout/layout_home/images/files/Link-sai-gon-c-36507.jpg') }}" height="100%" style="padding: 50px;" alt="">
-                <img src="{{ asset('dist/layout/layout_home/images/files/Link-sai-gon-c-39456.jpg') }}" height="100%" style="padding: 50px;" alt="">
-                <img src="{{ asset('dist/layout/layout_home/images/files/Link-sai-gon-c-64210.jpg') }}" height="100%" style="padding: 50px;" alt="">
-                <img src="{{ asset('dist/layout/layout_home/images/files/Link-sai-gon-c-66470.jpg') }}" height="100%" style="padding: 50px;" alt="">
+                @foreach ($collab_logo as $item)
+                <img src="{{ asset($item['image_url']) }}" height="100%" style="padding: 50px;" alt="{{ $item['title'] }}">
+                @endforeach
             </div>
         </div>
     </div>
-</div>
-
-<!-- <div class="container">
-		<div id="owl-collab" class="owl-carousel owl-theme" data-interval="50" data-delay="100" data-ride="carousel">
-			<img src="dist/layout/layout_home/images/files/Link-sai-gon-c-66470.jpg" height="100%" style="padding: 50px;" alt="">
-			<img src="dist/layout/layout_home/images/files/Link-sai-gon-c-21823.gif" height="100%" style="padding: 50px;" alt="">
-			<img src="dist/layout/layout_home/images/files/Link-sai-gon-c-24394.jpg" height="100%" style="padding: 50px;" alt="">
-			<img src="dist/layout/layout_home/images/files/Link-sai-gon-c-36507.jpg" height="100%" style="padding: 50px;" alt="">
-			<img src="dist/layout/layout_home/images/files/Link-sai-gon-c-39456.jpg" height="100%" style="padding: 50px;" alt="">
-			<img src="dist/layout/layout_home/images/files/Link-sai-gon-c-64210.jpg" height="100%" style="padding: 50px;" alt="">
-			<img src="dist/layout/layout_home/images/files/Link-sai-gon-c-66470.jpg" height="100%" style="padding: 50px;" alt="">
-		</div> -->
 </div>
 
 <!-- subscribe -->
 <div class="w3ls-section subscribe text-center">
     <div class="container">
         <h3 class="w3ls-title">Đăng ký tư vấn tuyển sinh!</h3>
-        <p>Nhập Email để nhận tư vấn tuyển sinh.</p>
+        {{-- <p>Nhập Email để nhận tư vấn tuyển sinh.</p> --}}
         <div class="subscribe-grid">
 
             {{-- <input type="email" placeholder="Email" name="Subscribe" required=""> --}}
@@ -470,44 +313,16 @@
 <div class="ndt__footer">
     <div class="container">
         <div class="row">
+            @foreach ($footer_link as $footer_category)
             <div class="col-sm-4 col-md-3">
-                <h4 class="ndt__footer__title">Đảng - Đoàn Thể</h4>
+                <h4 class="ndt__footer__title">{{ $footer_category['title'] }}</h4>
                 <ul class="ndt__footer__link">
-                    <li> <a href="#">Chi bộ Đảng</a> </li>
-                    <li> <a href="#"></a> </li>
-                    <li> <a href="#">Đoàn Thanh niên</a> </li>
-                    <li> <a href="#">Hội Sinh viên</a> </li>
+                    @foreach ($footer_category['child'] as $footer_item)
+                    <li> <a href="{{ checkURL($footer_item['link']) }}">{{ $footer_item['title'] }}</a></li>
+                    @endforeach
                 </ul>
             </div>
-            <div class="col-sm-4 col-md-3">
-                <h4 class="ndt__footer__title">Phòng</h4>
-                <ul class="ndt__footer__link">
-                    <li> <a href="javascript:">Văn phòng hiệu trưởng</a> </li>
-                    <li> <a href="javascript:">Phòng Tổ chức hành chính</a> </li>
-                    <li> <a href="javascript:">Phòng Quản trị</a> </li>
-                    <li> <a href="javascript:">Phòng Thanh tra</a> </li>
-                    <li> <a href="javascript:">Phòng Công tác HS - SV</a> </li>
-                    <li> <a href="javascript:">Phòng Khảo thí</a> </li>
-                    <li> <a href="javascript:">Phòng Kế toán</a> </li>
-                    <li> <a href="javascript:">Phòng Đào tạo</a> </li>
-                    <li> <a href="javascript:">Phòng Công nghệ thông tin</a> </li>
-                </ul>
-            </div>
-            <div class="col-sm-4 col-md-3">
-                <h4 class="ndt__footer__title">Phòng</h4>
-                <ul class="ndt__footer__link">
-                    <li> <a href="javascript:">Văn phòng hiệu trưởng</a> </li>
-                    <li> <a href="javascript:">Phòng Tổ chức hành chính</a> </li>
-                    <li> <a href="javascript:">Phòng Quản trị</a> </li>
-                    <li> <a href="javascript:">Phòng Thanh tra</a> </li>
-                    <li> <a href="javascript:">Phòng Công tác HS - SV</a> </li>
-                    <li> <a href="javascript:">Phòng Khảo thí</a> </li>
-                    <li> <a href="javascript:">Phòng Kế toán</a> </li>
-                    <li> <a href="javascript:">Phòng Đào tạo</a> </li>
-                    <li> <a href="javascript:">Phòng Công nghệ thông tin</a> </li>
-                </ul>
-            </div>
-            <div class="col-sm-4 col-md-3"></div>
+            @endforeach
         </div>
     </div>
 </div>
@@ -515,19 +330,20 @@
 <!-- footer -->
 <div class="agileits_w3layouts-footer">
     <div class="col-md-6 col-sm-8 agileinfo-copyright">
-        <p>© 2021 Bản quền thuộc về Trường Đại Học Du Lịch Sài Gòn </p>
+        <p>{{ $copyright }}</p>
     </div>
     <div class="col-md-6 col-sm-4 agileinfo-icons">
         <ul>
-            <li><a class="icon fb" href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a class="icon gp" href="#"><i class="fa fa-youtube"></i></a></li>
+            @foreach ($socials_icon as $item)
+            <li><a class="icon" href="{{ checkURL($item['link']) }}"><i class="fa fa-{{ $item['fa_icon'] }}"></i></a></li>
+            @endforeach
         </ul>
     </div>
     <div class="clearfix"></div>
 </div>
 <!-- footer -->
 <!-- bootstrap-modal-pop-up -->
-<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+{{-- <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -536,19 +352,19 @@
             </div>
             <div class="modal-body">
                 <img src="{{ asset('dist/layout/layout_home/images/6.jpg') }}" alt=" " class="img-responsive" />
-                <p>Ut enim ad minima veniam, quis nostrum
-                    exercitationem ullam corporis suscipit laboriosam,
-                    nisi ut aliquid ex ea commodi consequatur? Quis autem
-                    vel eum iure reprehenderit qui in ea voluptate velit
-                    esse quam nihil molestiae consequatur, vel illum qui
-                    dolorem eum fugiat quo voluptas nulla pariatur.
-                    <i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit
-                        esse quam nihil molestiae consequatur.</i>
-                </p>
-            </div>
-        </div>
-    </div>
+<p>Ut enim ad minima veniam, quis nostrum
+    exercitationem ullam corporis suscipit laboriosam,
+    nisi ut aliquid ex ea commodi consequatur? Quis autem
+    vel eum iure reprehenderit qui in ea voluptate velit
+    esse quam nihil molestiae consequatur, vel illum qui
+    dolorem eum fugiat quo voluptas nulla pariatur.
+    <i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit
+        esse quam nihil molestiae consequatur.</i>
+</p>
 </div>
+</div>
+</div>
+</div> --}}
 <!-- //bootstrap-modal-pop-up -->
 <!--script for portfolio-->
 <script src="{{ asset('dist/layout/layout_home/js/lightbox-plus-jquery.min.js') }}"> </script>

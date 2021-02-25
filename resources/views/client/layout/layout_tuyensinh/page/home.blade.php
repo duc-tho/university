@@ -1,265 +1,277 @@
 @extends('client.layout.layout_tuyensinh.index')
 @section('title', 'Tuyển Sinh')
 @section('main')
-<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="container" data-aos="fade-in">
-        <h1 class="h1-banner">TUYỂN SINH CAO ĐẲNG HỆ 2 NĂM, TRUNG CẤP CHUYÊN NGHIỆP NĂM 2021</h1>
-        {{-- <h2>SAIGON-ACT DẪN ĐẦU XU THẾ VỀ NGHÀNH DU LỊCH</h2> --}}
+    <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+        <div class="container" data-aos="fade-in">
+            <h1 class="h1-banner">TUYỂN SINH 2021</h1>
 
-        <div class="d-flex align-items-center">
-            <i class="bx bxs-right-arrow-alt get-started-icon"></i>
-            <a href="#about" class="btn-get-started scrollto">Bắt Đầu Nào</a>
+            <h2 class="h2-banner">Hệ Cao Đẳng Và Trung Cấp dành cho học sinh tốt nghiệp THCS học song song văn hóa lớp 10,
+                11, 12 để lấy bằng tốt nghiệp THPT (Chương trình 9+3+1)</h2>
+            {{-- <h2>SAIGON-ACT DẪN ĐẦU XU THẾ VỀ NGHÀNH DU LỊCH</h2> --}}
+
+            {{-- <div class="d-flex align-items-center">
+                <i class="bx bxs-right-arrow-alt get-started-icon"></i>
+                <a href="#about" class="btn-get-started scrollto">Bắt Đầu Nào</a>
+            </div> --}}
         </div>
-    </div>
-</section>
-<main id="main">
-    <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us">
-        <div class="container">
+    </section>
+    <main id="main">
+        <!-- ======= Why Us Section ======= -->
+        <section id="why-us" class="why-us">
+            <div class="container">
 
-            <div class="row">
-                {{-- <div class="col-xl-4 col-lg-5" data-aos="fade-up">
+                <div class="row">
+                    {{-- <div class="col-xl-4 col-lg-5" data-aos="fade-up">
                     <div class="content">
                         <h3 class="h3-banner-name">Trường Cao Đẳng Văn Hóa Nghệ Thuật Và Du Lịch Sài Gòn</h3>
                         <p class="p-card-banner">Tư vấn trực tuyến 24/7 : <span class="span-card-banner">daihocdulich.edu.vn/tu-van</span> </p>
                         <p class="p-card-banner">Nhận và nộp hồ sơ xét tuyển trực tuyến tại : <span class="span-card-banner">daihocdulich.edu.vn/xet-tuyen</span> </p> --}}
 
-                        {{-- <div class="text-center">
+                    {{-- <div class="text-center">
                 <a href="#" class="more-btn">Đọc Thêm <i class="bx bx-chevron-right"></i></a>
               </div> --}}
                     {{-- </div>
                 </div> --}}
-                <div class="col-xl-12 col-lg-7 d-flex">
-                    <div class="icon-boxes d-flex flex-column justify-content-center">
-                        <div class="row">
-                            <div class="col-xl-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                                <div class="icon-box mt-4 mt-xl-0" id="box">
-                                    <i class="bx bx-receipt" id="kho"></i>
-                                    <h4>Giảng dạy trên các dự án thực tế chuyên nghành có khoa học</h4>
-                                    <!-- <p>Học đi đôi với hành </p> -->
+                    <div class="col-xl-12 col-lg-7 d-flex">
+                        <div class="icon-boxes d-flex flex-column justify-content-center">
+                            <div class="row">
+                                <div class="col-xl-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="icon-box mt-4 mt-xl-0" id="box">
+                                        <i class="bx bx-receipt" id="kho"></i>
+                                        <h4>SAIGONACT định hướng trở thành Trường Đại học Du lịch SÀi Gòn</h4>
+                                        <!-- <p>Học đi đôi với hành </p> -->
+                                    </div>
                                 </div>
-                            </div>
-                            <div class=" col-xl-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                                <div class=" col-xl-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                                     <div class="icon-box mt-4 mt-xl-0" id="box2">
                                         <i class="bx bx-cube-alt" id="kho"></i>
-                                        <h4>Môi trường học tập thân thiện, hiện đại, tiện ích</h4>
+                                        <h4>Được liên thông lên Cao đẳng, Đại học từ 1 - 1,5 năm tại trường</h4>
                                         <!-- <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p> -->
                                     </div>
                                 </div>
-                            <div class="col-xl-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                                <div class="icon-box mt-4 mt-xl-0" id="box3">
-                                    <i class="	fab fa-codepen" id="kho"></i>
-                                    <h4>Chú trọng rèn luyện kỹ năng
-                                        sống thiết yếu của thế kỷ 21 cho sinh viên</h4>
-                                    <!-- <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p> -->
+                                <div class="col-xl-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="icon-box mt-4 mt-xl-0" id="box3">
+                                        <i class="	fab fa-codepen" id="kho"></i>
+                                        <h4>Môi trường phát triển toàn diện Đức-Trí-Thể-Mỹ</h4>
+                                        <!-- <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p> -->
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="icon-box mt-4 mt-xl-0" id="box4">
+                                        <i class="fas fa-user-friends" id="kho"></i>
+                                        <h4>
+                                            Cơ sở vật chất tiện nghi đáp ứng
+                                            nhu cầu học và hành của người học</h4>
+                                        <!-- <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p> -->
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-                                <div class="icon-box mt-4 mt-xl-0" id="box4">
-                                    <i class="fas fa-user-friends" id="kho"></i>
-                                    <h4>
-                                        Đội ngũ giảng viên chuyên nghiệp, trình độ chuyên môn cao </h4>
-                                    <!-- <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p> -->
-                                </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Why Us Section -->
+        <br>
+        <br>
+        <br>
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about section-bg">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch"
+                        data-aos="fade-right">
+                        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4"
+                            data-vbtype="video" data-autoplay="true"></a>
+                    </div>
+
+                    <div
+                        class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+                        {{-- <h4 data-aos="fade-up" id="ptts">Phương thức tuyển sinh</h4> --}}
+                        <h3 data-aos="fade-up">PHƯƠNG THỨC TUYỂN SINH & THỜI GIAN HỌC</h3>
+                        <p data-aos="fade-up" id="ptts">
+                            Với chương trình Cao đẳng hệ 9+, học sinh tốt nghiệp THCS
+                            được xét tuyển thẳng theo học Chương trình Cao đẳng
+                            song song học văn hóa (chương trình THPT) và liên thông
+                            Chương trình Đại học về sau.
+                        </p>
+
+                        <div class="icon-box" data-aos="fade-up">
+                            <div class="icon"><i class="fa fa-graduation-cap"></i></div>
+                            <h4 class="title"><a>Phương thức và đối tượng tuyển sinh :</a></h4>
+                            <p class="description">1.1 Xét tuyển học lực, hạnh kiểm đạt yêu cầu năm học lớp 9.</p>
+                            <p class="description">1.2 Đối tượng tuyển sinh: lên năm học lớp 9.</p>
+                        </div>
+
+                        {{-- <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="icon"><i class="	fas fa-layer-group"></i></div>
+                            <h4 class="title"><a>Phương thức 2</a></h4>
+                            <p class="description">Xét tuyển theo tổng điểm các môn thi tốt nghiệp từ cao đến
+                                thấp cho đến khi đủ chỉ tiêu</p>
+                        </div> --}}
+
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                            <div class="icon"><i class="far fa-calendar-alt"></i></div>
+                            <h4 class="title"><a>Thời gian học (bao gồm cả học văn hóa ):</a></h4>
+                            <p class="description">- Hệ trung cấp từ 2,5 – 3 năm
+                                tuỳ theo từng ngành nghề.</p>
+                            <p class="description">- Hệ Cao đẳng từ 4 – 4,5 năm
+                                tuỳ theo từng ngành nghề.</p>
+                        </div>
+
+                    </div>
+                </div>
+                {{-- <hr style=" border-radius: 5px; border: 5px solid green;"> --}}
+            </div>
+
+        </section><!-- End About Section -->
+
+
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services section-bg">
+
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up">
+                    <p id="nndt">NHÓM NGHÀNH ĐÀO TẠO</p>
+                    {{-- <p id="nndt">Nhóm nghành đào tạo: Du Lịch, Ngoại Ngữ, CNTT, Kinh Tế, Kỹ Thuật (Xét Tuyển), Nghệ Thuật và
+                        Mỹ
+                        Thuật Công Nghiệp (Thi Tuyển Môn Năng Khiếu)
+                    </p>
+                    <p id="nndt">Hệ Cao Đẳng (Hệ 2 năm) - Xét/Thi Tuyển</p>
+                    <p id="nndt">Hệ Trung Cấp - Xét Tuyển</p> --}}
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="70">
+                        <img src="{{ asset('dist/layout/layout_tuyensinh/img/LandingPage02.png') }}" alt="Avatar" class="image">
+                        {{-- <a href="route('khoadulich')" target="_blank">
+                            <div class="middle">
+                                <br>
+                                <div class="text" id="textdl">Du Lịch</div>
+                                <p class="textp"> Quản Trị Lữ Hânh | Quản Trị Nhà Hàng Và Dịch Vụ | Hướng Dẫn Viên Du Lịch
+                                </p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section><!-- End Why Us Section -->
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about section-bg">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch" data-aos="fade-right">
-                    <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
-                </div>
-
-                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-                    <h4 data-aos="fade-up" id="ptts">Phương thức tuyển sinh</h4>
-                    <h3 data-aos="fade-up">PHƯƠNG THỨC TUYỂN SINH 2021</h3>
-                    <p data-aos="fade-up" id="ptts">
-                        Năm 2021, Trường Cao Đẳng Văn Hóa Nghệ Thuật Và Du Lịch Sài Gòn dự kiến tuyển sinh 4.210 chỉ
-                        tiêu cho 68
-                        ngành đào
-                        tạo đại học chính quy. Nhà trường áp dụng 5 phương thức tuyển sinh bao gồm cả xét tuyển và thi
-                        tuyển. Thí sinh có thể chọn một hoặc nhiều phương thức xét tuyển. </p>
-
-                    <div class="icon-box" data-aos="fade-up">
-                        <div class="icon"><i class="fa fa-graduation-cap"></i></div>
-                        <h4 class="title"><a>Phương thức 1</a></h4>
-                        <p class="description">Xét tuyển theo điểm trung bình 3 học kỳ >= 5 ( HK1, HK2 lớp
-                            11 và HK1 lớp 12)</p>
+                        </a> --}}
                     </div>
 
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon"><i class="	fas fa-layer-group"></i></div>
-                        <h4 class="title"><a>Phương thức 2</a></h4>
-                        <p class="description">Xét tuyển theo tổng điểm các môn thi tốt nghiệp từ cao đến
-                            thấp cho đến khi đủ chỉ tiêu</p>
-                    </div>
-
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon"><i class="bx bx-atom"></i></div>
-                        <h4 class="title"><a>Điều kiện trúng tuyển</a></h4>
-                        <p class="description">Tôt nghiêp THPT (Nếu đăng kí môn năng khiếu thì xét theo 2
-                            phương thức, điều kiện trúng tuyển và thi môn năng khiếu)</p>
-                    </div>
-
-                </div>
-            </div>
-            {{-- <hr style=" border-radius: 5px; border: 5px solid green;"> --}}
-        </div>
-
-    </section><!-- End About Section -->
-
-
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
-
-        <div class="container">
-
-            <div class="section-title" data-aos="fade-up">
-                <h2 id="nndt">NHÓM NGHÀNH ĐÀO TẠO</h2>
-                <p id="nndt">Nhóm nghành đào tạo: Du Lịch, Ngoại Ngữ, CNTT, Kinh Tế, Kỹ Thuật (Xét Tuyển), Nghệ Thuật và
-                    Mỹ
-                    Thuật Công Nghiệp (Thi Tuyển Môn Năng Khiếu)
-                </p>
-                <p id="nndt">Hệ Cao Đẳng (Hệ 2 năm) - Xét/Thi Tuyển</p>
-                <p id="nndt">Hệ Trung Cấp - Xét Tuyển</p>
-            </div>
-
-            <div class="row">
-
-                <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="70">
-                    <br>
-                    <img src="{{ asset('dist/layout/layout_tuyensinh/img/dulich.jpg') }}" alt="Avatar" class="image">
-
-                    <a href="{{-- route('khoadulich') --}}" target="_blank">
-                        <div class="middle">
-                            <br>
-                            <div class="text" id="textdl">Du Lịch</div>
-                            <p class="textp"> Quản Trị Lữ Hânh | Quản Trị Nhà Hàng Và Dịch Vụ | Hướng Dẫn Viên Du Lịch
-                            </p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
-                    <br>
-                    <img src=" {{ asset('dist/layout/layout_tuyensinh/img/ngoaingu.png') }}" alt="Avatar" class="image">
-                    <a href="{{-- route('khoangoaingu') --}}" target="_blank">
-                        <div class="middle">
-                            <br>
-                            <div class="text" id="textdl">Ngoại Ngữ</div>
-                            <p class="textp"> Tiếng Nhật | Tiếng Anh | Tiếng Hàn | Tiếng Trung </p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
-                    <br>
-                    <img src=" {{ asset('dist/layout/layout_tuyensinh/img/values-3.jpg') }}" alt="Avatar" class="image">
-
-                    <div class="middle">
+                    {{-- <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
                         <br>
-                        <div class="text" id="textdl">Công Nghệ Thông Tin</div>
-                        <p class="textp">Quản Trị Mạng | Tin Học Ứng Dụng | Kỹ Thuật Sữa Chữa | Lắp Ráp Máy Tính</p>
+                        <img src=" {{ asset('dist/layout/layout_tuyensinh/img/ngoaingu.png') }}" alt="Avatar"
+                            class="image">
+                        <a href="route('khoangoaingu')" target="_blank">
+                            <div class="middle">
+                                <br>
+                                <div class="text" id="textdl">Ngoại Ngữ</div>
+                                <p class="textp"> Tiếng Nhật | Tiếng Anh | Tiếng Hàn | Tiếng Trung </p>
+                            </div>
+                        </a>
                     </div>
 
-                </div>
+                    <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
+                        <br>
+                        <img src=" {{ asset('dist/layout/layout_tuyensinh/img/values-3.jpg') }}" alt="Avatar"
+                            class="image">
 
-                <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
-                    <br>
-                    <img src="{{ asset('dist/layout/layout_tuyensinh/img/20170828165923-45184.jpg') }}" alt="Avatar" class="image">
-                    <a href="{{-- route('khoakinhte') --}}" target="_blank">
                         <div class="middle">
                             <br>
-                            <div class="text" id="textdl">Kinh Tế</div>
-                            <p class="textp"> Tài Chinh Ngân Hàng | Marketing | Quản Trị Kinh Doanh | Quản Trị Nhân Sự |
-                                Kế Toán
-                                | Thư Ký </p>
+                            <div class="text" id="textdl">Công Nghệ Thông Tin</div>
+                            <p class="textp">Quản Trị Mạng | Tin Học Ứng Dụng | Kỹ Thuật Sữa Chữa | Lắp Ráp Máy Tính</p>
                         </div>
-                    </a>
+
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
+                        <br>
+                        <img src="{{ asset('dist/layout/layout_tuyensinh/img/20170828165923-45184.jpg') }}" alt="Avatar"
+                            class="image">
+                        <a href="route('khoakinhte')" target="_blank">
+                            <div class="middle">
+                                <br>
+                                <div class="text" id="textdl">Kinh Tế</div>
+                                <p class="textp"> Tài Chinh Ngân Hàng | Marketing | Quản Trị Kinh Doanh | Quản Trị Nhân Sự |
+                                    Kế Toán
+                                    | Thư Ký </p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
+                        <br>
+                        <img src="{{ asset('dist/layout/layout_tuyensinh/img/values-4.jpg') }}" alt="Avatar"
+                            class="image">
+
+                        <di0v class="middle">
+                            <div class="text" id="textdl">Kỹ Thuật</div>
+                            <p class="textp"> Kỹ Thuật Máy Lạnh Và Điều Hòa | Điện Công Nghiệp </p>
+                        </di0v>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
+                        <br>
+                        <img src="{{ asset('dist/layout/layout_tuyensinh/img/20180118145548-56466.jpg') }}" alt="Avatar"
+                            class="image">
+                        <a href="route('khoanghethuat')" target="_blank">
+                            <div class="middle">
+                                <div class="text" id="textdl">Nghệ Thuật Và Mỹ Thuật Công Nghiệp</div>
+                                <p class="textp"> Thanh Nhạc | Diễn Viễn Kịch Điện Ảnh | Đạo Diễn | Quay Phim | Thiết kế đồ
+                                    họa </p>
+                            </div>
+                        </a>
+                    </div> --}}
+
+                    <!-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="70">
+                                <div class="icon-box">
+                                  <div class="icon" ><i class="fas fa-subway" ></i></div>
+                                  <h4 class="title"><a href="" >Du Lịch</a></h4>
+                                  <p class="description" id="mar">Quản Trị Lữ Hânh | Quản Trị Nhà Hàng Và Dịch Vụ| Hướng Dẫn Viên Du Lịch </p>
+                                </div>
+                              </div> -->
+                    <!-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                                <div class="icon-box">
+                                  <div class="icon"><i class="fas fa-landmark"></i></div>
+                                  <h4 class="title"><a href="">Ngoại Ngữ</a></h4>
+                                  <p class="description" id="mar">Tiếng Nhật | Tiếng Anh | Tiếng Hàn | Tiếng Trung</p>
+                                </div>
+                              </div>
+                              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                                <div class="icon-box">
+                                  <div class="icon"><i class="fas fa-laptop"></i></div>
+                                  <h4 class="title"><a href="">Công Nghệ Thông Tin</a></h4>
+                                  <p class="description" id="mar">Quản Trị Mạng | Tin Học Ứng Dụng | Kỹ Thuật Sữa Chữa | Lắp Ráp Máy Tính</p>
+                                </div>
+                              </div>
+                              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                                <div class="icon-box">
+                                  <div class="icon"><i class="fas fa-chart-pie"></i></div>
+                                  <h4 class="title"><a href="">Kinh Tế</a></h4>
+                                  <p class="description" id="mar">Tài Chinh Ngân Hàng | Marketing | Quản Trị Kinh Doanh | Quản Trị Nhân Sự | Kế Toán
+                                    | Thư Ký</p>
+                                </div>
+                              </div>
+                              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                                <div class="icon-box">
+                                  <div class="icon"><i class="icofont-settings"></i></div>
+                                  <h4 class="title"><a href="">Kỹ Thuật</a></h4>
+                                  <p class="description" id="mar">Kỹ Thuật Máy Lạnh Và Điều Hòa | Điện Công Nghiệp</p>
+                                </div>
+                              </div>
+                              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                                <div class="icon-box">
+                                  <div class="icon"><i class="fa fa-paint-brush"></i></div>
+                                  <h4 class="title"><a href="">Nghệ Thuật Và Mỹ Thuật Công Nghiệp</a></h4>
+                                  <p class="description" id="mar">Thanh Nhạc | Diễn Viễn Kịch Điện Ảnh | Đạo Diễn | Quay Phim | Thiết kế đồ họa |
+                                  </p>
+                                </div>
+                              </div> -->
                 </div>
 
-                <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
-                    <br>
-                    <img src="{{ asset('dist/layout/layout_tuyensinh/img/values-4.jpg') }}" alt="Avatar" class="image">
-
-                    <di0v class="middle">
-                        <div class="text" id="textdl">Kỹ Thuật</div>
-                        <p class="textp"> Kỹ Thuật Máy Lạnh Và Điều Hòa | Điện Công Nghiệp </p>
-                    </di0v>
-                </div>
-
-                <div class="col-lg-4 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="100">
-                    <br>
-                    <img src="{{ asset('dist/layout/layout_tuyensinh/img/20180118145548-56466.jpg') }}" alt="Avatar" class="image">
-                    <a href="{{-- route('khoanghethuat') --}}" target="_blank">
-                        <div class="middle">
-                            <div class="text" id="textdl">Nghệ Thuật Và Mỹ Thuật Công Nghiệp</div>
-                            <p class="textp"> Thanh Nhạc | Diễn Viễn Kịch Điện Ảnh | Đạo Diễn | Quay Phim | Thiết kế đồ
-                                họa </p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="70">
-                    <div class="icon-box">
-                      <div class="icon" ><i class="fas fa-subway" ></i></div>
-                      <h4 class="title"><a href="" >Du Lịch</a></h4>
-                      <p class="description" id="mar">Quản Trị Lữ Hânh | Quản Trị Nhà Hàng Và Dịch Vụ| Hướng Dẫn Viên Du Lịch </p>
-                    </div>
-                  </div> -->
-                <!-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-box">
-                      <div class="icon"><i class="fas fa-landmark"></i></div>
-                      <h4 class="title"><a href="">Ngoại Ngữ</a></h4>
-                      <p class="description" id="mar">Tiếng Nhật | Tiếng Anh | Tiếng Hàn | Tiếng Trung</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon-box">
-                      <div class="icon"><i class="fas fa-laptop"></i></div>
-                      <h4 class="title"><a href="">Công Nghệ Thông Tin</a></h4>
-                      <p class="description" id="mar">Quản Trị Mạng | Tin Học Ứng Dụng | Kỹ Thuật Sữa Chữa | Lắp Ráp Máy Tính</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="icon-box">
-                      <div class="icon"><i class="fas fa-chart-pie"></i></div>
-                      <h4 class="title"><a href="">Kinh Tế</a></h4>
-                      <p class="description" id="mar">Tài Chinh Ngân Hàng | Marketing | Quản Trị Kinh Doanh | Quản Trị Nhân Sự | Kế Toán
-                        | Thư Ký</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon-box">
-                      <div class="icon"><i class="icofont-settings"></i></div>
-                      <h4 class="title"><a href="">Kỹ Thuật</a></h4>
-                      <p class="description" id="mar">Kỹ Thuật Máy Lạnh Và Điều Hòa | Điện Công Nghiệp</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                    <div class="icon-box">
-                      <div class="icon"><i class="fa fa-paint-brush"></i></div>
-                      <h4 class="title"><a href="">Nghệ Thuật Và Mỹ Thuật Công Nghiệp</a></h4>
-                      <p class="description" id="mar">Thanh Nhạc | Diễn Viễn Kịch Điện Ảnh | Đạo Diễn | Quay Phim | Thiết kế đồ họa |
-                      </p>
-                    </div>
-                  </div> -->
             </div>
+        </section><!-- End Services Section -->
 
-        </div>
-    </section><!-- End Services Section -->
-
-    <!-- ======= Values Section ======= -->
-    {{-- <section id="values" class="values">
+        <!-- ======= Values Section ======= -->
+        {{-- <section id="values" class="values">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
@@ -319,206 +331,211 @@
         </div>
     </section><!-- End Values Section --> --}}
 
-    <!-- ======= Testimonials Section ======= -->
+        <!-- ======= Testimonials Section ======= -->
 
-    <section id="testimonials" class="testimonials">
+        <section id="testimonials" class="testimonials">
 
-        <div class="container" data-aos="fade-up">
-            <p class="cnsv">Cảm nhận của học viên</p>
-            <div class="owl-carousel testimonials-carousel">
-                <div class="testimonial-item">
-                    <img src="{{ 'dist/layout/layout_tuyensinh/img/testimonials/testimonials-1.jpg' }}" class="testimonial-img" alt="">
-                    <h3>Huỳnh Khương Duy</h3>
-                    <h4>Cựu Sinh Viên</h4>
-                    <p>
-                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                        Nhà trường đã tổ chức đợt tuyển sinh ở Cần Thơ rất tuyệt vời, sự nhiệt tình trong công tác tuyển
-                        sinh đã
-                        làm tôi thấy rất ngôi
-                        trường là một nơi thật tuyệt.
-                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                </div>
+            <div class="container" data-aos="fade-up">
+                <p class="cnsv">Cảm nhận của học viên</p>
+                <div class="owl-carousel testimonials-carousel">
+                    <div class="testimonial-item">
+                        {{-- <img src="{{ 'dist/layout/layout_tuyensinh/img/testimonials/testimonials-1.jpg' }}"
+                            class="testimonial-img" alt=""> --}}
+                        <h3>Huỳnh Khương Duy</h3>
+                        <h4>Cựu Sinh Viên</h4>
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            Nhà trường đã tổ chức đợt tuyển sinh ở Cần Thơ rất tuyệt vời, sự nhiệt tình trong công tác tuyển
+                            sinh đã
+                            làm tôi thấy rất ngôi
+                            trường là một nơi thật tuyệt.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                    </div>
 
-                <div class="testimonial-item">
-                    <img src="{{ 'dist/layout/layout_tuyensinh/img/testimonials/testimonials-2.jpg' }}" class="testimonial-img" alt="">
-                    <h3>Nguyễn Mộc Lan</h3>
-                    <h4>Sinh Viên Năm 4</h4>
-                    <p>
-                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                        Nhà trường đã tổ chức đợt tuyển sinh ở Cần Thơ rất tuyệt vời, sự nhiệt tình trong công tác tuyển
-                        sinh đã
-                        làm tôi thấy rất ngôi
-                        trường là một nơi thật tuyệt.
-                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                </div>
+                    <div class="testimonial-item">
+                        {{-- <img src="{{ 'dist/layout/layout_tuyensinh/img/testimonials/testimonials-2.jpg' }}"
+                            class="testimonial-img" alt=""> --}}
+                        <h3>Nguyễn Mộc Lan</h3>
+                        <h4>Sinh Viên Năm 4</h4>
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            Nhà trường đã tổ chức đợt tuyển sinh ở Cần Thơ rất tuyệt vời, sự nhiệt tình trong công tác tuyển
+                            sinh đã
+                            làm tôi thấy rất ngôi
+                            trường là một nơi thật tuyệt.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                    </div>
 
-                <div class="testimonial-item">
-                    <img src="{{ 'dist/layout/layout_tuyensinh/img/testimonials/testimonials-3.jpg' }}" class="testimonial-img" alt="">
-                    <h3>Lê Minh Hậu</h3>
-                    <h4>Sinh Viên Năm 3</h4>
-                    <p>
-                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                        Nhà trường đã tổ chức đợt tuyển sinh ở Cần Thơ rất tuyệt vời, sự nhiệt tình trong công tác tuyển
-                        sinh đã
-                        làm tôi thấy rất ngôi
-                        trường là một nơi thật tuyệt.
-                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                </div>
+                    <div class="testimonial-item">
+                        {{-- <img src="{{ 'dist/layout/layout_tuyensinh/img/testimonials/testimonials-3.jpg' }}"
+                            class="testimonial-img" alt=""> --}}
+                        <h3>Lê Minh Hậu</h3>
+                        <h4>Sinh Viên Năm 3</h4>
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            Nhà trường đã tổ chức đợt tuyển sinh ở Cần Thơ rất tuyệt vời, sự nhiệt tình trong công tác tuyển
+                            sinh đã
+                            làm tôi thấy rất ngôi
+                            trường là một nơi thật tuyệt.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                    </div>
 
-                <div class="testimonial-item">
-                    <img src="{{ 'dist/layout/layout_tuyensinh/img/testimonials/testimonials-4.jpg' }}" class="testimonial-img" alt="">
-                    <h3>Nguyễn Khiết</h3>
-                    <h4>Cựu Sinh Viên </h4>
-                    <p>
-                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                        Nhà trường đã tổ chức đợt tuyển sinh ở Cần Thơ rất tuyệt vời, sự nhiệt tình trong công tác tuyển
-                        sinh đã
-                        làm tôi thấy rất ngôi
-                        trường là một nơi thật tuyệt.
-                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                </div>
+                    <div class="testimonial-item">
+                        {{-- <img src="{{ 'dist/layout/layout_tuyensinh/img/testimonials/testimonials-4.jpg' }}"
+                            class="testimonial-img" alt=""> --}}
+                        <h3>Nguyễn Khiết</h3>
+                        <h4>Cựu Sinh Viên </h4>
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            Nhà trường đã tổ chức đợt tuyển sinh ở Cần Thơ rất tuyệt vời, sự nhiệt tình trong công tác tuyển
+                            sinh đã
+                            làm tôi thấy rất ngôi
+                            trường là một nơi thật tuyệt.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                    </div>
 
-                <div class="testimonial-item">
-                    <img src="{{ 'dist/layout/layout_tuyensinh/img/testimonials/testimonials-5.jpg' }}" class="testimonial-img" alt="">
-                    <h3>Nguyễn Thảo Nhi</h3>
-                    <h4>Sinh Viên Năm 4</h4>
-                    <p>
-                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                        Nhà trường đã tổ chức đợt tuyển sinh ở Cần Thơ rất tuyệt vời, sự nhiệt tình trong công tác tuyển
-                        sinh đã
-                        làm tôi thấy rất ngôi
-                        trường là một nơi thật tuyệt.
-                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
+                    <div class="testimonial-item">
+                        {{-- <img src="{{ 'dist/layout/layout_tuyensinh/img/testimonials/testimonials-5.jpg' }}"
+                            class="testimonial-img" alt=""> --}}
+                        <h3>Nguyễn Thảo Nhi</h3>
+                        <h4>Sinh Viên Năm 4</h4>
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            Nhà trường đã tổ chức đợt tuyển sinh ở Cần Thơ rất tuyệt vời, sự nhiệt tình trong công tác tuyển
+                            sinh đã
+                            làm tôi thấy rất ngôi
+                            trường là một nơi thật tuyệt.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                    </div>
+
                 </div>
 
             </div>
+        </section><!-- End Testimonials Section -->
 
-        </div>
-    </section><!-- End Testimonials Section -->
+        <!-- ======= Portfolio Section ======= -->
+        <!-- <section id="portfolio" class="portfolio">
+                          <div class="container">
+                            <div class="section-title">
+                              <h2 data-aos="fade-up">Portfolio</h2>
+                              <p data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                            </div>
+                            <div class="row" data-aos="fade-up" data-aos-delay="100">
+                              <div class="col-lg-12 d-flex justify-content-center">
+                                <ul id="portfolio-flters">
+                                  <li data-filter="*" class="filter-active">All</li>
+                                  <li data-filter=".filter-app">App</li>
+                                  <li data-filter=".filter-card">Card</li>
+                                  <li data-filter=".filter-web">Web</li>
+                                </ul>
+                              </div>
+                            </div>
 
-    <!-- ======= Portfolio Section ======= -->
-    <!-- <section id="portfolio" class="portfolio">
-              <div class="container">
-                <div class="section-title">
-                  <h2 data-aos="fade-up">Portfolio</h2>
-                  <p data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
-                <div class="row" data-aos="fade-up" data-aos-delay="100">
-                  <div class="col-lg-12 d-flex justify-content-center">
-                    <ul id="portfolio-flters">
-                      <li data-filter="*" class="filter-active">All</li>
-                      <li data-filter=".filter-app">App</li>
-                      <li data-filter=".filter-card">Card</li>
-                      <li data-filter=".filter-web">Web</li>
-                    </ul>
-                  </div>
-                </div>
+                            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                                <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                  <h4>App 1</h4>
+                                  <p>App</p>
+                                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+                                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                                </div>
+                              </div>
 
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                      <h4>App 1</h4>
-                      <p>App</p>
-                      <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
+                              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                                <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                  <h4>Web 3</h4>
+                                  <p>Web</p>
+                                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+                                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                                </div>
+                              </div>
 
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                      <h4>Web 3</h4>
-                      <p>Web</p>
-                      <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
+                              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                                <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                  <h4>App 2</h4>
+                                  <p>App</p>
+                                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+                                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                                </div>
+                              </div>
 
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                      <h4>App 2</h4>
-                      <p>App</p>
-                      <a href="assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
+                              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                                <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                  <h4>Card 2</h4>
+                                  <p>Card</p>
+                                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+                                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                                </div>
+                              </div>
 
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                      <h4>Card 2</h4>
-                      <p>Card</p>
-                      <a href="assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
+                              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                                <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                  <h4>Web 2</h4>
+                                  <p>Web</p>
+                                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+                                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                                </div>
+                              </div>
 
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                      <h4>Web 2</h4>
-                      <p>Web</p>
-                      <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
+                              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                                <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                  <h4>App 3</h4>
+                                  <p>App</p>
+                                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+                                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                                </div>
+                              </div>
 
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                      <h4>App 3</h4>
-                      <p>App</p>
-                      <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
+                              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                                <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                  <h4>Card 1</h4>
+                                  <p>Card</p>
+                                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+                                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                                </div>
+                              </div>
 
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                      <h4>Card 1</h4>
-                      <p>Card</p>
-                      <a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
+                              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                                <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                  <h4>Card 3</h4>
+                                  <p>Card</p>
+                                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+                                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                                </div>
+                              </div>
 
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                    <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                      <h4>Card 3</h4>
-                      <p>Card</p>
-                      <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
+                              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                                <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+                                <div class="portfolio-info">
+                                  <h4>Web 3</h4>
+                                  <p>Web</p>
+                                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+                                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                                </div>
+                              </div>
 
-                  <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                    <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                      <h4>Web 3</h4>
-                      <p>Web</p>
-                      <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-                      <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
+                            </div>
 
-                </div>
+                          </div>
+                        </section>  -->
+        <!-- End Portfolio Section-->
 
-              </div>
-            </section>  -->
-    <!-- End Portfolio Section-->
-
-    <!-- ======= Team Section ======= -->
-    {{-- <section id="team" class="team section-bg">
+        <!-- ======= Team Section ======= -->
+        {{-- <section id="team" class="team section-bg">
         <div class="container">
 
             <div class="section-title">
@@ -611,113 +628,114 @@
 
         </div>
     </section> --}}
-    <!-- End Team Section -->
+        <!-- End Team Section -->
 
-    <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
-        <div class="container">
+        <!-- ======= Pricing Section ======= -->
+        <section id="pricing" class="pricing">
+            <div class="container">
 
-            <div class="section-title">
-                <h2 data-aos="fade-up">Chế Độ Học Bổng</h2>
-                <p data-aos="fade-up">Nhiều ưu đãi học bổng giành cho các tân sinh viên khi đăng ký tuyển sinh</p>
+                <div class="section-title">
+                    <h2 class="h2-hocbong" data-aos="fade-up">Chế Độ Học Bổng</h2>
+                    {{-- <p data-aos="fade-up">Nhiều ưu đãi học bổng giành cho các tân sinh viên khi đăng ký tuyển sinh</p> --}}
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-12 col-md-6" data-aos="fade-up">
+                        <div class="box featured">
+                            {{-- <h3>Đối Tượng</h3>
+                            <h4>100<sup>%</sup><span id="hb">học phí khóa học</span></h4>
+                            <ul>
+                                <li>Tốt nghiệp THPT trừ 24 điểm trở lên (Tổ hợp 3 môn xét tuyển).</li>
+                            </ul>
+                            <div class="btn-wrap">
+                                <a href="#contact" class="btn-buy scrollto">Đăng Kí</a>
+                            </div> --}}
+                            <img src="{{ asset('dist/layout/layout_tuyensinh/img/LandingPage03.jpg') }}" width="100%" alt="">
+                        </div>
+                    </div>
+
+                    {{-- <div class="col-lg-6 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="100">
+                        <div class="box featured">
+                            <h3>Đối Tượng</h3>
+                            <h4>50<sup>%</sup><span id="hb">học phí khóa học</span></h4>
+                            <ul>
+                                <li>Tốt nghiệp THPT từ 22 đến dưới 24 diểm (Tổ hợp 3 môn xét tuyển).</li>
+                            </ul>
+                            <div class="btn-wrap">
+                                <a href="#contact" class="btn-buy scrollto">Đăng Kí</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+                        <br>
+                        <div class="box featured">
+                            <h3>Đối Tượng</h3>
+                            <h4>02<sup></sup> <span id="hb">học kỳ học bổng tương đương học
+                                    phí</span></h4>
+                            <ul>
+                                <li>TOEIC đạt 500 điểm hoặc IELTS dạt 5.0 trở lên.</li>
+                                <li>Đạt giải trong các cuộc thi Văn, Thể, Mỹ cấp Tỉnh trở lên.</li>
+                                <li>Có hoàn cảnh khó khăn và điểm trung bình từ 8.5 trở lên.</li>
+
+                            </ul>
+                            <div class="btn-wrap">
+                                <a href="#contact" class="btn-buy scrollto">Đăng Kí</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+                        <br>
+                        <div class="box featured">
+                            <!-- <span class="advanced">Advanced</span> -->
+                            <h3>Đối Tượng</h3>
+                            <h4>01<sup></sup> <span id="hb">học kỳ học bổng tương đương học
+                                    phí</span></h4>
+                            <ul>
+                                <li>TOEIC đạt 350 điểm hoặc IELTS đạt 3.5 trở lên hoặc nhập học trước ngày 01/08/2021</li>
+                                <li>Dành cho tân sinh viên lọt vào Top 5 cuộc thi người mẫu SVVN 2021, Người mẫu SVVN 2021
+                                    qua ảnh, Top
+                                    3 cuộc thi
+                                    Người mẫu ảnh do Trường tổ chức.
+                                </li>
+
+                            </ul>
+                            <div class="btn-wrap">
+                                <a href="#contact" class="btn-buy scrollto">Đăng Kí</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+                        <br>
+                        <div class="box featured">
+                            <!-- <span class="advanced">Advanced</span> -->
+                            <h3>Đối Tượng</h3>
+                            <h4>1/2<sup></sup> <span id="hb">học kỳ học bổng tương đương học
+                                    phí</span></h4>
+                            <ul>
+                                <li>Tân sinh viên có anh, chị, em (ruột) đang theo học tại Saigonact hoặc có hỗ khẩu thường
+                                    trú trên địa
+                                    bàn lân cận trường hoặc
+                                    nhập học trước ngày 05/09/2021.
+                                </li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <div class="btn-wrap">
+                                <a href="#contact" class="btn-buy scrollto">Đăng Kí</a>
+                            </div>
+                        </div>
+                    </div> --}}
+
+                </div>
+
             </div>
+        </section><!-- End Pricing Section -->
 
-            <div class="row">
-
-                <div class="col-lg-6 col-md-6" data-aos="fade-up">
-                    <div class="box featured">
-                        <h3>Đối Tượng</h3>
-                        <h4>100<sup>%</sup><span id="hb">học phí khóa học</span></h4>
-                        <ul>
-                            <li>Tốt nghiệp THPT trừ 24 điểm trở lên (Tổ hợp 3 môn xét tuyển).</li>
-                        </ul>
-                        <div class="btn-wrap">
-                            <a href="#contact" class="btn-buy scrollto">Đăng Kí</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="100">
-                    <div class="box featured">
-                        <h3>Đối Tượng</h3>
-                        <h4>50<sup>%</sup><span id="hb">học phí khóa học</span></h4>
-                        <ul>
-                            <li>Tốt nghiệp THPT từ 22 đến dưới 24 diểm (Tổ hợp 3 môn xét tuyển).</li>
-                        </ul>
-                        <div class="btn-wrap">
-                            <a href="#contact" class="btn-buy scrollto">Đăng Kí</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
-                    <br>
-                    <div class="box featured">
-                        <h3>Đối Tượng</h3>
-                        <h4>02<sup></sup> <span id="hb">học kỳ học bổng tương đương học
-                                phí</span></h4>
-                        <ul>
-                            <li>TOEIC đạt 500 điểm hoặc IELTS dạt 5.0 trở lên.</li>
-                            <li>Đạt giải trong các cuộc thi Văn, Thể, Mỹ cấp Tỉnh trở lên.</li>
-                            <li>Có hoàn cảnh khó khăn và điểm trung bình từ 8.5 trở lên.</li>
-
-                        </ul>
-                        <div class="btn-wrap">
-                            <a href="#contact" class="btn-buy scrollto">Đăng Kí</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
-                    <br>
-                    <div class="box featured">
-                        <!-- <span class="advanced">Advanced</span> -->
-                        <h3>Đối Tượng</h3>
-                        <h4>01<sup></sup> <span id="hb">học kỳ học bổng tương đương học
-                                phí</span></h4>
-                        <ul>
-                            <li>TOEIC đạt 350 điểm hoặc IELTS đạt 3.5 trở lên hoặc nhập học trước ngày 01/08/2021</li>
-                            <li>Dành cho tân sinh viên lọt vào Top 5 cuộc thi người mẫu SVVN 2021, Người mẫu SVVN 2021
-                                qua ảnh, Top
-                                3 cuộc thi
-                                Người mẫu ảnh do Trường tổ chức.
-                            </li>
-
-                        </ul>
-                        <div class="btn-wrap">
-                            <a href="#contact" class="btn-buy scrollto">Đăng Kí</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
-                    <br>
-                    <div class="box featured">
-                        <!-- <span class="advanced">Advanced</span> -->
-                        <h3>Đối Tượng</h3>
-                        <h4>1/2<sup></sup> <span id="hb">học kỳ học bổng tương đương học
-                                phí</span></h4>
-                        <ul>
-                            <li>Tân sinh viên có anh, chị, em (ruột) đang theo học tại Saigonact hoặc có hỗ khẩu thường
-                                trú trên địa
-                                bàn lân cận trường hoặc
-                                nhập học trước ngày 05/09/2021.
-                            </li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                        <div class="btn-wrap">
-                            <a href="#contact" class="btn-buy scrollto">Đăng Kí</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section><!-- End Pricing Section -->
-
-    <!-- ======= F.A.Q Section ======= -->
-    {{-- <section id="faq" class="faq section-bg">
+        <!-- ======= F.A.Q Section ======= -->
+        {{-- <section id="faq" class="faq section-bg">
         <div class="container">
 
             <div class="section-title">
@@ -789,132 +807,143 @@
         </div>
     </section><!-- End F.A.Q Section --> --}}
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-        <div class="container">
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container">
 
-            <div class="section-title" id="sectitle">
-                <h2 data-aos="fade-up">Đăng Ký Nhận Tư Vấn</h2>
-                <p data-aos="fade-up">Hồ sơ đăng ký nộp xét tuyển bao gồm :</p>
+                <div class="section-title" id="sectitle">
+                    <h2 data-aos="fade-up">Đăng Ký Nhận Tư Vấn</h2>
+                    <p data-aos="fade-up">Hồ sơ đăng ký nộp xét tuyển bao gồm :</p>
 
-                <p data-aos="fade-up"></a>Xét phương thức 1 : Bảng điểm học bạ 3 học kỳ -- Xét phương thức 2 : Bảng điểm
-                    thi
-                    tốt nghiệp THPT</p>
-                <p data-aos="fade-up">Phiếu đăng ký xét tuyển <a href="javascript:">(Mẫu của trường)</a>,Bảng sao Học Bạ
-                    có công chứng,
-                    03 thẻ ảnh 3x4, Giấy chứng nhận đối tượng ưu tiên (nếu có)</p>
-                <p data-aos="fade-up"><a href="javascript:void(0)" data-toggle="modal" data-target="#myModal">Xem Thông
-                        Tin Tuyển Sinh</a></p>
-            </div>
+                    <p data-aos="fade-up"></a>Xét phương thức 1 : Bảng điểm học bạ 3 học kỳ -- Xét phương thức 2 : Bảng điểm
+                        thi
+                        tốt nghiệp THPT</p>
+                    <p data-aos="fade-up">Phiếu đăng ký xét tuyển <a href="javascript:">(Mẫu của trường)</a>,Bảng sao Học Bạ
+                        có công chứng,
+                        03 thẻ ảnh 3x4, Giấy chứng nhận đối tượng ưu tiên (nếu có)</p>
+                    <p data-aos="fade-up"><a href="javascript:void(0)" data-toggle="modal" data-target="#myModal">Xem Thông
+                            Tin Tuyển Sinh</a></p>
+                </div>
 
 
-            <div class="row justify-content-center">
-                <div class="col-xl-9 col-lg-12 mt-4">
-                    <form method="post" action="#" class="php-email-form">
-                        <div class="form-row">
-                            <div class="col-md-6 form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Họ Tên" data-rule="minlen:4" data-msg="Bạn chưa điền tên" />
-                                <div class="validate"></div>
+                <div class="row justify-content-center">
+                    <div class="col-xl-9 col-lg-12 mt-4">
+                        <form method="post" action="#" class="php-email-form">
+                            <div class="form-row">
+                                <div class="col-md-6 form-group">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Họ Tên"
+                                        data-rule="minlen:4" data-msg="Bạn chưa điền tên" />
+                                    <div class="validate"></div>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email"
+                                        data-rule="email" data-msg="Bạn chưa điền Email" />
+                                    <div class="validate"></div>
+                                </div>
                             </div>
-                            <div class="col-md-6 form-group">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Bạn chưa điền Email" />
-                                <div class="validate"></div>
+                            <div class="form-row">
+                                <div class="col-md-6 form-group">
+                                    <input type="number" name="phone" class="form-control" id="phone"
+                                        placeholder="Số Điện Thoại" data-rule="minlen:4"
+                                        data-msg="Bạn chưa điền số điện thoại" />
+                                    <div class="validate"></div>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <input type="text" class="form-control" name="address" id="address"
+                                        placeholder="Địa Chỉ" data-rule="minlen:4" data-msg="Bạn chưa điền địa chỉ" />
+                                    <div class="validate"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-6 form-group">
-                                <input type="number" name="phone" class="form-control" id="phone" placeholder="Số Điện Thoại" data-rule="minlen:4" data-msg="Bạn chưa điền số điện thoại" />
-                                <div class="validate"></div>
+                            <div class="form-row">
+                                <div class="col-md-12 form-group">
+                                    <select required name="majors" class="form-control">
+                                        <option value="Du Lịch">Du Lịch</option>
+                                        <option value="Ngoại Ngữ">Ngoại Ngữ</option>
+                                        <option value="Công Nghệ Thông Tin">Công Nghệ Thông Tin</option>
+                                        <option value="Kinh Tế">Kinh Tế</option>
+                                        <option value="Kỹ Thuật">Kỹ Thuật</option>
+                                        <option value="Nghệ Thuật Và Mỹ Thuật">Nghệ Thuật Và Mỹ Thuật</option>
+                                    </select>
+                                    <div class="validate"></div>
+                                </div>
                             </div>
-                            <div class="col-md-6 form-group">
-                                <input type="text" class="form-control" name="address" id="address" placeholder="Địa Chỉ" data-rule="minlen:4" data-msg="Bạn chưa điền địa chỉ" />
-                                <div class="validate"></div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-12 form-group">
-                                <select required name="majors" class="form-control">
-                                    <option value="Du Lịch">Du Lịch</option>
-                                    <option value="Ngoại Ngữ">Ngoại Ngữ</option>
-                                    <option value="Công Nghệ Thông Tin">Công Nghệ Thông Tin</option>
-                                    <option value="Kinh Tế">Kinh Tế</option>
-                                    <option value="Kỹ Thuật">Kỹ Thuật</option>
-                                    <option value="Nghệ Thuật Và Mỹ Thuật">Nghệ Thuật Và Mỹ Thuật</option>
-                                </select>
-                                <div class="validate"></div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="loading">Bạn đã đăng ký thành công, hãy check lại email mà bạn đã đăng ký. Cảm ơn!</div>
-                            {{-- <div class="error-message">Lỗi khi đăng ký</div>
+                            <div class="mb-3">
+                                <div class="loading">Bạn đã đăng ký thành công, hãy check lại email mà bạn đã đăng ký. Cảm
+                                    ơn!</div>
+                                {{-- <div class="error-message">Lỗi khi đăng ký</div>
                                 <div class="sent-message">Bạn đã đăng ký thành công. Cảm ơn!</div> --}}
-                        </div>
-                        <div class="text-center">
-                            <button type="submit">Đăng Ký</button>
-                        </div>
-                        @csrf
-                    </form>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit">Đăng Ký</button>
+                            </div>
+                            @csrf
+                        </form>
+                    </div>
+
                 </div>
 
+
+                {{-- <div class="row justify-content-center">
+
+                    <div class="col-xl-4 col-lg-4 mt-4" data-aos="fade-up">
+                        <div class="info-box">
+                            <i class="bx bx-map" id="ress"></i>
+                            <h3>Địa Chỉ :</h3>
+                            <p>70 Đường Tân Thới Nhất 8 - Khu phố 5 - P.Tân Thới Nhất - Q.12-TP.HCM</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-4 mt-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="info-box">
+                            <i class="bx bx-envelope" id="ress"></i>
+                            <h3>Email :</h3>
+                            <p>info@daihocdulich.edu.vn</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 mt-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="info-box">
+                            <i class="bx bx-phone-call" id="ress"></i>
+                            <h3>Điện Thoại :</h3>
+                            <p>(028)38.831.793 | (028)38.831.796</p>
+                        </div>
+                    </div>
+                </div> --}}
             </div>
-
-
-            <div class="row justify-content-center">
-
-                <div class="col-xl-4 col-lg-4 mt-4" data-aos="fade-up">
-                    <div class="info-box">
-                        <i class="bx bx-map" id="ress"></i>
-                        <h3>Địa Chỉ :</h3>
-                        <p>70 Đường Tân Thới Nhất 8 - Khu phố 5 - P.Tân Thới Nhất - Q.12-TP.HCM</p>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-lg-4 mt-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="info-box">
-                        <i class="bx bx-envelope" id="ress"></i>
-                        <h3>Email :</h3>
-                        <p>info@daihocdulich.edu.vn</p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 mt-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="info-box">
-                        <i class="bx bx-phone-call" id="ress"></i>
-                        <h3>Điện Thoại :</h3>
-                        <p>(028)38.831.793 | (028)38.831.796</p>
+        </section><!-- End Contact Section -->
+        <!-- //comment fb -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="fb-comments" data-href="http://127.0.0.1:5500/index.html" data-width="1100"
+                        data-numposts="10">
                     </div>
                 </div>
             </div>
         </div>
-    </section><!-- End Contact Section -->
-    <!-- //comment fb -->
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="fb-comments" data-href="http://127.0.0.1:5500/index.html" data-width="1100" data-numposts="10">
-                </div>
-            </div>
-        </div>
-    </div>
-</main><!-- End #main -->
+    </main><!-- End #main -->
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/6034bffe918aa2612741ad9a/1ev70rv7h';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6034bffe918aa2612741ad9a/1ev70rv7h';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+
     </script>
     <!--End of Tawk.to Script-->
-<!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-        <img src="{{ asset('dist/layout/layout_tuyensinh/img/z2273728659739_4388ed7cd00c760a40ea47af77f43c99.jpg') }}" width="120%">
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <img src="{{ asset('dist/layout/layout_tuyensinh/img/z2273728659739_4388ed7cd00c760a40ea47af77f43c99.jpg') }}"
+                width="120%">
 
+        </div>
     </div>
-</div>
 @stop

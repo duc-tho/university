@@ -26,7 +26,7 @@ class ChangeUsersTablePasswordLength extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('password', 32)->change();
+            $table->string('password')->change();
         });
     }
 }
