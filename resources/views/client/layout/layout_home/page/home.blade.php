@@ -144,7 +144,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
                     <img class="boder-radius-img" src="{{asset($item['image']) }}" width="40%" alt="">
                     <h4>{{ $item['name'] }}</h4>
                 </a>
-                <p class="khoa-p">{{ $item['intro_summary'] }}</p>
+                <p class="khoa-p">{!! $item['intro_summary'] !!}</p>
             </div>
             @endforeach
             <div class="clearfix"> </div>

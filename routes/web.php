@@ -154,7 +154,7 @@ Route::get('/{khoa}/sinh-vien/thong-bao/asd', [StudentController::class, 'detail
 
 // Khóa Học
 Route::get('/{khoa}/khoa-hoc', [CourseController::class, 'index'])->name('khoa-hoc');
-Route::get('/{khoa}/chi-tiet-khoa-hoc', [CourseController::class, 'detail'])->name('khoa-hoc-chi-tiet');
+// Route::get('/{khoa}/chi-tiet-khoa-hoc', [CourseController::class, 'detail'])->name('khoa-hoc-chi-tiet');
 
 // Thông báo
 Route::get('/{khoa}/thong-bao', [NotificationController::class, 'index'])->name('thong-bao');
