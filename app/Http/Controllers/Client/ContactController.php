@@ -53,7 +53,8 @@ class ContactController extends Controller
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty['id']])->first();
 
-        return view('client.layout.layout_kkt.page.contact', [
+
+        return view('client.layout.' . $layout_name . '.page.contact', [
             'phone' => $contact['phone'],
             'email' => $contact['email'],
             'hotline' => $contact['hotline'],
@@ -66,10 +67,13 @@ class ContactController extends Controller
             'menu' => $menu,
             'footer_link' => $footer_link,
             'socials_icon' => $socials_icon,
+
             //start khoa kinh tế 
             'time_work' => getSettingValue($settings, 'time-work'),
 
             //end khoa kinh tế
+
+            'faculty' => $faculty,
         ]);
     }
 }

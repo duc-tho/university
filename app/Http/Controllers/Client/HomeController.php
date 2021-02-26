@@ -66,7 +66,8 @@ class HomeController extends Controller
         // Lấy hình ảnh và danh mục hình
         $image_category = ImageCategory::where(['status' => 1])->get();
         if (!$image_category->isEmpty()) foreach ($image_category as $key => $item) {
-            $item['image_item'] = $item->images;
+            $image = $item->images;
+            if (!$image->isEmpty()) $item['image_item'] = $item->images()->paginate(8);
         }
 
         // Lấy menu
@@ -112,7 +113,6 @@ class HomeController extends Controller
             'slogan_bottom' => getSettingValue($settings, 'slogan_bottom'),
             'slogan_route' => getSettingValue($settings, 'slogan_route'), //
             'time' => getSettingValue($settings, 'time'),
-            'hotline' => getSettingValue($settings, 'hotline'),
             'spline' => getSettingValue($settings, 'spline'),
 
             //Start Khoa Du Lịch
@@ -123,9 +123,10 @@ class HomeController extends Controller
             'slogan_intro_travel3' => getSettingValue($settings, 'slogan_intro_travel3'),
             'slogan_intro_travel4' => getSettingValue($settings, 'slogan_intro_travel4'),
             'slogan_intro_travel5' => getSettingValue($settings, 'slogan_intro_travel5'),
-            'name' => getSettingValue($specialized,'name'),
-            'intro' => getSettingValue($specialized,'intro'),
+            'name' => getSettingValue($specialized, 'name'),
+            'intro' => getSettingValue($specialized, 'intro'),
             //End Khoa Du Lịch
+
 
             //start khoa kinh tế 
             'time_work' => getSettingValue($settings, 'time-work'),
@@ -139,8 +140,6 @@ class HomeController extends Controller
             'intro_image' => getSettingValue($settings, 'intro_image'),
             'intro_video' => getSettingValue($settings, 'intro_video'),
             'intro_route' => getSettingValue($settings, 'intro_route') == null ? route('gioi-thieu', [$faculty['slug']]) : getSettingValue($settings, 'intro_route'),
-            'google_map_link' => getSettingValue($settings, 'google_map_link'),
-
 
 
             'intro_short' => $faculty['intro_summary'],
