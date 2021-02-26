@@ -35,7 +35,7 @@ class HomeController extends Controller
         $faculty_id = $faculty['id'];
 
         $layout_name = $faculty['layout_name'];
-
+        //thời gian làm việc 
         // Lấy danh sách khoa kèm url
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
 
@@ -105,13 +105,13 @@ class HomeController extends Controller
             'google_map_link' => $contact['map_embed'],
             'website_link' => $contact['website_link'],
             'contact_title' => $contact['contact_title'],
+            'address' => $contact['address_info'],
 
             'logo' => getSettingValue($settings, 'logo'),
             'slogan_top' => getSettingValue($settings, 'slogan_top'),
             'slogan_main' => getSettingValue($settings, 'slogan_main'),
             'slogan_bottom' => getSettingValue($settings, 'slogan_bottom'),
             'slogan_route' => getSettingValue($settings, 'slogan_route'), //
-            'address' => getSettingValue($settings, 'address'),
             'time' => getSettingValue($settings, 'time'),
             'spline' => getSettingValue($settings, 'spline'),
 
@@ -127,6 +127,12 @@ class HomeController extends Controller
             'intro' => getSettingValue($specialized, 'intro'),
             //End Khoa Du Lịch
 
+
+            //start khoa kinh tế 
+            'time_work' => getSettingValue($settings, 'time-work'),
+
+            //end khoa kinh tế
+
             'admission_title' => getSettingValue($settings, 'email'),
             'admission_description' => getSettingValue($settings, 'email'),
             'admission_route' => getSettingValue($settings, 'email'),
@@ -134,6 +140,7 @@ class HomeController extends Controller
             'intro_image' => getSettingValue($settings, 'intro_image'),
             'intro_video' => getSettingValue($settings, 'intro_video'),
             'intro_route' => getSettingValue($settings, 'intro_route') == null ? route('gioi-thieu', [$faculty['slug']]) : getSettingValue($settings, 'intro_route'),
+
 
             'intro_short' => $faculty['intro_summary'],
             'intro_statistic' => $statistic,
