@@ -1,10 +1,10 @@
 <section id="topbar" class="d-none d-lg-block">
     <div class="container d-flex">
         <div class="contact-info mr-auto">
-            <i class="icofont-envelope"></i><a href="mailto:contact@example.com">daihocdulich@dhdl.edu.vn</a>
-            <i class="icofont-phone"></i> 0282000200
-            <i class="icofont-livejournal"></i><span>Giờ làm việc: T2-T6: 7h30-4h30 - </span>
-            <span> T7:7h30-12h</span>
+            <i class="icofont-envelope"></i><a href="mailto:contact@example.com">{{$email}}</a>
+            <i class="icofont-phone"></i> {{$phone}}
+            <i class="icofont-livejournal"></i><span>{{$time_work}} </span>
+
         </div>
         <div class="social-links">
             <a href="javascript:" class="twitter"><i class="icofont-twitter"></i></a>

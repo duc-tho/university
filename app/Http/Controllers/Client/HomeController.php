@@ -93,6 +93,8 @@ class HomeController extends Controller
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty_id])->first();
 
+        // dd($settings);
+
         return view('client.layout.' . $layout_name . '.page.home', [
             'phone' => $contact['phone'],
             'email' => $contact['email'],
@@ -100,6 +102,9 @@ class HomeController extends Controller
             'google_map_link' => $contact['map_embed'],
             'website_link' => $contact['website_link'],
             'contact_title' => $contact['contact_title'],
+            'slogan_nn'=>getSettingValue($settings,'slogan_nn'),
+            'sub_slogan_nn'=>getSettingValue($settings,'sub_slogan_nn'),
+            'time_work' => getSettingValue($settings, 'time_work'),
             'logo' => getSettingValue($settings, 'logo'),
             'slogan_top' => getSettingValue($settings, 'slogan_top'),
             'slogan_main' => getSettingValue($settings, 'slogan_main'),

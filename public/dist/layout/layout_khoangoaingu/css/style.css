@@ -660,7 +660,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
 }
 #hero .carousel-item{
-  background: url('http://khoangoaingu.daihocdulich.edu.vn/upload/slide/slide-noi-that-g4-82730.jpg');
+  /* background: url('http://khoangoaingu.daihocdulich.edu.vn/upload/slide/slide-noi-that-g4-82730.jpg'); */
   background-repeat: no-repeat;
   width:100%;
   background-size: cover;

@@ -12,13 +12,11 @@
                     <div class="carousel-inner" role="listbox">
 
                         <!-- Slide 1 -->
-                        <div class="carousel-item active">
+                        <div class="carousel-item active" style=" background: url('http://khoangoaingu.daihocdulich.edu.vn/upload/slide/slide-noi-that-g4-82730.jpg');">
                             <div class="carousel-container">
                                 <div class="carousel-content">
-                                    <h2 class="animate__animated animate__fadeInDown text-light">WELCOME TO <span>KHOA NGOẠI
-                                            NGỮ</span></h2>
-                                    {{-- <p class="animate__animated animate__fadeInUp">Best choice to learn at SaiGon
-                                        University.</p> --}}
+                                    <h2 class="animate__animated animate__fadeInDown text-light">WELCOME TO {{$slogan_nn}}</h2>
+                                     <p class="animate__animated animate__fadeInUp">{{$sub_slogan_nn}}</p> 
                                     <a href="{{-- route('tin-tuc', ['khoa-ngoai']) --}}"
                                         class="btn-get-started animate__animated animate__fadeInUp">Tìm hiểu thêm</a>
                                 </div>
@@ -29,10 +27,9 @@
                         <div class="carousel-item">
                             <div class="carousel-container">
                                 <div class="carousel-content">
-                                    <h2 class="animate__animated animate__fadeInDown">WELCOME TO <span>KHOA NGOẠI NGỮ</span>
+                                    <h2 class="animate__animated animate__fadeInDown">{{$slogan_nn}}
                                     </h2>
-                                    {{-- <p class="animate__animated animate__fadeInUp">Best choice to learn at SaiGon
-                                        University.</p> --}}
+                                     <p class="animate__animated animate__fadeInUp">{{$sub_slogan_nn}}</p> 
                                     <a href="javascript:" class="btn-get-started animate__animated animate__fadeInUp">Tìm
                                         hiểu thêm</a>
                                 </div>
@@ -43,10 +40,9 @@
                         <div class="carousel-item">
                             <div class="carousel-container">
                                 <div class="carousel-content">
-                                    <h2 class="animate__animated animate__fadeInDown">WELCOME TO <span>KHOA NGOẠI NGỮ</span>
+                                    <h2 class="animate__animated animate__fadeInDown">{{$slogan_nn}}
                                     </h2>
-                                    <p class="animate__animated animate__fadeInUp">Best choice to learn at SaiGon
-                                        University.</p>
+                                    <p class="animate__animated animate__fadeInUp">{{$sub_slogan_nn}}</p>
                                     <a href="javascript:" class="btn-get-started animate__animated animate__fadeInUp">Tìm
                                         hiểu thêm</a>
                                 </div>
