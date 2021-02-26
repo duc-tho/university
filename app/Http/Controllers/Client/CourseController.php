@@ -9,7 +9,7 @@ class CourseController extends Controller
 {
     public function index(Request $request, $khoa)
     {
-        // return view('client.layout.layout_kkt.pagehome');
+        return view('client.layout.layout_kkt.home');
         return;
     }
 
