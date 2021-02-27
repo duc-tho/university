@@ -61,6 +61,26 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
                 ->where(['id' => '[0-9]+']);
         });
 
+        Route::group(['prefix' => 'slide'], function () {
+            Route::get('/', [SlideController::class, 'getSlide'])->name('adminSlide');
+
+            Route::get('add', [SlideController::class,'getAddSlide'])->name('GetAddSlide');
+
+            Route::post('add', [SlideController::class,'postAddSlide'])->name('PostAddSlide');
+
+            Route::get('/edit/{id}',[SlideController::class,'getEditSlide'])
+                ->name('GetEditSlide')
+                ->where(['id'=>'[0-9]+']);
+
+            Route::post('/edit/{id}',[SlideController::class,'getEditSlide'])
+                ->name('PostEditSlide')
+                ->where(['id'=>'[0-9]+']);
+
+            Route::get('/delete/{id}', [SlideController::class, 'deleteSlide'])
+            ->name('DeleteSlide')
+            ->where(['id' => '[0-9]+']);
+        });
+
         Route::group(['prefix' => 'teacher'], function () {
             Route::get('/', [Teacher_reController::class, 'getTeacher'])->name('Teacher');
 
@@ -99,11 +119,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
             Route::get('/delete/{id}', [UserController::class, 'deleteUser'])
                 ->name('DeleteUser')
                 ->where(['id' => '[0-9]+']);
-        });
-
-
-        Route::group(['prefix' => 'slide'], function () {
-            Route::get('/', [SlideController::class, 'index'])->name('adminSlide');
         });
     });
 

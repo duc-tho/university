@@ -11,9 +11,10 @@
             <div class="col-12">
                 <div class="card card-primary card-outline">
                     <div class="card-header p-2 d-flex align-items-center justify-content-between">
+                        <a href="{{route('GetAddSlide')}}">
                         <button type="submit" class="btn btn-info btn-sm">
                             <i class="fas fa-plus"></i> Thêm slide
-                        </button>
+                        </button></a>
                         <div class="ml-auto d-inline-block">
                             <div class="input-group input-group-sm">
                                 <select class="form-control custon-select" style="width:auto !important" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
@@ -228,7 +229,7 @@
                                     <td class="text-center">1592</td>
 
                                     <td>
-										<img width="200px"  src="https://via.placeholder.com/150" class="thumbnail">
+										<img width="200px"  src="http://daihocdulich.edu.vn/upload/slide/slide-sai-gon-c-72529.jpg" class="thumbnail">
 									</td>
                                   
                                     <td class="text-center">Kim Nga</td>
@@ -241,7 +242,10 @@
                                    
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="1" type="checkbox" >
+                                        <label for="1"> </label></div></label>
+                                        <!-- <input data-id="1579" type="checkbox" checked=""><span></span></label> -->
                                         <a href="#" class="btn btn-warning btn-xs" title="" style="overflow: hidden;position: relative;" data-toggle="tooltip" data-original-title="Sửa"><i class="fa fa-flag"  aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs" title="" style="overflow: hidden;position: relative;" data-toggle="tooltip" data-original-title="Xóa"><i class="fa fa-trash"  aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -266,8 +270,10 @@
 
                                     
                                     <td class="text-center">
-                                        <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                    <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="2" type="checkbox" >
+                                        <label for="2"> </label></div></label>
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -292,7 +298,9 @@
                                    
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="3" type="checkbox" >
+                                        <label for="3"> </label></div></label>
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -315,7 +323,9 @@
                                     <td class="text-center">2021-01-07</td>
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="4" type="checkbox" >
+                                        <label for="4"> </label></div></label>
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -337,7 +347,9 @@
                                     <td class="text-center">2021-01-07</td>
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="5" type="checkbox" >
+                                        <label for="5"> </label></div></label>
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -356,7 +368,9 @@
                                     <td class="text-center">2020-12-28</td>
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="6" type="checkbox" >
+                                        <label for="6"> </label></div></label>
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -373,7 +387,9 @@
                                     <td class="text-center">2020-12-24</td>
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="7" type="checkbox" >
+                                        <label for="7"> </label></div></label>
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -390,7 +406,9 @@
                                     <td class="text-center">2020-12-22</td>
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="8" type="checkbox" >
+                                        <label for="8"> </label></div></label>
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -407,7 +425,9 @@
                                     <td class="text-center">2020-12-21</td>
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="9" type="checkbox" >
+                                        <label for="9"> </label></div></label>
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -423,7 +443,9 @@
                                     <td class="text-center">2020-12-21</td>
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                        <input data-id="1579" type="checkbox" checked=""><span></span></label>
+                                        <div class="mt-check-garden nutanhien">
+                                        <input id="10" type="checkbox" >
+                                        <label for="10"> </label></div></label>
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
@@ -467,120 +489,5 @@
         </div>
     </div><!-- /.container-fluid -->
 </div>
-    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-		<div class="row">
-			<div class="col-lg-12">
-				<h1 class="page-header">Sản phẩm</h1>
-			</div>
-		</div><!--/.row-->
-		
-		<div class="row">
-			<div class="col-xs-12 col-md-12 col-lg-12">
-				
-				<div class="panel panel-primary">
-					<div class="panel-heading">Danh sách sản phẩm</div>
-					<div class="panel-body">
-						<div class="bootstrap-table">
-							<div class="table-responsive">
-								<a href="#" class="btn btn-primary">Thêm sản phẩm</a>
-								<table class="table table-bordered" style="margin-top:20px;">				
-									<thead>
-										<tr class="bg-primary">
-											<th>ID</th>
-											<th width="30%">Tên Sản phẩm</th>
-											<th>Giá sản phẩm</th>
-											<th width="20%">Ảnh sản phẩm</th>
-											<th>Danh mục</th>
-											<th>Tùy chọn</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>1</td>
-											<td>iPhone 7 Plus 32GB quốc tế Mate Black</td>
-											<td>21.990.000 VND</td>
-											<td>
-												<img width="200px" src="img/iphone7-plus-black-select-2016.jpg" class="thumbnail">
-											</td>
-											<td>iPhone</td>
-											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-											</td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td>iPhone 7 Plus 32GB quốc tế Mate Black</td>
-											<td>21.990.000 VND</td>
-											<td>
-												<img width="200px" src="img/iphone7-plus-black-select-2016.jpg" class="thumbnail">
-											</td>
-											<td>iPhone</td>
-											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-											</td>
-										</tr>
-										<tr>
-											<td>3</td>
-											<td>iPhone 7 Plus 32GB quốc tế Mate Black</td>
-											<td>21.990.000 VND</td>
-											<td>
-												<img width="200px" src="img/iphone7-plus-black-select-2016.jpg" class="thumbnail">
-											</td>
-											<td>iPhone</td>
-											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-											</td>
-										</tr>
-										<tr>
-											<td>4</td>
-											<td>iPhone 7 Plus 32GB quốc tế Mate Black</td>
-											<td>21.990.000 VND</td>
-											<td>
-												<img width="200px" src="img/iphone7-plus-black-select-2016.jpg" class="thumbnail">
-											</td>
-											<td>iPhone</td>
-											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-											</td>
-										</tr>
-										<tr>
-											<td>5</td>
-											<td>iPhone 7 Plus 32GB quốc tế Mate Black</td>
-											<td>21.990.000 VND</td>
-											<td>
-												<img width="200px" src="img/iphone7-plus-black-select-2016.jpg" class="thumbnail">
-											</td>
-											<td>iPhone</td>
-											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-											</td>
-										</tr>
-										<tr>
-											<td>6</td>
-											<td>iPhone 7 Plus 32GB quốc tế Mate Black</td>
-											<td>21.990.000 VND</td>
-											<td>
-												<img width="200px" src="img/iphone7-plus-black-select-2016.jpg" class="thumbnail">
-											</td>
-											<td>iPhone</td>
-											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-											</td>
-										</tr>
-									</tbody>
-								</table>							
-							</div>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
-			</div>
-		</div><!--/.row-->
-	</div>	<!--/.main-->
+  
 @endsection
