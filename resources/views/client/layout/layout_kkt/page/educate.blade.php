@@ -19,7 +19,7 @@
                     <h2>Danh sách khóa học</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('khoakinhte-khoahoc') }}">Khoa Kinh Tế</a></li>
+                            <li class="breadcrumb-item"><a href="{{-- route('khoakinhte-khoahoc') --}}">Khoa Kinh Tế</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Danh sách khóa học</li>
                         </ol>
                     </nav>
@@ -79,7 +79,7 @@
                                     <li><i class="fa fa-star"></i></li>
                                 </ul>
                                 <span>(20 Reviws)</span>
-                                <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
+                                <a href="{{--  route('khoakinhte-chitietkhoahoc') --}}">
                                     <h4>Learn basis javascirpt from start for beginner</h4>
                                 </a>
                                 <div class="course-teacher">
@@ -120,7 +120,7 @@
                                     <li><i class="fa fa-star"></i></li>
                                 </ul>
                                 <span>(20 Reviws)</span>
-                                <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
+                                <a href="{{--  route('khoakinhte-chitietkhoahoc') --}}">
                                     <h4>Learn basis javascirpt from start for beginner</h4>
                                 </a>
                                 <div class="course-teacher">
@@ -161,7 +161,7 @@
                                     <li><i class="fa fa-star"></i></li>
                                 </ul>
                                 <span>(20 Reviws)</span>
-                                <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
+                                <a href="{{--  route('khoakinhte-chitietkhoahoc') --}}">
                                     <h4>Learn basis javascirpt from start for beginner</h4>
                                 </a>
                                 <div class="course-teacher">
@@ -202,7 +202,7 @@
                                     <li><i class="fa fa-star"></i></li>
                                 </ul>
                                 <span>(20 Reviws)</span>
-                                <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
+                                <a href="{{--  route('khoakinhte-chitietkhoahoc') --}}">
                                     <h4>Learn basis javascirpt from start for beginner</h4>
                                 </a>
                                 <div class="course-teacher">
@@ -243,7 +243,7 @@
                                     <li><i class="fa fa-star"></i></li>
                                 </ul>
                                 <span>(20 Reviws)</span>
-                                <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
+                                <a href="{{--  route('khoakinhte-chitietkhoahoc') --}}">
                                     <h4>Learn basis javascirpt from start for beginner</h4>
                                 </a>
                                 <div class="course-teacher">
@@ -284,7 +284,7 @@
                                     <li><i class="fa fa-star"></i></li>
                                 </ul>
                                 <span>(20 Reviws)</span>
-                                <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
+                                <a href="{{--  route('khoakinhte-chitietkhoahoc') --}}">
                                     <h4>Learn basis javascirpt from start for beginner</h4>
                                 </a>
                                 <div class="course-teacher">
@@ -325,7 +325,7 @@
                                     <li><i class="fa fa-star"></i></li>
                                 </ul>
                                 <span>(20 Reviws)</span>
-                                <a href="{{  route('khoakinhte-chitietkhoahoc') }}">
+                                <a href="{{--  route('khoakinhte-chitietkhoahoc') --}}">
                                     <h4>Learn basis javascirpt from start for beginner</h4>
                                 </a>
                                 <div class="course-teacher">

@@ -35,7 +35,7 @@ class HomeController extends Controller
         $faculty_id = $faculty['id'];
 
         $layout_name = $faculty['layout_name'];
-
+        //thời gian làm việc
         // Lấy danh sách khoa kèm url
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
@@ -69,7 +69,8 @@ class HomeController extends Controller
         // Lấy hình ảnh và danh mục hình
         $image_category = ImageCategory::where(['status' => 1])->get();
         if (!$image_category->isEmpty()) foreach ($image_category as $key => $item) {
-            $item['image_item'] = $item->images;
+            $image = $item->images;
+            if (!$image->isEmpty()) $item['image_item'] = $item->images()->paginate(8);
         }
 
         // Lấy menu
@@ -100,6 +101,8 @@ class HomeController extends Controller
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty_id])->first();
 
+        // dd($settings);
+
         return view('client.layout.' . $layout_name . '.page.home', [
             'phone' => $contact['phone'],
             'email' => $contact['email'],
@@ -107,15 +110,17 @@ class HomeController extends Controller
             'google_map_link' => $contact['map_embed'],
             'website_link' => $contact['website_link'],
             'contact_title' => $contact['contact_title'],
+            'slogan_nn'=>getSettingValue($settings,'slogan_nn'),
+            'sub_slogan_nn'=>getSettingValue($settings,'sub_slogan_nn'),
+            'time_work' => getSettingValue($settings, 'time_work'),
+            'address' => $contact['address_info'],
 
             'logo' => getSettingValue($settings, 'logo'),
             'slogan_top' => getSettingValue($settings, 'slogan_top'),
             'slogan_main' => getSettingValue($settings, 'slogan_main'),
             'slogan_bottom' => getSettingValue($settings, 'slogan_bottom'),
             'slogan_route' => getSettingValue($settings, 'slogan_route'), //
-            'address' => getSettingValue($settings, 'address'),
             'time' => getSettingValue($settings, 'time'),
-            'hotline' => getSettingValue($settings, 'hotline'),
             'spline' => getSettingValue($settings, 'spline'),
 
             //Start Khoa Du Lịch
@@ -126,16 +131,9 @@ class HomeController extends Controller
             'slogan_intro_travel3' => getSettingValue($settings, 'slogan_intro_travel3'),
             'slogan_intro_travel4' => getSettingValue($settings, 'slogan_intro_travel4'),
             'slogan_intro_travel5' => getSettingValue($settings, 'slogan_intro_travel5'),
-
-            'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),
-            'footer_email_travel' => getSettingValue($settings, 'footer_email_travel'),
-            'footer_website_travel' => getSettingValue($settings, 'footer_website_travel'),
-            'footer_address_travel' => getSettingValue($settings, 'footer_address_travel'),
-
             'name' => getSettingValue($specialized, 'name'),
             'intro' => getSettingValue($specialized, 'intro'),
             //End Khoa Du Lịch
-
 
             'admission_title' => getSettingValue($settings, 'email'),
             'admission_description' => getSettingValue($settings, 'email'),
@@ -145,9 +143,6 @@ class HomeController extends Controller
             'intro_video' => getSettingValue($settings, 'intro_video'),
             'intro_image_travel' => getSettingValue($settings, 'intro_image_travel'),
             'intro_route' => getSettingValue($settings, 'intro_route') == null ? route('gioi-thieu', [$faculty['slug']]) : getSettingValue($settings, 'intro_route'),
-            'google_map_link' => getSettingValue($settings, 'google_map_link'),
-
-
             'intro_short' => $faculty['intro_summary'],
             'intro_statistic' => $statistic,
             'menu' => $menu,

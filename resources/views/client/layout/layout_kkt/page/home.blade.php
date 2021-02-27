@@ -82,21 +82,105 @@
                 </div>
                 <div class="col-lg-6 offset-lg-1 col-md-8 offset-md-2 col-sm-8 offset-sm-2 col-8 offset-2">
                     <div class="row category-slied mt-40">
+                        @foreach ($specialized as $key => $nk) 
                         <div class="col-lg-4">
-                        @foreach ($specialized as $nk)
                             <a href="javascript:">
-                                <span class="singel-category text-center color-1">
+                                <span class="singel-category text-center color-{{ $key+1 }}">
                                     <span class="icon">
-                                        <img src="{{$nk->image}}" alt="Icon">
+                                        <img src="/dist/layout/layout_kkt/images/all-icon/ctg-1.png" alt="Icon">
                                     </span>
                                     <span class="cont">
                                         <span>{{$nk->name}}</span>
                                     </span>
                                 </span> <!-- singel category -->
                             </a>
-                        @endforeach
                         </div>
-                    </div> <!-- category slied -->
+                        @endforeach
+                        {{-- <div class="col-lg-4">
+                            <a href="javascript:">
+                                <span class="singel-category text-center color-1">
+                                    <span class="icon">
+                                        <img src="/dist/layout/layout_kkt/images/all-icon/ctg-1.png" alt="Icon">
+                                    </span>
+                                    <span class="cont">
+                                        <span>Tài Chính Ngân Hàng</span>
+                                    </span>
+                                </span> <!-- singel category -->
+                            </a>
+                        </div>
+                        <div class="col-lg-4">
+                            <a href="javascript:">
+                                <span class="singel-category text-center color-1">
+                                    <span class="icon">
+                                        <img src="/dist/layout/layout_kkt/images/all-icon/ctg-1.png" alt="Icon">
+                                    </span>
+                                    <span class="cont">
+                                        <span>Tài Chính Ngân Hàng</span>
+                                    </span>
+                                </span> <!-- singel category -->
+                            </a>
+                        </div>
+                        <div class="col-lg-4">
+                            <a href="javascript:">
+                                <span class="singel-category text-center color-2">
+                                    <span class="icon">
+                                        <img src="/dist/layout/layout_kkt/images/all-icon/ctg-2.png" alt="Icon">
+                                    </span>
+                                    <span class="cont">
+                                        <span>Quản Trị Kinh Doanh</span>
+                                    </span>
+                                </span> <!-- singel category -->
+                            </a>
+                        </div>
+                        <div class="col-lg-4">
+                            <a href="javascript:">
+                                <span class="singel-category text-center color-3">
+                                    <span class="icon">
+                                        <img src="/dist/layout/layout_kkt/images/all-icon/ctg-3.png" alt="Icon">
+                                    </span>
+                                    <span class="cont">
+                                        <span>Kế Toán Doanh Nghiệp</span>
+                                    </span>
+                                </span> <!-- singel category -->
+                            </a>
+                        </div>
+                        <div class="col-lg-4">
+                            <a href="javascript:">
+                                <span class="singel-category text-center color-1">
+                                    <span class="icon">
+                                        <img src="/dist/layout/layout_kkt/images/all-icon/ctg-1.png" alt="Icon">
+                                    </span>
+                                    <span class="cont">
+                                        <span>Thư Ký Văn Phòng</span>
+                                    </span>
+                                </span> <!-- singel category -->
+                            </a>
+                        </div>
+                        <div class="col-lg-4">
+                            <a href="javascript:">
+                                <span class="singel-category text-center color-2">
+                                    <span class="icon">
+                                        <img src="/dist/layout/layout_kkt/images/all-icon/ctg-2.png" alt="Icon">
+                                    </span>
+                                    <span class="cont">
+                                        <span>Tin Học Ứng dụng</span>
+                                    </span>
+                                </span> <!-- singel category -->
+                            </a>
+                        </div>
+                        <div class="col-lg-4">
+                            <a href="javascript:">
+                                <span class="singel-category text-center color-3">
+                                    <span class="icon">
+                                        <img src="/dist/layout/layout_kkt/images/all-icon/ctg-3.png" alt="Icon">
+                                    </span>
+                                    <span class="cont">
+                                        <span>Quản Trị Mạng Máy Tính</span>
+                                    </span>
+                                </span> <!-- singel category -->
+                            </a>
+                        </div> --}}
+                    </div>
                 </div>
             </div> <!-- row -->
         </div> <!-- category -->
@@ -134,10 +218,11 @@
                         <h3>Sự Kiến Sắp Tới</h3>
                     </div> <!-- event title -->
                     <ul>
+                    @foreach ($specialized as $nk)
                         <li>
                             <div class="singel-event">
                                 <a href="{{-- route('khoakinhte-chitiettintuc') --}}">
-                                    <h4>Hội Thảo Chuyên Nghành Về Quản Trị Kinh Doanh</h4>
+                                    <h4>Hội Thảo Chuyên Nghành Về {{$nk->name}} </h4>
                                 </a>
                                 <span><i class="fa fa-calendar"></i> 12/03/2021</span>
 
@@ -145,28 +230,7 @@
                                 <span><i class="fa fa-map-marker"></i> Đại Học Du Lịch Văn Hóa Nghệ Thuật Sài Gòn</span>
                             </div>
                         </li>
-                        <li>
-                            <div class="singel-event">
-                                <a href="{{-- route('khoakinhte-chitiettintuc') --}}">
-                                    <h4>Hội Thảo Chuyên Nghành Về Tài Chính Ngân Hàng</h4>
-                                </a>
-                                <span><i class="fa fa-calendar"></i> 13/03/2021</span>
-
-                                <span><i class="fa fa-clock-o"></i> 80h30 - 11h00</span>
-                                <span><i class="fa fa-map-marker"></i> Đại Học Du Lịch Văn Hóa Nghệ Thuật Sài Gòn</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="singel-event">
-                                <a href="{{-- route('khoakinhte-chitiettintuc') --}}">
-                                    <h4>Hội Thảo Chuyên Nghành Về Kế Toán</h4>
-                                </a>
-                                <span><i class="fa fa-calendar"></i> 14/03/2021</span>
-
-                                <span><i class="fa fa-clock-o"></i> 80h30 - 11h00</span>
-                                <span><i class="fa fa-map-marker"></i> Đại Học Du Lịch Văn Hóa Nghệ Thuật Sài Gòn</span>
-                            </div>
-                        </li>
+                    @endforeach
                     </ul>
                 </div> <!-- about event -->
             </div>

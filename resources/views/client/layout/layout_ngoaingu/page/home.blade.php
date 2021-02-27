@@ -12,14 +12,12 @@
                     <div class="carousel-inner" role="listbox">
 
                         <!-- Slide 1 -->
-                        <div class="carousel-item active">
+                        <div class="carousel-item active" style=" background: url('http://khoangoaingu.daihocdulich.edu.vn/upload/slide/slide-noi-that-g4-82730.jpg');">
                             <div class="carousel-container">
                                 <div class="carousel-content">
-                                    <h2 class="animate__animated animate__fadeInDown text-light">WELCOME TO <span>KHOA NGOẠI
-                                            NGỮ</span></h2>
-                                    {{-- <p class="animate__animated animate__fadeInUp">Best choice to learn at SaiGon
-                                        University.</p> --}}
-                                    <a href="{{ route('gioithieukhoangoaingu') }}"
+                                    <h2 class="animate__animated animate__fadeInDown text-light">WELCOME TO {{$slogan_nn}}</h2>
+                                     <p class="animate__animated animate__fadeInUp">{{$sub_slogan_nn}}</p> 
+                                    <a href="{{-- route('tin-tuc', ['khoa-ngoai']) --}}"
                                         class="btn-get-started animate__animated animate__fadeInUp">Tìm hiểu thêm</a>
                                 </div>
                             </div>
@@ -29,10 +27,9 @@
                         <div class="carousel-item">
                             <div class="carousel-container">
                                 <div class="carousel-content">
-                                    <h2 class="animate__animated animate__fadeInDown">WELCOME TO <span>KHOA NGOẠI NGỮ</span>
+                                    <h2 class="animate__animated animate__fadeInDown">{{$slogan_nn}}
                                     </h2>
-                                    {{-- <p class="animate__animated animate__fadeInUp">Best choice to learn at SaiGon
-                                        University.</p> --}}
+                                     <p class="animate__animated animate__fadeInUp">{{$sub_slogan_nn}}</p> 
                                     <a href="javascript:" class="btn-get-started animate__animated animate__fadeInUp">Tìm
                                         hiểu thêm</a>
                                 </div>
@@ -43,10 +40,9 @@
                         <div class="carousel-item">
                             <div class="carousel-container">
                                 <div class="carousel-content">
-                                    <h2 class="animate__animated animate__fadeInDown">WELCOME TO <span>KHOA NGOẠI NGỮ</span>
+                                    <h2 class="animate__animated animate__fadeInDown">{{$slogan_nn}}
                                     </h2>
-                                    <p class="animate__animated animate__fadeInUp">Best choice to learn at SaiGon
-                                        University.</p>
+                                    <p class="animate__animated animate__fadeInUp">{{$sub_slogan_nn}}</p>
                                     <a href="javascript:" class="btn-get-started animate__animated animate__fadeInUp">Tìm
                                         hiểu thêm</a>
                                 </div>
@@ -76,7 +72,7 @@
                         <div class="col-lg-3">
                             <div class="icon-box">
                                 <i class="icofont-computer d-flex justify-content-center"></i>
-                                <h3 class="text-center"><a href="{{ route('daotaoanhngu') }}">Anh Ngữ</a></h3>
+                                <h3 class="text-center"><a href="{{-- route('daotaoanhngu') --}}">Anh Ngữ</a></h3>
                                 <p class="text-center">Học Anh ngữ mở rộng con dường tìm kiếm cờ hội làm việc trong các môi trường nước ngoài
                                     chuyên nghiệp</p>
                             </div>
@@ -84,7 +80,7 @@
                         <div class="col-lg-3 mt-4 mt-lg-0">
                             <div class="icon-box">
                                 <i class="icofont-image d-flex justify-content-center"></i>
-                                <h3 class="text-center"><a href="{{ route('daotaoanhngu') }}">Nhật Ngữ</a></h3>
+                                <h3 class="text-center"><a href="{{-- route('daotaoanhngu') --}}">Nhật Ngữ</a></h3>
                                 <p class="text-center">Học Nhật ngữ mở rộng con dường tìm kiếm cờ hội làm việc trong các môi trường nước ngoài
                                     chuyên nghiệp</p>
                             </div>
@@ -92,7 +88,7 @@
                         <div class="col-lg-3 mt-4 mt-lg-0">
                             <div class="icon-box">
                                 <i class="icofont-tasks-alt d-flex justify-content-center"></i>
-                                <h3 class="text-center"><a href="{{ route('daotaoanhngu') }}">Trung Ngữ</a></h3>
+                                <h3 class="text-center"><a href="{{-- route('daotaoanhngu') --}}">Trung Ngữ</a></h3>
                                 <p class="text-center">Học Trung ngữ mở rộng con dường tìm kiếm cờ hội làm việc trong các môi trường nước ngoài
                                     chuyên nghiệp</p>
                             </div>
@@ -100,7 +96,7 @@
                         <div class="col-lg-3 mt-4 mt-lg-0">
                             <div class="icon-box">
                                 <i class="icofont-tasks-alt d-flex justify-content-center"></i>
-                                <h3 class="text-center"><a href="{{ route('daotaoanhngu') }}">Hàn Ngữ</a></h3>
+                                <h3 class="text-center"><a href="{{-- route('daotaoanhngu') --}}">Hàn Ngữ</a></h3>
                                 <p class="text-center">Học Hàn ngữ mở rộng con dường tìm kiếm cờ hội làm việc trong các môi trường nước ngoài
                                     chuyên nghiệp</p>
                             </div>
@@ -117,6 +113,8 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2017/08/21/muc-tieu-thumbnail-62678.jpg"
+                                class="img-fluid" alt="">
+                                <img src="{{ asset('dist/upload/ten-hinh.png') }}"
                                 class="img-fluid" alt="">
                         </div>
                         <div class="col-lg-6 pt-4 pt-lg-0 content">
@@ -154,7 +152,7 @@
                                 <article id="post-37885"
                                     class="post-37885 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc-chung cart cart--wide">
                                     <a class="cart__image"
-                                        href="{{ route('chitietttkhoangoaingu') }}">
+                                        href="{{-- route('chitietttkhoangoaingu') --}}">
                                         <img width="373" height="206"
                                             src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2019/07/13/hoc-ngoai-ngu-o-saigonact-noi-nhu-nguoi-ban-dia-thumbnail-26188.jpg"
                                             sizes="(max-width: 373px) 100vw, 373px">
@@ -162,7 +160,7 @@
                                     </a>
                                     <header class="entry-header cart__content">
                                         <h3 class="cart__title entry-title">
-                                            <a href="{{ route('chitietttkhoangoaingu') }}"
+                                            <a href="{{-- route('chitietttkhoangoaingu') --}}"
                                                 title="Học ngoại ngữ ở SaigonACT nói như người bản địa">Học ngoại ngữ ở
                                                 SaigonACT nói như người bản địa</a>
                                         </h3>
@@ -180,7 +178,7 @@
                                 <article id="post-37885"
                                     class="post-37885 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc-chung cart cart--wide">
                                     <a class="cart__image"
-                                        href="{{ route('chitietttkhoangoaingu') }}">
+                                        href="{{-- route('chitietttkhoangoaingu') --}}">
                                         <img width="373" height="206"
                                         src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2018/10/31/cau-lac-bo-tieng-anh-dong-som-thumbnail-72795.jpg"
                                             sizes="(max-width: 373px) 100vw, 373px">
@@ -188,7 +186,7 @@
                                     </a>
                                     <header class="entry-header cart__content">
                                         <h3 class="cart__title entry-title">
-                                            <a href="{{ route('chitietttkhoangoaingu') }}"
+                                            <a href="{{-- route('chitietttkhoangoaingu') --}}"
                                                 title="Học ngoại ngữ ở SaigonACT nói như người bản địa">Câu lạc bộ tiếng Anh – Đông sớm</a>
                                         </h3>
                                         <span class="posted-on">
@@ -205,7 +203,7 @@
                                 <article id="post-37885"
                                     class="post-37885 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc-chung cart cart--wide">
                                     <a class="cart__image"
-                                        href="{{ route('chitietttkhoangoaingu') }}">
+                                        href="{{-- route('chitietttkhoangoaingu') --}}">
                                         <img width="373" height="206"
                                         src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2018/06/01/cau-lac-bo-ngoai-ngu-di-mot-ngay-dang-hoc-mot-sang-khon-thumbnail-71405.jpg"
                                             sizes="(max-width: 373px) 100vw, 373px">
@@ -213,7 +211,7 @@
                                     </a>
                                     <header class="entry-header cart__content">
                                         <h3 class="cart__title entry-title">
-                                            <a href="{{ route('chitietttkhoangoaingu') }}"
+                                            <a href="{{-- route('chitietttkhoangoaingu') --}}"
                                                 title="Học ngoại ngữ ở SaigonACT nói như người bản địa">Câu lạc bộ Ngoại Ngữ - Đi một ngày đàng học một sàng khôn</a>
                                         </h3>
                                         <span class="posted-on">
@@ -230,7 +228,7 @@
                                 <article id="post-37885"
                                     class="post-37885 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc-chung cart cart--wide">
                                     <a class="cart__image"
-                                        href="{{ route('chitietttkhoangoaingu') }}">
+                                        href="{{-- route('chitietttkhoangoaingu') --}}">
                                         <img width="373" height="206"
                                         src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2018/04/14/vi-sao-sinh-vien-nen-trang-bi-kien-thuc-ky-nang-mem-thumbnail-88715.jpg"
                                             sizes="(max-width: 373px) 100vw, 373px">
@@ -238,7 +236,7 @@
                                     </a>
                                     <header class="entry-header cart__content">
                                         <h3 class="cart__title entry-title">
-                                            <a href="{{ route('chitietttkhoangoaingu') }}"
+                                            <a href="{{-- route('chitietttkhoangoaingu') --}}"
                                                 title="Học ngoại ngữ ở SaigonACT nói như người bản địa">Vì sao sinh viên nên trang bị kiến thức kỹ năng mềm</a>
                                         </h3>
                                         <span class="posted-on">
@@ -327,7 +325,7 @@
                             </a>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 text-center" >
-                            <a class="button button--outline button--orange button-addread-new" href="{{ route('tintucngoaingu') }}">XEM THÊM
+                            <a class="button button--outline button--orange button-addread-new" href="{{-- route('tintucngoaingu') --}}">XEM THÊM
                                 TIN TỨC</a>
                         </div>
                     </div>
@@ -420,7 +418,7 @@
                         <div class="row">
                             <div class="col-md-4 col-sm-6 fh5co-project fadeIn animate-box animated-fast"
                                 data-animate-effect="fadeIn">
-                                <a href="{{ route('chitietttkhoangoaingu') }}"><img
+                                <a href="{{-- route('chitietttkhoangoaingu') --}}"><img
                                         src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2019/07/18/tieng-trung-quoc-nganh-hoc-chua-bao-gio-het-hot-thumbnail-44420.png"
                                         alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
                                     <h3>Tiếng Trung Quốc - Ngành học chưa bao giờ hết hot</h3>
@@ -429,7 +427,7 @@
                             </div>
                             <div class="col-md-4 col-sm-6 fh5co-project fadeIn animate-box animated-fast"
                                 data-animate-effect="fadeIn">
-                                <a href="{{ route('chitietttkhoangoaingu') }}"><img
+                                <a href="{{-- route('chitietttkhoangoaingu') --}}"><img
                                         src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2019/05/30/tai-sao-nen-hoc-tieng-trung-thumbnail-67983.png"
                                         alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
                                     <h3>Tại sao nên học tiếng Trung</h3>
@@ -438,7 +436,7 @@
                             </div>
                             <div class="col-md-4 col-sm-6 fh5co-project fadeIn animate-box animated-fast"
                                 data-animate-effect="fadeIn">
-                                <a href="{{ route('chitietttkhoangoaingu') }}">
+                                <a href="{{-- route('chitietttkhoangoaingu') --}}">
                                     <img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2019/05/17/ky-nang-noi-tieng-anh-thumbnail-47615.jpg"
                                         alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
                                     <h3>Kỹ năng nói tiếng Anh</h3>
@@ -447,7 +445,7 @@
                             </div>
                             <div class="col-md-4 col-sm-6 fh5co-project fadeIn animate-box animated-fast"
                                 data-animate-effect="fadeIn">
-                                <a href="{{ route('chitietttkhoangoaingu') }}"><img
+                                <a href="{{-- route('chitietttkhoangoaingu') --}}"><img
                                         src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2018/08/02/van-hoa-nhat-ban-thumbnail-52187.jpg"
                                         alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
                                     <h3>Văn hóa Nhật Bản</h3>
@@ -456,7 +454,7 @@
                             </div>
                             <div class="col-md-4 col-sm-6 fh5co-project fadeIn animate-box animated-fast"
                                 data-animate-effect="fadeIn">
-                                <a href="{{ route('chitietttkhoangoaingu') }}"><img
+                                <a href="{{-- route('chitietttkhoangoaingu') --}}"><img
                                         src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2018/05/17/phuong-phap-hoc-ngoai-ngu-nhanh-va-hieu-qua-thumbnail-88759.jpg"
                                         alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
                                     <h3>Phương pháp học ngoại ngữ hiệu quả</h3>
@@ -465,7 +463,7 @@
                             </div>
                             <div class="col-md-4 col-sm-6 fh5co-project fadeIn animate-box animated-fast"
                                 data-animate-effect="fadeIn">
-                                <a href="{{ route('chitietttkhoangoaingu') }}"><img
+                                <a href="{{-- route('chitietttkhoangoaingu') --}}"><img
                                         src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2017/09/14/cu-nhan-nganh-tieng-nhat-khong-so-that-nghiep-thumbnail-23520.jpg"
                                         alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
                                     <h3>Cử nhân ngành tiếng Nhật - Không sợ thất nghiệp</h3>
@@ -473,7 +471,7 @@
                                 </a>
                             </div>
                             <div class="col-md-12 text-right button-more">
-                                <a class="text-right" href="{{ route('tintucngoaingu') }}">
+                                <a class="text-right" href="{{-- route('tintucngoaingu') --}}">
                                     <button class="button"><span>Xem thêm </span></button>
                                 </a>
                             </div>
