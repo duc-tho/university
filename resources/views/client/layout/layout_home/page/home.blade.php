@@ -168,7 +168,8 @@ $slide_str = str_replace('\\', '/', $slide_str);
                 <div class="resp-tabs-container">
                     @foreach ($image as $image_category)
                     <div class="tab-1 resp-tab-content">
-                        @foreach ($image_category['image_item'] as $image_item)
+                        @foreach ($image_category['image_group'] as $image_group)
+                        @foreach ($image_group['images'] as $image_item)
                         <div class="col-md-3 portfolio-grids">
                             <a href="{{ asset($image_item['image']) }}" data-lightbox="example-set" data-title="{{ $image_item['description'] }}">
                                 <img src="{{ asset($image_item['image']) }}" class="img-responsive zoom-img" alt="" />
@@ -177,6 +178,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
                                 </div>
                             </a>
                         </div>
+                        @endforeach
                         @endforeach
                         <div class="clearfix"></div>
                     </div>
@@ -191,15 +193,16 @@ $slide_str = str_replace('\\', '/', $slide_str);
 <!--//main-header-->
 <script type="text/javascript" src="{{ asset('dist/layout/layout_home/js/jquery.zoomslider.min.js') }}"></script>
 <!-- testimonial -->
+@foreach ($news as $key => $category)
 <div class="testimonials w3ls-section" id="team">
     <div class="container">
-        <h3 class="w3ls-title">Tin Tức</h3>
+        <h3 class="w3ls-title">{{ $category['title'] }}</h3>
         <div class="w3_testimonials_grids w3_testimonials_grids">
-            <div id="owl-demo" class="owl-carousel">
-                @foreach ($news as $item)
+            <div id="owl-news-{{ $key }}" class="owl-carousel">
+                @foreach ($category['news'] as $item)
                 <div class="item w3_agileits_testimonials_grid">
-                    <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $item['category']['slug'], $item['slug']]) }}"><img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="img-responsive" /></a>
-                    <h4><a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $item['category']['slug'], $item['slug']]) }}">{{ $item['title'] }}</a></h4>
+                    <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}"><img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="img-responsive" /></a>
+                    <h4><a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">{{ $item['title'] }}</a></h4>
                     <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
                         <i class="fa fa-clock-o" aria-hidden="true"></i> {{ date("d-m-Y", strtotime($item['created_at'])) }} &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> {{ $item['view_count'] }}
                     </div>
@@ -208,9 +211,10 @@ $slide_str = str_replace('\\', '/', $slide_str);
                 @endforeach
             </div>
         </div>
-        <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{ route('tin-tuc', [$faculty['slug']]) }}"> Các tin tức khác</a></div>
+        <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category['slug']]) }}"> Các {{ $category['title'] }} khác</a></div>
     </div>
 </div>
+@endforeach
 {{-- <img src="" alt=""> --}}
 <div class="wthree-testi w3ls-section" id="testimonials">
     <!-- container -->
@@ -387,7 +391,8 @@ $slide_str = str_replace('\\', '/', $slide_str);
 <script src="{{ asset('dist/layout/layout_home/js/owl.carousel.js') }}"></script>
 <script>
     $(document).ready(function () {
-			$("#owl-demo").owlCarousel({
+        document.querySelectorAll('[id^=owl-news-]').forEach(item => {
+            $(`#${item.id}`).owlCarousel({
 				autoPlay: true, //Set AutoPlay to 3 seconds
 				items: 3,
 				itemsDesktop: [768, 2],
@@ -408,6 +413,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
 				}
 				// END NEW PART
 			});
+        });
 
 			$("#owl-collab").owlCarousel({
 				autoPlay: 2000, //Set AutoPlay to 3 seconds

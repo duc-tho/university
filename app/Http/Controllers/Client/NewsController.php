@@ -159,7 +159,7 @@ class NewsController extends Controller
         // dd($image_category); // Bỏ comment để xem cấu trúc dữ liệu hình ảnh
 
         // lấy danh mục tin tức
-        $category = Category::where(['status' => 1, 'show_on_menu' => '0'])->orderBy('display_order', 'asc')->get();
+        $category = Category::where(['status' => 1, 'show_at_news' => '0'])->orderBy('display_order', 'asc')->get();
 
         if (!$category->isEmpty()) foreach ($category as $key => $item) {
             $news = $item->news()->orderBy('id', 'desc')->paginate(4);
