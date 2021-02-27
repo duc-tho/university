@@ -144,7 +144,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
                     <img class="boder-radius-img" src="{{asset($item['image']) }}" width="40%" alt="">
                     <h4>{{ $item['name'] }}</h4>
                 </a>
-                <p class="khoa-p">{{ $item['intro_summary'] }}</p>
+                <p class="khoa-p">{!! $item['intro_summary'] !!}</p>
             </div>
             @endforeach
             <div class="clearfix"> </div>
@@ -245,7 +245,11 @@ $slide_str = str_replace('\\', '/', $slide_str);
 <!-- contact -->
 <div class="contact-bottom w3ls-section" id="contact">
     <div class="container">
-        <h3 class="w3ls-title">Liên Hệ</h3>
+        <h3 class="w3ls-title">Liên Hệ
+            <small style="text-align: right;">
+                <a href="{{ route('lien-he', [$faculty['slug']]) }}">Xem thêm &gt;&gt;</a>
+            </small>
+        </h3>
         {{-- <p>SAIGONTU - BQLĐATL Trường Đại học Du lịch Sài Gòn </p>
                     <p> Cơ sở: 70 Đường Tân Thới Nhất 8 - Khu phố 5 - P.Tân Thới Nhất - Q.12 - Tp.HCM. </p> --}}
 

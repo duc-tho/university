@@ -34,13 +34,13 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Ngày Tạo : </label>
-                                        <input required type="date" id="created_by" name="created_by" class="form-control" placeholder="Nhập Ngày Tạo...">
+                                        <label>Người Tạo : </label>
+                                        <input required type="text" id="created_by" name="created_by" class="form-control" placeholder="Nhập Ngày Tạo...">
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Ngày Đăng : </label>
-                                        <input required type="date" id="updated_by" name="updated_by" class="form-control" placeholder="Nhập Ngày Đăng...">
+                                        <label>Người Đăng : </label>
+                                        <input required type="text" id="updated_by" name="updated_by" class="form-control" placeholder="Nhập Ngày Đăng...">
                                     </div>
 
                                     <div class="form-group">

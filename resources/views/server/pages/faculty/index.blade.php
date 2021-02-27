@@ -92,10 +92,10 @@
                                             <a>Người tạo</a>
                                         </th>
                                         <th class="text-center sorting_desc">
-                                            <a>Ngày tạo</a>
+                                            <a>Người tạo</a>
                                         </th>
                                         <th class="text-center sorting_desc">
-                                            <a>Ngày đăng</a>
+                                            <a>Người đăng</a>
                                         </th>
                                         <th class="text-center sorting">
                                             <a>Ẩn / Hiện</a>

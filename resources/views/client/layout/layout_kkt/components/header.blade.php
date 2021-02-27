@@ -8,15 +8,14 @@
                 <div class="col-lg-6">
                     <div class="header-contact text-lg-left text-center">
                         <ul>
-                            <li><img src="{{ asset('dist/layout/layout_kkt/images/all-icon/map.png') }}" alt="icon"><span>70 Tân Thới Nhất , Khu Phố 5 , P.Tân Thới Nhất , Quận 12 </span></li>
-                            <li><img src="{{ asset('dist/layout/layout_kkt/images/all-icon/email.png') }}" alt="icon"><span>info@daihocdulich.edu.vn</span></li>
+                            <li><img src="{{ asset('dist/layout/layout_kkt/images/all-icon/map.png') }}" alt="icon"><span>{{$address}} </span></li>
+                            <li><img src="{{ asset('dist/layout/layout_kkt/images/all-icon/email.png') }}" alt="icon"><span>{{$email}}</span></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="header-opening-time text-lg-right text-center">
-                        <p>Giờ hoạt động : Thứ 2 đến Thứ 6 : 8h đến 17h</p>
-                        <p>Thứ 7 : 8h đến 12h</p>
+                        {!!$time_work!!}
                     </div>
                 </div>
             </div> <!-- row -->
@@ -76,37 +75,37 @@
                                 <li class="nav-item">
                                     <a href="javascript:">Trang Chủ</a>
                                     <ul class="sub-menu">
-                                        <li><a href="{{ route('home') }}">Đại Học Du Lịch</a></li>
-                                        <li><a href="{{ route('khoakinhte') }}">Khoa Kinh tế</a></li>
+                                        <li><a href="{{route('trang-chu',['trang-chu'])}}">Đại Học Du Lịch</a></li>
+                                        <li><a href="{{route('trang-chu',['khoa-kinh-te'])}}">Khoa Kinh tế</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('khoakinhte-gioithieu') }}">Giới Thiệu</a>
+                                    <a href="{{-- route('khoakinhte-gioithieu') --}}">Giới Thiệu</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="javascript:">Đào Tạo</a>
                                     <ul class="sub-menu">
-                                        <li><a href="{{ route('khoakinhte-chitietkhoahoc') }}">Tài Chính Ngân Hàng</a></li>
-                                        <li><a href="{{ route('khoakinhte-chitietkhoahoc') }}">Quản Trị Kinh Doanh</a></li>
-                                        <li><a href="{{ route('khoakinhte-chitietkhoahoc') }}">Kế Toán</a></li>
+                                        <li><a href="{{-- route('khoakinhte-chitietkhoahoc') --}}">Tài Chính Ngân Hàng</a></li>
+                                        <li><a href="{{-- route('khoakinhte-chitietkhoahoc') --}}">Quản Trị Kinh Doanh</a></li>
+                                        <li><a href="{{-- route('khoakinhte-chitietkhoahoc') --}}">Kế Toán</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('khoakinhte-tintuc') }}">Tin Tức - Sự Kiện</a>
+                                    <a href="{{-- route('khoakinhte-tintuc') --}}">Tin Tức - Sự Kiện</a>
                                     {{-- <ul class="sub-menu">
                                         <li><a href="tintucnhom.html">Events</a></li>
                                         <li><a href="tintucdon.html">Event Singel</a></li>
                                     </ul> --}}
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('home-teacher') }}">Giảng Viên</a>
+                                    <a href="{{-- route('home-teacher') --}}">Giảng Viên</a>
                                     {{-- <ul class="sub-menu">
                                         <li><a href="teachers.html">teachers</a></li>
                                         <li><a href="teachers-singel.html">teacher Singel</a></li>
                                     </ul> --}}
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('khoakinhte-lienhe') }}">Liên Lạc</a>
+                                    <a href="{{route('lien-he',['khoa-kinh-te'])}}">Liên Lạc</a>
                                 </li>
                             </ul>
                         </div>

@@ -75,3 +75,12 @@
 .blog-content img {
     width: 100%;
 }
+
+.ndt__section--title {
+    border-bottom: #dbdbdb solid 1px; height: 28px;
+    margin-bottom: 2px;
+}
+
+.ndt__section--title h3 a {
+    font-size: 20px;
+}

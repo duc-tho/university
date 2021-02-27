@@ -15,6 +15,7 @@ use App\Models\Slide;
 use App\Models\Socials;
 use App\Models\Specialized;
 use App\Models\Statistics;
+use App\Models\StudentRepresentative;
 use App\Models\TeacherRepresentative;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -34,7 +35,7 @@ class HomeController extends Controller
         $faculty_id = $faculty['id'];
 
         $layout_name = $faculty['layout_name'];
-
+        //thời gian làm việc 
         // Lấy danh sách khoa kèm url
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
 
@@ -65,7 +66,8 @@ class HomeController extends Controller
         // Lấy hình ảnh và danh mục hình
         $image_category = ImageCategory::where(['status' => 1])->get();
         if (!$image_category->isEmpty()) foreach ($image_category as $key => $item) {
-            $item['image_item'] = $item->images;
+            $image = $item->images;
+            if (!$image->isEmpty()) $item['image_item'] = $item->images()->paginate(8);
         }
 
         // Lấy menu
@@ -79,6 +81,9 @@ class HomeController extends Controller
 
         // lấy giáo viên tiêu biểu
         $teacher = TeacherRepresentative::where(['status' => 1])->get();
+
+        // lấy sinh viên tiêu biểu
+        $student = StudentRepresentative::where(['status' => 1])->get();
 
         // lấy các liên kết qua trang khác ở footer
         $footer_link = FooterLinkCategory::where(['status' => 1])->get();
@@ -105,13 +110,43 @@ class HomeController extends Controller
             'slogan_nn'=>getSettingValue($settings,'slogan_nn'),
             'sub_slogan_nn'=>getSettingValue($settings,'sub_slogan_nn'),
             'time_work' => getSettingValue($settings, 'time_work'),
+            'address' => $contact['address_info'],
+
             'logo' => getSettingValue($settings, 'logo'),
             'slogan_top' => getSettingValue($settings, 'slogan_top'),
             'slogan_main' => getSettingValue($settings, 'slogan_main'),
             'slogan_bottom' => getSettingValue($settings, 'slogan_bottom'),
+            'slogan_route' => getSettingValue($settings, 'slogan_route'), //
+            'time' => getSettingValue($settings, 'time'),
+            'spline' => getSettingValue($settings, 'spline'),
+
+            //Start Khoa Du Lịch
+            'logo_travel' => getSettingValue($settings, 'logo_travel'),
+            'slogan_main_travel' => getSettingValue($settings, 'slogan_main_travel'),
+            'slogan_intro_travel' => getSettingValue($settings, 'slogan_intro_travel'),
+            'slogan_intro_travel2' => getSettingValue($settings, 'slogan_intro_travel2'),
+            'slogan_intro_travel3' => getSettingValue($settings, 'slogan_intro_travel3'),
+            'slogan_intro_travel4' => getSettingValue($settings, 'slogan_intro_travel4'),
+            'slogan_intro_travel5' => getSettingValue($settings, 'slogan_intro_travel5'),
+            'name' => getSettingValue($specialized, 'name'),
+            'intro' => getSettingValue($specialized, 'intro'),
+            //End Khoa Du Lịch
+
+
+            //start khoa kinh tế 
+            'time_work' => getSettingValue($settings, 'time-work'),
+
+            //end khoa kinh tế
+
+            'admission_title' => getSettingValue($settings, 'email'),
+            'admission_description' => getSettingValue($settings, 'email'),
+            'admission_route' => getSettingValue($settings, 'email'),
+
             'intro_image' => getSettingValue($settings, 'intro_image'),
             'intro_video' => getSettingValue($settings, 'intro_video'),
             'intro_route' => getSettingValue($settings, 'intro_route') == null ? route('gioi-thieu', [$faculty['slug']]) : getSettingValue($settings, 'intro_route'),
+
+
             'intro_short' => $faculty['intro_summary'],
             'intro_statistic' => $statistic,
             'menu' => $menu,
@@ -124,9 +159,8 @@ class HomeController extends Controller
             // 'student_comment_name' => ,
             // 'student_comment_type' => ,
 
-            //box
-
             'teacher' => $teacher,
+            'student' => $student,
             'image' => $image_category,
             'news' => $news,
             'collab_logo' => $collab_logo,
@@ -138,12 +172,10 @@ class HomeController extends Controller
 
     public function postAdmissionsRegister(Request $request)
     {
-        // $data = $request->all();
-        // dd($data);
         $data['info'] = $request->all();
         $email = $request->email;
         Mail::send('client.layout.layout_tuyensinh.email', $data, function ($message) use ($email) {
-            $message->from('thopk007113@gmail.com', 'Ngô Đức Thọ');
+            $message->from('ngoclap585@gmail.com', 'Lương Ngọc Lập');
             $message->to($email, $email);
             $message->cc('ngoclap585@gmail.com', 'Lương Ngọc Lập');
             $message->subject('Xác nhận đăng kí thông tin tuyển sinh SAIGON_ACT');

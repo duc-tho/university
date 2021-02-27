@@ -34,13 +34,13 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Ngày Tạo : </label>
-                                        <input required type="date" id="created_by" name="created_by" value="{{$teacher->created_by}}" class="form-control" placeholder="Nhập trang layout...">
+                                        <label>Người Tạo : </label>
+                                        <input required type="text" id="created_by" name="created_by" value="{{$teacher->created_by}}" class="form-control" placeholder="Nhập trang layout...">
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Ngày Đăng : </label>
-                                        <input required type="date" id="updated_by" name="updated_by" value="{{$teacher->updated_by}}" class="form-control" placeholder="Nhập trang layout...">
+                                        <label>Người Đăng : </label>
+                                        <input required type="text" id="updated_by" name="updated_by" value="{{$teacher->updated_by}}" class="form-control" placeholder="Nhập trang layout...">
                                     </div>
 
                                     <div class="form-group">

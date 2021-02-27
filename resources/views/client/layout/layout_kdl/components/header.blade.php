@@ -23,7 +23,7 @@
             <!-- <a class="navbar-brand" href="index.html"></a>	<img src="images/logo.png" alt="Logo" style="width:40%; height: auto;"></a> -->
 
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('dist/layout/layout_khoadulich/images/logo.png') }}" style="width: 40%;" />
+                <img src="{{$logo_travel}}" style="width: 40%;" />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,13 +33,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto" id="navwidth">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('khoadulich') }}">Trang Chủ</a>
+
+                        <a class="nav-link" href="#">Trang Chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('gioithieu') }}">Giới Thiệu</a>
+
+                        <a class="nav-link" href="#">Giới Thiệu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('tintuc') }}">Tin Tức</a>
+                        {{-- <a class="nav-link" href="{{ route('tintuc') }}">Tin Tức</a> --}}
+                        <a class="nav-link" href="#">Tin Tức</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -47,10 +50,11 @@
                         </a>
                         <div class="dropdown-menu">
                             {{-- <a class="dropdown-item" href="introdution.html">Giới Thiệu</a> --}}
-                            <a class="dropdown-item" href="{{ route('quantrikhachsan') }}">Ngành quản trị khách sạn</a>
-                            <a class="dropdown-item" href="{{ route('quantrinhahang') }}">Ngành quản trị nhà hàng và
+                            {{-- <a class="dropdown-item" href="{{ route('quantrikhachsan') }}">Ngành quản trị khách sạn</a> --}}
+                            <a class="dropdown-item" href="#">Ngành quản trị khách sạn</a>
+                            <a class="dropdown-item" href="#">Ngành quản trị nhà hàng và
                                 dịch vụ ăn uống</a>
-                            <a class="dropdown-item" href="{{ route('quantridulich') }}">Ngành quản trị du lịch và lữ
+                            <a class="dropdown-item" href="#">Ngành quản trị du lịch và lữ
                                 hành</a>
                         </div>
                     </li>
@@ -59,17 +63,17 @@
                             Sinh Viên
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ route('thuctap') }}">Thực tập</a>
-                            <a class="dropdown-item" href="{{ route('thongbao') }}">Thông Báo</a>
+                            <a class="dropdown-item" href="#">Thực tập</a>
+                            <a class="dropdown-item" href="#">Thông Báo</a>
                             {{-- <a class="dropdown-item" href="{{route('thongbao')}}">Bảng Tin Khoa</a> --}}
                             <a class="dropdown-item" href="javascription:">Đăng Nhập hệ thống sinh viên</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home-teacher') }}">Giảng Viên</a>
+                        <a class="nav-link" href="#">Giảng Viên</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('lienhe') }}">Liên Hệ</a>
+                        <a class="nav-link" href="#">Liên Hệ</a>
                     </li>
                 </ul>
             </div>
