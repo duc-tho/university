@@ -140,8 +140,6 @@ class HomeController extends Controller
             'intro_image' => getSettingValue($settings, 'intro_image'),
             'intro_video' => getSettingValue($settings, 'intro_video'),
             'intro_route' => getSettingValue($settings, 'intro_route') == null ? route('gioi-thieu', [$faculty['slug']]) : getSettingValue($settings, 'intro_route'),
-
-
             'intro_short' => $faculty['intro_summary'],
             'intro_statistic' => $statistic,
             'menu' => $menu,
