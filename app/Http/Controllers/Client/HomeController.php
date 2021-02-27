@@ -132,12 +132,6 @@ class HomeController extends Controller
             'intro' => getSettingValue($specialized, 'intro'),
             //End Khoa Du Lịch
 
-
-            //start khoa kinh tế 
-            'time_work' => getSettingValue($settings, 'time-work'),
-
-            //end khoa kinh tế
-
             'admission_title' => getSettingValue($settings, 'email'),
             'admission_description' => getSettingValue($settings, 'email'),
             'admission_route' => getSettingValue($settings, 'email'),
