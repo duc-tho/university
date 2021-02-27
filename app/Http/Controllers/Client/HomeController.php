@@ -46,7 +46,7 @@ class HomeController extends Controller
 
         // Lấy danh sách ngành kèm url
         $specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
-
+        $all_specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
         if (!$specialized->isEmpty()) foreach ($specialized as $key => $item) {
             $item['url'] = route('dao-tao-chi-tiet', [$faculty['slug'], $item['slug']]);
         }
@@ -68,6 +68,8 @@ class HomeController extends Controller
 
         // Lấy hình ảnh và danh mục hình
         $image_category = ImageCategory::where(['status' => 1])->get();
+
+
         if (!$image_category->isEmpty()) foreach ($image_category as $key => $item) {
             $image = $item->images;
             if (!$image->isEmpty()) $item['image_item'] = $item->images()->paginate(8);
@@ -150,8 +152,16 @@ class HomeController extends Controller
             'faculty' => $faculty,
             'all_faculty' => $all_faculty,
             'footer_faculty' => $footer_faculty,
+            'all_specialized' => $all_specialized,
             'specialized' => $specialized,
+            //Start Khoa DU Lich
 
+            'logo_travel' => getSettingValue($settings, 'logo_travel'),
+            'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),
+            'footer_email_travel' => getSettingValue($settings, 'footer_email_travel'),
+            'footer_website_travel' => getSettingValue($settings, 'footer_website_travel'),
+            'footer_address_travel' => getSettingValue($settings, 'footer_address_travel'),
+            //End Khoa Du Lịch
             // 'student_comment_content' => ,
             // 'student_comment_name' => ,
             // 'student_comment_type' => ,

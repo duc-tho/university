@@ -49,11 +49,14 @@
                         <div class="dropdown-menu">
                         <a class="dropdown-item" href="introdution.html"></a>
                             {{-- <a class="dropdown-item" href="{{ route('quantrikhachsan') }}">Ngành quản trị khách sạn</a> --}}
-                            <a class="dropdown-item" href="{{route('dao-tao-chi-tiet', [$faculty['slug'],'nghanh-quan-tri-khach-san'])}}">Ngành quản trị khách sạn</a>
+                            @foreach ($all_specialized as $item)
+                                    <a class="dropdown-item" href="{{route('dao-tao-chi-tiet', [$faculty['slug'],$item->slug])}}">{{$item->name}}</a>
+                            @endforeach
+                            {{-- <a class="dropdown-item" href="{{route('dao-tao-chi-tiet', [$faculty['slug'],'nghanh-quan-tri-khach-san'])}}">Ngành quản trị khách sạn</a>
                             <a class="dropdown-item" href="{{route('dao-tao-chi-tiet', [$faculty['slug'],'nghanh-quan-tri-nha-hang-va-dich-vu-an-uong'])}}">Ngành quản trị nhà hàng và
                                 dịch vụ ăn uống</a>
                             <a class="dropdown-item" href="{{route('dao-tao-chi-tiet', [$faculty['slug'],'nghanh-quan-tri-du-lich-valu-hanh'])}}">Ngành quản trị du lịch và lữ
-                                hành</a>
+                                hành</a> --}}
                         </div>
                     </li>
                     <li class="nav-item dropdown">

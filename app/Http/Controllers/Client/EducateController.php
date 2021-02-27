@@ -11,11 +11,12 @@ use App\Models\FooterLinkCategory;
 use App\Models\Settings;
 use App\Models\Socials;
 use App\Models\Specialized;
+use App\Models\TeacherRepresentative;
 use Illuminate\Http\Request;
 
 class EducateController extends Controller
 {
-    public function detail(Request $request, $khoa)
+    public function detail(Request $request, $khoa, $nganh)
     {
 
         $faculty = Faculty::where(['status' => 1, 'slug' => $khoa])->first();
@@ -25,7 +26,7 @@ class EducateController extends Controller
         $layout_name = $faculty['layout_name'];
 
         $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty['id']])->get();
-
+        $teacher = TeacherRepresentative::where(['status' => 1])->get();
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
         if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
             $item['url'] = route('trang-chu', [$item['slug']]);
@@ -47,9 +48,12 @@ class EducateController extends Controller
         }
 
         // Lấy danh sách ngành kèm url
-        $specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        $all_specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
 
-        if (!$specialized->isEmpty()) foreach ($specialized as $key => $item) {
+        $specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id, 'slug' => $nganh])->first();
+
+
+        if (!$all_specialized->isEmpty()) foreach ($all_specialized as $key => $item) {
             $item['url'] = route('dao-tao-chi-tiet', [$faculty['slug'], $item['slug']]);
         }
         // Lấy các icon mạng xã hội
@@ -66,20 +70,25 @@ class EducateController extends Controller
         return view('client.layout.layout_kdl.page.educate', [
             'logo' => getSettingValue($settings, 'logo'),
             'copyright' => getSettingValue($settings, 'copyright'),
-
+            'teacher' => $teacher,
             'footer_link' => $footer_link,
             'socials_icon' => $socials_icon,
             'faculty' => $faculty,
             'category' => $category,
+            'all_specialized' => $all_specialized,
+            'specialized' => $specialized,
             //Start Khoa DU Lich
             'logo_travel' => getSettingValue($settings, 'logo_travel'),
             'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),
             'footer_email_travel' => getSettingValue($settings, 'footer_email_travel'),
             'footer_website_travel' => getSettingValue($settings, 'footer_website_travel'),
             'footer_address_travel' => getSettingValue($settings, 'footer_address_travel'),
+            'footer_address_travel' => getSettingValue($settings, 'footer_address_travel'),
+            'slogan_teacher_educate' => getSettingValue($settings, 'slogan_teacher_educate'),
             //End Khoa Du Lịch
             'footer_faculty' => $footer_faculty,
-            'specialized' => $specialized,
+            'all_specialized' => $all_specialized,
+
 
         ]);
     }

@@ -10,6 +10,7 @@ use App\Models\Faculty;
 use App\Models\FooterLinkCategory;
 use App\Models\Settings;
 use App\Models\Socials;
+use App\Models\Specialized;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -24,7 +25,8 @@ class AboutController extends Controller
         $layout_name = $faculty['layout_name'];
 
         $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty['id']])->get();
-
+        $specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        $all_specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
         // Lấy menu
         $menu = Category::where([
             'status' => '1',
@@ -75,13 +77,15 @@ class AboutController extends Controller
             'footer_link' => $footer_link,
             'socials_icon' => $socials_icon,
             'about' => $about_category,
-
+            'all_specialized' => $all_specialized,
+            'specialized' => $specialized,
             //Start Khoa DU Lich
             'logo_travel' => getSettingValue($settings, 'logo_travel'),
             'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),
             'footer_email_travel' => getSettingValue($settings, 'footer_email_travel'),
             'footer_website_travel' => getSettingValue($settings, 'footer_website_travel'),
             'footer_address_travel' => getSettingValue($settings, 'footer_address_travel'),
+
             //End Khoa Du Lịch
             'footer_faculty' => $footer_faculty,
         ]);

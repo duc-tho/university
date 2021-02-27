@@ -77,7 +77,7 @@
                         <div class="three-grids-columns">
                             <span class="{{ $item->icons }}" id="faicon"></span>
                             <h4>{{ $item->name }}</h4>
-                            <p>{{ $item->intro }}
+                            <p>{{ $item->intro_summary }}
                             </p>
                             {{-- <a href="{{ route('quantrikhachsan') }}" class="btn btn-secondary btn-theme3 mt-4">Đọc thêm </a> --}}
                             <a href="#" class="btn btn-secondary btn-theme3 mt-4">Đọc thêm </a>
@@ -121,12 +121,7 @@
                         <a class="btn btn-secondary btn-theme2 mt-3" href="#"> Đọc Thêm</a>
                     </div>
                     <div class="column ccont-left col-lg-6">
-                        @foreach ($image_category as $item)
-                            @if ($item->faculty_id == 3)
-                                <img src="{{ asset($item['link']) }}" class="img-responsive" alt="">
-                            @endif
-                        @endforeach
-
+                        <img src="{{ asset($image_category->link) }}" class="img-responsive" alt="">
                     </div>
                 </div>
             </div>
