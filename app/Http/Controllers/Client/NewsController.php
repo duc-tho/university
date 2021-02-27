@@ -15,9 +15,10 @@ class NewsController extends Controller
             'A', 'B', 'C', 'D'
         ];
 
-        return view('client.layout.' . $layout_name . '.page.home', [
-            'mock' => $data
-        ]);
+        // return view('client.layout.' . $layout_name . '.page.news', [
+        //     'mock' => $data
+        // ]);
+        return view('client.layout.layout_kdl.page.news');
     }
 
     public function detail(Request $request)

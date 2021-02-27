@@ -38,6 +38,7 @@ class HomeController extends Controller
 
         // Lấy danh sách khoa kèm url
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
+        $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
 
         if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
             $item['url'] = route('trang-chu', [$item['slug']]);
@@ -57,8 +58,10 @@ class HomeController extends Controller
         $collab_logo = CollabLogo::all();
 
         // Lấy tin tức
-        $news = News::where(['status' => 1])->paginate(10);
+        // $notifice = Category::where(['slug', $slug])->first();
+        // $news = News::where(['category_id' => $notifice->id, 'status'=>1])->paginate(11);
 
+        $news = News::where(['status'=>1])->paginate(11);
         if (!$news->isEmpty()) foreach ($news as $key => $item) {
             $item['category'] = $item->category;
         }
@@ -123,8 +126,14 @@ class HomeController extends Controller
             'slogan_intro_travel3' => getSettingValue($settings, 'slogan_intro_travel3'),
             'slogan_intro_travel4' => getSettingValue($settings, 'slogan_intro_travel4'),
             'slogan_intro_travel5' => getSettingValue($settings, 'slogan_intro_travel5'),
-            'name' => getSettingValue($specialized,'name'),
-            'intro' => getSettingValue($specialized,'intro'),
+
+            'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),
+            'footer_email_travel' => getSettingValue($settings, 'footer_email_travel'),
+            'footer_website_travel' => getSettingValue($settings, 'footer_website_travel'),
+            'footer_address_travel' => getSettingValue($settings, 'footer_address_travel'),
+
+            'name' => getSettingValue($specialized, 'name'),
+            'intro' => getSettingValue($specialized, 'intro'),
             //End Khoa Du Lịch
 
 
@@ -134,6 +143,7 @@ class HomeController extends Controller
 
             'intro_image' => getSettingValue($settings, 'intro_image'),
             'intro_video' => getSettingValue($settings, 'intro_video'),
+            'intro_image_travel' => getSettingValue($settings, 'intro_image_travel'),
             'intro_route' => getSettingValue($settings, 'intro_route') == null ? route('gioi-thieu', [$faculty['slug']]) : getSettingValue($settings, 'intro_route'),
             'google_map_link' => getSettingValue($settings, 'google_map_link'),
 
@@ -144,6 +154,7 @@ class HomeController extends Controller
             'slide' => $slide,
             'faculty' => $faculty,
             'all_faculty' => $all_faculty,
+            'footer_faculty' => $footer_faculty,
             'specialized' => $specialized,
 
             // 'student_comment_content' => ,

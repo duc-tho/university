@@ -49,11 +49,12 @@ class ContactController extends Controller
         if (!$about_category->isEmpty()) foreach ($about_category as $key => $item) {
             $item['link'] = route('gioi-thieu-chi-tiet', [$faculty['slug'], $item['slug']]);
         }
-
+        $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty['id']])->first();
 
-        return view('client.layout.'.$layout_name.'.page.contact', [
+        return view('client.layout.layout_kdl.page.contact', [
+
             'phone' => $contact['phone'],
             'email' => $contact['email'],
             'hotline' => $contact['hotline'],
@@ -66,6 +67,15 @@ class ContactController extends Controller
             'menu' => $menu,
             'footer_link' => $footer_link,
             'socials_icon' => $socials_icon,
+            'faculty' => $faculty,
+            //Start Khoa DU Lich
+            'logo_travel' => getSettingValue($settings, 'logo_travel'),
+            'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),
+            'footer_email_travel' => getSettingValue($settings, 'footer_email_travel'),
+            'footer_website_travel' => getSettingValue($settings, 'footer_website_travel'),
+            'footer_address_travel' => getSettingValue($settings, 'footer_address_travel'),
+            //End Khoa Du Lịch
+            'footer_faculty' => $footer_faculty,
         ]);
     }
 }

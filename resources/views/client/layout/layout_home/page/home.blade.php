@@ -334,7 +334,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
     <div class="col-md-6 col-sm-4 agileinfo-icons">
         <ul>
             @foreach ($socials_icon as $item)
-            <li><a class="icon" href="{{ checkURL($item['link']) }}"><i class="fa fa-{{ $item['fa_icon'] }}"></i></a></li>
+                <li><a class="icon" href="{{ checkURL($item['link']) }}"><i class="fa fa-{{ $item['fa_icon'] }}"></i></a></li>
             @endforeach
         </ul>
     </div>

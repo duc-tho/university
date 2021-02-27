@@ -144,7 +144,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-12 col-md-6 khoa-hover" data-aos="fade-up" data-aos-delay="70">
+                    <div class="col-lg-12 col-md-6 " data-aos="fade-up" data-aos-delay="70">
                         <img src="{{ asset('dist/layout/layout_tuyensinh/img/LandingPage02.png') }}" alt="Avatar" class="image">
                         {{-- <a href="route('khoadulich')" target="_blank">
                             <div class="middle">

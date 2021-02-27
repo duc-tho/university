@@ -6,25 +6,30 @@
                     <h6 class="footer-title-29">Liên Hệ</h6>
                     <ul>
                         <li>
-                            <p><span class="fa fa-map-marker"></span> Khoa Du lịch - Lầu 1
-
-                                Cơ sở 2: 53/1 Phan Văn Hớn, Đường Tân Thới Nhất 8, Khu phố 5, P.Tân Thới Nhất,
-                                Q.12-Tp.HCM.</p>
+                            <p><span class="fa fa-map-marker"></span>
+                            {{$footer_address_travel}}
+                            </p>
                         </li>
-                        <li><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span>(028) 628 614 62</a></li>
+                        <li><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span>{{$footer_phone_travel}}</a></li>
                         <li><a href="mailto:corporate-mail@support.com" class="mail"><span
                                     class="fa fa-envelope-open-o"></span>
-                                khoadulich@daihocdulich.edu.vn</a></li>
+                                    {{$footer_email_travel}}</a></li>
                         <li><a href="mailto:corporate-mail@support.com" class="mail"><span
                                     class="fa fa-envelope-open-o"></span>
-                                Website: http://khoadulich.daihocdulich.edu.vn</a></li>
+                                    {{$footer_website_travel}}</a></li>
                     </ul>
                     <div class="main-social-footer-29">
-                        <a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a>
-                        <a href="#twitter" class="twitter"><span class="fa fa-twitter"></span></a>
-                        <a href="#instagram" class="instagram"><span class="fa fa-instagram"></span></a>
-                        <a href="#google-plus" class="google-plus"><span class="fa fa-google-plus"></span></a>
-                        <a href="#linkedin" class="linkedin"><span class="fa fa-linkedin"></span></a>
+                        {{-- @foreach (socials_icon as $item)
+
+                        @endforeach
+                        <a href="#facebook" ><span class="fa fa-facebook"></span></a>
+                        <a href="#twitter" ><span class="fa fa-twitter"></span></a>
+                        <a href="#instagram" ><span class="fa fa-instagram"></span></a>
+                        <a href="#google-plus"><span class="fa fa-google-plus"></span></a>
+                        <a href="#linkedin" ><span class="fa fa-linkedin"></span></a> --}}
+                        @foreach ($socials_icon as $item)
+                            <a href="#facebook" ><span class="fa fa-{{$item->fa_icon}}"></span></a>
+                        @endforeach
                     </div>
                 </div>
                 <div class="footer-list-29 footer-2">
@@ -53,10 +58,9 @@
                 <div class="footer-list-29 footer-4">
                     <ul>
                         <h6 class="footer-title-29">Liên Kết Khác</h6>
-                        <li><a href="#">Khoa Nghệ Thuật</a></li>
-                        <li><a href="#">Khoa Ngoại Ngữ</a></li>
-                        <li><a href="#">Khoa Kinh Tế</a></li>
-                        <li><a href="#">Khoa Du Lịch</a></li>
+                        @foreach ($footer_faculty as $item)
+                            <li><a href="#">{{$item->name}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
