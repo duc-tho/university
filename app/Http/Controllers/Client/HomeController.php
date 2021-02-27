@@ -38,6 +38,7 @@ class HomeController extends Controller
         //thời gian làm việc
         // Lấy danh sách khoa kèm url
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
+        $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
 
         if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
             $item['url'] = route('trang-chu', [$item['slug']]);
@@ -65,6 +66,7 @@ class HomeController extends Controller
             if (!$news->isEmpty()) $item['news'] = $news;
         }
 
+        // dd($category);
 
         // // Lấy hình ảnh và danh mục hình
         // $image_category = ImageCategory::where(['status' => 1])->get();
@@ -155,6 +157,7 @@ class HomeController extends Controller
 
             'intro_image' => getSettingValue($settings, 'intro_image'),
             'intro_video' => getSettingValue($settings, 'intro_video'),
+            'intro_image_travel' => getSettingValue($settings, 'intro_image_travel'),
             'intro_route' => getSettingValue($settings, 'intro_route') == null ? route('gioi-thieu', [$faculty['slug']]) : getSettingValue($settings, 'intro_route'),
             'intro_short' => $faculty['intro_summary'],
             'intro_statistic' => $statistic,
@@ -162,6 +165,7 @@ class HomeController extends Controller
             'slide' => $slide,
             'faculty' => $faculty,
             'all_faculty' => $all_faculty,
+            'footer_faculty' => $footer_faculty,
             'specialized' => $specialized,
 
             // 'student_comment_content' => ,

@@ -5,7 +5,7 @@
     <div class="breadcrum-bg py-sm-5 py-4">
         <div class="container py-lg-3">
             <h2>Giới Thiệu</h2>
-            <p><a href="{{route('khoadulich')}}">Trang Chủ</a> &nbsp; / &nbsp; Giới thiệu</p>
+            <p><a href="#">Trang Chủ</a> &nbsp; / &nbsp; Giới thiệu</p>
         </div>
     </div>
 </section>
@@ -14,23 +14,20 @@
     <div id="content-with-photo4-block" class="pt-5">
         <div class="container py-md-5">
             <div class="cwp4-two row">
-
+                @foreach ( $about as $item )
                 <div class="cwp4-text col-lg-6">
-                    <h3>Giới Thiệu Về Khoa Du Lịch</h3>
-                    <p>Khoa Du lịch – BQLĐATL Trường Đại học Du lịch Sài Gòn ra đời mở ra cơ hội tốt hơn cho người học có điều kiện học tập ở trình độ cao thuộc các chuyên ngành du lịch, góp phần nâng cao chất lượng nguồn nhân lực du lịch, cải thiện chất lượng dịch vụ, nâng cao khả năng cạnh tranh của doanh nghiệp và của ngành, nâng cao danh tiếng, uy tín và hình ảnh của du lịch miền Nam nói riêng và Du lịch Việt Nam nói chung.
-                    </p>
 
-                    <ul class="cont-4">
-                        <li><span class="fa fa-check"></span>Chức năng: Khoa Du lịch là đơn vị quản lý hành chính cơ sở của Trường</li>
-                        <li><span class="fa fa-check"></span>Nhiệm vụ: Khoa Du lịch có nhiệm vụ xây dựng kế hoạch và tổ chức </li>
-                        <li><span class="fa fa-check"></span>Khoa Du lịch bậc Đại học gồm có 3 ngành: Quản trị dịch vụ du lịch và lữ hành, Quản trị nhà hàng và dịch vụ ăn uống, Quản trị khách sạn</li>
-                        <li><span class="fa fa-check"></span>Sự ra đời của Khoa Du lịch – BQLĐATL Trường Đại học Du lịch Sài Gòn cũng tạo thêm cơ hội để khai thác hiệu quả hơn các nguồn lực hiện có của BQLĐATL</li>
-                    </ul>
+                    @if( $item->id==1 )
+                        <h3>{{$item->intro_title}}</h3>
+                        <p>
+                            {{$item->intro}}
+                        </p>
+                    @endif
                 </div>
                 <div class="cwp4-image col-lg-6 pl-lg-5 mt-lg-0 mt-5">
-                    <img src="{{asset('dist/layout/layout_khoadulich/images/20181227183631-48113.jpg')}}" class="img-fluid" alt="" />
-
+                    <img src="{{asset($item->image)}}" class="img-fluid" alt="" />
                 </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -43,31 +40,40 @@
 
             <div class="fea-gd-vv row ">
                 <div class="float-lt feature-gd col-lg-4 col-sm-6">
-
-                    <div class="icon-info">
-                        <h5>Đào Tạo</h5>
-                        <p>Khoa Du lịch bậc Đại học gồm có 3 ngành: Quản trị dịch vụ du lịch và lữ hành, Quản trị nhà hàng và dịch vụ ăn uống, Quản trị khách sạn; bậc Cao đẳng gồm 4 ngành: Quản trị khách sạn, Quản trị lữ hành, Quản trị dịch vụ du lịch và lữ hành, Hướng dẫn viên du lịch; bậc Trung cấp chuyên nghiệp gồm 3 ngành: Hướng dẫn viên du lịch, Nghiệp vụ Nhà hàng - Khách sạn, Quản trị lữ hành. Đây được xem là những ngành nghề thu hút nhân lực hiện nay và được mệnh danh là ngành "công
-                            nghiệp không khói".
-                        </p>
-                    </div>
+                    @foreach ( $about as $item )
+                        @if( $item->id==2 )
+                        <div class="icon-info">
+                            <h5>{{$item->intro_title}}</h5>
+                            <p>{{$item->intro}}
+                            </p>
+                        </div>
+                        @endif
+                    @endforeach
 
                 </div>
                 <div class="float-mid feature-gd col-lg-4 col-sm-6 mt-sm-0 mt-4">
 
+                    @foreach ( $about as $item )
+                    @if( $item->id==3 )
                     <div class="icon-info">
-                        <h5>Sứ mệnh</h5>
-                        <p>Khoa du lịch – BQLĐATL Trường Đại học Du lịch Sài Gòn có sứ mệnh đào tạo cho xã hội nguồn nhân lực chất lượng cao, phục vụ sự nghiệp phát triển văn hóa dân tộc nói riêng và sự nghiệp công nghiệp hóa, hiện đại hóa đất nước; góp phần nâng cao dân trí, đào tạo nhân lực, bồi dưỡng nhân tài cho đất nước.
+                        <h5>{{$item->intro_title}}</h5>
+                        <p>{{$item->intro}}
                         </p>
                     </div>
+                    @endif
+                @endforeach
                 </div>
                 <div class="float-rt feature-gd col-lg-4 col-sm-6 mt-lg-0 mt-4">
 
-                    <div class="icon-info">
-                        <h5>Tầm nhìn</h5>
-                        <p>Với tầm nhìn: “Xây dựng Khoa Du lịch – BQLĐATL Trường Đại học Du lịch Sài Gòn thành địa chỉ đào tạo, nghiên cứu và cung ứng dịch vụ khoa học công nghệ có chất lượng và uy tín trong lĩnh vực kinh tế và kinh doanh du lịch, đáp ứng nhu cầu về nguồn nhân lực du lịch có chất lượng cao và từng bước tiếp cận chuẩn mực quốc tế”. Khoa Du lịch – BQLĐATL Trường Đại Học Du lịch Sài Gòn đặc biệt chú trọng đến chất lượng đào tạo, nghiên cứu khoa học và hợp tác quốc tế trên cơ sở
-                            nguồn lực vững mạnh của BQLĐATL Trường Đại Học Du lịch Sài Gòn – “một trong những trung tâm đào tạo, nghiên cứu, đầu mối giao lưu văn hoá, khoa học, giáo dục lớn nhất ở Miền Nam”.
-                        </p>
-                    </div>
+                    @foreach ( $about as $item )
+                        @if( $item->id==4 )
+                        <div class="icon-info">
+                            <h5>{{$item->intro_title}}</h5>
+                            <p>{{$item->intro}}
+                            </p>
+                        </div>
+                        @endif
+                    @endforeach
                 </div>
 
             </div>
@@ -75,7 +81,7 @@
     </div>
     <!-- //features -->
 </section>
-<section class="w3l-feature-2">
+{{-- <section class="w3l-feature-2">
     <div class="grid top-bottom py-5">
         <div class="container py-md-5">
             <div class="heading text-center mx-auto">
@@ -107,8 +113,8 @@
             </div>
         </div>
     </div>
-</section>
-<section class="teams-1">
+</section> --}}
+{{-- <section class="teams-1">
     <section class="teams text-center py-5" id="team">
         <div class="container py-xl-5 py-lg-3">
             <div class="heading text-center mx-auto">
@@ -233,11 +239,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <a href="{{route('home-teacher')}}">
+                    <a href="#">
                         <button class="button"><span>Giảng Viên</span></button>
                     </a>
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     @stop
