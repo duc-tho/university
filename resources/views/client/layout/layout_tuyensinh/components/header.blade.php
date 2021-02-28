@@ -19,12 +19,8 @@
     <div class="container d-flex">
 
         <div class="logo mr-auto">
-            <a href="/"><img src="{{ asset('dist/layout/layout_tuyensinh/img/logodean.png') }}" alt="Logo"
+            <a href="/"><img src="{{ asset('dist/layout/layout_tuyensinh/img/logo truong-04 (1sssss).png') }}" alt="Logo"
                     class="img-fluid"></a>
-                    <span>
-                        <a href="/"><img src="{{ asset('dist/layout/layout_tuyensinh/img/logocaodang.png') }}" alt="Logo"
-                            class="img-fluid"></a>
-                    </span>
         </div>
         {{-- <nav class="nav-menu d-none d-lg-block">
             <ul>

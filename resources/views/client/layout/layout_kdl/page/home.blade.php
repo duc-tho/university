@@ -73,15 +73,11 @@
             <div class="container">
 
                 <div class="middle-section grid-column text-center">
-                    @foreach ($specialized as $item)
+                    @foreach ($all_specialized as $item)
                         <div class="three-grids-columns">
-                            @foreach ($socials_icon as $icon)
-                                @if ($icon->id == 6)
-                                    <span class="{{ $icon->fa_icon }}" id="faicon"></span>
-                                @endif
-                            @endforeach
+                            <span class="{{ $item->icons }}" id="faicon"></span>
                             <h4>{{ $item->name }}</h4>
-                            <p>{{ $item->intro }}
+                            <p>{{ $item->intro_summary }}
                             </p>
                             {{-- <a href="{{ route('quantrikhachsan') }}" class="btn btn-secondary btn-theme3 mt-4">Đọc thêm </a> --}}
                             <a href="#" class="btn btn-secondary btn-theme3 mt-4">Đọc thêm </a>
@@ -115,22 +111,16 @@
 
                 <div class="calltoaction-20-content row">
                     <div class="column center-align-self col-lg-6 pr-lg-5">
-                        @foreach ($images as $item)
-                            @if ($item->image_category_id == 2)
-                                <h5 class="editContent">{{ $item->title }}</h5>
-                                <p class="more-gap editContent">{{ $item->description }}</p>
-                            @endif
-                        @endforeach
+                        <h5 class="editContent">{{ $faculty['name']}}</h5>
+                        <p class="more-gap editContent">{!! $faculty['intro_summary'] !!}</p>
+
+
+
                         {{-- <a class="btn btn-secondary btn-theme2 mt-3" href="{{ route('gioithieu') }}"> Đọc Thêm</a> --}}
                         <a class="btn btn-secondary btn-theme2 mt-3" href="#"> Đọc Thêm</a>
                     </div>
                     <div class="column ccont-left col-lg-6">
-                        @foreach ($image_category as $item)
-                            @if ($item->faculty_id == 3)
-                                <img src="{{ asset($item['link']) }}" class="img-responsive" alt="">
-                            @endif
-                        @endforeach
-
+                        <img src="{{ asset($item['image']) }}" class="img-responsive" alt="">
                     </div>
                 </div>
             </div>
@@ -263,17 +253,13 @@
             <div class="container py-lg-3">
                 <div class="row main-cont-wthree-fea">
                     @foreach ($intro_statistic as $item)
-                        @if ($item->faculty_id == 3)
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="grids-speci1">
-                                    <h3 class="title-spe">{{ $item->value }}</h3>
-                                    <p>{{ $item->name }}</p>
-                                </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="grids-speci1">
+                                <h3 class="title-spe">{{ $item->value }}</h3>
+                                <p>{{ $item->name }}</p>
                             </div>
-                        @endif
+                        </div>
                     @endforeach
-
-
                 </div>
             </div>
         </div>
@@ -296,14 +282,12 @@
                     <div class="item-top col-md-6 mt-md-0 mt-4">
                         <div class="item text-center">
                             @foreach ($student as $item)
-                                @if ($item->faculty_id == 3)
-                                    <div class="imgTitle">
-                                        <img src="{{ asset($item['image']) }}" class="img-responsive" alt="" />
-                                    </div>
-                                    <h6 class="mt-3">{{ $item->name }}</h6>
-                                    <p class="">{{ $item->intro }}</p>
-                                    <p> {{ $item->evaluate }}</p>
-                                @endif
+                                <div class="imgTitle">
+                                    <img src="{{ asset($item['image']) }}" class="img-responsive" alt="" />
+                                </div>
+                                <h6 class="mt-3">{{ $item->name }}</h6>
+                                <p class="">{{ $item->intro }}</p>
+                                <p> {{ $item->evaluate }}</p>
                             @endforeach
 
                         </div>
@@ -321,27 +305,24 @@
                         <h3 class="">Tin tức</h3>
                         <div class="tatest-top mt-md-5 mt-4">
                             @foreach ($news as $item)
-                                @if ($item->category_id == 5)
+                                @if ($item->category_id == 11)
                                     <div class="price-box btn-layout bt6">
                                         <div class="grid grid-column-2">
                                             <div class="column-6">
-                                                <img src="{{ asset($item['image']) }}"
-                                                    alt="" class="img-fluid">
+                                                <img src="{{ asset($item['image']) }}" alt="" class="img-fluid">
                                             </div>
                                             <div class="column1">
                                                 <div class="job-info">
-                                                    <h6 class="pricehead"><a href="#">{{$item->title}} </a></h6>
-                                                    <h5>{{$item->event_time}}</h5>
-                                                    <p>{{$item->description
-                                                    }}</p>
+                                                    <h6 class="pricehead"><a href="#">{{ $item->title }} </a></h6>
+                                                    <h5>{{ $item->event_time }}</h5>
+                                                    <p>{{ $item->description }}
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 @endif
                             @endforeach
-
-
                         </div>
                         <div class="text-right mt-4">
                             {{-- <a class="btn btn-secondary btn-theme2" href="{{ route('tintuc') }}"> Xem tất cả</a> --}}
@@ -353,76 +334,30 @@
                         <h3 class="">Thông Báo</h3>
                         <div class="tatest-top mt-md-5 mt-4">
                             <div class="price-box btn-layout bt6">
-                                {{-- <div class="grid grid-column-2"> --}}
-                                {{-- <div class="column-6">
-                                        <img src="{{ asset('dist/layout/layout_khoadulich/images/20190920102331-31696.jpg') }}"
-                                            alt="" class="img-fluid">
-                                    </div> --}}
-                                <div class="column1">
-                                    <div class="job-info">
-                                        <h6 class="pricehead">
-                                            <a href="#">Khoa Du Lịch được tuyên dương </a>
-                                        </h6>
-                                        <h5>Tháng 6/24/2021</h5>
-                                        <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
-                                    </div>
-                                    {{-- </div> --}}
-                                </div>
-                            </div>
-                            <div class="price-box btn-layout bt6">
-                                {{-- <div class="grid grid-column-2"> --}}
-                                {{-- <div class="column-6">
-                                        <img src="{{ asset('dist/layout/layout_khoadulich/images/link-dhdl-45338.jpg') }}"
-                                            alt="" class="img-fluid">
-                                    </div> --}}
-                                <div class="column1">
-
-                                    <div class="job-info">
-                                        <h6 class="pricehead">
-                                            <a href="#">Khoa Du Lịch được tuyên dương </a>
-                                        </h6>
-                                        <h5>Tháng 6/24/2021</h5>
-                                        <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
-                                    </div>
-                                </div>
-                                {{-- </div> --}}
-                            </div>
-                            <div class="price-box btn-layout bt6">
-                                {{-- <div class="grid grid-column-2"> --}}
-                                {{-- <div class="column-6">
+                                @foreach ($news as $itemmess)
+                                    @if ($itemmess->category_id == 16)
+                                        {{-- <div class="grid grid-column-2"> --}}
+                                        {{-- <div class="column-6">
                                         <img src="{{ asset('dist/layout/layout_khoadulich/images/20170828165923-45184.jpg') }}"
                                             alt="" class="img-fluid">
                                     </div> --}}
-                                <div class="column1">
+                                        <div class="column1">
+                                            <div class="job-info">
+                                                <h6 class="pricehead">
+                                                    <a href="#">{{ $itemmess->title }}</a>
+                                                </h6>
+                                                <h5>{{ $itemmess->event_time }}</h5>
+                                                <p>{{ $itemmess->description }}</p>
+                                            </div>
+                                            {{-- </div> --}}
+                                        </div>
+                                        <hr>
+                                    @endif
+                                @endforeach
 
-                                    <div class="job-info">
-                                        <h6 class="pricehead">
-                                            <a href="#">Khoa Du Lịch được tuyên dương </a>
-                                        </h6>
-                                        <h5>Tháng 6/24/2021</h5>
-                                        <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
-                                    </div>
-                                </div>
-                                {{-- </div> --}}
                             </div>
-                            <div class="price-box btn-layout bt6">
-                                {{-- <div class="grid grid-column-2"> --}}
-                                {{-- <div class="column-6">
-                                        <img src="{{ asset('dist/layout/layout_khoadulich/images/20170828165923-45184.jpg') }}"
-                                            alt="" class="img-fluid">
-                                    </div> --}}
-                                <div class="column1">
 
-                                    <div class="job-info">
-                                        <h6 class="pricehead">
-                                            <a href="#">Khoa Du Lịch được tuyên dương </a>
-                                        </h6>
-                                        <h5>Tháng 6/24/2021</h5>
-                                        <p>Tự hào khi khoa du lịch được tuyên dương trước trường ...</p>
-                                    </div>
-                                </div>
-                                {{-- </div> --}}
-                            </div>
+
                         </div>
                         <div class="text-right mt-4">
                             {{-- <a class="btn btn-secondary btn-theme2" href="{{ route('thongbao') }}"> Xem tất cả</a> --}}
@@ -430,7 +365,7 @@
                         </div>
                     </div>
 
-                    <div class="w3l-faq-page col-lg-6 pl-3 pl-lg-5 mt-lg-0 mt-5">
+                    {{-- <div class="w3l-faq-page col-lg-6 pl-3 pl-lg-5 mt-lg-0 mt-5">
                         <br>
                         <h3 class="">Sự kiện Của Khoa</h3>
                         <div class="events-top mt-md-5 mt-4">
@@ -516,7 +451,7 @@
                         <div class="text-right mt-4">
                             <a class="btn btn-secondary btn-theme2" href="#"> Xem Tất Cả</a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -527,19 +462,9 @@
             <h3 class="ctdn">Cộng Tác Doanh Nghiệp</h3>
             <br>
             <div id="owl-congtac" class="owl-carousel owl-theme" data-interval="50" data-delay="100" data-ride="carousel">
-                <img src="{{ asset('dist/layout/layout_khoadulich/images/Link-sai-gon-c-21823.gif') }}" width="100%"
-                    height="auto" class="img-responsive" alt="">
-                <img src="{{ asset('dist/layout/layout_khoadulich/images/Link-sai-gon-c-24394.jpg') }}" width="100%"
-                    height="auto" class="img-responsive" alt="">
-                <img src="{{ asset('dist/layout/layout_khoadulich/images/Link-sai-gon-c-36507.jpg') }}" width="100%"
-                    height="auto" class="img-responsive" alt="">
-                <img src="{{ asset('dist/layout/layout_khoadulich/images/Link-sai-gon-c-66470.jpg') }}" width="100%"
-                    height="auto" class="img-responsive" alt="">
-                <img src="{{ asset('dist/layout/layout_khoadulich/images/Link-sai-gon-c-39456.jpg') }}" width="100%"
-                    height="auto" class="img-responsive" alt="">
-                <img src="{{ asset('dist/layout/layout_khoadulich/images/Link-sai-gon-c-64210.jpg') }}" width="100%"
-                    height="auto" class="img-responsive" alt="">
-
+                @foreach ($collab_logo as $item)
+                    <img src="{{ asset($item['image_url']) }}" width="100%" alt="{{ $item['title'] }}">
+                @endforeach
             </div>
         </div>
     </div>

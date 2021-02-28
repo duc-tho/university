@@ -69,7 +69,7 @@
             <section id="featured" class="featured">
                 <div class="container">
                     <div class="row">
-                        @foreach($specialized as $item)
+                        @foreach($all_specialized as $item)
                         <!-- <div class="col-lg-3 mt-4 mt-lg-0">
                             <div class="icon-box">
                                 <i class="icofont-computer d-flex justify-content-center"></i>
@@ -133,6 +133,7 @@
                         <div class="col-md-8 col-sm-6 col-xs-12">
                             <div class="grid grid--2">
                             @foreach($news as $item)
+                                @if($item->category_id != 9)
                                 <article id="post-37885"
                                     class="post-37885 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc-chung cart cart--wide">
                                     <a class="cart__image"
@@ -238,21 +239,25 @@
                                         </span>
                                     </header>
                                 </article> -->
+                                @endif
                              @endforeach
                             </div>
                         </div>
                         <div id="news_new_right" class="col-md-4 col-sm-6 col-xs-12">
-                            <a
-                                href="https://daihoc.fpt.edu.vn/tet-nay-cung-dai-hoc-fpt-lan-toa-yeu-thuong-den-tre-em-tp-can-tho/">
-                                <div class="news_new_right_content" id="news_new_item_0">
-                                    <div class="news_new_right_title"> Tết này, cùng Đại học Du lịch Sài Gòn lan toả yêu thương đến trẻ
-                                        em TP. Cần Thơ
-                                        <img src="https://daihoc.fpt.edu.vn/templates/fpt-university/images/new_arrow.png">
+                            @foreach($news as $item)
+                                @if($item->category_id == 6)
+                                <a
+                                    href="https://daihoc.fpt.edu.vn/tet-nay-cung-dai-hoc-fpt-lan-toa-yeu-thuong-den-tre-em-tp-can-tho/">
+                                    <div class="news_new_right_content" id="news_new_item_0">
+                                        <div class="news_new_right_title"> {{$item->title}}
+                                            <img src="https://daihoc.fpt.edu.vn/templates/fpt-university/images/new_arrow.png">
+                                        </div>
+                                        <div class="news_new_right_post_time">{{$item->created_at}}</div>
                                     </div>
-                                    <div class="news_new_right_post_time">14/01/2021</div>
-                                </div>
-                            </a>
-                            <a href="https://daihoc.fpt.edu.vn/thay-co-mach-nuoc-thi-sinh-tham-gia-fpt-edu-hackathon-2021/">
+                                </a>
+                                @endif
+                            @endforeach
+                            <!-- <a href="https://daihoc.fpt.edu.vn/thay-co-mach-nuoc-thi-sinh-tham-gia-fpt-edu-hackathon-2021/">
                                 <div class="news_new_right_content" id="news_new_item_1">
                                     <div class="news_new_right_title"> Thầy cô mách nước thí sinh tham gia ĐH Du lịch Sài Gòn Edu Hackathon
                                         2021
@@ -311,7 +316,7 @@
                                     </div>
                                     <div class="news_new_right_post_time">08/01/2021</div>
                                 </div>
-                            </a>
+                            </a> -->
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 text-center" >
                             <a class="button button--outline button--orange button-addread-new" href="{{-- route('tintucngoaingu') --}}">XEM THÊM
@@ -328,6 +333,7 @@
                     <h3 class="award-title">Sinh viên tiêu biểu</h3>
                     <div id="owl-tieubieu" class="owl-carousel owl-theme">
                     @foreach($student as $item)
+                        
                         <div class="item text-center">
                             <!-- <img src="images/hang.jpg" alt=""  width="100%" height="auto" class="img-responsive "> -->
                             <figure
@@ -338,6 +344,7 @@
                             <div class="h3 award-content">{{$item->name}}</div>
                             <div class="award-content">{{$item->intro}}</div>
                         </div>
+                        
                     @endforeach
                         
                         <!-- <div class="red-2">
@@ -389,15 +396,17 @@
                     <div class="container proj-bottom">
                         <div class="row">
                         @foreach($news as $item)
-                            <div class="col-md-4 col-sm-6 fh5co-project fadeIn animate-box animated-fast"
-                                data-animate-effect="fadeIn">
-                                <a href="{{-- route('chitietttkhoangoaingu') --}}"><img
-                                        src="{{asset($item->image)}}"
-                                        alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-                                    <h3>{{$item->title}}</h3>
-                                    <span>Xem chi tiết</span>
-                                </a>
-                            </div>
+                           
+                                <div class="col-md-4 col-sm-6 fh5co-project fadeIn animate-box animated-fast"
+                                    data-animate-effect="fadeIn">
+                                    <a href="{{-- route('chitietttkhoangoaingu') --}}"><img
+                                            src="{{asset($item->image)}}"
+                                            alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+                                        <h3>{{$item->title}}</h3>
+                                        <span>Xem chi tiết</span>
+                                    </a>
+                                </div>
+                        
                         @endforeach
                             <!-- <div class="col-md-4 col-sm-6 fh5co-project fadeIn animate-box animated-fast"
                                 data-animate-effect="fadeIn">

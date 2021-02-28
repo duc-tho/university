@@ -23,7 +23,7 @@
             <!-- <a class="navbar-brand" href="index.html"></a>	<img src="images/logo.png" alt="Logo" style="width:40%; height: auto;"></a> -->
 
             <a class="navbar-brand" href="/">
-                <img src="{{$logo_travel}}" style="width: 40%;" />
+                <img src="{{asset($logo_travel)}}" style="width: 55%;" />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,29 +33,30 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto" id="navwidth">
                     <li class="nav-item">
-
-                        <a class="nav-link" href="#">Trang Chủ</a>
+                        <a class="nav-link" href="{{route('trang-chu', [$faculty['slug']])}}">Trang Chủ</a>
                     </li>
                     <li class="nav-item">
-
-                        <a class="nav-link" href="#">Giới Thiệu</a>
+                        <a class="nav-link" href="{{route('gioi-thieu', [$faculty['slug']])}}">Giới Thiệu</a>
                     </li>
                     <li class="nav-item">
                         {{-- <a class="nav-link" href="{{ route('tintuc') }}">Tin Tức</a> --}}
-                        <a class="nav-link" href="#">Tin Tức</a>
+                        <a class="nav-link" href="{{route('tin-tuc', [$faculty['slug']])}}">Tin Tức</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                             Đào Tạo
                         </a>
                         <div class="dropdown-menu">
-                            {{-- <a class="dropdown-item" href="introdution.html">Giới Thiệu</a> --}}
+                        <a class="dropdown-item" href="introdution.html"></a>
                             {{-- <a class="dropdown-item" href="{{ route('quantrikhachsan') }}">Ngành quản trị khách sạn</a> --}}
-                            <a class="dropdown-item" href="#">Ngành quản trị khách sạn</a>
-                            <a class="dropdown-item" href="#">Ngành quản trị nhà hàng và
+                            @foreach ($all_specialized as $item)
+                                    <a class="dropdown-item" href="{{route('dao-tao-chi-tiet', [$faculty['slug'],$item->slug])}}">{{$item->name}}</a>
+                            @endforeach
+                            {{-- <a class="dropdown-item" href="{{route('dao-tao-chi-tiet', [$faculty['slug'],'nghanh-quan-tri-khach-san'])}}">Ngành quản trị khách sạn</a>
+                            <a class="dropdown-item" href="{{route('dao-tao-chi-tiet', [$faculty['slug'],'nghanh-quan-tri-nha-hang-va-dich-vu-an-uong'])}}">Ngành quản trị nhà hàng và
                                 dịch vụ ăn uống</a>
-                            <a class="dropdown-item" href="#">Ngành quản trị du lịch và lữ
-                                hành</a>
+                            <a class="dropdown-item" href="{{route('dao-tao-chi-tiet', [$faculty['slug'],'nghanh-quan-tri-du-lich-valu-hanh'])}}">Ngành quản trị du lịch và lữ
+                                hành</a> --}}
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -73,7 +74,7 @@
                         <a class="nav-link" href="#">Giảng Viên</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Liên Hệ</a>
+                        <a class="nav-link" href="{{route('lien-he', [$faculty['slug']])}}">Liên Hệ</a>
                     </li>
                 </ul>
             </div>

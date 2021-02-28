@@ -38,7 +38,7 @@
                 {{-- Your browser does not support the video tag. --}}
             </video>
         </div>
-        @foreach ($about as $item)
+        {{-- @foreach ($about as $item)
         <div class="col-md-6 col-lg-4">
             <a href="{{ $item['link'] }}">
                 <div class="card">
@@ -49,7 +49,7 @@
                 </div>
             </a>
         </div>
-        @endforeach
+        @endforeach --}}
     </div>
 
     {{-- <div class="row my-5">
