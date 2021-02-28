@@ -73,7 +73,7 @@
             <div class="container">
 
                 <div class="middle-section grid-column text-center">
-                    @foreach ($specialized as $item)
+                    @foreach ($all_specialized as $item)
                         <div class="three-grids-columns">
                             <span class="{{ $item->icons }}" id="faicon"></span>
                             <h4>{{ $item->name }}</h4>
@@ -111,17 +111,16 @@
 
                 <div class="calltoaction-20-content row">
                     <div class="column center-align-self col-lg-6 pr-lg-5">
-                        @foreach ($images as $item)
-                            @if ($item->image_category_id == 2)
-                                <h5 class="editContent">{{ $item->title }}</h5>
-                                <p class="more-gap editContent">{{ $item->description }}</p>
-                            @endif
-                        @endforeach
+                        <h5 class="editContent">{{ $faculty['name']}}</h5>
+                        <p class="more-gap editContent">{!! $faculty['intro_summary'] !!}</p>
+
+
+
                         {{-- <a class="btn btn-secondary btn-theme2 mt-3" href="{{ route('gioithieu') }}"> Đọc Thêm</a> --}}
                         <a class="btn btn-secondary btn-theme2 mt-3" href="#"> Đọc Thêm</a>
                     </div>
                     <div class="column ccont-left col-lg-6">
-                        <img src="{{ asset($image_category->link) }}" class="img-responsive" alt="">
+                        <img src="{{ asset($item['image']) }}" class="img-responsive" alt="">
                     </div>
                 </div>
             </div>
@@ -254,17 +253,13 @@
             <div class="container py-lg-3">
                 <div class="row main-cont-wthree-fea">
                     @foreach ($intro_statistic as $item)
-                        @if ($item->faculty_id == 3)
-                            <div class="col-lg-3 col-sm-6">
-                                <div class="grids-speci1">
-                                    <h3 class="title-spe">{{ $item->value }}</h3>
-                                    <p>{{ $item->name }}</p>
-                                </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="grids-speci1">
+                                <h3 class="title-spe">{{ $item->value }}</h3>
+                                <p>{{ $item->name }}</p>
                             </div>
-                        @endif
+                        </div>
                     @endforeach
-
-
                 </div>
             </div>
         </div>
@@ -287,14 +282,12 @@
                     <div class="item-top col-md-6 mt-md-0 mt-4">
                         <div class="item text-center">
                             @foreach ($student as $item)
-                                @if ($item->faculty_id == 3)
-                                    <div class="imgTitle">
-                                        <img src="{{ asset($item['image']) }}" class="img-responsive" alt="" />
-                                    </div>
-                                    <h6 class="mt-3">{{ $item->name }}</h6>
-                                    <p class="">{{ $item->intro }}</p>
-                                    <p> {{ $item->evaluate }}</p>
-                                @endif
+                                <div class="imgTitle">
+                                    <img src="{{ asset($item['image']) }}" class="img-responsive" alt="" />
+                                </div>
+                                <h6 class="mt-3">{{ $item->name }}</h6>
+                                <p class="">{{ $item->intro }}</p>
+                                <p> {{ $item->evaluate }}</p>
                             @endforeach
 
                         </div>
@@ -351,10 +344,10 @@
                                         <div class="column1">
                                             <div class="job-info">
                                                 <h6 class="pricehead">
-                                                    <a href="#">{{$itemmess->title}}</a>
+                                                    <a href="#">{{ $itemmess->title }}</a>
                                                 </h6>
-                                                <h5>{{$itemmess->event_time}}</h5>
-                                                <p>{{$itemmess->description}}</p>
+                                                <h5>{{ $itemmess->event_time }}</h5>
+                                                <p>{{ $itemmess->description }}</p>
                                             </div>
                                             {{-- </div> --}}
                                         </div>
