@@ -57,8 +57,8 @@ class HomeController extends Controller
         $collab_logo = CollabLogo::all();
 
         // Lấy tin tức
-        $news = News::where(['status' => 1])->paginate(10);
-
+        $news = News::where(['status' => 1,'category_id'=>7])->orderBy("id","desc")->paginate(6);
+        
         if (!$news->isEmpty()) foreach ($news as $key => $item) {
             $item['category'] = $item->category;
         }

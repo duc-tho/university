@@ -69,7 +69,8 @@
             <section id="featured" class="featured">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-3">
+                        @foreach($specialized as $item)
+                        <!-- <div class="col-lg-3 mt-4 mt-lg-0">
                             <div class="icon-box">
                                 <i class="icofont-computer d-flex justify-content-center"></i>
                                 <h3 class="text-center"><a href="{{-- route('daotaoanhngu') --}}">Anh Ngữ</a></h3>
@@ -92,15 +93,15 @@
                                 <p class="text-center">Học Trung ngữ mở rộng con dường tìm kiếm cờ hội làm việc trong các môi trường nước ngoài
                                     chuyên nghiệp</p>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-lg-3 mt-4 mt-lg-0">
                             <div class="icon-box">
                                 <i class="icofont-tasks-alt d-flex justify-content-center"></i>
-                                <h3 class="text-center"><a href="{{-- route('daotaoanhngu') --}}">Hàn Ngữ</a></h3>
-                                <p class="text-center">Học Hàn ngữ mở rộng con dường tìm kiếm cờ hội làm việc trong các môi trường nước ngoài
-                                    chuyên nghiệp</p>
+                                <h3 class="text-center"><a href="{{-- route('daotaoanhngu') --}}">{{$item->name}}</a></h3>
+                                <p class="text-center">{{$item->intro_summary}}}</p>
                             </div>
                         </div>
+                        @endforeach
                     </div>
 
                 </div>
@@ -112,30 +113,12 @@
 
                     <div class="row">
                         <div class="col-lg-6">
-                            <img src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2017/08/21/muc-tieu-thumbnail-62678.jpg"
-                                class="img-fluid" alt="">
-                                <img src="{{ asset('dist/upload/ten-hinh.png') }}"
+                          
+                                <img src="{{ asset($faculty->image) }}"
                                 class="img-fluid" alt="">
                         </div>
                         <div class="col-lg-6 pt-4 pt-lg-0 content">
-                            <h3>Chào Mừng Đến Khoa Ngoại Ngữ</h3>
-                            <p class="font-italic">
-                                Đào tạo Cử nhân tiếng Anh và Đông Phương học có đủ kiến thức, kỹ năng nghề nghiệp, phẩm chất
-                                chính trị,
-                                đạo đức, tác phong nghề nghiệp và sức khoẻ tốt để có thể làm việc hiệu quả trong các lĩnh
-                                vực chuyên môn có sử dụng tiếng Anh,
-                                đáp ứng được yêu cầu xã hội và của nền kinh tế hội nhập quốc tế.
-                            </p>
-                            <ul>
-                                <li><i class="icofont-check-circled"></i> Cung cấp cho sinh viên kiến thức rộng tương đối rộng về ngôn ngữ Anh, văn hóa, xã hội và văn học Anh-Mỹ.</li>
-                                <li><i class="icofont-check-circled"></i> Rèn luyện và phát triển các kỹ năng giao tiếp tiếng Anh ở mức đối tương đối thành thạo trong các tình huống giao tiếp xã hội và chuyên môn thông thường.</li>
-                                <li><i class="icofont-check-circled"></i> Bảo đảm cho sinh viên đạt được trình độ nghiệp vụ đủ để hoạt động và công tác có hiệu quả trong các lĩnh vực chuyên môn như các lĩnh vực hoạt động nghiệp vụ,
-                                kinh doanh, kinh tế và xã hội, lễ tân, khách sạn,…</li>
-                            </ul>
-                            <p>
-                            Trang bị cho sinh viên kỹ năng học tập hiệu quả để có thể tự học tập nhằm tiếp tục nâng cao kiến thức và năng lực thực hành tiếng,
-                             bước đầu hình thành tư duy và năng lực nghiên cứu khoa học về các vấn đề ngôn ngữ du lịch, điều hành tour…
-                            </p>
+                            {!! $faculty->intro !!}
                         </div>
                     </div>
 
@@ -149,33 +132,38 @@
 
                         <div class="col-md-8 col-sm-6 col-xs-12">
                             <div class="grid grid--2">
+                            @foreach($news as $item)
                                 <article id="post-37885"
                                     class="post-37885 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc-chung cart cart--wide">
                                     <a class="cart__image"
                                         href="{{-- route('chitietttkhoangoaingu') --}}">
-                                        <img width="373" height="206"
+                                            <!-- <img width="373" height="206"
                                             src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2019/07/13/hoc-ngoai-ngu-o-saigonact-noi-nhu-nguoi-ban-dia-thumbnail-26188.jpg"
+                                            sizes="(max-width: 373px) 100vw, 373px"> -->
+                                            <img width="373" height="206"
+                                            src="{{asset($item->image)}}"
                                             sizes="(max-width: 373px) 100vw, 373px">
                                         <i class="post-icon fa fa-align-justify"></i>
                                     </a>
                                     <header class="entry-header cart__content">
                                         <h3 class="cart__title entry-title">
-                                            <a href="{{-- route('chitietttkhoangoaingu') --}}"
+                                            <!-- <a href="{{-- route('chitietttkhoangoaingu') --}}"
                                                 title="Học ngoại ngữ ở SaigonACT nói như người bản địa">Học ngoại ngữ ở
-                                                SaigonACT nói như người bản địa</a>
+                                                SaigonACT nói như người bản địa</a> -->
+                                            <a href="{{-- route('chitietttkhoangoaingu') --}}"
+                                            title="{{$item->title}}">{{$item->title}}</a>
                                         </h3>
                                         <span class="posted-on">
                                             <time class="entry-date published" datetime="2021-01-15T13:41:37+07:00">2 ngày
                                                 trước</time>
-                                            <time class="updated" datetime="2021-01-15T13:42:26+07:00">15/01/2021</time>
+                                            <time class="updated" datetime="2021-01-15T13:42:26+07:00">{{$item->created_at}}</time>
                                         </span>
                                         <span class="byline"> bởi <span class="author vcard">
-                                                <a class="url fn n" href="https://daihoc.fpt.edu.vn/author/yennth/">Nguyễn
-                                                    Thị Hồng Yến</a></span>
+                                                <a class="url fn n" href="https://daihoc.fpt.edu.vn/author/yennth/">{{$item->created_by}}</a></span>
                                         </span>
                                     </header>
                                 </article>
-                                <article id="post-37885"
+                                <!-- <article id="post-37885"
                                     class="post-37885 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc-chung cart cart--wide">
                                     <a class="cart__image"
                                         href="{{-- route('chitietttkhoangoaingu') --}}">
@@ -249,7 +237,8 @@
                                                     Thị Hồng Yến</a></span>
                                         </span>
                                     </header>
-                                </article>
+                                </article> -->
+                             @endforeach
                             </div>
                         </div>
                         <div id="news_new_right" class="col-md-4 col-sm-6 col-xs-12">
@@ -338,36 +327,19 @@
                 <div class="container">
                     <h3 class="award-title">Sinh viên tiêu biểu</h3>
                     <div id="owl-tieubieu" class="owl-carousel owl-theme">
+                    @foreach($student as $item)
                         <div class="item text-center">
                             <!-- <img src="images/hang.jpg" alt=""  width="100%" height="auto" class="img-responsive "> -->
                             <figure
                                 style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden; position: relative; margin: 0 auto 1.5em;">
-                                <img src="{{ asset('dist/layout/layout_khoangoaingu/img/hang.jpg') }}" alt="user"
+                                <img src="{{ asset($item->image) }}" alt="user"
                                     style="width: 100%; border-radius: unset; -webkit-border-radius: unset; position: absolute; top: 50%; transform: translateY(-50%);">
                             </figure>
-                            <div class="h3 award-content">Trần Thị Thanh Hằng</div>
-                            <div class="award-content">Khóa 186-Khoa Công nghệ thông tin</div>
+                            <div class="h3 award-content">{{$item->name}}</div>
+                            <div class="award-content">{{$item->intro}}</div>
                         </div>
-                        <div class="item text-center">
-                            <!-- <img src="images/hang2.jpg" alt=""  width="100%" height="auto" class="img-responsive "> -->
-                            <figure
-                                style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden; position: relative; margin: 0 auto 1.5em;">
-                                <img src="{{ asset('dist/layout/layout_khoangoaingu/img/hang2.jpg') }}" alt="user"
-                                    style="width: 100%; border-radius: unset; -webkit-border-radius: unset; position: absolute; top: 50%; transform: translateY(-50%);">
-                            </figure>
-                            <div class="h3 award-content">Trần Thị Thanh Nga</div>
-                            <div class="award-content">Khóa 186-Khoa Ngoại ngữ</div>
-                        </div>
-                        <div class="item text-center">
-                            <!-- <img src="images/bao.jpg" alt=""  width="100%" height="auto" class="img-responsive "> -->
-                            <figure
-                                style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden; position: relative; margin: 0 auto 1.5em;">
-                                <img src="{{ asset('dist/layout/layout_khoangoaingu/img/bao.jpg') }}" alt="user"
-                                    style="width: 100%; border-radius: unset; -webkit-border-radius: unset; position: absolute; top: 50%; transform: translateY(-50%);">
-                            </figure>
-                            <div class="h3 award-content">Võ Duy Bảo</div>
-                            <div class="award-content">Khóa 186 - Khoa Công nghệ thông tin</div>
-                        </div>
+                    @endforeach
+                        
                         <!-- <div class="red-2">
                             <div>
                                 <form action="method">
@@ -416,16 +388,18 @@
                     </div>
                     <div class="container proj-bottom">
                         <div class="row">
+                        @foreach($news as $item)
                             <div class="col-md-4 col-sm-6 fh5co-project fadeIn animate-box animated-fast"
                                 data-animate-effect="fadeIn">
                                 <a href="{{-- route('chitietttkhoangoaingu') --}}"><img
-                                        src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2019/07/18/tieng-trung-quoc-nganh-hoc-chua-bao-gio-het-hot-thumbnail-44420.png"
+                                        src="{{asset($item->image)}}"
                                         alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
-                                    <h3>Tiếng Trung Quốc - Ngành học chưa bao giờ hết hot</h3>
+                                    <h3>{{$item->title}}</h3>
                                     <span>Xem chi tiết</span>
                                 </a>
                             </div>
-                            <div class="col-md-4 col-sm-6 fh5co-project fadeIn animate-box animated-fast"
+                        @endforeach
+                            <!-- <div class="col-md-4 col-sm-6 fh5co-project fadeIn animate-box animated-fast"
                                 data-animate-effect="fadeIn">
                                 <a href="{{-- route('chitietttkhoangoaingu') --}}"><img
                                         src="http://khoangoaingu.daihocdulich.edu.vn/upload/news/2019/05/30/tai-sao-nen-hoc-tieng-trung-thumbnail-67983.png"
@@ -469,7 +443,7 @@
                                     <h3>Cử nhân ngành tiếng Nhật - Không sợ thất nghiệp</h3>
                                     <span>Xem chi tiế<th></th></span>
                                 </a>
-                            </div>
+                            </div> -->
                             <div class="col-md-12 text-right button-more">
                                 <a class="text-right" href="{{-- route('tintucngoaingu') --}}">
                                     <button class="button"><span>Xem thêm </span></button>
