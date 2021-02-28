@@ -38,7 +38,7 @@ class HomeController extends Controller
         //thời gian làm việc
         // Lấy danh sách khoa kèm url
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
-        $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
+
 
         if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
             $item['url'] = route('trang-chu', [$item['slug']]);
@@ -47,11 +47,8 @@ class HomeController extends Controller
         // Lấy danh sách ngành kèm url
         $all_specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
 
-        // $specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->first();
-
-        // if (!$specialized->isEmpty()) foreach ($specialized as $key => $item) {
-        //     $item['url'] = route('dao-tao-chi-tiet', [$faculty['slug'], $item['slug']]);
-        // }
+        // Lấy footer liệt kê các khoa
+        $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->paginate(4);
 
         // Lấy data từ các bảng cần thiết
         $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
@@ -60,13 +57,23 @@ class HomeController extends Controller
         $collab_logo = CollabLogo::all();
 
         // Lấy tin tức
-        // $notifice = Category::where(['slug', $slug])->first();
-        // $news = News::where(['category_id' => $notifice->id, 'status'=>1])->paginate(11);
 
-        $news = News::where(['status'=>1])->paginate(11);
+        $news = News::where(['status' => 1])->paginate(11);
         if (!$news->isEmpty()) foreach ($news as $key => $item) {
             $item['category'] = $item->category;
         }
+
+
+        $category = Category::where(['status' => 1])->get();
+        $category_id = ;
+        $new_faculty = News::where(['status' => 1, 'category_id' => $category_id ])->paginate(11);
+        if (!$news->isEmpty()) foreach ($news as $key => $item) {
+            $item['category'] = $item->category;
+        }
+
+        // dd($category_id);
+
+
 
         // Lấy hình ảnh và danh mục hình
         $image_category = ImageCategory::where(['status' => 1])->get();
@@ -89,7 +96,7 @@ class HomeController extends Controller
         $teacher = TeacherRepresentative::where(['status' => 1])->get();
 
         // lấy sinh viên tiêu biểu
-        $student = StudentRepresentative::where(['status' => 1])->get();
+        $student = StudentRepresentative::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
 
         // lấy các liên kết qua trang khác ở footer
         $footer_link = FooterLinkCategory::where(['status' => 1])->get();
@@ -97,6 +104,8 @@ class HomeController extends Controller
         if (!$footer_link->isEmpty()) foreach ($footer_link as $key => $item) {
             $item['child'] = $item->footerLinks;
         }
+
+
 
         // Lấy các icon mạng xã hội
         $socials_icon = Socials::where(['status' => 1])->get();
@@ -113,8 +122,8 @@ class HomeController extends Controller
             'google_map_link' => $contact['map_embed'],
             'website_link' => $contact['website_link'],
             'contact_title' => $contact['contact_title'],
-            'slogan_nn'=>getSettingValue($settings,'slogan_nn'),
-            'sub_slogan_nn'=>getSettingValue($settings,'sub_slogan_nn'),
+            'slogan_nn' => getSettingValue($settings, 'slogan_nn'),
+            'sub_slogan_nn' => getSettingValue($settings, 'sub_slogan_nn'),
             'time_work' => getSettingValue($settings, 'time_work'),
             'address' => $contact['address_info'],
 
@@ -159,7 +168,6 @@ class HomeController extends Controller
             'faculty' => $faculty,
             'all_faculty' => $all_faculty,
             'footer_faculty' => $footer_faculty,
-            // 'specialized' => $specialized,
             'all_specialized' => $all_specialized,
             // 'student_comment_content' => ,
             // 'student_comment_name' => ,
@@ -169,6 +177,9 @@ class HomeController extends Controller
             'student' => $student,
             'image' => $image_category,
             'news' => $news,
+            'new_faculty' => $new_faculty,
+
+
             'collab_logo' => $collab_logo,
             'footer_link' => $footer_link,
             'copyright' => getSettingValue($settings, 'copyright'),

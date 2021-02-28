@@ -304,25 +304,24 @@
                     <div class="pricing-chart col-lg-6">
                         <h3 class="">Tin tức</h3>
                         <div class="tatest-top mt-md-5 mt-4">
-                            @foreach ($news as $item)
-                                @if ($item->category_id == 11)
-                                    <div class="price-box btn-layout bt6">
-                                        <div class="grid grid-column-2">
-                                            <div class="column-6">
-                                                <img src="{{ asset($item['image']) }}" alt="" class="img-fluid">
-                                            </div>
-                                            <div class="column1">
-                                                <div class="job-info">
-                                                    <h6 class="pricehead"><a href="#">{{ $item->title }} </a></h6>
-                                                    <h5>{{ $item->event_time }}</h5>
-                                                    <p>{{ $item->description }}
-                                                    </p>
-                                                </div>
+                            @foreach ($new_faculty as $item)
+                                <div class="price-box btn-layout bt6">
+                                    <div class="grid grid-column-2">
+                                        <div class="column-6">
+                                            <img src="{{ asset($item['image']) }}" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="column1">
+                                            <div class="job-info">
+                                                <h6 class="pricehead"><a href="#">{{ $item['title']  }} </a></h6>
+                                                <h5>{{ $item->event_time }}</h5>
+                                                <p>{{ $item->description }}
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
-                                @endif
+                                </div>
                             @endforeach
+
                         </div>
                         <div class="text-right mt-4">
                             {{-- <a class="btn btn-secondary btn-theme2" href="{{ route('tintuc') }}"> Xem tất cả</a> --}}

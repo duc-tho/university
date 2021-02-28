@@ -10,8 +10,10 @@ use App\Models\Faculty;
 use App\Models\FooterLinkCategory;
 use App\Models\Image;
 use App\Models\ImageCategory;
+use App\Models\News;
 use App\Models\Settings;
 use App\Models\Socials;
+use App\Models\Specialized;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -81,7 +83,34 @@ class NewsController extends Controller
         }
 
 
+
+        // Lấy toàn bộ nghành trên header
+        $all_specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+        // Lấy footer liệt kê các khoa
+        $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->paginate(4);
+
         return view('client.layout.' . $layout_name . '.page.news', [
+
+            //Start Khoa Du Lịch
+            'logo_travel' => getSettingValue($settings, 'logo_travel'),
+            'slogan_main_travel' => getSettingValue($settings, 'slogan_main_travel'),
+            'slogan_intro_travel' => getSettingValue($settings, 'slogan_intro_travel'),
+            'slogan_intro_travel2' => getSettingValue($settings, 'slogan_intro_travel2'),
+            'slogan_intro_travel3' => getSettingValue($settings, 'slogan_intro_travel3'),
+            'slogan_intro_travel4' => getSettingValue($settings, 'slogan_intro_travel4'),
+            'slogan_intro_travel5' => getSettingValue($settings, 'slogan_intro_travel5'),
+
+            'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),
+            'footer_email_travel' => getSettingValue($settings, 'footer_email_travel'),
+            'footer_website_travel' => getSettingValue($settings, 'footer_website_travel'),
+            'footer_address_travel' => getSettingValue($settings, 'footer_address_travel'),
+            'all_specialized' => $all_specialized,
+
+            // 'name' => getSettingValue($specialized, 'name'),
+            // 'intro' => getSettingValue($specialized, 'intro'),
+            //End Khoa Du Lịch
+            'footer_faculty' => $footer_faculty,
+
             'phone' => $contact['phone'],
             'faculty' => $faculty,
             'email' => $contact['email'],
@@ -100,6 +129,9 @@ class NewsController extends Controller
             'about' => $about_category,
             'category' => $category,
             'image_category' => $image_category
+
+
+
         ]);
     }
 
