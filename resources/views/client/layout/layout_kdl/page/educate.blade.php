@@ -4,13 +4,8 @@
     <section class="w3l-about-breadcrum">
         <div class="breadcrum-bg py-sm-5 py-4">
             <div class="container py-lg-3">
-                @foreach ($specialized as $item)
-                    @if ($item->id == 1)
-                        <h2>{{ $item->name }}</h2>
-                        </h2>
-                    @endif
-                @endforeach
-                <p><a href="#">Trang Chủ</a> &nbsp; / &nbsp; Đào Tạo &nbsp; / &nbsp; Nghành Quản Trị Khách Sạn</p>
+                <h2>{{ $specialized->name }}</h2>
+                <p><a href="#">Trang Chủ</a> &nbsp; / &nbsp; Đào Tạo &nbsp; / &nbsp; {{ $specialized->name }}</p>
             </div>
         </div>
     </section>
@@ -20,26 +15,22 @@
             <div class="container py-md-5">
                 <div class="cwp4-two row">
                     <div class="cwp4-image col-lg-6 pl-lg-5 mt-lg-0 mt-5">
-                        <img src="{{ asset('dist/layout/layout_khoadulich/images/20181227184217-21754.jpg') }}" width="100%"
-                            height="auto" class="img-fluid" alt="" />
+                        <img src="{{ asset($specialized->image) }}"
+                            width="100%" height="auto" class="img-fluid" alt="" />
                         <hr>
-                        <img src=" {{ asset('dist/layout/layout_khoadulich/images/20180118150548-73629.jpg') }}"
+                        <img src=" {{ asset($specialized->image2) }}"
                             width="100%" height="auto" class="img-fluid" alt="" />
                     </div>
                     <div class="cwp4-text col-lg-6">
-                        @foreach ($specialized as $item)
-                            @if ($item->id == 1)
-                                <h2 id="titleqtks">{{ $item->name }}</h2>
-                                <p id="des"> {!! $item->intro !!}</p>
-                            {{-- <ul class="cont-4">
+                                <h2 id="titleqtks">{{ $specialized->name }}</h2>
+                                <p id="des"> {!! $specialized->intro !!}</p>
+                                {{-- <ul class="cont-4">
                                 <li><span class="fa fa-check"></span> <span id="con">Trình độ đào tạo :</span> Đại học</li>
                                 <li><span class="fa fa-check"></span> <span id="con">Loại hình đào tạo :</span> Chính quy</li>
                                 <li><span class="fa fa-check"></span> <span id="con">Thời gian đào tạo :</span> 04 năm</li>
                                 <li><span class="fa fa-check"></span> <span id="con">Đối tượng tuyển sinh :</span> Theo Quy chế
                                     tuyển sinh đại học, cao đẳng hệ chính qui hiện hành do Bộ Giáo dục và Đào tạo.</li>
                             </ul> --}}
-                            @endif
-                        @endforeach
                     </div>
 
                 </div>
@@ -48,7 +39,7 @@
     </section>
     <!-- content-with-photo4 block -->
 
-    <section class="w3l-feature-2">
+    {{-- <section class="w3l-feature-2">
         <div class="grid top-bottom py-5">
             <div class="container py-md-5">
                 <div class="heading text-center mx-auto">
@@ -66,134 +57,31 @@
 
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <section class="teams text-center py-5" id="team">
         <div class="container py-xl-5 py-lg-3">
             <div class="heading text-center mx-auto">
                 <h3 class="head">Giảng Viên Của Khoa</h3>
-                <p class="my-3 head">Chúng tôi luôn cố gắng và không ngừng phấn đấu, để có thể mang đến những kiến thức bổ
-                    ích
-                    cho sinh viên trong khoa, đồng thời chúng tôi luôn sẵn sàng mang đến cho các sinh viên những chuyến đi
-                    bổ ích
+                <p class="my-3 head">
+                    {{$slogan_teacher_educate}}
                 </p>
             </div>
             <div class="row inner-sec-w3ls-w3pvt-aminfo pt-5 mt-3">
+                @foreach ($teacher as $item)
+                @if ($item->faculty_id==3)
                 <div class="col-lg-3 col-sm-6">
                     <div class="team-grid text-center">
                         <div class="team-img">
-                            <img class="img-fluid rounded" src=" {{ asset('dist/layout/layout_khoadulich/images/t1.jpg') }}"
-                                alt="">
-
-
+                            <a href="">
+                                <img class="img-fluid rounded"
+                                src=" {{ asset($item->image) }}" alt="">
+                            </a>
                         </div>
-                        {{-- <div class="team-info">
-                        <h4>Trent Boult</h4>
-                        <ul class="d-flex justify-content-center py-3 social-icons">
-                            <li class="effect-soc-team1">
-                                <a href="javascript:">
-                                    <span class="fa fa-facebook-f"></span>
-                                </a>
-                            </li>
-                            <li class="effect-soc-team2">
-                                <a href="javascript:">
-                                    <span class="fa fa-twitter"></span>
-                                </a>
-                            </li>
-                            <li class="effect-soc-team3">
-                                <a href="javascript:">
-                                    <span class="fa fa-google-plus"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div> --}}
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 top-tem">
-                    <div class="team-grid text-center">
-                        <div class="team-img">
-                            <img class="img-fluid rounded" src="{{ asset('dist/layout/layout_khoadulich/images/t2.jpg') }}"
-                                alt="">
-                        </div>
-                        {{-- <div class="team-info">
-                        <h4>Ruth Grace</h4>
-                        <ul class="d-flex justify-content-center py-3 social-icons">
-                            <li class="effect-soc-team1">
-                                <a href="javascript:">
-                                    <span class="fa fa-facebook-f"></span>
-                                </a>
-                            </li>
-                            <li class="effect-soc-team2">
-                                <a href="javascript:">
-                                    <span class="fa fa-twitter"></span>
-                                </a>
-                            </li>
-                            <li class="effect-soc-team3">
-                                <a href="javascript:">
-                                    <span class="fa fa-google-plus"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div> --}}
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6  mt-sm-0 mt-5">
-                    <div class="team-grid text-center">
-                        <div class="team-img">
-                            <img class="img-fluid rounded" src="{{ asset('dist/layout/layout_khoadulich/images/t3.jpg') }}"
-                                alt="">
-                        </div>
-                        {{-- <div class="team-info">
-                        <h4>Jonty Rhoods</h4>
-                        <ul class="d-flex justify-content-center py-3 social-icons">
-                            <li class="effect-soc-team1">
-                                <a href="javascript:">
-                                    <span class="fa fa-facebook-f"></span>
-                                </a>
-                            </li>
-                            <li class="effect-soc-team2">
-                                <a href="javascript:">
-                                    <span class="fa fa-twitter"></span>
-                                </a>
-                            </li>
-                            <li class="effect-soc-team3">
-                                <a href="javascript:">
-                                    <span class="fa fa-google-plus"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div> --}}
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 top-tem">
-                    <div class="team-grid text-center">
-                        <div class="team-img">
-                            <img class="img-fluid rounded" src="{{ asset('dist/layout/layout_khoadulich/images/t4.jpg') }}"
-                                alt="">
-                        </div>
-                        {{-- <div class="team-info">
-                        <h4>Maria Clisters</h4>
-                        <ul class="d-flex justify-content-center py-3 social-icons">
-                            <li class="effect-soc-team1">
-                                <a href="javascript:">
-                                    <span class="fa fa-facebook-f"></span>
-                                </a>
-                            </li>
-                            <li class="effect-soc-team2">
-                                <a href="javascript:">
-                                    <span class="fa fa-twitter"></span>
-                                </a>
-                            </li>
-                            <li class="effect-soc-team3">
-                                <a href="javascript:">
-                                    <span class="fa fa-google-plus"></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div> --}}
-                    </div>
-                </div>
+                @endif
+                @endforeach
             </div>
-        </div>
     </section>
 @stop
