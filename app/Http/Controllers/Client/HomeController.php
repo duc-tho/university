@@ -59,6 +59,18 @@ class HomeController extends Controller
         $statistic = Statistics::where(['faculty_id' => $faculty_id])->get();
         $collab_logo = CollabLogo::all();
 
+        // Lấy tin tức
+        
+        // $notifice = Category::where(['slug', $slug])->first();
+        // $news = News::where(['category_id' => $notifice->id, 'status'=>1])->paginate(11);
+        // $news_faculty=News::where(['status'=>1,'category_id'=>10])->orderBy("id","desc")->paginate(6);
+        // if (!$news_faculty->isEmpty()) foreach ($news_faculty as $key => $item) {
+        //     $item['category'] = $item->category;
+        // }
+        // $notice=News::where(['status'=>1,'category_id'=>6])->orderBy("id","desc")->paginate(8);
+        // $news = News::where(['status'=>1])->paginate(6);
+        // if (!$news->isEmpty()) foreach ($news as $key => $item) {
+        //     $item['category'] = $item->category;
         // lấy tin tức và danh mục tin tức
         $category = Category::where(['status' => 1, 'show_at_home' => '1'])->orderBy('display_order', 'asc')->get();
 
