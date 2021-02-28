@@ -18,7 +18,7 @@
 </section>
 <!-- //Top Menu 1 -->
 <section class="w3l-bootstrap-header">
-    <nav class="navbar navbar-expand-lg navbar-light py-lg-2 py-2">
+    <nav class="navbar navbar-expand-lg navbar-light py-lg-2 py-2 " >
         <div class="container">
             <!-- <a class="navbar-brand" href="index.html"></a>	<img src="images/logo.png" alt="Logo" style="width:40%; height: auto;"></a> -->
 
@@ -64,14 +64,20 @@
                             Sinh Viên
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Thực tập</a>
+                            @foreach ($all_category as $item)
+                                @foreach ($all_category as $item2)
+                                    @if ($item->id == $item2->parent_id)
+                                        <a class="dropdown-item" href="{{route('sinh-vien-danh-muc', [$faculty['slug'],$item2->slug])}}">{{$item2->title}}</a>
+                                    @endif
+                                @endforeach
+                            @endforeach
+                            {{-- <a class="dropdown-item" href="#">Thực tập</a>
                             <a class="dropdown-item" href="#">Thông Báo</a>
-                            {{-- <a class="dropdown-item" href="{{route('thongbao')}}">Bảng Tin Khoa</a> --}}
-                            <a class="dropdown-item" href="javascription:">Đăng Nhập hệ thống sinh viên</a>
+                            <a class="dropdown-item" href="javascription:">Đăng Nhập hệ thống sinh viên</a> --}}
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Giảng Viên</a>
+                        <a class="nav-link" href="{{route('giao-vien', [$faculty['slug']])}}">Giáo Viên</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('lien-he', [$faculty['slug']])}}">Liên Hệ</a>

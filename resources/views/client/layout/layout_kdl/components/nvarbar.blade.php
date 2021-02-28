@@ -12,30 +12,30 @@
             </div><!-- /input-group -->
             <div class="br"></div>
         </aside>
-        
+
         <aside class="single_sidebar_widget popular_post_widget">
             <h3 class="widget_title">Thông Báo</h3>
             <div class="testimonial-info">
-                <a href="{{route('chitiettintuc')}}">
+                <a href="#">
                     <p id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học</p>
                 </a>
-               
-                <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5> 
+
+                <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5>
                 <br>
             </div>
-        
+
             <div class="testimonial-info">
-                <a href="{{route('chitiettintuc')}}">
+                <a href="#">
                     <p id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học, Đăng ký các môn thi lại </p>
                 </a>
-                <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5> 
+                <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5>
                 <br>
             </div>
             <div class="testimonial-info">
-                <a href="{{route('chitiettintuc')}}">
+                <a href="#">
                     <p id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học, Đăng ký các môn thi lại </p>
                 </a>
-                <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5> 
+                <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5>
                 <br>
             </div>
             <div class="br"></div>
@@ -47,24 +47,24 @@
         <aside class="single_sidebar_widget post_category_widget">
             <h4 class="widget_title">Bảng Tin Khoa</h4>
             <div class="testimonial-info">
-                <a href="{{route('chitiettintuc')}}">
+                <a href="#">
                     <p id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học</p>
                 </a>
-                <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5> 
+                <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5>
                 <br>
             </div>
             <div class="testimonial-info">
-                <a href="{{route('chitiettintuc')}}">
+                <a href="#">
                 <p id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học</p>
                 </a>
-                <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5> 
+                <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5>
                 <br>
             </div>
             <div class="testimonial-info">
-                <a href="{{route('chitiettintuc')}}">
+                <a href="#">
                     <div id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học</p>
                 </a>
-                    <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5> 
+                    <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5>
                     <br>
                 </div>
             </div>
@@ -96,14 +96,14 @@
         <aside class="single-sidebar-widget tag_cloud_widget">
             <h4 class="widget_title">Liên kết khác</h4>
             <ul class="list">
-                <li><a href="{{route('khoadulich')}}">Trang chủ</a></li>
-                <li><a href="{{route('thuctap')}}">Thực Tập</a></li>
-                <li><a href="{{route('thongbao')}}">Thông Báo</a></li>
-                <li><a href="{{route('gioithieu')}}">Giới Thiệu</a></li>
-                <li><a href="{{route('tintuc')}}">Tin tức</a></li>
-                <li><a href="{{route('lienhe')}}">Liên Hệ</a></li>
-                <li><a href="{{route('quantrikhachsan')}}">Nghành Quản Trị Khách Sạn</a></li>
-             
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Thực Tập</a></li>
+                <li><a href="#">Thông Báo</a></li>
+                <li><a href="#">Giới Thiệu</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+                <li><a href="#">Nghành Quản Trị Khách Sạn</a></li>
+
             </ul>
         </aside>
     </div>

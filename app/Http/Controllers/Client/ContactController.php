@@ -10,6 +10,7 @@ use App\Models\Faculty;
 use App\Models\FooterLinkCategory;
 use App\Models\Settings;
 use App\Models\Socials;
+use App\Models\Specialized;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -52,6 +53,11 @@ class ContactController extends Controller
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty['id']])->first();
 
+        $all_specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+
+        $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
+
+        $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
         return view('client.layout.layout_kdl.page.contact', [
 
             'phone' => $contact['phone'],
@@ -73,8 +79,11 @@ class ContactController extends Controller
             'footer_email_travel' => getSettingValue($settings, 'footer_email_travel'),
             'footer_website_travel' => getSettingValue($settings, 'footer_website_travel'),
             'footer_address_travel' => getSettingValue($settings, 'footer_address_travel'),
-            //End Khoa Du Lịch
+            'all_specialized' => $all_specialized,
             'footer_faculty' => $footer_faculty,
+            'all_category' => $all_category,
+            //End Khoa Du Lịch
+
         ]);
     }
 }

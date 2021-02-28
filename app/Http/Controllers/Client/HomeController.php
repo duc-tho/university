@@ -47,6 +47,9 @@ class HomeController extends Controller
         // Lấy danh sách ngành kèm url
         $all_specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
 
+        $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+
+
         // Lấy footer liệt kê các khoa
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->paginate(4);
 
@@ -77,7 +80,18 @@ class HomeController extends Controller
             if (!$news->isEmpty()) $item['news'] = $news;
         }
 
-        // dd($category);
+        // Lấy danh sách mục con trong Sinh Viên của KDL
+        $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+        // dd($all_category);
+
+         // lấy tin tức và danh mục  của khoa Du Lịch
+        $category_travel = Category::where(['status' => 1, 'show_at_home_travel' => '1'])->orderBy('display_order', 'asc')->get();
+        if (!$category_travel->isEmpty()) foreach ($category_travel as $key => $item) {
+            $news = $item->news()->orderBy('id', 'desc')->paginate(10);
+
+            if (!$news->isEmpty()) $item['news'] = $news;
+        }
+ 
 
         // // Lấy hình ảnh và danh mục hình
         // $image_category = ImageCategory::where(['status' => 1])->get();
@@ -186,6 +200,7 @@ class HomeController extends Controller
             'all_faculty' => $all_faculty,
             'footer_faculty' => $footer_faculty,
             'all_specialized' => $all_specialized,
+            'all_category' => $all_category,
             // 'student_comment_content' => ,
             // 'student_comment_name' => ,
             // 'student_comment_type' => ,
@@ -193,7 +208,10 @@ class HomeController extends Controller
             'teacher' => $teacher,
             'student' => $student,
             'image' => $image_category,
+
             'news' => $category,
+            'news_travel' => $category_travel,
+
             'collab_logo' => $collab_logo,
             'footer_link' => $footer_link,
             'copyright' => getSettingValue($settings, 'copyright'),

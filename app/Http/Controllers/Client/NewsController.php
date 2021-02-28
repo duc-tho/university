@@ -70,6 +70,10 @@ class NewsController extends Controller
                 $image_group['image_preview'] = $image_group['images'][0]['image'] ?? 'dist\img\image_placehoder.jpg';
             }
         }
+        // Lấy danh sách ngành kèm url
+        $all_specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+
+        $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
 
         // dd($image_category); // Bỏ comment để xem cấu trúc dữ liệu hình ảnh
 
@@ -82,35 +86,19 @@ class NewsController extends Controller
             if (!$news->isEmpty()) $item['news'] = $news;
         }
 
+        $category_travel = Category::where(['status' => 1, 'show_at_news' => '1'])->orderBy('display_order', 'asc')->get();
+
+        if (!$category_travel->isEmpty()) foreach ($category_travel as $key => $item) {
+            $news = $item->news()->orderBy('id', 'desc')->paginate(4);
+
+            if (!$news->isEmpty()) $item['news'] = $news;
+        }
 
 
-        // Lấy toàn bộ nghành trên header
-        $all_specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
-        // Lấy footer liệt kê các khoa
-        $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->paginate(4);
+        $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
+
 
         return view('client.layout.' . $layout_name . '.page.news', [
-
-            //Start Khoa Du Lịch
-            'logo_travel' => getSettingValue($settings, 'logo_travel'),
-            'slogan_main_travel' => getSettingValue($settings, 'slogan_main_travel'),
-            'slogan_intro_travel' => getSettingValue($settings, 'slogan_intro_travel'),
-            'slogan_intro_travel2' => getSettingValue($settings, 'slogan_intro_travel2'),
-            'slogan_intro_travel3' => getSettingValue($settings, 'slogan_intro_travel3'),
-            'slogan_intro_travel4' => getSettingValue($settings, 'slogan_intro_travel4'),
-            'slogan_intro_travel5' => getSettingValue($settings, 'slogan_intro_travel5'),
-
-            'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),
-            'footer_email_travel' => getSettingValue($settings, 'footer_email_travel'),
-            'footer_website_travel' => getSettingValue($settings, 'footer_website_travel'),
-            'footer_address_travel' => getSettingValue($settings, 'footer_address_travel'),
-            'all_specialized' => $all_specialized,
-
-            // 'name' => getSettingValue($specialized, 'name'),
-            // 'intro' => getSettingValue($specialized, 'intro'),
-            //End Khoa Du Lịch
-            'footer_faculty' => $footer_faculty,
-
             'phone' => $contact['phone'],
             'faculty' => $faculty,
             'email' => $contact['email'],
@@ -128,10 +116,33 @@ class NewsController extends Controller
             'socials_icon' => $socials_icon,
             'about' => $about_category,
             'category' => $category,
-            'image_category' => $image_category
+            'news_travel' => $category_travel,
+
+            'image_category' => $image_category,
+
+            //Start Khoa Du Lịch
+            'logo_travel' => getSettingValue($settings, 'logo_travel'),
+            'slogan_main_travel' => getSettingValue($settings, 'slogan_main_travel'),
+            'slogan_intro_travel' => getSettingValue($settings, 'slogan_intro_travel'),
+            'slogan_intro_travel2' => getSettingValue($settings, 'slogan_intro_travel2'),
+            'slogan_intro_travel3' => getSettingValue($settings, 'slogan_intro_travel3'),
+            'slogan_intro_travel4' => getSettingValue($settings, 'slogan_intro_travel4'),
+            'slogan_intro_travel5' => getSettingValue($settings, 'slogan_intro_travel5'),
+
+            'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),
+            'footer_email_travel' => getSettingValue($settings, 'footer_email_travel'),
+            'footer_website_travel' => getSettingValue($settings, 'footer_website_travel'),
+            'footer_address_travel' => getSettingValue($settings, 'footer_address_travel'),
+
+            'all_specialized' => $all_specialized,
+            'all_category' => $all_category,
+            'footer_faculty' => $footer_faculty,
 
 
 
+            // 'name' => getSettingValue($specialized, 'name'),
+            // 'intro' => getSettingValue($specialized, 'intro'),
+            //End Khoa Du Lịch
         ]);
     }
 
@@ -199,8 +210,22 @@ class NewsController extends Controller
             if (!$news->isEmpty()) $item['news'] = $news;
         }
 
+        $all_specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
 
+        $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
+
+        $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+
+
+        // dd($news_detail_travel );
+        // if (!$news_detail_travel->isEmpty()) foreach ($news_detail_travel as $key => $item) {
+        //     $news = $item->news()->orderBy('id', 'desc')->paginate(4);
+
+        //     if (!$news->isEmpty()) $item['news'] = $news;
+        // }
         return view('client.layout.' . $layout_name . '.page.news-detail', [
+
+
             'phone' => $contact['phone'],
             'faculty' => $faculty,
             'email' => $contact['email'],
@@ -218,7 +243,32 @@ class NewsController extends Controller
             'socials_icon' => $socials_icon,
             'about' => $about_category,
             'category' => $category,
-            'image_category' => $image_category
+            'image_category' => $image_category,
+
+            //Start Khoa Du Lịch
+            'logo_travel' => getSettingValue($settings, 'logo_travel'),
+            'slogan_main_travel' => getSettingValue($settings, 'slogan_main_travel'),
+            'slogan_intro_travel' => getSettingValue($settings, 'slogan_intro_travel'),
+            'slogan_intro_travel2' => getSettingValue($settings, 'slogan_intro_travel2'),
+            'slogan_intro_travel3' => getSettingValue($settings, 'slogan_intro_travel3'),
+            'slogan_intro_travel4' => getSettingValue($settings, 'slogan_intro_travel4'),
+            'slogan_intro_travel5' => getSettingValue($settings, 'slogan_intro_travel5'),
+
+            'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),
+            'footer_email_travel' => getSettingValue($settings, 'footer_email_travel'),
+            'footer_website_travel' => getSettingValue($settings, 'footer_website_travel'),
+            'footer_address_travel' => getSettingValue($settings, 'footer_address_travel'),
+
+            'all_specialized' => $all_specialized,
+            'all_category' => $all_category,
+            'footer_faculty' => $footer_faculty,
+
+
+
+            // 'name' => getSettingValue($specialized, 'name'),
+            // 'intro' => getSettingValue($specialized, 'intro'),
+            //End Khoa Du Lịch
+
         ]);
     }
 

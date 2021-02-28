@@ -39,7 +39,6 @@
                     <div class="blog-grid-system">
                         <div class="row">
                             @foreach ($category['news'] as $item)
-
                             <div class="col-md-6">
                                 <div class="blog-box">
                                     <div class="post-media">

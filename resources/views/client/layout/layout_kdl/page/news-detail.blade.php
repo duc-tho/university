@@ -5,7 +5,7 @@
     <div class="breadcrum-bg py-sm-5 py-4">
         <div class="container py-lg-3">
             <h2>Tin tức Khoa Du Lịch</h2>
-            <p><a href="{{route('khoadulich')}}">Trang Chủ</a> &nbsp; / &nbsp; Tin Tức</p>
+            <p><a href="#">Trang Chủ</a> &nbsp; / &nbsp; Tin Tức</p>
         </div>
     </div>
 </section>
@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="col-lg-9 col-md-9 blog_details">
-                        <h2>Học ngắn hạn tại SAIGONACT: Nhiều lựa chọn cho người học</h2>
+                        <h2>tieu de</h2>
                         <br>
                         <p class="excert">
                             Bạn đã tốt nghiệp THPT hoặc đã học hết phổ thông nhưng đại học không phải là sự lựa chọn của bạn. Bạn muốn chọn một nghề nào đó để học nhưng lại không muốn mất quá nhiều thời gian trong một số trường nghề mà ra trường lại chưa chắc làm được việc?
@@ -68,7 +68,6 @@
                             materials yourself at a fraction of the camp price. However, who has the willpower to
                             actually sit through a self-imposed MCSE training.
                         </div>
-
                     </div>
                 </div>
 

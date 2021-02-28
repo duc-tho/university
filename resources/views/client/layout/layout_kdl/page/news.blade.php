@@ -12,24 +12,24 @@
     <section class=" w3l-features-8">
         <div class="features py-5" id="services">
             <div class="container py-md-3">
+                @foreach ($news_travel as $key => $category_travel)
                 <div class="fea-gd-vv text-center row">
-                    @foreach ($category[1]['news'] as $key => $item)
-
-                    @if ($key >3 )
+                    @foreach ($category_travel['news'] as $item)
                         <div class="float-top col-lg-4 col-md-6">
-                            <a href="#"><img
+                            <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category_travel['slug'], $item['slug']]) }}"><img
                                     src="{{ asset('dist/layout/layout_khoadulich/images/hoc-ngan-han-tai-saigonact-nhieu-lua-chon-cho-nguoi-hoc-thumbnail-36492.jpg') }}"
                                     class="img-responsive" alt=""></a>
                             <div class="float-lt feature-gd">
                                 <h3><a href="#"">{{$item->title}}</a> </h3>
-                                    <h6> <span id=" sernew">Tin tức,</span> tháng 6/24/2020</h6>
-                                        <p> Bạn đã tốt nghiệp THPT hoặc đã học hết phổ thông nhưng đại học không
-                                            phải là sự lựa chọn của bạn. </p>
+                                    <h6> <span id="sernew">{{ $category_travel->title}}, </span>{{ ConvertDatabaseTimeToDMY($item['created_at']) }}</h6>
+                                        <p> {{$item->description}} </p>
                             </div>
                         </div>
-                        @endif
-                    @endforeach
+                        @endforeach
                 </div>
+                @endforeach
+                <br>
+                {{-- @endforeach --}}
             </div>
         </div>
     </section>
