@@ -40,76 +40,80 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
 <!-- CKEDITOR -->
+{{--
 <script src="{{ asset('plugins/editor/ckeditor/ckeditor.js') }}"></script>
-<script src="{{ asset('plugins/editor/ckfinder/ckfinder.js') }}"></script>
+<script src="{{ asset('plugins/editor/ckfinder/ckfinder.js') }}"></script> --}}
+<script src="{{ asset('plugins/ckeditor5/build/ckeditor.js') }}"></script>
+<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>
 <!-- Link Jequery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Summernote -->
 <script src=" {{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
 <script>
     $(function () {
-    bsCustomFileInput.init();
+        bsCustomFileInput.init();
 
-    //Initialize Select2 Elements
-    $('.select2').select2()
+        //Initialize Select2 Elements
+        $('.select2').select2()
 
-    //Initialize Select2 Elements
-    $('.select2bs4').select2({
-        theme: 'bootstrap4'
-    })
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+            theme: 'bootstrap4'
+        })
 
-    //Bootstrap Duallistbox
-    $('.duallistbox').bootstrapDualListbox()
+        //Bootstrap Duallistbox
+        $('.duallistbox').bootstrapDualListbox()
 
-    $("input[data-bootstrap-switch]").each(function () {
-        $(this).bootstrapSwitch('state', $(this).prop('checked'));
+        $("input[data-bootstrap-switch]").each(function () {
+            $(this).bootstrapSwitch('state', $(this).prop('checked'));
+        });
     });
-});
 
 </script>
 
-{{--  Scription upload ảnh --}}
+{{-- Scription upload ảnh --}}
 <script>
     $('#calendar').datepicker({});
 
-!function ($) {
-    $(document).on("click","ul.nav li.parent > a > span.icon", function(){
-        $(this).find('em:first').toggleClass("glyphicon-minus");
-    });
-    $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
-}(window.jQuery);
+    !function ($) {
+        $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
+            $(this).find('em:first').toggleClass("glyphicon-minus");
+        });
+        $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+    }(window.jQuery);
 
-$(window).on('resize', function () {
-  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
-})
-$(window).on('resize', function () {
-  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
-})
-// Chang Image add product
-function changeImg(input){
-    //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
-    if(input.files && input.files[0]){
-        var reader = new FileReader();
-        //Sự kiện file đã được load vào website
-        reader.onload = function(e){
-            //Thay đổi đường dẫn ảnh
-            $('#image').attr('src',e.target.result);
+    $(window).on('resize', function () {
+        if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+    })
+    $(window).on('resize', function () {
+        if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+    })
+    // Chang Image add product
+    function changeImg(input) {
+        //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            //Sự kiện file đã được load vào website
+            reader.onload = function (e) {
+                //Thay đổi đường dẫn ảnh
+                $('#image').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
         }
-        reader.readAsDataURL(input.files[0]);
     }
-}
-$(document).ready(function() {
-    $('#image').click(function(){
-        $('#img').click();
-    });
+    $(document).ready(function () {
+        $('#image').click(function () {
+            $('#img').click();
+        });
 
-});
+    });
 
 </script>
 
-{{--  Scription chạy slug--}}
+{{-- Scription chạy slug--}}
+{{--
 <script>
-    $('input#name').keyup(function(event) {
+    $('input#name').keyup(function (event) {
         /* Act on the event */
         var title, slug;
         //Lấy text từ thẻ input title
@@ -142,4 +146,89 @@ $(document).ready(function() {
         //In slug ra textbox có id “slug”
         $('input#slug').val(slug);
     });
+</script> --}}
+
+<script>
+    import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
+    ClassicEditor
+        .create(document.querySelector('#intro-summary'), {
+            toolbar: {
+                items: [
+                    'heading',
+                    'CKFinder',
+                    'highlight',
+                    '|',
+                    'bold',
+                    'italic',
+                    'underline',
+                    'strikethrough',
+                    'subscript',
+                    'superscript',
+                    'specialCharacters',
+                    '|',
+                    'fontFamily',
+                    'fontSize',
+                    '|',
+                    'alignment',
+                    'link',
+                    'bulletedList',
+                    'numberedList',
+                    '|',
+                    'indent',
+                    'outdent',
+                    '|',
+                    'imageInsert',
+                    'imageUpload',
+                    '|',
+                    'blockQuote',
+                    'insertTable',
+                    'mediaEmbed',
+                    'horizontalLine',
+                    '|',
+                    'undo',
+                    'redo',
+                    '|',
+                    'exportPdf',
+                    'exportWord',
+                    '|'
+                ]
+            },
+            language: 'vi',
+            ckfinder: {
+            // Upload the images to the server using the CKFinder QuickUpload command.
+            uploadUrl: 'https://example.com/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json',
+
+            // Define the CKFinder configuration (if necessary).
+            options: {
+                resourceType: 'Images'
+            }
+        }
+            image: {
+                toolbar: [
+                    'imageTextAlternative',
+                    'imageStyle:full',
+                    'imageStyle:side',
+                    'linkImage'
+                ]
+            },
+            table: {
+                contentToolbar: [
+                    'tableColumn',
+                    'tableRow',
+                    'mergeTableCells',
+                    'tableCellProperties',
+                    'tableProperties'
+                ]
+            },
+            licenseKey: '',
+        })
+        .then(editor => {
+            window.editor = editor;
+        })
+        .catch(error => {
+            console.error('Oops, something went wrong!');
+            console.error('Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:');
+            console.warn('Build id: owcizz4kpcrs-35ketd2bzzkf');
+            console.error(error);
+        });
 </script>

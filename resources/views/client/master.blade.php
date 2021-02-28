@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ĐHDL - @yield('title')</title>
     <link rel="shortcut icon" href="http://daihocdulich.edu.vn/default/template/imgs/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{{ asset('dist/css/cke-content.css') }}">
     @yield('meta')
     @yield('head')
 </head>
