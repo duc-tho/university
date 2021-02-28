@@ -27,7 +27,6 @@ class ContactController extends Controller
         // Lấy menu
         $menu = Category::where([
             'status' => '1',
-            'show_on_menu' => '1'
         ])->get();
 
         if (!$menu->isEmpty()) getCategories($menu);

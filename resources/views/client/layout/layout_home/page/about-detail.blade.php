@@ -40,7 +40,7 @@
                 </div>
             </div>
 
-            @include('client.layout.default.components.sidebar')
+            @include('client.layout.default.components.sidebar-about')
             <!-- end col -->
         </div><!-- end row -->
     </div><!-- end container -->
