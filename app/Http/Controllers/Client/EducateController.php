@@ -34,7 +34,7 @@ class EducateController extends Controller
         // Lấy menu
         $category = Category::where([
             'status' => '1',
-            'show_on_menu' => '1'
+
         ])->get();
 
         if (!$category->isEmpty()) getCategories($category);

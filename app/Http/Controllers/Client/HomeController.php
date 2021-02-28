@@ -67,24 +67,46 @@ class HomeController extends Controller
         // if (!$news_faculty->isEmpty()) foreach ($news_faculty as $key => $item) {
         //     $item['category'] = $item->category;
         // }
-        $notice=News::where(['status'=>1,'category_id'=>6])->orderBy("id","desc")->paginate(8);
-        $news = News::where(['status'=>1])->paginate(6);
-        if (!$news->isEmpty()) foreach ($news as $key => $item) {
-            $item['category'] = $item->category;
+        // $notice=News::where(['status'=>1,'category_id'=>6])->orderBy("id","desc")->paginate(8);
+        // $news = News::where(['status'=>1])->paginate(6);
+        // if (!$news->isEmpty()) foreach ($news as $key => $item) {
+        //     $item['category'] = $item->category;
+        // lấy tin tức và danh mục tin tức
+        $category = Category::where(['status' => 1, 'show_at_home' => '1'])->orderBy('display_order', 'asc')->get();
+
+        if (!$category->isEmpty()) foreach ($category as $key => $item) {
+            $news = $item->news()->orderBy('id', 'desc')->paginate(10);
+
+            if (!$news->isEmpty()) $item['news'] = $news;
         }
 
-        // Lấy hình ảnh và danh mục hình
-        $image_category = ImageCategory::where(['status' => 1])->get();
+        // dd($category);
+
+        // // Lấy hình ảnh và danh mục hình
+        // $image_category = ImageCategory::where(['status' => 1])->get();
+        // if (!$image_category->isEmpty()) foreach ($image_category as $key => $item) {
+        //     $image = $item->images;
+        //     if (!$image->isEmpty()) $item['image_item'] = $item->images()->paginate(8);
+        // }
+
+        // Lấy ảnh và danh mục hình
+
+        $image_category = ImageCategory::where(['faculty_id' => $faculty_id, 'status' => 1, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
 
         if (!$image_category->isEmpty()) foreach ($image_category as $key => $item) {
-            $image = $item->images;
-            if (!$image->isEmpty()) $item['image_item'] = $item->images()->paginate(8);
+            $item['image_group'] = ImageCategory::where(['status' => 1, 'parent_id' => $item['id']])->orderBy('display_order', 'asc')->get();
+
+            if (!$item['image_group']->isEmpty()) foreach ($item['image_group'] as $key => $image_group) {
+                $image['images'] = $image_group->images()->where(['status' => 1])->orderBy('display_order', 'asc')->get();
+                $image_group['image_preview'] = $image_group['images'][0]['image'] ?? 'dist\img\image_placehoder.jpg';
+            }
         }
+
+        // dd($image_category); // Bỏ comment để xem cấu trúc dữ liệu hình ảnh
 
         // Lấy menu
         $menu = Category::where([
             'status' => '1',
-            'show_on_menu' => '1'
         ])->get();
 
         if (!$menu->isEmpty()) getCategories($menu);
@@ -118,8 +140,8 @@ class HomeController extends Controller
             'google_map_link' => $contact['map_embed'],
             'website_link' => $contact['website_link'],
             'contact_title' => $contact['contact_title'],
-            'slogan_nn'=>getSettingValue($settings,'slogan_nn'),
-            'sub_slogan_nn'=>getSettingValue($settings,'sub_slogan_nn'),
+            'slogan_nn' => getSettingValue($settings, 'slogan_nn'),
+            'sub_slogan_nn' => getSettingValue($settings, 'sub_slogan_nn'),
             'time_work' => getSettingValue($settings, 'time_work'),
             'address' => $contact['address_info'],
 
@@ -173,7 +195,7 @@ class HomeController extends Controller
             'teacher' => $teacher,
             'student' => $student,
             'image' => $image_category,
-            'news' => $news,
+            'news' => $category,
             'collab_logo' => $collab_logo,
             'footer_link' => $footer_link,
             'copyright' => getSettingValue($settings, 'copyright'),

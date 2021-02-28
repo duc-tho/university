@@ -2065,3 +2065,8 @@ div#contact h3 {
 	color: black;
 	font-weight: bold;
 }
+
+.btn1 {
+    padding-left: .5em;
+    padding-right: .5em;
+}

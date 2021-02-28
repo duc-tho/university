@@ -10,11 +10,11 @@
     </div><!-- end widget -->
 
     <div class="widget col">
-        <h2 class="widget-title">Có thể bạn quan tâm!</h2>
+        <h2 class="widget-title">Giới thiệu</h2>
         <div class="blog-list-widget">
             <div class="list-group">
-                @foreach ($all_category as $item)
-                <a href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $item['slug']]) }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                @foreach ($about as $item)
+                <a href="{{ route('gioi-thieu-chi-tiet', ['trang-chu', $item['slug']]) }}" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="w-100 justify-content-between">
                         <img src="{{ asset($item['image']) }}" alt="" class="img-fluid float-left">
                         <h5 class="mb-1">{{ $item['title'] }}</h5>

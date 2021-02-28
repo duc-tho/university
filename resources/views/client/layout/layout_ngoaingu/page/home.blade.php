@@ -133,7 +133,7 @@
                         <div class="col-md-8 col-sm-6 col-xs-12">
                             <div class="grid grid--2">
                             @foreach($news as $item)
-                                @if($item->category_id != 9)
+                               
                                 <article id="post-37885"
                                     class="post-37885 post type-post status-publish format-standard has-post-thumbnail hentry category-tin-tuc-chung cart cart--wide">
                                     <a class="cart__image"
@@ -239,7 +239,7 @@
                                         </span>
                                     </header>
                                 </article> -->
-                                @endif
+                               
                              @endforeach
                             </div>
                         </div>
