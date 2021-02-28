@@ -81,6 +81,11 @@
     margin-bottom: 2px;
 }
 
+.page-item.active .page-link {
+    color: lightblue !important;
+    background:rgb(24, 48, 53) !important;
+}
+
 .ndt__section--title h3 a {
     font-size: 20px;
 }

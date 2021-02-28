@@ -32,7 +32,7 @@ class NewsController extends Controller
         // Lấy menu
         $menu = Category::where([
             'status' => '1',
-            'show_on_menu' => '1'
+
         ])->get();
 
         if (!$menu->isEmpty()) getCategories($menu);
@@ -74,7 +74,7 @@ class NewsController extends Controller
         // dd($image_category); // Bỏ comment để xem cấu trúc dữ liệu hình ảnh
 
         // lấy danh mục tin tức
-        $category = Category::where(['status' => 1, 'show_on_menu' => '0'])->orderBy('display_order', 'asc')->get();
+        $category = Category::where(['status' => 1, 'show_at_news' => '1'])->orderBy('display_order', 'asc')->get();
 
         if (!$category->isEmpty()) foreach ($category as $key => $item) {
             $news = $item->news()->orderBy('id', 'desc')->paginate(4);
@@ -149,7 +149,7 @@ class NewsController extends Controller
         // Lấy menu
         $menu = Category::where([
             'status' => '1',
-            'show_on_menu' => '1'
+
         ])->get();
 
         if (!$menu->isEmpty()) getCategories($menu);
@@ -191,7 +191,7 @@ class NewsController extends Controller
         // dd($image_category); // Bỏ comment để xem cấu trúc dữ liệu hình ảnh
 
         // lấy danh mục tin tức
-        $category = Category::where(['status' => 1, 'show_on_menu' => '0'])->orderBy('display_order', 'asc')->get();
+        $category = Category::where(['status' => 1, 'show_at_news' => '0'])->orderBy('display_order', 'asc')->get();
 
         if (!$category->isEmpty()) foreach ($category as $key => $item) {
             $news = $item->news()->orderBy('id', 'desc')->paginate(4);
@@ -222,7 +222,7 @@ class NewsController extends Controller
         ]);
     }
 
-    public function list(Request $request, $khoa)
+    public function list(Request $request, $khoa, $danh_muc)
     {
         // Lấy thông tin khoa và kiểm tra xem khoa có tồn tại hay không
         $faculty = Faculty::where(['status' => 1, 'slug' => $khoa])->first();
@@ -236,7 +236,7 @@ class NewsController extends Controller
         // Lấy menu
         $menu = Category::where([
             'status' => '1',
-            'show_on_menu' => '1'
+
         ])->get();
 
         if (!$menu->isEmpty()) getCategories($menu);
@@ -262,30 +262,13 @@ class NewsController extends Controller
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty['id']])->first();
 
-        // Lấy danh mục hình
-
-        $image_category = ImageCategory::where(['faculty_id' => $faculty_id, 'status' => 1, 'parent_id' => 0])->orderBy('display_order', 'asc')->paginate(2);
-
-        if (!$image_category->isEmpty()) foreach ($image_category as $key => $item) {
-            $item['image_group'] = ImageCategory::where(['status' => 1, 'parent_id' => $item['id']])->orderBy('display_order', 'asc')->paginate(1);
-
-            if (!$item['image_group']->isEmpty()) foreach ($item['image_group'] as $key => $image_group) {
-                $image['images'] = $image_group->images()->where(['status' => 1])->orderBy('display_order', 'asc')->get();
-                $image_group['image_preview'] = $image_group['images'][0]['image'] ?? 'dist\img\image_placehoder.jpg';
-            }
-        }
-
-        // dd($image_category); // Bỏ comment để xem cấu trúc dữ liệu hình ảnh
+        // lấy tin tức
+        $category = Category::where(['status' => 1, 'slug' => $danh_muc])->first();
+        abort_if(!$category, 404);
+        $category['news'] = $category->news()->where(['status' => 1])->orderBy('id', 'desc')->paginate(10);
 
         // lấy danh mục tin tức
-        $category = Category::where(['status' => 1, 'show_on_menu' => '0'])->orderBy('display_order', 'asc')->get();
-
-        if (!$category->isEmpty()) foreach ($category as $key => $item) {
-            $news = $item->news()->orderBy('id', 'desc')->paginate(4);
-
-            if (!$news->isEmpty()) $item['news'] = $news;
-        }
-
+        $all_category = Category::where(['status' => 1])->get();
 
         return view('client.layout.' . $layout_name . '.page.news-list', [
             'phone' => $contact['phone'],
@@ -305,7 +288,7 @@ class NewsController extends Controller
             'socials_icon' => $socials_icon,
             'about' => $about_category,
             'category' => $category,
-            'image_category' => $image_category
+            'all_category' => $all_category
         ]);
     }
 }
