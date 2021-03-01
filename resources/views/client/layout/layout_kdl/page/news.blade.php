@@ -12,7 +12,7 @@
     <section class=" w3l-features-8">
         <div class="features py-5" id="services">
             <div class="container py-md-3">
-                @foreach ($news_travel as $key => $category_travel)
+                {{-- @foreach ($news_travel as $key => $category_travel) --}}
                 <div class="fea-gd-vv text-center row">
                     @foreach ($only_news as $item)
                         <div class="float-top col-lg-4 col-md-6">
@@ -27,9 +27,9 @@
                         </div>
                         @endforeach
                 </div>
-                @endforeach
+                {{-- @endforeach --}}
                 <br>
-
+                {{-- @endforeach --}}
             </div>
         </div>
     </section>
