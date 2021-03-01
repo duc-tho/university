@@ -13,38 +13,26 @@
             <div class="br"></div>
         </aside>
 
+        @foreach ($news_travel_nvarbar as $key => $category_travel)
         <aside class="single_sidebar_widget popular_post_widget">
-            <h3 class="widget_title">Thông Báo</h3>
+            <h3 class="widget_title">{{ $category_travel['title'] }}</h3>
+            @foreach ($category_travel['news'] as $item)
             <div class="testimonial-info">
-                <a href="#">
-                    <p id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học</p>
-                </a>
-
-                <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5>
-                <br>
-            </div>
-
-            <div class="testimonial-info">
-                <a href="#">
-                    <p id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học, Đăng ký các môn thi lại </p>
+                <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category_travel['slug'], $item['slug']]) }}">
+                    <p id="tb">{{ $item['title']  }}</p>
                 </a>
                 <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5>
                 <br>
             </div>
-            <div class="testimonial-info">
-                <a href="#">
-                    <p id="tb"> Học kỳ dự thính 1/2020-2021 - Thông báo đăng ký học trả nợ môn học, Đăng ký các môn thi lại </p>
-                </a>
-                <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5>
-                <br>
-            </div>
+            @endforeach
             <div class="br"></div>
         </aside>
+        @endforeach
         <aside class="single_sidebar_widget ads_widget">
             <a href="#"><img class="img-fluid" src="imagesadd.jpg" alt=""></a>
             <div class="br"></div>
         </aside>
-        <aside class="single_sidebar_widget post_category_widget">
+        {{-- <aside class="single_sidebar_widget post_category_widget">
             <h4 class="widget_title">Bảng Tin Khoa</h4>
             <div class="testimonial-info">
                 <a href="#">
@@ -69,7 +57,7 @@
                 </div>
             </div>
             <div class="br"></div>
-        </aside>
+        </aside> --}}
         <aside class="single-sidebar-widget newsletter_widget">
             <h4 class="widget_title">Đóng góp ý kiến</h4>
             <p>
@@ -96,14 +84,11 @@
         <aside class="single-sidebar-widget tag_cloud_widget">
             <h4 class="widget_title">Liên kết khác</h4>
             <ul class="list">
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Thực Tập</a></li>
-                <li><a href="#">Thông Báo</a></li>
-                <li><a href="#">Giới Thiệu</a></li>
-                <li><a href="#">Tin tức</a></li>
-                <li><a href="#">Liên Hệ</a></li>
-                <li><a href="#">Nghành Quản Trị Khách Sạn</a></li>
-
+                @foreach ($footer_link as $footer_category)
+                @foreach ($footer_category['child'] as $footer_item)
+                <li><a href="{{ checkURL($footer_item['link']) }}">{{ $footer_item['title'] }}</a></li>
+                @endforeach
+                @endforeach
             </ul>
         </aside>
     </div>

@@ -36,12 +36,12 @@
 
                                     <div class="form-group">
                                         <label>Tên Layout : </label>
-                                        <input required type="text" id="layoutname" name="layout_name"  value="{{$faculty->layout_name}}" class="form-control" placeholder="Nhập tên layout...">
+                                        <input required type="text" id="layoutname" name="layout_name" value="{{$faculty->layout_name}}" class="form-control" placeholder="Nhập tên layout...">
                                     </div>
 
                                     <div class="form-group">
                                         <label>Trang Layout : </label>
-                                        <input required type="text" id="layoutpage" name="layout_page"  value="{{$faculty->layout_page}}" class="form-control" placeholder="Nhập trang layout...">
+                                        <input required type="text" id="layoutpage" name="layout_page" value="{{$faculty->layout_page}}" class="form-control" placeholder="Nhập trang layout...">
                                     </div>
 
                                     <div class="form-group">
@@ -54,12 +54,12 @@
 
                                     <div class="form-group">
                                         <label>Người Tạo : </label>
-                                        <input required type="text" id="created_by" name="created_by"  value="{{$faculty->created_by}}" class="form-control" placeholder="Nhập trang layout...">
+                                        <input required type="text" id="created_by" name="created_by" value="{{$faculty->created_by}}" class="form-control" placeholder="Nhập trang layout...">
                                     </div>
 
                                     <div class="form-group">
                                         <label>Người Đăng : </label>
-                                        <input required type="text" id="updated_by" name="updated_by"  value="{{$faculty->updated_by}}" class="form-control" placeholder="Nhập trang layout...">
+                                        <input required type="text" id="updated_by" name="updated_by" value="{{$faculty->updated_by}}" class="form-control" placeholder="Nhập trang layout...">
                                     </div>
                                 </div>
                             </div>

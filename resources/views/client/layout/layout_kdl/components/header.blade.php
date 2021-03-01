@@ -64,16 +64,17 @@
                             Sinh Viên
                         </a>
                         <div class="dropdown-menu">
-                            @foreach ($all_category as $item)
+                            {{-- @foreach ($all_category as $item)
                                 @foreach ($all_category as $item2)
                                     @if ($item->id == $item2->parent_id)
                                         <a class="dropdown-item" href="{{route('sinh-vien-danh-muc', [$faculty['slug'],$item2->slug])}}">{{$item2->title}}</a>
                                     @endif
                                 @endforeach
-                            @endforeach
-                            {{-- <a class="dropdown-item" href="#">Thực tập</a>
-                            <a class="dropdown-item" href="#">Thông Báo</a>
-                            <a class="dropdown-item" href="javascription:">Đăng Nhập hệ thống sinh viên</a> --}}
+                            @endforeach --}}
+                            <a class="dropdown-item" href="{{route('thong-bao', [$faculty['slug']])}}">Thông Báo</a>
+                            {{-- <a class="dropdown-item" href="{{route('sinh-vien-danh-muc', [$faculty['slug']])}}">Thực tập</a> --}}
+
+                            {{-- <a class="dropdown-item" href="javascription:">Đăng Nhập hệ thống sinh viên</a> --}}
                         </div>
                     </li>
                     <li class="nav-item">

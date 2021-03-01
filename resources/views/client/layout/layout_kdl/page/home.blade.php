@@ -117,7 +117,7 @@
 
 
                         {{-- <a class="btn btn-secondary btn-theme2 mt-3" href="{{ route('gioithieu') }}"> Đọc Thêm</a> --}}
-                        <a class="btn btn-secondary btn-theme2 mt-3" href="#"> Đọc Thêm</a>
+                        {{-- <a class="btn btn-secondary btn-theme2 mt-3" href="#"> Đọc Thêm</a> --}}
                     </div>
                     <div class="column ccont-left col-lg-6">
                         <img src="{{ asset($item['image']) }}" class="img-responsive" alt="">
@@ -142,7 +142,7 @@
                     </div>
                     <div class="column2">
                         {{-- <a class="btn btn-secondary btn-theme2 mt-3" href="{{ route('tuyensinh') }}"> Ứng Tuyển</a> --}}
-                        <a class="btn btn-secondary btn-theme2 mt-3" href="#"> Ứng Tuyển</a>
+                        <a class="btn btn-secondary btn-theme2 mt-3" href="{{route('tuyensinh')}}"> Đăng Kí Tuyển Sinh</a>
 
                     </div>
                 </div>
@@ -308,17 +308,19 @@
                             @foreach ($category_travel['news'] as $item)
                                 <div class="price-box btn-layout bt6">
                                     <div class="grid grid-column-2">
+                                        <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category_travel['slug'], $item['slug']]) }}">
                                         <div class="column-6">
                                             <img src="{{ asset($item['image']) }}" alt="" class="img-fluid">
                                         </div>
                                         <div class="column1">
                                             <div class="job-info">
-                                                <h6 class="pricehead"><a href="#">{{ $item['title']  }} </a></h6>
+                                                <h6 class="pricehead"><a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category_travel['slug'], $item['slug']]) }}">{{ $item['title']  }} </a></h6>
                                                 <h5>{{ $item->event_time }}</h5>
                                                 <p>{{ $item->description }}
                                                 </p>
                                             </div>
                                         </div>
+                                        </a>
                                     </div>
                                 </div>
                             @endforeach
@@ -326,8 +328,7 @@
                         </div>
                         <div class="text-right mt-4">
                             {{-- <a class="btn btn-secondary btn-theme2" href="{{ route('tintuc') }}"> Xem tất cả</a> --}}
-                            <a class="btn btn-secondary btn-theme2" href="#"> Xem tất cả</a>
-
+                            <a class="btn btn-secondary btn-theme2" href="{{route('tin-tuc', [$faculty['slug']])}}"> Xem tất cả</a>
                         </div>
                     </div>
                     @endforeach
