@@ -10,8 +10,10 @@ use App\Models\Faculty;
 use App\Models\FooterLinkCategory;
 use App\Models\Image;
 use App\Models\ImageCategory;
+use App\Models\News;
 use App\Models\Settings;
 use App\Models\Socials;
+use App\Models\Specialized;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -68,6 +70,10 @@ class NewsController extends Controller
                 $image_group['image_preview'] = $image_group['images'][0]['image'] ?? 'dist\img\image_placehoder.jpg';
             }
         }
+        // Lấy danh sách ngành kèm url
+        $all_specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+
+        $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
 
         // dd($image_category); // Bỏ comment để xem cấu trúc dữ liệu hình ảnh
 
@@ -79,6 +85,13 @@ class NewsController extends Controller
 
             if (!$news->isEmpty()) $item['news'] = $news;
         }
+
+        // chỉ lấy tin tức trong danh mục tin tức
+        $category_news = Category::where(['status' => 1, 'slug' => 'tin-tuc'])->first();
+        $only_news = $category_news->news()->orderBy('id', 'desc')->paginate(4);
+
+
+        $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
 
 
         return view('client.layout.' . $layout_name . '.page.news', [
@@ -99,11 +112,37 @@ class NewsController extends Controller
             'socials_icon' => $socials_icon,
             'about' => $about_category,
             'category' => $category,
-            'image_category' => $image_category
+            'only_news' => $only_news,
+
+            'image_category' => $image_category,
+
+            //Start Khoa Du Lịch
+            'logo_travel' => getSettingValue($settings, 'logo_travel'),
+            'slogan_main_travel' => getSettingValue($settings, 'slogan_main_travel'),
+            'slogan_intro_travel' => getSettingValue($settings, 'slogan_intro_travel'),
+            'slogan_intro_travel2' => getSettingValue($settings, 'slogan_intro_travel2'),
+            'slogan_intro_travel3' => getSettingValue($settings, 'slogan_intro_travel3'),
+            'slogan_intro_travel4' => getSettingValue($settings, 'slogan_intro_travel4'),
+            'slogan_intro_travel5' => getSettingValue($settings, 'slogan_intro_travel5'),
+
+            'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),
+            'footer_email_travel' => getSettingValue($settings, 'footer_email_travel'),
+            'footer_website_travel' => getSettingValue($settings, 'footer_website_travel'),
+            'footer_address_travel' => getSettingValue($settings, 'footer_address_travel'),
+
+            'all_specialized' => $all_specialized,
+            'all_category' => $all_category,
+            'footer_faculty' => $footer_faculty,
+
+
+
+            // 'name' => getSettingValue($specialized, 'name'),
+            // 'intro' => getSettingValue($specialized, 'intro'),
+            //End Khoa Du Lịch
         ]);
     }
 
-    public function detail(Request $request, $khoa)
+    public function detail(Request $request, $khoa, $danh_muc, $bai_viet)
     {
         // Lấy thông tin khoa và kiểm tra xem khoa có tồn tại hay không
         $faculty = Faculty::where(['status' => 1, 'slug' => $khoa])->first();
@@ -143,20 +182,23 @@ class NewsController extends Controller
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty['id']])->first();
 
-        // Lấy danh mục hình
+        // lấy tin tức
+        $category = Category::where(['status' => 1, 'slug' => $danh_muc])->first();
+        abort_if(!$category, 404);
 
-        $image_category = ImageCategory::where(['faculty_id' => $faculty_id, 'status' => 1, 'parent_id' => 0])->orderBy('display_order', 'asc')->paginate(2);
+        $news = News::where(['status' => 1, 'slug' => $bai_viet])->first();
+        abort_if(!$news, 404);
+        $news['view_count'] = $news['view_count'] + 1;
+        $news->save();
 
-        if (!$image_category->isEmpty()) foreach ($image_category as $key => $item) {
-            $item['image_group'] = ImageCategory::where(['status' => 1, 'parent_id' => $item['id']])->orderBy('display_order', 'asc')->paginate(1);
 
-            if (!$item['image_group']->isEmpty()) foreach ($item['image_group'] as $key => $image_group) {
-                $image['images'] = $image_group->images()->where(['status' => 1])->orderBy('display_order', 'asc')->get();
-                $image_group['image_preview'] = $image_group['images'][0]['image'] ?? 'dist\img\image_placehoder.jpg';
-            }
-        }
+        $news_travel = News::where(['status' => 1, 'slug' => $bai_viet])->first();
+        abort_if(!$news_travel, 404);
+        $news_travel['view_count'] = $news_travel['view_count'] + 1;
+        $news_travel->save();
 
-        // dd($image_category); // Bỏ comment để xem cấu trúc dữ liệu hình ảnh
+
+        $relate_news = $category->news()->where(['status' => 1, ['id', '!=', $news['id']]])->take(2)->get();
 
         // lấy danh mục tin tức
         $category = Category::where(['status' => 1, 'show_at_news' => '0'])->orderBy('display_order', 'asc')->get();
@@ -168,7 +210,27 @@ class NewsController extends Controller
         }
 
 
+        $all_specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+
+        $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
+
+        $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+
+        $category_travel = Category::where(['status' => 1, 'show_at_news' => '1'])->orderBy('display_order', 'asc')->get();
+
+        if (!$category_travel->isEmpty()) foreach ($category_travel as $key => $item) {
+            $news = $item->news()->orderBy('id', 'desc')->paginate(4);
+
+            if (!$news->isEmpty()) $item['news'] = $news;
+        }
+        // dd($news_detail_travel );
+        // if (!$news_detail_travel->isEmpty()) foreach ($news_detail_travel as $key => $item) {
+        //     $news = $item->news()->orderBy('id', 'desc')->paginate(4);
+
+        //     if (!$news->isEmpty()) $item['news'] = $news;
+        // }
         return view('client.layout.' . $layout_name . '.page.news-detail', [
+
             'phone' => $contact['phone'],
             'faculty' => $faculty,
             'email' => $contact['email'],
@@ -186,7 +248,32 @@ class NewsController extends Controller
             'socials_icon' => $socials_icon,
             'about' => $about_category,
             'category' => $category,
-            'image_category' => $image_category
+            'news' => $news,
+            'news_travel' => $news_travel,
+            'news_travel_nvarbar' => $category_travel,
+
+            'relate_news' => $relate_news,
+            'all_category' => $all_category,
+
+            //Start Khoa Du Lịch
+            'logo_travel' => getSettingValue($settings, 'logo_travel'),
+            'slogan_main_travel' => getSettingValue($settings, 'slogan_main_travel'),
+            'slogan_intro_travel' => getSettingValue($settings, 'slogan_intro_travel'),
+            'slogan_intro_travel2' => getSettingValue($settings, 'slogan_intro_travel2'),
+            'slogan_intro_travel3' => getSettingValue($settings, 'slogan_intro_travel3'),
+            'slogan_intro_travel4' => getSettingValue($settings, 'slogan_intro_travel4'),
+            'slogan_intro_travel5' => getSettingValue($settings, 'slogan_intro_travel5'),
+
+            'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),
+            'footer_email_travel' => getSettingValue($settings, 'footer_email_travel'),
+            'footer_website_travel' => getSettingValue($settings, 'footer_website_travel'),
+            'footer_address_travel' => getSettingValue($settings, 'footer_address_travel'),
+            'footer_faculty' => $footer_faculty,
+            'all_specialized' => $all_specialized,
+            'all_category' => $all_category,
+            // 'name' => getSettingValue($specialized, 'name'),
+            // 'intro' => getSettingValue($specialized, 'intro'),
+            //End Khoa Du Lịch
         ]);
     }
 

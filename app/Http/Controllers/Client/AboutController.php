@@ -30,7 +30,7 @@ class AboutController extends Controller
         // Lấy menu
         $menu = Category::where([
             'status' => '1',
-            
+
         ])->get();
 
         if (!$menu->isEmpty()) getCategories($menu);
@@ -59,7 +59,7 @@ class AboutController extends Controller
 
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty['id']])->first();
-
+        $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
         return view('client.layout.' . $layout_name . '.page.about', [
             'phone' => $contact['phone'],
             'faculty' => $faculty,
@@ -88,6 +88,7 @@ class AboutController extends Controller
 
             //End Khoa Du Lịch
             'footer_faculty' => $footer_faculty,
+            'all_category' => $all_category,
         ]);
     }
 

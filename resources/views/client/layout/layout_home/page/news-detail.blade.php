@@ -6,12 +6,17 @@
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="">
+<meta property="og:url" content="https://www.your-domain.com/your-page.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Your Website Title" />
+<meta property="og:description" content="Your description" />
+<meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
 @endsection
 
 @section('main')
 @include('client.layout.default.components.headernews')
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v9.0&appId=440819316956327&autoLogAppEvents=1" nonce="VShJsKfQ"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0" nonce="2JjGvYzS"></script>
 <section class="section wb">
     <div class="container">
         <div class="row">
@@ -20,115 +25,89 @@
                     <div class="blog-title-area">
 
 
-                        <span class="color-aqua"><a href="blog-category-01.html" title="">Tin Tức</a></span>
+                        <span class="color-aqua"><a href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category['slug']]) }}" title="">{{ $category['title'] }}</a></span>
 
-                        <h3>Du lịch học đường thời kỳ hội nhập</h3>
+                        <h3>{{ $news['title'] }}</h3>
 
                         <div class="blog-meta big-meta">
-                            <small><a href="single.html" title="">21/07/2017</a></small>
-                            <small><a href="blog-author.html" title="">Tác giả: Minh Lộc</a></small>
-                            <small><a href="#" title=""><i class="fa fa-eye"></i> 2344</a></small>
+                            <small><a href="javascript:">{{ ConvertDatabaseTimeToDMY($news['created_at']) }}</a></small>
+                            <small><a href="javascript:">Tác giả: {{ $news['created_by'] }}</a></small>
+                            <small><a href="javascript:"><i class="fa fa-eye"></i> {{ $news['view_count'] }}</a></small>
                         </div><!-- end meta -->
 
                         <div class="post-sharing">
                             <ul class="list-inline">
-                                <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
-                                <li><a href="#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
-                                <li><a href="#" class="gp-button btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
+                                <div class="fb-share-button" data-href="{{ URL::current() }}" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
                             </ul>
                         </div><!-- end post-sharing -->
                     </div><!-- end title -->
 
-                    <div class="single-post-media">
+                    {{-- <div class="single-post-media">
                         <img src="{{ asset('dist/layout/layout_kkt/images/du-lich-hoc-duong-thoi-ky-hoi-nhap-thumbnail-96548.png') }}" alt="" class="img-fluid">
-                    </div><!-- end media -->
+                </div><!-- end media --> --}}
 
-                    <div class="blog-content">
-                        <div class="pp">
-                            <p>Để giúp trẻ vượt qua được những áp lực trong học tập, các bậc phụ huynh cần có kế hoạch cụ thể cho con được vui chơi giải trí một cách hợp lý. Nhưng để lựa chọn cho các em chơi gì, tham gia hoạt động nào lại là điều không hề đơn giản. Để việc thực hiện du lịch học đường có hiểu quả thì cần có sự phối hợp chặt chẽ giữa gia đình và nhà trường</p>
-                            <p>Trả lời cho những băn khoăn đó của các bậc phụ huynh, một giải pháp có thể mang lại nhiều ích lợi cho trẻ đó là các chương trình “Du lịch học đường” dành cho các em từ Mẫu giáo, Tiểu học đến Trung học cơ sở, Trung học phổ thông cho đến Cao đẳng và Đại học…. Du lịch học đường là một lựa chọn tốt cho nhà trường cũng như các vị phụ huynh trong việc tìm ra giải pháp giúp các em có thời gian vui chơi, giảm căng thẳng và áp lực trong việc học tập. Đồng thời đây cũng là cơ hội cho các doanh nghiệp lữ hành đưa ra những sản phẩm mới đáp ứng nhu cầu ngày càng tăng của thị trường.</p>
-                            <p>Khi tham gia vào các chương trình du lịch học đường các em được tham gia vào các hoạt động sản xuất nông nghiệp như xay lúa, giã gạo, tát nước, úp nơm bắt cá và nướng cá bằng rơm, ngoài ra các em còn được trãi nghiệm nhập vai làm các công việc của các cô chú….</p>
-                        </div><!-- end pp -->
+                <div class="ck-content">
+                    {!! $news['content'] !!}
+                </div><!-- end content -->
 
+                <div class="blog-title-area">
+                    {{-- <div class="tag-cloud-single">
+                        <span>Tags</span>
+                        <small><a href="#" title="">lifestyle</a></small>
+                        <small><a href="#" title="">colorful</a></small>
+                        <small><a href="#" title="">trending</a></small>
+                        <small><a href="#" title="">another tag</a></small>
+                    </div><!-- end meta --> --}}
 
-                       <!-- end pp -->
-                    </div><!-- end content -->
-
-                    <div class="blog-title-area">
-                        <div class="tag-cloud-single">
-                            <span>Tags</span>
-                            <small><a href="#" title="">lifestyle</a></small>
-                            <small><a href="#" title="">colorful</a></small>
-                            <small><a href="#" title="">trending</a></small>
-                            <small><a href="#" title="">another tag</a></small>
-                        </div><!-- end meta -->
-
-                        <div class="post-sharing">
-                            <ul class="list-inline">
-                                <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
-                                <li><a href="#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
-                                <li><a href="#" class="gp-button btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
-                            </ul>
-                        </div><!-- end post-sharing -->
-                    </div><!-- end title -->
+                    <div class="post-sharing">
+                        <ul class="list-inline">
+                            <div class="fb-share-button" data-href="{{ URL::current() }}" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
+                        </ul>
+                    </div><!-- end post-sharing -->
+                </div><!-- end title -->
 
                 <!-- end row -->
 
-                    <hr class="invis1">
+                <hr class="invis1">
 
+                <div class="custombox clearfix">
+                    <h4 class="small-title">Tin liên quan</h4>
+                    <div class="row">
+                        @if ($relate_news->isEmpty())
+                        <div class="col-lg-6 mx-auto text-center">Hiện chưa có tin liên quan!</div>
+                        @endif
+                        @foreach ($relate_news as $item)
+                        <div class="col-lg-6">
+                            <div class="blog-box">
+                                <div class="post-media">
+                                    <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">
+                                        <img src="{{ asset($item['image']) }}" alt="{{ $item['title'] }}" class="img-fluid float-left">
+                                        <div class="hovereffect">
+                                            <span class=""></span>
+                                        </div><!-- end hover -->
+                                    </a>
+                                </div><!-- end media -->
+                                <div class="blog-meta">
+                                    <h4><a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">{{ $item['title'] }}</a></h4>
+                                    <small><a href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category['slug']]) }}">{{ $category['title'] }}</a></small>
+                                    <small><a href="javascript:">{{ ConvertDatabaseTimeToDMY($item['created_at']) }}</a></small>
+                                </div><!-- end meta -->
+                            </div><!-- end blog-box -->
+                        </div><!-- end col -->
+                        @endforeach
+                    </div><!-- end row -->
+                </div><!-- end custom-box -->
 
+                <hr class="invis1">
 
-                    <div class="custombox clearfix">
-                        <h4 class="small-title">Tin liên quan</h4>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="blog-box">
-                                    <div class="post-media">
-                                        <a href="single.html" title="">
-                                            <img src="{{ asset('dist/layout/layout_kkt/images/nganh-tai-chinh-ngan-hang-hoc-de-lam-gi-thumbnail-99181 (1).png') }}" alt=""  class="img-fluid float-left" >
-                                            <div class="hovereffect">
-                                                <span class=""></span>
-                                            </div><!-- end hover -->
-                                        </a>
-                                    </div><!-- end media -->
-                                    <div class="blog-meta">
-                                        <h4><a href="single.html" title="">Hội Nhập Quốc Tế Cộng Đồng</a></h4>
-                                        <small><a href="blog-category-01.html" title="">Tin Tức</a></small>
-                                        <small><a href="blog-category-01.html" title="">21/07/2017</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-                            </div><!-- end col -->
+                <div class="custombox clearfix">
+                    <div class="fb-comments" data-href="{{ URL::current() }}" data-width="750" data-numposts="5"></div>
 
-                            <div class="col-lg-6">
-                                <div class="blog-box">
-                                    <div class="post-media">
-                                        <a href="single.html" title="">
-                                            <img src="{{ asset('dist/layout/layout_kkt/images/nganh-tai-chinh-ngan-hang-hoc-de-lam-gi-thumbnail-99181 (1).png') }}" alt=""  class="img-fluid float-left" >
-                                            <div class="hovereffect">
-                                                <span class=""></span>
-                                            </div><!-- end hover -->
-                                        </a>
-                                    </div><!-- end media -->
-                                    <div class="blog-meta">
-                                        <h4><a href="single.html" title="">Hội Nhập Quốc Tế Cộng Đồng</a></h4>
-                                        <small><a href="blog-category-01.html" title="">Tin Tức</a></small>
-                                        <small><a href="blog-category-01.html" title="">21/07/2017</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-                            </div><!-- end col -->
-                        </div><!-- end row -->
-                    </div><!-- end custom-box -->
+                </div><!-- end custom-box -->
 
-                    <hr class="invis1">
+                <hr class="invis1">
 
-                    <div class="custombox clearfix">
-                        <div class="fb-comments" data-href="http://127.0.0.1:8000/tin-tuc/danh-muc-tin-tuc/chi-tiet-tin-tuc" data-width="750" data-numposts="5"></div>
-
-                    </div><!-- end custom-box -->
-
-                    <hr class="invis1">
-
-                    <!-- <div class="custombox clearfix">
+                <!-- <div class="custombox clearfix">
                         <h4 class="small-title">Leave a Reply</h4>
                         <div class="row">
                             <div class="col-lg-12">
@@ -142,13 +121,13 @@
                             </div>
                         </div>
                     </div> -->
-                </div><!-- end page-wrapper -->
-            </div><!-- end col -->
+            </div><!-- end page-wrapper -->
+        </div><!-- end col -->
 
-            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-                @include('client.layout.default.components.sidebar')
-            </div><!-- end col -->
-        </div><!-- end row -->
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+            @include('client.layout.default.components.sidebar')
+        </div><!-- end col -->
+    </div><!-- end row -->
     </div><!-- end container -->
 </section>
 @endsection

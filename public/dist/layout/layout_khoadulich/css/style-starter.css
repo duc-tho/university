@@ -5346,7 +5346,7 @@ input[type="button"].btn-block {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  font-size:20px;
+  font-size:17px;
 }
   .nav-link:hover, .nav-link:focus {
     text-decoration: none; }
@@ -12805,11 +12805,12 @@ button.owl-next {
 }
 #tb{
   font-weight: bold;
+  font-size: 1.3em;
   color: black;
 }
 .mes-h5{
   color: rgb(6, 113, 135);
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-family: "Yanone Kaffeesatz", sans-serif;
     margin: 0.5em 0px 0px;
 }

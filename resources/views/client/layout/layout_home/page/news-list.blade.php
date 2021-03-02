@@ -39,25 +39,24 @@
                     <div class="blog-grid-system">
                         <div class="row">
                             @foreach ($category['news'] as $item)
-
-                            <div class="col-md-6">
-                                <div class="blog-box">
-                                    <div class="post-media">
-                                        <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}" title="">
-                                            <img src="{{ asset($item['image']) }}" alt="" class="img-fluid">
-                                            <div class="hovereffect">
-                                                <span></span>
-                                            </div><!-- end hover -->
-                                        </a>
-                                    </div><!-- end media -->
-                                    <div class="blog-meta big-meta">
-                                        <h4><a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}" title=""> {{ $item['title'] }}</a></h4>
-                                        <p>{{ $item['description'] }}</p>
-                                        <small><a href="blog-category-01.html" title="">{{ $category['title'] }}</a></small>
-                                        <small><a href="javascript:" title="">{{ ConvertDatabaseTimeToDMY($item['created_at']) }}</a> </small> <small><a href="javascript:" title="">Tác giả: {{ $item['created_by'] }}</a></small>
-                                    </div><!-- end meta -->
-                                </div><!-- end blog-box -->
-                            </div><!-- end col -->
+                                <div class="col-md-6">
+                                    <div class="blog-box">
+                                        <div class="post-media">
+                                            <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">
+                                                <img src="{{ asset($item['image']) }}" alt="" class="img-fluid">
+                                                <div class="hovereffect">
+                                                    <span></span>
+                                                </div><!-- end hover -->
+                                            </a>
+                                        </div><!-- end media -->
+                                        <div class="blog-meta big-meta">
+                                            <h4><a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}" title=""> {{ $item['title'] }}</a></h4>
+                                            <p>{{ $item['description'] }}</p>
+                                            <small><a href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category['slug']]) }}" title="">{{ $category['title'] }}</a></small>
+                                            <small><a href="javascript:" title="">{{ ConvertDatabaseTimeToDMY($item['created_at']) }}</a> </small> <small><a href="javascript:" title="">Tác giả: {{ $item['created_by'] }}</a></small>
+                                        </div><!-- end meta -->
+                                    </div><!-- end blog-box -->
+                                </div><!-- end col -->
                             @endforeach
 
                         </div><!-- end row -->

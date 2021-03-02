@@ -49,6 +49,8 @@ class EducateController extends Controller
 
         // Lấy danh sách ngành kèm url
         $all_specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+        
+        $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
 
         $specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id, 'slug' => $nganh])->first();
 
@@ -88,6 +90,7 @@ class EducateController extends Controller
             //End Khoa Du Lịch
             'footer_faculty' => $footer_faculty,
             'all_specialized' => $all_specialized,
+            'all_category' => $all_category,
 
 
         ]);

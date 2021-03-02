@@ -16,7 +16,6 @@
             <div class="cwp4-two row">
                 @foreach ( $about as $item )
                 <div class="cwp4-text col-lg-6">
-
                     @if( $item->id==1 )
                         <h3>{{$item->intro_title}}</h3>
                         <p>

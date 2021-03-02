@@ -238,7 +238,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
                     </ul>
                 </div>
             </section>
-            <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{route('giao-vien')}}"> Cán Bộ Giảng Viên</a></div>
+            <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{route('giao-vien',[$faculty['slug']])}}"> Cán Bộ Giảng Viên</a></div>
         </div>
     </div>
 </div>

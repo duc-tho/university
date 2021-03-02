@@ -143,7 +143,7 @@ Route::group(['prefix' => 'tuyen-sinh'], function () {
 Route::get('complete', [HomeController::class, 'getComplete']);
 
 // Giáo Viên
-Route::get('/giao-vien', [TeacherController::class, 'index'])->name('giao-vien');
+Route::get('/{khoa}/giao-vien', [TeacherController::class, 'index'])->name('giao-vien');
 Route::get('/giao-vien/thong-tin-giao-vien', [TeacherController::class, 'detail'])->name('giao-vien-chi-tiet');
 
 // Home
@@ -166,7 +166,7 @@ Route::get('/{khoa}/lien-he', [ContactController::class, 'index'])->name('lien-h
 Route::get('/{khoa}/dao-tao/{nganh}', [EducateController::class, 'detail'])->name('dao-tao-chi-tiet');
 
 // Sinh Viên
-Route::get('/{khoa}/sinh-vien/thuc-tap', [StudentController::class, 'list'])->name('sinh-vien-danh-muc');
+Route::get('/{khoa}/sinh-vien', [StudentController::class, 'list'])->name('sinh-vien-danh-muc');
 Route::get('/{khoa}/sinh-vien/thong-bao/asd', [StudentController::class, 'detail'])->name('sinh-vien-chi-tiet');
 
 // Khóa Học
