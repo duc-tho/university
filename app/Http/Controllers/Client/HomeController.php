@@ -85,7 +85,7 @@ class HomeController extends Controller
         // dd($all_category);
 
          // lấy tin tức và danh mục  của khoa Du Lịch
-        $category_travel = Category::where(['status' => 1, 'show_at_home_travel' => '1'])->orderBy('display_order', 'asc')->get();
+        $category_travel = Category::where(['status' => 1, 'show_at_home' => '1'])->orderBy('display_order', 'asc')->get();
         if (!$category_travel->isEmpty()) foreach ($category_travel as $key => $item) {
             $news = $item->news()->orderBy('id', 'desc')->paginate(10);
 
