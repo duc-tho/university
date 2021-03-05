@@ -40,11 +40,11 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
 <!-- CKEDITOR -->
-{{--
+
 <script src="{{ asset('plugins/editor/ckeditor/ckeditor.js') }}"></script>
-<script src="{{ asset('plugins/editor/ckfinder/ckfinder.js') }}"></script> --}}
-<script src="{{ asset('plugins/ckeditor5/build/ckeditor.js') }}"></script>
-<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>
+<script src="{{ asset('plugins/editor/ckfinder/ckfinder.js') }}"></script>
+{{-- <script src="{{ asset('plugins/ckeditor5/build/ckeditor.js') }}"></script>
+<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script> --}}
 <!-- Link Jequery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Summernote -->

@@ -41,3 +41,28 @@
 
     <!--====== Map js ======-->
     <script src="{{asset('dist/layout/layout_kkt/js/map-script.js')}}"></script>
+    <script>
+        $('#owl-congtac').owlCarousel({
+            loop: true,
+            margin: 100,
+            autoplay: true,
+            nav: true,
+            navText: [" ", " "],
+            autoplayTimeout: 2500,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+          items: 2,
+          margin:50
+                },
+                600: {
+                    items: 2
+        },
+
+                720: {
+                    items: 4
+                }
+            }
+        })
+    </script>
+
