@@ -16,12 +16,7 @@
             <div class="cwp4-two row">
                 @foreach ( $about as $item )
                 <div class="cwp4-text col-lg-6">
-                    @if( $item->id==1 )
-                        <h3>{{$item->intro_title}}</h3>
-                        <p>
-                            {{$item->intro}}
-                        </p>
-                    @endif
+                    
                 </div>
                 <div class="cwp4-image col-lg-6 pl-lg-5 mt-lg-0 mt-5">
                     <img src="{{asset($item->image)}}" class="img-fluid" alt="" />
@@ -39,40 +34,16 @@
 
             <div class="fea-gd-vv row ">
                 <div class="float-lt feature-gd col-lg-4 col-sm-6">
-                    @foreach ( $about as $item )
-                        @if( $item->id==2 )
-                        <div class="icon-info">
-                            <h5>{{$item->intro_title}}</h5>
-                            <p>{{$item->intro}}
-                            </p>
-                        </div>
-                        @endif
-                    @endforeach
+
 
                 </div>
                 <div class="float-mid feature-gd col-lg-4 col-sm-6 mt-sm-0 mt-4">
 
-                    @foreach ( $about as $item )
-                    @if( $item->id==3 )
-                    <div class="icon-info">
-                        <h5>{{$item->intro_title}}</h5>
-                        <p>{{$item->intro}}
-                        </p>
-                    </div>
-                    @endif
-                @endforeach
+
                 </div>
                 <div class="float-rt feature-gd col-lg-4 col-sm-6 mt-lg-0 mt-4">
 
-                    @foreach ( $about as $item )
-                        @if( $item->id==4 )
-                        <div class="icon-info">
-                            <h5>{{$item->intro_title}}</h5>
-                            <p>{{$item->intro}}
-                            </p>
-                        </div>
-                        @endif
-                    @endforeach
+
                 </div>
 
             </div>

@@ -4,17 +4,16 @@
     <div class="footer-top pt-40 pb-70">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <div class="footer-about mt-40">
                         <div class="logo">
-                            <a href="#"><img src="{{ asset('dist/layout/layout_kkt/images/hihkhoa_files/favicon (1).png') }}" alt="Logo"></a>
+                            <a href="#"><img src="{{ asset($logo) }}" alt="Logo" width="50%"></a>
                         </div>
-                        <p>Trường Đại Học Du Lịch Sài Gòn.</p>
+                        <p>{{ $title_name_uni_footer }}</p>
                         <ul class="mt-20">
-                            <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            @foreach ($socials_icon as $item)
+                                <li><a href="#"><i class="fa fa-{{ $item->fa_icon }}"></i></a></li>
+                            @endforeach
                         </ul>
                     </div> <!-- footer about -->
                 </div>
@@ -30,14 +29,9 @@
                             <li><a href="blog.html"><i class="fa fa-angle-right"></i>Thông Báo</a></li>
                             <li><a href="events.html"><i class="fa fa-angle-right"></i>Sự Kiện</a></li>
                         </ul>
-                        <ul>
-                            <li><a href="#"><i class="fa fa-angle-right"></i>Thư Viện Ảnh</a></li>
-                            <li><a href="teachers.html"><i class="fa fa-angle-right"></i>Giảng Viên</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i>Hỗ Trợ</a></li>
-                        </ul>
                     </div> <!-- footer link -->
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="footer-address mt-40">
                         <div class="footer-title pb-25">
                             <h6>Liên Lạc</h6>
@@ -48,7 +42,7 @@
                                     <i class="fa fa-home"></i>
                                 </div>
                                 <div class="cont">
-                                    <p>70 Tân Thới Nhất , Khu Phố 5 , P.Tân Thới Nhất , Quận 12</p>
+                                    <p>{{ $address }}</p>
                                 </div>
                             </li>
                             <li>
@@ -56,7 +50,7 @@
                                     <i class="fa fa-phone"></i>
                                 </div>
                                 <div class="cont">
-                                    <p>(028)38.831.793 (028)38.831.796</p>
+                                    <p>{{ $number_support_line }} </p>
                                 </div>
                             </li>
                             <li>
@@ -64,14 +58,22 @@
                                     <i class="fa fa-envelope-o"></i>
                                 </div>
                                 <div class="cont">
-                                    <p>info@daihocdulich.edu.vn</p>
+                                    <p>{{ $email }}</p>
                                 </div>
                             </li>
                         </ul>
                     </div> <!-- footer address -->
                 </div>
+
+                <div class="col-sm-12">
+                    <br>
+                <br>
+                    <p class="footer_license">{{ $title_license_footer }}</p>
+                    <p class="footer_license">{{ $title_license_content_footer }}</p>
+                </div>
             </div> <!-- row -->
-        </div> <!-- container -->
+        </div>
+        <!-- container -->
     </div> <!-- footer top -->
 
     <!--<div class="footer-copyright pt-10 pb-25">

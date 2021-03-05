@@ -5,17 +5,17 @@
     <div class="header-top d-none d-lg-block">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-10">
                     <div class="header-contact text-lg-left text-center">
                         <ul>
-                            <li><img src="{{ asset('dist/layout/layout_kkt/images/all-icon/map.png') }}" alt="icon"><span>{{$address}} </span></li>
+                            <li><img src="{{ asset('dist/layout/layout_kkt/images/all-icon/map.png') }}" alt="icon"><span>{{$address}}</span></li>
                             <li><img src="{{ asset('dist/layout/layout_kkt/images/all-icon/email.png') }}" alt="icon"><span>{{$email}}</span></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-2">
                     <div class="header-opening-time text-lg-right text-center">
-                        {!!$time_work!!}
+
                     </div>
                 </div>
             </div> <!-- row -->
@@ -28,7 +28,7 @@
                 <div class="col-lg-4 col-md-4">
                     <div class="logo">
                         <a href="/">
-                            <img src="{{ asset('dist/layout/layout_kkt/images/hihkhoa_files/logo.png') }}" alt="Logo">
+                            <img src="{{ asset($logo) }}" alt="Logo">
                         </a>
                     </div>
                 </div>
@@ -39,8 +39,8 @@
                                 <img src="{{ asset('dist/layout/layout_kkt/images/all-icon/support.png') }}" alt="icon">
                             </div>
                             <div class="cont">
-                                <p>Đường dây hỗ trợ</p>
-                                <span>(028)38.831.793 - (028)38.831.796 </span>
+                                <p>{{$title_support_line}}</p>
+                                <span>{{$number_support_line}} </span>
                             </div>
                         </div>
                         <br>
@@ -49,8 +49,8 @@
                                 <img src="{{ asset('dist/layout/layout_kkt/images/all-icon/support.png') }}" alt="icon">
                             </div>
                             <div class="cont">
-                                <p>Đường dây nóng</p>
-                                <span>0914.411.012 </span>
+                                <p>{{$title_hot_line}}</p>
+                                <span>{{$number_hot_line}}</span>
                             </div>
                         </div>
                     </div>
@@ -80,14 +80,14 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{-- route('khoakinhte-gioithieu') --}}">Giới Thiệu</a>
+                                    <a href="{{route('gioi-thieu', [$faculty['slug']])}}">Giới Thiệu</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="javascript:">Đào Tạo</a>
                                     <ul class="sub-menu">
-                                        <li><a href="{{-- route('khoakinhte-chitietkhoahoc') --}}">Tài Chính Ngân Hàng</a></li>
-                                        <li><a href="{{-- route('khoakinhte-chitietkhoahoc') --}}">Quản Trị Kinh Doanh</a></li>
-                                        <li><a href="{{-- route('khoakinhte-chitietkhoahoc') --}}">Kế Toán</a></li>
+                                        @foreach ($all_specialized as $item)
+                                            <li><a href="{{route('dao-tao-chi-tiet', [$faculty['slug'],$item->slug])}}">{{$item->name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
                                 <li class="nav-item">

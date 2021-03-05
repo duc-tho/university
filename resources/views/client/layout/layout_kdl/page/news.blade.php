@@ -16,7 +16,7 @@
                 <div class="fea-gd-vv text-center row">
                     @foreach ($only_news as $item)
                         <div class="float-top col-lg-4 col-md-6">
-                            <a href="{{-- route('tin-tuc-chi-tiet', [$faculty['slug'], $category_travel['slug'], $item['slug']]) --}}"><img
+                            <a href="{{route('tin-tuc-chi-tiet', [$faculty['slug'], $item['slug'], $item['slug']])}}"><img
                                     src="{{ asset('dist/layout/layout_khoadulich/images/hoc-ngan-han-tai-saigonact-nhieu-lua-chon-cho-nguoi-hoc-thumbnail-36492.jpg') }}"
                                     class="img-responsive" alt=""></a>
                             <div class="float-lt feature-gd">

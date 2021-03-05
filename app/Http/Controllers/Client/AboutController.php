@@ -39,7 +39,6 @@ class AboutController extends Controller
         // lấy các liên kết qua trang khác ở footer
         $footer_link = FooterLinkCategory::where(['status' => 1])->get();
 
-
         if (!$footer_link->isEmpty()) foreach ($footer_link as $key => $item) {
             $item['child'] = $item->footerLinks;
         }
@@ -51,8 +50,7 @@ class AboutController extends Controller
         $socials_icon = Socials::where(['status' => 1])->get();
 
         // Lấy các bài giới thiệu
-        $about_category = AboutCategory::all();
-
+        $about_category = AboutCategory::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
         if (!$about_category->isEmpty()) foreach ($about_category as $key => $item) {
             $item['link'] = route('gioi-thieu-chi-tiet', [$faculty['slug'], $item['slug']]);
         }
@@ -80,12 +78,30 @@ class AboutController extends Controller
             'all_specialized' => $all_specialized,
             'specialized' => $specialized,
             //Start Khoa DU Lich
-            'logo_travel' => getSettingValue($settings, 'logo_travel'),
-            'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),
-            'footer_email_travel' => getSettingValue($settings, 'footer_email_travel'),
-            'footer_website_travel' => getSettingValue($settings, 'footer_website_travel'),
-            'footer_address_travel' => getSettingValue($settings, 'footer_address_travel'),
+            // 'logo_travel' => getSettingValue($settings, 'logo_travel'),
+            // 'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),
+            // 'footer_email_travel' => getSettingValue($settings, 'footer_email_travel'),
+            // 'footer_website_travel' => getSettingValue($settings, 'footer_website_travel'),
+            // 'footer_address_travel' => getSettingValue($settings, 'footer_address_travel'),
 
+            'title_faculty_description' => getSettingValue($settings, 'title_faculty_description'),
+            'title_scholarship' => getSettingValue($settings, 'title_scholarship'),
+            'title_scholarship_content' => getSettingValue($settings, 'title_scholarship_content'),
+            'title_develop' => getSettingValue($settings, 'title_develop'),
+            'title_develop_content' => getSettingValue($settings, 'title_develop_content'),
+            'title_resources' => getSettingValue($settings, 'title_resources'),
+            'title_resources_content' => getSettingValue($settings, 'title_resources_content'),
+            'title_evaluate_student' => getSettingValue($settings, 'title_evaluate_student'),
+            'title_name_uni_footer' => getSettingValue($settings, 'title_name_uni_footer'),
+            'title_license_footer' => getSettingValue($settings, 'title_license_footer'),
+            'title_license_content_footer' => getSettingValue($settings, 'title_license_content_footer'),
+            'title_support_line' => getSettingValue($settings, 'title_support_line'),
+            'number_support_line' => getSettingValue($settings, 'number_support_line'),
+            'title_infor_teacher' => getSettingValue($settings, 'title_infor_teacher'),
+            'title_teacher_faculty' => getSettingValue($settings, 'title_teacher_faculty'),
+            'content_teacher_faculty' => getSettingValue($settings, 'content_teacher_faculty'),
+            'title_hot_line' => getSettingValue($settings, 'title_hot_line'),
+            'number_hot_line' => getSettingValue($settings, 'number_hot_line'),
             //End Khoa Du Lịch
             'footer_faculty' => $footer_faculty,
             'all_category' => $all_category,
