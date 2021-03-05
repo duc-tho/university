@@ -1,7 +1,6 @@
 @extends('server.index')
 @section('title', 'Slide')
 @section('page-title', 'Slide page')
-
 @section('page-content')
 <div class="content">
     <div class="container-fluid">
@@ -38,8 +37,6 @@
                                     <th class="text-center">
                                         <input class="form-control" type="text" name="News_Name" value="">
                                     </th>
-
-
 
                                     <!-- <th style="width:15%" class="text-center">
                                         <select class="form-control" name="News_NewsCat">
