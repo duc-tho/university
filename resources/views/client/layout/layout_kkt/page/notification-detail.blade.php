@@ -38,11 +38,11 @@
                                 <li class="breadcrumb-item"><a href="{{ route('trang-chu', ['khoa-kinh-te']) }}">Trang
                                         Chủ</a></li>
                                 <li class="breadcrumb-item"><a
-                                        href="{{ route('tin-tuc', [$faculty['slug'], $category['slug']]) }}">{{ $category['title'] }}</a>
+                                        href="{{ route('thong-bao', [$faculty['slug'], $category['slug']]) }}">{{ $category['title'] }}</a>
                                 </li>
                             </ol>
                             <span class="color-aqua"><a
-                                    href="{{ route('tin-tuc', [$faculty['slug'], $category['slug']]) }}"
+                                    href="{{ route('thong-bao', [$faculty['slug'], $category['slug']]) }}"
                                     title="#">{{ $category['title'] }}</a></span>
                             <h3>{{ $news['title'] }}</h3>
                             <div class="blog-meta big-meta">
@@ -59,17 +59,17 @@
                                             class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
                                 </ul>
                             </div>
-                        </div><!-- end title -->
-                        <div class="single-post-media">
+                        </div>
+                        {{-- <div class="single-post-media">
                             <img src="{{ asset($news['image']) }}" alt="" class="img-fluid">
-                        </div><!-- end media -->
+                        </div> --}}
                         <div class="blog-content">
                             <div class="pp">
                                 <p>{{ $news['content'] }}</p>
                             </div><!-- end pp -->
                         </div><!-- end content -->
 
-                        {{-- <div class="blog-title-area">
+                        <div class="blog-title-area">
                             <div class="tag-cloud-single">
                                 <span>Tags</span>
                                 @foreach ($all_category as $item)
@@ -77,9 +77,14 @@
                                             title="">{{ $item['title'] }}</a></small>
                                 @endforeach
                             </div>
-                        </div> --}}
+
+
+                        </div><!-- end title -->
 
                         <hr class="invis1">
+
+
+
                         <hr class="invis1">
                         <div class="fb-comments" data-href="http://127.0.0.1:8000/khoa-kinh-te/tin-tuc/chi-tiet-tin-tuc"
                             data-width="100%" data-numposts="5"></div>
@@ -100,7 +105,7 @@
                         </div><!-- end widget -->
 
                         <div class="widget">
-                            <h2 class="widget-title">Tin Tức Liên Quan</h2>
+                            <h2 class="widget-title">Thông Báo Liên Quan</h2>
                             <div class="blog-list-widget">
                                 <div class="list-group">
                                     @if ($relate_news->isEmpty())
@@ -120,28 +125,6 @@
                                 </div>
                             </div><!-- end blog-list -->
                         </div><!-- end widget -->
-
-                        {{-- <div class="widget">
-                            <h2 class="widget-title">Thông Báo </h2>
-                            <div class="blog-list-widget">
-                                <div class="list-group">
-                                    @if ($relate_news->isEmpty())
-                                        <div class="col-lg-6 mx-auto text-center">Hiện chưa có thông báo liên quan!</div>
-                                    @endif
-                                    @foreach ($relate_news as $item)
-                                        <a href="single.html"
-                                            class="list-group-item list-group-item-action flex-column align-items-start">
-                                            <div class="w-100 justify-content-between">
-                                              
-                                                <h5 class="mb-1">
-                                                    {{ $item['title'] }}</h5>
-                                                <small>{{ $item['created_at'] }}</small>
-                                            </div>
-                                        </a>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div> --}}
                     </div><!-- end sidebar -->
                 </div><!-- end col -->
             </div><!-- end row -->

@@ -1187,15 +1187,16 @@ p {
 }
 
 .singel-course .cont span{
-    font-size: 13px;
-    color: #000;
+    font-size: 16px;
+    color: #047393;
+    font-weight: bold;
 }
 .singel-course .cont h4{
     font-weight: 600;
     font-size: 24px;
     color: #000;
-    padding-top: 15px;
-    padding-bottom: 40px;
+    padding-top: 5px;
+    padding-bottom: 15px;
     -webkit-transition: all 0.4s linear;
     transition: all 0.4s linear;
 }
@@ -3791,6 +3792,8 @@ p.form-message.error {
     color: #ffffff;
     text-align: center;
 }
-
+.padding-top{
+    padding-top: 2px;
+}
 
 

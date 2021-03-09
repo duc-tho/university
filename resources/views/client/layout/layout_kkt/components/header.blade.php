@@ -91,14 +91,21 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{-- route('khoakinhte-tintuc') --}}">Tin Tức - Sự Kiện</a>
+                                    <a href="{{route('tin-tuc', [$faculty['slug']])}}">Tin Tức</a>
                                     {{-- <ul class="sub-menu">
                                         <li><a href="tintucnhom.html">Events</a></li>
                                         <li><a href="tintucdon.html">Event Singel</a></li>
                                     </ul> --}}
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{-- route('home-teacher') --}}">Giảng Viên</a>
+                                    <a href="{{route('thong-bao', [$faculty['slug']])}}">Thông Báo</a>
+                                    {{-- <ul class="sub-menu">
+                                        <li><a href="tintucnhom.html">Events</a></li>
+                                        <li><a href="tintucdon.html">Event Singel</a></li>
+                                    </ul> --}}
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('giao-vien', [$faculty['slug']])}}">Giảng Viên</a>
                                     {{-- <ul class="sub-menu">
                                         <li><a href="teachers.html">teachers</a></li>
                                         <li><a href="teachers-singel.html">teacher Singel</a></li>

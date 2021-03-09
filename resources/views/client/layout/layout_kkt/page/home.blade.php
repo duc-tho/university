@@ -97,7 +97,7 @@
                                 <li>
                                     @foreach ($category['news'] as $item)
                                         <div class="singel-event">
-                                            <a href="{{-- route('khoakinhte-chitiettintuc') --}}">
+                                            <a href="{{route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']])}}">
                                                 <h4>{{ $item->title }} </h4>
                                             </a>
                                             <span><i class="fa fa-calendar"></i>{{ $item->event_time }}</span>
