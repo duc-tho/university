@@ -137,12 +137,13 @@ class HomeController extends Controller
         $contact = Contact::where(['faculty_id' => $faculty_id])->first();
 
         return view('client.layout.' . $layout_name . '.page.home', [
-            'phone' => $contact['phone'],
-            'email' => $contact['email'],
-            'hotline' => $contact['hotline'],
-            'google_map_link' => $contact['map_embed'],
-            'website_link' => $contact['website_link'],
-            'contact_title' => $contact['contact_title'],
+            'phone' => getSettingValue($settings,'phone'),
+            'email' => getSettingValue($settings,'email'),
+            'hotline' => getSettingValue($settings,'hotline'),
+            'google_map_link' => getSettingValue($settings,'map_embed'),
+            'website_link' => getSettingValue($settings,'website_link'),
+            'contact_title' => getSettingValue($settings,'contact_title'),
+            
 
 
             'all_specialized' => $all_specialized,

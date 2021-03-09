@@ -1,6 +1,6 @@
 @extends('server.index')
-@section('title', 'Quản Trị Giảng Viên')
-@section('page-title', 'Thêm Giảng Viên')
+@section('title', 'Quản Trị Sinh Viên')
+@section('page-title', 'Thêm Sinh Viên')
 @section('page-content')
 <!--/.row-->
 <div class="row">
@@ -14,7 +14,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-save"></i> Thêm</button>
-                                    <a href="{{route('Teacher')}}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
+                                    <a href="{{route('Student')}}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
                                 </div>
                                 <div class="card-body">
 
@@ -29,18 +29,18 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Tên Giảng Viên : </label>
-                                        <input required type="text" id="name" name="name" class="form-control" placeholder="Nhập Tên Giảng Viên...">
+                                        <label>Tên Sinh Viên : </label>
+                                        <input required type="text" id="name" name="name" class="form-control" placeholder="Nhập Tên Sinh Viên...">
                                     </div>
 
                                     <div class="form-group">
                                         <label>Người Tạo : </label>
-                                        <input required type="text" id="created_by" name="created_by" class="form-control" placeholder="Nhập Ngày Tạo...">
+                                        <input required type="text" id="created_by" name="created_by" class="form-control" placeholder="Nhập Người Tạo...">
                                     </div>
 
                                     <div class="form-group">
                                         <label>Người Đăng : </label>
-                                        <input required type="text" id="updated_by" name="updated_by" class="form-control" placeholder="Nhập Ngày Đăng...">
+                                        <input required type="text" id="updated_by" name="updated_by" class="form-control" placeholder="Nhập Người Đăng...">
                                     </div>
 
                                     <div class="form-group">
@@ -52,7 +52,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Ảnh Khoa :</label>
+                                        <label>Ảnh Sinh viên :</label>
                                         <input required id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)">
                                         <img id="image" class="thumbnail" width="200px" src="{{asset('/dist/img/imgdefault.png') }}">
                                     </div>
