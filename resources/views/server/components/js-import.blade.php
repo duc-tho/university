@@ -43,8 +43,6 @@
 {{--
 <script src="{{ asset('plugins/editor/ckeditor/ckeditor.js') }}"></script>
 <script src="{{ asset('plugins/editor/ckfinder/ckfinder.js') }}"></script> --}}
-<script src="{{ asset('plugins/ckeditor5/build/ckeditor.js') }}"></script>
-<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>
 <!-- Link Jequery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Summernote -->
@@ -147,88 +145,3 @@
         $('input#slug').val(slug);
     });
 </script> --}}
-
-<script>
-    import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
-    ClassicEditor
-        .create(document.querySelector('#intro-summary'), {
-            toolbar: {
-                items: [
-                    'heading',
-                    'CKFinder',
-                    'highlight',
-                    '|',
-                    'bold',
-                    'italic',
-                    'underline',
-                    'strikethrough',
-                    'subscript',
-                    'superscript',
-                    'specialCharacters',
-                    '|',
-                    'fontFamily',
-                    'fontSize',
-                    '|',
-                    'alignment',
-                    'link',
-                    'bulletedList',
-                    'numberedList',
-                    '|',
-                    'indent',
-                    'outdent',
-                    '|',
-                    'imageInsert',
-                    'imageUpload',
-                    '|',
-                    'blockQuote',
-                    'insertTable',
-                    'mediaEmbed',
-                    'horizontalLine',
-                    '|',
-                    'undo',
-                    'redo',
-                    '|',
-                    'exportPdf',
-                    'exportWord',
-                    '|'
-                ]
-            },
-            language: 'vi',
-            ckfinder: {
-            // Upload the images to the server using the CKFinder QuickUpload command.
-            uploadUrl: 'https://example.com/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json',
-
-            // Define the CKFinder configuration (if necessary).
-            options: {
-                resourceType: 'Images'
-            }
-        }
-            image: {
-                toolbar: [
-                    'imageTextAlternative',
-                    'imageStyle:full',
-                    'imageStyle:side',
-                    'linkImage'
-                ]
-            },
-            table: {
-                contentToolbar: [
-                    'tableColumn',
-                    'tableRow',
-                    'mergeTableCells',
-                    'tableCellProperties',
-                    'tableProperties'
-                ]
-            },
-            licenseKey: '',
-        })
-        .then(editor => {
-            window.editor = editor;
-        })
-        .catch(error => {
-            console.error('Oops, something went wrong!');
-            console.error('Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:');
-            console.warn('Build id: owcizz4kpcrs-35ketd2bzzkf');
-            console.error(error);
-        });
-</script>

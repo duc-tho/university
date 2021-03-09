@@ -30,6 +30,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
     Route::group(['prefix' => 'admin', 'middleware' => 'CheckLogedIn'], function () {
         Route::get('/', [LoginController::class, 'getLogin'])->name('admin');
@@ -64,21 +65,21 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
         Route::group(['prefix' => 'slide'], function () {
             Route::get('/', [SlideController::class, 'getSlide'])->name('adminSlide');
 
-            Route::get('add', [SlideController::class,'getAddSlide'])->name('GetAddSlide');
+            Route::get('add', [SlideController::class, 'getAddSlide'])->name('GetAddSlide');
 
-            Route::post('add', [SlideController::class,'postAddSlide'])->name('PostAddSlide');
+            Route::post('add', [SlideController::class, 'postAddSlide'])->name('PostAddSlide');
 
-            Route::get('/edit/{id}',[SlideController::class,'getEditSlide'])
+            Route::get('/edit/{id}', [SlideController::class, 'getEditSlide'])
                 ->name('GetEditSlide')
-                ->where(['id'=>'[0-9]+']);
+                ->where(['id' => '[0-9]+']);
 
-            Route::post('/edit/{id}',[SlideController::class,'getEditSlide'])
+            Route::post('/edit/{id}', [SlideController::class, 'getEditSlide'])
                 ->name('PostEditSlide')
-                ->where(['id'=>'[0-9]+']);
+                ->where(['id' => '[0-9]+']);
 
             Route::get('/delete/{id}', [SlideController::class, 'deleteSlide'])
-            ->name('DeleteSlide')
-            ->where(['id' => '[0-9]+']);
+                ->name('DeleteSlide')
+                ->where(['id' => '[0-9]+']);
         });
 
         Route::group(['prefix' => 'teacher'], function () {

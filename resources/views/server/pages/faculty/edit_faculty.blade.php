@@ -113,11 +113,11 @@
 <!--/.row-->
 </div>
 <script>
-    CKEDITOR.editorConfig = function (config) {
-        config.enterMode = CKEDITOR.ENTER_BR;
-        config.autoParagraph = false;
-        config.fillEmptyBlocks = false;
-    };
+    // CKEDITOR.editorConfig = function (config) {
+    //     config.enterMode = CKEDITOR.ENTER_BR;
+    //     config.autoParagraph = false;
+    //     config.fillEmptyBlocks = false;
+    // };
 </script>
 <script>
     $('input#name').keyup(function(event) {

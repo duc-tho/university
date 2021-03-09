@@ -52,7 +52,7 @@ class ContactController extends Controller
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty['id']])->first();
 
-        return view('client.layout.layout_kdl.page.contact', [
+        return view('client.layout.layout_home.page.contact', [
 
             'phone' => $contact['phone'],
             'email' => $contact['email'],
