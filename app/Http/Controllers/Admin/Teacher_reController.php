@@ -9,8 +9,6 @@ use App\Http\Requests\AddTeacherRequest;
 use App\Http\Requests\EditTeacherRequest;
 use Illuminate\Http\Request; 
 
-use function App\Providers\upload_file;
-
 class Teacher_reController extends Controller
 {
     public function getTeacher()

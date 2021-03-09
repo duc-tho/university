@@ -74,6 +74,17 @@ class HomeController extends Controller
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
         // dd($all_category);
 
+
+         // lấy tin tức và danh mục  của khoa Du Lịch
+        $category_travel = Category::where(['status' => 1, 'show_at_home' => '1'])->orderBy('display_order', 'asc')->get();
+        if (!$category_travel->isEmpty()) foreach ($category_travel as $key => $item) {
+            $news = $item->news()->orderBy('id', 'desc')->paginate(10);
+
+            if (!$news->isEmpty()) $item['news'] = $news;
+        }
+ 
+
+
         // // Lấy hình ảnh và danh mục hình
         // $image_category = ImageCategory::where(['status' => 1])->get();
         // if (!$image_category->isEmpty()) foreach ($image_category as $key => $item) {

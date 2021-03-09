@@ -28,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        
         $data['images'] = Image::all();
         view()->share($data);
         $data['image_category'] = ImageCategory::all();
