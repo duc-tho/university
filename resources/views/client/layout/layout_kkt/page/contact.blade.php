@@ -11,16 +11,16 @@
 @section('main')
 <!--====== PAGE BANNER PART START ======-->
 
-<section id="page-banner" class="pt-105 pb-130 bg_cover" data-overlay="8" style="background-image: url(/dist/layout/layout_kkt/images/hihkhoa_files/slide-noi-that-g4-82730.jpg)">
+<section id="page-banner" class="pt-105 pb-110 bg_cover" data-overlay="8" style="background-image: url(/dist/layout/layout_kkt/images/page-banner-2.jpg)">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="page-banner-cont">
-                    <h2>Liên Hệ</h2>
+                    <h2>Liên Hệ {{$faculty->name}}</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{-- route('khoakinhte') --}}">Trang Chủ</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Liên hệ</li>
+                            <li class="breadcrumb-item"><a href="{{route('trang-chu',['khoa-kinh-te'])}}">Trang Chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Liên Hệ</li>
                         </ol>
                     </nav>
                 </div> <!-- page banner cont -->
