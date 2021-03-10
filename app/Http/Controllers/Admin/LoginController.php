@@ -8,11 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function getLogin()
+    public function login()
     {
         return view('server.login');
     }
-    public function postLogin(Request $request)
+
+    public function authenticate(Request $request)
     {
         $arr = ['email' => $request->email, 'password' => $request->password];
         if ($request->remember = 'Remember Me') {
@@ -26,5 +27,11 @@ class LoginController extends Controller
         } else {
             return back()->withInput()->with('error', 'Email hoặc mật khẩu không đúng');
         }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        redirect()->route('login');
     }
 }

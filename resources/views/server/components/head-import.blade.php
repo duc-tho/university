@@ -32,14 +32,16 @@
 <!-- Custom Style -->
 <link rel="stylesheet" href="{{ asset('dist/css/custom-style.css') }}">
 <!-- Icon Google-->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 <!-- Custom css chose -->
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JNKKKK/MoreToggles.css@0.2.1/output/moretoggles.min.css">
-<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>
-<script src="{{ asset('plugins/ckeditor5/build/ckeditor.js') }}"></script>
+{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JNKKKK/MoreToggles.css@0.2.1/output/moretoggles.min.css"> --}}
+{{-- <script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script> --}}
+{{-- <script src="{{ asset('plugins/ckeditor5/build/ckeditor.js') }}"></script> --}}
 <style>
-    .nutanhien {
+    /* .nutanhien {
         font-size: 35%;
-    }
+    } */
 </style>
+
+{{-- script --}}
+<script src="{{ asset('plugins/tinymce/tinymce.min.js') }}"></script>

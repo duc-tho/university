@@ -60,7 +60,7 @@ class HomeController extends Controller
         $collab_logo = CollabLogo::all();
 
         // Lấy tin tức
-        
+
         // $notifice = Category::where(['slug', $slug])->first();
         // $news = News::where(['category_id' => $notifice->id, 'status'=>1])->paginate(11);
         // $news_faculty=News::where(['status'=>1,'category_id'=>10])->orderBy("id","desc")->paginate(6);
@@ -79,6 +79,8 @@ class HomeController extends Controller
 
             if (!$news->isEmpty()) $item['news'] = $news;
         }
+
+        dd($category);
 
         // dd($category);
 

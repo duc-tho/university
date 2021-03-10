@@ -74,7 +74,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('User')}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                    <a href="{{route('user.')}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-user-alt"></i>
                         <p>
                             Quản Trị Người Dùng

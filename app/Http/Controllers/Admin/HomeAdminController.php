@@ -8,14 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeAdminController extends Controller
 {
-    public function getHome(Request $request)
+    public function index(Request $request)
     {
         return view('server.pages.home.index');
     }
-    public function getLogout(){
-        Auth::logout();
-        return redirect()->intended('admin');
-    }
-
-    
 }
