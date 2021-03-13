@@ -28,6 +28,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Paginator::useBootstrap();
+
         $data['images'] = Image::all();
         view()->share($data);
         $data['image_category'] = ImageCategory::all();

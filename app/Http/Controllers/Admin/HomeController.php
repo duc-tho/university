@@ -15,7 +15,7 @@ class HomeController extends Controller
 
     public function index(Request $request, $khoa)
     {
-        dd($khoa);
+        // dd($khoa);
 
         return view('server.pages.home.index', [
             'khoa' => $khoa

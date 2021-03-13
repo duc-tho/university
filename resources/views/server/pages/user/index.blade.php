@@ -2,152 +2,105 @@
 @section('title', 'Quản Trị Người Dùng')
 @section('page-title', 'Quản Trị Người Dùng')
 @section('page-content')
-    <div class="content">
-        <div class="container-fluid">
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="card card-primary card-outline">
-                        <div class="card-header p-2 d-flex align-items-center justify-content-between">
-                            <a href="{{route('GetAddUser')}}">
-                                <button class="btn btn-info btn-sm">
-                                    <i class="fas fa-plus"></i> Thêm Người Dùng
-                                </button>
-                            </a>
-                            <div class="ml-auto d-inline-block">
-                                <div class="input-group input-group-sm">
-                                    <select class="form-control custon-select" style="width:auto !important"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                        <option value="10" selected="">Hiện 10 mục</option>
-                                        <option value="20">Hiện 25 mục</option>
-                                        <option value="50">Hiện 50 mục</option>
+<div class="content">
+    <div class="container-fluid">
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-primary card-outline">
+                    <div class="card-header p-2 d-flex align-items-center justify-content-between">
+                        <a href="{{route('admin.user.create', [$khoa->slug])}}">
+                            <button class="btn btn-info btn-sm">
+                                <i class="fas fa-plus"></i> Thêm Người Dùng
+                            </button>
+                        </a>
+                        <div class="ml-auto d-inline-block">
+                            <div class="input-group input-group-sm">
+                                <form action="{{ route('admin.user.show', [$khoa['slug']]) }}" method="get">
+                                    <select class="form-control custon-select" style="width:auto !important" data-toggle="tooltip" name="item-per-page" onchange="this.parentElement.submit();">
+                                        <option value="6" {{ $users->perPage() == 6 ? 'selected disabled' : ''  }}>Hiện 6 người dùng</option>
+                                        <option value="9" {{ $users->perPage() == 9 ? 'selected disabled' : ''  }}>Hiện 9 người dùng</option>
+                                        <option value="12" {{ $users->perPage() == 12 ? 'selected disabled' : ''  }}>Hiện 12 người dùng</option>
                                     </select>
-                                </div>
+                                </form>
                             </div>
                         </div>
-                        <!-- /.card-header -->
-                        <div class="card-body table-responsive p-0">
-                            <table class="table text-nowrap table-bordered table-hover">
-                                <thead class="filter">
-                                    <tr role="row">
-
-                                        <th style="width:5%" class="text-center">
-                                            <input class="form-control" type="text" name="News_ID" value="">
-                                        </th>
-
-                                        <th style="width:15%" class="text-center">
-                                            <input class="form-control" type="text" name="News_Name" value="">
-                                        </th>
-                                        <th style="width:15%" class="text-center">
-                                            <input class="form-control" type="text" name="News_Name" value="">
-                                        </th>
-                                        <th style="width:20%" class="text-center">
-                                            <input class="form-control" type="text" name="News_Name" value="">
-                                        </th>
-                                        <th style="width:15%" class="text-center">
-                                            <div class="input-group input-daterange" data-date-format="yyyy-mm-dd">
-                                                <input type="text" id="News_Datetime_From" name="News_Datetime_From"
-                                                    class="form-control" placeholder="Từ" value="">
-                                                <span class="form-control px-1"><i class="fa fa-chevron-right"></i></span>
-                                                <input type="text" id="News_Datetime_To" name="News_Datetime_To"
-                                                    class="form-control" placeholder="Đến" value="">
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            @foreach ($users as $user)
+                            <div class="col-md-4">
+                                <!-- Widget: user widget style 1 -->
+                                <div class="card card-widget widget-user shadow">
+                                    <!-- Add the bg color to the header using any of the bg-* classes -->
+                                    <div class="widget-user-header bg-info">
+                                        <h3 class="widget-user-username">{{ $user['last_name'] }} {{ $user['first_name'] }}</h3>
+                                        <h5 class="widget-user-desc">{{ $user['faculty']['name'] }}</h5>
+                                    </div>
+                                    <div class="widget-user-image">
+                                        <div style="position: relative; height: 90px; width: 90px; overflow: hidden; border-radius: 50%; border: #fff solid 3px;     box-shadow: 0 1px 11px -2px #00000050;">
+                                            <img class="elevation-2" src="{{ asset($user->avatar ?? "dist/img/avatar5.png") }}" alt="{{ $user['nickname'] }}" style="height: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="row">
+                                            <!-- /.col -->
+                                            <div class="col-sm-6 border-right">
+                                                <div class="description-block">
+                                                    <a href="{{ route('admin.user.edit', [$khoa['slug'], $user['id']]) }}" class="btn btn-info w-100"><i class="fa fa-edit"></i> Sửa</a>
+                                                </div>
+                                                <!-- /.description-block -->
                                             </div>
-                                        </th>
-
-                                        <th style="width:10%" class="text-center sorting_disabled">
-                                            <button type="submit" class="btn btn-effect-ripple btn-primary"
-                                                style="overflow: hidden; position: relative;">Special</button>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <thead>
-
-                                    <tr role="row">
-                                        <th class="text-center sorting">
-                                            <a>ID</a>
-                                        </th>
-                                        <th class="text-center sorting">
-                                            <a> Tên Người Dùng</a>
-                                        </th>
-                                        <th class="text-center sorting">
-                                            <a>Thuộc Khoa </a>
-                                        </th>
-                                        <th class="text-center sorting_desc">
-                                            <a>Email</a>
-                                        </th>
-                                        <th class="text-center sorting_desc">
-                                            <a>Ngày Sinh</a>
-                                        </th>
-                                        <th class="text-center sorting">
-                                            <a><i class="fa fa-bolt"></i></a>
-                                        </th>
-                                    </tr>
-
-                                </thead>
-                                <tbody>
-                                    @foreach ($userlist as $user)
-                                        <tr role="row">
-                                            <td class="text-center">{{ $user->id }}</td>
-                                            <td>{{ $user->nickname }}</td>
-                                            @foreach ($facultylist as $faculty)
-                                                @if ($faculty->id === $user->faculty_id)
-                                                    <td class="text-center">{{$faculty->name}}</td>
-                                                @break
-                                                @endif
-                                            @endforeach
-                                            <td class="text-center">{{ $user->email }}</td>
-                                            <td class="text-center">{{ $user->birthday }}</td>
-                                            <td class="text-center">
-                                                <label class="status switch switch-primary" data-toggle="tooltip" title=""
-                                                    data-original-title="Xuất bản">
-                                                    <input data-id="1579" type="checkbox" checked=""><span></span></label>
-                                                <a href="{{asset('admin/user/edit/'.$user->id)}}" class="btn btn-warning btn-xs" >
-                                                    <i class="fa fa-flag" aria-hidden="true"></i>
-                                                    Sửa</a>
-                                                <a href="{{asset('admin/user/delete/'.$user->id)}}"  onclick="return confirm('Bạn có chắc chắn muốn xóa !')" class="btn btn-danger btn-xs"
-                                                ><i class="fa fa-trash" aria-hidden="true"></i>
-                                                    Xóa</a>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                                <tfoot>
-
-                                </tfoot>
-                            </table>
-                        </div>
-                        <!-- /.card-body -->
-                        <div class="card-footer">
-                            <div class="row">
-                                <div class="col-sm-5 hidden-xs">
-                                    <div class="dataTables_info" id="example-datatable_info" role="status"
-                                        aria-live="polite">
-                                        <strong>1 / 57</strong>
+                                            <div class="col-sm-6">
+                                                <div class="description-block">
+                                                    <div class="description-block">
+                                                        <a href="{{ route('admin.user.delete', [$khoa['slug'], $user['id']]) }}" class="btn btn-danger w-100"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
+                                                    </div>
+                                                </div>
+                                                <!-- /.description-block -->
+                                            </div><!-- /.col -->
+                                        </div>
+                                        <!-- /.row -->
+                                        <div class="row pt-2">
+                                            <ul class="nav flex-column w-100">
+                                                @foreach ($user['roles'] as $role)
+                                                <li class="nav-item">
+                                                    <a href="javascript:" class="nav-link text-center">
+                                                        {{ $role['display_name'] }}
+                                                    </a>
+                                                </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-7 col-xs-12">
-                                    <div>
-                                        <ul class="pagination pagination-sm mb-0">
-                                            <li class="page-item prev">
-                                                <a class="page-link" href="#"><i class="fa fa-chevron-left"></i></a>
-                                            </li>
-                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                            <li class="page-item next">
-                                                <a class="page-link" href="#"> <i class="fa fa-chevron-right"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                <!-- /.widget-user -->
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-sm-5 hidden-xs">
+                                <div class="dataTables_info" id="example-datatable_info" role="status" aria-live="polite">
+                                    <strong>Trang {{ $users->currentPage() }} / {{ $users->lastPage() }}</strong>
+                                </div>
+                            </div>
+                            <div class="col-sm-7 col-xs-12">
+                                <div>
+                                    <ul class="pagination pagination-sm mb-0 d-flex justify-content-end">
+                                        {{ $users->links() }}
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- /.card -->
                 </div>
+                <!-- /.card -->
             </div>
-        </div><!-- /.container-fluid -->
-    </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</div>
 @endsection

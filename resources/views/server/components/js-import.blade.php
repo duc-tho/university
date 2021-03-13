@@ -1,5 +1,3 @@
-<!-- jQuery -->
-<script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- SweetAlert2 -->
@@ -46,6 +44,7 @@
 
         //Initialize Select2 Elements
         $('.select2bs4').select2({
+            placeholder: "Nhấp vào để chọn các mục cần thiết!",
             theme: 'bootstrap4'
         })
 

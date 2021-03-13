@@ -7,39 +7,64 @@ use App\Models\Faculty;
 use Illuminate\Http\Request;
 use App\Http\Requests\AddUserRequest;
 use App\Http\Requests\EditUserRequest;
-
+use App\Models\Roles;
 use App\Models\User;
 use phpDocumentor\Reflection\DocBlock\Tags\Uses;
 
 class UserController extends Controller
 {
-    public function show()
+    public function show(Request $request, $khoa)
     {
-        $data['userlist'] = User::all();
-        $data['facultylist'] = Faculty::all();
-        return view('server.pages.user.index', $data);
+        $item_per_page = 6;
+        if ($request->has('item-per-page')) $item_per_page = $request->query('item-per-page');
+
+        $users = User::paginate($item_per_page);
+
+        foreach ($users as $user) {
+            $user['faculty'] = $user->faculty;
+            $user['roles'] = $user->roles;
+        }
+
+        return view('server.pages.user.index', [
+            'users' => $users,
+            'khoa' => $khoa
+        ]);
     }
 
-    public function create()
+    public function create(Request $request, $khoa)
     {
-        $data['facultylist'] = Faculty::all();
-        return view('server.pages.user.add_user', $data);
+        $faculty_list = Faculty::all();
+        $roles = Roles::all();
+
+        return view('server.pages.user.create', [
+            'khoa' => $khoa,
+            'faculty_list' => $faculty_list,
+            'roles' => $roles
+        ]);
     }
 
-    public function store(AddUserRequest $request)
+    public function store(AddUserRequest $request, $khoa)
     {
-        $user = new User();
-        $user->faculty_id = $request->faculty_id;
-        $user->nickname = $request->nickname;
-        $user->first_name = $request->first_name;
-        $user->last_name = $request->last_name;
-        $user->birthday = $request->birthday;
-        $user->phone = $request->phone;
-        $user->email = $request->email;
+        // Tạo mới user
+        $user = new User($request->input());
+
+        // Mã hóa password
         $user->password = bcrypt($request->password);
-        $user->status = $request->status;
+
+        // chuyển status sang dạng 1, 0
+        $request['status'] == "on" ? $user['status'] = 1 : $user['status'] = 0;
+
+        // upload ảnh đại diện
+        if ($request->hasFile('avatar')) $user['avatar'] = upload_file($request->file('avatar'), 'dist/upload/image/3/users');
+
+        // lưu user
         $user->save();
-        return back();
+
+        // gắn role cho user
+        $user->roles()->attach($request['role']);
+
+        // chuyển hướng về trang user list
+        return redirect()->route('admin.user.show', [$khoa['slug']]);
     }
 
     public function edit($id)
