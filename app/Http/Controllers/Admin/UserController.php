@@ -13,20 +13,20 @@ use phpDocumentor\Reflection\DocBlock\Tags\Uses;
 
 class UserController extends Controller
 {
-    public function getUser()
+    public function show()
     {
         $data['userlist'] = User::all();
         $data['facultylist'] = Faculty::all();
-        return view('server.pages.user.index',$data);
+        return view('server.pages.user.index', $data);
     }
 
-    public function getAddUser()
+    public function create()
     {
         $data['facultylist'] = Faculty::all();
-        return view('server.pages.user.add_user',$data);
+        return view('server.pages.user.add_user', $data);
     }
 
-    public function postAddUser(AddUserRequest $request)
+    public function store(AddUserRequest $request)
     {
         $user = new User();
         $user->faculty_id = $request->faculty_id;
@@ -42,7 +42,7 @@ class UserController extends Controller
         return back();
     }
 
-    public function getEditUser($id)
+    public function edit($id)
     {
 
         $data['user'] = User::find($id);
@@ -50,7 +50,7 @@ class UserController extends Controller
         return view('server.pages.user.edit_user', $data);
     }
 
-    public function postEditUser(EditUserRequest $request, $id)
+    public function update(EditUserRequest $request, $id)
     {
         $user = new User();
         $arr['nickname'] = $request->nickname;
@@ -66,7 +66,7 @@ class UserController extends Controller
         return redirect('admin/user');
     }
 
-    public function deleteUser($id)
+    public function delete($id)
     {
         User::destroy($id);
         return back();

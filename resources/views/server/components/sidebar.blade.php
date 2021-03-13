@@ -1,9 +1,9 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{route('AdminHome')}}" class="brand-link">
+    <a href="{{route('admin.index', [$khoa['slug']])}}" class="brand-link">
         <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Admin SAIGON_ACT</span>
+        <span class="brand-text font-weight-light">Quản trị Website</span>
     </a>
 
     <!-- Sidebar -->
@@ -36,7 +36,7 @@
                 <!-- Add icons to the links using the .nav-icon class
             with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="{{route('AdminHome')}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                    <a href="{{route('admin.index', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Trang Chủ
@@ -54,19 +54,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('Faculty') }}" class="nav-link">
+                            <a href="{{ route('admin.faculty.show', [$khoa['slug']]) }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Khoa</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('Teacher') }}" class="nav-link">
+                            <a href="{{ route('admin.teacher.show', [$khoa['slug']]) }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Giảng Viên</p>
+                                <p>Giáo Viên</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('adminSlide') }}" class="nav-link {{ request()->is('admin/demo/demo-2*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.slide.show', [$khoa['slug']]) }}" class="nav-link {{ request()->is('admin/demo/demo-2*') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Slide</p>
                             </a>
@@ -74,7 +74,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('user.')}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                    <a href="{{route('admin.user.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-user-alt"></i>
                         <p>
                             Quản Trị Người Dùng

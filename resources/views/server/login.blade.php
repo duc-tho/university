@@ -30,7 +30,7 @@
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Đăng Nhập </p>
-                <form role="form" method="post">
+                <form role="form" method="post" action="{{ route('authenticate') }}">
                     @include('errors.note')
                     <div class="input-group mb-3">
                         <input type="email" name="email" class="form-control" value="{{old('email')}}" placeholder="Email">
@@ -70,26 +70,26 @@
                 {{-- <div class="social-auth-links text-center mb-3">
         <p>- HOẶC -</p>
         <a href="{{route('redirect',['facebook'])}}" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i> Đăng nhập bằng Facebook
-        </a>
-        <a href="{{route('redirectgg')}}" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i> Đăng nhập bằng Google+
-        </a>
-      </div> --}}
-                <!-- /.social-auth-links -->
+                <i class="fab fa-facebook mr-2"></i> Đăng nhập bằng Facebook
+                </a>
+                <a href="{{route('redirectgg')}}" class="btn btn-block btn-danger">
+                    <i class="fab fa-google-plus mr-2"></i> Đăng nhập bằng Google+
+                </a>
+            </div> --}}
+            <!-- /.social-auth-links -->
 
-                {{-- <p class="mb-1">
+            {{-- <p class="mb-1">
                     <a href="forgot-password.html">Bạn quên mật khẩu ?</a>
                 </p> --}}
-                {{-- <div class="col-lg-12 text-center mt-4">
+            {{-- <div class="col-lg-12 text-center mt-4">
                     Bạn chưa có tài khoản? <a href="{{ route('register') }}" class="text-danger">Đăng ký ngay</a>
-                </div> --}}
-                {{-- <p class="mb-0">
+        </div> --}}
+        {{-- <p class="mb-0">
                     <a href="register.html" class="text-center"></a>
                 </p> --}}
-            </div>
-            <!-- /.login-card-body -->
-        </div>
+    </div>
+    <!-- /.login-card-body -->
+    </div>
     </div>
     <!-- /.login-box -->
 

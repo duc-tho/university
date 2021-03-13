@@ -13,16 +13,16 @@ use function App\Providers\upload_file;
 
 class FacultyController extends Controller
 {
-    public function getFaculty()
+    public function show()
     {
         $data['facultylist'] = Faculty::where(["status" => "1"])->orderBy("id", "desc")->paginate(10);
-        return view('server.pages.faculty.index',$data);
+        return view('server.pages.faculty.show', $data);
     }
-    public function getAddFaculty()
+    public function create()
     {
-        return view('server.pages.faculty.add_faculty');
+        return view('server.pages.faculty.create');
     }
-    public function postAddFaculty(AddFacultyRequest $request)
+    public function store(AddFacultyRequest $request)
     {
         $faculty = new Faculty();
         $faculty->name = $request->name;
@@ -36,16 +36,16 @@ class FacultyController extends Controller
         $faculty->created_by = $request->created_by;
         $faculty->updated_by = $request->updated_by;
         $faculty->status = $request->status;
-        $faculty->image = upload_file($request->img,'dist/upload/image/faculty');
+        $faculty->image = upload_file($request->img, 'dist/upload/image/faculty');
         $faculty->save();
         return back();
     }
-    public function getEditFaculty($id)
+    public function edit($id)
     {
         $data['faculty'] = Faculty::find($id);
-        return view('server.pages.faculty.edit_faculty', $data);
+        return view('server.pages.faculty.edit', $data);
     }
-    public function postEditFaculty(EditFacultyRequest $request, $id)
+    public function update(EditFacultyRequest $request, $id)
     {
         $faculty = new Faculty();
         $arr['name'] = $request->name;
@@ -60,12 +60,12 @@ class FacultyController extends Controller
         $arr['intro_summary'] = $request->summary;
         $arr['intro'] = $request->introdution;
         if ($request->hasFile('img')) {
-            $arr['image'] = upload_file($request->img,'dist/upload/image/faculty');
+            $arr['image'] = upload_file($request->img, 'dist/upload/image/faculty');
         }
         $faculty::where('id', $id)->update($arr);
         return redirect('admin/faculty');
     }
-    public function deleteFaculty($id)
+    public function delete($id)
     {
         Faculty::destroy($id);
         // return redirect()->back()->with(["toastrInfo" => ["type" => "success", "messenger" => "Xóa thành công"]]);

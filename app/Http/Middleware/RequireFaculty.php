@@ -2,11 +2,11 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Faculty;
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class CheckLogedIn
+class RequireFaculty
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,12 @@ class CheckLogedIn
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth::check()) return redirect()->route('login');
+        $khoa_param = $request->route('khoa');
+        $khoa = Faculty::where(['slug' => $khoa_param])->first();
+
+        abort_if(!$khoa, 404);
+
+        $request->route()->setParameter('khoa', $khoa);
 
         return $next($request);
     }

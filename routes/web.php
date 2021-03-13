@@ -1,11 +1,10 @@
 <?php
 
-use App\Http\Controllers\Admin;
 use App\Http\Controllers\Admin\SlideController;
-use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\AuthenticateController;
 use App\Http\Controllers\Admin\FacultyController;
-use App\Http\Controllers\Admin\Teacher_reController;
-use App\Http\Controllers\Admin\HomeAdminController;
+use App\Http\Controllers\Admin\TeacherController as AdminTeacherController;
+use App\Http\Controllers\Admin\HomeController as DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Client\CourseController;
 use App\Http\Controllers\Client\EducateController;
@@ -31,124 +30,79 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+#region authenticate route
+Route::get('/login', [AuthenticateController::class, 'login'])->name('login');
+Route::match(['get', 'post'], '/logout', [AuthenticateController::class, 'logout'])->name('logout');
+Route::post('/authenticate', [AuthenticateController::class, 'authenticate'])->name('authenticate');
+#endregion
+
+#region lfm route
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
-
-Route::get('/tinymce', function () {;
-    return view('tinymce');
-});
-
-// Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
-//     Route::group(['prefix' => 'admin', 'middleware' => 'CheckLogedIn'], function () {
-//         Route::get('/', [LoginController::class, 'getLogin'])->name('admin');
-//         Route::post('/', [LoginController::class, 'postLogin']);
-//     });
-
-//     Route::get('logout', [HomeAdminController::class, 'getLogout'])->name('logout');
-
-//     Route::group(['prefix' => 'admin', 'middleware' => 'CheckLogedOut'], function () {
-//         Route::get('/home', [HomeAdminController::class, 'getHome'])->name('AdminHome');
-
-//         Route::group(['prefix' => 'faculty'], function () {
-//             Route::get('/', [FacultyController::class, 'getFaculty'])->name('Faculty');
-
-//             Route::get('add',  [FacultyController::class, 'getAddFaculty'])->name('GetAddFaculty');
-
-//             Route::post('add',  [FacultyController::class, 'postAddFaculty'])->name('PostAddFaculty');
-
-//             Route::get('/edit/{id}',  [FacultyController::class, 'getEditFaculty'])
-//                 ->name('GetEditFaculty')
-//                 ->where(['id' => '[0-9]+']);
-
-//             Route::post('/edit/{id}', [FacultyController::class, 'postEditFaculty'])
-//                 ->name('PostEditFaculty')
-//                 ->where(['id' => '[0-9]+']);
-
-//             Route::get('/delete/{id}', [FacultyController::class, 'deleteFaculty'])
-//                 ->name('DeleteFaculty')
-//                 ->where(['id' => '[0-9]+']);
-//         });
-
-//         Route::group(['prefix' => 'slide'], function () {
-//             Route::get('/', [SlideController::class, 'getSlide'])->name('adminSlide');
-
-//             Route::get('add', [SlideController::class, 'getAddSlide'])->name('GetAddSlide');
-
-//             Route::post('add', [SlideController::class, 'postAddSlide'])->name('PostAddSlide');
-
-//             Route::get('/edit/{id}', [SlideController::class, 'getEditSlide'])
-//                 ->name('GetEditSlide')
-//                 ->where(['id' => '[0-9]+']);
-
-//             Route::post('/edit/{id}', [SlideController::class, 'getEditSlide'])
-//                 ->name('PostEditSlide')
-//                 ->where(['id' => '[0-9]+']);
-
-//             Route::get('/delete/{id}', [SlideController::class, 'deleteSlide'])
-//                 ->name('DeleteSlide')
-//                 ->where(['id' => '[0-9]+']);
-//         });
-
-//         Route::group(['prefix' => 'teacher'], function () {
-//             Route::get('/', [Teacher_reController::class, 'getTeacher'])->name('Teacher');
-
-//             Route::get('add',  [Teacher_reController::class, 'getAddTeacher'])->name('GetAddTeacher');
-
-//             Route::post('add',  [Teacher_reController::class, 'postAddTeacher'])->name('PostAddTeacher');
-
-//             Route::get('/edit/{id}',  [Teacher_reController::class, 'getEditTeacher'])
-//                 ->name('GetEditTeacher')
-//                 ->where(['id' => '[0-9]+']);
-
-//             Route::post('/edit/{id}', [Teacher_reController::class, 'postEditTeacher'])
-//                 ->name('PostEditTeacher')
-//                 ->where(['id' => '[0-9]+']);
-
-//             Route::get('/delete/{id}', [Teacher_reController::class, 'deleteTeacher'])
-//                 ->name('DeleteTeacher')
-//                 ->where(['id' => '[0-9]+']);
-//         });
-
-//         Route::group(['prefix' => 'user'], function () {
-//             Route::get('/', [UserController::class, 'getUser'])->name('User');
-
-//             Route::get('add',  [UserController::class, 'getAddUser'])->name('GetAddUser');
-
-//             Route::post('add',  [UserController::class, 'postAddUser'])->name('PostAddUser');
-
-//             Route::get('/edit/{id}',  [UserController::class, 'getEditUser'])
-//                 ->name('GetEditUser')
-//                 ->where(['id' => '[0-9]+']);
-
-//             Route::post('/edit/{id}', [UserController::class, 'postEditUser'])
-//                 ->name('PostEditUser')
-//                 ->where(['id' => '[0-9]+']);
-
-//             Route::get('/delete/{id}', [UserController::class, 'deleteUser'])
-//                 ->name('DeleteUser')
-//                 ->where(['id' => '[0-9]+']);
-//         });
-//     });
-// });
-
+#endregion
 
 #region admin route
-Route::namespace(Admin::class)->name('admin.')->prefix('admin')->middleware('CheckLogedIn')->group(function () {
+Route::get('/admin', [DashboardController::class, 'redirect'])->name('admin.redirect');
 
-    Route::get('/', [HomeAdminController::class, 'getHome'])->name('index');
+Route::name('admin.')->prefix('admin/{khoa}')->middleware(['CheckLogedIn', 'RequireFaculty'])->group(function () {
+
+    Route::get('/', [DashboardController::class, 'index'])->name('index');
+
+    Route::name('faculty.')->prefix('faculty')->group(function () {
+        //
+        Route::get('/', [FacultyController::class, 'show'])->name('show');
+        //
+        Route::get('add',  [FacultyController::class, 'create'])->name('create');
+        Route::post('add',  [FacultyController::class, 'store'])->name('store');
+        //
+        Route::get('/edit/{id}',  [FacultyController::class, 'edit'])->name('edit')->where(['id' => '[0-9]+']);
+        Route::post('/edit/{id}', [FacultyController::class, 'update'])->name('update')->where(['id' => '[0-9]+']);
+        //
+        Route::get('/delete/{id}', [FacultyController::class, 'delete'])->name('delete')->where(['id' => '[0-9]+']);
+        //
+    });
+
+    Route::name('teacher.')->prefix('teacher')->group(function () {
+        //
+        Route::get('/', [AdminTeacherController::class, 'show'])->name('show');
+        //
+        Route::get('/add',  [AdminTeacherController::class, 'create'])->name('create');
+        Route::post('/add',  [AdminTeacherController::class, 'store'])->name('store');
+        //
+        Route::get('/edit/{id}',  [AdminTeacherController::class, 'edit'])->name('edit')->where(['id' => '[0-9]+']);
+        Route::post('/edit/{id}', [AdminTeacherController::class, 'update'])->name('update')->where(['id' => '[0-9]+']);
+        //
+        Route::get('/delete/{id}', [AdminTeacherController::class, 'delete'])->name('delete')->where(['id' => '[0-9]+']);
+        //
+    });
+
+    Route::name('slide.')->prefix('slide')->group(function () {
+        //
+        Route::get('/', [SlideController::class, 'show'])->name('show');
+        //
+        Route::get('add',  [SlideController::class, 'create'])->name('create');
+        Route::post('add',  [SlideController::class, 'store'])->name('store');
+        //
+        Route::get('/edit/{id}',  [SlideController::class, 'edit'])->name('edit')->where(['id' => '[0-9]+']);
+        Route::post('/edit/{id}', [SlideController::class, 'update'])->name('update')->where(['id' => '[0-9]+']);
+        //
+        Route::get('/delete/{id}', [SlideController::class, 'delete'])->name('delete')->where(['id' => '[0-9]+']);
+        //
+    });
 
     Route::name('user.')->prefix('user')->group(function () {
-
+        //
         Route::get('/', [UserController::class, 'show'])->name('show');
-
+        //
         Route::get('add',  [UserController::class, 'create'])->name('create');
         Route::post('add',  [UserController::class, 'store'])->name('store');
-
+        //
         Route::get('/edit/{id}',  [UserController::class, 'edit'])->name('edit')->where(['id' => '[0-9]+']);
         Route::post('/edit/{id}', [UserController::class, 'update'])->name('update')->where(['id' => '[0-9]+']);
-
+        //
         Route::get('/delete/{id}', [UserController::class, 'delete'])->name('delete')->where(['id' => '[0-9]+']);
+        //
     });
 });
 #endregion

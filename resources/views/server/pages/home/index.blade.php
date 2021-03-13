@@ -1,6 +1,6 @@
 @extends('server.index')
-@section('title', 'Admin Home')
-@section('page-title', 'Admin Home')
+@section('title', 'Trang chủ')
+@section('page-title', 'Trang chủ')
 
 @section('page-content')
 <div class="content">

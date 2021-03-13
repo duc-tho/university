@@ -9,7 +9,7 @@
         .btn-Edit{padding: 6px auto; width:100%;margin-bottom:10px;}
         .mb-1{background:red;}
     </style> --}}
-    <title>Laravel - @yield('title')</title>
+    <title>@yield('title') - Quản trị Website | Admin Dashboard</title>
     @yield('head-import')
 </head>
 
@@ -19,4 +19,3 @@
 </body>
 
 </html>
-
