@@ -38,7 +38,7 @@
                         <li><a href="#">Tin Tức</a></li>
                         <li><a href="#">Giới Thiệu</a></li>
                         <li><a href="#">Thông Báo</a></li>
-                        <li><a href="#">Thông Tin Khoa</a></li>
+                        <li><a href="#">Thông Tin Khoa  </a></li>
                         {{-- <li><a href="####">Khác</a></li> --}}
                     </ul>
                 </div>
