@@ -112,12 +112,10 @@
                                             <td class="text-center">{{ $teacher->created_by }}</td>
                                             <td class="text-center">{{ $teacher->updated_by }}</td>
                                             <td class="text-center">
-                                                <label class="status switch switch-primary" data-toggle="tooltip" title="" name="status"
-                                                    data-original-title="Xuất bản">
-                                                    <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
+                                                <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
                                                     <div class="mt-check-garden nutanhien">
                                                     <input id="{{$teacher->id}}" type="checkbox" >
-                                                    <label for="{{$teacher->id}}"> </label></div></label>
+                                                <label for="{{$teacher->id}}"> </label></div></label>
                                                     <!-- <input data-id="1579" type="checkbox" checked=""><span></span></label> -->
                                                 <a href="{{asset('admin/teacher/edit/'.$teacher->id)}}" class="btn btn-warning btn-xs" >
                                                     <i class="fa fa-flag" aria-hidden="true"></i>

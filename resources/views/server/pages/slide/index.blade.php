@@ -1,7 +1,6 @@
 @extends('server.index')
 @section('title', 'Slide')
 @section('page-title', 'Slide page')
-
 @section('page-content')
 <div class="content">
     <div class="container-fluid">
@@ -38,8 +37,6 @@
                                     <th class="text-center">
                                         <input class="form-control" type="text" name="News_Name" value="">
                                     </th>
-
-
 
                                     <!-- <th style="width:15%" class="text-center">
                                         <select class="form-control" name="News_NewsCat">
@@ -224,36 +221,34 @@
                                 </tr>
                             </thead>
                             <tbody>
-
+                            @foreach($slidelist as $item)
                                 <tr role="row">
-                                    <td class="text-center">1592</td>
+                                    <td class="text-center">{{$item -> id}}</td>
 
                                     <td>
-										<img width="200px"  src="http://daihocdulich.edu.vn/upload/slide/slide-sai-gon-c-72529.jpg" class="thumbnail">
+										<img width="200px"  src="{{asset($item -> link)}}" class="thumbnail">
 									</td>
                                   
-                                    <td class="text-center">Kim Nga</td>
+                                    <td class="text-center">{{$item -> created_by }}</td>
 
                                     <td class="text-center">
-                                        Kim Nga </td>
+                                        {{$item -> updated_by}} </td>
 
-                                    <td class="text-center">2021-01-10</td>
+                                    <td class="text-center">{{$item->created_at}}</td>
 
                                    
                                     <td class="text-center">
                                         <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
                                         <div class="mt-check-garden nutanhien">
-                                        <input id="1" type="checkbox" >
-                                        <label for="1"> </label></div></label>
+                                        <input id="{{$item->id}}" type="checkbox" >
+                                        <label for="{{$item->id}}"> </label></div></label>
                                         <!-- <input data-id="1579" type="checkbox" checked=""><span></span></label> -->
-                                        <a href="#" class="btn btn-warning btn-xs" title="" style="overflow: hidden;position: relative;" data-toggle="tooltip" data-original-title="Sửa"><i class="fa fa-flag"  aria-hidden="true"></i> Sửa</a>
-                                        <a href="#" class="btn btn-danger btn-xs" title="" style="overflow: hidden;position: relative;" data-toggle="tooltip" data-original-title="Xóa"><i class="fa fa-trash"  aria-hidden="true"></i> Xóa</a>
+                                        <a href="{{asset('admin/slide/edit/'.$item->id)}}" class="btn btn-warning btn-xs" title="" style="overflow: hidden;position: relative;" data-toggle="tooltip" data-original-title="Sửa"><i class="fa fa-flag"  aria-hidden="true"></i> Sửa</a>
+                                        <a href="{{asset('admin/slide/delete/'.$item->id)}}" class="btn btn-danger btn-xs" title="" style="overflow: hidden;position: relative;" data-toggle="tooltip" data-original-title="Xóa"><i class="fa fa-trash"  aria-hidden="true"></i> Xóa</a>
                                     </td>
-
-
-
                                 </tr>
-                                <tr role="row">
+                                @endforeach
+                                <!-- <tr role="row">
 
                                     <td class="text-center">1591</td>
 
@@ -449,7 +444,7 @@
                                         <a href="#" class="btn btn-warning btn-xs"><i class="fa fa-flag" aria-hidden="true"></i> Sửa</a>
                                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                     </td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                             <tfoot>
 

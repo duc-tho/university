@@ -117,21 +117,35 @@ class HomeController extends Controller
             $item['child'] = $item->footerLinks;
         }
 
+        $category_news = Category::where(['status' => 1, 'show_at_news' => '1','faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
 
+        if (!$category->isEmpty()) foreach ($category as $key => $item) {
+            $news = $item->news()->orderBy('id', 'desc')->paginate(6);
 
+            if (!$news->isEmpty()) $item['news'] = $news;
+        }
+
+        $category_notification = Category::where(['status' => 1, 'show_at_notification' => '1','faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
+
+        if (!$category->isEmpty()) foreach ($category as $key => $item) {
+            $news = $item->news()->orderBy('id', 'desc')->paginate(6);
+
+            if (!$news->isEmpty()) $item['news'] = $news;
+        }
         // Lấy các icon mạng xã hội
         $socials_icon = Socials::where(['status' => 1])->get();
 
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty_id])->first();
 
+
         return view('client.layout.' . $layout_name . '.page.home', [
-            'phone' => $contact['phone'],
-            'email' => $contact['email'],
-            'hotline' => $contact['hotline'],
-            'google_map_link' => $contact['map_embed'],
-            'website_link' => $contact['website_link'],
-            'contact_title' => $contact['contact_title'],
+            'phone' => getSettingValue($settings,'phone'),
+            'email' => getSettingValue($settings,'email'),
+            'hotline' => getSettingValue($settings,'hotline'),
+            'google_map_link' => getSettingValue($settings,'map_embed'),
+            'website_link' => getSettingValue($settings,'website_link'),
+            'contact_title' => getSettingValue($settings,'contact_title'),
 
 
             'all_specialized' => $all_specialized,
@@ -167,21 +181,10 @@ class HomeController extends Controller
             'title_hot_line' => getSettingValue($settings, 'title_hot_line'),
             'number_hot_line' => getSettingValue($settings, 'number_hot_line'),
             //Start Khoa
-
-
-
             'title_faculty' => getSettingValue($settings, 'title_faculty'),
             'title_welcom_faculty' => getSettingValue($settings, 'title_welcom_faculty'),
             'title_admissions' => getSettingValue($settings, 'title_admissions'),
             'content_admissions' => getSettingValue($settings, 'content_admissions'),
-
-            //End Khoa
-
-            // 'admission_title' => getSettingValue($settings, 'email'),
-            // 'admission_description' => getSettingValue($settings, 'email'),
-            // 'admission_route' => getSettingValue($settings, 'email'),
-
-
 
             'intro_image' => getSettingValue($settings, 'intro_image'),
             'intro_video' => getSettingValue($settings, 'intro_video'),
@@ -202,7 +205,8 @@ class HomeController extends Controller
             'image' => $image_category,
 
             'news' => $category,
-
+            'category_news' => $category_news,
+            'category_notification' => $category_notification,
 
             'collab_logo' => $collab_logo,
             'footer_link' => $footer_link,
@@ -210,6 +214,7 @@ class HomeController extends Controller
             'socials_icon' => $socials_icon,
         ]);
     }
+
 
     public function postAdmissionsRegister(Request $request)
     {

@@ -23,7 +23,7 @@
             <!-- <a class="navbar-brand" href="index.html"></a>	<img src="images/logo.png" alt="Logo" style="width:40%; height: auto;"></a> -->
 
             <a class="navbar-brand" href="/">
-                <img src="{{asset($logo_travel)}}" style="width: 55%;" />
+                <img src="#" style="width: 55%;" />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

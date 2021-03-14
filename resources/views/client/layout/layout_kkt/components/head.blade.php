@@ -6,9 +6,11 @@
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ asset('dist/layout/layout_kkt/js/vendor/jquery-1.12.4.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
+
 <!-- Bootstrap core CSS -->
-<link href="{{asset('dist/layout/layout_kkt/css/css/bootstrap.min.css')}}" rel="stylesheet">
+{{-- <link href="{{asset('dist/layout/layout_kkt/css/css/bootstrap.min.css')}}" rel="stylesheet"> --}}
 
 <!-- FontAwesome Icons core CSS -->
 <link href="{{asset('dist/layout/layout_kkt/css/css/font-awesome.min.css')}}" rel="stylesheet">
@@ -53,3 +55,14 @@
 
 <!--====== Responsive css ======-->
 <link rel="stylesheet" href="{{asset('dist/layout/layout_kkt/css/responsive.css')}}">
+
+<!--====== css teacher ======-->
+
+<link href="{{ asset('dist/layout/default/css/style.css') }}" rel="stylesheet">
+
+
+
+
+
+
+

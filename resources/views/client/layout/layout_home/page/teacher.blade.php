@@ -1,7 +1,5 @@
 @extends('client.layout.default.index')
-
 @section('title', 'Giảng Viên')
-
 @section('meta')
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -20,10 +18,10 @@
                             chủ</a></li>
                     <li class="breadcrumb-item active">Giảng Viên</li>
                 </ol>
-            </div><!-- end col -->
-        </div><!-- end row -->
-    </div><!-- end container -->
-</div><!-- end page-title -->
+            </div>
+        </div>
+    </div>
+</div>
 
 <section class="section wb">
     <div class="container">
@@ -249,8 +247,6 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="modal-footer">
-            </div> --}}
     </div>
 </div>
 @endsection

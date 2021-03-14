@@ -66,6 +66,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route('Student') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Sinh Viên</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('adminSlide') }}" class="nav-link {{ request()->is('admin/demo/demo-2*') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Slide</p>

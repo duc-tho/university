@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\FacultyController;
 use App\Http\Controllers\Admin\Teacher_reController;
 use App\Http\Controllers\Admin\HomeAdminController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\Student_reController;
 use App\Http\Controllers\Client\CourseController;
 use App\Http\Controllers\Client\EducateController;
 use App\Http\Controllers\Client\AboutController;
@@ -61,6 +62,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
                 ->where(['id' => '[0-9]+']);
         });
 
+        //Route add,edit,delete slide
         Route::group(['prefix' => 'slide'], function () {
             Route::get('/', [SlideController::class, 'getSlide'])->name('adminSlide');
 
@@ -81,6 +83,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
             ->where(['id' => '[0-9]+']);
         });
 
+        //Route add,edit,delete teacher
         Route::group(['prefix' => 'teacher'], function () {
             Route::get('/', [Teacher_reController::class, 'getTeacher'])->name('Teacher');
 
@@ -101,6 +104,28 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
                 ->where(['id' => '[0-9]+']);
         });
 
+        //Route add,edi,delete student
+        Route::group(['prefix' => 'student'], function () {
+            Route::get('/', [Student_reController::class, 'getStudent'])->name('Student');
+
+            Route::get('add',  [Student_reController::class, 'getAddStudent'])->name('GetAddStudent');
+
+            Route::post('add',  [Student_reController::class, 'postAddStudent'])->name('PostAddStudent');
+
+            Route::get('/edit/{id}',  [Student_reController::class, 'getEditStudent'])
+                ->name('GetEditStudent')
+                ->where(['id' => '[0-9]+']);
+
+            Route::post('/edit/{id}', [Student_reController::class, 'postEditStudent'])
+                ->name('PostEditStudent')
+                ->where(['id' => '[0-9]+']);
+
+            Route::get('/delete/{id}', [Student_reController::class, 'deleteStudent'])
+                ->name('DeleteStudent')
+                ->where(['id' => '[0-9]+']);
+        });
+
+        //Route add,edit,delete user
         Route::group(['prefix' => 'user'], function () {
             Route::get('/', [UserController::class, 'getUser'])->name('User');
 
@@ -175,7 +200,7 @@ Route::get('/{khoa}/khoa-hoc', [CourseController::class, 'index'])->name('khoa-h
 
 // Thông báo
 Route::get('/{khoa}/thong-bao', [NotificationController::class, 'index'])->name('thong-bao');
-Route::get('/{khoa}/thong-bao/chi-tiet-thong-bao', [NotificationController::class, 'detail'])->name('thong-bao-chi-tiet');
+Route::get('/{khoa}/thong-bao/{category}/{name}', [NotificationController::class, 'detail'])->name('thong-bao-chi-tiet');
 
 // hình ảnh
 Route::get('/{khoa}/hinh-anh', [ImageController::class, 'index'])->name('hinh-anh'); // tạo chức năng lọc :D theo danh mục
