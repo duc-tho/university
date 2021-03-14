@@ -209,6 +209,10 @@ class NewsController extends Controller
         abort_if(!$category, 404);
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 0233fb6cee52d2ef6ed5d97c7526df4e8e426973
         $news = News::where(['status' => 1, 'slug' => $bai_viet, ])->first();
         abort_if(!$news, 404);
         $news['view_count'] = $news['view_count'] + 1;
