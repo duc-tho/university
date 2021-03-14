@@ -10,8 +10,13 @@
                     <div class="card card-primary card-outline">
                         <div class="card-header p-2 d-flex align-items-center justify-content-between">
                             <a href="{{ route('GetAddFaculty') }}">
-                                <button class="btn btn-info btn-sm">
+                                <button class="btn btn-info btn-sm btn-1">
                                     <i class="fas fa-plus"></i> Thêm Khoa
+                                </button>
+                            </a>
+                            <a href="#">
+                                <button class="btn btn-info btn-sm btn-1">
+                                    <i class="fas fa-plus"></i> Cập Nhật
                                 </button>
                             </a>
                             <div class="ml-auto d-inline-block">
@@ -84,7 +89,7 @@
                                         <th class="text-center sorting">
                                             <a> Tên Khoa</a>
                                         </th>
-                                       
+
                                         <th class="text-center sorting">
                                             <a>Giới Thiệu Tóm Tắt</a>
                                         </th>
@@ -107,11 +112,11 @@
 
                                 </thead>
                                 <tbody>
-                                    @foreach ($facultylist as $faculty)
+                                    @foreach ($facultylist as $key => $faculty)
                                         <tr role="row">
                                             <td class="text-center">{{ $faculty->id }}</td>
                                             <td>Khoa {{ $faculty->name }}</td>
-                                            
+
                                             <td>
                                                 <img width="200px" src="{{asset($faculty->image)}}" class="thumbnail">
                                             </td>
@@ -122,8 +127,8 @@
                                                 <label class="status switch switch-primary" data-toggle="tooltip" title=""
                                                     data-original-title="Xuất bản">
                                                     <div class="mt-check-garden nutanhien">
-                                                    <input id="1" type="checkbox" >
-                                                    <label for="1"> </label></div>
+                                                    <input id="{{$key +1}}" type="checkbox" >
+                                                    <label for="{{$key +1}}"> </label></div>
                                                     <!-- <input data-id="1579" type="checkbox" checked=""><span></span></label> -->
                                                 <a href="{{asset('admin/faculty/edit/'.$faculty->id)}}" class="btn btn-warning btn-xs" >
                                                     <i class="fa fa-flag" aria-hidden="true"></i>

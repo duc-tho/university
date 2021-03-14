@@ -202,7 +202,7 @@
             options: {
                 resourceType: 'Images'
             }
-        }
+        },
             image: {
                 toolbar: [
                     'imageTextAlternative',

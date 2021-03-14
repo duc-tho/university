@@ -7,16 +7,20 @@
                     <ul>
                         <li>
                             <p><span class="fa fa-map-marker"></span>
-                            {{$footer_address_travel}}
+                            {{-- {{$footer_address_travel}} --}}
                             </p>
                         </li>
-                        <li><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span>{{$footer_phone_travel}}</a></li>
+                        <li><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span>
+                            {{-- {{$footer_phone_travel}} --}}
+                        </a></li>
                         <li><a href="mailto:corporate-mail@support.com" class="mail"><span
                                     class="fa fa-envelope-open-o"></span>
-                                    {{$footer_email_travel}}</a></li>
+                                    {{-- {{$footer_email_travel}} --}}
+                                </a></li>
                         <li><a href="mailto:corporate-mail@support.com" class="mail"><span
                                     class="fa fa-envelope-open-o"></span>
-                                    {{$footer_website_travel}}</a></li>
+                                    {{-- {{$footer_website_travel}} --}}
+                                </a></li>
                     </ul>
                     <div class="main-social-footer-29">
                         {{-- @foreach (socials_icon as $item)
@@ -38,7 +42,7 @@
                         <li><a href="#">Tin Tức</a></li>
                         <li><a href="#">Giới Thiệu</a></li>
                         <li><a href="#">Thông Báo</a></li>
-                        <li><a href="#">Thông Tin Khoa</a></li>
+                        <li><a href="#">Thông Tin Khoa  </a></li>
                         {{-- <li><a href="####">Khác</a></li> --}}
                     </ul>
                 </div>

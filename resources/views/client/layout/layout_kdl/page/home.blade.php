@@ -10,7 +10,7 @@
                             <div class="banner-info">
                                 <div class="container">
                                     <div class="banner-info-bg mx-auto text-center">
-                                        <h5>{{ $slogan_main_travel }}</h5>
+                                        <h5>#</h5>
                                         <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" {{-- href="{{ route('gioithieu') }}">Tìm Hiểu</a> --}}
                                             href="{{route('gioi-thieu', [$faculty['slug']])}}">Tìm Hiểu</a>
                                     </div>
@@ -25,7 +25,7 @@
                             <div class="banner-info">
                                 <div class="container">
                                     <div class="banner-info-bg mx-auto text-center">
-                                        <h5>{{ $slogan_main_travel }}</h5>
+                                        <h5>#</h5>
                                         <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="#">Tìm Hiểu</a>
                                     </div>
                                 </div>
@@ -39,7 +39,7 @@
                             <div class="banner-info">
                                 <div class="container">
                                     <div class="banner-info-bg mx-auto text-center">
-                                        <h5>{{ $slogan_main_travel }}</h5>
+                                        <h5>#</h5>
                                         <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="{{route('gioi-thieu', [$faculty['slug']])}}">Tìm Hiểu</a>
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@
                             <div class="banner-info">
                                 <div class="container">
                                     <div class="banner-info-bg mx-auto text-center">
-                                        <h5>{{ $slogan_main_travel }}</h5>
+                                        <h5>#</h5>
                                         <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="#">Tìm Hiểu</a>
                                     </div>
                                 </div>
@@ -134,9 +134,9 @@
 
                     <div class="column1">
                         <div class="heading">
-                            <h3 class="head text-white">{{ $slogan_intro_travel }}</h3>
-                            <h4>{{ $slogan_intro_travel2 }}</h4>
-                            <p class="my-3 text-white">{{ $slogan_intro_travel3 }}
+                            <h3 class="head text-white"></h3>
+                            <h4></h4>
+                            <p class="my-3 text-white">
                             </p>
                         </div>
                     </div>
@@ -272,23 +272,25 @@
                 <div class="section-title align-center row">
                     <div class="item-top col-md-6 pr-md-5">
                         <div class="heading">
-                            <h3 class="head text-white">{{ $slogan_intro_travel4 }}</h3>
+                            <h3 class="head text-white">
+                            {{-- {{ $slogan_intro_travel4 }} --}}
+                        </h3>
                             <p class="my-3 head text-white">
-                                {{ $slogan_intro_travel5 }}
+                                {{-- {{ $slogan_intro_travel5 }} --}}
                             </p>
 
                         </div>
                     </div>
                     <div class="item-top col-md-6 mt-md-0 mt-4">
                         <div class="item text-center">
-                            @foreach ($student as $item)
+                            {{-- @foreach ($student as $item)
                                 <div class="imgTitle">
                                     <img src="{{ asset($item['image']) }}" class="img-responsive" alt="" />
                                 </div>
                                 <h6 class="mt-3">{{ $item->name }}</h6>
                                 <p class="">{{ $item->intro }}</p>
                                 <p> {{ $item->evaluate }}</p>
-                            @endforeach
+                            @endforeach --}}
 
                         </div>
                     </div>
@@ -301,7 +303,7 @@
         <div class="price-main py-5">
             <div class="container py-md-3">
                 <div class="pricing-style-w3ls row py-md-5">
-                    @foreach ($news_travel as $key => $category_travel)
+                    {{-- @foreach ($news_travel as $key => $category_travel)
                     <div class="pricing-chart col-lg-6">
                         <h3 class="">{{ $category_travel['title'] }}</h3>
                         <div class="tatest-top mt-md-5 mt-4">
@@ -327,11 +329,10 @@
 
                         </div>
                         <div class="text-right mt-4">
-                            {{-- <a class="btn btn-secondary btn-theme2" href="{{ route('tintuc') }}"> Xem tất cả</a> --}}
                             <a class="btn btn-secondary btn-theme2" href="{{route('tin-tuc', [$faculty['slug']])}}"> Xem tất cả</a>
                         </div>
                     </div>
-                    @endforeach
+                    @endforeach --}}
                 </div>
 
             </div>

@@ -166,3 +166,6 @@ fieldset[disabled] .btn-danger.active {
 	background-color: #f9243f;
 	border-color: #f9243f;
 }
+.btn-1{
+	margin-left: 8px;
+}

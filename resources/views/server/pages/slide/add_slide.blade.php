@@ -1,93 +1,7 @@
 @extends('server.index')
-@section('title', 'Quản trị ảnh các trang')
-@section('page-title', 'Thêm ảnh cho các trang')
-
+@section('title', 'Quản Trị ảnh slide')
+@section('page-title', 'Thêm ảnh')
 @section('page-content')
-<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-		<div class="row">
-			<div class="col-lg-12">
-				<h1 class="page-header">Quản trị ảnh</h1>
-			</div>
-		</div><!--/.row-->
-		
-		<div class="row">
-			<div class="col-xs-12 col-md-12 col-lg-12">
-				
-				<div class="panel panel-primary">
-					<div class="panel-heading">Thêm sản phẩm</div>
-					<div class="panel-body">
-						<form method="post" enctype="multipart/form-data">
-							<div class="row" style="margin-bottom:40px">
-								<div class="col-xs-8">
-									<div class="form-group" >
-										<label>Tên sản phẩm</label>
-										<input required type="text" name="name" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Giá sản phẩm</label>
-										<input required type="number" name="price" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Ảnh sản phẩm</label>
-										<input required id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)">
-					                    <img id="avatar" class="thumbnail" width="300px" src="img/new_seo-10-512.png">
-									</div>
-									<div class="form-group" >
-										<label>Phụ kiện</label>
-										<input required type="text" name="accessories" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Bảo hành</label>
-										<input required type="text" name="warranty" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Khuyến mãi</label>
-										<input required type="text" name="promotion" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Tình trạng</label>
-										<input required type="text" name="condition" class="form-control">
-									</div>
-									<div class="form-group" >
-										<label>Trạng thái</label>
-										<select required name="status" class="form-control">
-											<option value="1">Còn hàng</option>
-											<option value="0">Hết hàng</option>
-					                    </select>
-									</div>
-									<div class="form-group" >
-										<label>Miêu tả</label>
-										<textarea required name="description"></textarea>
-									</div>
-									<div class="form-group" >
-										<label>Danh mục</label>
-										<select required name="cate" class="form-control">
-											<option value="1">iPhone</option>
-											<option value="2">Samsung</option>
-											<option value="3">Nokia</option>
-											<option value="4">HTC</option>
-											<option value="5">LG</option>
-											<option value="6">Sony</option>
-					                    </select>
-									</div>
-									<div class="form-group" >
-										<label>Sản phẩm nổi bật</label><br>
-										Có: <input type="radio" name="featured" value="1">
-										Không: <input type="radio" checked name="featured" value="0">
-									</div>
-									<input type="submit" name="submit" value="Thêm" class="btn btn-primary">
-									<a href="#" class="btn btn-danger">Hủy bỏ</a>
-								</div>
-							</div>
-						</form>
-						<div class="clearfix"></div>
-					</div>
-				</div>
-			</div>
-		</div><!--/.row-->
-	</div>	<!--/.main-->
-@endsection
-
 <!--/.row-->
 <div class="row">
     <div class="col-sm-12 ">
@@ -108,25 +22,25 @@
                                         <label>Thuộc Khoa : </label>
                                         <select required name="faculty_id" class="form-control">
                                             <option value="">Chọn Khoa</option>
-                                            @foreach ($facultylist as $faculty)
+                                            @foreach ($faculityslide as $faculty)
                                                 <option value="{{$faculty->id}}">{{$faculty->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Tên Giảng Viên : </label>
-                                        <input required type="text" id="name" name="name" class="form-control" placeholder="Nhập Tên Giảng Viên...">
+                                        <label>Tên ảnh slide : </label>
+                                        <input required type="text" id="name" name="name" class="form-control" placeholder="Nhập Tên nội dung ảnh...">
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Ngày Tạo : </label>
-                                        <input required type="date" id="created_by" name="created_by" class="form-control" placeholder="Nhập Ngày Tạo...">
+                                        <label>Người Tạo : </label>
+                                        <input required type="text" id="created_by" name="created_by" class="form-control" placeholder="Nhập người tạo...">
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Ngày Đăng : </label>
-                                        <input required type="date" id="updated_by" name="updated_by" class="form-control" placeholder="Nhập Ngày Đăng...">
+                                        <label>Người Đăng : </label>
+                                        <input required type="text" id="updated_by" name="updated_by" class="form-control" placeholder="Nhập người đăng...">
                                     </div>
 
                                     <div class="form-group">
@@ -138,9 +52,9 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Ảnh Khoa :</label>
+                                        <label>Ảnh Slide trình chiếu :</label>
                                         <input required id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)">
-                                        <img id="image" class="thumbnail" width="200px" src="{{asset('/dist/img/imgdefault.png') }}">
+                                        <img id="link" class="thumbnail" width="200px" src="{{asset('/dist/img/imgdefault.png') }}">
                                     </div>
 
                                 </div>
@@ -150,10 +64,10 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label>Tóm Lược Giới Thiệu: </label>
-                                        <textarea required class="ckeditor" required name="intro">{{ old('intro') }}</textarea>
+                                        <label>Tóm Lược nội dung ảnh slide: </label>
+                                        <textarea required class="ckeditor" required name="description">{{ old('description') }}</textarea>
                                         <script type="text/javascript">
-                                            var editor = CKEDITOR.replace('intro', {
+                                            var editor = CKEDITOR.replace('description', {
                                                     language: 'vi',
                                                     filebrowserImageBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Images',
                                                     filebrowserFlashBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Flash',
@@ -163,7 +77,7 @@
                                         </script>
                                     </div>
 
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label>Đánh Giá: </label>
                                         <textarea required class="ckeditor" required name="evaluate">{{ old('evaluate') }}</textarea>
                                         <script type="text/javascript">
@@ -175,7 +89,7 @@
                                                     filebrowserFlashUploadUrl: '../../plugins/editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
                                                 });
                                         </script>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -197,3 +111,4 @@
     };
 </script>
 
+@stop
