@@ -48,7 +48,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
                             <span class="icon-bar"></span>
                         </button>
                         <!-- <h1><a href="index.html"><span>Đ</span>ại <span>H</span>ọc</span> <span>D</span>u <span>L</span>ịch</a></h1> -->
-                        <a href="/"><img class="logo-background visible hidden-md" src="http://daihocdulich.edu.vn/default/template/imgs/logo-02.png" alt="" height="50px"></a>
+                        <a href="/"><img class="logo-background visible hidden-md" src="{{$logo}}" alt="" height="50px"></a>
                     </div>
                     <!-- navbar-header -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -198,7 +198,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
     <div class="container">
         <h3 class="w3ls-title">{{ $category['title'] }}</h3>
         <div class="w3_testimonials_grids w3_testimonials_grids">
-            <div id="owl-news-{{ $key }}" class="owl-carousel">
+            <d iv id="owl-news-{{ $key }}" class="owl-carousel">
                 @foreach ($category['news'] as $item)
                 <div class="item w3_agileits_testimonials_grid">
                     <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}"><img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="img-responsive" /></a>
@@ -209,7 +209,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
                     <p>{{ $item['description'] }}</p>
                 </div>
                 @endforeach
-            </div>
+            </d>
         </div>
         <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category['slug']]) }}"> Các {{ $category['title'] }} khác</a></div>
     </div>

@@ -79,11 +79,10 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="section-title mt-50">
-                        <h5>{{ $title_faculty }}</h5>
-                        <h2>{{ $title_welcom_faculty }}</h2>
+                        <h2>{{ $faculty['name'] }}</h2>
+                        <h5>{!! $faculty['intro_summary'] !!}</h5>
                     </div> <!-- section title -->
                     <div class="about-cont">
-                        {!! $intro_short !!}
                         <a href="{{ route('gioi-thieu', [$faculty['slug']]) }}" class="main-btn mt-55">Tìm hiểu</a></a>
                     </div>
                 </div> <!-- about cont -->

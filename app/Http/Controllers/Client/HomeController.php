@@ -75,8 +75,8 @@ class HomeController extends Controller
         // dd($all_category);
 
 
-         // lấy tin tức và danh mục  của khoa Du Lịch
-        $category_travel = Category::where(['status' => 1, 'show_at_home' => '1'])->orderBy('display_order', 'asc')->get();
+        // lấy tin tức và danh mục  của khoa Du Lịch
+        $category_travel = Category::where(['status' => 1, 'show_at_home' => '1',  'faculty_id' => $faculty->id])->orderBy('display_order', 'asc')->get();
         if (!$category_travel->isEmpty()) foreach ($category_travel as $key => $item) {
             $news = $item->news()->orderBy('id', 'desc')->paginate(10);
 
@@ -128,21 +128,23 @@ class HomeController extends Controller
             $item['child'] = $item->footerLinks;
         }
 
-        $category_news = Category::where(['status' => 1, 'show_at_news' => '1','faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
-
+         // lấy danh sách tin tức kèm danh mục của khoa kinh tế
+        $category_news = Category::where(['status' => 1, 'show_at_news' => '1', 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
         if (!$category->isEmpty()) foreach ($category as $key => $item) {
             $news = $item->news()->orderBy('id', 'desc')->paginate(6);
 
             if (!$news->isEmpty()) $item['news'] = $news;
         }
 
-        $category_notification = Category::where(['status' => 1, 'show_at_notification' => '1','faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
-
+        // lấy danh sách thông báo kèm danh mục của khoa kinh tế
+        $category_notification = Category::where(['status' => 1, 'show_at_notification' => '1', 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
         if (!$category->isEmpty()) foreach ($category as $key => $item) {
             $news = $item->news()->orderBy('id', 'desc')->paginate(6);
 
             if (!$news->isEmpty()) $item['news'] = $news;
         }
+
+
         // Lấy các icon mạng xã hội
         $socials_icon = Socials::where(['status' => 1])->get();
 
@@ -151,28 +153,28 @@ class HomeController extends Controller
 
 
         return view('client.layout.' . $layout_name . '.page.home', [
-            'phone' => getSettingValue($settings,'phone'),
-            'email' => getSettingValue($settings,'email'),
-            'hotline' => getSettingValue($settings,'hotline'),
-            'google_map_link' => getSettingValue($settings,'map_embed'),
-            'website_link' => getSettingValue($settings,'website_link'),
-            'contact_title' => getSettingValue($settings,'contact_title'),
-
-
-            'all_specialized' => $all_specialized,
-            'slogan_nn' => getSettingValue($settings, 'slogan_nn'),
-            'sub_slogan_nn' => getSettingValue($settings, 'sub_slogan_nn'),
-            'time_work' => getSettingValue($settings, 'time_work'),
-            'address' =>getSettingValue($settings, 'address'),
-
             'logo' => getSettingValue($settings, 'logo'),
+            'hotline' => getSettingValue($settings, 'hotline'),
+            'email' => getSettingValue($settings, 'email'),
+            'all_specialized' => $all_specialized,
+            'website' => getSettingValue($settings, 'website'),
+            // Trang Chủ
+            'phone' => getSettingValue($settings, 'phone'),
             'slogan_top' => getSettingValue($settings, 'slogan_top'),
             'slogan_main' => getSettingValue($settings, 'slogan_main'),
             'slogan_bottom' => getSettingValue($settings, 'slogan_bottom'),
-            'slogan_route' => getSettingValue($settings, 'slogan_route'), //
+            'slogan_route' => getSettingValue($settings, 'slogan_route'),
+            'intro_image' => getSettingValue($settings, 'intro_image'),
+            'intro_video' => getSettingValue($settings, 'intro_video'),
+            'intro_route' => getSettingValue($settings, 'intro_route') == null ? route('gioi-thieu', [$faculty['slug']]) : getSettingValue($settings, 'intro_route'),
+            'google_map_link' => getSettingValue($settings, 'map_embed'),
+            
+            // End Trang Chủ
+
+            // Khoa Kinh Tế
+            'address' => getSettingValue($settings, 'address'),
             'time' => getSettingValue($settings, 'time'),
             'spline' => getSettingValue($settings, 'spline'),
-
             'title_faculty_description' => getSettingValue($settings, 'title_faculty_description'),
             'title_scholarship' => getSettingValue($settings, 'title_scholarship'),
             'title_scholarship_content' => getSettingValue($settings, 'title_scholarship_content'),
@@ -191,16 +193,37 @@ class HomeController extends Controller
             'content_teacher_faculty' => getSettingValue($settings, 'content_teacher_faculty'),
             'title_hot_line' => getSettingValue($settings, 'title_hot_line'),
             'number_hot_line' => getSettingValue($settings, 'number_hot_line'),
-            //Start Khoa
             'title_faculty' => getSettingValue($settings, 'title_faculty'),
             'title_welcom_faculty' => getSettingValue($settings, 'title_welcom_faculty'),
             'title_admissions' => getSettingValue($settings, 'title_admissions'),
             'content_admissions' => getSettingValue($settings, 'content_admissions'),
 
-            'intro_image' => getSettingValue($settings, 'intro_image'),
-            'intro_video' => getSettingValue($settings, 'intro_video'),
-            'intro_image_travel' => getSettingValue($settings, 'intro_image_travel'),
-            'intro_route' => getSettingValue($settings, 'intro_route') == null ? route('gioi-thieu', [$faculty['slug']]) : getSettingValue($settings, 'intro_route'),
+            
+            // End Khoa Kinh Tế
+
+            // Khoa Du Lịch
+            'slogan_main_travel' => getSettingValue($settings, 'slogan_main_travel'),
+            'slogan_main_travel_2' => getSettingValue($settings, 'slogan_main_travel_2'),
+            'slogan_intro_travel' => getSettingValue($settings, 'slogan_intro_travel'),
+            'slogan_intro_travel_2' => getSettingValue($settings, 'slogan_intro_travel_2'),
+            'license' => getSettingValue($settings, 'license'),
+            'license_content' => getSettingValue($settings, 'license_content'),
+
+            // End Khoa Du Lịch
+
+            'website_link' => getSettingValue($settings, 'website_link'),
+            'contact_title' => getSettingValue($settings, 'contact_title'),
+            'slogan_nn' => getSettingValue($settings, 'slogan_nn'),
+            'sub_slogan_nn' => getSettingValue($settings, 'sub_slogan_nn'),
+            'time_work' => getSettingValue($settings, 'time_work'),
+            'copyright' => getSettingValue($settings, 'copyright'),
+
+            'news' => $category,
+            'news_travel' => $category_travel,
+            'category_news' => $category_news,
+            'category_notification' => $category_notification,
+
+
             'intro_short' => $faculty['intro_summary'],
             'intro_statistic' => $statistic,
             'menu' => $menu,
@@ -208,21 +231,15 @@ class HomeController extends Controller
             'faculty' => $faculty,
             'all_faculty' => $all_faculty,
             'footer_faculty' => $footer_faculty,
-
             'all_category' => $all_category,
-
             'teacher' => $teacher,
             'student' => $student,
             'image' => $image_category,
-
-            'news' => $category,
-            'category_news' => $category_news,
-            'category_notification' => $category_notification,
-
             'collab_logo' => $collab_logo,
             'footer_link' => $footer_link,
-            'copyright' => getSettingValue($settings, 'copyright'),
             'socials_icon' => $socials_icon,
+
+
         ]);
     }
 
