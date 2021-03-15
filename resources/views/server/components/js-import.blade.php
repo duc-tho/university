@@ -58,10 +58,43 @@
 
 </script>
 
+{{-- Set default Jquery Validate --}}
+<script>
+    $.validator.setDefaults({
+        //
+        onfocusout: function (e) {
+            this.element(e);
+        },
+        //
+        onkeyup: function(element, event) {
+            $(element).valid();
+        },
+        //
+        highlight: function (element) {
+            $(element).closest('.form-control').addClass('is-invalid');
+        },
+        //
+        unhighlight: function (element) {
+            $(element).closest('.form-control').removeClass('is-invalid');
+            $(element).closest('.form-control').addClass('is-valid');
+        },
+        //
+        errorElement: 'div',
+        //
+        errorClass: 'invalid-feedback',
+        //
+        errorPlacement: function (error, element) {
+            if (element.parent('.input-group-prepend').length) {
+                $(element).siblings(".invalid-feedback").append(error);
+            } else {
+                error.insertAfter(element);
+            }
+        },
+    });
+</script>
+
 {{-- Scription upload ảnh --}}
 <script>
-    // $('#calendar').datepicker({});
-
     !function ($) {
         $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
             $(this).find('em:first').toggleClass("glyphicon-minus");

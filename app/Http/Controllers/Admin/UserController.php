@@ -69,7 +69,6 @@ class UserController extends Controller
 
     public function edit($id)
     {
-
         $data['user'] = User::find($id);
         $data['list_faculty'] = Faculty::all();
         return view('server.pages.user.edit_user', $data);
