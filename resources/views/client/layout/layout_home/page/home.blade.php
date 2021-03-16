@@ -24,6 +24,38 @@
 </div>
 <!--//banner-bottom-->
 <!--/banner-section-->
+
+<!--/header-w3l-->
+<div class="header-w3-agileits" id="home">
+    <div class="inner-header-agile">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- <h1><a href="index.html"><span>Đ</span>ại <span>H</span>ọc</span> <span>D</span>u <span>L</span>ịch</a></h1> -->
+                <a href="/"><img class="logo-background visible hidden-md" src="http://daihocdulich.edu.vn/default/template/imgs/logo-02.png" alt="" height="50px"></a>
+            </div>
+            <!-- navbar-header -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li data-scroll="top" class="active"><a href="javascript:">Trang chủ</a></li>
+                    <li><a href="#about" class="scroll">Giới Thiệu</a></li>
+                    <li><a href="#agileits-services" class="scroll">Khoa</a></li>
+                    <li><a href="#portfolio" class="scroll">Khám phá</a></li>
+                    <li><a href="#team" class="scroll">Tin tức</a></li>
+                    <li><a href="#testimonials" class="scroll">Giảng Viên</a></li>
+                    <li><a href="#contact" class="scroll">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </nav>
+    </div>
+</div>
+
 @php
 $slide_arr = [];
 foreach ($slide as $key => $item) {
@@ -34,47 +66,42 @@ $slide_str = join(', ', $slide_arr);
 $slide_str = str_replace('\\', '/', $slide_str);
 @endphp
 
-<div id="demo-1" class="zs-enabled overlay-dots " data-zs-src='[{{ $slide_str }}]' data-zs-overlay="dots" data-zs-interval="8000">
-    <div class="demo-inner-content">
-        <!--/header-w3l-->
-        <div class="header-w3-agileits" id="home">
-            <div class="inner-header-agile">
-                <nav class="navbar navbar-default">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <!-- <h1><a href="index.html"><span>Đ</span>ại <span>H</span>ọc</span> <span>D</span>u <span>L</span>ịch</a></h1> -->
-                        <a href="/"><img class="logo-background visible hidden-md" src="{{$logo}}" alt="" height="50px"></a>
-                    </div>
-                    <!-- navbar-header -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li data-scroll="top" class="active"><a href="javascript:">Trang chủ</a></li>
-                            <li><a href="#about" class="scroll">Giới Thiệu</a></li>
-                            <li><a href="#agileits-services" class="scroll">Khoa</a></li>
-                            <li><a href="#portfolio" class="scroll">Khám phá</a></li>
-                            <li><a href="#team" class="scroll">Tin tức</a></li>
-                            <li><a href="#testimonials" class="scroll">Giảng Viên</a></li>
-                            <li><a href="#contact" class="scroll">Liên hệ</a></li>
-                        </ul>
-                    </div>
-                    <div class="clearfix"> </div>
-                </nav>
-            </div>
-        </div>
-        <div class="baner-info">
-            <h4>{{ $slogan_top }}</h4>
-            <h3>{{ $slogan_main }}</h3>
-            <p>{{ $slogan_bottom }}</p>
-            <a class="hvr-rectangle-out w3_play_icon1" href="{{ route('tuyensinh') }}"> Ứng tuyển ngay</a>
-        </div>
-        <!--/banner-ingo-->
+{{-- <div id="demo-1" class="zs-enabled overlay-dots" data-zs-src='[{{ $slide_str }}]' data-zs-overlay="dots" data-zs-interval="8000" data-zs-autoplay="false">
+<div class="demo-inner-content">
+
+    <div class="baner-info">
+        <h4>{{ $slogan_top }}</h4>
+        <h3>{{ $slogan_main }}</h3>
+        <p>{{ $slogan_bottom }}</p>
+        <a class="hvr-rectangle-out w3_play_icon1" href="{{ route('tuyensinh') }}"> Ứng tuyển ngay</a>
+    </div>
+    <!--/banner-ingo-->
+</div>
+</div> --}}
+
+<div class="splide" style="position: relative;">
+    <a class="hvr-rectangle-out w3_play_icon1" href="{{ route('tuyensinh') }}" style="position: absolute; bottom: 10%; left: 10%; z-index:998;"> Tuyển sinh ngay</a>
+    <div class="splide__track">
+        <ul class="splide__list">
+            {{-- <li class="splide__slide">
+                <img src="http://daihocdulich.edu.vn/upload/slide/slide-sai-gon-c-72529.jpg" alt="" style="width: 100%">
+            </li>
+            <li class="splide__slide">
+                <img src="http://daihocdulich.edu.vn/upload/slide/slide-sai-gon-c-50577.jpg" alt="" style="width: 100%">
+            </li>
+            <li class="splide__slide">
+                <img src="http://daihocdulich.edu.vn/upload/slide/slide-sai-gon-c-10770.jpg" alt="" style="width: 100%">
+            </li> --}}
+            <li class="splide__slide">
+                <img src="{{ asset('dist/upload/image/slide/Artboard 1@5x-100.jpg') }}" alt="" style="width: 100%">
+            </li>
+            {{-- <li class="splide__slide">
+                <img src="{{ asset('dist/upload/image/slide/12.jpg') }}" alt="" style="width: 100%">
+            </li> --}}
+        </ul>
     </div>
 </div>
+
 <!--/banner-section-->
 <!--about -->
 <div id="about" class="wthree-about w3ls-section">
@@ -105,11 +132,8 @@ $slide_str = str_replace('\\', '/', $slide_str);
     {!! $intro_short !!}
 </div>
 <div class="col-md-5 w3ls-row">
-    <div class="col-md-6 col-sm-6 wthree-about-left">
-        <img src="{{ $intro_image }}" class="img-responsive" alt="" />
-    </div>
-    <div class="col-md-6 col-sm-6 w3ls-row alert wthree-about-right">
-        <video controls class="img-responsive" style="max-width: 120%;" autoplay muted>
+    <div class="col-md-12 col-sm-12 w3ls-row alert">
+        <video controls class="img-responsive" style="max-width: 100%;" autoplay muted>
             <source src="{{ asset($intro_video) }}" type="video/mp4">
             Trình duyệt cùa bạn không hỗ trợ xem loại video này!
         </video>
@@ -117,17 +141,17 @@ $slide_str = str_replace('\\', '/', $slide_str);
     <div class="clearfix"> </div>
 </div>
 <div class="clearfix"> </div>
-<div class="stats-info agileits-w3layouts">
+{{-- <div class="stats-info agileits-w3layouts">
     @foreach ($intro_statistic as $item)
     <div class="col-sm-3 col-xs-6 stats-grid">
         <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='{{ $item['value'] }}' data-delay='.5' data-increment="{{ ceil($item['value'] / 120) }}">{{ $item['value'] }}</div>
-        <div class="stats-img stat2">
-            <p>{{ $item['name'] }}</p>
-        </div>
-    </div>
-    @endforeach
-    <div class="clearfix"></div>
+<div class="stats-img stat2">
+    <p>{{ $item['name'] }}</p>
 </div>
+</div>
+@endforeach
+<div class="clearfix"></div>
+</div> --}}
 </div>
 <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{ $intro_route }}"> Tìm hiểu thêm</a></div>
 </div>
@@ -135,18 +159,20 @@ $slide_str = str_replace('\\', '/', $slide_str);
 <!--services-->
 <div class="agileits-services w3ls-section" id="agileits-services">
     <div class="container">
-        <h3 class="w3ls-title">Khoa </h3>
+        <h3 class="w3ls-title">Các khoa </h3>
         <div class="agileits-services-row">
-            @foreach ($all_faculty as $item)
-            <div class="col-md-3 col-sm-6 agileits-services-grids">
-                <a href="{{ route('trang-chu', [$item['slug']]) }}" target="_blank">
-                    {{-- <span class="glyphicon glyphicon-stats effect-1" aria-hidden="true"></span> --}}
-                    <img class="boder-radius-img" src="{{asset($item['image']) }}" width="40%" alt="">
-                    <h4>{{ $item['name'] }}</h4>
-                </a>
-                <p class="khoa-p">{!! $item['intro_summary'] !!}</p>
+            <div id="owl-faculty" class="owl-carousel">
+                @foreach ($all_faculty as $item)
+                <div class="agileits-services-grids">
+                    <a href="{{ route('trang-chu', [$item['slug']]) }}" target="_blank">
+                        {{-- <span class="glyphicon glyphicon-stats effect-1" aria-hidden="true"></span> --}}
+                        <img class="boder-radius-img" src="{{asset($item['image']) }}" width="40%" alt="" style="height: unset;">
+                        <h4>{{ $item['name'] }}</h4>
+                    </a>
+                    {{-- <p class="khoa-p">{!! $item['intro_summary'] !!}</p> --}}
+                </div>
+                @endforeach
             </div>
-            @endforeach
             <div class="clearfix"> </div>
         </div>
         {{-- <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="#"> Xem thêm về các khoa</a></div> --}}
@@ -156,7 +182,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
 <!--portfolio-->
 <div id="portfolio" class="portfolio w3ls-section">
     <div class="container">
-        <h3 class="w3ls-title">Khám phá</h3>
+        <h3 class="w3ls-title">Đời sống sinh viên</h3>
         <div class="sap_tabs">
             <div id="horizontalTab">
                 <ul class="resp-tabs-list">
@@ -215,6 +241,20 @@ $slide_str = str_replace('\\', '/', $slide_str);
     </div>
 </div>
 @endforeach
+
+<div class="contact-bottom w3ls-section">
+    <div class="container">
+        <h3 class="w3ls-title">Hợp Tác</h3>
+        <div class="container">
+            <div id="owl-collab" class="owl-carousel owl-theme" data-interval="50" data-delay="100" data-ride="carousel">
+                @foreach ($collab_logo as $item)
+                <img src="{{ asset($item['image_url']) }}" height="100%" style="padding: 50px;" alt="{{ $item['title'] }}">
+                @endforeach
+            </div>
+        </div>
+    </div>
+</div>
+
 {{-- <img src="" alt=""> --}}
 <div class="wthree-testi w3ls-section" id="testimonials">
     <!-- container -->
@@ -249,9 +289,10 @@ $slide_str = str_replace('\\', '/', $slide_str);
 <!-- contact -->
 <div class="contact-bottom w3ls-section" id="contact">
     <div class="container">
-        <h3 class="w3ls-title">Liên Hệ
+        <h3 class="w3ls-title">
+            <a href="{{ route('lien-he', [$faculty['slug']]) }}">Liên Hệ</a>
             <small style="text-align: right;">
-                <a href="{{ route('lien-he', [$faculty['slug']]) }}">Xem thêm &gt;&gt;</a>
+                {{-- <a href="{{ route('lien-he', [$faculty['slug']]) }}">Xem thêm &gt;&gt;</a> --}}
             </small>
         </h3>
         {{-- <p>SAIGONTU - BQLĐATL Trường Đại học Du lịch Sài Gòn </p>
@@ -260,63 +301,47 @@ $slide_str = str_replace('\\', '/', $slide_str);
     </div>
 
 
-    <div class="w3layouts-list">
+    {{-- <div class="w3layouts-list">
         <div class="col-md-4 li"><span class="fa fa-envelope-o list-icon" aria-hidden="true"></span>
             <a href="javascript:">{{ $email }}</a>
-        </div>
-        <div class="col-md-4 li"><span class="fa fa-phone" aria-hidden="true"></span>
-            <a href="javascript:">{{ $phone }} - {{ $hotline }}</a>
-        </div>
-        <div class="col-md-4 li"><span class="fa fa-location-arrow" aria-hidden="true"></span><a href="mailto:info@daihocdulich.com">{{ $email }}</a></div>
-        <div class="clearfix"></div>
-    </div>
+</div>
+<div class="col-md-4 li"><span class="fa fa-phone" aria-hidden="true"></span>
+    <a href="javascript:">{{ $phone }} - {{ $hotline }}</a>
+</div>
+<div class="col-md-4 li"><span class="fa fa-location-arrow" aria-hidden="true"></span><a href="mailto:info@daihocdulich.com">{{ $email }}</a></div>
+<div class="clearfix"></div>
+</div> --}}
 
-    <div class="col-md-6 col-sm-6  col-xs-6 agileits_w3layouts-map">
-        <iframe src="{{ $google_map_link }}" style="border:0;" allowfullscreen></iframe>
-    </div>
-    <div class="col-md-6 col-sm-6 col-xs-6 contact-right-w3l">
-        <form action="#" method="post">
-            <input type="text" class="name" name="name" placeholder="Tên" required="">
-            <input type="text" class="name" name="name" placeholder="Họ" required="">
-            <input type="email" class="name" name="name" placeholder="Email" required="">
-            <input type="text" class="name" name="name" placeholder="Chủ đề" required="">
-            <textarea placeholder="Nội Dung" required=""></textarea>
-            <input type="submit" value="Gửi">
-        </form>
-    </div>
-    <div class="clearfix"></div>
+<div class="col-md-6 col-sm-6  col-xs-6 agileits_w3layouts-map">
+    <iframe src="{{ $google_map_link }}" style="border:0;" allowfullscreen></iframe>
 </div>
+<div class="col-md-6 col-sm-6 col-xs-6 contact-right-w3l">
+    <form action="#" method="post">
+        <input type="text" class="name" name="name" placeholder="Tên" required>
+        <input type="text" class="name" name="name" placeholder="Họ" required>
+        <input type="email" class="name" name="name" placeholder="Email" required>
+        <input type="text" class="name" name="name" placeholder="Chủ đề" required>
+        <textarea placeholder="Nội Dung" required=""></textarea>
+        <input type="submit" value="Gửi">
+    </form>
 </div>
-<!-- //contact -->
-<div class="contact-bottom w3ls-section" id="contact">
-    <div class="container">
-        <h3 class="w3ls-title">Hợp Tác</h3>
-        <div class="container">
-            <div id="owl-collab" class="owl-carousel owl-theme" data-interval="50" data-delay="100" data-ride="carousel">
-                @foreach ($collab_logo as $item)
-                <img src="{{ asset($item['image_url']) }}" height="100%" style="padding: 50px;" alt="{{ $item['title'] }}">
-                @endforeach
-            </div>
-        </div>
-    </div>
+<div class="clearfix"></div>
+</div>
 </div>
 
 <!-- subscribe -->
-<div class="w3ls-section subscribe text-center">
+<!--div class="w3ls-section subscribe text-center">
     <div class="container">
         <h3 class="w3ls-title">Đăng ký tư vấn tuyển sinh!</h3>
         {{-- <p>Nhập Email để nhận tư vấn tuyển sinh.</p> --}}
         <div class="subscribe-grid">
-
             {{-- <input type="email" placeholder="Email" name="Subscribe" required=""> --}}
             <a href="{{route('tuyensinh')}}">
                 <button class="btn1">Đăng ký</button>
             </a>
-
-
         </div>
     </div>
-</div>
+</div-->
 <div class="ndt__footer">
     <div class="container">
         <div class="row">
@@ -342,7 +367,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
     <div class="col-md-6 col-sm-4 agileinfo-icons">
         <ul>
             @foreach ($socials_icon as $item)
-                <li><a class="icon" href="{{ checkURL($item['link']) }}"><i class="fa fa-{{ $item['fa_icon'] }}"></i></a></li>
+            <li><a class="icon" href="{{ checkURL($item['link']) }}"><i class="fa fa-{{ $item['fa_icon'] }}"></i></a></li>
             @endforeach
         </ul>
     </div>
@@ -395,9 +420,10 @@ $slide_str = str_replace('\\', '/', $slide_str);
             $(`#${item.id}`).owlCarousel({
 				autoPlay: true, //Set AutoPlay to 3 seconds
 				items: 3,
-				itemsDesktop: [768, 2],
-				itemsDesktopSmall: [425, 2],
-				itemsMobile: [425, 1],
+                itemsDesktop: [1199,3],
+				itemsDesktopSmall: [979,3],
+				itemsTablet: [768,2],
+				itemsMobile: [479,1],
 				navigation: true,
 				// THIS IS THE NEW PART
 				afterAction: function (el) {
@@ -435,7 +461,17 @@ $slide_str = str_replace('\\', '/', $slide_str);
 						.addClass('active')
 				}
 				// END NEW PART
+			});
 
+            $("#owl-faculty").owlCarousel({
+				autoPlay: 2000, //Set AutoPlay to 3 seconds
+				items: 4,
+				itemsDesktop: [1199,4],
+				itemsDesktopSmall: [979,3],
+				itemsTablet: [768,2],
+				itemsMobile: [479,1],
+				navigation: true,
+                dots: 1
 			});
 
 		});
@@ -485,20 +521,35 @@ $slide_str = str_replace('\\', '/', $slide_str);
 <!-- //here ends scrolling icon -->
 
 <script type="text/javascript" src="{{ asset('dist/layout/layout_home/js/numscroller-1.0.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
 
 <script src="{{ asset('dist/layout/layout_home/js/SmoothScroll.min.js') }}"></script>
 <script>
+    document.addEventListener( 'DOMContentLoaded', function () {
+		new Splide('.splide', {
+            type: 'loop',
+            perPage: 1,
+            autoplay: 1,
+            pauseOnHover: 1,
+            pauseOnFocus: 1,
+            width: "100%"
+        }).mount();
+	});
+
     $(document).ready(function () {
 			let navbar = $('.header-w3-agileits')[0];
 			let banner = $('.w3_agilits_banner_bootm')[0];
-			let banerInfo = $('.baner-info')[0];
+			// let banerInfo = $('.baner-info')[0];
+            let slide = $('.splide')[0];
 			document.onscroll = () => {
 				if (window.scrollY > banner.offsetHeight) {
 					navbar.classList.add('ndt__navbar--fixed');
-					banerInfo.classList.add(`ndt__baner__info--fix`);
+					// banerInfo.classList.add(`ndt__baner__info--fix`);
+                    slide.style.marginTop = `${navbar.offsetHeight}px`;
 				} else {
 					navbar.classList.remove('ndt__navbar--fixed');
-					banerInfo.classList.remove(`ndt__baner__info--fix`);
+					// banerInfo.classList.remove(`ndt__baner__info--fix`);
+                    slide.style.marginTop = 0;
 				};
 			}
 
@@ -513,6 +564,5 @@ $slide_str = str_replace('\\', '/', $slide_str);
 			})
 
 		})
-
 </script>
 @endSection

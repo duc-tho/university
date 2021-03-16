@@ -35,6 +35,13 @@ return [
             'root' => public_path(),
         ],
 
+        'public_lfm' => [
+            'driver' => 'local',
+            'root' => public_path() . '\dist\upload',
+            'url' => '/dist/upload',
+            'visibility' => 'public'
+        ],
+
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
@@ -43,7 +50,7 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
         ],
 

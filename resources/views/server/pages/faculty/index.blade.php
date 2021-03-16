@@ -9,7 +9,7 @@
                 <div class="col-12">
                     <div class="card card-primary card-outline">
                         <div class="card-header p-2 d-flex align-items-center justify-content-between">
-                            <a href="{{ route('GetAddFaculty') }}">
+                            <a href="{{ route('admin.faculty.create', [$khoa->slug]) }}">
                                 <button class="btn btn-info btn-sm btn-1">
                                     <i class="fas fa-plus"></i> Thêm Khoa
                                 </button>
@@ -43,18 +43,14 @@
                                         <th style="width:15%" class="text-center">
                                             <input class="form-control" type="text" name="News_Name" value="">
                                         </th>
-                                        <th style="width:25%" class="text-center">
+                                        <th style="width:20%" class="text-center">
+                                            <input class="form-control" type="text" name="News_Name" value="">
+                                        </th>
+                                        <th style="width:30%" class="text-center">
                                             <input class="form-control" type="text" name="News_Name" value="">
                                         </th>
                                         <th style="width:10%" class="text-center">
                                             <input class="form-control" type="text" name="News_Name" value="">
-                                            {{-- <select class="form-control" name="News_Author">
-                                                <option value="0">--Tất cả--</option>
-                                                <option value="35">ADMIN</option>
-                                                <option value="42">Duy Trần</option>
-                                                <option value="44">Kim Nga</option>
-                                                <option value="45">Hậu Hoàng</option>
-                                            </select> --}}
                                         </th>
                                         <th style="width:15%" class="text-center">
                                             <div class="input-group input-daterange" data-date-format="yyyy-mm-dd">
@@ -89,18 +85,17 @@
                                         <th class="text-center sorting">
                                             <a> Tên Khoa</a>
                                         </th>
-
+                                        <th class="text-center sorting">
+                                            <a>Hình Ảnh</a>
+                                        </th>
                                         <th class="text-center sorting">
                                             <a>Giới Thiệu Tóm Tắt</a>
                                         </th>
+                                        <th class="text-center sorting_desc">
+                                            <a>Tên Layout</a>
+                                        </th>
                                         <th class="text-center sorting">
                                             <a>Người tạo</a>
-                                        </th>
-                                        <th class="text-center sorting_desc">
-                                            <a>Người tạo</a>
-                                        </th>
-                                        <th class="text-center sorting_desc">
-                                            <a>Người đăng</a>
                                         </th>
                                         <th class="text-center sorting">
                                             <a>Ẩn / Hiện</a>
@@ -118,24 +113,29 @@
                                             <td>Khoa {{ $faculty->name }}</td>
 
                                             <td>
-                                                <img width="200px" src="{{asset($faculty->image)}}" class="thumbnail">
+                                                <img width="200px" src="{{ asset($faculty->image) }}" class="thumbnail">
                                             </td>
                                             <td class="text-center">{!! $faculty->intro_summary !!}</td>
+                                            <td class="text-center">{{ $faculty->layout_name }}</td>
                                             <td class="text-center">{{ $faculty->created_by }}</td>
-                                            <td class="text-center">{{ $faculty->updated_by }}</td>
+                                            <td class="text-center">{{ $faculty->status }}</td>
                                             <td class="text-center">
                                                 <label class="status switch switch-primary" data-toggle="tooltip" title=""
                                                     data-original-title="Xuất bản">
                                                     <div class="mt-check-garden nutanhien">
-                                                    <input id="{{$key +1}}" type="checkbox" >
-                                                    <label for="{{$key +1}}"> </label></div>
+                                                        <input id="{{ $key + 1 }}" type="checkbox">
+                                                        <label for="{{ $key + 1 }}"> </label>
+                                                    </div>
                                                     <!-- <input data-id="1579" type="checkbox" checked=""><span></span></label> -->
-                                                <a href="{{asset('admin/faculty/edit/'.$faculty->id)}}" class="btn btn-warning btn-xs" >
-                                                    <i class="fa fa-flag" aria-hidden="true"></i>
-                                                    Sửa</a>
-                                                <a href="{{asset('admin/faculty/delete/'.$faculty->id)}}"  onclick="return confirm('Bạn có chắc chắn muốn xóa !')" class="btn btn-danger btn-xs"
-                                                ><i class="fa fa-trash" aria-hidden="true"></i>
-                                                    Xóa</a>
+                                                    <a href="{{ route('admin.faculty.edit', [$khoa->slug , $faculty->id]) }}"
+                                                        class="btn btn-warning btn-xs">
+                                                        <i class="fa fa-flag" aria-hidden="true"></i>
+                                                        Sửa</a>
+                                                    <a href="{{ route('admin.faculty.delete', [$khoa->slug , $faculty->id]) }}"
+                                                        onclick="return confirm('Bạn có chắc chắn muốn xóa !')"
+                                                        class="btn btn-danger btn-xs"><i class="fa fa-trash"
+                                                            aria-hidden="true"></i>
+                                                        Xóa</a>
                                             </td>
                                         </tr>
                                     @endforeach

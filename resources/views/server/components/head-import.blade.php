@@ -14,8 +14,6 @@
 <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
 <!-- Bootstrap Color Picker -->
 <link rel="stylesheet" href="{{ asset('plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css') }}">
-<!-- Tempusdominus Bootstrap 4 -->
-<link rel="stylesheet" href="{{ asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
 <!-- Bootstrap4 Duallistbox -->
 <link rel="stylesheet" href="{{ asset('plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css') }}">
 <!-- Select2 -->
@@ -32,11 +30,22 @@
 <!-- Custom Style -->
 <link rel="stylesheet" href="{{ asset('dist/css/custom-style.css') }}">
 <!-- Icon Google-->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+<!-- Tempusdominus Bootstrap 4 -->
+<link rel="stylesheet" href="{{ asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
 <!-- Custom css chose -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JNKKKK/MoreToggles.css@0.2.1/output/moretoggles.min.css">
+{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JNKKKK/MoreToggles.css@0.2.1/output/moretoggles.min.css"> --}}
+{{-- <script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script> --}}
+{{-- <script src="{{ asset('plugins/ckeditor5/build/ckeditor.js') }}"></script> --}}
+<script src="{{ asset('plugins/editor/ckeditor/ckeditor.js')}}"></script>
+<script src="{{ asset('plugins/editor/ckfinder/ckfinder.js')}}"></script>
 <style>
-    .nutanhien {
+    /* .nutanhien {
         font-size: 35%;
-    }
+    } */
 </style>
+
+{{-- script --}}
+<script src="{{ asset('plugins/tinymce/tinymce.min.js') }}"></script>
+<!-- jQuery -->
+<script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>

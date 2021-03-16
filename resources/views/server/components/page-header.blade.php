@@ -7,7 +7,7 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{route('AdminHome')}}">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('admin.index', [$khoa['slug']])}}">{{ $khoa['name'] }}</a></li>
                     <li class="breadcrumb-item active">Starter Page</li>
                 </ol>
             </div><!-- /.col -->

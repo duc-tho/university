@@ -9,7 +9,7 @@
                 <div class="col-12">
                     <div class="card card-primary card-outline">
                         <div class="card-header p-2 d-flex align-items-center justify-content-between">
-                            <a href="{{ route('GetAddCategory') }}">
+                            <a href="{{ route('admin.category.create', [$khoa->slug]) }}">
                                 <button class="btn btn-info btn-sm btn-1">
                                     <i class="fas fa-plus"></i> Thêm Danh Mục
                                 </button>
@@ -39,33 +39,23 @@
                                         <th style="width:5%" class="text-center">
                                             <input class="form-control" type="text" name="News_ID" value="">
                                         </th>
-
                                         <th style="width:15%" class="text-center">
                                             <input class="form-control" type="text" name="News_Name" value="">
                                         </th>
-                                        <th style="width:25%" class="text-center">
-                                            <input class="form-control" type="text" name="News_Name" value="">
-                                        </th>
-                                        <th style="width:10%" class="text-center">
+                                        <th style="width:15%" class="text-center">
                                             <input class="form-control" type="text" name="News_Name" value="">
                                         </th>
                                         <th style="width:15%" class="text-center">
-                                            <div class="input-group input-daterange" data-date-format="yyyy-mm-dd">
-                                                <input type="text" id="News_Datetime_From" name="News_Datetime_From"
-                                                    class="form-control" placeholder="Từ" value="">
-                                                <span class="form-control px-1"><i class="fa fa-chevron-right"></i></span>
-                                                <input type="text" id="News_Datetime_To" name="News_Datetime_To"
-                                                    class="form-control" placeholder="Đến" value="">
-                                            </div>
+                                            <input class="form-control" type="text" name="News_Name" value="">
                                         </th>
                                         <th style="width:15%" class="text-center">
-                                            <div class="input-group input-daterange" data-date-format="yyyy-mm-dd">
-                                                <input type="text" id="News_Datetime_From" name="News_Datetime_From"
-                                                    class="form-control" placeholder="Từ" value="">
-                                                <span class="form-control px-1"><i class="fa fa-chevron-right"></i></span>
-                                                <input type="text" id="News_Datetime_To" name="News_Datetime_To"
-                                                    class="form-control" placeholder="Đến" value="">
-                                            </div>
+                                            <input class="form-control" type="text" name="News_Name" value="">
+                                        </th>
+                                        <th style="width:15%" class="text-center">
+                                            <input class="form-control" type="text" name="News_Name" value="">
+                                        </th>
+                                        <th style="width:15%" class="text-center">
+                                            <input class="form-control" type="text" name="News_Name" value="">
                                         </th>
                                         <th style="width:10%" class="text-center sorting_disabled">
                                             <button type="submit" class="btn btn-effect-ripple btn-primary"
@@ -105,33 +95,52 @@
 
                                 </thead>
                                 <tbody>
-                                    {{-- @foreach ($facultylist as $key => $faculty)
+                                    @foreach ($categorylist as $key => $item)
                                         <tr role="row">
-                                            <td class="text-center">{{ $faculty->id }}</td>
-                                            <td>Khoa {{ $faculty->name }}</td>
+                                            <td class="text-center">{{ $item->id }}</td>
+                                            <td>{{ $item->title }}</td>
 
-                                            <td>
-                                                <img width="200px" src="{{asset($faculty->image)}}" class="thumbnail">
-                                            </td>
-                                            <td class="text-center">{!! $faculty->intro_summary !!}</td>
-                                            <td class="text-center">{{ $faculty->created_by }}</td>
-                                            <td class="text-center">{{ $faculty->updated_by }}</td>
+                                            @foreach ($facultylist as $faculty)
+                                                @if ($faculty->id === $item->faculty_id)
+                                                    <td class="text-center">{{ $faculty->name }}</td>
+                                                    @break
+                                                @endif
+                                            @endforeach
+
+                                            @if ($item->parent_id === 0)
+                                                <td>Không thuộc danh mục nào</td>
+                                            @else
+                                                @foreach ($categorylist as $item2)
+                                                    @if ($item->parent_id === $item2->id)
+                                                        <td class="text-center">{{ $item2->title }}</td>
+                                                        @break
+                                                    @endif
+                                                @endforeach
+                                            @endif
+
+                                            <td class="text-center">{{ $item->show_at_home }}</td>
+                                            <td class="text-center">{{ $item->show_at_news }}</td>
+                                            <td class="text-center">{{ $item->show_at_notification }}</td>
                                             <td class="text-center">
                                                 <label class="status switch switch-primary" data-toggle="tooltip" title=""
                                                     data-original-title="Xuất bản">
                                                     <div class="mt-check-garden nutanhien">
-                                                    <input id="{{$key +1}}" type="checkbox" >
-                                                    <label for="{{$key +1}}"> </label></div>
+                                                        <input id="{{ $key + 1 }}" type="checkbox">
+                                                        <label for="{{ $key + 1 }}"> </label>
+                                                    </div>
                                                     <!-- <input data-id="1579" type="checkbox" checked=""><span></span></label> -->
-                                                <a href="{{asset('admin/faculty/edit/'.$faculty->id)}}" class="btn btn-warning btn-xs" >
-                                                    <i class="fa fa-flag" aria-hidden="true"></i>
-                                                    Sửa</a>
-                                                <a href="{{asset('admin/faculty/delete/'.$faculty->id)}}"  onclick="return confirm('Bạn có chắc chắn muốn xóa !')" class="btn btn-danger btn-xs"
-                                                ><i class="fa fa-trash" aria-hidden="true"></i>
-                                                    Xóa</a>
+                                                    <a href="{{ asset('admin/faculty/edit/' . $item->id) }}"
+                                                        class="btn btn-warning btn-xs">
+                                                        <i class="fa fa-flag" aria-hidden="true"></i>
+                                                        Sửa</a>
+                                                    <a href="{{ asset('admin/faculty/delete/' . $item->id) }}"
+                                                        onclick="return confirm('Bạn có chắc chắn muốn xóa !')"
+                                                        class="btn btn-danger btn-xs"><i class="fa fa-trash"
+                                                            aria-hidden="true"></i>
+                                                        Xóa</a>
                                             </td>
                                         </tr>
-                                    @endforeach --}}
+                                    @endforeach
                                 </tbody>
                                 <tfoot>
 

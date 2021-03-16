@@ -13,16 +13,21 @@ use function App\Providers\upload_file;
 
 class FacultyController extends Controller
 {
-    public function getFaculty()
+    public function show(Request $request, $khoa)
     {
-        $data['facultylist'] = Faculty::where(["status" => "1"])->orderBy("id", "desc")->paginate(10);
-        return view('server.pages.faculty.index',$data);
+        $facultylist = Faculty::where(["status" => "1"])->orderBy("id", "desc")->paginate(10);
+        return view('server.pages.faculty.index', [
+            'facultylist' => $facultylist,
+            'khoa' => $khoa,
+        ]);
     }
-    public function getAddFaculty()
+    public function create(Request $request, $khoa)
     {
-        return view('server.pages.faculty.add_faculty');
+        return view('server.pages.faculty.create', [
+            'khoa' => $khoa,
+        ]);
     }
-    public function postAddFaculty(AddFacultyRequest $request)
+    public function store(AddFacultyRequest $request, $khoa)
     {
         $faculty = new Faculty();
         $faculty->name = $request->name;
@@ -36,16 +41,19 @@ class FacultyController extends Controller
         $faculty->created_by = $request->created_by;
         $faculty->updated_by = $request->updated_by;
         $faculty->status = $request->status;
-        $faculty->image = upload_file($request->img,'dist/upload/image/faculty');
+        if ($request->hasFile('image')) $faculty['image'] = upload_file($request->file('image'), 'dist/upload/image/3/faculty');
         $faculty->save();
-        return back();
+        return redirect()->route('admin.faculty.show', [$khoa['slug']]);
     }
-    public function getEditFaculty($id)
+    public function edit($id, Request $request, $khoa)
     {
-        $data['faculty'] = Faculty::find($id);
-        return view('server.pages.faculty.edit_faculty', $data);
+        $faculty = Faculty::find($id);
+        return view('server.pages.faculty.edit', [
+            'faculty' => $faculty,
+            'khoa' => $khoa,
+        ]);
     }
-    public function postEditFaculty(EditFacultyRequest $request, $id)
+    public function update(EditFacultyRequest $request, $id, $khoa)
     {
         $faculty = new Faculty();
         $arr['name'] = $request->name;
@@ -60,15 +68,14 @@ class FacultyController extends Controller
         $arr['intro_summary'] = $request->summary;
         $arr['intro'] = $request->introdution;
         if ($request->hasFile('img')) {
-            $arr['image'] = upload_file($request->img,'dist/upload/image/faculty');
+            $arr['image'] = upload_file($request->img, 'dist/upload/image/faculty');
         }
         $faculty::where('id', $id)->update($arr);
-        return redirect('admin/faculty');
+        return redirect('admin/faculty', [$khoa['slug']]);
     }
-    public function deleteFaculty($id)
+    public function delete($id)
     {
         Faculty::destroy($id);
-        // return redirect()->back()->with(["toastrInfo" => ["type" => "success", "messenger" => "Xóa thành công"]]);
         return back();
     }
 }

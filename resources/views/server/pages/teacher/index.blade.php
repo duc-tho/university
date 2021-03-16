@@ -9,7 +9,7 @@
                 <div class="col-12">
                     <div class="card card-primary card-outline">
                         <div class="card-header p-2 d-flex align-items-center justify-content-between">
-                            <a href="{{route('GetAddTeacher')}}">
+                            <a href="{{route('admin.teacher.create', [$khoa->slug])}}">
                                 <button class="btn btn-info btn-sm">
                                     <i class="fas fa-plus"></i> Thêm Giảng Viên
                                 </button>

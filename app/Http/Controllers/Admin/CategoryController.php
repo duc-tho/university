@@ -8,16 +8,27 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function getCategory()
+    public function show(Request $request, $khoa)
     {
-        // $data['facultylist'] = Faculty::where(["status" => "1"])->orderBy("id", "desc")->paginate(10);
-        return view('server.pages.category.index');
+        $facultylist = Faculty::where(["status" => "1"])->orderBy("id", "desc")->paginate(10);
+        $categorylist = Category::where(["status" => "1"])->orderBy("id", "desc")->paginate(500);
+
+        return view('server.pages.category.index',[
+            'khoa' => $khoa,
+            'facultylist' => $facultylist,
+            'categorylist' => $categorylist
+        ]);
     }
-    public function getAddCategory()
+    public function create(Request $request, $khoa)
     {
-        $data['category_list']=Category::all();
-        $data['facultylist']=Faculty::all();
-        return view('server.pages.category.add_category', $data);
+        $category_list = Category::all();
+        $facultylist = Faculty::all();
+        return view('server.pages.category.create',
+        [
+            'khoa' => $khoa,
+            'category_list' => $category_list,
+            'facultylist' => $facultylist,
+        ]);
     }
     // public function postAddFaculty(AddFacultyRequest $request)
     // {

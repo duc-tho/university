@@ -59,7 +59,16 @@ class HomeController extends Controller
 
         // Lấy tin tức
 
-
+        // $notifice = Category::where(['slug', $slug])->first();
+        // $news = News::where(['category_id' => $notifice->id, 'status'=>1])->paginate(11);
+        // $news_faculty=News::where(['status'=>1,'category_id'=>10])->orderBy("id","desc")->paginate(6);
+        // if (!$news_faculty->isEmpty()) foreach ($news_faculty as $key => $item) {
+        //     $item['category'] = $item->category;
+        // }
+        // $notice=News::where(['status'=>1,'category_id'=>6])->orderBy("id","desc")->paginate(8);
+        // $news = News::where(['status'=>1])->paginate(6);
+        // if (!$news->isEmpty()) foreach ($news as $key => $item) {
+        //     $item['category'] = $item->category;
         // lấy tin tức và danh mục tin tức
         $category = Category::where(['status' => 1, 'show_at_home' => '1', 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
 
@@ -128,7 +137,7 @@ class HomeController extends Controller
             $item['child'] = $item->footerLinks;
         }
 
-         // lấy danh sách tin tức kèm danh mục của khoa kinh tế
+        // lấy danh sách tin tức kèm danh mục của khoa kinh tế
         $category_news = Category::where(['status' => 1, 'show_at_news' => '1', 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
         if (!$category->isEmpty()) foreach ($category as $key => $item) {
             $news = $item->news()->orderBy('id', 'desc')->paginate(6);
@@ -168,7 +177,7 @@ class HomeController extends Controller
             'intro_video' => getSettingValue($settings, 'intro_video'),
             'intro_route' => getSettingValue($settings, 'intro_route') == null ? route('gioi-thieu', [$faculty['slug']]) : getSettingValue($settings, 'intro_route'),
             'google_map_link' => getSettingValue($settings, 'map_embed'),
-            
+
             // End Trang Chủ
 
             // Khoa Kinh Tế
@@ -198,7 +207,7 @@ class HomeController extends Controller
             'title_admissions' => getSettingValue($settings, 'title_admissions'),
             'content_admissions' => getSettingValue($settings, 'content_admissions'),
 
-            
+
             // End Khoa Kinh Tế
 
             // Khoa Du Lịch

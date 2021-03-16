@@ -1,6 +1,6 @@
 @extends('server.index')
-@section('title', 'Quản Trị Khoa')
-@section('page-title', 'Thêm Khoa')
+@section('title', 'Quản Trị Danh Mục')
+@section('page-title', 'Thêm Danh Mục')
 @section('page-content')
 <!--/.row-->
 <div class="row">
@@ -14,16 +14,34 @@
                             <div class="card">
                                 <div class="card-header">
                                     <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-save"></i> Thêm</button>
-                                    <a href="{{route('Faculty')}}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
+                                    <a href="{{route('admin.category.create', [$khoa->slug])}}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label>Tên Khoa : </label>
-                                        <input required type="text" id="name" name="name" value="{{old('name')}}" class="form-control" placeholder="Nhập Tên Khoa...">
+                                        <label>Thuộc Khoa : </label>
+                                        <select required name="faculty_id" class="form-control">
+                                            <option value="">Chọn Khoa</option>
+                                            @foreach ($facultylist as $faculty)
+                                                <option value="{{$faculty->id}}">{{$faculty->name}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="form-group">
-                                        <label>Slug : </label>
-                                        <input required type="text" id="slug" name="slug"  value="{{old('slug')}}"  class="form-control" placeholder="Slug...">
+                                        <label>Thuộc Danh Mục Con: </label>
+                                        <select required name="faculty_id" class="form-control">
+                                            <option value="">Chọn Danh Mục</option>
+                                            @foreach ($category_list as $item)
+                                            @if ($item->parent_id == 0 )
+                                                <option value="{{$item->id}}" style="color: red; font-weight: bold">{{$item->title}}
+                                                    @foreach($category_list as $item2)
+                                                        @if($item->id == $item2->parent_id)
+                                                            <option value="{{$item->id}}">{{$item2->title}}</option>
+                                                        @endif
+                                                    @endforeach
+                                                </option>
+                                            @endif
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Meta Từ Khóa : </label>

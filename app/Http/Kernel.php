@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\RequireFaculty;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -53,6 +54,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
+        'RequireFaculty' => RequireFaculty::class,
         'CheckLogedIn' => \App\Http\Middleware\CheckLogedIn::class,
         'CheckLogedOut' => \App\Http\Middleware\CheckLogedOut::class,
         'auth' => \App\Http\Middleware\Authenticate::class,

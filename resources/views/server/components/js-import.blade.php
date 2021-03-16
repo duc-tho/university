@@ -1,5 +1,3 @@
-<!-- jQuery -->
-<script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- SweetAlert2 -->
@@ -39,25 +37,13 @@
 <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
-<!-- CKEDITOR -->
-
-<script src="{{ asset('plugins/editor/ckeditor/ckeditor.js') }}"></script>
-<script src="{{ asset('plugins/editor/ckfinder/ckfinder.js') }}"></script>
-{{-- <script src="{{ asset('plugins/ckeditor5/build/ckeditor.js') }}"></script>
-<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script> --}}
-<!-- Link Jequery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Summernote -->
-<script src=" {{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
 <script>
     $(function () {
         bsCustomFileInput.init();
 
         //Initialize Select2 Elements
-        $('.select2').select2()
-
-        //Initialize Select2 Elements
         $('.select2bs4').select2({
+            placeholder: "Nhấp vào để chọn các mục cần thiết!",
             theme: 'bootstrap4'
         })
 
@@ -71,10 +57,43 @@
 
 </script>
 
+{{-- Set default Jquery Validate --}}
+<script>
+    $.validator.setDefaults({
+        //
+        onfocusout: function (e) {
+            this.element(e);
+        },
+        //
+        onkeyup: function(element, event) {
+            $(element).valid();
+        },
+        //
+        highlight: function (element) {
+            $(element).closest('.form-control').addClass('is-invalid');
+        },
+        //
+        unhighlight: function (element) {
+            $(element).closest('.form-control').removeClass('is-invalid');
+            $(element).closest('.form-control').addClass('is-valid');
+        },
+        //
+        errorElement: 'div',
+        //
+        errorClass: 'invalid-feedback',
+        //
+        errorPlacement: function (error, element) {
+            if (element.parent('.input-group-prepend').length) {
+                $(element).siblings(".invalid-feedback").append(error);
+            } else {
+                error.insertAfter(element);
+            }
+        },
+    });
+</script>
+
 {{-- Scription upload ảnh --}}
 <script>
-    $('#calendar').datepicker({});
-
     !function ($) {
         $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
             $(this).find('em:first').toggleClass("glyphicon-minus");
@@ -101,134 +120,10 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
+
     $(document).ready(function () {
         $('#image').click(function () {
             $('#img').click();
         });
-
     });
-
-</script>
-
-{{-- Scription chạy slug--}}
-{{--
-<script>
-    $('input#name').keyup(function (event) {
-        /* Act on the event */
-        var title, slug;
-        //Lấy text từ thẻ input title
-        title = $(this).val();
-        //Đổi chữ hoa thành chữ thường
-        slug = title.toLowerCase();
-
-        //Đổi ký tự có dấu thành không dấu
-        slug = slug.replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a');
-        slug = slug.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e');
-        slug = slug.replace(/i|í|ì|ỉ|ĩ|ị/gi, 'i');
-        slug = slug.replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, 'o');
-        slug = slug.replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, 'u');
-        slug = slug.replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, 'y');
-        slug = slug.replace(/đ/gi, 'd');
-        //Xóa các ký tự đặt biệt
-        slug = slug.replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi,
-            '');
-        //Đổi khoảng trắng thành ký tự gạch ngang
-        slug = slug.replace(/ /gi, "-");
-        //Đổi nhiều ký tự gạch ngang liên tiếp thành 1 ký tự gạch ngang
-        //Phòng trường hợp người nhập vào quá nhiều ký tự trắng
-        slug = slug.replace(/\-\-\-\-\-/gi, '-');
-        slug = slug.replace(/\-\-\-\-/gi, '-');
-        slug = slug.replace(/\-\-\-/gi, '-');
-        slug = slug.replace(/\-\-/gi, '-');
-        //Xóa các ký tự gạch ngang ở đầu và cuối
-        slug = '@' + slug + '@';
-        slug = slug.replace(/\@\-|\-\@|\@/gi, '');
-        //In slug ra textbox có id “slug”
-        $('input#slug').val(slug);
-    });
-</script> --}}
-
-<script>
-    import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
-    ClassicEditor
-        .create(document.querySelector('#intro-summary'), {
-            toolbar: {
-                items: [
-                    'heading',
-                    'CKFinder',
-                    'highlight',
-                    '|',
-                    'bold',
-                    'italic',
-                    'underline',
-                    'strikethrough',
-                    'subscript',
-                    'superscript',
-                    'specialCharacters',
-                    '|',
-                    'fontFamily',
-                    'fontSize',
-                    '|',
-                    'alignment',
-                    'link',
-                    'bulletedList',
-                    'numberedList',
-                    '|',
-                    'indent',
-                    'outdent',
-                    '|',
-                    'imageInsert',
-                    'imageUpload',
-                    '|',
-                    'blockQuote',
-                    'insertTable',
-                    'mediaEmbed',
-                    'horizontalLine',
-                    '|',
-                    'undo',
-                    'redo',
-                    '|',
-                    'exportPdf',
-                    'exportWord',
-                    '|'
-                ]
-            },
-            language: 'vi',
-            ckfinder: {
-            // Upload the images to the server using the CKFinder QuickUpload command.
-            uploadUrl: 'https://example.com/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json',
-
-            // Define the CKFinder configuration (if necessary).
-            options: {
-                resourceType: 'Images'
-            }
-        },
-            image: {
-                toolbar: [
-                    'imageTextAlternative',
-                    'imageStyle:full',
-                    'imageStyle:side',
-                    'linkImage'
-                ]
-            },
-            table: {
-                contentToolbar: [
-                    'tableColumn',
-                    'tableRow',
-                    'mergeTableCells',
-                    'tableCellProperties',
-                    'tableProperties'
-                ]
-            },
-            licenseKey: '',
-        })
-        .then(editor => {
-            window.editor = editor;
-        })
-        .catch(error => {
-            console.error('Oops, something went wrong!');
-            console.error('Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:');
-            console.warn('Build id: owcizz4kpcrs-35ketd2bzzkf');
-            console.error(error);
-        });
 </script>

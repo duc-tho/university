@@ -14,7 +14,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-save"></i> Lưu</button>
-                                    <a href="{{route('Faculty')}}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
+                                    <a href="{{ route('admin.faculty.create', [$khoa->slug]) }}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group">
@@ -113,11 +113,11 @@
 <!--/.row-->
 </div>
 <script>
-    CKEDITOR.editorConfig = function (config) {
-        config.enterMode = CKEDITOR.ENTER_BR;
-        config.autoParagraph = false;
-        config.fillEmptyBlocks = false;
-    };
+    // CKEDITOR.editorConfig = function (config) {
+    //     config.enterMode = CKEDITOR.ENTER_BR;
+    //     config.autoParagraph = false;
+    //     config.fillEmptyBlocks = false;
+    // };
 </script>
 <script>
     $('input#name').keyup(function(event) {

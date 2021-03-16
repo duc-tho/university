@@ -66,7 +66,7 @@ class ContactController extends Controller
             'website_link' => $contact['website'],
             'contact_title' => $contact['contact_title'],
 
-            
+
             'address' => $contact['address_info'],
             'logo' => getSettingValue($settings, 'logo'),
             'copyright' => getSettingValue($settings, 'copyright'),
@@ -74,7 +74,7 @@ class ContactController extends Controller
             'footer_link' => $footer_link,
             'socials_icon' => $socials_icon,
             'faculty' => $faculty,
-            //Start 
+            //Start
             'title_faculty_description' => getSettingValue($settings, 'title_faculty_description'),
             'title_scholarship' => getSettingValue($settings, 'title_scholarship'),
             'title_scholarship_content' => getSettingValue($settings, 'title_scholarship_content'),
@@ -102,7 +102,7 @@ class ContactController extends Controller
             'all_specialized' => $all_specialized,
             'all_category' => $all_category,
             'footer_faculty' => $footer_faculty,
-            //End 
+            //End
 
         ]);
     }

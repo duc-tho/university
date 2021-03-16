@@ -19,16 +19,7 @@ class User extends Authenticatable
     protected $table = 'users';
     protected $primaryKey = "id";
     protected $guarded = [];
-    protected $fillable = [
-        'email',
-        'password',
-        'faculty_id',
-        'nickname',
-        'first_name',
-        'last_name', 'birthday',
-        'phone', 'email', 'password',
-        'status', 'created_at', 'updated_at'
-    ];
+    protected $fillable = ['faculty_id', 'nickname', 'first_name', 'last_name', 'birthday', 'phone', 'email', 'password', 'status', 'created_at', 'updated_at', 'remember_token', 'avatar'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -48,8 +39,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
     public function roleUsers()
     {
         return $this->hasMany('App\Models\RoleUser');
+    }
+
+    public function faculty()
+    {
+        return $this->belongsTo('App\Models\Faculty');
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Roles::class, 'role_user', 'user_id', 'role_id');
     }
 }

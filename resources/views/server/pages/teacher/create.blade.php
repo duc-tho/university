@@ -23,7 +23,7 @@
                                         <select required name="faculty_id" class="form-control">
                                             <option value="">Chọn Khoa</option>
                                             @foreach ($facultylist as $faculty)
-                                                <option value="{{$faculty->id}}">{{$faculty->name}}</option>
+                                            <option value="{{$faculty->id}}">{{$faculty->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
