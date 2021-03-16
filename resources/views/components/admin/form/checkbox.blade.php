@@ -1,6 +1,6 @@
 @props(['col', 'fieldName', 'label', 'required', 'labelContent'])
 
-<div class="form-check col-md-{{ $col }}">
+<div class="form-check col-md-{{ $col }} px-3">
     <label class="w-100" for="{{ $fieldName }}">{{ $label }}{!! $required ? '<span class="text-danger">*</span>' : '' !!}</label>
     <div class="custom-control custom-switch form-control @error($fieldName) is-invalid @enderror">
         <input type="checkbox" id="{{ $fieldName }}" class="custom-control-input" name="{{ $fieldName }}" {{ old($fieldName) ? "checked" : ""  }}>
