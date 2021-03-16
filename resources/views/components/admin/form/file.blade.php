@@ -1,4 +1,4 @@
-@props(['col', 'fieldName', 'label', 'required'])
+@props(['col', 'fieldName', 'label', 'required', 'data'])
 
 <div class="form-group col-md-{{ $col }} px-3">
     <label class="w-100" for="{{ $fieldName }}">{{ $label }}{!! $required ? '<span class="text-danger">*</span>' : '' !!}</label>
@@ -12,6 +12,6 @@
         </div>
     </div>
     <label for="{{ $fieldName }}" style="width: 100% !important;">
-        <img id="image" class="thumbnail" width="100%" src="{{asset('/dist/img/imgdefault.png') }}">
+        <img id="image" class="thumbnail" width="100%" src="{{ asset($data[$fieldName] ?? '/dist/img/imgdefault.png') }}">
     </label>
 </div>

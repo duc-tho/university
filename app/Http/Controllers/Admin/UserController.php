@@ -55,7 +55,7 @@ class UserController extends Controller
         $request['status'] == "on" ? $user['status'] = 1 : $user['status'] = 0;
 
         // upload ảnh đại diện
-        if ($request->hasFile('avatar')) $user['avatar'] = upload_file($request->file('avatar'), 'dist/upload/image/3/users');
+        if ($request->file('avatar') != null) $user['avatar'] = upload_file($request->file('avatar'), 'dist/upload/image/3/users');
 
         // lưu user
         $user->save();
@@ -67,32 +67,81 @@ class UserController extends Controller
         return redirect()->route('admin.user.show', [$khoa['slug']]);
     }
 
-    public function edit($id)
+    public function edit(Request $request, $khoa, $id)
     {
-        $data['user'] = User::find($id);
-        $data['list_faculty'] = Faculty::all();
-        return view('server.pages.user.edit_user', $data);
+        // Tìm users
+        $user = User::find($id);
+
+        // Ngưng nếu ko tìm thấy user
+        abort_if(!$user, 404);
+
+        // lấy danh sách role của user
+        $user['roles_list'] = $user->roles->pluck('id')->toArray();
+
+        // Lấy tất cả các khoa
+        $faculty_list = Faculty::all();
+
+        // Lấy tất cả role
+        $roles = Roles::all();
+
+        return view('server.pages.user.edit', [
+            'khoa' => $khoa,
+            'user' => $user->toArray(),
+            'faculty_list' => $faculty_list,
+            'roles' => $roles
+        ]);
     }
 
-    public function update(EditUserRequest $request, $id)
+    public function update(EditUserRequest $request, $khoa, $id)
     {
-        $user = new User();
-        $arr['nickname'] = $request->nickname;
-        $arr['faculty_id'] = $request->faculty_id;
-        $arr['first_name'] = $request->first_name;
-        $arr['last_name'] = $request->last_name;
-        $arr['birthday'] = $request->birthday;
-        $arr['phone'] = $request->phone;
-        $arr['status'] = $request->status;
-        $arr['email'] = $request->email;
-        $arr['password'] = bcrypt($request->password);
-        $user::where('id', $id)->update($arr);
-        return redirect('admin/user');
+        // Tìm users
+        $user = User::find($id);
+
+        // dừng nếu user không tồn tại
+        abort_if(!$user, 404);
+
+        // Mã hóa password
+        if ($request->has('password')) $request->merge(['password' => bcrypt($request->password)]);
+
+        // chuyển status sang dạng 1, 0
+        if ($request->has('status')) $request->merge(['status' => $request['status'] == "on" ? 1 : 0]);
+
+        // upload ảnh đại diện
+        if ($request->file('avatar') != null) $request->merge(['avatar' => upload_file($request->file('avatar'), 'dist/upload/image/3/users')]);
+
+        // Kiểm tra email đã tồn tại trong db hay chưa ngoại trừ user hiện tại!
+        $request->validate(['email' => 'required|email|unique:users,email,' . $user->id]);
+
+        if ($request->has('role')) {
+            // Gỡ toàn bộ role của user ra
+            $user->roles()->detach();
+
+            // Gắn lại roles cho user
+            $user->roles()->attach($request['role']);
+        }
+
+        // Cập nhật lại thông tin user
+        $user->update($request->input());
+
+        // chuyển hướng về trang user list
+        return redirect()->route('admin.user.show', [$khoa['slug']]);
     }
 
-    public function delete($id)
+    public function delete($khoa, $id)
     {
+        // Tìm users
+        $user = User::find($id);
+
+        // dừng nếu user không tồn tại
+        abort_if(!$user, 404);
+
+        // Gỡ toàn bộ role của user ra
+        $user->roles()->detach();
+
+        // xóa user
         User::destroy($id);
-        return back();
+
+        // chuyển hướng về trang user list
+        return redirect()->route('admin.user.show', [$khoa['slug']]);
     }
 }

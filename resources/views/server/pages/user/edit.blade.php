@@ -5,98 +5,129 @@
 <!--/.row-->
 <div class="row">
     <div class="col-sm-12 ">
-        <div class="panel panel-primary">
-            <div class="panel-body">
-                @include('errors.note')
-                <form method="post" enctype="multipart/form-data" role="form" action="">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-save"></i> Lưu</button>
-                                    <a href="{{route('User')}}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
-                                </div>
-                                <div class="card-body">
 
-                                    <div class="form-group">
-                                        <label>Thuộc Khoa : </label>
-                                        <select required name="faculty_id" class="form-control">
-                                            <option value="">Chọn Khoa</option>
-                                            @foreach ($list_faculty as $faculty)
-                                                <option value="{{$faculty->id}}" @if($user->faculty_id == $faculty->id) selected @endif>{{$faculty->name}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+        <x-admin.form.form method="POST" :cancelLink="route('admin.user.show', [$khoa['slug']])" :submitLink="route('admin.user.update', [$khoa['slug'], $user['id']])">
+            <div class="row">
+                <x-admin.form.alert :col="12" class="bg-olive color-palette">
+                    <b>Lưu ý: </b>Các trường có dấu <span class="text-danger"><b>*</b></span> là bắt buộc!
+                </x-admin.form.alert>
 
-                                    <div class="form-group">
-                                        <label>Tên Tài Khoản : </label>
-                                        <input required type="text" id="nickname" name="nickname"  value="{{$user->nickname}}" class="form-control" placeholder="Nhập Tên Tài Khoản...">
-                                    </div>
+                <x-admin.form.select :required="true" :col="6" :fieldName="'faculty_id'" :label="'Khoa'">
+                    <option value="" aria-readonly="true">Chọn Khoa</option>
+                    @foreach ($faculty_list as $faculty)
+                    <option value="{{$faculty->id}}" {{ old('faculty_id') ?? $user['faculty_id'] == $faculty->id ? "selected" : '' }}>{{$faculty->name}}</option>
+                    @endforeach
+                </x-admin.form.select>
 
-                                    <div class="form-group">
-                                        <label>Họ : </label>
-                                        <input required type="text" id="first_name" name="first_name" value="{{$user->first_name}}" class="form-control" placeholder="Nhập Họ Người Dùng...">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Tên : </label>
-                                        <input required type="text" id="last_name" name="last_name"  value="{{$user->last_name}}" class="form-control" placeholder="Nhập Tên Người Dùng...">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Ngày Sinh : </label>
-                                        <input required type="date" id="birthday" name="birthday" value="{{$user->birthday}}" class="form-control" placeholder="Nhập Ngày Sinh...">
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-body">
-
-                                    <div class="form-group">
-                                        <label>Điện Thoại: </label>
-                                        <input required type="number" id="phone" name="phone" value="{{$user->phone}}" class="form-control" placeholder="Nhập Số Điện Thoại...">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Email : </label>
-                                        <input required type="email" id="email" name="email" value="{{$user->email}}" class="form-control" placeholder="Nhập Email...">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Mật Khẩu : </label>
-                                        <input required type="password" id="password" name="password"  class="form-control" placeholder="Nhập Mật Khẩu...">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Xác Nhận Mật Khẩu: </label>
-                                        <input required type="password" id="passwordAgain" name="passwordAgain" class="form-control" placeholder="Xác Nhận Mật Khẩu...">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Trạng Thái :</label>
-                                        <select required name="status" class="form-control">
-                                            <option value="1" @if($user->status==1) selected @endif>Bật</option>
-                                            <option value="0" @if($user->status==0) selected @endif>Tắt</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @csrf
-                </form>
-                <div class="clearfix"></div>
+                <x-admin.form.checkbox :data="$user" :col="3" :label="'Trạng thái'" :required="false" :fieldName="'status'" :labelContent="'Đang hoạt động'" />
+                <x-admin.form.input :data="$user" :col="3" :type="'phone'" :label="'Số điện thoại'" :required="true" :placeholder="'Số điện thoại của bạn!'" :fieldName="'phone'" />
+                <x-admin.form.input :data="$user" :col="3" :type="'text'" :label="'Họ'" :required="true" :placeholder="'Họ của bạn!'" :fieldName="'first_name'" />
+                <x-admin.form.input :data="$user" :col="3" :type="'text'" :label="'Tên'" :required="true" :placeholder="'Tên của bạn!'" :fieldName="'last_name'" />
+                <x-admin.form.input :data="$user" :col="3" :type="'text'" :label="'Biệt danh'" :required="false" :placeholder="'Nickname của bạn!'" :fieldName="'nickname'" />
+                <x-admin.form.input :data="$user" :col="3" :type="'date'" :label="'Sinh nhật'" :required="false" :placeholder="''" :fieldName="'birthday'" />
+                <x-admin.form.input :data="$user" :col="6" :type="'text'" :label="'Email'" :required="true" :placeholder="'Email của bạn!'" :fieldName="'email'" />
+                <x-admin.form.input :data="$user" :col="3" :type="'password'" :label="'Mật Khẩu mới'" :required="false" :placeholder="'Mật khẩu của bạn!'" :fieldName="'password'" />
+                <x-admin.form.input :data="$user" :col="3" :type="'password'" :label="'Nhập lại mật khẩu'" :required="false" :placeholder="'Nhập lại mật khẩu của bạn!'" :fieldName="'re-password'" />
+                <x-admin.form.file :data="$user" :col="3" :label="'Ảnh đại diện'" :required="false" :fieldName="'avatar'" />
+                <x-admin.form.multi-select :col="6" :label="'Vai trò'" :required="false" :fieldName="'role'">
+                    @foreach ($roles as $role)
+                    <option value="{{$role['id']}}" {{ in_array($role['id'], old('role') ?? $user['roles_list'] ?? []) ? "selected" : '' }}>{{$role['display_name']}}</option>
+                    @endforeach
+                </x-admin.form.multi-select>
             </div>
-        </div>
+        </x-admin.form.form>
     </div>
 </div>
 <!--/.row-->
 </div>
 <script>
-    CKEDITOR.editorConfig = function (config) {
-        config.enterMode = CKEDITOR.ENTER_BR;
-        config.autoParagraph = false;
-        config.fillEmptyBlocks = false;
-    };
+    $(document).ready(function() {
+    $("#form").validate({
+		rules: {
+			'faculty_id': {
+                required: true
+            },
+            //
+            'phone': {
+                required: true,
+                number: true,
+                maxlength: 12
+            },
+            //
+            'first_name': {
+                required: true,
+                maxlength: 20
+            },
+            //
+            'last_name': {
+                required: true,
+                maxlength: 20
+            },
+            //
+            'nickname': {
+                required: true,
+                minlength: 3,
+                maxlength: 20
+            },
+            //
+            'email': {
+                required: false,
+                email: true
+            },
+            //
+            'password': {
+                required: false,
+                minlength: 8
+            },
+            //
+            're-password': {
+                required: false,
+                equalTo: '#password'
+            }
+		},
+        //
+        messages: {
+			'faculty_id': {
+                required: "Chưa chọn khoa nè!"
+            },
+            //
+            'phone': {
+                required: 'Chưa nhập số điện thoại nè!',
+                number: 'Số điện thoại sao lại có chữ?',
+                maxlength: 'Số điện thoại tối đa là 12 chữ số!'
+            },
+            //
+            'first_name': {
+                required: 'Chưa nhập họ nè!',
+                maxlength: 'Họ dài quá rồi!',
+            },
+            //
+            'last_name': {
+                required: 'Chưa nhập tên nè!',
+                maxlength: 'Tên dài quá rồi!',
+            },
+            //
+            'nickname': {
+                required: 'Chưa nhập biệt danh nè!',
+                minlength: 'Biệt danh ngắn quá!',
+                maxlength: 'Biệt danh dài quá!',
+            },
+            //
+            'email': {
+                required: 'Chưa nhập email nè!',
+                email: "Email chưa đúng!"
+            },
+            //
+            'password': {
+                minlength: 'Mật khẩu phải ít nhất 8 ký tự nha!',
+            },
+            //
+            're-password': {
+                equalTo: 'Mật khẩu nhập lại chưa khớp!'
+            }
+        }
+	});
+});
 </script>
 
 @stop

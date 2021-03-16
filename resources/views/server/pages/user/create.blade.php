@@ -5,7 +5,7 @@
 <!--/.row-->
 <div class="row">
     <div class="col-sm-12 ">
-        <x-admin.form.form method="POST" :cancelLink="route('admin.user.show', [$khoa['slug']])" :submitLink="route('admin.user.create', [$khoa['slug']])">
+        <x-admin.form.form method="POST" :cancelLink="route('admin.user.show', [$khoa['slug']])" :submitLink="route('admin.user.store', [$khoa['slug']])">
             <div class="row">
                 <x-admin.form.alert :col="12" class="bg-olive color-palette">
                     <b>Lưu ý: </b>Các trường có dấu <span class="text-danger"><b>*</b></span> là bắt buộc!
