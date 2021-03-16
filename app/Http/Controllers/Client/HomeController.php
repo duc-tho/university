@@ -9,7 +9,6 @@ use App\Models\Contact;
 use App\Models\Faculty;
 use App\Models\FooterLinkCategory;
 use App\Models\ImageCategory;
-use App\Models\News;
 use App\Models\Settings;
 use App\Models\Slide;
 use App\Models\Socials;
@@ -38,7 +37,6 @@ class HomeController extends Controller
         //thời gian làm việc
         // Lấy danh sách khoa kèm url
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
-        $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
 
         if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
             $item['url'] = route('trang-chu', [$item['slug']]);
@@ -47,11 +45,11 @@ class HomeController extends Controller
         // Lấy danh sách ngành kèm url
         $all_specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
 
-        // $specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->first();
+        $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
 
-        // if (!$specialized->isEmpty()) foreach ($specialized as $key => $item) {
-        //     $item['url'] = route('dao-tao-chi-tiet', [$faculty['slug'], $item['slug']]);
-        // }
+
+        // Lấy footer liệt kê các khoa
+        $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->paginate(4);
 
         // Lấy data từ các bảng cần thiết
         $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
@@ -72,7 +70,7 @@ class HomeController extends Controller
         // if (!$news->isEmpty()) foreach ($news as $key => $item) {
         //     $item['category'] = $item->category;
         // lấy tin tức và danh mục tin tức
-        $category = Category::where(['status' => 1, 'show_at_home' => '1'])->orderBy('display_order', 'asc')->get();
+        $category = Category::where(['status' => 1, 'show_at_home' => '1', 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
 
         if (!$category->isEmpty()) foreach ($category as $key => $item) {
             $news = $item->news()->orderBy('id', 'desc')->paginate(10);
@@ -80,9 +78,21 @@ class HomeController extends Controller
             if (!$news->isEmpty()) $item['news'] = $news;
         }
 
-        dd($category);
 
-        // dd($category);
+        // Lấy danh sách mục con trong Sinh Viên của KDL
+        $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+        // dd($all_category);
+
+
+        // lấy tin tức và danh mục  của khoa Du Lịch
+        $category_travel = Category::where(['status' => 1, 'show_at_home' => '1',  'faculty_id' => $faculty->id])->orderBy('display_order', 'asc')->get();
+        if (!$category_travel->isEmpty()) foreach ($category_travel as $key => $item) {
+            $news = $item->news()->orderBy('id', 'desc')->paginate(10);
+
+            if (!$news->isEmpty()) $item['news'] = $news;
+        }
+
+
 
         // // Lấy hình ảnh và danh mục hình
         // $image_category = ImageCategory::where(['status' => 1])->get();
@@ -115,10 +125,10 @@ class HomeController extends Controller
         else $menu = null;
 
         // lấy giáo viên tiêu biểu
-        $teacher = TeacherRepresentative::where(['status' => 1])->get();
+        $teacher = TeacherRepresentative::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
 
         // lấy sinh viên tiêu biểu
-        $student = StudentRepresentative::where(['status' => 1])->get();
+        $student = StudentRepresentative::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
 
         // lấy các liên kết qua trang khác ở footer
         $footer_link = FooterLinkCategory::where(['status' => 1])->get();
@@ -127,60 +137,102 @@ class HomeController extends Controller
             $item['child'] = $item->footerLinks;
         }
 
+        // lấy danh sách tin tức kèm danh mục của khoa kinh tế
+        $category_news = Category::where(['status' => 1, 'show_at_news' => '1', 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
+        if (!$category->isEmpty()) foreach ($category as $key => $item) {
+            $news = $item->news()->orderBy('id', 'desc')->paginate(6);
+
+            if (!$news->isEmpty()) $item['news'] = $news;
+        }
+
+        // lấy danh sách thông báo kèm danh mục của khoa kinh tế
+        $category_notification = Category::where(['status' => 1, 'show_at_notification' => '1', 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
+        if (!$category->isEmpty()) foreach ($category as $key => $item) {
+            $news = $item->news()->orderBy('id', 'desc')->paginate(6);
+
+            if (!$news->isEmpty()) $item['news'] = $news;
+        }
+
+
         // Lấy các icon mạng xã hội
         $socials_icon = Socials::where(['status' => 1])->get();
 
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty_id])->first();
 
-        // dd($settings);
 
         return view('client.layout.' . $layout_name . '.page.home', [
-            'phone' => $contact['phone'],
-            'email' => $contact['email'],
-            'hotline' => $contact['hotline'],
-            'google_map_link' => $contact['map_embed'],
-            'website_link' => $contact['website_link'],
-            'contact_title' => $contact['contact_title'],
-            'slogan_nn' => getSettingValue($settings, 'slogan_nn'),
-            'sub_slogan_nn' => getSettingValue($settings, 'sub_slogan_nn'),
-            'time_work' => getSettingValue($settings, 'time_work'),
-            'address' => $contact['address_info'],
-
             'logo' => getSettingValue($settings, 'logo'),
+            'hotline' => getSettingValue($settings, 'hotline'),
+            'email' => getSettingValue($settings, 'email'),
+            'all_specialized' => $all_specialized,
+            'website' => getSettingValue($settings, 'website'),
+            // Trang Chủ
+            'phone' => getSettingValue($settings, 'phone'),
             'slogan_top' => getSettingValue($settings, 'slogan_top'),
             'slogan_main' => getSettingValue($settings, 'slogan_main'),
             'slogan_bottom' => getSettingValue($settings, 'slogan_bottom'),
-            'slogan_route' => getSettingValue($settings, 'slogan_route'), //
-            'time' => getSettingValue($settings, 'time'),
-            'spline' => getSettingValue($settings, 'spline'),
-
-            //Start Khoa Du Lịch
-            'logo_travel' => getSettingValue($settings, 'logo_travel'),
-            'slogan_main_travel' => getSettingValue($settings, 'slogan_main_travel'),
-            'slogan_intro_travel' => getSettingValue($settings, 'slogan_intro_travel'),
-            'slogan_intro_travel2' => getSettingValue($settings, 'slogan_intro_travel2'),
-            'slogan_intro_travel3' => getSettingValue($settings, 'slogan_intro_travel3'),
-            'slogan_intro_travel4' => getSettingValue($settings, 'slogan_intro_travel4'),
-            'slogan_intro_travel5' => getSettingValue($settings, 'slogan_intro_travel5'),
-
-            'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),
-            'footer_email_travel' => getSettingValue($settings, 'footer_email_travel'),
-            'footer_website_travel' => getSettingValue($settings, 'footer_website_travel'),
-            'footer_address_travel' => getSettingValue($settings, 'footer_address_travel'),
-
-            // 'name' => getSettingValue($specialized, 'name'),
-            // 'intro' => getSettingValue($specialized, 'intro'),
-            //End Khoa Du Lịch
-
-            'admission_title' => getSettingValue($settings, 'email'),
-            'admission_description' => getSettingValue($settings, 'email'),
-            'admission_route' => getSettingValue($settings, 'email'),
-
+            'slogan_route' => getSettingValue($settings, 'slogan_route'),
             'intro_image' => getSettingValue($settings, 'intro_image'),
             'intro_video' => getSettingValue($settings, 'intro_video'),
-            'intro_image_travel' => getSettingValue($settings, 'intro_image_travel'),
             'intro_route' => getSettingValue($settings, 'intro_route') == null ? route('gioi-thieu', [$faculty['slug']]) : getSettingValue($settings, 'intro_route'),
+            'google_map_link' => getSettingValue($settings, 'map_embed'),
+
+            // End Trang Chủ
+
+            // Khoa Kinh Tế
+            'address' => getSettingValue($settings, 'address'),
+            'time' => getSettingValue($settings, 'time'),
+            'spline' => getSettingValue($settings, 'spline'),
+            'title_faculty_description' => getSettingValue($settings, 'title_faculty_description'),
+            'title_scholarship' => getSettingValue($settings, 'title_scholarship'),
+            'title_scholarship_content' => getSettingValue($settings, 'title_scholarship_content'),
+            'title_develop' => getSettingValue($settings, 'title_develop'),
+            'title_develop_content' => getSettingValue($settings, 'title_develop_content'),
+            'title_resources' => getSettingValue($settings, 'title_resources'),
+            'title_resources_content' => getSettingValue($settings, 'title_resources_content'),
+            'title_evaluate_student' => getSettingValue($settings, 'title_evaluate_student'),
+            'title_name_uni_footer' => getSettingValue($settings, 'title_name_uni_footer'),
+            'title_license_footer' => getSettingValue($settings, 'title_license_footer'),
+            'title_license_content_footer' => getSettingValue($settings, 'title_license_content_footer'),
+            'title_support_line' => getSettingValue($settings, 'title_support_line'),
+            'number_support_line' => getSettingValue($settings, 'number_support_line'),
+            'title_infor_teacher' => getSettingValue($settings, 'title_infor_teacher'),
+            'title_teacher_faculty' => getSettingValue($settings, 'title_teacher_faculty'),
+            'content_teacher_faculty' => getSettingValue($settings, 'content_teacher_faculty'),
+            'title_hot_line' => getSettingValue($settings, 'title_hot_line'),
+            'number_hot_line' => getSettingValue($settings, 'number_hot_line'),
+            'title_faculty' => getSettingValue($settings, 'title_faculty'),
+            'title_welcom_faculty' => getSettingValue($settings, 'title_welcom_faculty'),
+            'title_admissions' => getSettingValue($settings, 'title_admissions'),
+            'content_admissions' => getSettingValue($settings, 'content_admissions'),
+
+
+            // End Khoa Kinh Tế
+
+            // Khoa Du Lịch
+            'slogan_main_travel' => getSettingValue($settings, 'slogan_main_travel'),
+            'slogan_main_travel_2' => getSettingValue($settings, 'slogan_main_travel_2'),
+            'slogan_intro_travel' => getSettingValue($settings, 'slogan_intro_travel'),
+            'slogan_intro_travel_2' => getSettingValue($settings, 'slogan_intro_travel_2'),
+            'license' => getSettingValue($settings, 'license'),
+            'license_content' => getSettingValue($settings, 'license_content'),
+
+            // End Khoa Du Lịch
+
+            'website_link' => getSettingValue($settings, 'website_link'),
+            'contact_title' => getSettingValue($settings, 'contact_title'),
+            'slogan_nn' => getSettingValue($settings, 'slogan_nn'),
+            'sub_slogan_nn' => getSettingValue($settings, 'sub_slogan_nn'),
+            'time_work' => getSettingValue($settings, 'time_work'),
+            'copyright' => getSettingValue($settings, 'copyright'),
+
+            'news' => $category,
+            'news_travel' => $category_travel,
+            'category_news' => $category_news,
+            'category_notification' => $category_notification,
+
+
             'intro_short' => $faculty['intro_summary'],
             'intro_statistic' => $statistic,
             'menu' => $menu,
@@ -188,22 +240,18 @@ class HomeController extends Controller
             'faculty' => $faculty,
             'all_faculty' => $all_faculty,
             'footer_faculty' => $footer_faculty,
-            // 'specialized' => $specialized,
-            'all_specialized' => $all_specialized,
-            // 'student_comment_content' => ,
-            // 'student_comment_name' => ,
-            // 'student_comment_type' => ,
-
+            'all_category' => $all_category,
             'teacher' => $teacher,
             'student' => $student,
             'image' => $image_category,
-            'news' => $category,
             'collab_logo' => $collab_logo,
             'footer_link' => $footer_link,
-            'copyright' => getSettingValue($settings, 'copyright'),
             'socials_icon' => $socials_icon,
+
+
         ]);
     }
+
 
     public function postAdmissionsRegister(Request $request)
     {

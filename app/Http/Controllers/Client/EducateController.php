@@ -50,6 +50,8 @@ class EducateController extends Controller
         // Lấy danh sách ngành kèm url
         $all_specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
 
+        $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+
         $specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id, 'slug' => $nganh])->first();
 
 
@@ -67,7 +69,8 @@ class EducateController extends Controller
         }
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
 
-        return view('client.layout.layout_kdl.page.educate', [
+        $contact = Contact::where(['faculty_id' => $faculty_id])->first();
+        return view('client.layout.' . $layout_name . '.page.educate', [
             'logo' => getSettingValue($settings, 'logo'),
             'copyright' => getSettingValue($settings, 'copyright'),
             'teacher' => $teacher,
@@ -77,6 +80,8 @@ class EducateController extends Controller
             'category' => $category,
             'all_specialized' => $all_specialized,
             'specialized' => $specialized,
+            'address' =>getSettingValue($settings, 'address'),
+            'email' => $contact['email'],
             //Start Khoa DU Lich
             'logo_travel' => getSettingValue($settings, 'logo_travel'),
             'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),
@@ -87,8 +92,25 @@ class EducateController extends Controller
             'slogan_teacher_educate' => getSettingValue($settings, 'slogan_teacher_educate'),
             //End Khoa Du Lịch
             'footer_faculty' => $footer_faculty,
-            'all_specialized' => $all_specialized,
-
+            'all_category' => $all_category,
+            'title_faculty_description' => getSettingValue($settings, 'title_faculty_description'),
+            'title_scholarship' => getSettingValue($settings, 'title_scholarship'),
+            'title_scholarship_content' => getSettingValue($settings, 'title_scholarship_content'),
+            'title_develop' => getSettingValue($settings, 'title_develop'),
+            'title_develop_content' => getSettingValue($settings, 'title_develop_content'),
+            'title_resources' => getSettingValue($settings, 'title_resources'),
+            'title_resources_content' => getSettingValue($settings, 'title_resources_content'),
+            'title_evaluate_student' => getSettingValue($settings, 'title_evaluate_student'),
+            'title_name_uni_footer' => getSettingValue($settings, 'title_name_uni_footer'),
+            'title_license_footer' => getSettingValue($settings, 'title_license_footer'),
+            'title_license_content_footer' => getSettingValue($settings, 'title_license_content_footer'),
+            'title_support_line' => getSettingValue($settings, 'title_support_line'),
+            'number_support_line' => getSettingValue($settings, 'number_support_line'),
+            'title_infor_teacher' => getSettingValue($settings, 'title_infor_teacher'),
+            'title_teacher_faculty' => getSettingValue($settings, 'title_teacher_faculty'),
+            'content_teacher_faculty' => getSettingValue($settings, 'content_teacher_faculty'),
+            'title_hot_line' => getSettingValue($settings, 'title_hot_line'),
+            'number_hot_line' => getSettingValue($settings, 'number_hot_line'),
 
         ]);
     }

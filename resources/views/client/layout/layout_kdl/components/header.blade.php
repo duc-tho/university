@@ -18,12 +18,12 @@
 </section>
 <!-- //Top Menu 1 -->
 <section class="w3l-bootstrap-header">
-    <nav class="navbar navbar-expand-lg navbar-light py-lg-2 py-2">
+    <nav class="navbar navbar-expand-lg navbar-light py-lg-2 py-2 " >
         <div class="container">
             <!-- <a class="navbar-brand" href="index.html"></a>	<img src="images/logo.png" alt="Logo" style="width:40%; height: auto;"></a> -->
 
             <a class="navbar-brand" href="/">
-                <img src="{{asset($logo_travel)}}" style="width: 55%;" />
+                <img src="{{$logo}}" style="width: 55%;" />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,18 +33,18 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto" id="navwidth">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('trang-chu', [$faculty['slug']])}}">Trang Chủ</a>
+                        <a class="nav-link" href="{{route('trang-chu', [$faculty['slug']])}}">TRANG CHỦ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('gioi-thieu', [$faculty['slug']])}}">Giới Thiệu</a>
+                        <a class="nav-link" href="{{route('gioi-thieu', [$faculty['slug']])}}">GIỚI THIỆU</a>
                     </li>
                     <li class="nav-item">
                         {{-- <a class="nav-link" href="{{ route('tintuc') }}">Tin Tức</a> --}}
-                        <a class="nav-link" href="{{route('tin-tuc', [$faculty['slug']])}}">Tin Tức</a>
+                        <a class="nav-link" href="{{route('tin-tuc', [$faculty['slug']])}}">TIN TỨC</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Đào Tạo
+                            ĐÀO TẠO
                         </a>
                         <div class="dropdown-menu">
                         <a class="dropdown-item" href="introdution.html"></a>
@@ -59,22 +59,14 @@
                                 hành</a> --}}
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            Sinh Viên
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Thực tập</a>
-                            <a class="dropdown-item" href="#">Thông Báo</a>
-                            {{-- <a class="dropdown-item" href="{{route('thongbao')}}">Bảng Tin Khoa</a> --}}
-                            <a class="dropdown-item" href="javascription:">Đăng Nhập hệ thống sinh viên</a>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('thong-bao', [$faculty['slug']])}}">THÔNG BÁO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Giảng Viên</a>
+                        <a class="nav-link" href="{{route('giao-vien', [$faculty['slug']])}}">GIÁO VIÊN</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('lien-he', [$faculty['slug']])}}">Liên Hệ</a>
+                        <a class="nav-link" href="{{route('lien-he', [$faculty['slug']])}}">LIÊN HỆ</a>
                     </li>
                 </ul>
             </div>

@@ -14,8 +14,6 @@
 <div id="wrapper">
     @include('client.layout.default.components.header-top-bar')
 
-   
-
     @yield('main')
 
     @include('client.layout.default.components.nav-footer')

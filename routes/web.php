@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\FacultyController;
 use App\Http\Controllers\Admin\TeacherController as AdminTeacherController;
 use App\Http\Controllers\Admin\HomeController as DashboardController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\Student_reController;
 use App\Http\Controllers\Client\CourseController;
 use App\Http\Controllers\Client\EducateController;
 use App\Http\Controllers\Client\AboutController;
@@ -119,7 +120,7 @@ Route::group(['prefix' => 'tuyen-sinh'], function () {
 Route::get('complete', [HomeController::class, 'getComplete']);
 
 // Giáo Viên
-Route::get('/giao-vien', [TeacherController::class, 'index'])->name('giao-vien');
+Route::get('/{khoa}/giao-vien', [TeacherController::class, 'index'])->name('giao-vien');
 Route::get('/giao-vien/thong-tin-giao-vien', [TeacherController::class, 'detail'])->name('giao-vien-chi-tiet');
 
 // Home
@@ -142,7 +143,7 @@ Route::get('/{khoa}/lien-he', [ContactController::class, 'index'])->name('lien-h
 Route::get('/{khoa}/dao-tao/{nganh}', [EducateController::class, 'detail'])->name('dao-tao-chi-tiet');
 
 // Sinh Viên
-Route::get('/{khoa}/sinh-vien/thuc-tap', [StudentController::class, 'list'])->name('sinh-vien-danh-muc');
+Route::get('/{khoa}/sinh-vien', [StudentController::class, 'list'])->name('sinh-vien-danh-muc');
 Route::get('/{khoa}/sinh-vien/thong-bao/asd', [StudentController::class, 'detail'])->name('sinh-vien-chi-tiet');
 
 // Khóa Học
@@ -151,7 +152,7 @@ Route::get('/{khoa}/khoa-hoc', [CourseController::class, 'index'])->name('khoa-h
 
 // Thông báo
 Route::get('/{khoa}/thong-bao', [NotificationController::class, 'index'])->name('thong-bao');
-Route::get('/{khoa}/thong-bao/chi-tiet-thong-bao', [NotificationController::class, 'detail'])->name('thong-bao-chi-tiet');
+Route::get('/{khoa}/thong-bao/{category}/{name}', [NotificationController::class, 'detail'])->name('thong-bao-chi-tiet');
 
 // hình ảnh
 Route::get('/{khoa}/hinh-anh', [ImageController::class, 'index'])->name('hinh-anh'); // tạo chức năng lọc :D theo danh mục

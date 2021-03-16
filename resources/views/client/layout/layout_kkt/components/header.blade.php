@@ -5,17 +5,17 @@
     <div class="header-top d-none d-lg-block">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-10">
                     <div class="header-contact text-lg-left text-center">
                         <ul>
-                            <li><img src="{{ asset('dist/layout/layout_kkt/images/all-icon/map.png') }}" alt="icon"><span>{{$address}} </span></li>
+                            <li><img src="{{ asset('dist/layout/layout_kkt/images/all-icon/map.png') }}" alt="icon"><span>{{$address}}</span></li>
                             <li><img src="{{ asset('dist/layout/layout_kkt/images/all-icon/email.png') }}" alt="icon"><span>{{$email}}</span></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-2">
                     <div class="header-opening-time text-lg-right text-center">
-                        {!!$time_work!!}
+
                     </div>
                 </div>
             </div> <!-- row -->
@@ -28,7 +28,7 @@
                 <div class="col-lg-4 col-md-4">
                     <div class="logo">
                         <a href="/">
-                            <img src="{{ asset('dist/layout/layout_kkt/images/hihkhoa_files/logo.png') }}" alt="Logo">
+                            <img src="{{ asset($logo) }}" alt="Logo">
                         </a>
                     </div>
                 </div>
@@ -39,8 +39,8 @@
                                 <img src="{{ asset('dist/layout/layout_kkt/images/all-icon/support.png') }}" alt="icon">
                             </div>
                             <div class="cont">
-                                <p>Đường dây hỗ trợ</p>
-                                <span>(028)38.831.793 - (028)38.831.796 </span>
+                                <p>{{$title_support_line}}</p>
+                                <span>{{$number_support_line}} </span>
                             </div>
                         </div>
                         <br>
@@ -49,8 +49,8 @@
                                 <img src="{{ asset('dist/layout/layout_kkt/images/all-icon/support.png') }}" alt="icon">
                             </div>
                             <div class="cont">
-                                <p>Đường dây nóng</p>
-                                <span>0914.411.012 </span>
+                                <p>{{$title_hot_line}}</p>
+                                <span>{{$number_hot_line}}</span>
                             </div>
                         </div>
                     </div>
@@ -75,37 +75,44 @@
                                 <li class="nav-item">
                                     <a href="javascript:">Trang Chủ</a>
                                     <ul class="sub-menu">
-                                        <li><a href="{{route('trang-chu',['trang-chu'])}}">Đại Học Du Lịch</a></li>
                                         <li><a href="{{route('trang-chu',['khoa-kinh-te'])}}">Khoa Kinh tế</a></li>
+                                        <li><a href="{{route('trang-chu',['trang-chu'])}}">Đại Học Du Lịch</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{-- route('khoakinhte-gioithieu') --}}">Giới Thiệu</a>
+                                    <a href="{{route('gioi-thieu', [$faculty['slug']])}}">Giới Thiệu</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="javascript:">Đào Tạo</a>
                                     <ul class="sub-menu">
-                                        <li><a href="{{-- route('khoakinhte-chitietkhoahoc') --}}">Tài Chính Ngân Hàng</a></li>
-                                        <li><a href="{{-- route('khoakinhte-chitietkhoahoc') --}}">Quản Trị Kinh Doanh</a></li>
-                                        <li><a href="{{-- route('khoakinhte-chitietkhoahoc') --}}">Kế Toán</a></li>
+                                        @foreach ($all_specialized as $item)
+                                            <li><a href="{{route('dao-tao-chi-tiet', [$faculty['slug'],$item->slug])}}">{{$item->name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{-- route('khoakinhte-tintuc') --}}">Tin Tức - Sự Kiện</a>
+                                    <a href="{{route('tin-tuc', [$faculty['slug']])}}">Tin Tức</a>
                                     {{-- <ul class="sub-menu">
                                         <li><a href="tintucnhom.html">Events</a></li>
                                         <li><a href="tintucdon.html">Event Singel</a></li>
                                     </ul> --}}
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{-- route('home-teacher') --}}">Giảng Viên</a>
+                                    <a href="{{route('thong-bao', [$faculty['slug']])}}">Thông Báo</a>
+                                    {{-- <ul class="sub-menu">
+                                        <li><a href="tintucnhom.html">Events</a></li>
+                                        <li><a href="tintucdon.html">Event Singel</a></li>
+                                    </ul> --}}
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('giao-vien', [$faculty['slug']])}}">Giảng Viên</a>
                                     {{-- <ul class="sub-menu">
                                         <li><a href="teachers.html">teachers</a></li>
                                         <li><a href="teachers-singel.html">teacher Singel</a></li>
                                     </ul> --}}
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('lien-he',['khoa-kinh-te'])}}">Liên Lạc</a>
+                                    <a href="{{route('lien-he', [$faculty['slug']])}}">Liên Lạc</a>
                                 </li>
                             </ul>
                         </div>

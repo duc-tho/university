@@ -16,10 +16,10 @@ class SlideController extends Controller
     {
         # code...
 
-        return view('server.pages.slide.show');
-        // $data['slidelist'] = Slide::Where(["status"=>"1"])->oderBy("display_order","desc");
-        // $data['faculityslide']=Faculty::all();
-        // return view('server.pages.slide.index',$data);
+        // return view('server.pages.slide.index');
+        $data['slidelist'] = Slide::Where(["status" => "1"])->orderBy('display_order', 'desc')->paginate(10);
+        $data['faculityslide'] = Faculty::all();
+        return view('server.pages.slide.index', $data);
     }
 
     public function create()
@@ -33,12 +33,12 @@ class SlideController extends Controller
         $slide->faculty_id = $request->faculty_id;
         $slide->name = $request->name;
         $slide->display_order = $request->display_order;
-        $slide->link = $request->upload_file($request->img, 'dist/upload/image/slide');
         $slide->browser_target = $request->browser_target;
         $slide->description = $request->description;
         $slide->created_by = $request->created_by;
         $slide->updated_by = $request->updated_by;
         $slide->status = $request->status;
+        $slide->link = upload_file($request->img, 'dist/upload/image/slide');
         $slide->save();
 
         return back();

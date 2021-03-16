@@ -11,16 +11,16 @@
 @section('main')
 <!--====== PAGE BANNER PART START ======-->
 
-<section id="page-banner" class="pt-105 pb-130 bg_cover" data-overlay="8" style="background-image: url(/dist/layout/layout_kkt/images/hihkhoa_files/slide-noi-that-g4-82730.jpg)">
+<section id="page-banner" class="pt-105 pb-110 bg_cover" data-overlay="8" style="background-image: url(/dist/layout/layout_kkt/images/page-banner-2.jpg)">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="page-banner-cont">
-                    <h2>Liên Hệ</h2>
+                    <h2>Liên Hệ {{$faculty->name}}</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{-- route('khoakinhte') --}}">Trang Chủ</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Liên hệ</li>
+                            <li class="breadcrumb-item"><a href="{{route('trang-chu',['khoa-kinh-te'])}}">Trang Chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Liên Hệ</li>
                         </ol>
                     </nav>
                 </div> <!-- page banner cont -->
@@ -95,9 +95,8 @@
                                     <i class="fa fa-home"></i>
                                 </div>
                                 <div class="cont">
-                                    <p>Khoa Kinh tế - Lầu 1</p>
-                                    <p>Cơ sở 2: 53/1 Phan Văn Hớn, Đường Tân Thới Nhất 8, Khu phố 5, P.Tân Thới Nhất, Q.12-Tp.HCM.</p>
-                                    <p>http://khoakinhte.daihocdulich.edu.vn</p>
+                                    <p>{{ $address }}</p>
+                                
                                 </div>
                             </div> <!-- singel address -->
                         </li>
@@ -107,8 +106,7 @@
                                     <i class="fa fa-phone"></i>
                                 </div>
                                 <div class="cont">
-                                    <p>(028)62.861.462</p>
-                                    <p>(028)38.831.796</p>
+                                    <p>{{ $phone }}</p>
                                 </div>
                             </div> <!-- singel address -->
                         </li>
@@ -118,10 +116,11 @@
                                     <i class="fa fa-envelope-o"></i>
                                 </div>
                                 <div class="cont">
-                                    <p>khoakinhte@daihocdulich.edu.vn</p>
+                                    <p>{{$email}}</p>
                                 </div>
                             </div> <!-- singel address -->
                         </li>
+                        
                     </ul>
                 </div> <!-- contact address -->
                 <div class="map mt-30">

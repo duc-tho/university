@@ -10,13 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -24,7 +24,8 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="index2.html"><b>Login </b> SAIGON_ACT</a>
+
+           <a href="index2.html"><b>LOGIN </b> SAIGON_ACT</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
@@ -49,17 +50,17 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-8">
-                            <div class="icheck-primary">
+                        <div class="col-7">
+                            {{-- <div class="icheck-primary">
                                 <input type="checkbox" id="remember" name="remember" value="Remember Me">
                                 <label for="remember">
                                     Nhớ mật khẩu
                                 </label>
-                            </div>
+                            </div> --}}
                         </div>
                         <!-- /.col -->
-                        <div class="col-4">
-                            <button type="submit" name="submit" value="Login" class="btn btn-primary" style="white-space: nowrap;">Đăng nhập</button>
+                        <div class="col-5">
+                            <button type="submit" name="submit" value="Login" class="btn btn-primary" style="white-space: nowrap;">  <i class=" fas fa-check"></i> Đăng nhập</button>
                             @csrf
                         </div>
                         <!-- /.col -->
@@ -94,11 +95,11 @@
     <!-- /.login-box -->
 
     <!-- jQuery -->
-    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->
-    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- AdminLTE App -->
-    <script src="dist/js/adminlte.min.js"></script>
+    <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
 
     {{-- Không cho nhập kí tự đặc biệt --}}
     {{-- <script>

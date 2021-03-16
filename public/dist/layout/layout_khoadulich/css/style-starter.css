@@ -5346,7 +5346,7 @@ input[type="button"].btn-block {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  font-size:20px;
+  font-size:17px;
 }
   .nav-link:hover, .nav-link:focus {
     text-decoration: none; }
@@ -10497,8 +10497,7 @@ h4.sub-title {
   -ms-transition: 0.3s ease-in; }
 
 .w3l-main-slider .banner-view {
-  /* background: url(assets/images/20181227183631-48113.jpg) no-repeat; */
-  background:url(http://khoadulich.daihocdulich.edu.vn/admin3917/template/kindeditor/attached/image/20180515/20180515065719_94716.jpg) no-repeat 0px 0px;
+  /* background:url(http://khoadulich.daihocdulich.edu.vn/admin3917/template/kindeditor/attached/image/20180515/20180515065719_94716.jpg) no-repeat 0px 0px; */
   background-size: cover;
   min-height: 600px;
   position: relative;
@@ -10507,15 +10506,15 @@ h4.sub-title {
   align-items: center; }
 
 .w3l-main-slider .banner-top1 {
-  background:url(http://khoadulich.daihocdulich.edu.vn/upload/slide/slide-noi-that-g4-73657.jpg) no-repeat 0px 0px;
+  /* background:url(http://khoadulich.daihocdulich.edu.vn/upload/slide/slide-noi-that-g4-73657.jpg) no-repeat 0px 0px; */
   background-size: cover; }
 
 .w3l-main-slider .banner-top2 {
-  background:url(http://khoadulich.daihocdulich.edu.vn/upload/news/2019/05/15/nhung-ki-nang-can-thiet-cua-huong-dan-vien-du-lich-thumbnail-89275.jpg) no-repeat 0px 0px;
+  /* background:url(http://khoadulich.daihocdulich.edu.vn/upload/news/2019/05/15/nhung-ki-nang-can-thiet-cua-huong-dan-vien-du-lich-thumbnail-89275.jpg) no-repeat 0px 0px; */
   background-size: cover; }
 
 .w3l-main-slider .banner-top3 {
-  background:url(http://khoadulich.daihocdulich.edu.vn/admin3917/template/kindeditor/attached/image/20180515/20180515065719_94716.jpg) no-repeat 0px 0px;
+  /* background:url(http://khoadulich.daihocdulich.edu.vn/admin3917/template/kindeditor/attached/image/20180515/20180515065719_94716.jpg) no-repeat 0px 0px; */
   background-size: cover; }
 
 .w3l-main-slider .banner-view:before {
@@ -11122,7 +11121,7 @@ button.owl-next {
   /*--responsive--*/
   /*--//responsive--*/ }
   .w3l-feature-3 .grid.top-bottom {
-    margin-top: -9px;
+    margin-top: -100px;
     z-index: 10;
     position: relative; }
   .w3l-feature-3 span.number img {
@@ -11133,7 +11132,9 @@ button.owl-next {
     padding: 40px 30px;
     transition: 0.3s ease-out;
     border-radius: 4px;
+    text-align: center;
     background-color: #fff;
+    font-size:35px;
     box-shadow: 0 0 30px #cccccc73; }
   .w3l-feature-3 .grid-column {
     grid-template-columns: 1fr 1fr 1fr;
@@ -11871,7 +11872,7 @@ button.owl-next {
   line-height: 25px; }
 
 .w3l-footer-29-main h6.footer-title-29 {
-  color: #fff;
+  color: #fcd307;
   font-size: 20px;
   line-height: 25px;
   text-transform: capitalize;
@@ -12805,11 +12806,12 @@ button.owl-next {
 }
 #tb{
   font-weight: bold;
+  font-size: 1.3em;
   color: black;
 }
 .mes-h5{
   color: rgb(6, 113, 135);
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-family: "Yanone Kaffeesatz", sans-serif;
     margin: 0.5em 0px 0px;
 }
@@ -12851,4 +12853,10 @@ button.owl-next {
   opacity: 1;
   right: 0;
 }
-
+.text-compact {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    -webkit-box-orient: vertical;
+ }

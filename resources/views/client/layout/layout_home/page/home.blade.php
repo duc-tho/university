@@ -224,7 +224,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
     <div class="container">
         <h3 class="w3ls-title">{{ $category['title'] }}</h3>
         <div class="w3_testimonials_grids w3_testimonials_grids">
-            <div id="owl-news-{{ $key }}" class="owl-carousel">
+            <d iv id="owl-news-{{ $key }}" class="owl-carousel">
                 @foreach ($category['news'] as $item)
                 <div class="item w3_agileits_testimonials_grid">
                     <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}"><img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="img-responsive" /></a>
@@ -235,7 +235,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
                     <p>{{ $item['description'] }}</p>
                 </div>
                 @endforeach
-            </div>
+            </d>
         </div>
         <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category['slug']]) }}"> Các {{ $category['title'] }} khác</a></div>
     </div>
@@ -278,7 +278,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
                     </ul>
                 </div>
             </section>
-            <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{route('giao-vien')}}"> Cán Bộ Giảng Viên</a></div>
+            <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{route('giao-vien',[$faculty['slug']])}}"> Cán Bộ Giảng Viên</a></div>
         </div>
     </div>
 </div>
