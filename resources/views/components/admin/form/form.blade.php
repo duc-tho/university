@@ -4,7 +4,7 @@
     @csrf
     <div class="card card-primary card-outline">
         <div class="card-header p-2">
-            <button class="btn btn-info btn-sm" type="submit" name="submit"><i class="fas fa-save"></i> Thêm</button>
+            <button class="btn btn-info btn-sm" type="submit" name="submit"><i class="fas fa-save"></i> Lưu</button>
             <a href="{{ $cancelLink }}" class="btn btn-danger btn-sm"><i class="fas fa-window-close"></i> Hủy bỏ</a>
         </div>
         <div class="card-body">
