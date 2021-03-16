@@ -148,7 +148,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
     </section>
 
     <!--  form-12 -->
-    <section class="w3l-form-12">
+    {{-- <section class="w3l-form-12">
         <div class="form-12-content py-5" id="services">
             <div class="container py-md-3">
                 <div class="grid grid-column-12 py-md-5">
@@ -171,74 +171,82 @@ $slide_str = str_replace('\\', '/', $slide_str);
                             <button type="button" class="btn btn-secondary btn-theme2">Tìm Kiếm</button>
                         </form>
                     </div>
-                    {{-- <div class="column2">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-6 col-6">
-                                <a href="javascript:">
-                                    <div class="courses-item">
-                                        <span class="fa fa-male"></span>
-                                        <p>Số Lượng</p>
+
+                </div>
+            </div>
+        </div>
+    </section> --}}
+    <section class="w3l-price-2" id="news">
+        <div class="price-main py-5">
+            <div class="container py-md-3">
+                <div class="pricing-style-w3ls row py-md-5">
+                    {{-- Tin Tức --}}
+                    @foreach ($category_news as $key => $category)
+                    <div class="pricing-chart col-lg-6">
+                        <h3 class="">{{ $category['title'] }}</h3>
+                        <div class="tatest-top mt-md-5 mt-4">
+                            @foreach ($category['news'] as $key => $item)
+                                <div class="price-box btn-layout bt6">
+                                    <div class="grid grid-column-2">
+                                        <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">
+                                        <div class="column-6">
+                                            <img src="{{ asset($item['image']) }}" alt="" class="img-fluid">
+                                        </div>
+                                        <div class="column1">
+                                            <div class="job-info">
+                                                <h6 class="pricehead"><a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">{{ $item['title']  }} </a></h6>
+
+                                                <p><a
+                                                    href="{{ route('thong-bao', [$faculty['slug']]) }}">{{ $category['title'] }} </a>,
+                                                    <span>{{ $item->event_time }}</span>
+                                                </p>
+                                                <p>{{ $item->description }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        </a>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-6">
-                                <a href="javascript:">
-                                    <div class="courses-item">
-                                        <span class="fa fa-suitcase"></span>
-                                        <p>Hành Lí</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-6 mt-md-0 mt-4">
-                                <a href="javascript:">
-                                    <div class="courses-item">
-                                        <span class="fa fa-code"></span>
-                                        <p>Web hỗ trọ</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-6 mt-md-0 mt-4">
-                                <a href="javascript:">
-                                    <div class="courses-item">
-                                        <span class="	fa fa-book"></span>
-                                        <p>Khóa Học</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-6 mt-4">
-                                <a href="javascript:">
-                                    <div class="courses-item mt-2">
-                                        <span class="fa fa-image"></span>
-                                        <p>Hình Ảnh</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-6 mt-4">
-                                <a href="javascript:">
-                                    <div class="courses-item mt-2">
-                                        <span class="fa fa-gg"></span>
-                                        <p>Liên Kết</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-6 mt-4">
-                                <a href="javascript:">
-                                    <div class="courses-item mt-2">
-                                        <span class="fa fa-paper-plane-o"></span>
-                                        <p>CheckIn</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-6 mt-4">
-                                <a href="javascript:">
-                                    <div class="courses-item mt-2">
-                                        <span class="fa fa-object-group"></span>
-                                        <p>Nhóm</p>
-                                    </div>
-                                </a>
-                            </div>
+                                    <hr>
+                                </div>
+                            @endforeach
                         </div>
-                    </div> --}}
+                        <div class="text-right mt-4">
+                            <a class="btn btn-secondary btn-theme2" href="{{route('tin-tuc', [$faculty['slug']])}}"> Xem tất cả</a>
+                        </div>
+                    </div>
+                    @endforeach
+
+                    {{-- //Thông Báo --}}
+                    @foreach ($category_notification as $key => $category)
+                    <div class="pricing-chart col-lg-6">
+                        <h3 class="">{{ $category['title'] }}</h3>
+                        <div class="tatest-top mt-md-5 mt-4">
+                            @foreach ($category['news'] as $key => $item)
+                                <div class="price-box btn-layout bt6">
+                                    <div class="grid grid-column-12">
+                                        <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">
+                                        <div class="column-6">
+                                            <div class="job-info">
+                                                <h6 class="pricehead"><a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">{{ $item['title']  }} </a></h6>
+                                                <p><a
+                                                    href="{{ route('tin-tuc', [$faculty['slug']]) }}">{{ $category['title'] }}</a> ,
+                                                <span>{{ $item->event_time }}</span>
+                                            </p>
+                                                <p>{{ $item->description }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        </a>
+                                    </div>
+                                    <hr>
+                                </div>
+                            @endforeach
+                        </div>
+                        <div class="text-right mt-4">
+                            <a class="btn btn-secondary btn-theme2" href="{{route('thong-bao', [$faculty['slug']])}}"> Xem tất cả</a>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -295,83 +303,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
         </div>
 
     </section>
-    <section class="w3l-price-2" id="news">
-        <div class="price-main py-5">
-            <div class="container py-md-3">
-                <div class="pricing-style-w3ls row py-md-5">
-                    {{-- Tin Tức --}}
-                    @foreach ($category_news as $key => $category)
-                    <div class="pricing-chart col-lg-6">
-                        <h3 class="">{{ $category['title'] }}</h3>
-                        <div class="tatest-top mt-md-5 mt-4">
-                            @foreach ($category['news'] as $key => $item)
-                                <div class="price-box btn-layout bt6">
-                                    <div class="grid grid-column-2">
-                                        <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">
-                                        <div class="column-6">
-                                            <img src="{{ asset($item['image']) }}" alt="" class="img-fluid">
-                                        </div>
-                                        <div class="column1">
-                                            <div class="job-info">
-                                                <h6 class="pricehead"><a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">{{ $item['title']  }} </a></h6>
-                                                
-                                                <p><a
-                                                    href="{{ route('thong-bao', [$faculty['slug']]) }}">{{ $category['title'] }} </a>,
-                                                    <span>{{ $item->event_time }}</span>
-                                                </p>
-                                                <p>{{ $item->description }}
-                                                </p>
-                                            </div>
-                                        </div>
-                                        </a>
-                                    </div>
-                                    <hr>
-                                </div>
-                            @endforeach
-                        </div>
-                        <div class="text-right mt-4">
-                            <a class="btn btn-secondary btn-theme2" href="{{route('tin-tuc', [$faculty['slug']])}}"> Xem tất cả</a>
-                        </div>
-                    </div>
-                    @endforeach
 
-                    {{-- //Thông Báo --}}
-                    @foreach ($category_notification as $key => $category)
-                    <div class="pricing-chart col-lg-6">
-                        <h3 class="">{{ $category['title'] }}</h3>
-                        <div class="tatest-top mt-md-5 mt-4">
-                            @foreach ($category['news'] as $key => $item)
-                                <div class="price-box btn-layout bt6">
-                                    <div class="grid grid-column-12">
-                                        <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">
-                                        <div class="column-6">
-                                            <div class="job-info">
-                                                <h6 class="pricehead"><a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">{{ $item['title']  }} </a></h6>
-                                                <p><a
-                                                    href="{{ route('tin-tuc', [$faculty['slug']]) }}">{{ $category['title'] }}</a> ,
-                                                <span>{{ $item->event_time }}</span>
-                                            </p>
-                                                <p>{{ $item->description }}
-                                                </p>
-                                            </div>
-                                        </div>
-                                        </a>
-                                    </div>
-                                    <hr>
-                                </div>
-                            @endforeach
-                        </div>
-                        <div class="text-right mt-4">
-                            <a class="btn btn-secondary btn-theme2" href="{{route('thong-bao', [$faculty['slug']])}}"> Xem tất cả</a>
-                        </div>
-                    </div>
-                    @endforeach
-
-                </div>
-
-            </div>
-        </div>
-    </section>
     <br>
     <div class="student w3layouts-agileinfo">
         <div class="container">

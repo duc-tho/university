@@ -7,6 +7,10 @@ use App\Http\Controllers\Admin\Teacher_reController;
 use App\Http\Controllers\Admin\HomeAdminController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\Student_reController;
+use App\Http\Controllers\Admin\CategoryController;
+
+
+
 use App\Http\Controllers\Client\CourseController;
 use App\Http\Controllers\Client\EducateController;
 use App\Http\Controllers\Client\AboutController;
@@ -143,6 +147,27 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin'], function () {
 
             Route::get('/delete/{id}', [UserController::class, 'deleteUser'])
                 ->name('DeleteUser')
+                ->where(['id' => '[0-9]+']);
+        });
+
+        //Route add,edit,delete category
+        Route::group(['prefix' => 'category'], function () {
+            Route::get('/', [CategoryController::class, 'getCategory'])->name('Category');
+
+            Route::get('add',  [CategoryController::class, 'getAddCategory'])->name('GetAddCategory');
+
+            Route::post('add',  [CategoryController::class, 'postAddCategory'])->name('PostAddCategory');
+
+            Route::get('/edit/{id}',  [CategoryController::class, 'getEditCategory'])
+                ->name('GetEditCategory')
+                ->where(['id' => '[0-9]+']);
+
+            Route::post('/edit/{id}', [CategoryController::class, 'postEditCategory'])
+                ->name('PostEditCategory')
+                ->where(['id' => '[0-9]+']);
+
+            Route::get('/delete/{id}', [CategoryController::class, 'deleteCategory'])
+                ->name('DeleteCategory')
                 ->where(['id' => '[0-9]+']);
         });
     });

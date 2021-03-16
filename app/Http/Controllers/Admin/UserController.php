@@ -1,13 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use App\Http\Controllers\Controller;
 use App\Models\Faculty;
 use Illuminate\Http\Request;
 use App\Http\Requests\AddUserRequest;
 use App\Http\Requests\EditUserRequest;
-
 use App\Models\User;
 use phpDocumentor\Reflection\DocBlock\Tags\Uses;
 

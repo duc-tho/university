@@ -1,73 +1,40 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\Models\Faculty;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\Faculty;
-use App\Http\Requests\AddCategoryRequest;
-use App\Http\Requests\EditCategoryRequest;
 use Illuminate\Http\Request;
-use Prophecy\Call\Call;
 
 class CategoryController extends Controller
 {
-    //
     public function getCategory()
     {
-        # code...
-    
-        // return view('server.pages.slide.index');
-        $data['categoryList'] = Category::Where(["status"=>"1"])->orderBy('display_order','desc')->paginate(10);
-        $data['faculityslide']=Faculty::all();
-         return view('server.pages.categories.index',$data);
+        // $data['facultylist'] = Faculty::where(["status" => "1"])->orderBy("id", "desc")->paginate(10);
+        return view('server.pages.category.index');
     }
-
-    public function getAddCategory(){
-        $data['faculityslide']=Faculty::all();
-        return view('server.pages.categories.add_category',$data);
+    public function getAddCategory()
+    {
+        $data['category_list']=Category::all();
+        $data['facultylist']=Faculty::all();
+        return view('server.pages.category.add_category', $data);
     }
-    public function postAddCategory(AddCategoryRequest $request){
-        $category=new Category();
-        $category->faculty_id = $request->faculty_id;
-        $category->name = $request->name;
-        $category->display_order = $request->display_order;
-        
-        $category->browser_target = $request->browser_target;
-        $category->description = $request->description;
-        $category->created_by = $request->created_by;
-        $category->updated_by = $request->updated_by;
-        $category->status = $request->status;
-        $category->link = upload_file($request->img,'dist/upload/image/category');
-        $category->save();
-
-        return back();
-    }
-
-    public function postEditCategory(EditCategoryRequest $request,$id){
-        $category = new Category();
-        $arr['name']= $request->name;
-        $arr['display_order']=$request->display_order;
-        
-        $arr['browser_target']=$request->browser_target;
-        $arr['description']=$request->description;
-        $arr['created_by']=$request->created_by;
-        $arr['updated_by']=$request->updated_by;
-        $arr['status']=$request->status;
-        if ($request->hasFile('img')) {
-            $arr['link'] = upload_file($request->img,'dist/upload/image/category');
-        }
-        $category::where('id', $id)->update($arr);
-        return redirect('admin/category');
-    }
-
-    public function getEditCategory($id){
-        $data['category'] = Category::find($id);
-        $data['list_faculty'] = Faculty::all();
-        return view('server.pages.categories.edit_category', $data);
-    }
-    public function deleteCategory($id){
-        Category::destroy($id);
-        return back();
-    }
+    // public function postAddFaculty(AddFacultyRequest $request)
+    // {
+    //     $faculty = new Faculty();
+    //     $faculty->name = $request->name;
+    //     $faculty->slug = str::slug($request->slug);
+    //     $faculty->meta_keywords = $request->keywords;
+    //     $faculty->meta_descriptions = $request->descriptions;
+    //     $faculty->intro_summary = $request->summary;
+    //     $faculty->intro = $request->introdution;
+    //     $faculty->layout_name = $request->layout_name;
+    //     $faculty->layout_page = $request->layout_page;
+    //     $faculty->created_by = $request->created_by;
+    //     $faculty->updated_by = $request->updated_by;
+    //     $faculty->status = $request->status;
+    //     $faculty->image = upload_file($request->img,'dist/upload/image/faculty');
+    //     $faculty->save();
+    //     return back();
+    // }
 }

@@ -16,7 +16,7 @@ class SlideController extends Controller
     public function getSlide()
     {
         # code...
-    
+
         // return view('server.pages.slide.index');
         $data['slidelist'] = Slide::Where(["status"=>"1"])->orderBy('display_order','desc')->paginate(10);
         $data['faculityslide']=Faculty::all();
@@ -32,7 +32,7 @@ class SlideController extends Controller
         $slide->faculty_id = $request->faculty_id;
         $slide->name = $request->name;
         $slide->display_order = $request->display_order;
-        
+
         $slide->browser_target = $request->browser_target;
         $slide->description = $request->description;
         $slide->created_by = $request->created_by;
@@ -48,7 +48,7 @@ class SlideController extends Controller
         $slide = new Slide();
         $arr['name']= $request->name;
         $arr['display_order']=$request->display_order;
-        
+
         $arr['browser_target']=$request->browser_target;
         $arr['description']=$request->description;
         $arr['created_by']=$request->created_by;
