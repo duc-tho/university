@@ -18,10 +18,10 @@ return [
         'student_edit' => 'student_edit',
         'student_delete' => 'student_delete',
         // Teacher
-        'slide_list' => 'slide_list',
-        'slide_create' => 'slide_create',
-        'slide_edit' => 'slide_edit',
-        'slide_delete' => 'slide_delete',
+        'teacher_list' => 'teacher_list',
+        'teacher_create' => 'teacher_create',
+        'teacher_edit' => 'teacher_edit',
+        'teacher_delete' => 'teacher_delete',
         // User
         'user_list' => 'user_list',
         'user_create' => 'user_create',
