@@ -74,6 +74,18 @@ class RoleController extends Controller
         // dừng nếu role không tồn tại
         abort_if(!$role, 404);
 
+        // Kiểm tra name đã tồn tại trong db hay chưa ngoại trừ name của role hiện tại!
+        $request->validate([
+            'name' => 'required|unique:roles,name,' . $role->id,
+            'display_name' => 'required|unique:roles,display_name,' . $role->id
+        ], [
+            'name.unique' => 'Tên vai trò đã tồn tại!',
+            'name.required' => 'Chưa nhập tên vai trò nè!',
+            //
+            'display_name.unique' => 'Tên hiển thị của vai trò đã tồn tại!',
+            'display_name.required' => 'Chưa nhập tên hiển thị của vai trò nè!',
+        ]);;
+
         if ($request->has('permission')) {
             // Gỡ toàn bộ role của role ra
             $role->permissions()->detach();

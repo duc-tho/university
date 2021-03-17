@@ -53,7 +53,9 @@ Route::name('admin.')->prefix('admin/{khoa}')->middleware(['CheckLogedIn', 'Requ
 
     Route::name('faculty.')->prefix('faculty')->group(function () {
         //
-        Route::get('/', [FacultyController::class, 'show'])->name('show');
+        Route::get('/', [FacultyController::class, 'show'])
+            ->middleware('can:faculty_list')
+            ->name('show');
         //
         Route::get('add',  [FacultyController::class, 'create'])->name('create');
         Route::post('add',  [FacultyController::class, 'store'])->name('store');

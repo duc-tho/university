@@ -24,18 +24,16 @@ class UpdateRole extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'unique:roles'],
-            'display_name' => ['required', 'unique:roles']
+            'name' => ['required'],
+            'display_name' => ['required']
         ];
     }
 
     public function messages()
     {
         return [
-            'name.unique' => 'Tên vai trò đã tồn tại!',
             'name.required' => 'Chưa nhập tên vai trò nè!',
             //
-            'display_name.unique' => 'Tên hiển thị của vai trò đã tồn tại!',
             'display_name.required' => 'Chưa nhập tên hiển thị của vai trò nè!',
         ];
     }

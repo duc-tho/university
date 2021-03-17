@@ -25,6 +25,38 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        // faculty
+        Gate::define('faculty_list', function ($user) {
+            return $user->checkPermissionAccess(config('permission.access.faculty_list'));
+        });
+
+
+        Gate::define('faculty_create', '');
+        Gate::define('faculty_edit', '');
+        Gate::define('faculty_delete', '');
+
+        // slide
+        Gate::define('slide_list', '');
+        Gate::define('slide_create', '');
+        Gate::define('slide_edit', '');
+        Gate::define('slide_delete', '');
+
+        // student
+        Gate::define('student_list', '');
+        Gate::define('student_create', '');
+        Gate::define('student_edit', '');
+        Gate::define('student_delete', '');
+
+        // teacher
+        Gate::define('teacher_list', '');
+        Gate::define('teacher_create', '');
+        Gate::define('teacher_edit', '');
+        Gate::define('teacher_delete', '');
+
+        // user
+        Gate::define('user_list', '');
+        Gate::define('user_create', '');
+        Gate::define('user_edit', '');
+        Gate::define('user_delete', '');
     }
 }
