@@ -24,7 +24,7 @@ class EditTeacherRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'unique:teacher_representative,name,'.$this->segment(4).',id',
+            'name'=>'unique:teacher_representative,name,'.$this->segment(5).',id',
         ];
     }
     public function messages()

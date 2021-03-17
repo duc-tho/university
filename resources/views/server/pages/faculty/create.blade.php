@@ -15,7 +15,7 @@
                                     <div class="card-header ">
                                         <button class="btn btn-success" type="submit" name="submit"><i
                                                 class="fas fa-save"></i> Thêm</button>
-                                        <a href="{{ route('admin.faculty.create', [$khoa->slug]) }}"
+                                        <a href="{{ route('admin.faculty.show', [$khoa->slug]) }}"
                                             class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
                                     </div>
                                     <div class="card-body">
@@ -68,14 +68,14 @@
                                             <label>Người Tạo : </label>
                                             <input required type="text" id="created_by" name="created_by"
                                                 value="{{ old('created_by') }}" class="form-control"
-                                                placeholder="Nhập trang layout...">
+                                                placeholder="Nhập người tạo...">
                                         </div>
 
                                         <div class="form-group">
                                             <label>Người Đăng : </label>
                                             <input required type="text" id="updated_by" name="updated_by"
                                                 value="{{ old('updated_by') }}" class="form-control"
-                                                placeholder="Nhập trang layout...">
+                                                placeholder="Nhập người đăng...">
                                         </div>
                                     </div>
                                 </div>
@@ -97,7 +97,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Ảnh Khoa :</label>
-                                            <input required id="img" type="file" name="img" class="form-control hidden"
+                                            <input required id="img" type="file" name="image" class="form-control hidden"
                                                 onchange="changeImg(this)" ">
                                                     <img id="image" class="thumbnail" width="200px"
                                                 src="{{ asset('/dist/img/imgdefault.png') }}">

@@ -110,7 +110,7 @@
                                     @foreach ($facultylist as $key => $faculty)
                                         <tr role="row">
                                             <td class="text-center">{{ $faculty->id }}</td>
-                                            <td>Khoa {{ $faculty->name }}</td>
+                                            <td>{{ $faculty->name }}</td>
 
                                             <td>
                                                 <img width="200px" src="{{ asset($faculty->image) }}" class="thumbnail">

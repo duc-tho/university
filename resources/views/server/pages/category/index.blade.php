@@ -74,7 +74,7 @@
                                         </th>
 
                                         <th class="text-center sorting">
-                                            <a>Khoa</a>
+                                            <a>Thuộc Khoa</a>
                                         </th>
                                         <th class="text-center sorting">
                                             <a>Danh Mục Con</a>
@@ -129,14 +129,11 @@
                                                         <label for="{{ $key + 1 }}"> </label>
                                                     </div>
                                                     <!-- <input data-id="1579" type="checkbox" checked=""><span></span></label> -->
-                                                    <a href="{{ asset('admin/faculty/edit/' . $item->id) }}"
-                                                        class="btn btn-warning btn-xs">
+                                                    <a href="{{ route('admin.category.edit', [$khoa['slug'], $item['id']]) }}" class="btn btn-warning btn-xs" >
                                                         <i class="fa fa-flag" aria-hidden="true"></i>
                                                         Sửa</a>
-                                                    <a href="{{ asset('admin/faculty/delete/' . $item->id) }}"
-                                                        onclick="return confirm('Bạn có chắc chắn muốn xóa !')"
-                                                        class="btn btn-danger btn-xs"><i class="fa fa-trash"
-                                                            aria-hidden="true"></i>
+                                                    <a href="{{ route('admin.category.delete', [$khoa['slug'], $item['id']]) }}"  onclick="return confirm('Bạn có chắc chắn muốn xóa !')" class="btn btn-danger btn-xs"
+                                                    ><i class="fa fa-trash" aria-hidden="true"></i>
                                                         Xóa</a>
                                             </td>
                                         </tr>

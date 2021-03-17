@@ -14,7 +14,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-save"></i> Thêm</button>
-                                    <a href="{{route('Teacher')}}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
+                                    <a href="{{ route('admin.teacher.show', [$khoa->slug]) }}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
                                 </div>
                                 <div class="card-body">
 

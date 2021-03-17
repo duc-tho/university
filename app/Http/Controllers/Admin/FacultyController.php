@@ -9,7 +9,7 @@ use App\Models\Faculty;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
-use function App\Providers\upload_file;
+
 
 class FacultyController extends Controller
 {
@@ -41,11 +41,11 @@ class FacultyController extends Controller
         $faculty->created_by = $request->created_by;
         $faculty->updated_by = $request->updated_by;
         $faculty->status = $request->status;
-        if ($request->hasFile('image')) $faculty['image'] = upload_file($request->file('image'), 'dist/upload/image/3/faculty');
+        $teacher->image = upload_file($request->img, 'dist/upload/image/3/faculty');
         $faculty->save();
         return redirect()->route('admin.faculty.show', [$khoa['slug']]);
     }
-    public function edit($id, Request $request, $khoa)
+    public function edit( Request $request, $khoa, $id)
     {
         $faculty = Faculty::find($id);
         return view('server.pages.faculty.edit', [
@@ -53,7 +53,7 @@ class FacultyController extends Controller
             'khoa' => $khoa,
         ]);
     }
-    public function update(EditFacultyRequest $request, $id, $khoa)
+    public function update(EditFacultyRequest $request, $khoa, $id )
     {
         $faculty = new Faculty();
         $arr['name'] = $request->name;
@@ -68,14 +68,16 @@ class FacultyController extends Controller
         $arr['intro_summary'] = $request->summary;
         $arr['intro'] = $request->introdution;
         if ($request->hasFile('img')) {
-            $arr['image'] = upload_file($request->img, 'dist/upload/image/faculty');
+            $arr['image'] = upload_file($request->img, 'dist/upload/image/3/faculty');
         }
         $faculty::where('id', $id)->update($arr);
-        return redirect('admin/faculty', [$khoa['slug']]);
+        return redirect()->route('admin.faculty.show', [$khoa['slug']]);
     }
-    public function delete($id)
+    public function delete($khoa, $id)
     {
+        Faculty::find($id);
         Faculty::destroy($id);
-        return back();
+        // chuyển hướng về trang faculty list
+        return redirect()->route('admin.faculty.show', [$khoa['slug']]);
     }
 }

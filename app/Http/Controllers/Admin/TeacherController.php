@@ -22,12 +22,15 @@ class TeacherController extends Controller
             'khoa' =>$khoa
         ]);
     }
-    public function create()
+    public function create($khoa)
     {
-        $data['facultylist'] = Faculty::all();
-        return view('server.pages.teacher.add_teacher', $data);
+        $facultylist = Faculty::all();
+        return view('server.pages.teacher.create', [
+            'facultylist' =>  $facultylist,
+            'khoa' => $khoa,
+        ]);
     }
-    public function store(AddTeacherRequest $request)
+    public function store(AddTeacherRequest $request, $khoa)
     {
         // $filename = $request->img->getClientOriginalName();
         $teacher = new TeacherRepresentative();
@@ -38,17 +41,21 @@ class TeacherController extends Controller
         $teacher->created_by = $request->created_by;
         $teacher->updated_by = $request->updated_by;
         $teacher->status = $request->status;
-        $teacher->image = upload_file($request->img, 'dist/upload/image/teacher');
+        $teacher->image = upload_file($request->img, 'dist/upload/image/3/teacher');
         $teacher->save();
-        return back();
+        return redirect()->route('admin.teacher.show', [$khoa['slug']]);
     }
-    public function edit($id)
+    public function edit(Request $request, $khoa, $id)
     {
-        $data['teacher'] = TeacherRepresentative::find($id);
-        $data['list_faculty'] = Faculty::all();
-        return view('server.pages.teacher.edit_teacher', $data);
+        $teacher = TeacherRepresentative::find($id);
+        $list_faculty = Faculty::all();
+        return view('server.pages.teacher.edit', [
+            'teacher' => $teacher,
+            'list_faculty' => $list_faculty,
+            'khoa' => $khoa,
+        ]);
     }
-    public function update(EditTeacherRequest $request, $id)
+    public function update(EditTeacherRequest $request, $khoa, $id)
     {
         $teacher = new TeacherRepresentative();
         $arr['name'] = $request->name;
@@ -59,19 +66,17 @@ class TeacherController extends Controller
         $arr['updated_by'] = $request->updated_by;
         $arr['intro'] = $request->intro;
         if ($request->hasFile('img')) {
-            $arr['image'] = upload_file($request->img, 'dist/upload/image/teacher');
+            $arr['image'] = upload_file($request->img, 'dist/upload/image/3/teacher');
         }
         $teacher::where('id', $id)->update($arr);
         // return redirect()->back()->with(["toastrInfo" => ["type" => "success", "messenger" => "Lưu thành công"]]);
-        return redirect('admin/teacher');
+        return redirect()->route('admin.teacher.show', [$khoa['slug']]);
     }
-    public function delete($id)
+    public function delete($khoa, $id)
     {
+        TeacherRepresentative::find($id);
         TeacherRepresentative::destroy($id);
-        // return redirect()->back()->with(["toastrInfo" => ["type" => "success", "messenger" => "Xóa thành công"]]);
-        return back();
-    }
-    public function Appear($id)
-    {
+        // chuyển hướng về trang faculty list
+        return redirect()->route('admin.teacher.show', [$khoa['slug']]);
     }
 }

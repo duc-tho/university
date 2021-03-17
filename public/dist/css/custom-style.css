@@ -169,3 +169,26 @@ fieldset[disabled] .btn-danger.active {
 .btn-1{
 	margin-left: 8px;
 }
+.optionGroup {
+    font-weight: bold;
+    /* font-style: italic; */
+    color: black;
+}
+.optionGroup2 {
+    font-weight: bold;
+    font-style: italic;
+    color: black;
+}
+.optionGroup3 {
+    /* font-weight: bold; */
+    font-style: italic;
+    color: black;
+}
+.optionGroup4 {
+    /* font-weight: bold; */
+    font-style: italic;
+    color: black;
+}
+/* .optionChild {
+    padding-left: 15px;
+} */

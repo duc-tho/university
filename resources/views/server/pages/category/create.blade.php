@@ -14,7 +14,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-save"></i> Thêm</button>
-                                    <a href="{{route('admin.category.create', [$khoa->slug])}}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
+                                    <a href="{{route('admin.category.show', [$khoa->slug])}}"  onclick="return confirm('Bạn có chắc chắn muốn hủy !')" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group">
@@ -28,38 +28,101 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Thuộc Danh Mục Con: </label>
-                                        <select required name="faculty_id" class="form-control">
+                                        <select required name="parent_id" class="form-control">
                                             <option value="">Chọn Danh Mục</option>
+                                            <option value="0" class="optionGroup" >Không Thuộc Danh Mục Nào</option>
+                                            @isset($category_list)
                                             @foreach ($category_list as $item)
-                                            @if ($item->parent_id == 0 )
-                                                <option value="{{$item->id}}" style="color: red; font-weight: bold">{{$item->title}}
+                                            @if ($item->parent_id==0)
+                                            <option value="{{$item->id}}" class="optionGroup"> {{ $item->title }}
                                                     @foreach($category_list as $item2)
-                                                        @if($item->id == $item2->parent_id)
-                                                            <option value="{{$item->id}}">{{$item2->title}}</option>
+                                                        @if($item->id === $item2->parent_id)
+                                                            <option value="{{$item2->id}}" class="optionGroup2" >&nbsp;&nbsp;&nbsp;{{$item2->title}}
+                                                                @foreach($category_list as $item3)
+                                                                    @if($item2->id === $item3->parent_id)
+                                                                    <option value="{{$item3->id}}" class="optionGroup3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$item3->title}}
+                                                                        @foreach($category_list as $item4)
+                                                                            @if($item3->id === $item4->parent_id)
+                                                                            <option value="{{$item4->id}}" class="optionGroup4" disabled >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{$item4->title}} </option>
+                                                                            @endif
+                                                                        @endforeach
+                                                                    </option>
+                                                                    @endif
+                                                                @endforeach
+                                                            </option>
                                                         @endif
                                                     @endforeach
-                                                </option>
+                                            </option>
                                             @endif
                                             @endforeach
+                                            @endisset
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label>Meta Từ Khóa : </label>
-                                        <input required type="text" id="keywords" name="keywords"  value="{{old('keywords')}}"  class="form-control" placeholder="Nhập Meta Keywords...">
+                                        <label>Tên Danh Mục : </label>
+                                        <input required type="text" id="title" name="title"  value="{{old('title')}}"  class="form-control" placeholder="Nhập tên danh mục...">
                                     </div>
                                     <div class="form-group">
-                                        <label>Meta Mô tả : </label>
-                                        <input required type="text" id="descriptions" name="descriptions"  value="{{old('descriptions')}}"  class="form-control" placeholder="Nhập Meta Descriptions...">
+                                        <label>Slug Danh Mục : </label>
+                                        <input required type="text" id="slug" name="slug"  value="{{old('slug')}}"  class="form-control" >
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Meta description : </label>
+                                        <input required type="text" id="meta_descriptions" name="meta_descriptions"  value="{{old('meta_descriptions')}}"  class="form-control" placeholder="Nhập Meta description...">
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Tên Layout : </label>
-                                        <input required type="text" id="layoutname" name="layout_name" value="{{old('layout_name')}}"  class="form-control" placeholder="Nhập tên layout...">
+                                        <label>Meta keywords : </label>
+                                        <input required type="text" id="meta_keywords" name="meta_keywords"  value="{{old('meta_keywords')}}"  class="form-control" placeholder="Nhập Meta keywords...">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label>Hiển thị tại trang chủ : </label>
+                                        <select required name="show_at_home" class="form-control">
+                                            <option value="0">Không Hiển Thị</option>
+                                            <option value="1">Hiện Thị</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Hiển thị tại trang tin tức: </label>
+                                        <select required name="show_at_news" class="form-control">
+                                            <option value="0">Không Hiển Thị</option>
+                                            <option value="1">Hiện Thị</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Hiển thị tại trang thông báo : </label>
+                                        <select required name="show_at_notification" class="form-control">
+                                            <option value="0">Không Hiển Thị</option>
+                                            <option value="1">Hiện Thị</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Display order : </label>
+                                        <select required name="display_order" class="form-control">
+                                            <option value="1">Hiện Thị</option>
+                                            <option value="0">Không Hiển Thị</option>
+                                        </select>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Trang Layout : </label>
-                                        <input required type="text" id="layoutpage" name="layout_page" value="{{old('layout_page')}}"  class="form-control" placeholder="Nhập trang layout...">
+                                        <label>Người Tạo : </label>
+                                        <input required type="text" id="created_by" name="created_by"
+                                            value="{{ old('created_by') }}" class="form-control"
+                                            placeholder="Nhập người tạo...">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Người Đăng : </label>
+                                        <input required type="text" id="updated_by" name="updated_by"
+                                            value="{{ old('updated_by') }}" class="form-control"
+                                            placeholder="Nhập người đăng...">
                                     </div>
 
                                     <div class="form-group">
@@ -68,53 +131,6 @@
                                             <option value="1">Bật</option>
                                             <option value="0">Tắt</option>
                                         </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Người Tạo : </label>
-                                        <input required type="text" id="created_by" name="created_by" value="{{old('created_by')}}" class="form-control" placeholder="Nhập trang layout...">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Người Đăng : </label>
-                                        <input required type="text" id="updated_by" name="updated_by"  value="{{old('updated_by')}}" class="form-control" placeholder="Nhập trang layout...">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label>Tóm Lược Giới Thiệu: </label>
-                                        <textarea required class="ckeditor" required name="summary" id="summary" >{{ old('summary') }}</textarea>
-                                        <script type="text/javascript">
-                                            var editor = CKEDITOR.replace('summary', {
-                                                    language: 'vi',
-                                                    filebrowserImageBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Images',
-                                                    filebrowserFlashBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Flash',
-                                                    filebrowserImageUploadUrl: '../../plugins/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                                                    filebrowserFlashUploadUrl: '../../plugins/editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-                                                });
-                                        </script>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Nội dung Giới Thiệu: </label>
-                                        <textarea required class="ckeditor" required name="introdution" id="introdution" >{{ old('introdution') }}</textarea>
-                                        <script type="text/javascript">
-                                            var editor = CKEDITOR.replace('introdution', {
-                                                    language: 'vi',
-                                                    filebrowserImageBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Images',
-                                                    filebrowserFlashBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Flash',
-                                                    filebrowserImageUploadUrl: '../../plugins/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                                                    filebrowserFlashUploadUrl: '../../plugins/editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-                                                });
-                                        </script>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Ảnh Khoa :</label>
-                                        <input required id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)" ">
-                                        <img id="image" class="thumbnail" width="200px" src="{{asset('/dist/img/imgdefault.png') }}">
                                     </div>
 
                                 </div>
@@ -130,6 +146,7 @@
 </div>
 <!--/.row-->
 </div>
+
 <script>
     CKEDITOR.editorConfig = function (config) {
         config.enterMode = CKEDITOR.ENTER_BR;
@@ -138,7 +155,7 @@
     };
 </script>
 <script>
-    $('input#name').keyup(function(event) {
+    $('input#title').keyup(function(event) {
             /* Act on the event */
             var title, slug;
             //Lấy text từ thẻ input title
