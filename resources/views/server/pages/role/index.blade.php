@@ -18,9 +18,9 @@
                             <div class="input-group input-group-sm">
                                 <form action="{{ route('admin.role.show', [$khoa['slug']]) }}" method="get">
                                     <select class="form-control custon-select" style="width:auto !important" data-toggle="tooltip" name="item-per-page" onchange="this.parentElement.submit();">
-                                        <option value="6" {{ $roles->perPage() == 6 ? 'selected disabled' : ''  }}>Hiện 6 mục</option>
-                                        <option value="9" {{ $roles->perPage() == 9 ? 'selected disabled' : ''  }}>Hiện 9 mục</option>
-                                        <option value="12" {{ $roles->perPage() == 12 ? 'selected disabled' : ''  }}>Hiện 12 mục</option>
+                                        <option value="6" {{ $roles->perPage() == 8 ? 'selected disabled' : ''  }}>Hiện 8 mục</option>
+                                        <option value="9" {{ $roles->perPage() == 12 ? 'selected disabled' : ''  }}>Hiện 12 mục</option>
+                                        <option value="12" {{ $roles->perPage() == 16 ? 'selected disabled' : ''  }}>Hiện 16 mục</option>
                                     </select>
                                 </form>
                             </div>

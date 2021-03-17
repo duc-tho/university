@@ -4,7 +4,7 @@
 @section('page-content')
 <div class="row">
     <div class="col-md-12 px-3">
-        <x-admin.form.form method="POST" :cancelLink="route('admin.role.show', [$khoa['slug']])" :submitLink="route('admin.role.store', [$khoa['slug']])">
+        <x-admin.form.form method="POST" :cancelLink="route('admin.role.show', [$khoa['slug']])" :submitLink="route('admin.role.update', [$khoa['slug'], $role['id']])" :deleteLink="route('admin.role.delete', [$khoa['slug'], $role['id']])">
             <x-admin.form.input :data="$role" :col="4" :type="'text'" :label="'Tên vai trò'" :required="true" :placeholder="'Tên vai trò'" :fieldName="'name'" />
             <x-admin.form.input :data="$role" :col="4" :type="'text'" :label="'Tên hiển thị'" :required="true" :placeholder="'Tên hiển thị của vai trò này'" :fieldName="'display_name'" />
             <hr class="w-100 mx-3">

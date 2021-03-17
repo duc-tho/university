@@ -34,7 +34,7 @@
                             <div class="form-check col-md-12 px-1 pb-1">
                                 {{-- <label class="w-100" for="">Xem</label> --}}
                                 <div class="custom-control custom-switch form-control">
-                                    <input type="checkbox" id="{{ $permission['id'].$permissionChildren['id'] }}" value="{{ $permissionChildren['id'] }}" class="custom-control-input" name="permission[]">
+                                    <input type="checkbox" id="{{ $permission['id'].$permissionChildren['id'] }}" value="{{ $permissionChildren['id'] }}" class="custom-control-input" name="permission[]" {{ in_array($permissionChildren['id'], old('permission') ?? []) ? "checked" : '' }}>
                                     <label class="custom-control-label ml-3" for="{{ $permission['id'].$permissionChildren['id'] }}" style="cursor: pointer;">
                                         <div title="{{ $permissionChildren['display_name'] }}" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 175px;">{{ $permissionChildren['display_name'] }}</div>
                                     </label>

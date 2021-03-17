@@ -11,7 +11,7 @@ class RoleController extends Controller
 {
     public function show(Request $request, $khoa)
     {
-        $item_per_page = 6;
+        $item_per_page = 16;
         if ($request->has('item-per-page')) $item_per_page = $request->query('item-per-page');
 
         $roles = Roles::paginate($item_per_page);
@@ -64,13 +64,44 @@ class RoleController extends Controller
         ]);
     }
 
-    public function update(Request $request, $khoa)
+    public function update(Request $request, $khoa, $id)
     {
-        //
+        // Tìm role
+        $role = Roles::find($id);
+
+        // dừng nếu role không tồn tại
+        abort_if(!$role, 404);
+
+        if ($request->has('permission')) {
+            // Gỡ toàn bộ role của role ra
+            $role->permissions()->detach();
+
+            // Gắn lại roles cho role
+            $role->permissions()->attach($request['permission']);
+        }
+
+        // Cập nhật lại thông tin role
+        $role->update($request->input());
+
+        // chuyển hướng về trang role list
+        return redirect()->route('admin.role.edit', [$khoa['slug'], $id]);
     }
 
-    public function delete(Request $request, $khoa)
+    public function delete(Request $request, $khoa, $id)
     {
-        //
+        // Tìm role
+        $role = Roles::find($id);
+
+        // dừng nếu role không tồn tại
+        abort_if(!$role, 404);
+
+        // Gỡ toàn bộ role của role ra
+        $role->permissions()->detach();
+
+        // xóa role
+        Roles::destroy($id);
+
+        // chuyển hướng về trang role list
+        return redirect()->route('admin.role.show', [$khoa['slug']]);
     }
 }
