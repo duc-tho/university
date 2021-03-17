@@ -57,11 +57,21 @@
     $(document).ready(function() {
         $("#form").validate({
             rules: {
-                //
+                'name': {
+                    required: true
+                },
+                'display_name': {
+                    required: true
+                },
             },
             //
             messages: {
-            //
+                'name': {
+                    required: 'Chưa nhập tên vai trò nè!'
+                },
+                'display_name': {
+                    required: 'Chưa nhập tên hiển thị của vai trò nè!'
+                },
             }
         });
     });

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Role\CreateRole;
+use App\Http\Requests\Admin\Role\UpdateRole;
 use App\Models\Permission;
 use App\Models\Roles;
 use Illuminate\Http\Request;
@@ -32,7 +34,7 @@ class RoleController extends Controller
         ]);
     }
 
-    public function store(Request $request, $khoa)
+    public function store(CreateRole $request, $khoa)
     {
         $roles = new Roles($request->input());
 
@@ -64,7 +66,7 @@ class RoleController extends Controller
         ]);
     }
 
-    public function update(Request $request, $khoa, $id)
+    public function update(UpdateRole $request, $khoa, $id)
     {
         // Tìm role
         $role = Roles::find($id);
