@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AuthenticateController;
 use App\Http\Controllers\Admin\FacultyController;
 use App\Http\Controllers\Admin\TeacherController as AdminTeacherController;
 use App\Http\Controllers\Admin\HomeController as DashboardController;
+use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\Student_reController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -56,7 +57,9 @@ Route::name('admin.')->prefix('admin/{khoa}')->middleware(['CheckLogedIn', 'Requ
 
     Route::name('faculty.')->prefix('faculty')->group(function () {
         //
-        Route::get('/', [FacultyController::class, 'show'])->name('show');
+        Route::get('/', [FacultyController::class, 'show'])
+            ->middleware('can:faculty_list')
+            ->name('show');
         //
         Route::get('add',  [FacultyController::class, 'create'])->name('create');
         Route::post('add',  [FacultyController::class, 'store'])->name('store');
@@ -123,6 +126,20 @@ Route::name('admin.')->prefix('admin/{khoa}')->middleware(['CheckLogedIn', 'Requ
         Route::post('/edit/{id}', [UserController::class, 'update'])->name('update')->where(['id' => '[0-9]+']);
         //
         Route::get('/delete/{id}', [UserController::class, 'delete'])->name('delete')->where(['id' => '[0-9]+']);
+        //
+    });
+
+    Route::name('role.')->prefix('role')->group(function () {
+        //
+        Route::get('/', [RoleController::class, 'show'])->name('show');
+        //
+        Route::get('add',  [RoleController::class, 'create'])->name('create');
+        Route::post('add',  [RoleController::class, 'store'])->name('store');
+        //
+        Route::get('/edit/{id}',  [RoleController::class, 'edit'])->name('edit')->where(['id' => '[0-9]+']);
+        Route::post('/edit/{id}', [RoleController::class, 'update'])->name('update')->where(['id' => '[0-9]+']);
+        //
+        Route::get('/delete/{id}', [RoleController::class, 'delete'])->name('delete')->where(['id' => '[0-9]+']);
         //
     });
 });

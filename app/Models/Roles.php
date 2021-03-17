@@ -15,7 +15,7 @@ class Roles extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -24,6 +24,9 @@ class Roles extends Model
      * @var array
      */
     protected $fillable = ['name', 'display_name'];
+
+    // created, updated
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -39,5 +42,10 @@ class Roles extends Model
     public function roleUsers()
     {
         return $this->hasMany('App\Models\RoleUser');
+    }
+
+    public function permissions()
+    {
+        return $this->belongsToMany(Permission::class, 'permission_role', 'role_id', 'permission_id');
     }
 }

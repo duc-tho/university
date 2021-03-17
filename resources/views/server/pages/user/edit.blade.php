@@ -4,7 +4,7 @@
 @section('page-content')
 <!--/.row-->
 <div class="row">
-    <div class="col-sm-12 ">
+    <div class="col-sm-12 px-3">
 
         <x-admin.form.form method="POST" :cancelLink="route('admin.user.show', [$khoa['slug']])" :submitLink="route('admin.user.update', [$khoa['slug'], $user['id']])">
             <div class="row">

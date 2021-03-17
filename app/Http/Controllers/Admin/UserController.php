@@ -109,7 +109,12 @@ class UserController extends Controller
         if ($request->file('avatar') != null) $request->merge(['avatar' => upload_file($request->file('avatar'), 'dist/upload/image/3/users')]);
 
         // Kiểm tra email đã tồn tại trong db hay chưa ngoại trừ user hiện tại!
-        $request->validate(['email' => 'required|email|unique:users,email,' . $user->id]);
+        $request->validate([
+            'email' => 'required|unique:users,email,' . $user->id
+        ], [
+            'email.unique' => 'Email đã tồn tại, vui lòng nhập một Email khác...',
+            'email.required' => 'Chưa nhập email nè!',
+        ]);
 
         if ($request->has('role')) {
             // Gỡ toàn bộ role của user ra

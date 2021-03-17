@@ -14,14 +14,14 @@ class Permission extends Model
 {
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'permission';
 
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -37,5 +37,10 @@ class Permission extends Model
     public function permissionRoles()
     {
         return $this->hasMany('App\Models\PermissionRole');
+    }
+
+    public function childrens()
+    {
+        return $this->hasMany(Permission::class, 'parent_id');
     }
 }

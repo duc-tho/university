@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -53,5 +54,19 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany(Roles::class, 'role_user', 'user_id', 'role_id');
+    }
+
+    public function checkPermissionAccess($permission)
+    {
+        // Lấy các vai trò của user đang đang nhập
+        $roles = Auth::user()->roles;
+
+        foreach ($roles as $role) {
+            $permissions = $role->permissions;
+
+            if ($permissions->contains('name', $permission)) return true;
+        }
+
+        return false;
     }
 }
