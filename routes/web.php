@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AuthenticateController;
 use App\Http\Controllers\Admin\FacultyController;
 use App\Http\Controllers\Admin\TeacherController as AdminTeacherController;
 use App\Http\Controllers\Admin\HomeController as DashboardController;
+use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\Student_reController;
@@ -120,6 +121,13 @@ Route::name('admin.')->prefix('admin/{khoa}')->middleware(['CheckLogedIn', 'Requ
         Route::post('/edit/{id}', [RoleController::class, 'update'])->name('update')->where(['id' => '[0-9]+']);
         //
         Route::get('/delete/{id}', [RoleController::class, 'delete'])->name('delete')->where(['id' => '[0-9]+']);
+        //
+    });
+
+    Route::name('permission.')->prefix('permission')->group(function () {
+        //
+        Route::get('add',  [PermissionController::class, 'create'])->name('create');
+        Route::post('add',  [PermissionController::class, 'store'])->name('store');
         //
     });
 });
