@@ -7,6 +7,14 @@
         <x-admin.form.form method="POST" :cancelLink="route('admin.role.show', [$khoa['slug']])" :submitLink="route('admin.role.update', [$khoa['slug'], $role['id']])" :deleteLink="route('admin.role.delete', [$khoa['slug'], $role['id']])">
             <x-admin.form.input :data="$role" :col="4" :type="'text'" :label="'Tên vai trò'" :required="true" :placeholder="'Tên vai trò'" :fieldName="'name'" />
             <x-admin.form.input :data="$role" :col="4" :type="'text'" :label="'Tên hiển thị'" :required="true" :placeholder="'Tên hiển thị của vai trò này'" :fieldName="'display_name'" />
+
+            <x-admin.form.select :required="false" :col="4" :fieldName="'level'" :label="'Vai trò này thuộc'">
+                <option value=""></option>
+                @foreach ($roles_list as $role_item)
+                <option value="{{ $role_item['level'] }}">{{ $role_item['display_name'] }}</option>
+                @endforeach
+            </x-admin.form.select>
+
             <hr class="w-100 mx-3">
             <div class="col-12 px-3 pb-3">
                 <h4 class="mb-2">Các quyền của vai trò này</h4>

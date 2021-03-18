@@ -31,6 +31,8 @@ class UserController extends Controller
         $auth_users_role_level = Auth::user()->roles->max('level');
 
         foreach ($users as $key => $user) {
+            if ($user->roles->max('level') == null) continue;
+
             if ($user->roles->max('level') < $auth_users_role_level) $users->forget($key);
             else {
                 $user['faculty'] = $user->faculty;
@@ -106,7 +108,7 @@ class UserController extends Controller
 
         // Luu y: chuyen vao policy khu lam toi chuc nang nay
         // dừng lại nếu user muốn chỉnh sửa có quyền cao hơn hoặc bằng mình trừ chính mình
-        abort_if(Auth::user()->roles->max('level') >= $user->roles->max('level') && Auth::user()['id'] != $user['id'], 403);
+        if ($user->roles->max('level') != null) abort_if(Auth::user()->roles->max('level') >= $user->roles->max('level') && Auth::user()['id'] != $user['id'], 403);
 
         // lấy danh sách role của user
         $user['roles_list'] = $user->roles->pluck('id')->toArray();
@@ -142,7 +144,7 @@ class UserController extends Controller
 
         // Luu y: chuyen vao policy khu lam toi chuc nang nay
         // dừng lại nếu user muốn chỉnh sửa có quyền cao hơn hoặc bằng mình trừ chính mình
-        abort_if(Auth::user()->roles->max('level') >= $user->roles->max('level') && Auth::user()['id'] != $user['id'], 403);
+        if ($user->roles->max('level') != null) abort_if(Auth::user()->roles->max('level') >= $user->roles->max('level') && Auth::user()['id'] != $user['id'], 403);
 
         // Mã hóa password
         if ($request->filled('password')) $request->merge(['password' => bcrypt($request['password'])]);
@@ -195,7 +197,7 @@ class UserController extends Controller
 
         // Luu y: chuyen vao policy khu lam toi chuc nang nay
         // dừng lại nếu user muốn xóa có quyền cao hơn hoặc bằng mình trừ chính mình
-        abort_if(Auth::user()->roles->max('level') >= $user->roles->max('level') && Auth::user()['id'] != $user['id'], 403);
+        if ($user->roles->max('level') != null) abort_if(Auth::user()->roles->max('level') >= $user->roles->max('level') && Auth::user()['id'] != $user['id'], 403);
 
         // Gỡ toàn bộ role của user ra
         $user->roles()->detach();

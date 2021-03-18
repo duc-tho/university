@@ -34,19 +34,24 @@ class RoleController extends Controller
     {
         $permissions = Permission::where(['parent_id' => 0])->get();
 
+        $roles = Roles::where([['level', '>', 0]])->get();
+
         return view('server.pages.role.create', [
             'permissions' => $permissions,
-            'khoa' => $khoa
+            'khoa' => $khoa,
+            'roles' => $roles
         ]);
     }
 
     public function store(CreateRole $request, $khoa)
     {
-        $roles = new Roles($request->input());
+        $role = new Roles($request->input());
 
-        $roles->save();
+        $role['level'] = $role['level'] + 1;
 
-        $roles->permissions()->attach($request->input('permission'));
+        $role->save();
+
+        $role->permissions()->attach($request->input('permission'));
 
         return redirect()->route('admin.role.show', [$khoa['slug']]);
     }
@@ -59,15 +64,19 @@ class RoleController extends Controller
         // Ngưng nếu ko tìm thấy role
         abort_if(!$role, 404);
 
-        // lấy danh sách role của role
+        // lấy danh sách quyền của role
         $role['permission_list'] = $role->permissions->pluck('id')->toArray();
 
-        // Lấy tất cả role
+        // Lấy tất cả quyền
         $permissions = Permission::where(['parent_id' => 0])->get();
+
+        // lấy tất cả role
+        $roles = Roles::where([['level', '>', 0], ['id', '!=', $role['id']]])->get();
 
         return view('server.pages.role.edit', [
             'khoa' => $khoa,
             'role' => $role->toArray(),
+            'roles_list' => $roles,
             'permissions' => $permissions
         ]);
     }
@@ -99,6 +108,9 @@ class RoleController extends Controller
             // Gắn lại roles cho role
             $role->permissions()->attach($request['permission']);
         }
+
+        if ($request->filled('level')) $request->merge(['level' => $request['level'] + 1]);
+        else $request->offsetUnset('level');
 
         // Cập nhật lại thông tin role
         $role->update($request->input());
