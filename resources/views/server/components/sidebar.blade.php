@@ -53,14 +53,14 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        {{-- @can('faculty_create', Faculty::class) --}}
+                        @can('faculty_list', FacultyPolicy::class)
                         <li class="nav-item">
                             <a href="{{ route('admin.faculty.show', [$khoa['slug']]) }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Khoa</p>
                             </a>
                         </li>
-                        {{-- @endcan --}}
+                        @endcan
                         <li class="nav-item">
                             <a href="{{ route('admin.teacher.show', [$khoa['slug']]) }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>

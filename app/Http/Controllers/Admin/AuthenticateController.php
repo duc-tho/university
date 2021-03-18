@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Faculty;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,6 +11,12 @@ class AuthenticateController extends Controller
 {
     public function login()
     {
+        if (Auth::check()) {
+            $user_faculty = Faculty::find(Auth::user()['faculty_id']);
+
+            return redirect()->route('admin.index', [$user_faculty['slug']]);
+        };
+
         return view('server.login');
     }
 
@@ -25,7 +32,10 @@ class AuthenticateController extends Controller
 
         if (Auth::attempt($arr, $remember)) {
             $request->session()->flash('status', 'đăng nhập Admin thành công !'); // tạo thông báo khi đăng nhập thành công
-            return redirect()->route('admin.index', ['trang-chu']);
+
+            $user_faculty = Faculty::find(Auth::user()['faculty_id']);
+
+            return redirect()->route('admin.index', [$user_faculty['slug']]);
         } else {
             return redirect()->route('login')->withInput()->with('error', 'Email hoặc mật khẩu không đúng');
         }

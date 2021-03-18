@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use App\Models\Faculty;
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RequireFaculty
 {
@@ -21,6 +22,10 @@ class RequireFaculty
         $khoa = Faculty::where(['slug' => $khoa_param])->first();
 
         abort_if(!$khoa, 404);
+
+        $auth_user = Auth::user();
+
+        if (!$auth_user['isAdmin']) abort_if($auth_user['faculty_id'] != $khoa['id'], 403);
 
         $request->route()->setParameter('khoa', $khoa);
 

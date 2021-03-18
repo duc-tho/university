@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Policies\Admin\FacultyPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -26,14 +27,10 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         // faculty
-        Gate::define('faculty_list', function ($user) {
-            return $user->checkPermissionAccess(config('permission.access.faculty_list'));
-        });
-
-
-        Gate::define('faculty_create', '');
-        Gate::define('faculty_edit', '');
-        Gate::define('faculty_delete', '');
+        Gate::define('faculty_list', [FacultyPolicy::class, 'view']);
+        Gate::define('faculty_create', [FacultyPolicy::class, 'create']);
+        Gate::define('faculty_edit', [FacultyPolicy::class, 'edit']);
+        Gate::define('faculty_delete', [FacultyPolicy::class, 'delete']);
 
         // slide
         Gate::define('slide_list', '');

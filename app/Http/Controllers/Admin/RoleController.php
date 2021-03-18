@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\Role\CreateRole;
 use App\Http\Requests\Admin\Role\UpdateRole;
 use App\Models\Permission;
 use App\Models\Roles;
+use App\Models\RoleUser;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -86,7 +87,7 @@ class RoleController extends Controller
             'display_name.required' => 'Chưa nhập tên hiển thị của vai trò nè!',
         ]);;
 
-        if ($request->has('permission')) {
+        if ($request->filled('permission')) {
             // Gỡ toàn bộ role của role ra
             $role->permissions()->detach();
 
@@ -111,6 +112,13 @@ class RoleController extends Controller
 
         // Gỡ toàn bộ role của role ra
         $role->permissions()->detach();
+
+        // xóa vai trò ở các user đang giữ vai trò này
+        $role_users = RoleUser::where('role_id', $role['id'])->get();
+
+        foreach ($role_users as $role_user) {
+            RoleUser::destroy($role_user['id']);
+        }
 
         // xóa role
         Roles::destroy($id);

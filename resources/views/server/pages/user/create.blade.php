@@ -34,6 +34,9 @@
                     <option value="{{$role['id']}}" {{ in_array($role['id'], old('role') ?? []) ? "selected" : '' }}>{{$role['display_name']}}</option>
                     @endforeach
                 </x-admin.form.multi-select>
+                @if (Auth::user()['isAdmin'] && Auth::user()['id'] != $user['id'])
+                <x-admin.form.checkbox :col="3" :label="'Quản trị viên'" :required="false" :fieldName="'isAdmin'" :labelContent="'Administrator'" />
+                @endif
             </div>
         </x-admin.form.form>
     </div>

@@ -9,6 +9,7 @@ use App\Http\Requests\AddUserRequest;
 use App\Http\Requests\EditUserRequest;
 use App\Models\Roles;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\DocBlock\Tags\Uses;
 
 class UserController extends Controller
@@ -18,7 +19,13 @@ class UserController extends Controller
         $item_per_page = 6;
         if ($request->has('item-per-page')) $item_per_page = $request->query('item-per-page');
 
-        $users = User::paginate($item_per_page);
+        $query_condition = [
+            'isSystemAccount' => 0
+        ];
+
+        if (!Auth::user()['isAdmin']) $query_condition['faculty_id'] = $khoa['id'];
+
+        $users = User::where($query_condition)->paginate($item_per_page);
 
         foreach ($users as $user) {
             $user['faculty'] = $user->faculty;
@@ -53,6 +60,10 @@ class UserController extends Controller
 
         // chuyển status sang dạng 1, 0
         $request['status'] == "on" ? $user['status'] = 1 : $user['status'] = 0;
+
+
+        // chuyển isAdmin sang dạng 1, 0
+        $request['isAdmin'] == "on" ? $user['isAdmin'] = 1 : $user['isAdmin'] = 0;
 
         // upload ảnh đại diện
         if ($request->file('avatar') != null) $user['avatar'] = upload_file($request->file('avatar'), 'dist/upload/image/3/users');
@@ -101,10 +112,13 @@ class UserController extends Controller
         abort_if(!$user, 404);
 
         // Mã hóa password
-        if ($request->has('password')) $request->merge(['password' => bcrypt($request->password)]);
+        if ($request->filled('password')) $request->merge(['password' => bcrypt($request->password)]);
 
         // chuyển status sang dạng 1, 0
-        if ($request->has('status')) $request->merge(['status' => $request['status'] == "on" ? 1 : 0]);
+        if ($request->filled('status')) $request->merge(['status' => $request['status'] == "on" ? 1 : 0]);
+
+        // chuyển isAdmin sang dạng 1, 0
+        if ($request->filled('isAdmin')) $request->merge(['isAdmin' => $request['isAdmin'] == "on" ? 1 : 0]);
 
         // upload ảnh đại diện
         if ($request->file('avatar') != null) $request->merge(['avatar' => upload_file($request->file('avatar'), 'dist/upload/image/3/users')]);
@@ -117,7 +131,7 @@ class UserController extends Controller
             'email.required' => 'Chưa nhập email nè!',
         ]);
 
-        if ($request->has('role')) {
+        if ($request->filled('role')) {
             // Gỡ toàn bộ role của user ra
             $user->roles()->detach();
 
