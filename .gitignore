@@ -21,7 +21,7 @@ yarn-error.log
 # /public/dist/layout
 
 # ignore upload files
-/public/uploads
+/public/dist/upload/*
 /public/dist/admin/cssLoginAdmin
 /public/dist/layout/layout_home/video
 /public/dist/layout/layout_nghethuat

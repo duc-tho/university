@@ -9,6 +9,7 @@ use App\Models\Permission;
 use App\Models\Roles;
 use App\Models\RoleUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RoleController extends Controller
 {
@@ -17,7 +18,11 @@ class RoleController extends Controller
         $item_per_page = 16;
         if ($request->has('item-per-page')) $item_per_page = $request->query('item-per-page');
 
-        $roles = Roles::paginate($item_per_page);
+        $roles_query_conditions = [];
+
+        if (!Auth::user()->roles->contains('level', 0)) $roles_query_conditions = [['level', '>', 0]];
+
+        $roles = Roles::where($roles_query_conditions)->paginate($item_per_page);
 
         return view('server.pages.role.index', [
             'khoa' => $khoa,

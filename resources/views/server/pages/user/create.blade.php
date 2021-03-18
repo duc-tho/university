@@ -12,10 +12,14 @@
                 </x-admin.form.alert>
 
                 <x-admin.form.select :required="true" :col="6" :fieldName="'faculty_id'" :label="'Khoa'">
+                    @if (Auth::user()['isAdmin'])
                     <option value="" aria-readonly="true">Chọn Khoa</option>
                     @foreach ($faculty_list as $faculty)
                     <option value="{{$faculty->id}}" {{ old('faculty_id') == $faculty->id ? "selected" : '' }}>{{$faculty->name}}</option>
                     @endforeach
+                    @else
+                    <option value="{{$khoa['id']}}" selected>{{$khoa['name']}}</option>
+                    @endif
                 </x-admin.form.select>
 
                 <x-admin.form.checkbox :col="3" :label="'Trạng thái'" :required="false" :fieldName="'status'" :labelContent="'Đang hoạt động'" />
@@ -34,7 +38,7 @@
                     <option value="{{$role['id']}}" {{ in_array($role['id'], old('role') ?? []) ? "selected" : '' }}>{{$role['display_name']}}</option>
                     @endforeach
                 </x-admin.form.multi-select>
-                @if (Auth::user()['isAdmin'] && Auth::user()['id'] != $user['id'])
+                @if (Auth::user()['isAdmin'])
                 <x-admin.form.checkbox :col="3" :label="'Quản trị viên'" :required="false" :fieldName="'isAdmin'" :labelContent="'Administrator'" />
                 @endif
             </div>

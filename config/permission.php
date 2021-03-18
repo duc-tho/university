@@ -76,5 +76,14 @@ return [
                 'delete' => 'menu_delete',
             ]
         ],
+        'news' => [
+            'display_name' => 'Tin tức',
+            'access' => [
+                'list' => 'news_list',
+                'create' => 'news_create',
+                'edit' => 'news_edit',
+                'delete' => 'news_delete',
+            ]
+        ],
     ],
 ];

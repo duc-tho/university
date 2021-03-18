@@ -123,9 +123,9 @@
         }
     }
 
-    $(document).ready(function () {
-        $('#image').click(function () {
-            $('#img').click();
-        });
-    });
+    // $(document).ready(function () {
+    //     $('#image').click(function () {
+    //         $('#img').click();
+    //     });
+    // });
 </script>
