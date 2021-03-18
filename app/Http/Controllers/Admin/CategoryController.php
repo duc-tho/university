@@ -1,73 +1,93 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\Models\Faculty;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\Faculty;
-use App\Http\Requests\AddCategoryRequest;
-use App\Http\Requests\EditCategoryRequest;
+use Illuminate\Support\Str;
+
 use Illuminate\Http\Request;
-use Prophecy\Call\Call;
 
 class CategoryController extends Controller
 {
-    //
-    public function getCategory()
+    public function show(Request $request, $khoa)
     {
-        # code...
-    
-        // return view('server.pages.slide.index');
-        $data['categoryList'] = Category::Where(["status"=>"1"])->orderBy('display_order','desc')->paginate(10);
-        $data['faculityslide']=Faculty::all();
-         return view('server.pages.categories.index',$data);
-    }
+        $facultylist = Faculty::where(["status" => "1"])->orderBy("id", "desc")->paginate(10);
+        $categorylist = Category::where(["status" => "1"])->orderBy("id", "desc")->paginate(500);
 
-    public function getAddCategory(){
-        $data['faculityslide']=Faculty::all();
-        return view('server.pages.categories.add_category',$data);
+        return view('server.pages.category.index',[
+            'khoa' => $khoa,
+            'facultylist' => $facultylist,
+            'categorylist' => $categorylist
+        ]);
     }
-    public function postAddCategory(AddCategoryRequest $request){
-        $category=new Category();
+    public function create(Request $request, $khoa)
+    {
+        $category_list = Category::all();
+        $facultylist = Faculty::all();
+        return view('server.pages.category.create',
+        [
+            'khoa' => $khoa,
+            'category_list' => $category_list,
+            'facultylist' => $facultylist,
+        ]);
+    }
+    public function store(Request $request, $khoa)
+    {
+        $category = new Category();
         $category->faculty_id = $request->faculty_id;
-        $category->name = $request->name;
+        $category->parent_id = $request->parent_id;
+        $category->title = $request->title;
+        $category->slug = str::slug($request->slug);
+        $category->meta_descriptions = $request->meta_descriptions;
+        $category->meta_keywords = $request->meta_keywords;
+        $category->show_at_news = $request->show_at_news;
+        $category->show_at_home = $request->show_at_home;
+        $category->show_at_notification = $request->show_at_notification;
         $category->display_order = $request->display_order;
-        
-        $category->browser_target = $request->browser_target;
-        $category->description = $request->description;
         $category->created_by = $request->created_by;
         $category->updated_by = $request->updated_by;
         $category->status = $request->status;
-        $category->link = upload_file($request->img,'dist/upload/image/category');
         $category->save();
-
-        return back();
+        return redirect()->route('admin.category.show', [$khoa['slug']]);
     }
 
-    public function postEditCategory(EditCategoryRequest $request,$id){
+    public function edit( Request $request, $khoa, $id)
+    {
+        $facultylist = Faculty::all();
+        $category_list = Category::all();
+        $category = Category::find($id);
+        return view('server.pages.category.edit', [
+            'category' => $category,
+            'facultylist' => $facultylist,
+            'category_list' => $category_list,
+            'khoa' => $khoa,
+        ]);
+    }
+    public function update(Request $request, $khoa, $id )
+    {
         $category = new Category();
-        $arr['name']= $request->name;
-        $arr['display_order']=$request->display_order;
-        
-        $arr['browser_target']=$request->browser_target;
-        $arr['description']=$request->description;
-        $arr['created_by']=$request->created_by;
-        $arr['updated_by']=$request->updated_by;
-        $arr['status']=$request->status;
-        if ($request->hasFile('img')) {
-            $arr['link'] = upload_file($request->img,'dist/upload/image/category');
-        }
+        $arr['faculty_id'] = $request->faculty_id;
+        $arr['parent_id'] = $request->parent_id;
+        $arr['title'] = $request->title;
+        $arr['slug'] = str::slug($request->slug);
+        $arr['meta_keywords'] = $request->keywords;
+        $arr['meta_descriptions'] = $request->descriptions;
+        $arr['show_at_news'] = $request->show_at_news;
+        $arr['show_at_home'] = $request->show_at_home;
+        $arr['show_at_notification'] = $request->show_at_notification;
+        $arr['display_order'] = $request->display_order;
+        $arr['created_by'] = $request->created_by;
+        $arr['updated_by'] = $request->updated_by;
+        $arr['status'] = $request->status;
         $category::where('id', $id)->update($arr);
-        return redirect('admin/category');
+        return redirect()->route('admin.category.show', [$khoa['slug']]);
     }
-
-    public function getEditCategory($id){
-        $data['category'] = Category::find($id);
-        $data['list_faculty'] = Faculty::all();
-        return view('server.pages.categories.edit_category', $data);
-    }
-    public function deleteCategory($id){
+    public function delete($khoa, $id)
+    {
+        Category::find($id);
         Category::destroy($id);
-        return back();
+        // chuyển hướng về trang faculty list
+        return redirect()->route('admin.category.show', [$khoa['slug']]);
     }
 }

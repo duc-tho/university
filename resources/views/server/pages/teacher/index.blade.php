@@ -9,7 +9,7 @@
                 <div class="col-12">
                     <div class="card card-primary card-outline">
                         <div class="card-header p-2 d-flex align-items-center justify-content-between">
-                            <a href="{{route('GetAddTeacher')}}">
+                            <a href="{{route('admin.teacher.create', [$khoa->slug])}}">
                                 <button class="btn btn-info btn-sm">
                                     <i class="fas fa-plus"></i> Thêm Giảng Viên
                                 </button>
@@ -45,22 +45,10 @@
                                             <input class="form-control" type="text" name="News_Name" value="">
                                         </th>
                                         <th style="width:15%" class="text-center">
-                                            <div class="input-group input-daterange" data-date-format="yyyy-mm-dd">
-                                                <input type="text" id="News_Datetime_From" name="News_Datetime_From"
-                                                    class="form-control" placeholder="Từ" value="">
-                                                <span class="form-control px-1"><i class="fa fa-chevron-right"></i></span>
-                                                <input type="text" id="News_Datetime_To" name="News_Datetime_To"
-                                                    class="form-control" placeholder="Đến" value="">
-                                            </div>
+                                            <input class="form-control" type="text" name="News_Name" value="">
                                         </th>
                                         <th style="width:15%" class="text-center">
-                                            <div class="input-group input-daterange" data-date-format="yyyy-mm-dd">
-                                                <input type="text" id="News_Datetime_From" name="News_Datetime_From"
-                                                    class="form-control" placeholder="Từ" value="">
-                                                <span class="form-control px-1"><i class="fa fa-chevron-right"></i></span>
-                                                <input type="text" id="News_Datetime_To" name="News_Datetime_To"
-                                                    class="form-control" placeholder="Đến" value="">
-                                            </div>
+                                            <input class="form-control" type="text" name="News_Name" value="">
                                         </th>
                                         <th style="width:10%" class="text-center sorting_disabled">
                                             <button type="submit" class="btn btn-effect-ripple btn-primary"
@@ -84,10 +72,10 @@
                                             <a>Thuộc Khoa </a>
                                         </th>
                                         <th class="text-center sorting_desc">
-                                            <a>Ngày tạo</a>
+                                            <a>Người tạo</a>
                                         </th>
                                         <th class="text-center sorting_desc">
-                                            <a>Ngày đăng</a>
+                                            <a>Người đăng</a>
                                         </th>
                                         <th class="text-center sorting">
                                             <a><i class="fa fa-bolt"></i></a>
@@ -117,10 +105,10 @@
                                                     <input id="{{$teacher->id}}" type="checkbox" >
                                                 <label for="{{$teacher->id}}"> </label></div></label>
                                                     <!-- <input data-id="1579" type="checkbox" checked=""><span></span></label> -->
-                                                <a href="{{asset('admin/teacher/edit/'.$teacher->id)}}" class="btn btn-warning btn-xs" >
+                                                <a href="{{ route('admin.teacher.edit', [$khoa['slug'], $teacher['id']]) }}" class="btn btn-warning btn-xs" >
                                                     <i class="fa fa-flag" aria-hidden="true"></i>
                                                     Sửa</a>
-                                                <a href="{{asset('admin/teacher/delete/'.$teacher->id)}}"  onclick="return confirm('Bạn có chắc chắn muốn xóa !')" class="btn btn-danger btn-xs"
+                                                <a href="{{ route('admin.teacher.delete', [$khoa['slug'], $teacher['id']]) }}"  onclick="return confirm('Bạn có chắc chắn muốn xóa !')" class="btn btn-danger btn-xs"
                                                 ><i class="fa fa-trash" aria-hidden="true"></i>
                                                     Xóa</a>
                                             </td>

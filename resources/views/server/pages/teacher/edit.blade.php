@@ -1,6 +1,6 @@
 @extends('server.index')
 @section('title', 'Quản Trị Giảng Viên')
-@section('page-title', 'Sửa Giảng Viên')
+@section('page-title', 'Sửa '.$teacher['evaluate'].$teacher['name'] )
 @section('page-content')
 <!--/.row-->
 <div class="row">
@@ -14,7 +14,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-save"></i> Lưu</button>
-                                    <a href="{{route('Teacher')}}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
+                                    <a href="{{route('admin.teacher.show', [$khoa->slug])}}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
                                 </div>
                                 <div class="card-body">
 

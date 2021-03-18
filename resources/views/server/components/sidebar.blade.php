@@ -73,6 +73,12 @@
                                 <p>Slide</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.category.show', [$khoa['slug']]) }}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh Mục</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item">

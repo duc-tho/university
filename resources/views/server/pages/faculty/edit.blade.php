@@ -1,8 +1,9 @@
 @extends('server.index')
 @section('title', 'Quản Trị Khoa')
-@section('page-title', 'Sửa Khoa')
+@section('page-title', ' Sửa '.$faculty['name'])
 @section('page-content')
 <!--/.row-->
+
 <div class="row">
     <div class="col-sm-12 ">
         <div class="panel panel-primary">
@@ -14,7 +15,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-save"></i> Lưu</button>
-                                    <a href="{{route('Faculty')}}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
+                                    <a href="{{ route('admin.faculty.show', [$khoa->slug]) }}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group">
@@ -70,28 +71,12 @@
                                     <div class="form-group">
                                         <label>Tóm Lược Giới Thiệu: </label>
                                         <textarea required class="ckeditor" required name="summary">{{$faculty->intro_summary}}</textarea>
-                                        <script type="text/javascript">
-                                            var editor = CKEDITOR.replace('summary', {
-                                                    language: 'vi',
-                                                    filebrowserImageBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Images',
-                                                    filebrowserFlashBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Flash',
-                                                    filebrowserImageUploadUrl: '../../plugins/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                                                    filebrowserFlashUploadUrl: '../../plugins/editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-                                                });
-                                        </script>
+
                                     </div>
                                     <div class="form-group">
                                         <label>Nội dung Giới Thiệu: </label>
                                         <textarea required class="ckeditor" required name="introdution">{{$faculty->intro}}</textarea>
-                                        <script type="text/javascript">
-                                            var editor = CKEDITOR.replace('introdution', {
-                                                    language: 'vi',
-                                                    filebrowserImageBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Images',
-                                                    filebrowserFlashBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Flash',
-                                                    filebrowserImageUploadUrl: '../../plugins/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                                                    filebrowserFlashUploadUrl: '../../plugins/editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-                                                });
-                                        </script>
+
                                     </div>
                                     <div class="form-group">
                                         <label>Ảnh Khoa :</label>
@@ -119,6 +104,27 @@
     //     config.fillEmptyBlocks = false;
     // };
 </script>
+
+<script type="text/javascript">
+    var editor = CKEDITOR.replace('summary', {
+            language: 'vi',
+            filebrowserImageBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Images',
+            filebrowserFlashBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Flash',
+            filebrowserImageUploadUrl: '../../plugins/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+            filebrowserFlashUploadUrl: '../../plugins/editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+        });
+</script>
+
+<script type="text/javascript">
+    var editor = CKEDITOR.replace('introdution', {
+            language: 'vi',
+            filebrowserImageBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Images',
+            filebrowserFlashBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Flash',
+            filebrowserImageUploadUrl: '../../plugins/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+            filebrowserFlashUploadUrl: '../../plugins/editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+        });
+</script>
+
 <script>
     $('input#name').keyup(function(event) {
             /* Act on the event */
