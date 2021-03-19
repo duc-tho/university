@@ -37,7 +37,7 @@ class StudentController extends Controller
         $request->validate([
             'name' => 'required:student_representative,name,' . $student->id
         ], [
-            'name.required' => 'Chưa nhập tên giảng viên nè!',
+            'name.required' => 'Chưa nhập tên sinh viên nè!',
         ]);
 
         $student->save();
@@ -45,41 +45,40 @@ class StudentController extends Controller
     }
     public function edit(Request $request, $khoa, $id)
     {
-        $teacher = TeacherRepresentative::find($id);
+        $student = StudentRepresentative::find($id);
         $faculty_list = Faculty::all();
-        return view('server.pages.teacher.edit', [
-            'teacher' => $teacher,
+        return view('server.pages.student.edit', [
+            'student' => $student,
             'faculty_list' => $faculty_list,
             'khoa' => $khoa,
         ]);
     }
-    public function update(EditTeacherRequest $request, $khoa, $id)
+    public function update(Request $request, $khoa, $id)
     {
 
-        $teacher = TeacherRepresentative::find($id);
+        $student = StudentRepresentative::find($id);
 
-        abort_if(!$teacher, 404);
+        abort_if(!$student, 404);
 
         if ($request->has('status')) $request->merge(['status' => $request['status'] == "on" ? 1 : 0]);
 
-        if ($request->file('image') != null) $request->merge(['image' => upload_file($request->file('image'), 'dist/upload/image/teacher')]);
+        if ($request->file('image') != null) $request->merge(['image' => upload_file($request->file('image'), 'dist/upload/image/student')]);
 
-        $teacher->update($request->input());
+        $student->update($request->input());
 
         $request->validate([
-            'name' => 'required|unique:teacher_representative,name,' . $teacher->id
+            'name' => 'required:student_representative,name,' . $student->id
         ], [
-            'name.unique' => 'Tên giảng viên đã tồn tại, vui lòng nhập một tên khác...',
-            'name.required' => 'Chưa nhập tên giảng viên nè!',
+            'name.required' => 'Chưa nhập tên sinh viên nè!',
         ]);
         // chuyển hướng về trang teacher list
-        return redirect()->route('admin.teacher.show', [$khoa['slug']]);
+        return redirect()->route('admin.student.show', [$khoa['slug']]);
     }
     public function delete($khoa, $id)
     {
-        TeacherRepresentative::find($id);
-        TeacherRepresentative::destroy($id);
+        StudentRepresentative::find($id);
+        StudentRepresentative::destroy($id);
         // chuyển hướng về trang faculty list
-        return redirect()->route('admin.teacher.show', [$khoa['slug']]);
+        return redirect()->route('admin.student.show', [$khoa['slug']]);
     }
 }

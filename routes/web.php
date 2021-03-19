@@ -167,7 +167,7 @@ Route::name('admin.')->prefix('admin/{khoa}')->middleware(['CheckLogedIn', 'Requ
         Route::get('add',  [AdminStudentController::class, 'create'])->name('create');
         Route::post('add',  [AdminStudentController::class, 'store'])->name('store');
         //
-        Route::get('/edit/{id}',  [StudenAdminStudentControllertController::class, 'edit'])->name('edit')->where(['id' => '[0-9]+']);
+        Route::get('/edit/{id}',  [AdminStudentController::class, 'edit'])->name('edit')->where(['id' => '[0-9]+']);
         Route::post('/edit/{id}', [AdminStudentController::class, 'update'])->name('update')->where(['id' => '[0-9]+']);
         //
         Route::get('/delete/{id}', [AdminStudentController::class, 'delete'])->name('delete')->where(['id' => '[0-9]+']);

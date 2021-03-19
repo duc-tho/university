@@ -96,14 +96,14 @@
 
                                 </thead>
                                 <tbody>
-                                    {{-- @foreach ($studentlist as $student)
+                                    @foreach ($student_list as $student)
                                         <tr role="row">
                                             <td class="text-center">{{ $student->id }}</td>
                                             <td>{{ $student->name }}</td>
                                             <td>
                                                 <img width="200px" src="{{asset($student->image)}}" class="thumbnail">
                                             </td>
-                                            @foreach ($facultylist as $faculty)
+                                            @foreach ($faculty_list as $faculty)
                                                 @if ($faculty->id === $student->faculty_id)
                                                     <td class="text-center">{{$faculty->name}}</td>
                                                 @break
@@ -117,15 +117,15 @@
                                                     <input id="{{$student->id}}" type="checkbox" >
                                                 <label for="{{$student->id}}"> </label></div></label>
                                                     <!-- <input data-id="1579" type="checkbox" checked=""><span></span></label> -->
-                                                <a href="{{asset('admin/student/edit/'.$student->id)}}" class="btn btn-warning btn-xs" >
+                                                <a href="{{ route('admin.student.edit', [$khoa['slug'], $student['id']]) }}" class="btn btn-warning btn-xs" >
                                                     <i class="fa fa-flag" aria-hidden="true"></i>
                                                     Sửa</a>
-                                                <a href="{{asset('admin/student/delete/'.$student->id)}}"  onclick="return confirm('Bạn có chắc chắn muốn xóa !')" class="btn btn-danger btn-xs"
+                                                <a href="{{ route('admin.student.delete', [$khoa['slug'], $student['id']]) }}"  onclick="return confirm('Bạn có chắc chắn muốn xóa !')" class="btn btn-danger btn-xs"
                                                 ><i class="fa fa-trash" aria-hidden="true"></i>
                                                     Xóa</a>
                                             </td>
                                         </tr>
-                                    @endforeach --}}
+                                    @endforeach
                                 </tbody>
                                 <tfoot>
 
