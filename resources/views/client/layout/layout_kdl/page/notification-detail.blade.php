@@ -4,7 +4,7 @@
 <section class="w3l-service-breadcrum">
     <div class="breadcrum-bg py-sm-5 py-4">
         <div class="container py-lg-3">
-            <h2>Tin tức Khoa Du Lịch</h2>
+            <h2>{{$category['title']}} Khoa Du Lịch</h2>
             <p><a href="#">Trang Chủ</a> &nbsp; / &nbsp; {{$category['title']}} &nbsp; / &nbsp; {{$news['title']}}</p>
         </div>
     </div>
@@ -27,7 +27,7 @@
                     <div class="col-lg-3  col-md-3">
                         <div class="blog_info text-right">
                             <div class="post_tag">
-                                <a class="active" href="{{ route('tin-tuc', [$faculty['slug']]) }}">{{ $category['title'] }}</a>
+                                <a class="active" href="{{ route('thong-bao', [$faculty['slug']]) }}">{{ $category['title'] }}</a>
                             </div>
                             <ul class="blog_meta list">
                                 <li><a href="javascript:">Tác giả : {{ $news['created_by'] }}<i class="fas fa-user-alt"></i></a></li>
@@ -72,7 +72,7 @@
                 </div>
 
             </div>
-            @include('client.layout.layout_kdl.components.nvarbar')
+            @include('client.layout.layout_kdl.components.nvarbar_notifications')
         </div>
     </div>
 </section>

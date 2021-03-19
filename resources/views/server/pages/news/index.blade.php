@@ -1,6 +1,6 @@
 @extends('server.index')
-@section('title', 'Quản Trị Giảng Viên')
-@section('page-title', 'Quản Trị Giảng Viên')
+@section('title', 'Quản Trị Tin Tức - Thông Báo')
+@section('page-title', 'Quản Trị Tin Tức - Thông Báo')
 @section('page-content')
     <div class="content">
         <div class="container-fluid">
@@ -9,9 +9,9 @@
                 <div class="col-12">
                     <div class="card card-primary card-outline">
                         <div class="card-header p-2 d-flex align-items-center justify-content-between">
-                            <a href="{{route('admin.teacher.create', [$khoa->slug])}}">
+                            <a href="{{route('admin.news.create', [$khoa->slug])}}">
                                 <button class="btn btn-info btn-sm">
-                                    <i class="fas fa-plus"></i> Thêm Giảng Viên
+                                    <i class="fas fa-plus"></i> Thêm dữ liệu
                                 </button>
                             </a>
                             <div class="ml-auto d-inline-block">
@@ -34,17 +34,19 @@
                                         <th style="width:5%" class="text-center">
                                             <input class="form-control" type="text" name="News_ID" value="">
                                         </th>
-
-                                        <th style="width:15%" class="text-center">
+                                        <th style="width:25%" class="text-center">
                                             <input class="form-control" type="text" name="News_Name" value="">
                                         </th>
                                         <th style="width:15%" class="text-center">
                                             <input class="form-control" type="text" name="News_Name" value="">
                                         </th>
-                                        <th style="width:20%" class="text-center">
+                                        <th style="width:25%" class="text-center">
                                             <input class="form-control" type="text" name="News_Name" value="">
                                         </th>
-                                        <th style="width:15%" class="text-center">
+                                        <th style="width:10%" class="text-center">
+                                            <input class="form-control" type="text" name="News_Name" value="">
+                                        </th>
+                                        <th style="width:10%" class="text-center">
                                             <input class="form-control" type="text" name="News_Name" value="">
                                         </th>
                                         <th style="width:15%" class="text-center">
@@ -63,19 +65,22 @@
                                             <a>ID</a>
                                         </th>
                                         <th class="text-center sorting">
-                                            <a> Tên Giảng Viên</a>
+                                            <a>Tiêu Đề</a>
                                         </th>
                                         <th class="text-center sorting">
-                                            <a> Hình ảnh</a>
+                                            <a>Danh Mục </a>
                                         </th>
                                         <th class="text-center sorting">
-                                            <a>Thuộc Khoa </a>
+                                            <a>Hình Ảnh</a>
+                                        </th>
+                                        <th class="text-center sorting">
+                                            <a>Thời Gian </a>
                                         </th>
                                         <th class="text-center sorting_desc">
-                                            <a>Chức Vụ</a>
+                                            <a>Người tạo</a>
                                         </th>
                                         <th class="text-center sorting_desc">
-                                            <a>Người Đăng</a>
+                                            <a>Trạng Thái</a>
                                         </th>
                                         <th class="text-center sorting">
                                             <a><i class="fa fa-bolt"></i></a>
@@ -84,31 +89,43 @@
 
                                 </thead>
                                 <tbody>
-                                    @foreach ($teacherlist as $teacher)
+                                    @foreach ($news_list as $news)
                                         <tr role="row">
-                                            <td class="text-center">{{ $teacher->id }}</td>
-                                            <td>{{ $teacher->name }}</td>
-                                            <td>
-                                                <img width="200px" src="{{ asset($teacher->image) }}" class="thumbnail">
-                                            </td>
-                                            @foreach ($facultylist as $faculty)
-                                                @if ($faculty->id === $teacher->faculty_id)
-                                                    <td class="text-center">{{$faculty->name}}</td>
+                                            <td class="text-center">{{ $news->id }}</td>
+                                            <td>{{ $news->title }}</td>
+
+                                            @foreach ($categorylist as $category)
+                                                @if ($category->id === $news->category_id)
+                                                    <td class="text-center">{{$category->title}}</td>
                                                 @break
                                                 @endif
                                             @endforeach
-                                            <td class="text-center">{{ $teacher->position }}</td>
-                                            <td class="text-center">{{ $teacher->updated_by }}</td>
+                                            <td>
+                                                <img width="200px" src="{{asset($news->image ?? "dist/img/imgdefault.png")}}" class="thumbnail">
+                                            </td>
+                                            <td class="text-center">{{ $news->event_time }}</td>
+                                            <td class="text-center">{{ $news->created_by }}</td>
+
+                                            @switch($news->status)
+                                            @case(1)
+                                            <td class="text-center">Đang Hoạt Động</td>
+                                            @break
+                                            @case(0)
+                                            <td class="text-center">Ngưng Hoạt Động</td>
+                                            @break
+                                            @default
+                                            @endswitch
+
                                             <td class="text-center">
                                                 <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
                                                     <div class="mt-check-garden nutanhien">
-                                                    <input id="{{$teacher->id}}" type="checkbox" >
-                                                <label for="{{$teacher->id}}"> </label></div></label>
+                                                    <input id="{{$news->id}}" type="checkbox" >
+                                                <label for="{{$news->id}}"> </label></div></label>
                                                     <!-- <input data-id="1579" type="checkbox" checked=""><span></span></label> -->
-                                                <a href="{{ route('admin.teacher.edit', [$khoa['slug'], $teacher['id']]) }}" class="btn btn-warning btn-xs" >
+                                                <a href="{{ route('admin.news.edit', [$khoa['slug'], $news['id']]) }}" class="btn btn-warning btn-xs" >
                                                     <i class="fa fa-flag" aria-hidden="true"></i>
                                                     Sửa</a>
-                                                <a href="{{ route('admin.teacher.delete', [$khoa['slug'], $teacher['id']]) }}"  onclick="return confirm('Bạn có chắc chắn muốn xóa !')" class="btn btn-danger btn-xs"
+                                                <a href="{{ route('admin.news.delete', [$khoa['slug'], $news['id']]) }}"  onclick="return confirm('Bạn có chắc chắn muốn xóa !')" class="btn btn-danger btn-xs"
                                                 ><i class="fa fa-trash" aria-hidden="true"></i>
                                                     Xóa</a>
                                             </td>

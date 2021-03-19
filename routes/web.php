@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\Student_reController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\News_Controller;
 use App\Http\Controllers\Client\CourseController;
 use App\Http\Controllers\Client\EducateController;
 use App\Http\Controllers\Client\AboutController;
@@ -95,6 +96,35 @@ Route::name('admin.')->prefix('admin/{khoa}')->middleware(['CheckLogedIn', 'Requ
         Route::post('/edit/{id}', [CategoryController::class, 'update'])->name('update')->where(['id' => '[0-9]+']);
         //
         Route::get('delete/{id}', [CategoryController::class, 'delete'])->name('delete')->where(['id' => '[0-9]+']);
+        //
+    });
+
+    //Route add,edit,delete category
+    Route::name('category.')->prefix('category')->group(function () {
+        //
+        Route::get('/', [CategoryController::class, 'show'])->name('show');
+        //
+        Route::get('add',  [CategoryController::class, 'create'])->name('create');
+        Route::post('add',  [CategoryController::class, 'store'])->name('store');
+        //
+        Route::get('/edit/{id}',  [CategoryController::class, 'edit'])->name('edit')->where(['id' => '[0-9]+']);
+        Route::post('/edit/{id}', [CategoryController::class, 'update'])->name('update')->where(['id' => '[0-9]+']);
+        //
+        Route::get('delete/{id}', [CategoryController::class, 'delete'])->name('delete')->where(['id' => '[0-9]+']);
+        //
+    });
+
+    Route::name('news.')->prefix('news')->group(function () {
+        //
+        Route::get('/', [News_Controller::class, 'show'])->name('show');
+        //
+        Route::get('add',  [News_Controller::class, 'create'])->name('create');
+        Route::post('add',  [News_Controller::class, 'store'])->name('store');
+        //
+        Route::get('/edit/{id}',  [News_Controller::class, 'edit'])->name('edit')->where(['id' => '[0-9]+']);
+        Route::post('/edit/{id}', [News_Controller::class, 'update'])->name('update')->where(['id' => '[0-9]+']);
+        //
+        Route::get('delete/{id}', [News_Controller::class, 'delete'])->name('delete')->where(['id' => '[0-9]+']);
         //
     });
 

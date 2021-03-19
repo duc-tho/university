@@ -70,13 +70,16 @@ class NotificationController extends Controller
             if (!$news->isEmpty()) $item['news'] = $news;
         }
 
-        
+
         // $only_notification = $category_notification->news()->orderBy('id', 'desc',)->paginate(4);
-        
+
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
 
 
         return view('client.layout.' . $layout_name . '.page.notification', [
+            'license' => getSettingValue($settings, 'license'),
+            'license_content' => getSettingValue($settings, 'license_content'),
+            'website' => getSettingValue($settings, 'website'),
             'phone' => $contact['phone'],
             'faculty' => $faculty,
             'email' => $contact['email'],
@@ -97,7 +100,7 @@ class NotificationController extends Controller
 
 
             //Start Khoa Du Lịch
-            
+
             'title_faculty_description' => getSettingValue($settings, 'title_faculty_description'),
             'title_scholarship' => getSettingValue($settings, 'title_scholarship'),
             'title_scholarship_content' => getSettingValue($settings, 'title_scholarship_content'),
@@ -172,7 +175,7 @@ class NotificationController extends Controller
         // lấy tin tức
         $category = Category::where(['status' => 1, 'slug' => $danh_muc, 'faculty_id' => $faculty['id']])->first();
         abort_if(!$category, 404);
-        
+
 
         $news = News::where(['status' => 1, 'slug' => $bai_viet, ])->first();
         abort_if(!$news, 404);
@@ -193,7 +196,9 @@ class NotificationController extends Controller
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
 
         return view('client.layout.' . $layout_name . '.page.notification-detail', [
-
+            'license' => getSettingValue($settings, 'license'),
+            'license_content' => getSettingValue($settings, 'license_content'),
+            'website' => getSettingValue($settings, 'website'),
             'phone' => $contact['phone'],
             'faculty' => $faculty,
             'email' => $contact['email'],

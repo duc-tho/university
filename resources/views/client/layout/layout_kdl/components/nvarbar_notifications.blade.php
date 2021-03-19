@@ -16,10 +16,10 @@
 
         <aside class="single_sidebar_widget popular_post_widget">
 
-            <h3 class="widget_title">Tin Tức Liên Quan</h3>
+            <h3 class="widget_title">Thông Báo Liên Quan</h3>
             @foreach ($relate_news as $item)
             <div class="testimonial-info">
-                <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">
+                <a href="{{ route('thong-bao-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">
                     <p id="tb">{{ $item['title']  }}</p>
                 </a>
                 <h5 class="mes-h5">{{ $category['title'] }}, <span>{{ $item['event_time'] }}</span></h5>

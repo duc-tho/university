@@ -24,25 +24,23 @@ class EditFacultyRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'unique:faculty,name,' . $this->segment(5) . ',id',
-            'slug' => 'unique:faculty,slug,' . $this->segment(5) . ',id',
-            'meta_keywords' => 'unique:faculty,meta_keywords,' . $this->segment(5) . ',id',
-            'meta_descriptions' => 'unique:faculty,meta_descriptions,' . $this->segment(5) . ',id',
-            // 'layout_name'=>'unique:faculty,layout_name,'.$this->segment(5).',id',
-            // 'layout_page'=>'unique:faculty,layout_page,'.$this->segment(5).',id',
-
-
+            'img' => 'image',
+            'name' => 'required',
+            'slug' => 'required',
+            'meta_keywords' => 'required',
+            'meta_descriptions' => 'required',
+            'layout_page' => 'required',
         ];
     }
     public function messages()
     {
         return [
-            'name.unique' => ' Tên Khoa đã tồn tại, vui lòng nhập một tên khác...',
-            'slug.unique' => ' Slug đã tồn tại, vui lòng nhập một tên khác...',
-            'meta_keywords.unique' => ' Meta_title đã tồn tại, vui lòng nhập một meta khác...',
-            'meta_descriptions.unique' => ' Meta_description đã tồn tại, vui lòng nhập một meta khác...',
-            // 'layout_name.unique'=>' Tên Layout đã tồn tại, vui lòng nhập một tên khác...',
-            // 'layout_page.unique'=>' Layout_page đã tồn tại, vui lòng nhập một tên khác...',
+            'name.required' => ' Tên Khoa đã tồn tại, vui lòng nhập một tên khác...',
+            'slug.required' => ' Slug đã tồn tại, vui lòng nhập một tên khác...',
+            'meta_keywords.required' => ' Meta_title đã tồn tại, vui lòng nhập một meta khác...',
+            'meta_descriptions.required' => ' Meta_description đã tồn tại, vui lòng nhập một meta khác...',
+            'layout_name.required' => ' Tên Layout đã tồn tại, vui lòng nhập một tên khác...',
+            'layout_page.required' => ' Layout_page đã tồn tại, vui lòng nhập một tên khác...',
         ];
     }
 }

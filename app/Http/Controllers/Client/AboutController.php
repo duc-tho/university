@@ -60,6 +60,7 @@ class AboutController extends Controller
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
         return view('client.layout.' . $layout_name . '.page.about', [
             'phone' => $contact['phone'],
+
             'faculty' => $faculty,
             'email' => $contact['email'],
             'hotline' => $contact['hotline'],
@@ -67,9 +68,7 @@ class AboutController extends Controller
             'website_link' => $contact['website_link'],
             'contact_title' => $contact['contact_title'],
             'address' => $contact['address_info'],
-            'logo' => getSettingValue($settings, 'logo'),
-            'intro_video' => getSettingValue($settings, 'intro_video'),
-            'copyright' => getSettingValue($settings, 'copyright'),
+
             'intro_short' => $faculty['intro_summary'],
             'menu' => $menu,
             'footer_link' => $footer_link,
@@ -77,12 +76,14 @@ class AboutController extends Controller
             'about' => $about_category,
             'all_specialized' => $all_specialized,
             'specialized' => $specialized,
-            //Start Khoa DU Lich
-            // 'logo_travel' => getSettingValue($settings, 'logo_travel'),
-            // 'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),
-            // 'footer_email_travel' => getSettingValue($settings, 'footer_email_travel'),
-            // 'footer_website_travel' => getSettingValue($settings, 'footer_website_travel'),
-            // 'footer_address_travel' => getSettingValue($settings, 'footer_address_travel'),
+
+            'logo' => getSettingValue($settings, 'logo'),
+            'license' => getSettingValue($settings, 'license'),
+            'license_content' => getSettingValue($settings, 'license_content'),
+            'logo' => getSettingValue($settings, 'logo'),
+            'intro_video' => getSettingValue($settings, 'intro_video'),
+            'copyright' => getSettingValue($settings, 'copyright'),
+            'website' => getSettingValue($settings, 'website'),
 
             'title_faculty_description' => getSettingValue($settings, 'title_faculty_description'),
             'title_scholarship' => getSettingValue($settings, 'title_scholarship'),

@@ -118,9 +118,38 @@
                                                 @endforeach
                                             @endif
 
-                                            <td class="text-center">{{ $item->show_at_home }}</td>
-                                            <td class="text-center">{{ $item->show_at_news }}</td>
-                                            <td class="text-center">{{ $item->show_at_notification }}</td>
+                                            @switch($item->show_at_home)
+                                            @case(1)
+                                            <td class="text-center">Hiển Thị</td>
+                                            @break
+                                            @case(0)
+                                            <td class="text-center">Ẩn</td>
+                                            @break
+                                            @default
+                                            @endswitch
+
+                                            @switch($item->show_at_news)
+                                            @case(1)
+                                            <td class="text-center">Hiển Thị</td>
+                                            @break
+                                            @case(0)
+                                            <td class="text-center">Ẩn</td>
+                                            @break
+                                            @default
+                                            @endswitch
+
+                                            @switch($item->show_at_notification)
+                                            @case(1)
+                                            <td class="text-center">Hiển Thị</td>
+                                            @break
+                                            @case(0)
+                                            <td class="text-center">Ẩn</td>
+                                            @break
+                                            @default
+                                            @endswitch
+
+
+
                                             <td class="text-center">
                                                 <label class="status switch switch-primary" data-toggle="tooltip" title=""
                                                     data-original-title="Xuất bản">

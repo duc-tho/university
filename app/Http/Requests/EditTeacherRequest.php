@@ -24,13 +24,14 @@ class EditTeacherRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'unique:teacher_representative,name,'.$this->segment(5).',id',
+            'name'=>'required',
         ];
     }
     public function messages()
     {
         return[
-            'name.unique'=>' Tên Giảng Viên đã tồn tại, vui lòng nhập một tên khác...',
+            'name.required'=>' Chưa nhập tên Giảng Viên ...',
         ];
     }
+
 }

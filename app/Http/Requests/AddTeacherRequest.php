@@ -24,15 +24,13 @@ class AddTeacherRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'img'=>'image',
-            'name'=>'unique:teacher_representative,name',
-
+            'name'=>'required',
         ];
     }
     public function messages()
     {
         return[
-            'name.unique'=>' Tên Giảng Viên đã tồn tại, vui lòng nhập một tên khác...',
+            'name.required'=>' Chưa nhập tên Giảng Viên ...',
         ];
     }
 }

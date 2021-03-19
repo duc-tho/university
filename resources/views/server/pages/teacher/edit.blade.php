@@ -1,113 +1,42 @@
 @extends('server.index')
-@section('title', 'Quản Trị Giảng Viên')
-@section('page-title', 'Sửa '.$teacher['evaluate'].$teacher['name'] )
+@section('title', 'Quản Trị Giáo Viên')
+@section('page-title', 'Sửa Giáo Viên '.$teacher['position'].$teacher['name'])
 @section('page-content')
 <!--/.row-->
 <div class="row">
-    <div class="col-sm-12 ">
-        <div class="panel panel-primary">
-            <div class="panel-body">
-                @include('errors.note')
-                <form method="post" enctype="multipart/form-data" role="form" action="">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-save"></i> Lưu</button>
-                                    <a href="{{route('admin.teacher.show', [$khoa->slug])}}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
-                                </div>
-                                <div class="card-body">
+    <div class="col-sm-12 px-3">
+        <x-admin.form.form method="POST" :cancelLink="route('admin.teacher.show', [$khoa['slug']])" :submitLink="route('admin.teacher.update', [$khoa['slug'], $teacher['id']])">
+            <div class="row">
+                <x-admin.form.alert :col="12" class="bg-olive color-palette">
+                    <b>Lưu ý: </b>Các trường có dấu <span class="text-danger"><b>*</b></span> là bắt buộc!
+                </x-admin.form.alert>
 
-                                    <div class="form-group">
-                                        <label>Thuộc Khoa : </label>
-                                        <select required name="faculty_id" class="form-control">
-                                            <option value="">Chọn Khoa</option>
-                                            @foreach ($list_faculty as $faculty)
-                                                <option value="{{$faculty->id}}" @if($teacher->faculty_id == $faculty->id) selected @endif >{{$faculty->name}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                <x-admin.form.select :required="true" :col="3" :fieldName="'faculty_id'" :label="'Khoa'">
+                    <option value="" aria-readonly="true">Chọn Khoa</option>
+                    @foreach ($faculty_list as $faculty)
+                    <option value="{{$faculty->id}}" {{ old('faculty_id') ?? $teacher['faculty_id'] == $faculty->id ? "selected" : '' }}>{{$faculty->name}}</option>
+                    @endforeach
 
-                                    <div class="form-group">
-                                        <label>Tên Giảng Viên : </label>
-                                        <input required type="text" id="name" name="name"  value="{{$teacher->name}}" class="form-control" placeholder="Nhập Tên Khoa...">
-                                    </div>
+                </x-admin.form.select>
 
-                                    <div class="form-group">
-                                        <label>Người Tạo : </label>
-                                        <input required type="text" id="created_by" name="created_by" value="{{$teacher->created_by}}" class="form-control" placeholder="Nhập trang layout...">
-                                    </div>
+                <x-admin.form.input :data="$teacher" :col="3" :type="'text'" :label="'Tên Giảng Viên'" :required="true" :placeholder="'Tên Giảng Viên'" :fieldName="'name'" />
+                <x-admin.form.input :data="$teacher" :col="3" :type="'text'" :label="'Chức Vụ'" :required="true" :placeholder="'Chức Vụ'" :fieldName="'position'" />
+                <x-admin.form.input :data="$teacher" :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" />
+                <x-admin.form.input :data="$teacher" :col="3" :type="'text'" :label="'Người Cập Nhập'" :required="true" :placeholder="'Người Cập Nhập'" :fieldName="'updated_by'" />
+                <x-admin.form.input :data="$teacher" :col="3" :type="'text'" :label="'Giới Thiệu Về Giảng Viên'" :required="false" :placeholder="'Giới Thiệu'" :fieldName="'intro'" />
+                <x-admin.form.input :data="$teacher" :col="3" :type="'text'" :label="'Đánh Giá Của Giảng Viên'" :required="false" :placeholder="'Đánh Giá'" :fieldName="'evaluate'" />
+                <x-admin.form.checkbox :data="$teacher" :col="3" :label="'Trạng thái'" :required="false" :fieldName="'status'" :labelContent="'Đang hoạt động'" />
+                <x-admin.form.file :data="$teacher" :col="3" :label="'Ảnh đại diện'" :required="false" :fieldName="'image'" />
 
-                                    <div class="form-group">
-                                        <label>Người Đăng : </label>
-                                        <input required type="text" id="updated_by" name="updated_by" value="{{$teacher->updated_by}}" class="form-control" placeholder="Nhập trang layout...">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Trạng thái</label>
-                                        <select required name="status" class="form-control">
-                                            <option value="1" @if($teacher->status==1) selected @endif>Bật</option>
-                                            <option value="0" @if($teacher->status==0) selected @endif>Tắt</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Ảnh Khoa :</label>
-                                        <input  id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)">
-                                        <img id="image" class="thumbnail" width="200px" src="{{asset($teacher->image)}}">
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label>Tóm Lược Giới Thiệu: </label>
-                                        <textarea required class="ckeditor" required name="intro">{{$teacher->intro}}</textarea>
-                                        <script type="text/javascript">
-                                            var editor = CKEDITOR.replace('intro', {
-                                                    language: 'vi',
-                                                    filebrowserImageBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Images',
-                                                    filebrowserFlashBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Flash',
-                                                    filebrowserImageUploadUrl: '../../plugins/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                                                    filebrowserFlashUploadUrl: '../../plugins/editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-                                                });
-                                        </script>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Đánh Giá: </label>
-                                        <textarea required class="ckeditor" required name="evaluate">{{$teacher->evaluate}}</textarea>
-                                        <script type="text/javascript">
-                                            var editor = CKEDITOR.replace('evaluate', {
-                                                    language: 'vi',
-                                                    filebrowserImageBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Images',
-                                                    filebrowserFlashBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Flash',
-                                                    filebrowserImageUploadUrl: '../../plugins/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                                                    filebrowserFlashUploadUrl: '../../plugins/editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-                                                });
-                                        </script>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @csrf
-                </form>
-                <div class="clearfix"></div>
+                <x-admin.form.multi-select :col="6" :label="'Vai trò'" :required="false" :fieldName="'role'">
+                    {{-- @foreach ($roles as $role)
+                    <option value="{{$role['id']}}" {{ in_array($role['id'], old('role') ?? []) ? "selected" : '' }}>{{$role['display_name']}}</option>
+                    @endforeach --}}
+                </x-admin.form.multi-select>
             </div>
-        </div>
+        </x-admin.form.form>
     </div>
 </div>
-<!--/.row-->
 </div>
-<script>
-    CKEDITOR.editorConfig = function (config) {
-        config.enterMode = CKEDITOR.ENTER_BR;
-        config.autoParagraph = false;
-        config.fillEmptyBlocks = false;
-    };
-</script>
-@stop
+
+@endsection

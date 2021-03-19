@@ -120,13 +120,20 @@
             //Sự kiện file đã được load vào website
             reader.onload = function (e) {
                 //Thay đổi đường dẫn ảnh
-                $('#image').attr('src', e.target.result);
+                $('#preview_image').attr('src', e.target.result);
             }
             reader.readAsDataURL(input.files[0]);
         }
     }
 </script>
 
+<<<<<<< HEAD
+    // $(document).ready(function () {
+    //     $('#image').click(function () {
+    //         $('#img').click();
+    //     });
+    // });
+=======
 {{-- init tiny mce --}}
 <script>
     tinymce.baseURL = "{{ asset('plugins/tinymce') }}";
@@ -153,4 +160,5 @@
             });
         }
     });
+>>>>>>> 1f1495cb38754d21e96361bbbd2900a3f1322946
 </script>

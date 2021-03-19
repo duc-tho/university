@@ -83,22 +83,11 @@ $slide_str = str_replace('\\', '/', $slide_str);
     <a class="hvr-rectangle-out w3_play_icon1" href="{{ route('tuyensinh') }}" style="position: absolute; bottom: 10%; left: 10%; z-index:998;"> Tuyển sinh ngay</a>
     <div class="splide__track">
         <ul class="splide__list">
-            {{-- <li class="splide__slide">
-                <img src="http://daihocdulich.edu.vn/upload/slide/slide-sai-gon-c-72529.jpg" alt="" style="width: 100%">
-            </li>
+            @foreach ($slide as $item)
             <li class="splide__slide">
-                <img src="http://daihocdulich.edu.vn/upload/slide/slide-sai-gon-c-50577.jpg" alt="" style="width: 100%">
+                <img src="{{ $item->link }}" alt="" width="100%" height="auto">
             </li>
-            <li class="splide__slide">
-                <img src="http://daihocdulich.edu.vn/upload/slide/slide-sai-gon-c-10770.jpg" alt="" style="width: 100%">
-            </li> --}}
-            <li class="splide__slide">
-                <img src="{{ asset('dist/upload/image/slide/Artboard 1@5x-100.jpg') }}" alt="" style="width: 100%">
-            </li>
-            {{-- <li class="splide__slide">
-                <img src="{{ asset('dist/upload/image/slide/12.jpg') }}" alt="" style="width: 100%">
-            </li> --}}
-        </ul>
+            @endforeach
     </div>
 </div>
 

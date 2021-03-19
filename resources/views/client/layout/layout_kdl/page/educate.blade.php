@@ -58,29 +58,4 @@
         </div>
     </section> --}}
 
-    <section class="teams text-center py-5" id="team">
-        <div class="container py-xl-5 py-lg-3">
-            <div class="heading text-center mx-auto">
-                <h3 class="head">Giảng Viên Của Khoa</h3>
-                <p class="my-3 head">
-                    {{$slogan_teacher_educate}}
-                </p>
-            </div>
-            <div class="row inner-sec-w3ls-w3pvt-aminfo pt-5 mt-3">
-                @foreach ($teacher as $item)
-                @if ($item->faculty_id==3)
-                <div class="col-lg-3 col-sm-6">
-                    <div class="team-grid text-center">
-                        <div class="team-img">
-                            <a href="">
-                                <img class="img-fluid rounded"
-                                src=" {{ asset($item->image) }}" alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                @endif
-                @endforeach
-            </div>
-    </section>
 @stop

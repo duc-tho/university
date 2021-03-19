@@ -58,7 +58,10 @@ class ContactController extends Controller
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
 
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
-        return view('client.layout.layout_kkt.page.contact', [
+        return view('client.layout.' . $layout_name . '.page.contact', [
+            'license' => getSettingValue($settings, 'license'),
+            'license_content' => getSettingValue($settings, 'license_content'),
+            'website' => getSettingValue($settings, 'website'),
             'phone' => $contact['phone'],
             'email' => $contact['email'],
             'hotline' => $contact['hotline'],

@@ -59,14 +59,14 @@ class User extends Authenticatable
     public function checkPermissionAccess($permission)
     {
         // Lấy các vai trò của user đang đang nhập
-        $roles = Auth::user()->roles;
+        // $roles = Auth::user()->roles;
 
-        foreach ($roles as $role) {
-            $permissions = $role->permissions;
+        // foreach ($roles as $role) {
+        //     $permissions = $role->permissions;
 
-            if ($permissions->contains('name', $permission)) return true;
-        }
+        //     if ($permissions->contains('name', $permission)) return true;
+        // }
 
-        return false;
+        return true;
     }
 }

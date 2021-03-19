@@ -529,7 +529,7 @@
                     </div> <!-- section title -->
                     <div class="teachers-cont">
                         <p>{{ $content_teacher_faculty }}</p>
-                        <a href="{{-- route('home-teacher') --}}" class="main-btn mt-55">Danh sách đội ngũ giảng viên </a>
+                        <a href="{{route('giao-vien', [$faculty['slug']])}}" class="main-btn mt-55">Danh sách đội ngũ giảng viên </a>
                     </div> <!-- teachers cont -->
                 </div>
                 <div class="col-lg-6 offset-lg-1">
