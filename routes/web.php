@@ -9,7 +9,6 @@ use App\Http\Controllers\Admin\HomeController as DashboardController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Admin\Student_reController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CollabController;
 use App\Http\Controllers\Admin\ContactController as AdminContactController;
@@ -19,6 +18,7 @@ use App\Http\Controllers\Admin\News_Controller;
 use App\Http\Controllers\Admin\SpecializedController;
 use App\Http\Controllers\Admin\StatisticController;
 use App\Http\Controllers\Admin\VideoController as AdminVideoController;
+use App\Http\Controllers\Admin\StudentController as AdminStudentController;
 use App\Http\Controllers\Client\CourseController;
 use App\Http\Controllers\Client\EducateController;
 use App\Http\Controllers\Client\AboutController;
@@ -227,7 +227,33 @@ Route::name('admin.')->prefix('admin/{khoa}')->middleware(['CheckLogedIn', 'Requ
         //
     });
 
-    // user
+    // student
+    Route::name('student.')->prefix('student')->group(function () {
+        //
+        Route::get('/', [AdminStudentController::class, 'show'])
+            ->middleware('can:student_list')
+            ->name('show');
+        //
+        Route::get('add',  [AdminStudentController::class, 'create'])
+            ->middleware('can:student_create')
+            ->name('create');
+        Route::post('add',  [AdminStudentController::class, 'store'])
+            ->middleware('can:student_create')
+            ->name('store');
+        //
+        Route::get('/edit/{id}',  [AdminStudentController::class, 'edit'])
+            ->middleware('can:student_edit')
+            ->name('edit')->where(['id' => '[0-9]+']);
+        Route::post('/edit/{id}', [AdminStudentController::class, 'update'])
+            ->middleware('can:student_edit')
+            ->name('update')->where(['id' => '[0-9]+']);
+        //
+        Route::get('/delete/{id}', [AdminStudentController::class, 'delete'])
+            ->middleware('can:student_delete')
+            ->name('delete')->where(['id' => '[0-9]+']);
+        //
+    });
+
     Route::name('user.')->prefix('user')->group(function () {
         //
         Route::get('/', [UserController::class, 'show'])
