@@ -44,10 +44,10 @@ Route::post('/authenticate', [AuthenticateController::class, 'authenticate'])->n
 #endregion
 
 #region lfm route
-// Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
-//     \UniSharp\LaravelFilemanager\Lfm::routes();
-// });
-// #endregion
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
+#endregion
 
 #region admin route
 Route::get('/admin', [DashboardController::class, 'redirect'])->name('admin.redirect');

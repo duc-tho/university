@@ -11,19 +11,17 @@
 <body>
     <form action="#" method="post" enctype="multipart/form-data">
         @csrf
-        <textarea id="timymce" name="tinymce"></textarea>
+        <textarea id="timymce" name="tinymce" data-name="tinymce"></textarea>
         <button type="submit">Submit</button>
     </form>
     <script src="{{ asset('plugins/tinymce/tinymce.min.js') }}"></script>
     <script>
         tinymce.baseURL = "{{ asset('plugins/tinymce') }}";
         tinymce.init({
-            selector: "textarea#timymce",
-            plugins: [
-                "image imagetools",
-            ],
+            selector: "textarea[data-name='tinymce']",
             language: 'vi',
-            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | image",
+            plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern help image imagetools',
+            toolbar: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | image',
             file_picker_callback: function (callback, value, meta) {
                 let x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
                 let y = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
