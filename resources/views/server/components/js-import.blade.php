@@ -127,19 +127,13 @@
     }
 </script>
 
-<<<<<<< HEAD
-    // $(document).ready(function () {
-    //     $('#image').click(function () {
-    //         $('#img').click();
-    //     });
-    // });
-=======
 {{-- init tiny mce --}}
 <script>
     tinymce.baseURL = "{{ asset('plugins/tinymce') }}";
     tinymce.init({
         selector: "textarea[data-name='tinymce']",
         language: 'vi',
+        height: 400,
         plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern help image imagetools',
         toolbar: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | image',
         file_picker_callback: function (callback, value, meta) {
@@ -160,5 +154,4 @@
             });
         }
     });
->>>>>>> 1f1495cb38754d21e96361bbbd2900a3f1322946
 </script>

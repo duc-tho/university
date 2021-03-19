@@ -78,7 +78,7 @@
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Tin Tức - Thông Báo</p>
                             </a>
-                        </li
+                        </li>
                         <li class="nav-item">
                             <a href="{{ route('admin.slide.show', [$khoa['slug']]) }}" class="nav-link {{ request()->is('admin/demo/demo-2*') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
@@ -109,6 +109,14 @@
                         <i class="nav-icon fas fa-user-alt"></i>
                         <p>
                             Tạo Quyền
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('admin.setting.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-user-alt"></i>
+                        <p>
+                            Cài đặt thông tin khoa
                         </p>
                     </a>
                 </li>
