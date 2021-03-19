@@ -70,12 +70,18 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label>Tóm Lược Giới Thiệu: </label>
-                                        <textarea required class="ckeditor" required name="summary">{{$faculty->intro_summary}}</textarea>
+                                        {{-- <textarea required class="ckeditor" required name="summary">{{$faculty->intro_summary}}</textarea> --}}
+                                        <textarea name="summary" id="summary" data-name="tinymce">
+                                            {{$faculty->intro_summary}}
+                                        </textarea>
 
                                     </div>
                                     <div class="form-group">
                                         <label>Nội dung Giới Thiệu: </label>
-                                        <textarea required class="ckeditor" required name="introdution">{{$faculty->intro}}</textarea>
+                                        {{-- <textarea required class="ckeditor" required name="introdution">{{$faculty->intro}}</textarea> --}}
+                                        <textarea name="introdution" id="introdution" data-name="tinymce">
+                                            {{$faculty->intro}}
+                                        </textarea>
 
                                     </div>
                                     <div class="form-group">
