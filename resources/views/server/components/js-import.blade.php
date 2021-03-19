@@ -120,7 +120,7 @@
             //Sự kiện file đã được load vào website
             reader.onload = function (e) {
                 //Thay đổi đường dẫn ảnh
-                $('#preview_image').attr('src', e.target.result);
+                $($(input).parent().parent()[0].querySelector("img[data-name='preview-image']")).attr('src', e.target.result);
             }
             reader.readAsDataURL(input.files[0]);
         }
