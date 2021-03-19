@@ -9,7 +9,7 @@
                 <div class="col-12">
                     <div class="card card-primary card-outline">
                         <div class="card-header p-2 d-flex align-items-center justify-content-between">
-                            <a href="{{route('GetAddStudent')}}">
+                            <a href="{{route('admin.student.create', [$khoa->slug])}}">
                                 <button class="btn btn-info btn-sm">
                                     <i class="fas fa-plus"></i> Thêm Sinh Viên
                                 </button>
@@ -96,7 +96,7 @@
 
                                 </thead>
                                 <tbody>
-                                    @foreach ($studentlist as $student)
+                                    {{-- @foreach ($studentlist as $student)
                                         <tr role="row">
                                             <td class="text-center">{{ $student->id }}</td>
                                             <td>{{ $student->name }}</td>
@@ -125,7 +125,7 @@
                                                     Xóa</a>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @endforeach --}}
                                 </tbody>
                                 <tfoot>
 
