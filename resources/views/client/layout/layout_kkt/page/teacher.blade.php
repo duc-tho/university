@@ -44,7 +44,7 @@ style="background-image: url(/dist/layout/layout_kkt/images/page-banner-2.jpg)">
                     <div class="blog-grid-system">
                         <div class="row">
                             <div class="col-lg-12">
-                                <p class="p-giangvien-khoa"> Giảng Viên Khoa Du Lịch</p>
+                                <p class="p-giangvien-khoa"> Giảng Viên {{ $faculty->name }}</p>
                             </div>
                             @foreach ($teacher as $item)
                             <div class="col-lg-3">
@@ -56,7 +56,7 @@ style="background-image: url(/dist/layout/layout_kkt/images/page-banner-2.jpg)">
                                         </div>
                                         <br>
                                         <p class="des-teacher">{{$item->name}}</p>
-                                        <p class="des2-teacher">{{$item->evaluate}}</p>
+                                        <p class="des2-teacher">{{$item->position}}</p>
                                         <div class="middle">
                                             <button data-model-id="{{ $item->id }}" class="btn btn-primary">Xem Chi Tiết</button>
                                         </div>
@@ -90,7 +90,7 @@ style="background-image: url(/dist/layout/layout_kkt/images/page-banner-2.jpg)">
                     <img src="{{ asset($item->image) }}" class="w-100 rounded" alt="">
                 </div>
                 <div class="col-lg-9 teacher-info my-3">
-                    <h4>{{ $item->name }} – {{ $item->evaluate }}</h4>
+                    <h4>{{ $item->name }} – {{ $item->position }}</h4>
                     <p>Ngày sinh: 2000</p>
                     <p>Nơi sinh: Quảng Nam</p>
                     <p>Chức vụ: Hiêu Trưởng</p>

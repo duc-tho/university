@@ -72,10 +72,10 @@
                                             <a>Thuộc Khoa </a>
                                         </th>
                                         <th class="text-center sorting_desc">
-                                            <a>Người tạo</a>
+                                            <a>Chức Vụ</a>
                                         </th>
                                         <th class="text-center sorting_desc">
-                                            <a>Người đăng</a>
+                                            <a>Người Đăng</a>
                                         </th>
                                         <th class="text-center sorting">
                                             <a><i class="fa fa-bolt"></i></a>
@@ -89,7 +89,7 @@
                                             <td class="text-center">{{ $teacher->id }}</td>
                                             <td>{{ $teacher->name }}</td>
                                             <td>
-                                                <img width="200px" src="{{asset($teacher->image)}}" class="thumbnail">
+                                                <img width="200px" src="{{ asset($teacher->image) }}" class="thumbnail">
                                             </td>
                                             @foreach ($facultylist as $faculty)
                                                 @if ($faculty->id === $teacher->faculty_id)
@@ -97,7 +97,7 @@
                                                 @break
                                                 @endif
                                             @endforeach
-                                            <td class="text-center">{{ $teacher->created_by }}</td>
+                                            <td class="text-center">{{ $teacher->position }}</td>
                                             <td class="text-center">{{ $teacher->updated_by }}</td>
                                             <td class="text-center">
                                                 <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">

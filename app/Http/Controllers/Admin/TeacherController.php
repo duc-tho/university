@@ -24,52 +24,58 @@ class TeacherController extends Controller
     }
     public function create($khoa)
     {
-        $facultylist = Faculty::all();
+        $faculty_list = Faculty::all();
         return view('server.pages.teacher.create', [
-            'facultylist' =>  $facultylist,
+            'faculty_list' =>  $faculty_list,
             'khoa' => $khoa,
         ]);
     }
     public function store(AddTeacherRequest $request, $khoa)
     {
-        // $filename = $request->img->getClientOriginalName();
-        $teacher = new TeacherRepresentative();
-        $teacher->faculty_id = $request->faculty_id;
-        $teacher->name = $request->name;
-        $teacher->intro = $request->intro;
-        $teacher->evaluate = $request->evaluate;
-        $teacher->created_by = $request->created_by;
-        $teacher->updated_by = $request->updated_by;
-        $teacher->status = $request->status;
-        $teacher->image = upload_file($request->img, 'dist/upload/image/3/teacher');
+        $teacher = new TeacherRepresentative($request->input());
+        $request['status'] == "on" ? $teacher['status'] = 1 : $teacher['status'] = 0;
+        if ($request->file('image') != null) $teacher['image'] = upload_file($request->file('image'), 'dist/upload/image/teacher');
+
+        $request->validate([
+            'name' => 'required|unique:teacher_representative,name,' . $teacher->id
+        ], [
+            'name.unique' => 'Tên giảng viên đã tồn tại, vui lòng nhập một tên khác...',
+            'name.required' => 'Chưa nhập tên giảng viên nè!',
+        ]);
+
         $teacher->save();
         return redirect()->route('admin.teacher.show', [$khoa['slug']]);
     }
     public function edit(Request $request, $khoa, $id)
     {
         $teacher = TeacherRepresentative::find($id);
-        $list_faculty = Faculty::all();
+        $faculty_list = Faculty::all();
         return view('server.pages.teacher.edit', [
             'teacher' => $teacher,
-            'list_faculty' => $list_faculty,
+            'faculty_list' => $faculty_list,
             'khoa' => $khoa,
         ]);
     }
     public function update(EditTeacherRequest $request, $khoa, $id)
     {
-        $teacher = new TeacherRepresentative();
-        $arr['name'] = $request->name;
-        $arr['faculty_id'] = $request->faculty_id;
-        $arr['evaluate'] = $request->evaluate;
-        $arr['status'] = $request->status;
-        $arr['created_by'] = $request->created_by;
-        $arr['updated_by'] = $request->updated_by;
-        $arr['intro'] = $request->intro;
-        if ($request->hasFile('img')) {
-            $arr['image'] = upload_file($request->img, 'dist/upload/image/3/teacher');
-        }
-        $teacher::where('id', $id)->update($arr);
-        // return redirect()->back()->with(["toastrInfo" => ["type" => "success", "messenger" => "Lưu thành công"]]);
+
+        $teacher = TeacherRepresentative::find($id);
+
+        abort_if(!$teacher, 404);
+
+        if ($request->has('status')) $request->merge(['status' => $request['status'] == "on" ? 1 : 0]);
+
+        if ($request->file('image') != null) $request->merge(['image' => upload_file($request->file('image'), 'dist/upload/image/teacher')]);
+
+        $teacher->update($request->input());
+
+        $request->validate([
+            'name' => 'required|unique:teacher_representative,name,' . $teacher->id
+        ], [
+            'name.unique' => 'Tên giảng viên đã tồn tại, vui lòng nhập một tên khác...',
+            'name.required' => 'Chưa nhập tên giảng viên nè!',
+        ]);
+        // chuyển hướng về trang teacher list
         return redirect()->route('admin.teacher.show', [$khoa['slug']]);
     }
     public function delete($khoa, $id)

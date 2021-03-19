@@ -75,7 +75,7 @@ class TeacherController extends Controller
         else $menu = null;
 
         // lấy giáo viên tiêu biểu
-        $teacher = TeacherRepresentative::where(['status' => 1,'faculty_id' => $faculty_id])->get();
+        $teacher = TeacherRepresentative::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
         // dd($faculty_id);
 
         // lấy các liên kết qua trang khác ở footer
@@ -90,15 +90,19 @@ class TeacherController extends Controller
 
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty_id])->first();
-
-        return view('client.layout.layout_kkt.page.teacher', [
-
-
+        
+        // Lấy footer liệt kê các khoa
+        $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->paginate(4);
+        return view('client.layout.' . $layout_name . '.page.teacher', [
+            'footer_faculty' => $footer_faculty,
+            'license' => getSettingValue($settings, 'license'),
+            'license_content' => getSettingValue($settings, 'license_content'),
+            'website' => getSettingValue($settings, 'website'),
             'all_specialized' => $all_specialized,
             'slogan_nn' => getSettingValue($settings, 'slogan_nn'),
             'sub_slogan_nn' => getSettingValue($settings, 'sub_slogan_nn'),
             'time_work' => getSettingValue($settings, 'time_work'),
-            'address' =>getSettingValue($settings, 'address'),
+            'address' => getSettingValue($settings, 'address'),
             'phone' => $contact['phone'],
             'email' => $contact['email'],
             'hotline' => $contact['hotline'],

@@ -108,6 +108,7 @@ class NewsController extends Controller
             'logo' => getSettingValue($settings, 'logo'),
             'intro_video' => getSettingValue($settings, 'intro_video'),
             'copyright' => getSettingValue($settings, 'copyright'),
+            'website' => getSettingValue($settings, 'website'),
             'intro_short' => $faculty['intro_summary'],
             'menu' => $menu,
             'footer_link' => $footer_link,
@@ -120,6 +121,8 @@ class NewsController extends Controller
             'image_category' => $image_category,
 
             //Start
+            'license' => getSettingValue($settings, 'license'),
+            'license_content' => getSettingValue($settings, 'license_content'),
             'logo_travel' => getSettingValue($settings, 'logo_travel'),
             'slogan_main_travel' => getSettingValue($settings, 'slogan_main_travel'),
             'slogan_intro_travel' => getSettingValue($settings, 'slogan_intro_travel'),
@@ -241,6 +244,8 @@ class NewsController extends Controller
             'intro_video' => getSettingValue($settings, 'intro_video'),
             'copyright' => getSettingValue($settings, 'copyright'),
             'intro_short' => $faculty['intro_summary'],
+            'license' => getSettingValue($settings, 'license'),
+            'license_content' => getSettingValue($settings, 'license_content'),
             'menu' => $menu,
             'footer_link' => $footer_link,
             'socials_icon' => $socials_icon,
@@ -250,7 +255,7 @@ class NewsController extends Controller
             'relate_news' => $relate_news,
             'relate_notification' => $relate_notification,
             'all_category' => $all_category,
-
+            'website' => getSettingValue($settings, 'website'),
             //Start Khoa
             'logo_travel' => getSettingValue($settings, 'logo_travel'),
             'title_faculty_description' => getSettingValue($settings, 'title_faculty_description'),

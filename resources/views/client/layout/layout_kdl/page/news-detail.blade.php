@@ -5,7 +5,7 @@
     <div class="breadcrum-bg py-sm-5 py-4">
         <div class="container py-lg-3">
             <h2>Tin tức Khoa Du Lịch</h2>
-            <p><a href="#">Trang Chủ</a> &nbsp; / &nbsp; Tin Tức</p>
+            <p><a href="#">Trang Chủ</a> &nbsp; / &nbsp; {{$category['title']}} &nbsp; / &nbsp; {{$news['title']}}</p>
         </div>
     </div>
 </section>
@@ -21,38 +21,34 @@
 
                     <div class="col-lg-12">
                         <div class="feature-img">
-                            <img class="img-fluid" src="{{asset( $news_travel['image'] )}}" width="100%" alt="">
+                            <img class="img-fluid" src="{{asset( $news['image'] )}}" width="100%" alt="">
                         </div>
                     </div>
                     <div class="col-lg-3  col-md-3">
                         <div class="blog_info text-right">
                             <div class="post_tag">
-                                <a href="javascript:">Thông tin,</a>
-                                <a class="active" href="javascript:">Du lịch,</a>
-                                <a href="javascript:">Việc làm,</a>
-                                <a href="javascript:">Sự kiện</a>
+                                <a class="active" href="{{ route('tin-tuc', [$faculty['slug']]) }}">{{ $category['title'] }}</a>
                             </div>
                             <ul class="blog_meta list">
-                                <li><a href="javascript:">Tác giả :{{ $news_travel['created_by'] }}<i class="fas fa-user-alt"></i></a></li>
-                                <li><a href="javascript:">Ngày : {{ $news_travel['event_time'] }}<i class="far fa-calendar-alt"></i></a></li>
-                                <li><a href="javascript:">Lượt xem : {{ $news_travel['view_count'] }} view<i class="fas fa-eye"></i></a></li>
-                                <li><a href="javascript:">Bình luận :120 <i class="fas fa-comments"></i></a></li>
+                                <li><a href="javascript:">Tác giả : {{ $news['created_by'] }}<i class="fas fa-user-alt"></i></a></li>
+                                <li><a href="javascript:">Ngày : {{ $news['event_time'] }}<i class="far fa-calendar-alt"></i></a></li>
+                                <li><a href="javascript:">Lượt xem : {{ $news['view_count'] }} view<i class="fas fa-eye"></i></a></li>
                             </ul>
-                            <ul class="social-links">
+                            {{-- <ul class="social-links">
                                 <li><a href="javascript:"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="javascript:"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="javascript:"><i class="fa fa-github"></i></a></li>
                                 <li><a href="javascript:"><i class="fa fa-behance"></i></a></li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </div>
 
                     <div class="col-lg-9 col-md-9 blog_details">
 
-                        <h2>{{ $news_travel['title'] }}</h2>
+                        <h2>{{ $news['title'] }}</h2>
                         <br>
                         <p class="excert">
-                            {!! $news_travel['content'] !!}
+                            {!! $news['content'] !!}
                         </p>
                     </div>
 

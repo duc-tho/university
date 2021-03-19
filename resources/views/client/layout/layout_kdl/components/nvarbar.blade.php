@@ -13,21 +13,23 @@
             <div class="br"></div>
         </aside>
 
-        @foreach ($news_travel_nvarbar as $key => $category_travel)
+
         <aside class="single_sidebar_widget popular_post_widget">
-            <h3 class="widget_title">{{ $category_travel['title'] }}</h3>
-            @foreach ($category_travel['news'] as $item)
+
+            <h3 class="widget_title">Tin Tức Liên Quan</h3>
+            @foreach ($relate_news as $item)
             <div class="testimonial-info">
-                <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category_travel['slug'], $item['slug']]) }}">
+                <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">
                     <p id="tb">{{ $item['title']  }}</p>
                 </a>
-                <h5 class="mes-h5">Thông Báo, <span>29/12/2020</span></h5>
+                <h5 class="mes-h5">{{ $category['title'] }}, <span>{{ $item['event_time'] }}</span></h5>
                 <br>
             </div>
             @endforeach
             <div class="br"></div>
+
         </aside>
-        @endforeach
+
         <aside class="single_sidebar_widget ads_widget">
             <a href="#"><img class="img-fluid" src="imagesadd.jpg" alt=""></a>
             <div class="br"></div>

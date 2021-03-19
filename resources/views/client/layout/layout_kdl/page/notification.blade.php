@@ -19,47 +19,33 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="blog_left_sidebar">
-                        @foreach ($news_travel as $key => $category_travel)
-                        {{-- {{ $category_travel['title'] }} --}}
-                        <article class="row blog_item">
-                            @foreach ($category_travel['news'] as $item)
-                            <div class="col-md-3">
-                                <img
-                                src=" {{ asset($item->image)}}"
-                                width="100%" alt="">
-                            </div>
-                            <div class="col-md-9">
-                                <div class="blog_post">
+                        @foreach ($news as $key => $category)
+                            <article class="row blog_item">
+                                @foreach ($category['news'] as $item)
+                                    <div class="col-md-12">
+                                        <div class="blog_post">
+                                            <div class="blog_details">
+                                                <a href="{{route('thong-bao-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']])}}">
+                                                    <h2>{{ $item->title }}</h2>
+                                                    <br>
+                                                </a>
+                                                <p>
+                                                    <span><a href="javascript:"> <i class="fas fa-user-alt"></i> Tác giả :
+                                                            {{ $item->created_by }} |
+                                                        </a></span>
+                                                    <span><a href="javascript:"> <i class="far fa-calendar-alt"></i> Ngày :
+                                                            {{ $item->event_time }}| </a></span>
+                                                    <span><a href="javascript:"> <i class="fas fa-eye"></i> Lượt xem :
+                                                            {{ $item->view_count }} view
+                                                        </a></span>
 
-                                    <div class="blog_details">
-                                        <a href="#">
-                                            <h2>{{$item->title}}</h2>
-                                            <br>
-                                        </a>
-                                        <p>{{$item->description}}</p>
-                                        <p>
-                                            <span><a href="javascript:"><i class="fas fa-user-alt"></i>Tác giả : Ngọc Lập |
-                                                </a></span>
-                                            <span><a href="javascript:"><i class="far fa-calendar-alt"></i> Ngày :
-                                                    05/01/2020 | </a></span>
-                                            <span><a href="javascript:"><i class="fas fa-eye"></i> Lượt xem : 1.2 view |
-                                                </a></span>
-                                            <span><a href="javascript:"><i class="fas fa-comments"></i> Bình luận :120
-                                                </a></span>
-
-                                        </p>
-                                        <hr>
-                                        {{-- <a href="#" class="white_bg_btn">Xem thêm</a> --}}
+                                                </p>
+                                                <hr>
+                                            </div>
+                                        </div>
                                     </div>
-
-                                </div>
-
-                            </div>
-
-                            @endforeach
-
-                        </article>
-
+                                @endforeach
+                            </article>
 
                         @endforeach
 

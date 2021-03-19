@@ -71,6 +71,10 @@ class EducateController extends Controller
 
         $contact = Contact::where(['faculty_id' => $faculty_id])->first();
         return view('client.layout.' . $layout_name . '.page.educate', [
+            'license' => getSettingValue($settings, 'license'),
+            'license_content' => getSettingValue($settings, 'license_content'),
+            'website' => getSettingValue($settings, 'website'),
+            'phone' => getSettingValue($settings, 'phone'),
             'logo' => getSettingValue($settings, 'logo'),
             'copyright' => getSettingValue($settings, 'copyright'),
             'teacher' => $teacher,
