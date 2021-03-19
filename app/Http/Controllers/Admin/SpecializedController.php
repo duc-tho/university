@@ -46,43 +46,42 @@ class SpecializedController extends Controller
         $specialized->save();
         return redirect()->route('admin.specialized.show', [$khoa['slug']]);
     }
-    // public function edit(Request $request, $khoa, $id)
-    // {
-    //     $teacher = TeacherRepresentative::find($id);
-    //     $faculty_list = Faculty::all();
-    //     return view('server.pages.teacher.edit', [
-    //         'teacher' => $teacher,
-    //         'faculty_list' => $faculty_list,
-    //         'khoa' => $khoa,
-    //     ]);
-    // }
-    // public function update(EditTeacherRequest $request, $khoa, $id)
-    // {
+    public function edit(Request $request, $khoa, $id)
+    {
+        $specialized = Specialized::find($id);
+        $faculty_list = Faculty::all();
+        return view('server.pages.specialized.edit', [
+            'specialized' => $specialized,
+            'faculty_list' => $faculty_list,
+            'khoa' => $khoa,
+        ]);
+    }
+    public function update(Request $request, $khoa, $id)
+    {
 
-    //     $teacher = TeacherRepresentative::find($id);
+        $specialized = Specialized::find($id);
 
-    //     abort_if(!$teacher, 404);
+        abort_if(!$specialized, 404);
 
-    //     if ($request->has('status')) $request->merge(['status' => $request['status'] == "on" ? 1 : 0]);
+        if ($request->has('status')) $request->merge(['status' => $request['status'] == "on" ? 1 : 0]);
 
-    //     if ($request->file('image') != null) $request->merge(['image' => upload_file($request->file('image'), 'dist/upload/image/teacher')]);
+        if ($request->file('image') != null) $request->merge(['image' => upload_file($request->file('image'), 'dist/upload/image/specialized')]);
 
-    //     $teacher->update($request->input());
+        $specialized->update($request->input());
 
-    //     $request->validate([
-    //         'name' => 'required|unique:teacher_representative,name,' . $teacher->id
-    //     ], [
-    //         'name.unique' => 'Tên giảng viên đã tồn tại, vui lòng nhập một tên khác...',
-    //         'name.required' => 'Chưa nhập tên giảng viên nè!',
-    //     ]);
-    //     // chuyển hướng về trang teacher list
-    //     return redirect()->route('admin.teacher.show', [$khoa['slug']]);
-    // }
-    // public function delete($khoa, $id)
-    // {
-    //     TeacherRepresentative::find($id);
-    //     TeacherRepresentative::destroy($id);
-    //     // chuyển hướng về trang faculty list
-    //     return redirect()->route('admin.teacher.show', [$khoa['slug']]);
-    // }
+        $request->validate([
+            'name' => 'required:specialized,name,' . $specialized->id
+        ], [
+            'name.required' => 'Chưa nhập tên giảng viên nè!',
+        ]);
+        // chuyển hướng về trang teacher list
+        return redirect()->route('admin.specialized.show', [$khoa['slug']]);
+    }
+    public function delete($khoa, $id)
+    {
+        Specialized::find($id);
+        Specialized::destroy($id);
+        // chuyển hướng về trang faculty list
+        return redirect()->route('admin.specialized.show', [$khoa['slug']]);
+    }
 }

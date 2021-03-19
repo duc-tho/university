@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AddFacultyRequest;
 use App\Http\Requests\EditFacultyRequest;
 use App\Models\Faculty;
+use DirectoryIterator;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -23,8 +24,17 @@ class FacultyController extends Controller
     }
     public function create(Request $request, $khoa)
     {
+        $layout_path = base_path() . '\resources\views\client\layout\\';
+
+        $layout_dir = glob($layout_path . 'layout_*', GLOB_ONLYDIR | GLOB_NOSORT);
+
+        foreach ($layout_dir as $key => $dir) {
+            $layout_dir[$key] = str_replace($layout_path, '', $dir);
+        }
+
         return view('server.pages.faculty.create', [
             'khoa' => $khoa,
+            'layout_list' => $layout_dir
         ]);
     }
     public function store(AddFacultyRequest $request, $khoa)

@@ -25,14 +25,14 @@ class Specialized extends Model
 {
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'specialized';
 
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -40,7 +40,7 @@ class Specialized extends Model
     /**
      * @var array
      */
-    protected $fillable = ['faculty_id', 'name', 'meta_keywords', 'meta_descriptions', 'slug', 'intro_summary', 'intro', 'image', 'created_at', 'updated_at', 'created_by', 'updated_by', 'status'];
+    protected $fillable = ['faculty_id', 'name', 'meta_keywords', 'meta_descriptions', 'slug', 'intro_summary', 'intro', 'image', 'created_at', 'updated_at', 'created_by', 'updated_by', 'status','level_educate','type_educate','type_time','object_educate'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

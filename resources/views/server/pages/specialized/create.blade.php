@@ -27,16 +27,17 @@
                 <x-admin.form.input :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" />
                 <x-admin.form.input :col="3" :type="'text'" :label="'Người Đăng'" :required="true" :placeholder="'Người Đăng'" :fieldName="'updated_by'" />
 
-                <x-admin.form.input :col="3" :type="'text'" :label="'Trình Độ Đào Tạo'" :required="true" :placeholder="'Trình Độ Đào Tạo'" :fieldName="'level_educate'" />
-                <x-admin.form.input :col="3" :type="'text'" :label="'Hình Thức Đào Tạo'" :required="true" :placeholder="'Hình Thức Đào Tạo'" :fieldName="'type_educate'" />
-                <x-admin.form.input :col="3" :type="'text'" :label="'Thời Gian Đào Tạo'" :required="true" :placeholder="'Thời Gian Đào Tạo'" :fieldName="'type_time'" />
-                <x-admin.form.input :col="3" :type="'text'" :label="'Đối Tượng Đào Tạo'" :required="true" :placeholder="'Đối Tượng Đào Tạo'" :fieldName="'object_educate'" />
+                <x-admin.form.input :col="3" :type="'text'" :label="'Trình Độ Đào Tạo'"  :required="false"  :placeholder="'Trình Độ Đào Tạo'" :fieldName="'level_educate'"/>
+                <x-admin.form.input :col="3" :type="'text'" :label="'Hình Thức Đào Tạo'" :required="false" :placeholder="'Hình Thức Đào Tạo'" :fieldName="'type_educate'"/>
+                <x-admin.form.input :col="3" :type="'text'" :label="'Thời Gian Đào Tạo'" :required="false" :placeholder="'Thời Gian Đào Tạo'" :fieldName="'type_time'"/>
+                <x-admin.form.input :col="3" :type="'text'" :label="'Đối Tượng Đào Tạo'" :required="false" :placeholder="'Đối Tượng Đào Tạo'" :fieldName="'object_educate'" />
+                
 
                 <x-admin.form.checkbox :col="3" :label="'Trạng thái'" :required="true" :fieldName="'status'" :labelContent="'Đang hoạt động'" />
 
                 <x-admin.form.file :col="3" :label="'Icon đại diện'" :required="false" :fieldName="'icons'" />
 
-                <x-admin.form.file :col="3" :label="'Ảnh đại diện'" :required="false" :fieldName="'image'" />
+                <x-admin.form.file :col="3" :label="'Ảnh đại diện'" :required="false" :fieldName="'image'"  />
 
                 <x-admin.form.multi-select :col="6" :label="'Vai trò'" :required="false" :fieldName="'role'">
                     {{-- @foreach ($roles as $role)

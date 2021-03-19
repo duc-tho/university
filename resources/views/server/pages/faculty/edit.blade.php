@@ -1,6 +1,3 @@
-
-
-
 @extends('server.index')
 @section('title', 'Quản Trị Khoa')
 @section('page-title', 'Sửa '.$faculty['name'])

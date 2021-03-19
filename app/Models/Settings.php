@@ -16,7 +16,7 @@ class Settings extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -25,6 +25,10 @@ class Settings extends Model
      * @var array
      */
     protected $fillable = ['faculty_id', 'name', 'value', 'status'];
+
+
+    // created, updated
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

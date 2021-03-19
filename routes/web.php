@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\Student_reController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\News_Controller;
 use App\Http\Controllers\Admin\SpecializedController;
 
@@ -191,6 +192,13 @@ Route::name('admin.')->prefix('admin/{khoa}')->middleware(['CheckLogedIn', 'Requ
         //
         Route::get('add',  [PermissionController::class, 'create'])->name('create');
         Route::post('add',  [PermissionController::class, 'store'])->name('store');
+        //
+    });
+
+    Route::name('setting.')->prefix('setting')->group(function () {
+        //
+        Route::get('/',  [SettingController::class, 'show'])->name('show');
+        Route::post('/',  [SettingController::class, 'update'])->name('update');
         //
     });
 });

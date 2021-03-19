@@ -103,7 +103,6 @@
                     <x-admin.form.checkbox :col="3" :label="'Trạng thái'" :required="true" :fieldName="'status'"
                         :labelContent="'Đang hoạt động'" />
 
-
                     <x-admin.form.multi-select :col="6" :label="'Vai trò'" :required="false" :fieldName="'role'">
                         {{-- @foreach ($roles as $role)
                     <option value="{{$role['id']}}" {{ in_array($role['id'], old('role') ?? []) ? "selected" : '' }}>{{$role['display_name']}}</option>
