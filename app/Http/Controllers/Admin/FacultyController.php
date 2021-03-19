@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AddFacultyRequest;
 use App\Http\Requests\EditFacultyRequest;
 use App\Models\Faculty;
-use DirectoryIterator;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 

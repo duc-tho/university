@@ -120,7 +120,7 @@
             //Sự kiện file đã được load vào website
             reader.onload = function (e) {
                 //Thay đổi đường dẫn ảnh
-                $('#preview_image').attr('src', e.target.result);
+                $($(input).parent().parent()[0].querySelector("img[data-name='preview-image']")).attr('src', e.target.result);
             }
             reader.readAsDataURL(input.files[0]);
         }
@@ -133,6 +133,7 @@
     tinymce.init({
         selector: "textarea[data-name='tinymce']",
         language: 'vi',
+        height: 400,
         plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern help image imagetools',
         toolbar: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | image',
         file_picker_callback: function (callback, value, meta) {
