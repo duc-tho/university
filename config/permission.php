@@ -1,93 +1,89 @@
 <?php
 
-$defaut_perms = [
-    [
-        'name' => 'list',
-        'display_name' => 'Xem danh sách',
-    ],
-    [
-        'name' => 'create',
-        'display_name' => 'Tạo',
-    ],
-    [
-        'name' => 'edit',
-        'display_name' => 'Sửa',
-    ],
-    [
-        'name' => 'delete',
-        'display_name' => 'Xóa',
-    ]
-];
-
 return [
-    'module' => [
-        /* ví dụ về 1 module quyền
-        * sau khi khai báo module xong vào trang admin phần quản trị quyền
-        * chọn module và quyền của module
-        * sau đó ấn tạo quyền để khởi tạo module
-        */
-        // [
-        //     'name' => 'demo',
-        //     'display_name' => 'Ví dụ',
-        //     'permission' => array_merge($defaut_perms, [
-        //         [
-        //             'name' => 'Download',
-        //             'display_name' => 'Tải xuống',
-        //         ],
-        //     ])
-        // ],
+    'default_module_permission' => [
         [
-            'name' => 'faculty',
-            'display_name' => 'Khoa',
-            'permission' => array_merge($defaut_perms, [])
+            'name' => 'list',
+            'display_name' => 'Xem danh sách'
         ],
         [
-            'name' => 'slide',
-            'display_name' => 'Slide',
-            'permission' => array_merge($defaut_perms, [])
+            'name' => 'create',
+            'display_name' => 'Tạo'
         ],
         [
-            'name' => 'student',
-            'display_name' => 'Sinh viên',
-            'permission' => array_merge($defaut_perms, [])
+            'name' => 'edit',
+            'display_name' => 'Sửa'
         ],
         [
-            'name' => 'teacher',
-            'display_name' => 'Giáo viên',
-            'permission' => array_merge($defaut_perms, [])
-        ],
-        [
-            'name' => 'user',
-            'display_name' => 'Người dùng',
-            'permission' => array_merge($defaut_perms, [])
+            'name' => 'delete',
+            'display_name' => 'Xóa'
         ],
     ],
 
-    'access' => [
-        // Faculty
-        'faculty_list' => 'faculty_list',
-        'faculty_create' => 'faculty_create',
-        'faculty_edit' => 'faculty_edit',
-        'faculty_delete' => 'faculty_delete',
-        // Slide
-        'slide_list' => 'slide_list',
-        'slide_create' => 'slide_create',
-        'slide_edit' => 'slide_edit',
-        'slide_delete' => 'slide_delete',
-        // Student
-        'student_list' => 'student_list',
-        'student_create' => 'student_create',
-        'student_edit' => 'student_edit',
-        'student_delete' => 'student_delete',
-        // Teacher
-        'teacher_list' => 'teacher_list',
-        'teacher_create' => 'teacher_create',
-        'teacher_edit' => 'teacher_edit',
-        'teacher_delete' => 'teacher_delete',
-        // User
-        'user_list' => 'user_list',
-        'user_create' => 'user_create',
-        'user_edit' => 'user_edit',
-        'user_delete' => 'user_delete',
-    ]
+    'module' => [
+        'faculty' => [
+            'display_name' => 'Khoa',
+            'access' => [
+                'list' => 'faculty_list',
+                'create' => 'faculty_create',
+                'edit' => 'faculty_edit',
+                'delete' => 'faculty_delete',
+            ]
+        ],
+        'slide' => [
+            'display_name' => 'Slide',
+            'access' => [
+                'list' => 'slide_list',
+                'create' => 'slide_create',
+                'edit' => 'slide_edit',
+                'delete' => 'slide_delete',
+            ]
+        ],
+        'student' => [
+            'display_name' => 'Sinh viên',
+            'access' => [
+                'list' => 'student_list',
+                'create' => 'student_create',
+                'edit' => 'student_edit',
+                'delete' => 'student_delete',
+            ]
+        ],
+        'teacher' => [
+            'display_name' => 'Giáo viên',
+            'access' => [
+                'list' => 'teacher_list',
+                'create' => 'teacher_create',
+                'edit' => 'teacher_edit',
+                'delete' => 'teacher_delete',
+
+            ]
+        ],
+        'user' => [
+            'display_name' => 'Người dùng',
+            'access' => [
+                'list' => 'user_list',
+                'create' => 'user_create',
+                'edit' => 'user_edit',
+                'delete' => 'user_delete',
+            ]
+        ],
+        'menu' => [
+            'display_name' => 'Menu',
+            'access' => [
+                'list' => 'menu_list',
+                'create' => 'menu_create',
+                'edit' => 'menu_edit',
+                'delete' => 'menu_delete',
+            ]
+        ],
+        'news' => [
+            'display_name' => 'Tin tức',
+            'access' => [
+                'list' => 'news_list',
+                'create' => 'news_create',
+                'edit' => 'news_edit',
+                'delete' => 'news_delete',
+            ]
+        ],
+    ],
 ];

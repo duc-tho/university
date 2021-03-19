@@ -35,9 +35,12 @@
 <script src="{{ asset('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
 <script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+{{-- tinymce --}}
+<script src="{{ asset('plugins/tinymce/tinymce.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+{{--
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> --}}
 
 <script>
     $(function () {
@@ -67,7 +70,7 @@
             this.element(e);
         },
         //
-        onkeyup: function(element, event) {
+        onkeyup: function (element, event) {
             $(element).valid();
         },
         //
@@ -122,10 +125,40 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
+</script>
 
+<<<<<<< HEAD
     // $(document).ready(function () {
     //     $('#image').click(function () {
     //         $('#img').click();
     //     });
     // });
+=======
+{{-- init tiny mce --}}
+<script>
+    tinymce.baseURL = "{{ asset('plugins/tinymce') }}";
+    tinymce.init({
+        selector: "textarea[data-name='tinymce']",
+        language: 'vi',
+        plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern help image imagetools',
+        toolbar: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | image',
+        file_picker_callback: function (callback, value, meta) {
+            let x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+            let y = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
+
+            let type = 'image' === meta.filetype ? 'Images' : 'Files',
+                url = '/laravel-filemanager?editor=tinymce5&type=' + type;
+
+            tinymce.activeEditor.windowManager.openUrl({
+                url: url,
+                title: 'Quản Lý Files',
+                width: x * 0.8,
+                height: y * 0.8,
+                onMessage: (api, message) => {
+                    callback(message.content.replace('storage', 'dist/upload'));
+                }
+            });
+        }
+    });
+>>>>>>> 1f1495cb38754d21e96361bbbd2900a3f1322946
 </script>

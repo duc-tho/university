@@ -23,7 +23,7 @@ class Roles extends Model
     /**
      * @var array
      */
-    protected $fillable = ['name', 'display_name'];
+    protected $fillable = ['name', 'display_name', 'level'];
 
     // created, updated
     public $timestamps = false;

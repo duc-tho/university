@@ -7,7 +7,9 @@ use App\Http\Requests\Admin\Role\CreateRole;
 use App\Http\Requests\Admin\Role\UpdateRole;
 use App\Models\Permission;
 use App\Models\Roles;
+use App\Models\RoleUser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RoleController extends Controller
 {
@@ -16,7 +18,11 @@ class RoleController extends Controller
         $item_per_page = 16;
         if ($request->has('item-per-page')) $item_per_page = $request->query('item-per-page');
 
-        $roles = Roles::paginate($item_per_page);
+        $roles_query_conditions = [];
+
+        if (!Auth::user()->roles->contains('level', 0)) $roles_query_conditions = [['level', '>', 0]];
+
+        $roles = Roles::where($roles_query_conditions)->paginate($item_per_page);
 
         return view('server.pages.role.index', [
             'khoa' => $khoa,
@@ -28,19 +34,24 @@ class RoleController extends Controller
     {
         $permissions = Permission::where(['parent_id' => 0])->get();
 
+        $roles = Roles::where([['level', '>', 0]])->get();
+
         return view('server.pages.role.create', [
             'permissions' => $permissions,
-            'khoa' => $khoa
+            'khoa' => $khoa,
+            'roles' => $roles
         ]);
     }
 
     public function store(CreateRole $request, $khoa)
     {
-        $roles = new Roles($request->input());
+        $role = new Roles($request->input());
 
-        $roles->save();
+        $role['level'] = $role['level'] + 1;
 
-        $roles->permissions()->attach($request->input('permission'));
+        $role->save();
+
+        $role->permissions()->attach($request->input('permission'));
 
         return redirect()->route('admin.role.show', [$khoa['slug']]);
     }
@@ -53,15 +64,19 @@ class RoleController extends Controller
         // Ngưng nếu ko tìm thấy role
         abort_if(!$role, 404);
 
-        // lấy danh sách role của role
+        // lấy danh sách quyền của role
         $role['permission_list'] = $role->permissions->pluck('id')->toArray();
 
-        // Lấy tất cả role
+        // Lấy tất cả quyền
         $permissions = Permission::where(['parent_id' => 0])->get();
+
+        // lấy tất cả role
+        $roles = Roles::where([['level', '>', 0], ['id', '!=', $role['id']]])->get();
 
         return view('server.pages.role.edit', [
             'khoa' => $khoa,
             'role' => $role->toArray(),
+            'roles_list' => $roles,
             'permissions' => $permissions
         ]);
     }
@@ -86,13 +101,16 @@ class RoleController extends Controller
             'display_name.required' => 'Chưa nhập tên hiển thị của vai trò nè!',
         ]);;
 
-        if ($request->has('permission')) {
+        if ($request->filled('permission')) {
             // Gỡ toàn bộ role của role ra
             $role->permissions()->detach();
 
             // Gắn lại roles cho role
             $role->permissions()->attach($request['permission']);
         }
+
+        if ($request->filled('level')) $request->merge(['level' => $request['level'] + 1]);
+        else $request->offsetUnset('level');
 
         // Cập nhật lại thông tin role
         $role->update($request->input());
@@ -111,6 +129,13 @@ class RoleController extends Controller
 
         // Gỡ toàn bộ role của role ra
         $role->permissions()->detach();
+
+        // xóa vai trò ở các user đang giữ vai trò này
+        $role_users = RoleUser::where('role_id', $role['id'])->get();
+
+        foreach ($role_users as $role_user) {
+            RoleUser::destroy($role_user['id']);
+        }
 
         // xóa role
         Roles::destroy($id);

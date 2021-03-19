@@ -20,7 +20,7 @@ class User extends Authenticatable
     protected $table = 'users';
     protected $primaryKey = "id";
     protected $guarded = [];
-    protected $fillable = ['faculty_id', 'nickname', 'first_name', 'last_name', 'birthday', 'phone', 'email', 'password', 'status', 'created_at', 'updated_at', 'remember_token', 'avatar'];
+    protected $fillable = ['faculty_id', 'nickname', 'first_name', 'last_name', 'birthday', 'phone', 'email', 'password', 'status', 'created_at', 'updated_at', 'remember_token', 'avatar', 'isAdmin'];
 
     /**
      * The attributes that should be hidden for arrays.

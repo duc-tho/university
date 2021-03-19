@@ -53,12 +53,14 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+                        @can('faculty_list', FacultyPolicy::class)
                         <li class="nav-item">
                             <a href="{{ route('admin.faculty.show', [$khoa['slug']]) }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Khoa</p>
                             </a>
                         </li>
+                        @endcan
                         <li class="nav-item">
                             <a href="{{ route('admin.teacher.show', [$khoa['slug']]) }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -99,6 +101,14 @@
                         <i class="nav-icon fas fa-user-alt"></i>
                         <p>
                             Quản Trị Vai Trò
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('admin.permission.create', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-user-alt"></i>
+                        <p>
+                            Tạo Quyền
                         </p>
                     </a>
                 </li>

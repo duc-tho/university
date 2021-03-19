@@ -29,7 +29,11 @@ class Permission extends Model
     /**
      * @var array
      */
-    protected $fillable = ['name', 'display_name'];
+    protected $fillable = ['name', 'display_name', 'parent_id'];
+
+
+    // created, updated
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

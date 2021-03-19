@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AuthenticateController;
 use App\Http\Controllers\Admin\FacultyController;
 use App\Http\Controllers\Admin\TeacherController as AdminTeacherController;
 use App\Http\Controllers\Admin\HomeController as DashboardController;
+use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\Student_reController;
@@ -43,10 +44,10 @@ Route::post('/authenticate', [AuthenticateController::class, 'authenticate'])->n
 #endregion
 
 #region lfm route
-// Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
-//     \UniSharp\LaravelFilemanager\Lfm::routes();
-// });
-// #endregion
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
+#endregion
 
 #region admin route
 Route::get('/admin', [DashboardController::class, 'redirect'])->name('admin.redirect');
@@ -61,16 +62,45 @@ Route::name('admin.')->prefix('admin/{khoa}')->middleware(['CheckLogedIn', 'Requ
             ->middleware('can:faculty_list')
             ->name('show');
         //
-        Route::get('add',  [FacultyController::class, 'create'])->name('create');
-        Route::post('add',  [FacultyController::class, 'store'])->name('store');
+        Route::get('add',  [FacultyController::class, 'create'])
+            ->middleware('can:faculty_create')
+            ->name('create');
+        Route::post('add',  [FacultyController::class, 'store'])
+            ->middleware('can:faculty_create')
+            ->name('store');
         //
-        Route::get('/edit/{id}',  [FacultyController::class, 'edit'])->name('edit')->where(['id' => '[0-9]+']);
-        Route::post('/edit/{id}', [FacultyController::class, 'update'])->name('update')->where(['id' => '[0-9]+']);
+        Route::get('/edit/{id}',  [FacultyController::class, 'edit'])
+            ->middleware('can:faculty_edit')
+            ->name('edit')
+            ->where(['id' => '[0-9]+']);
+        Route::post('/edit/{id}', [FacultyController::class, 'update'])
+            ->middleware('can:faculty_edit')
+            ->name('update')
+            ->where(['id' => '[0-9]+']);
         //
-        Route::get('delete/{id}', [FacultyController::class, 'delete'])->name('delete')->where(['id' => '[0-9]+']);
+        Route::get('/delete/{id}', [FacultyController::class, 'delete'])
+            ->middleware('can:faculty_delete')
+            ->name('delete')
+            ->where(['id' => '[0-9]+']);
         //
     });
 
+    //Route add,edit,delete category
+    Route::name('category.')->prefix('category')->group(function () {
+        //
+        Route::get('/', [CategoryController::class, 'show'])->name('show');
+        //
+        Route::get('add',  [CategoryController::class, 'create'])->name('create');
+        Route::post('add',  [CategoryController::class, 'store'])->name('store');
+        //
+        Route::get('/edit/{id}',  [CategoryController::class, 'edit'])->name('edit')->where(['id' => '[0-9]+']);
+        Route::post('/edit/{id}', [CategoryController::class, 'update'])->name('update')->where(['id' => '[0-9]+']);
+        //
+        Route::get('delete/{id}', [CategoryController::class, 'delete'])->name('delete')->where(['id' => '[0-9]+']);
+        //
+    });
+
+<<<<<<< HEAD
         //Route add,edit,delete category
         Route::name('category.')->prefix('category')->group(function () {
             //
@@ -100,6 +130,8 @@ Route::name('admin.')->prefix('admin/{khoa}')->middleware(['CheckLogedIn', 'Requ
             //
         });
 
+=======
+>>>>>>> 1f1495cb38754d21e96361bbbd2900a3f1322946
     Route::name('teacher.')->prefix('teacher')->group(function () {
         //
         Route::get('/', [AdminTeacherController::class, 'show'])->name('show');
@@ -154,6 +186,13 @@ Route::name('admin.')->prefix('admin/{khoa}')->middleware(['CheckLogedIn', 'Requ
         Route::post('/edit/{id}', [RoleController::class, 'update'])->name('update')->where(['id' => '[0-9]+']);
         //
         Route::get('/delete/{id}', [RoleController::class, 'delete'])->name('delete')->where(['id' => '[0-9]+']);
+        //
+    });
+
+    Route::name('permission.')->prefix('permission')->group(function () {
+        //
+        Route::get('add',  [PermissionController::class, 'create'])->name('create');
+        Route::post('add',  [PermissionController::class, 'store'])->name('store');
         //
     });
 });

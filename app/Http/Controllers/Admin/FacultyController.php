@@ -67,7 +67,7 @@ class FacultyController extends Controller
 
         return redirect()->route('admin.faculty.show', [$khoa['slug']]);
     }
-    public function edit( Request $request, $khoa, $id)
+    public function edit(Request $request, $khoa, $id)
     {
         $faculty = Faculty::find($id);
         return view('server.pages.faculty.edit', [
@@ -75,7 +75,7 @@ class FacultyController extends Controller
             'khoa' => $khoa,
         ]);
     }
-    public function update(EditFacultyRequest $request, $khoa, $id )
+    public function update(EditFacultyRequest $request, $khoa, $id)
     {
         $faculty = Faculty::find($id);
 
