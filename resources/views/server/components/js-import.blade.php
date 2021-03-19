@@ -127,13 +127,6 @@
     }
 </script>
 
-<<<<<<< HEAD
-    // $(document).ready(function () {
-    //     $('#image').click(function () {
-    //         $('#img').click();
-    //     });
-    // });
-=======
 {{-- init tiny mce --}}
 <script>
     tinymce.baseURL = "{{ asset('plugins/tinymce') }}";
@@ -160,5 +153,4 @@
             });
         }
     });
->>>>>>> 1f1495cb38754d21e96361bbbd2900a3f1322946
 </script>

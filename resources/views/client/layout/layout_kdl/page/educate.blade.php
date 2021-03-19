@@ -18,8 +18,6 @@
                         <img src="{{ asset($specialized->image) }}"
                             width="100%" height="auto" class="img-fluid" alt="" />
                         <hr>
-                        <img src=" {{ asset($specialized->image2) }}"
-                            width="100%" height="auto" class="img-fluid" alt="" />
                     </div>
                     <div class="cwp4-text col-lg-6">
                                 <h2 id="titleqtks">{{ $specialized->name }}</h2>
