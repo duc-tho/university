@@ -85,6 +85,12 @@
                                 <p>Slide</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.specialized.show', [$khoa['slug']]) }}" class="nav-link {{ request()->is('admin/demo/demo-2*') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Các Ngành Đào Tạo</p>
+                            </a>
+                        </li>
 
                     </ul>
                 </li>

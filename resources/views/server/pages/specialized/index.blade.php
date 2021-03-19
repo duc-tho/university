@@ -1,6 +1,6 @@
 @extends('server.index')
-@section('title', 'Quản Trị Slide')
-@section('page-title', 'Quản Trị Slide')
+@section('title', 'Quản Trị Ngành')
+@section('page-title', 'Quản Trị Ngành')
 @section('page-content')
     <div class="content">
         <div class="container-fluid">
@@ -9,9 +9,9 @@
                 <div class="col-12">
                     <div class="card card-primary card-outline">
                         <div class="card-header p-2 d-flex align-items-center justify-content-between">
-                            <a href="{{route('admin.slide.create', [$khoa->slug])}}">
+                            <a href="{{route('admin.specialized.create', [$khoa->slug])}}">
                                 <button class="btn btn-info btn-sm">
-                                    <i class="fas fa-plus"></i> Thêm Slide
+                                    <i class="fas fa-plus"></i> Thêm Ngành
                                 </button>
                             </a>
                             <div class="ml-auto d-inline-block">
@@ -63,16 +63,17 @@
                                             <a>ID</a>
                                         </th>
                                         <th class="text-center sorting">
-                                            <a> Tên Slide</a>
-                                        </th>
-                                        <th class="text-center sorting">
-                                            <a> Hình ảnh</a>
+                                            <a> Tên Ngành</a>
                                         </th>
                                         <th class="text-center sorting">
                                             <a>Thuộc Khoa </a>
                                         </th>
+                                        <th class="text-center sorting">
+                                            <a> Hình ảnh</a>
+                                        </th>
+
                                         <th class="text-center sorting_desc">
-                                            <a>Tạo Bởi</a>
+                                            <a>Hình Thức Đào Tạo</a>
                                         </th>
                                         <th class="text-center sorting_desc">
                                             <a>Trạng Thái</a>
@@ -84,22 +85,25 @@
 
                                 </thead>
                                 <tbody>
-                                    @foreach ($slide_list as $slide)
+                                    @foreach ($specialized_list as $specialized)
                                         <tr role="row">
-                                            <td class="text-center">{{ $slide->id }}</td>
-                                            <td>{{ $slide->name }}</td>
-                                            <td>
-                                                <img width="200px" src="{{ asset($slide->link) }}" class="thumbnail">
-                                            </td>
-                                            @foreach ($faculty_list as $faculty)
-                                                @if ($faculty->id === $slide->faculty_id)
+                                            <td class="text-center">{{ $specialized->id }}</td>
+                                            <td>{{ $specialized->name }}</td>
+
+                                            @foreach ($facultylist as $faculty)
+                                                @if ($faculty->id === $specialized->faculty_id)
                                                     <td class="text-center">{{$faculty->name}}</td>
                                                 @break
                                                 @endif
                                             @endforeach
-                                            <td class="text-center">{{ $slide->created_by }}</td>
+                                            
+                                            <td>
+                                                <img width="200px" src="{{ asset($specialized->image) }}" class="thumbnail">
+                                            </td>
 
-                                            @switch($slide->status)
+                                            <td class="text-center">{{ $specialized->type_educate }}</td>
+
+                                            @switch($specialized->status)
                                             @case(1)
                                             <td class="text-center">Hoạt Động</td>
                                             @break
@@ -112,13 +116,13 @@
                                             <td class="text-center">
                                                 <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
                                                     <div class="mt-check-garden nutanhien">
-                                                    <input id="{{$slide->id}}" type="checkbox" >
-                                                <label for="{{$slide->id}}"> </label></div></label>
+                                                    <input id="{{$specialized->id}}" type="checkbox" >
+                                                <label for="{{$specialized->id}}"> </label></div></label>
                                                     <!-- <input data-id="1579" type="checkbox" checked=""><span></span></label> -->
-                                                <a href="{{ route('admin.slide.edit', [$khoa['slug'], $slide['id']]) }}" class="btn btn-warning btn-xs" >
+                                                <a href="{{ route('admin.specialized.edit', [$khoa['slug'], $specialized['id']]) }}" class="btn btn-warning btn-xs" >
                                                     <i class="fa fa-flag" aria-hidden="true"></i>
                                                     Sửa</a>
-                                                <a href="{{ route('admin.slide.delete', [$khoa['slug'], $slide['id']]) }}"  onclick="return confirm('Bạn có chắc chắn muốn xóa !')" class="btn btn-danger btn-xs"
+                                                <a href="{{ route('admin.specialized.delete', [$khoa['slug'], $specialized['id']]) }}"  onclick="return confirm('Bạn có chắc chắn muốn xóa !')" class="btn btn-danger btn-xs"
                                                 ><i class="fa fa-trash" aria-hidden="true"></i>
                                                     Xóa</a>
                                             </td>

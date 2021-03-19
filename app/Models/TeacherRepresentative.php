@@ -38,7 +38,7 @@ class TeacherRepresentative extends Model
     /**
      * @var array
      */
-    protected $fillable = ['faculty_id', 'name', 'intro', 'image', 'evaluate', 'created_at', 'updated_at', 'created_by', 'updated_by', 'status'];
+    protected $fillable = ['faculty_id', 'name', 'intro', 'image', 'evaluate', 'created_at', 'updated_at', 'created_by', 'updated_by', 'status','position'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

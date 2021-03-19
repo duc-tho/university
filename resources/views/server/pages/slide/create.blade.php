@@ -1,114 +1,53 @@
 @extends('server.index')
-@section('title', 'Quản Trị ảnh slide')
-@section('page-title', 'Thêm ảnh')
+@section('title', 'Quản Trị Slide')
+@section('page-title', 'Thêm Slide')
 @section('page-content')
 <!--/.row-->
 <div class="row">
-    <div class="col-sm-12 ">
-        <div class="panel panel-primary">
-            <div class="panel-body">
-                @include('errors.note')
-                <form method="post" enctype="multipart/form-data" role="form" action="">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <button class="btn btn-success" type="submit" name="submit"><i class="fas fa-save"></i> Thêm</button>
-                                    <a href="{{route('Teacher')}}" class="btn btn-danger"><i class="fas fa-window-close"></i> Hủy bỏ</a>
-                                </div>
-                                <div class="card-body">
+    <div class="col-sm-12 px-3">
+        <x-admin.form.form method="POST" :cancelLink="route('admin.slide.show', [$khoa['slug']])" :submitLink="route('admin.slide.store', [$khoa['slug']])">
+            <div class="row">
+                <x-admin.form.alert :col="12" class="bg-olive color-palette">
+                    <b>Lưu ý: </b>Các trường có dấu <span class="text-danger"><b>*</b></span> là bắt buộc!
+                </x-admin.form.alert>
 
-                                    <div class="form-group">
-                                        <label>Thuộc Khoa : </label>
-                                        <select required name="faculty_id" class="form-control">
-                                            <option value="">Chọn Khoa</option>
-                                            @foreach ($faculityslide as $faculty)
-                                                <option value="{{$faculty->id}}">{{$faculty->name}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+                <x-admin.form.select :required="true" :col="3" :fieldName="'faculty_id'" :label="'Khoa'">
+                    <option value="" aria-readonly="true">Chọn Khoa :</option>
+                    @foreach ($faculty_list as $faculty)
+                    <option value="{{$faculty->id}}" {{ old('faculty_id') == $faculty->id ? "selected" : '' }}>{{$faculty->name}}</option>
+                    @endforeach
+                </x-admin.form.select>
 
-                                    <div class="form-group">
-                                        <label>Tên ảnh slide : </label>
-                                        <input required type="text" id="name" name="name" class="form-control" placeholder="Nhập Tên nội dung ảnh...">
-                                    </div>
+                <x-admin.form.input :col="3" :type="'text'" :label="'Tên Slide'" :required="true" :placeholder="'Tên Slide'" :fieldName="'name'" />
 
-                                    <div class="form-group">
-                                        <label>Người Tạo : </label>
-                                        <input required type="text" id="created_by" name="created_by" class="form-control" placeholder="Nhập người tạo...">
-                                    </div>
+                <x-admin.form.input :col="3" :type="'text'" :label="'Display Order'" :required="true" :placeholder="'Display Order'" :fieldName="'display_order'" />
 
-                                    <div class="form-group">
-                                        <label>Người Đăng : </label>
-                                        <input required type="text" id="updated_by" name="updated_by" class="form-control" placeholder="Nhập người đăng...">
-                                    </div>
+                <x-admin.form.select :required="true" :col="3" :fieldName="'browser_target'" :label="'Browser_Target'">
+                    <option value="0" aria-readonly="true" > _blank </option>
+                    <option value="1" aria-readonly="true" > _self</option>
+                    <option value="2" aria-readonly="true" > _parent</option>
+                    <option value="3" aria-readonly="true" > _top</option>
+                </x-admin.form.select>
 
-                                    <div class="form-group">
-                                        <label>Trạng thái</label>
-                                        <select required name="status" class="form-control">
-                                            <option value="1">Bật</option>
-                                            <option value="0">Tắt</option>
-                                        </select>
-                                    </div>
+                <x-admin.form.input :col="3" :type="'text'" :label="'Mô Tả'" :required="true" :placeholder="'Mô Tả'" :fieldName="'description'" />
 
-                                    <div class="form-group">
-                                        <label>Ảnh Slide trình chiếu :</label>
-                                        <input required id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)">
-                                        <img id="link" class="thumbnail" width="200px" src="{{asset('/dist/img/imgdefault.png') }}">
-                                    </div>
+                <x-admin.form.input :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" />
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label>Tóm Lược nội dung ảnh slide: </label>
-                                        <textarea required class="ckeditor" required name="description">{{ old('description') }}</textarea>
-                                        <script type="text/javascript">
-                                            var editor = CKEDITOR.replace('description', {
-                                                    language: 'vi',
-                                                    filebrowserImageBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Images',
-                                                    filebrowserFlashBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Flash',
-                                                    filebrowserImageUploadUrl: '../../plugins/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                                                    filebrowserFlashUploadUrl: '../../plugins/editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-                                                });
-                                        </script>
-                                    </div>
+                <x-admin.form.input :col="3" :type="'text'" :label="'Người Cập Nhập'" :required="true" :placeholder="'Người Cập Nhập'" :fieldName="'updated_by'" />
 
-                                    <!-- <div class="form-group">
-                                        <label>Đánh Giá: </label>
-                                        <textarea required class="ckeditor" required name="evaluate">{{ old('evaluate') }}</textarea>
-                                        <script type="text/javascript">
-                                            var editor = CKEDITOR.replace('evaluate', {
-                                                    language: 'vi',
-                                                    filebrowserImageBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Images',
-                                                    filebrowserFlashBrowseUrl: '../../plugins/editor/ckfinder/ckfinder.html?Type=Flash',
-                                                    filebrowserImageUploadUrl: '../../plugins/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                                                    filebrowserFlashUploadUrl: '../../plugins/editor/public/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
-                                                });
-                                        </script>
-                                    </div> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @csrf
-                </form>
-                <div class="clearfix"></div>
+                <x-admin.form.checkbox :col="3" :label="'Trạng thái'" :required="true" :fieldName="'status'" :labelContent="'Đang hoạt động'" />
+
+                <x-admin.form.file :col="3" :label="'Ảnh đại diện'" :required="false" :fieldName="'link'" />
+
+                <x-admin.form.multi-select :col="6" :label="'Vai trò'" :required="false" :fieldName="'role'">
+                    {{-- @foreach ($roles as $role)
+                    <option value="{{$role['id']}}" {{ in_array($role['id'], old('role') ?? []) ? "selected" : '' }}>{{$role['display_name']}}</option>
+                    @endforeach --}}
+                </x-admin.form.multi-select>
             </div>
-        </div>
+        </x-admin.form.form>
     </div>
 </div>
-<!--/.row-->
 </div>
-<script>
-    CKEDITOR.editorConfig = function (config) {
-        config.enterMode = CKEDITOR.ENTER_BR;
-        config.autoParagraph = false;
-        config.fillEmptyBlocks = false;
-    };
-</script>
 
-@stop
+@endsection
