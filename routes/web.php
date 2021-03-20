@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\News_Controller;
 use App\Http\Controllers\Admin\SpecializedController;
 use App\Http\Controllers\Admin\StatisticController;
+use App\Http\Controllers\Admin\SocialsController;
 use App\Http\Controllers\Admin\VideoController as AdminVideoController;
 use App\Http\Controllers\Admin\StudentController as AdminStudentController;
 use App\Http\Controllers\Admin\AboutController as AdminAboutController;
@@ -398,6 +399,32 @@ Route::name('admin.')->prefix('admin/{khoa}')->middleware(['CheckLogedIn', 'Requ
         //
         Route::get('/delete/{id}', [CollabController::class, 'delete'])
             ->middleware('can:collab_delete')
+            ->name('delete')->where(['id' => '[0-9]+']);
+        //
+    });
+
+    Route::name('socials.')->prefix('socials')->group(function () {
+        //
+        Route::get('/', [SocialsController::class, 'show'])
+            // ->middleware('can:socials_list')
+            ->name('show');
+        //
+        Route::get('add',  [SocialsController::class, 'create'])
+            // ->middleware('can:socials_create')
+            ->name('create');
+        Route::post('add',  [SocialsController::class, 'store'])
+            // ->middleware('can:socials_create')
+            ->name('store');
+        //
+        Route::get('/edit/{id}',  [SocialsController::class, 'edit'])
+            // ->middleware('can:socials_edit')
+            ->name('edit')->where(['id' => '[0-9]+']);
+        Route::post('/edit/{id}', [SocialsController::class, 'update'])
+            // ->middleware('can:socials_edit')
+            ->name('update')->where(['id' => '[0-9]+']);
+        //
+        Route::get('/delete/{id}', [SocialsController::class, 'delete'])
+            // ->middleware('can:socials_delete')
             ->name('delete')->where(['id' => '[0-9]+']);
         //
     });
