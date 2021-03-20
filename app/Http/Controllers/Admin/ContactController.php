@@ -15,7 +15,15 @@ class ContactController extends Controller
      */
     public function show(Request $request, $khoa)
     {
-        $contact_list = Contact::where(["status" => "1", "faculty_id" => $khoa['id']])->orderBy("id", "desc")->paginate(6);
+        $item_per_page = 12;
+        if ($request->has('item-per-page')) $item_per_page = $request->query('item-per-page');
+
+        $query_condition = [
+            'status' => '1',
+            'faculty_id' => $khoa['id']
+        ];
+
+        $contact_list = Contact::where($query_condition)->orderBy("id", "desc")->paginate($item_per_page);
         return view('server.pages.contact.index', [
             'contact_list' =>  $contact_list,
             'khoa' => $khoa

@@ -14,17 +14,17 @@
                                     <i class="fas fa-plus"></i> Thêm Tin Tức - Thông Báo
                                 </button>
                             </a>
-                            {{-- <div class="ml-auto d-inline-block">
+                            <div class="ml-auto d-inline-block">
                                 <div class="input-group input-group-sm">
-                                    <form action="{{ route('admin.user.show', [$khoa['slug']]) }}" method="get">
+                                    <form action="{{ route('admin.news.show', [$khoa['slug']]) }}" method="get">
                                         <select class="form-control custon-select" style="width:auto !important" data-toggle="tooltip" name="item-per-page" onchange="this.parentElement.submit();">
-                                            <option value="6" {{ $news->perPage() == 6 ? 'selected disabled' : ''  }}>Hiện 6 mục</option>
-                                            <option value="9" {{ $news->perPage() == 9 ? 'selected disabled' : ''  }}>Hiện 9 mục</option>
-                                            <option value="12" {{ $news->perPage() == 12 ? 'selected disabled' : ''  }}>Hiện 12 mục</option>
+                                            <option value="6" {{ $news_list->perPage() == 6 ? 'selected disabled' : ''  }}>Hiện 6 mục</option>
+                                            <option value="9" {{ $news_list->perPage() == 9 ? 'selected disabled' : ''  }}>Hiện 9 mục</option>
+                                            <option value="12" {{ $news_list->perPage() == 12 ? 'selected disabled' : ''  }}>Hiện 12 mục</option>
                                         </select>
                                     </form>
                                 </div>
-                            </div> --}}
+                            </div>
                         </div>
                         <!-- /.card-header -->
                         <div class="card card-solid">

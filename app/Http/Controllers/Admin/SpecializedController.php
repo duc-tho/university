@@ -11,7 +11,15 @@ class SpecializedController extends Controller
 {
     public function show(Request $request, $khoa)
     {
-        $specialized_list = Specialized::where(["status" => "1", "faculty_id" => $khoa['id']])->orderBy("id", "desc")->paginate(10);
+        $item_per_page = 12;
+        if ($request->has('item-per-page')) $item_per_page = $request->query('item-per-page');
+
+        $query_condition = [
+            'status' => '1',
+            'faculty_id' => $khoa['id']
+        ];
+
+        $specialized_list = Specialized::where($query_condition)->orderBy("id", "desc")->paginate($item_per_page);
 
         return view('server.pages.specialized.index', [
             'specialized_list' =>  $specialized_list,

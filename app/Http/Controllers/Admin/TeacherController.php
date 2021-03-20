@@ -13,7 +13,15 @@ class TeacherController extends Controller
 {
     public function show(Request $request, $khoa)
     {
-        $teacher_list = TeacherRepresentative::where(["status" => "1","faculty_id" => $khoa['id']] )->orderBy("id", "desc")->paginate(6);
+        $item_per_page = 12;
+        if ($request->has('item-per-page')) $item_per_page = $request->query('item-per-page');
+
+        $query_condition = [
+            'status' => '1',
+            'faculty_id' => $khoa['id']
+        ];
+
+        $teacher_list = TeacherRepresentative::where($query_condition )->orderBy("id", "desc")->paginate($item_per_page);
         return view('server.pages.teacher.index', [
             'teacher_list' =>  $teacher_list,
             'khoa' =>$khoa

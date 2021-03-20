@@ -14,17 +14,17 @@
                                     <i class="fas fa-plus"></i> Thêm Giới Thiệu
                                 </button>
                             </a>
-                            {{-- <div class="ml-auto d-inline-block">
+                            <div class="ml-auto d-inline-block">
                                 <div class="input-group input-group-sm">
-                                    <form action="{{ route('admin.user.show', [$khoa['slug']]) }}" method="get">
+                                    <form action="{{ route('admin.specialized.show', [$khoa['slug']]) }}" method="get">
                                         <select class="form-control custon-select" style="width:auto !important" data-toggle="tooltip" name="item-per-page" onchange="this.parentElement.submit();">
-                                            <option value="6" {{ $specialized->perPage() == 6 ? 'selected disabled' : ''  }}>Hiện 6 mục</option>
-                                            <option value="9" {{ $specialized->perPage() == 9 ? 'selected disabled' : ''  }}>Hiện 9 mục</option>
-                                            <option value="12" {{ $specialized->perPage() == 12 ? 'selected disabled' : ''  }}>Hiện 12 mục</option>
+                                            <option value="6" {{ $specialized_list->perPage() == 6 ? 'selected disabled' : ''  }}>Hiện 6 mục</option>
+                                            <option value="9" {{ $specialized_list->perPage() == 9 ? 'selected disabled' : ''  }}>Hiện 9 mục</option>
+                                            <option value="12" {{ $specialized_list->perPage() == 12 ? 'selected disabled' : ''  }}>Hiện 12 mục</option>
                                         </select>
                                     </form>
                                 </div>
-                            </div> --}}
+                            </div>
                         </div>
                         <!-- /.card-header -->
                         <div class="card card-solid">

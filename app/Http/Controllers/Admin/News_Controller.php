@@ -14,8 +14,15 @@ class News_Controller extends Controller
 {
     public function show(Request $request, $khoa)
     {
+        $item_per_page = 12;
+        if ($request->has('item-per-page')) $item_per_page = $request->query('item-per-page');
+
+        $query_condition = [
+            'status' => '1',
+        ];
+
         $category_list= Category::where(["status" => "1", "faculty_id" => $khoa['id']])->get();
-        $news_list = News::where(["status" => "1"])->orderBy("id", "desc")->paginate(7);
+        $news_list = News::where($query_condition)->orderBy("id", "desc")->paginate($item_per_page);
 
         foreach ($category_list as $category) {
             $news = $category->news;
