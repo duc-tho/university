@@ -93,13 +93,13 @@
                                 <div class="row">
                                     <div class="col-sm-5 hidden-xs">
                                         <div class="dataTables_info" id="example-datatable_info" role="status" aria-live="polite">
-                                            {{-- <strong>Trang {{ $news->currentPage() }} / {{ $news->lastPage() }}</strong> --}}
+                                            <strong>Trang {{ $news_list->currentPage() }} / {{ $news_list->lastPage() }}</strong>
                                         </div>
                                     </div>
                                     <div class="col-sm-7 col-xs-12">
                                         <div>
                                             <ul class="pagination pagination-sm mb-0 d-flex justify-content-end">
-                                                {{-- {{ $news->links() }} --}}
+                                                {{ $news_list->links() }}
                                             </ul>
                                         </div>
                                     </div>

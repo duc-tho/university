@@ -15,7 +15,7 @@ class News_Controller extends Controller
     public function show(Request $request, $khoa)
     {
         $category_list= Category::where(["status" => "1", "faculty_id" => $khoa['id']])->get();
-        $news_list = News::all();
+        $news_list = News::where(["status" => "1"])->orderBy("id", "desc")->paginate(7);
 
         foreach ($category_list as $category) {
             $news = $category->news;
@@ -24,7 +24,7 @@ class News_Controller extends Controller
             else $category['news'] = null;
         }
 
-
+        // dd($news_list);
 
         return view('server.pages.news.index', [
             'news_list' =>  $news_list,
