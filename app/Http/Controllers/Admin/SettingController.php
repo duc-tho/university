@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Settings;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SettingController extends Controller
 {
@@ -15,9 +16,15 @@ class SettingController extends Controller
      */
     public function show(Request $request, $khoa)
     {
-        $settings = Settings::where(['faculty_id' => $khoa['id'], 'status' => 1])->get();
+        $settings = null;
 
-        // dd($settings);
+        if ($request->query('general') == "true") {
+            abort_if(!Auth::user()['isAdmin'], 403);
+
+            $settings = Settings::where(['greneral' => 1])->get();
+        } else {
+            $settings = Settings::where(['faculty_id' => $khoa['id'], 'greneral' => 0])->get();
+        }
 
         return view('server.pages.setting.index', [
             'settings' => $settings,
@@ -67,6 +74,14 @@ class SettingController extends Controller
     public function update(Request $request, $khoa)
     {
         $settings = Settings::where(['faculty_id' => $khoa['id'], 'status' => 1])->get();
+
+        // dừng lại nếu người dùng không phải là admin mà lại cập nhật setting chung
+        if ($request->query('general') == "true") {
+            abort_if(!Auth::user()['isAdmin'], 403);
+        }
+
+        // dừng lại nếu người dùng không phải là admin mà lại cập nhật setting chung
+        abort_if(!Auth::user()['isAdmin'] && $settings['greneral'] == 1, 403);
 
         foreach ($settings as $setting) {
             if ($request->filled($setting['name']) || $request->file($setting['name']) != null) {

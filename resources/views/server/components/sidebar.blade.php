@@ -44,10 +44,22 @@
                         </p>
                     </a>
                 </li>
+                @can('setting_list', SettingsPolicy::class)
+                @if(Auth::user()['isAdmin'])
+                <li class="nav-item">
+                    <a href="{{route('admin.setting.show', [$khoa['slug'], 'general' => "true"])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-cog"></i>
+                        <p>
+                            Cài đặt chung
+                        </p>
+                    </a>
+                </li>
+                @endif
+                @endcan
                 @if (Auth::user()['isAdmin'])
                 <li class="nav-item {{ request()->is('admin/demo*') ? 'menu-open' : '' }}">
                     <a href="javascript:" class="nav-link {{ request()->is('admin/demo*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-newspaper"></i>
+                        <i class="nav-icon fas fa-university"></i>
                         <p>
                             Khoa
                             <i class="right fas fa-angle-left"></i>
@@ -57,7 +69,7 @@
                         @foreach (app('request')['faculty_list'] as $item)
                         <li class="nav-item">
                             <a href="{{ route('admin.index', [$item['slug']]) }}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
-                                <i class="far fa-file-alt nav-icon"></i>
+                                <i class="fas fa-arrow-circle-right nav-icon"></i>
                                 <p>{{ $item['name'] }}</p>
                             </a>
                         </li>
@@ -113,11 +125,21 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+                        @can('setting_list', SettingsPolicy::class)
+                        <li class="nav-item">
+                            <a href="{{route('admin.setting.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="nav-icon far fa-circle"></i>
+                                <p>
+                                    Cài đặt
+                                </p>
+                            </a>
+                        </li>
+                        @endcan
                         @can('faculty_list', FacultyPolicy::class)
                         <li class="nav-item">
                             <a href="{{ route('admin.faculty.show', [$khoa['slug']]) }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Khoa</p>
+                                <p>Thông Tin Khoa</p>
                             </a>
                         </li>
                         @endcan
@@ -209,17 +231,6 @@
                             </a>
                         </li>
                         @endcan
-                        @can('setting_list', SettingsPolicy::class)
-                        <li class="nav-item">
-                            <a href="{{route('admin.setting.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
-                                <i class="nav-icon far fa-circle"></i>
-                                <p>
-                                    Cài đặt
-                                </p>
-                            </a>
-                        </li>
-                        @endcan
-
                         @can('contact_list', Contact::class)
                         <li class="nav-item">
                             <a href="{{ route('admin.contact.show', [$khoa['slug']]) }}" class="nav-link {{ request()->is('admin/demo/demo-2*') ? 'active' : '' }}">
@@ -228,7 +239,6 @@
                             </a>
                         </li>
                         @endcan
-
                     </ul>
                 </li>
                 <li class="nav-item {{ request()->is('admin/demo*') ? 'menu-open' : '' }}">

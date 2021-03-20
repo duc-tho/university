@@ -12,6 +12,7 @@ use App\Policies\Admin\MenuPolicy;
 use App\Policies\Admin\NewsPolicy;
 use App\Policies\Admin\PermissionPolicy;
 use App\Policies\Admin\RolePolicy;
+use App\Policies\Admin\SettingsPolicy;
 use App\Policies\Admin\SlidePolicy;
 use App\Policies\Admin\SpecializedPolicy;
 use App\Policies\Admin\StatisticsPolicy;
@@ -73,10 +74,10 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('user_delete', [UserPolicy::class, 'delete']);
 
         // menu
-        // Gate::define('menu_list', [FacultyPolicy::class, 'view']);
-        // Gate::define('menu_create', [FacultyPolicy::class, 'create']);
-        // Gate::define('menu_edit', [FacultyPolicy::class, 'edit']);
-        // Gate::define('menu_delete', [FacultyPolicy::class, 'delete']);
+        Gate::define('menu_list', [FacultyPolicy::class, 'view']);
+        Gate::define('menu_create', [FacultyPolicy::class, 'create']);
+        Gate::define('menu_edit', [FacultyPolicy::class, 'edit']);
+        Gate::define('menu_delete', [FacultyPolicy::class, 'delete']);
 
         // news
         Gate::define('news_list', [NewsPolicy::class, 'view']);
@@ -122,8 +123,8 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('role_delete', [RolePolicy::class, 'delete']);
 
         // setting
-        Gate::define('setting_list', [FacultyPolicy::class, 'view']);
-        Gate::define('setting_edit', [FacultyPolicy::class, 'edit']);
+        Gate::define('setting_list', [SettingsPolicy::class, 'view']);
+        Gate::define('setting_edit', [SettingsPolicy::class, 'edit']);
 
         // specialized
         Gate::define('specialized_list', [SpecializedPolicy::class, 'view']);
