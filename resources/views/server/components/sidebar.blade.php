@@ -94,6 +94,16 @@
                             </a>
                         </li>
                         @endcan
+                        @can('image_category_list', ImageCategoryPolicy::class)
+                        <li class="nav-item">
+                            <a href="{{route('admin.image_category.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="nav-icon far fa-file-alt"></i>
+                                <p>
+                                    Chuyên Mục Hình Ảnh
+                                </p>
+                            </a>
+                        </li>
+                        @endcan
                         @can('image_list', ImagePolicy::class)
                         <li class="nav-item">
                             <a href="{{route('admin.image.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
@@ -227,6 +237,26 @@
                                 <i class="nav-icon far fa-circle"></i>
                                 <p>
                                     Logo Hợp Tác
+                                </p>
+                            </a>
+                        </li>
+                        @endcan
+                        @can('footer_link_category_list', FooterLinkCategoryPolicy::class)
+                        <li class="nav-item">
+                            <a href="{{route('admin.footer_link_category.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="nav-icon far fa-circle"></i>
+                                <p>
+                                    Danh mục liên kết Footer
+                                </p>
+                            </a>
+                        </li>
+                        @endcan
+                        @can('footer_link_list', FooterLinkPolicy::class)
+                        <li class="nav-item">
+                            <a href="{{route('admin.footer_link.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="nav-icon far fa-circle"></i>
+                                <p>
+                                    Liên kết Footer
                                 </p>
                             </a>
                         </li>
