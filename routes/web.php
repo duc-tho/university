@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CollabController;
 use App\Http\Controllers\Admin\ContactController as AdminContactController;
 use App\Http\Controllers\Admin\ImageController as AdminImageController;
+use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\News_Controller;
 use App\Http\Controllers\Admin\SpecializedController;
@@ -474,6 +475,33 @@ Route::name('admin.')->prefix('admin/{khoa}')->middleware(['CheckLogedIn', 'Requ
         //
         Route::get('/delete/{id}', [AdminVideoController::class, 'delete'])
             ->middleware('can:video_delete')
+            ->name('delete')->where(['id' => '[0-9]+']);
+        //
+    });
+
+    // menu
+    Route::name('menu.')->prefix('menu')->group(function () {
+        //
+        Route::get('/', [MenuController::class, 'show'])
+            ->middleware('can:menu_list')
+            ->name('show');
+        //
+        Route::get('add',  [MenuController::class, 'create'])
+            ->middleware('can:menu_create')
+            ->name('create');
+        Route::post('add',  [MenuController::class, 'store'])
+            ->middleware('can:menu_create')
+            ->name('store');
+        //
+        Route::get('/edit/{id}',  [MenuController::class, 'edit'])
+            ->middleware('can:menu_edit')
+            ->name('edit')->where(['id' => '[0-9]+']);
+        Route::post('/edit/{id}', [MenuController::class, 'update'])
+            ->middleware('can:menu_edit')
+            ->name('update')->where(['id' => '[0-9]+']);
+        //
+        Route::get('/delete/{id}', [MenuController::class, 'delete'])
+            ->middleware('can:menu_delete')
             ->name('delete')->where(['id' => '[0-9]+']);
         //
     });

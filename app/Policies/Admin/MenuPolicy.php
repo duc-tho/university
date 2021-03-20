@@ -2,11 +2,11 @@
 
 namespace App\Policies\Admin;
 
+use App\Models\Menu;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Illuminate\Support\Facades\Auth;
 
-class UserPolicy
+class MenuPolicy
 {
     use HandlesAuthorization;
 
@@ -25,12 +25,12 @@ class UserPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
+     * @param  \App\Models\Menu  $menu
      * @return mixed
      */
     public function view(User $user)
     {
-        return $user->checkPermissionAccess(config('permission.module.user.access.list'));
+        return $user->checkPermissionAccess(config('permission.module.menu.access.list'));
     }
 
     /**
@@ -41,50 +41,45 @@ class UserPolicy
      */
     public function create(User $user)
     {
-        return $user->checkPermissionAccess(config('permission.module.user.access.create'));
+        return $user->checkPermissionAccess(config('permission.module.menu.access.create'));
     }
 
     public function edit(User $user)
     {
-        if ($user['id'] == Auth::user()['id']) {
-            return true;
-        }
-
-        return $user->checkPermissionAccess(config('permission.module.user.access.edit'));
+        return $user->checkPermissionAccess(config('permission.module.menu.access.edit'));
     }
 
     /**
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
+     * @param  \App\Models\Menu  $menu
      * @return mixed
      */
-    public function update(User $user, User $model)
+    public function update(User $user, Menu $menu)
     {
-        //
     }
 
     /**
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
+     * @param  \App\Models\Menu  $menu
      * @return mixed
      */
     public function delete(User $user)
     {
-        return $user->checkPermissionAccess(config('permission.module.user.access.delete'));
+        return $user->checkPermissionAccess(config('permission.module.menu.access.delete'));
     }
 
     /**
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
+     * @param  \App\Models\Menu  $menu
      * @return mixed
      */
-    public function restore(User $user, User $model)
+    public function restore(User $user, Menu $menu)
     {
         //
     }
@@ -93,10 +88,10 @@ class UserPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
+     * @param  \App\Models\Menu  $menu
      * @return mixed
      */
-    public function forceDelete(User $user, User $model)
+    public function forceDelete(User $user, Menu $menu)
     {
         //
     }
