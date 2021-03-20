@@ -44,7 +44,7 @@ class SpecializedController extends Controller
 
         if ($request->file('image') != null) $specialized['image'] = upload_file($request->file('image'), 'dist/upload/image/specialized');
 
-        if ($request->file('icons') != null) $specialized['icons'] = upload_file($request->file('icons'), 'dist/upload/image/icons');
+        if ($request->file('icons') != null) $specialized['icons'] = upload_file($request->file('icons'), 'dist/upload/image/specialized');
 
         $specialized->save();
         return redirect()->route('admin.specialized.show', [$khoa['slug']]);
@@ -76,7 +76,7 @@ class SpecializedController extends Controller
         if ($request->has('status')) $request->merge(['status' => $request['status'] == "on" ? 1 : 0]);
 
         if ($request->file('image') != null) $request->merge(['image' => upload_file($request->file('image'), 'dist/upload/image/specialized')]);
-
+        if ($request->file('icons') != null) $specialized['icons'] = upload_file($request->file('icons'), 'dist/upload/image/specialized');
         $specialized->update($request->input());
 
         $request->validate([

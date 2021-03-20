@@ -504,9 +504,9 @@
                                 </div>
                             </div>
                             <div class="testimonial-cont">
-                                <p>{{ $item->evaluate }}</p>
+                                <p>{!! $item->evaluate !!}</p>
                                 <h6>{{ $item->name }}</h6>
-                                <span>{{ $item->intro }}</span>
+                                <span>{!! $item->intro !!}</span>
                             </div>
                         </div> <!-- singel testimonial -->
                     </div>
