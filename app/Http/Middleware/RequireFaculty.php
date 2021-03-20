@@ -26,6 +26,9 @@ class RequireFaculty
         $auth_user = Auth::user();
 
         if (!$auth_user['isAdmin']) abort_if($auth_user['faculty_id'] != $khoa['id'], 403);
+        else {
+            $request->route()->setParameter('faculty_list', Faculty::where([['id', '!=', $khoa['id']]])->get());
+        }
 
         $request->route()->setParameter('khoa', $khoa);
 

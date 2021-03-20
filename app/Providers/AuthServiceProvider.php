@@ -8,6 +8,7 @@ use App\Policies\Admin\CollabPolicy;
 use App\Policies\Admin\ContactPolicy;
 use App\Policies\Admin\FacultyPolicy;
 use App\Policies\Admin\ImagePolicy;
+use App\Policies\Admin\MenuPolicy;
 use App\Policies\Admin\NewsPolicy;
 use App\Policies\Admin\PermissionPolicy;
 use App\Policies\Admin\RolePolicy;
@@ -141,5 +142,11 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('video_create', [VideoPolicy::class, 'create']);
         Gate::define('video_edit', [VideoPolicy::class, 'edit']);
         Gate::define('video_delete', [VideoPolicy::class, 'delete']);
+
+        // menu
+        Gate::define('menu_list', [MenuPolicy::class, 'view']);
+        Gate::define('menu_create', [MenuPolicy::class, 'create']);
+        Gate::define('menu_edit', [MenuPolicy::class, 'edit']);
+        Gate::define('menu_delete', [MenuPolicy::class, 'delete']);
     }
 }

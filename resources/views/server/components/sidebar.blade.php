@@ -44,11 +44,71 @@
                         </p>
                     </a>
                 </li>
+                @if (Auth::user()['isAdmin'])
                 <li class="nav-item {{ request()->is('admin/demo*') ? 'menu-open' : '' }}">
                     <a href="javascript:" class="nav-link {{ request()->is('admin/demo*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-newspaper"></i>
                         <p>
-                            Quản Lý Dữ Liệu
+                            Khoa
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        @foreach (app('request')['faculty_list'] as $item)
+                        <li class="nav-item">
+                            <a href="{{ route('admin.index', [$item['slug']]) }}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="far fa-file-alt nav-icon"></i>
+                                <p>{{ $item['name'] }}</p>
+                            </a>
+                        </li>
+                        @endforeach
+                    </ul>
+                </li>
+                @endif
+                <li class="nav-item {{ request()->is('admin/demo*') ? 'menu-open' : '' }}">
+                    <a href="javascript:" class="nav-link {{ request()->is('admin/demo*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-newspaper"></i>
+                        <p>
+                            Nội Dung
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        @can('news_list', NewsPolicy::class)
+                        <li class="nav-item">
+                            <a href="{{ route('admin.news.show', [$khoa['slug']]) }}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="far fa-file-alt nav-icon"></i>
+                                <p>Tin Tức - Thông Báo</p>
+                            </a>
+                        </li>
+                        @endcan
+                        @can('image_list', ImagePolicy::class)
+                        <li class="nav-item">
+                            <a href="{{route('admin.image.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="nav-icon far fa-file-alt"></i>
+                                <p>
+                                    Hình Ảnh
+                                </p>
+                            </a>
+                        </li>
+                        @endcan
+                        @can('video_list', VideoPolicy::class)
+                        <li class="nav-item">
+                            <a href="{{route('admin.video.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="nav-icon far fa-file-alt"></i>
+                                <p>
+                                    Video
+                                </p>
+                            </a>
+                        </li>
+                        @endcan
+                    </ul>
+                </li>
+                <li class="nav-item {{ request()->is('admin/demo*') ? 'menu-open' : '' }}">
+                    <a href="javascript:" class="nav-link {{ request()->is('admin/demo*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-tools"></i>
+                        <p>
+                            Cài đặt & thiết lập
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -61,13 +121,39 @@
                             </a>
                         </li>
                         @endcan
-                        @can('teacher_list', TeacherPolicy::class)
+                        @can('specialized_list', SpecializedPolicy::class)
                         <li class="nav-item">
-                            <a href="{{ route('admin.about.show', [$khoa['slug']]) }}" class="nav-link">
+                            <a href="{{ route('admin.specialized.show', [$khoa['slug']]) }}" class="nav-link {{ request()->is('admin/demo/demo-2*') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Giới Thiệu Khoa</p>
+                                <p>Các Ngành Đào Tạo</p>
                             </a>
                         </li>
+                        @endcan
+                        @can('category_list', CategoryPolicy::class)
+                        <li class="nav-item">
+                            <a href="{{ route('admin.menu.show', [$khoa['slug']]) }}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Menu</p>
+                            </a>
+                        </li>
+                        @endcan
+                        @can('category_list', CategoryPolicy::class)
+                        <li class="nav-item">
+                            <a href="{{ route('admin.category.show', [$khoa['slug']]) }}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Chuyên Mục</p>
+                            </a>
+                        </li>
+                        @endcan
+                        @can('slide_list', SlidePolicy::class)
+                        <li class="nav-item">
+                            <a href="{{ route('admin.slide.show', [$khoa['slug']]) }}" class="nav-link {{ request()->is('admin/demo/demo-2*') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Slide</p>
+                            </a>
+                        </li>
+                        @endcan
+                        @can('teacher_list', TeacherPolicy::class)
                         <li class="nav-item">
                             <a href="{{ route('admin.teacher.show', [$khoa['slug']]) }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -83,39 +169,57 @@
                             </a>
                         </li>
                         @endcan
-                        @can('category_list', CategoryPolicy::class)
+                        @can('statistic_list', StatisticsPolicy::class)
                         <li class="nav-item">
-                            <a href="{{ route('admin.category.show', [$khoa['slug']]) }}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Danh Mục</p>
+                            <a href="{{route('admin.statistic.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="nav-icon far fa-circle"></i>
+                                <p>
+                                    Số Liệu
+                                </p>
                             </a>
                         </li>
                         @endcan
-                        @can('news_list', NewsPolicy::class)
+                        @can('about_list', AboutPolicy::class)
                         <li class="nav-item">
-                            <a href="{{ route('admin.news.show', [$khoa['slug']]) }}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Tin Tức - Thông Báo</p>
+                            <a href="{{route('admin.about.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="nav-icon far fa-circle"></i>
+                                <p>
+                                    Giới Thiệu
+                                </p>
                             </a>
                         </li>
                         @endcan
-                        @can('slide_list', SlidePolicy::class)
+                        @can('contact_list', ContactPolicy::class)
                         <li class="nav-item">
-                            <a href="{{ route('admin.slide.show', [$khoa['slug']]) }}" class="nav-link {{ request()->is('admin/demo/demo-2*') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Slide</p>
+                            <a href="{{route('admin.contact.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="nav-icon far fa-circle"></i>
+                                <p>
+                                    Liên hệ
+                                </p>
                             </a>
                         </li>
                         @endcan
-                        @can('specialized_list', SpecializedPolicy::class)
+                        @can('collab_list', CollabPolicy::class)
                         <li class="nav-item">
-                            <a href="{{ route('admin.specialized.show', [$khoa['slug']]) }}" class="nav-link {{ request()->is('admin/demo/demo-2*') ? 'active' : '' }}">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Ngành Đào Tạo</p>
+                            <a href="{{route('admin.collab.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="nav-icon far fa-circle"></i>
+                                <p>
+                                    Logo Hợp Tác
+                                </p>
                             </a>
                         </li>
                         @endcan
-                        
+                        @can('setting_list', SettingsPolicy::class)
+                        <li class="nav-item">
+                            <a href="{{route('admin.setting.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="nav-icon far fa-circle"></i>
+                                <p>
+                                    Cài đặt
+                                </p>
+                            </a>
+                        </li>
+                        @endcan
+
                         @can('contact_list', Contact::class)
                         <li class="nav-item">
                             <a href="{{ route('admin.contact.show', [$khoa['slug']]) }}" class="nav-link {{ request()->is('admin/demo/demo-2*') ? 'active' : '' }}">
@@ -127,106 +231,47 @@
 
                     </ul>
                 </li>
-                @can('user_list', UserPolicy::class)
-                <li class="nav-item">
-                    <a href="{{route('admin.user.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-user-alt"></i>
+                <li class="nav-item {{ request()->is('admin/demo*') ? 'menu-open' : '' }}">
+                    <a href="javascript:" class="nav-link {{ request()->is('admin/demo*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-users-cog"></i>
                         <p>
-                            Quản Trị Người Dùng
+                            Quyền & Người dùng
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        @can('user_list', UserPolicy::class)
+                        <li class="nav-item">
+                            <a href="{{route('admin.user.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-user-alt"></i>
+                                <p>
+                                    Quản Trị Người Dùng
+                                </p>
+                            </a>
+                        </li>
+                        @endcan
+                        @can('role_list', RolePolicy::class)
+                        <li class="nav-item">
+                            <a href="{{route('admin.role.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-user-alt"></i>
+                                <p>
+                                    Quản Trị Vai Trò
+                                </p>
+                            </a>
+                        </li>
+                        @endcan
+                        @can('permission_create', PermissionPolicy::class)
+                        <li class="nav-item">
+                            <a href="{{route('admin.permission.create', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-user-alt"></i>
+                                <p>
+                                    Tạo Quyền
+                                </p>
+                            </a>
+                        </li>
+                        @endcan
+                    </ul>
                 </li>
-                @endcan
-                @can('role_list', RolePolicy::class)
-                <li class="nav-item">
-                    <a href="{{route('admin.role.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-user-alt"></i>
-                        <p>
-                            Quản Trị Vai Trò
-                        </p>
-                    </a>
-                </li>
-                @endcan
-                @can('about_list', AboutPolicy::class)
-                <li class="nav-item">
-                    <a href="{{route('admin.about.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-user-alt"></i>
-                        <p>
-                            Quản Trị Giới Thiệu
-                        </p>
-                    </a>
-                </li>
-                @endcan
-                @can('contact_list', ContactPolicy::class)
-                <li class="nav-item">
-                    <a href="{{route('admin.contact.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-user-alt"></i>
-                        <p>
-                            Cài đặt thông tin liên hệ
-                        </p>
-                    </a>
-                </li>
-                @endcan
-                @can('collab_list', CollabPolicy::class)
-                <li class="nav-item">
-                    <a href="{{route('admin.collab.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-user-alt"></i>
-                        <p>
-                            Quản Trị Logo Hợp Tác
-                        </p>
-                    </a>
-                </li>
-                @endcan
-                @can('statistic_list', StatisticsPolicy::class)
-                <li class="nav-item">
-                    <a href="{{route('admin.statistic.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-user-alt"></i>
-                        <p>
-                            Quản Trị Số Liệu
-                        </p>
-                    </a>
-                </li>
-                @endcan
-                @can('image_list', ImagePolicy::class)
-                <li class="nav-item">
-                    <a href="{{route('admin.image.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-user-alt"></i>
-                        <p>
-                            Quản Trị Hình Ảnh
-                        </p>
-                    </a>
-                </li>
-                @endcan
-                @can('video_list', VideoPolicy::class)
-                <li class="nav-item">
-                    <a href="{{route('admin.video.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-user-alt"></i>
-                        <p>
-                            Quản Trị Video
-                        </p>
-                    </a>
-                </li>
-                @endcan
-                @can('permission_create', PermissionPolicy::class)
-                <li class="nav-item">
-                    <a href="{{route('admin.permission.create', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-user-alt"></i>
-                        <p>
-                            Tạo Quyền
-                        </p>
-                    </a>
-                </li>
-                @endcan
-                @can('setting_list', SettingsPolicy::class)
-                <li class="nav-item">
-                    <a href="{{route('admin.setting.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-user-alt"></i>
-                        <p>
-                            Cài đặt thông tin khoa
-                        </p>
-                    </a>
-                </li>
-                @endcan
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
