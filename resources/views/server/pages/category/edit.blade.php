@@ -14,51 +14,24 @@
 
                     <x-admin.form.select :required="true" :col="3" :fieldName="'faculty_id'" :label="'Thuộc Khoa'">
                         <option value="" aria-readonly="true">Chọn Khoa</option>
-                        @foreach ($faculty_list as $faculty)
-                            <option value="{{ $faculty->id }}"
-                                {{ old('faculty_id') ?? $category['faculty_id'] == $faculty->id ? 'selected' : '' }}>
-                                {{ $faculty->name }}</option>
-                        @endforeach
+
+                            <option value="{{ $khoa->id }}"
+                                {{ old('faculty_id') == $khoa->id ? 'selected' : '' }} selected>
+                                {{ $khoa->name }}</option>
                     </x-admin.form.select>
 
 
                     <x-admin.form.select :required="true" :col="3" :fieldName="'parent_id'" :label="' Thuộc Danh Mục'">
-                        <option value="" aria-readonly="true">Chọn Danh Mục</option>
-                        <option value="0" class="optionGroup">Không Thuộc Danh Mục Nào</option>
-                        @isset($category_list)
+                        @isset($category_list )
                             @foreach ($category_list as $item)
-                                @if ($item->parent_id == 0)
-                                    <option value="{{ $item->id }}" class="optionGroup"
-                                        {{ old('parent_id') ?? $category['parent_id'] == $item->id ? 'selected' : '' }}>
+                                @if ( $item->parent_id != 0 && $item->faculty_id == $khoa->id )
+                                    <option value="{{ $item->id }}" {{ old('parent_id') ?? $category['parent_id'] == $item->id ? 'selected' : '' }}>
                                         {{ $item->title }}
-                                        @foreach ($category_list as $item2)
-                                            @if ($item->id === $item2->parent_id)
-                                    <option value="{{ $item2->id }}" class="optionGroup2"
-                                        {{ old('parent_id') ?? $category['parent_id'] == $item2->id ? 'selected' : '' }}>
-                                        &nbsp;&nbsp;&nbsp;{{ $item2->title }}
-                                        @foreach ($category_list as $item3)
-                                            @if ($item2->id === $item3->parent_id)
-                                    <option value="{{ $item3->id }}" class="optionGroup3"
-                                        {{ old('parent_id') ?? $category['parent_id'] == $item3->id ? 'selected' : '' }}>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $item3->title }}
-                                        @foreach ($category_list as $item4)
-                                            @if ($item3->id === $item4->parent_id)
-                                    <option value="{{ $item4->id }}" class="optionGroup4"
-                                        {{ old('parent_id') ?? $category['parent_id'] == $item4->id ? 'selected' : '' }}
-                                        disabled>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ $item4->title }} </option>
+                                    </option>
                                 @endif
                             @endforeach
-                            </option>
-                            @endif
-                            @endforeach
-                            </option>
-                            @endif
-                            @endforeach
-                            </option>
-                            @endif
-                            @endforeach
                         @endisset
+
                     </x-admin.form.select>
 
                     <x-admin.form.input :data="$category" :col="3" :type="'text'" :label="'Tên Danh Mục'" :required="true"
@@ -76,39 +49,21 @@
                     <x-admin.form.input :data="$category" :col="3" :type="'text'" :label="'Người Tạo'" :required="false"
                         :placeholder="'Người Tạo'" :fieldName="'created_by'" />
 
+                        <x-admin.form.input :data="$category" :col="3" :type="'number'" :label="'Display Order'" :required="true" :placeholder="'Display Order'" :fieldName="'display_order'" :value="0" />
+
+                        
                     <x-admin.form.input :data="$category" :col="3" :type="'text'" :label="'Người Đăng'" :required="false"
-                        :placeholder="'Người Đăng'" :fieldName="'updated_by'" />
+                        :placeholder="'Người Đăng'" :fieldName="'updated_by'" :value="Auth::user()['first_name']"/>
 
-                    <x-admin.form.select :required="true" :col="3" :fieldName="'show_at_home'"
-                        :label="'Hiển thị ở Trang Chủ'">
-                        <option value="0" {{ $category['show_at_home'] == 0 ? 'selected' : ''  }}  aria-readonly="true">Ẩn
-                        </option>
-                        <option value="1" {{ $category['show_at_home'] == 1 ? 'selected' : ''  }}aria-readonly="true">
-                            Hiện </option>
-                    </x-admin.form.select>
+                        <x-admin.form.checkbox :data="$category" :col="3" :label="'Hiển thị ở Trang Chủ'" :required="true" :fieldName="'show_at_home'"
+                        :labelContent="'Đang hoạt động'" />
 
-                    <x-admin.form.select :required="true" :col="3" :fieldName="'show_at_news'"
-                        :label="'Hiển thị ở Trang Tin Tức'">
-                        <option value="0"  {{ $category['show_at_news'] == 0 ? 'selected' : '' }} aria-readonly="true">Ẩn
-                        </option>
-                        <option value="1" {{ $category['show_at_news'] == 1 ? 'selected' : '' }} aria-readonly="true">
-                            Hiện</option>
-                    </x-admin.form.select>
+                        <x-admin.form.checkbox :data="$category" :col="3" :label="'Hiển thị ở Trang Tin Tức'" :required="true" :fieldName="'show_at_news'"
+                        :labelContent="'Đang hoạt động'" />
 
-                    <x-admin.form.select :required="true" :col="3" :fieldName="'show_at_notification'"
-                        :label="'Hiển thị ở Trang Thông Báo'">
-                        <option value="0" {{ $category['show_at_notification'] == 0 ? 'selected' : '' }}
-                            aria-readonly="true">Ẩn</option>
-                        <option value="1" {{ $category['show_at_notification'] == 1 ? 'selected' : '' }}
-                            aria-readonly="true">Hiện</option>
-                    </x-admin.form.select>
+                        <x-admin.form.checkbox :data="$category" :col="3" :label="'Hiển thị ở Trang Thông Báo'" :required="true" :fieldName="'show_at_notification'"
+                        :labelContent="'Đang hoạt động'" />
 
-                    <x-admin.form.select :required="true" :col="3" :fieldName="'display_order'" :label="'Display Order'">
-                        <option value="0" {{ $category['display_order'] == 0 ? 'selected' : '' }} aria-readonly="true">Ẩn
-                        </option>
-                        <option value="1" {{ $category['display_order'] == 1 ? 'selected' : '' }} aria-readonly="true">
-                            Hiện</option>
-                    </x-admin.form.select>
 
                     <x-admin.form.checkbox :data="$category" :col="3" :label="'Trạng thái'" :required="true"
                         :fieldName="'status'" :labelContent="'Đang hoạt động'" />

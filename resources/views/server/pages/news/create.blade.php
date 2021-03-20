@@ -26,9 +26,12 @@
 
                 <x-admin.form.input :col="3" :type="'text'" :label="'Tiêu Đề '" :required="true" :placeholder="'Tiêu Đề'" :fieldName="'title'" />
                 <x-admin.form.input :col="3" :type="'text'" :label="'Slug tiêu đề'" :required="true" :placeholder="'Slug tiêu đề'" :fieldName="'slug'" />
-                <x-admin.form.input :col="3" :type="'text'" :label="'Nội Dung'" :required="true" :placeholder="'Nội Dung'" :fieldName="'content'" />
                 <x-admin.form.input :col="3" :type="'date'" :label="'Thời Gian'" :required="true" :placeholder="'Thời Gian'" :fieldName="'event_time'" />
-                <x-admin.form.input :col="3" :type="'text'" :label="'Mô Tả'" :required="false" :placeholder="'Mô Tả'" :fieldName="'description'" />
+                
+                <x-admin.form.textarea-mce  :col="6" :label="'Nội Dung '" :required="true" :fieldName="'content'" />
+                <x-admin.form.textarea-mce  :col="6" :label="'Mô Tả'" :required="true" :fieldName="'description'" />
+
+
                 <x-admin.form.input :col="3" :type="'text'" :label="'Vị Trí'" :required="false" :placeholder="'Vị Trí'" :fieldName="'location'" />
                 <x-admin.form.input :col="3" :type="'text'" :label="'Tạo Bởi'" :required="false" :placeholder="'Tạo Bởi'" :fieldName="'created_by'" />
                 <x-admin.form.input :col="3" :type="'text'" :label="'Đăng Bởi'" :required="false" :placeholder="'Đăng Bởi'" :fieldName="'updated_by'" />

@@ -26,7 +26,6 @@
                     <option value="3" {{ $slide['browser_target'] == 3 ? 'selected' : '' }} aria-readonly="true"> _top</option>
                 </x-admin.form.select>
 
-                <x-admin.form.input :data="$slide" :col="3" :type="'text'" :label="'Mô Tả'" :required="true" :placeholder="'Mô Tả'" :fieldName="'description'" />
 
                 <x-admin.form.input :data="$slide" :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" />
 

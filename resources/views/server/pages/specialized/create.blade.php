@@ -13,25 +13,27 @@
 
                 <x-admin.form.select :required="true" :col="3" :fieldName="'faculty_id'" :label="'Khoa'">
                     <option value="" aria-readonly="true">Chọn Khoa :</option>
-                    @foreach ($faculty_list as $faculty)
-                    <option value="{{$faculty->id}}" {{ old('faculty_id') == $faculty->id ? "selected" : '' }}>{{$faculty->name}}</option>
-                    @endforeach
+                    <option value="{{$khoa->id}}" {{ old('faculty_id') == $khoa->id ? "selected" : '' }} selected>{{$khoa->name}}</option>
                 </x-admin.form.select>
 
                 <x-admin.form.input :col="3" :type="'text'" :label="'Tên Ngành'" :required="true" :placeholder="'Tên Ngành'" :fieldName="'name'" />
                 <x-admin.form.input :col="3" :type="'text'" :label="'Slug'" :required="true" :placeholder="'Slug'" :fieldName="'slug'" />
                 <x-admin.form.input :col="3" :type="'text'" :label="'Meta Keyword'" :required="true" :placeholder="'Meta Keyword'" :fieldName="'meta_keywords'" />
+
+
+                <x-admin.form.textarea-mce  :col="6" :label="'Tóm Tắt Giới Thiệu'" :required="true" :fieldName="'intro_summary'" />
+                <x-admin.form.textarea-mce  :col="6" :label="'Giới Thiệu'" :required="true" :fieldName="'intro'" />
+
                 <x-admin.form.input :col="3" :type="'text'" :label="'Meta Descriptions'" :required="true" :placeholder="'Meta Descriptions'" :fieldName="'meta_descriptions'" />
-                <x-admin.form.input :col="3" :type="'text'" :label="'Tóm Tắt Giới Thiệu'" :required="false" :placeholder="'Tóm Tắt Giới Thiệu'" :fieldName="'intro_summary'" />
-                <x-admin.form.input :col="3" :type="'text'" :label="'Giới Thiệu'" :required="false" :placeholder="'Giới Thiệu'" :fieldName="'intro'" />
-                <x-admin.form.input :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" />
-                <x-admin.form.input :col="3" :type="'text'" :label="'Người Đăng'" :required="true" :placeholder="'Người Đăng'" :fieldName="'updated_by'" />
+
+                <x-admin.form.input :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'"  :value="Auth::user()['first_name']" />
+                {{-- <x-admin.form.input :col="3" :type="'text'" :label="'Người Đăng'" :required="true" :placeholder="'Người Đăng'" :fieldName="'updated_by'" /> --}}
 
                 <x-admin.form.input :col="3" :type="'text'" :label="'Trình Độ Đào Tạo'"  :required="false"  :placeholder="'Trình Độ Đào Tạo'" :fieldName="'level_educate'"/>
                 <x-admin.form.input :col="3" :type="'text'" :label="'Hình Thức Đào Tạo'" :required="false" :placeholder="'Hình Thức Đào Tạo'" :fieldName="'type_educate'"/>
                 <x-admin.form.input :col="3" :type="'text'" :label="'Thời Gian Đào Tạo'" :required="false" :placeholder="'Thời Gian Đào Tạo'" :fieldName="'type_time'"/>
                 <x-admin.form.input :col="3" :type="'text'" :label="'Đối Tượng Đào Tạo'" :required="false" :placeholder="'Đối Tượng Đào Tạo'" :fieldName="'object_educate'" />
-                
+
 
                 <x-admin.form.checkbox :col="3" :label="'Trạng thái'" :required="true" :fieldName="'status'" :labelContent="'Đang hoạt động'" />
 
@@ -39,11 +41,7 @@
 
                 <x-admin.form.file :col="3" :label="'Ảnh đại diện'" :required="false" :fieldName="'image'"  />
 
-                <x-admin.form.multi-select :col="6" :label="'Vai trò'" :required="false" :fieldName="'role'">
-                    {{-- @foreach ($roles as $role)
-                    <option value="{{$role['id']}}" {{ in_array($role['id'], old('role') ?? []) ? "selected" : '' }}>{{$role['display_name']}}</option>
-                    @endforeach --}}
-                </x-admin.form.multi-select>
+         
             </div>
         </x-admin.form.form>
     </div>

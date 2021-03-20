@@ -68,7 +68,7 @@ class PermissionController extends Controller
 
                 Permission::create([
                     'name' => $permission['name'] . '_' . $perm_name,
-                    'display_name' =>  $perm_display_name . ' ' . strtolower($permission['display_name']),
+                    'display_name' =>  $perm_display_name . ' ' . mb_strtolower($permission['display_name']),
                     'parent_id' => $permission['id']
                 ]);
             }
@@ -85,7 +85,7 @@ class PermissionController extends Controller
                 if (!$permission_childs->contains('name', $permission['name'] . '_' . $perm_name)) {
                     Permission::create([
                         'name' => $permission['name'] . '_' . $perm_name,
-                        'display_name' =>  $perm_display_name . ' ' . strtolower($permission['display_name']),
+                        'display_name' =>  $perm_display_name . ' ' . mb_strtolower($permission['display_name']),
                         'parent_id' => $permission['id']
                     ]);
                 }

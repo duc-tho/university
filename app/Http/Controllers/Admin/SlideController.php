@@ -21,8 +21,6 @@ class SlideController extends Controller
     }
     public function create($khoa)
     {
-        $faculty_list = Faculty::all();
-
         return view('server.pages.slide.create', [
             'khoa' => $khoa,
         ]);
@@ -53,7 +51,6 @@ class SlideController extends Controller
 
         abort_if($slide['faculty_id'] != $khoa['id'], 403);
 
-        $faculty_list = Faculty::all();
         return view('server.pages.slide.edit', [
             'slide' => $slide,
             'khoa' => $khoa,

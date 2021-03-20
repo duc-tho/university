@@ -26,13 +26,14 @@
 
                 <x-admin.form.checkbox :col="3" :label="'Trạng thái'" :required="false" :fieldName="'status'" :labelContent="'Đang hoạt động'" />
 
-                <x-admin.form.input :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" />
+                <x-admin.form.input :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'"  :value="Auth::user()['first_name']"/>
 
-                <x-admin.form.input :col="3" :type="'text'" :label="'Người Đăng'" :required="true" :placeholder="'Người Đăng'" :fieldName="'updated_by'" />
 
-                <x-admin.form.input :col="3" :type="'text'" :label="'Nội Dung Giới Thiệu'" :required="true" :placeholder="'Nội Dung Giới Thiệu'" :fieldName="'intro'" />
+                <x-admin.form.textarea-mce  :col="6" :label="'Nội Dung Giới Thiệu'" :required="true" :fieldName="'intro'" />
 
-                <x-admin.form.input :col="3" :type="'text'" :label="'Tóm Tắt Giới Thiệu'" :required="true" :placeholder="'Tóm Tắt Giới Thiệu'" :fieldName="'intro_summary'" />
+                <x-admin.form.textarea-mce  :col="6" :label="'Tóm Tắt Giới Thiệu'" :required="true" :fieldName="'intro'" />
+
+                {{-- <x-admin.form.input :col="3" :type="'text'" :label="'Người Đăng'" :required="true" :placeholder="'Người Đăng'" :fieldName="'updated_by'" /> --}}
 
                 <x-admin.form.file :col="3" :label="'Ảnh khoa'" :required="false" :fieldName="'image'" />
 

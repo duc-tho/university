@@ -12,26 +12,22 @@ class CategoryController extends Controller
 {
     public function show(Request $request, $khoa)
     {
-        $facultylist = Faculty::where(["status" => "1"])->orderBy("id", "desc")->paginate(10);
-        $categorylist = Category::where(["status" => "1"])->orderBy("id", "desc")->paginate(500);
+
+        $category_list = Category::where(["status" => "1", "faculty_id" => $khoa['id']])->orderBy("id", "desc")->paginate(6);
 
         return view('server.pages.category.index',[
             'khoa' => $khoa,
-            'facultylist' => $facultylist,
-            'categorylist' => $categorylist
+            'category_list' => $category_list
         ]);
     }
     public function create(Request $request, $khoa)
     {
         // $postData = Category::find($id);
-
-        $faculty_list = Faculty::all();
         $category_list = Category::all();
         return view('server.pages.category.create',
         [
             'khoa' => $khoa,
             'category_list' => $category_list,
-            'faculty_list' => $faculty_list,
             // 'categorylist' => $categorylist,
         ]);
     }
@@ -39,12 +35,18 @@ class CategoryController extends Controller
     {
 
         $category = new Category($request->input());
+        abort_if($category['faculty_id'] != $khoa['id'], 403);
+        // $request['status'] == "on" ? $category['status'] = 1 : $category['status'] = 0;
+        // $request['display_order'] == "on" ? $category['display_order'] = 1 : $category['display_order'] = 0;
+        // $request['show_at_notification'] == "on" ? $category['show_at_notification'] = 1 : $category['show_at_notification'] = 0;
+        // $request['show_at_news'] == "on" ? $category['show_at_news'] = 1 : $category['show_at_news'] = 0;
+        // $request['show_at_home'] == "on" ? $category['show_at_home'] = 1 : $category['show_at_home'] = 0;
 
         $request['status'] == "on" ? $category['status'] = 1 : $category['status'] = 0;
-        $request['display_order'] == "on" ? $category['display_order'] = 1 : $category['display_order'] = 0;
         $request['show_at_notification'] == "on" ? $category['show_at_notification'] = 1 : $category['show_at_notification'] = 0;
         $request['show_at_news'] == "on" ? $category['show_at_news'] = 1 : $category['show_at_news'] = 0;
         $request['show_at_home'] == "on" ? $category['show_at_home'] = 1 : $category['show_at_home'] = 0;
+
 
         if ($request->file('image') != null) $category['image'] = upload_file($request->file('image'), 'dist/upload/image/category');
 
@@ -81,12 +83,15 @@ class CategoryController extends Controller
 
     public function edit( Request $request, $khoa, $id)
     {
-        $faculty_list = Faculty::all();
+
         $category_list = Category::all();
         $category = Category::find($id);
+        abort_if(!$category, 404);
+
+        abort_if($category['faculty_id'] != $khoa['id'], 403);
         return view('server.pages.category.edit', [
             'category' => $category,
-            'faculty_list' => $faculty_list,
+
             'category_list' => $category_list,
             'khoa' => $khoa,
         ]);
@@ -96,6 +101,8 @@ class CategoryController extends Controller
         $category = Category::find($id);
 
         abort_if(!$category, 404);
+
+        abort_if($category['faculty_id'] != $khoa['id'], 403);
 
         if ($request->has('status')) $request->merge(['status' => $request['status'] == "on" ? 1 : 0]);
 
@@ -125,8 +132,14 @@ class CategoryController extends Controller
     }
     public function delete($khoa, $id)
     {
-        Category::find($id);
-        Category::destroy($id);
+        $category = Category::find($id);
+
+        abort_if(!$category, 404);
+
+        abort_if($category['faculty_id'] != $khoa['id'], 403);
+
+        Category::destroy($category['id']);
+        // chuyển hướng về trang faculty list
         return redirect()->route('admin.category.show', [$khoa['slug']]);
     }
 }

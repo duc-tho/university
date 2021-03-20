@@ -11,27 +11,27 @@ class StudentController extends Controller
 {
     public function show(Request $request, $khoa)
     {
-        $student_list = StudentRepresentative::where(["status" => "1"])->orderBy("id", "desc")->paginate(10);
-        $faculty_list= Faculty::all();
-
+        $student_list = StudentRepresentative::where(["status" => "1", "faculty_id" => $khoa['id']])->orderBy("id", "desc")->paginate(6);
         return view('server.pages.student.index', [
             'student_list' =>  $student_list,
-            'faculty_list' =>  $faculty_list,
             'khoa' =>$khoa
         ]);
     }
     public function create($khoa)
     {
-        $faculty_list = Faculty::all();
         return view('server.pages.student.create', [
-            'faculty_list' =>  $faculty_list,
+
             'khoa' => $khoa,
         ]);
     }
     public function store(Request $request, $khoa)
     {
         $student = new StudentRepresentative($request->input());
+
+        abort_if($student['faculty_id'] != $khoa['id'], 403);
+
         $request['status'] == "on" ? $student['status'] = 1 : $student['status'] = 0;
+
         if ($request->file('image') != null) $student['image'] = upload_file($request->file('image'), 'dist/upload/image/student');
 
         $request->validate([
@@ -46,10 +46,14 @@ class StudentController extends Controller
     public function edit(Request $request, $khoa, $id)
     {
         $student = StudentRepresentative::find($id);
-        $faculty_list = Faculty::all();
+
+        abort_if(!$student, 404);
+
+        abort_if($student['faculty_id'] != $khoa['id'], 403);
+
         return view('server.pages.student.edit', [
             'student' => $student,
-            'faculty_list' => $faculty_list,
+
             'khoa' => $khoa,
         ]);
     }
@@ -59,6 +63,8 @@ class StudentController extends Controller
         $student = StudentRepresentative::find($id);
 
         abort_if(!$student, 404);
+
+        abort_if($student['faculty_id'] != $khoa['id'], 403);
 
         if ($request->has('status')) $request->merge(['status' => $request['status'] == "on" ? 1 : 0]);
 
@@ -76,8 +82,13 @@ class StudentController extends Controller
     }
     public function delete($khoa, $id)
     {
-        StudentRepresentative::find($id);
-        StudentRepresentative::destroy($id);
+        $student = StudentRepresentative::find($id);
+
+        abort_if(!$student, 404);
+
+        abort_if($student['faculty_id'] != $khoa['id'], 403);
+
+        StudentRepresentative::destroy($student['id']);
         // chuyển hướng về trang faculty list
         return redirect()->route('admin.student.show', [$khoa['slug']]);
     }
