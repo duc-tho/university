@@ -9,157 +9,96 @@
                 <div class="col-12">
                     <div class="card card-primary card-outline">
                         <div class="card-header p-2 d-flex align-items-center justify-content-between">
-                            <a href="{{route('admin.about.create', [$khoa->slug])}}">
+                            <a href="{{ route('admin.about.create', [$khoa->slug]) }}">
                                 <button class="btn btn-info btn-sm">
                                     <i class="fas fa-plus"></i> Thêm Giới Thiệu
                                 </button>
                             </a>
-                            <div class="ml-auto d-inline-block">
+                            {{-- <div class="ml-auto d-inline-block">
                                 <div class="input-group input-group-sm">
-                                    <select class="form-control custon-select" style="width:auto !important"
-                                        data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-                                        <option value="10" selected="">Hiện 10 mục</option>
-                                        <option value="20">Hiện 25 mục</option>
-                                        <option value="50">Hiện 50 mục</option>
-                                    </select>
+                                    <form action="{{ route('admin.user.show', [$khoa['slug']]) }}" method="get">
+                                        <select class="form-control custon-select" style="width:auto !important" data-toggle="tooltip" name="item-per-page" onchange="this.parentElement.submit();">
+                                            <option value="6" {{ $about->perPage() == 6 ? 'selected disabled' : ''  }}>Hiện 6 mục</option>
+                                            <option value="9" {{ $about->perPage() == 9 ? 'selected disabled' : ''  }}>Hiện 9 mục</option>
+                                            <option value="12" {{ $about->perPage() == 12 ? 'selected disabled' : ''  }}>Hiện 12 mục</option>
+                                        </select>
+                                    </form>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <!-- /.card-header -->
-                        <div class="card-body table-responsive p-0">
-                            <table class="table text-nowrap table-bordered table-hover">
-                                <thead class="filter">
-                                    <tr role="row">
-
-                                        <th style="width:5%" class="text-center">
-                                            <input class="form-control" type="text" name="News_ID" value="">
-                                        </th>
-
-                                        <th style="width:15%" class="text-center">
-                                            <input class="form-control" type="text" name="News_Name" value="">
-                                        </th>
-                                        <th style="width:15%" class="text-center">
-                                            <input class="form-control" type="text" name="News_Name" value="">
-                                        </th>
-                                        <th style="width:20%" class="text-center">
-                                            <input class="form-control" type="text" name="News_Name" value="">
-                                        </th>
-                                        <th style="width:15%" class="text-center">
-                                            <input class="form-control" type="text" name="News_Name" value="">
-                                        </th>
-                                        <th style="width:15%" class="text-center">
-                                            <input class="form-control" type="text" name="News_Name" value="">
-                                        </th>
-                                        <th style="width:10%" class="text-center sorting_disabled">
-                                            <button type="submit" class="btn btn-effect-ripple btn-primary"
-                                                style="overflow: hidden; position: relative;">Special</button>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <thead>
-
-                                    <tr role="row">
-                                        <th class="text-center sorting">
-                                            <a>ID</a>
-                                        </th>
-                                        <th class="text-center sorting">
-                                            <a>Tiêu Đề</a>
-                                        </th>
-                                        <th class="text-center sorting">
-                                            <a>Thuộc Khoa</a>
-                                        </th>
-                                        <th class="text-center sorting">
-                                            <a>Hình Ảnh</a>
-                                        </th>
-                                        <th class="text-center sorting_desc">
-                                            <a>Ngày Đăng</a>
-                                        </th>
-                                        <th class="text-center sorting_desc">
-                                            <a>Trạng Thái</a>
-                                        </th>
-                                        <th class="text-center sorting">
-                                            <a><i class="fa fa-bolt"></i></a>
-                                        </th>
-                                    </tr>
-
-                                </thead>
-                                <tbody>
+                        <div class="card card-solid">
+                            <div class="card-body pb-0">
+                                <div class="row d-flex align-items-stretch">
                                     @foreach ($about_list as $about)
-                                        <tr role="row">
-                                            <td class="text-center">{{ $about->id }}</td>
-                                            <td>{{ $about->title }}</td>
-                                            @foreach ($facultylist as $faculty)
-                                                @if ($faculty->id === $about->faculty_id)
-                                                    <td class="text-center">{{$faculty->name}}</td>
-                                                @break
-                                                @endif
-                                            @endforeach
-                                            <td>
-                                                <img width="200px" src="{{ asset($about->image) }}" class="thumbnail">
-                                            </td>
-                                            <td class="text-center">{{  ConvertDatabaseTimeToDMY($about->created_at) }}</td>
-                                            @switch($about->status)
-                                            @case(1)
-                                            <td class="text-center">Hoạt Động</td>
-                                            @break
-                                            @case(0)
-                                            <td class="text-center">Không Hoạt Động</td>
-                                            @break
-                                            @default
-                                            @endswitch
-                                            <td class="text-center">
-                                                <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
-                                                    <div class="mt-check-garden nutanhien">
-                                                    <input id="{{$about->id}}" type="checkbox" >
-                                                <label for="{{$about->id}}"> </label></div></label>
-                                                    <!-- <input data-id="1579" type="checkbox" checked=""><span></span></label> -->
-                                                <a href="{{ route('admin.about.edit', [$khoa['slug'], $about['id']]) }}" class="btn btn-warning btn-xs" >
-                                                    <i class="fa fa-flag" aria-hidden="true"></i>
-                                                    Sửa</a>
-                                                <a href="{{ route('admin.about.delete', [$khoa['slug'], $about['id']]) }}"  onclick="return confirm('Bạn có chắc chắn muốn xóa !')" class="btn btn-danger btn-xs"
-                                                ><i class="fa fa-trash" aria-hidden="true"></i>
-                                                    Xóa</a>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                                <tfoot>
+                                    <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
+                                        <div class="card bg-light">
+                                            <div class="card-header text-muted border-bottom-0">
+                                            </div>
+                                            <div class="card-body pt-0">
+                                                <div class="row">
+                                                    <div class="col-7">
+                                                        <h2 class="lead"><b>{{$about->title}}</b></h2>
+                                                        <p class="text-muted text-sm"><b>Tạo ngày : </b> {{ ConvertDatabaseTimeToDMY($about['created_at']) }} </p>
+                                                        <ul class="ml-4 mb-0 fa-ul text-muted">
+                                                            <li class="small"><span class="fa-li"><i
+                                                                class="fas fa-dice-d20"></i></span>Trạng Thái:
+                                                                @switch($about->status)
+                                                                @case(1)
+                                                                <span class="text-center">Hoạt Động</span>
+                                                                @break
+                                                                @case(0)
+                                                                <span class="text-center">Không Hoạt Động</span>
+                                                                @break
+                                                                @default
+                                                                @endswitch
+                                                                <br><br>
+                                                            <li class="small"><span class="fa-li"><i
+                                                                        class="fas fa-chalkboard-teacher"></i></span>Người Tạo:
+                                                                {{$about->created_by}}</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-5 text-center">
+                                                        <img src="{{asset($about->image ?? "dist/img/imgdefault.png")}}" alt="sdfsdf"
+                                                            class="img-circle img-fluid">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <div class="text-right">
+                                                    <a href="{{ route('admin.about.edit', [$khoa['slug'], $about['id']]) }}" class="btn btn-sm bg-teal">
+                                                        <i class="fas fa-user-edit"></i> Sửa
+                                                    </a>
+                                                    <a href="{{ route('admin.about.delete', [$khoa['slug'], $about['id']]) }}" class="btn btn-sm btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa !')">
+                                                        <i class="fas fa-exclamation-triangle"></i> Xóa
+                                                    </a>
+                                                </div>
+                                            </div>
 
-                                </tfoot>
-                            </table>
-                        </div>
-                        <!-- /.card-body -->
-                        <div class="card-footer">
-                            <div class="row">
-                                <div class="col-sm-5 hidden-xs">
-                                    <div class="dataTables_info" id="example-datatable_info" role="status"
-                                        aria-live="polite">
-                                        <strong>1 / 57</strong>
+                                        </div>
                                     </div>
+                                    @endforeach
+
                                 </div>
-                                <div class="col-sm-7 col-xs-12">
-                                    <div>
-                                        <ul class="pagination pagination-sm mb-0">
-                                            <li class="page-item prev">
-                                                <a class="page-link" href="#"><i class="fa fa-chevron-left"></i></a>
-                                            </li>
-                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                            <li class="page-item next">
-                                                <a class="page-link" href="#"> <i class="fa fa-chevron-right"></i></a>
-                                            </li>
-                                        </ul>
+                                <!-- /.card -->
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col-sm-5 hidden-xs">
+                                        <div class="dataTables_info" id="example-datatable_info" role="status" aria-live="polite">
+                                            <strong>Trang {{ $about_list->currentPage() }} / {{ $about_list->lastPage() }}</strong>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-7 col-xs-12">
+                                        <div>
+                                            <ul class="pagination pagination-sm mb-0 d-flex justify-content-end">
+                                                {{ $about_list->links() }}
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- /.card -->
+                    </div><!-- /.container-fluid -->
                 </div>
-            </div>
-        </div><!-- /.container-fluid -->
-    </div>
-@endsection
+            @endsection

@@ -69,7 +69,7 @@
         </div> <!-- tab content -->
         <div class="row">
             <div class="col-lg-12">
-                {{ $category['news']->render('vendor.pagination.bootstrap-4') }} <!-- courses pagination -->
+                {{-- {{ $category['news']->render('vendor.pagination.bootstrap-4') }} <!-- courses pagination --> --}}
             </div>
         </div> <!-- row -->
     </div> <!-- container -->

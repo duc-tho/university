@@ -14,11 +14,21 @@ class News_Controller extends Controller
 {
     public function show(Request $request, $khoa)
     {
-        $news_list = News::where(["status" => "1"])->orderBy("id", "desc")->paginate(10);
-        $categorylist= Category::all();
+        $category_list= Category::where(["status" => "1", "faculty_id" => $khoa['id']])->get();
+        $news_list = News::all();
+
+        foreach ($category_list as $category) {
+            $news = $category->news;
+
+            if (count($news) != 0) $category['news'] = $news;
+            else $category['news'] = null;
+        }
+
+
+
         return view('server.pages.news.index', [
             'news_list' =>  $news_list,
-            'categorylist' =>  $categorylist,
+            'category_list' =>  $category_list,
             'khoa' =>$khoa
         ]);
     }

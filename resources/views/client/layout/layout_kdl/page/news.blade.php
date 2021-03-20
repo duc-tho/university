@@ -38,6 +38,7 @@
         <div class="row">
             <div class="col-sm-12 ">
                 {{ $category['news']->render('vendor.pagination.bootstrap-4') }}
+  
             </div>
         </div>
     </div>

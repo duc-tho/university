@@ -28,7 +28,7 @@
 
                 <x-admin.form.input :data="$specialized" :col="3" :type="'text'" :label="'Meta Descriptions'" :required="true" :placeholder="'Meta Descriptions'" :fieldName="'meta_descriptions'" />
                 <x-admin.form.input :data="$specialized" :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" />
-                <x-admin.form.input :data="$specialized" :col="3" :type="'text'" :label="'Người Đăng'" :required="true" :placeholder="'Người Đăng'" :fieldName="'updated_by'" />
+                <x-admin.form.input :data="$specialized" :col="3" :type="'text'" :label="'Người Đăng'" :required="true" :placeholder="'Người Đăng'" :fieldName="'updated_by'" :value="Auth::user()['first_name']" />
 
                 <x-admin.form.input :data="$specialized" :col="3" :type="'text'" :label="'Trình Độ Đào Tạo'"  :required="false"  :placeholder="'Trình Độ Đào Tạo'" :fieldName="'level_educate'"/>
                 <x-admin.form.input :data="$specialized" :col="3" :type="'text'" :label="'Hình Thức Đào Tạo'" :required="false" :placeholder="'Hình Thức Đào Tạo'" :fieldName="'type_educate'"/>

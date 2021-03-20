@@ -31,7 +31,7 @@
 
                 <x-admin.form.textarea-mce :data="$faculty" :col="6" :label="'Giới Thiệu Tóm Tắt '" :required="true" :fieldName="'intro_summary'" />
 
-                <x-admin.form.input :data="$faculty" :col="3" :type="'text'" :label="'Người Đăng'" :required="true" :placeholder="'Người Đăng'" :fieldName="'updated_by'" />
+                <x-admin.form.input :data="$faculty" :col="3" :type="'text'" :label="'Người Đăng'" :required="true" :placeholder="'Người Đăng'" :fieldName="'updated_by'"  :value="Auth::user()['first_name']"/>
 
                 <x-admin.form.file :data="$faculty" :col="3" :label="'Ảnh khoa'" :required="false" :fieldName="'image'" />
 

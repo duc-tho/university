@@ -14,9 +14,9 @@ class FacultyController extends Controller
 {
     public function show(Request $request, $khoa)
     {
-        $facultylist = Faculty::where(["status" => "1"])->orderBy("id", "desc")->paginate(10);
+        $faculty_list = Faculty::where(["status" => "1", "id" => $khoa['id']])->orderBy("id", "desc")->paginate(10);
         return view('server.pages.faculty.index', [
-            'facultylist' => $facultylist,
+            'faculty_list' => $faculty_list,
             'khoa' => $khoa,
         ]);
     }
@@ -38,6 +38,8 @@ class FacultyController extends Controller
     public function store(AddFacultyRequest $request, $khoa)
     {
         $faculty = new Faculty($request->input());
+
+        abort_if($faculty['id'] != $khoa['id'], 403);
 
         $request['status'] == "on" ? $faculty['status'] = 1 : $faculty['status'] = 0;
 
@@ -89,6 +91,8 @@ class FacultyController extends Controller
 
         abort_if(!$faculty, 404);
 
+        abort_if($faculty['id'] != $khoa['id'], 403);
+
         if ($request->has('status')) $request->merge(['status' => $request['status'] == "on" ? 1 : 0]);
 
         if ($request->file('image') != null) $request->merge(['image' => upload_file($request->file('image'), 'dist/upload/image/faculty')]);
@@ -128,8 +132,13 @@ class FacultyController extends Controller
     }
     public function delete($khoa, $id)
     {
-        Faculty::find($id);
-        Faculty::destroy($id);
+        $faculty = Faculty::find($id);
+
+        abort_if(!$faculty, 404);
+
+        abort_if($faculty['id'] != $khoa['id'], 403);
+
+        Faculty::destroy($faculty['id']);
         // chuyển hướng về trang faculty list
         return redirect()->route('admin.faculty.show', [$khoa['slug']]);
     }

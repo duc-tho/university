@@ -68,7 +68,7 @@ class SlidePolicy
      * @param  \App\Models\Slide  $slide
      * @return mixed
      */
-    public function delete(User $user, Slide $slide)
+    public function delete(User $user)
     {
         return $user->checkPermissionAccess(config('permission.module.slide.access.delete'));
     }

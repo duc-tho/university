@@ -12,38 +12,29 @@
                 </x-admin.form.alert>
 
                 <x-admin.form.select :required="true" :col="3" :fieldName="'faculty_id'" :label="'Khoa'">
-                    <option value="" aria-readonly="true">Chọn Khoa :</option>
-                    @foreach ($faculty_list as $faculty)
-                    <option value="{{$faculty->id}}" {{ old('faculty_id') == $faculty->id ? "selected" : '' }}>{{$faculty->name}}</option>
-                    @endforeach
+                    <option value="{{$khoa->id}}" {{ old('faculty_id') == $khoa->id ? "selected" : '' }} selected>{{$khoa->name}}</option>
                 </x-admin.form.select>
 
                 <x-admin.form.input :col="3" :type="'text'" :label="'Tên Slide'" :required="true" :placeholder="'Tên Slide'" :fieldName="'name'" />
 
-                <x-admin.form.input :col="3" :type="'text'" :label="'Display Order'" :required="true" :placeholder="'Display Order'" :fieldName="'display_order'" />
+                <x-admin.form.input :col="3" :type="'number'" :label="'Display Order'" :required="true" :placeholder="'Display Order'" :fieldName="'display_order'" :value="0" />
 
                 <x-admin.form.select :required="true" :col="3" :fieldName="'browser_target'" :label="'Browser_Target'">
-                    <option value="0" aria-readonly="true" > _blank </option>
-                    <option value="1" aria-readonly="true" > _self</option>
-                    <option value="2" aria-readonly="true" > _parent</option>
-                    <option value="3" aria-readonly="true" > _top</option>
+                    <option value="0" aria-readonly="true"> _blank </option>
+                    <option value="1" aria-readonly="true"> _self</option>
+                    <option value="2" aria-readonly="true"> _parent</option>
+                    <option value="3" aria-readonly="true"> _top</option>
                 </x-admin.form.select>
 
-                <x-admin.form.checkbox :col="3" :label="'Trạng thái'" :required="true" :fieldName="'status'" :labelContent="'Đang hoạt động'" />
+                <x-admin.form.input :col="3" :type="'text'" :label="'Mô Tả'" :required="false" :placeholder="'Mô Tả'" :fieldName="'description'" />
 
-                <x-admin.form.input :col="3" :type="'text'" :label="'Người Cập Nhập'" :required="true" :placeholder="'Người Cập Nhập'" :fieldName="'updated_by'" />
+                <x-admin.form.input :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" :value="Auth::user()['first_name']" />
+                {{--
+                <x-admin.form.input :col="3" :type="'text'" :label="'Người Cập Nhập'" :required="true" :placeholder="'Người Cập Nhập'" :fieldName="'updated_by'" /> --}}
 
-                <x-admin.form.input :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" />
+                <x-admin.form.checkbox :col="3" :label="'Trạng thái'" :required="true" :fieldName="'status'" :labelContent="'Đang hoạt động'" :checked="true" />
 
-                <x-admin.form.file :col="3" :label="'Ảnh đại diện'" :required="false" :fieldName="'link'" />
-
-                <x-admin.form.textarea-mce  :col="6" :label="'Mô Tả'" :required="true" :fieldName="'description'" />
-
-                <x-admin.form.multi-select :col="6" :label="'Vai trò'" :required="false" :fieldName="'role'">
-                    {{-- @foreach ($roles as $role)
-                    <option value="{{$role['id']}}" {{ in_array($role['id'], old('role') ?? []) ? "selected" : '' }}>{{$role['display_name']}}</option>
-                    @endforeach --}}
-                </x-admin.form.multi-select>
+                <x-admin.form.file :col=" 3" :label="'Ảnh'" :required="false" :fieldName="'link'" />
             </div>
         </x-admin.form.form>
     </div>

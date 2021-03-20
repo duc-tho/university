@@ -39,7 +39,7 @@ class AboutCategory extends Model
     /**
      * @var array
      */
-    protected $fillable = ['faculty_id', 'title', 'image', 'slug', 'intro', 'created_at', 'updated_at', 'created_by', 'updated_by', 'display_order', 'status', 'view_count'];
+    protected $fillable = ['faculty_id', 'title', 'image', 'slug', 'intro', 'created_at', 'updated_at', 'created_by', 'updated_by', 'display_order', 'status', 'view_count', 'meta_descriptions','meta_keywords'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

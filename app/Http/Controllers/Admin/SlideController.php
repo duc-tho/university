@@ -12,26 +12,25 @@ class SlideController extends Controller
     //
     public function show(Request $request, $khoa)
     {
-        $slide_list = Slide::where(["status" => "1"])->orderBy("id", "desc")->paginate(10);
-        $faculty_list= Faculty::all();
+        $slide_list = Slide::where(["status" => "1", "faculty_id" => $khoa['id']])->orderBy("id", "desc")->paginate(10);
 
         return view('server.pages.slide.index', [
             'slide_list' =>  $slide_list,
-            'faculty_list' =>  $faculty_list,
-            'khoa' =>$khoa
+            'khoa' => $khoa
         ]);
     }
     public function create($khoa)
     {
-        $faculty_list = Faculty::all();
         return view('server.pages.slide.create', [
-            'faculty_list' =>  $faculty_list,
             'khoa' => $khoa,
         ]);
     }
     public function store(Request $request, $khoa)
     {
         $slide = new Slide($request->input());
+
+        abort_if($slide['faculty_id'] != $khoa['id'], 403);
+
         $request['status'] == "on" ? $slide['status'] = 1 : $slide['status'] = 0;
         if ($request->file('link') != null) $slide['link'] = upload_file($request->file('link'), 'dist/upload/image/slide');
 
@@ -47,10 +46,13 @@ class SlideController extends Controller
     public function edit(Request $request, $khoa, $id)
     {
         $slide = Slide::find($id);
-        $faculty_list = Faculty::all();
+
+        abort_if(!$slide, 404);
+
+        abort_if($slide['faculty_id'] != $khoa['id'], 403);
+
         return view('server.pages.slide.edit', [
             'slide' => $slide,
-            'faculty_list' => $faculty_list,
             'khoa' => $khoa,
         ]);
     }
@@ -60,6 +62,8 @@ class SlideController extends Controller
         $slide = Slide::find($id);
 
         abort_if(!$slide, 404);
+
+        abort_if($slide['faculty_id'] != $khoa['id'], 403);
 
         if ($request->has('status')) $request->merge(['status' => $request['status'] == "on" ? 1 : 0]);
 
@@ -77,8 +81,13 @@ class SlideController extends Controller
     }
     public function delete($khoa, $id)
     {
-        Slide::find($id);
-        Slide::destroy($id);
+        $slide = Slide::find($id);
+
+        abort_if(!$slide, 404);
+
+        abort_if($slide['faculty_id'] != $khoa['id'], 403);
+
+        Slide::destroy($slide['id']);
         // chuyển hướng về trang faculty list
         return redirect()->route('admin.slide.show', [$khoa['slug']]);
     }

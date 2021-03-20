@@ -11,36 +11,26 @@
                     <x-admin.form.alert :col="12" class="bg-olive color-palette">
                         <b>Lưu ý: </b>Các trường có dấu <span class="text-danger"><b>*</b></span> là bắt buộc!
                     </x-admin.form.alert>
-
                     <x-admin.form.select :required="true" :col="3" :fieldName="'faculty_id'" :label="'Khoa'">
-                        <option value="" aria-readonly="true">Chọn Khoa </option>
-                        @foreach ($faculty_list as $faculty)
-                        <option value="{{$faculty->id}}" {{ old('faculty_id') == $faculty->id ? "selected" : '' }}>{{$faculty->name}}</option>
-                        @endforeach
+                        <option value="{{$khoa->id}}" {{ old('faculty_id') == $khoa->id ? "selected" : '' }} selected>{{$khoa->name}}</option>
                     </x-admin.form.select>
+
 
                     <x-admin.form.input :col="3" :type="'text'" :label="'Tiêu Đề Giới Thiệu'" :required="true" :placeholder="'Tiêu Đề Giới Thiệu'" :fieldName="'title'" />
                     <x-admin.form.input :col="3" :type="'text'" :label="'Slug'" :required="true" :placeholder="'Slug'" :fieldName="'slug'" />
                     <x-admin.form.input :col="3" :type="'text'" :label="'Meta Descriptions'" :required="true" :placeholder="'Meta Descriptions'" :fieldName="'meta_descriptions'" />
                     <x-admin.form.input :col="3" :type="'text'" :label="'Meta Keywords'" :required="true" :placeholder="'Meta Keywords'" :fieldName="'meta_keywords'" />
-                    <x-admin.form.select :required="true" :col="3" :fieldName="'display_order'" :label="'Display Order'">
-                        <option value="0" aria-readonly="true">Ẩn</option>
-                        <option value="1" aria-readonly="true">Hiện</option>
-                    </x-admin.form.select>
 
-                    <x-admin.form.input :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" />
-                    <x-admin.form.input :col="3" :type="'text'" :label="'Người Cập Nhập'" :required="true" :placeholder="'Người Cập Nhập'" :fieldName="'updated_by'" />
+                    <x-admin.form.input :col="3" :type="'number'" :label="'Display Order'" :required="true" :placeholder="'Display Order'" :fieldName="'display_order'" :value="0" />
+
+                    <x-admin.form.input :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" :value="Auth::user()['first_name']" />
+                    {{-- <x-admin.form.input :col="3" :type="'text'" :label="'Người Cập Nhập'" :required="true" :placeholder="'Người Cập Nhập'" :fieldName="'updated_by'" /> --}}
 
                     <x-admin.form.textarea-mce :col="6" :label="'Giới Thiệu'" :required="true" :fieldName="'intro'" />
 
                     <x-admin.form.checkbox :col="3" :label="'Trạng thái'" :required="true" :fieldName="'status'" :labelContent="'Đang hoạt động'" />
                     <x-admin.form.file :col="3" :label="'Ảnh đại diện'" :required="false" :fieldName="'image'" />
 
-                    <x-admin.form.multi-select :col="6" :label="'Vai trò'" :required="false" :fieldName="'role'">
-                        {{-- @foreach ($roles as $role)
-                        <option value="{{$role['id']}}" {{ in_array($role['id'], old('role') ?? []) ? "selected" : '' }}>{{$role['display_name']}}</option>
-                        @endforeach --}}
-                    </x-admin.form.multi-select>
 
                 </div>
             </x-admin.form.form>

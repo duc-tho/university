@@ -65,12 +65,13 @@ class UserController extends Controller
         // Tạo mới user
         $user = new User($request->input());
 
+
         // dừng lại nếu tạo user có khoa khác với khoa của user đang login trừ admin
-        abort_if(!Auth::user()['isAdmin'] && $user['faculty_id'] != Auth::user()['faculty_id'], 403);
+        if ($user->roles->max('level') != null) abort_if(!Auth::user()['isAdmin'] && $user['faculty_id'] != Auth::user()['faculty_id'], 403);
 
         // Luu y: chuyen vao policy khu lam toi chuc nang nay
         // dừng lại nếu user muốn tạo có quyền cao hơn hoặc bằng mình
-        abort_if(Auth::user()->roles->max('level') >= $user->roles->max('level'), 403);
+        if(count($user->roles) != 0) abort_if(Auth::user()->roles->max('level') >= $user->roles->max('level'), 403);
 
         // Mã hóa password
         $user->password = bcrypt($request->password);
@@ -118,6 +119,8 @@ class UserController extends Controller
 
         // Lấy tất cả role level thấp hơn role của mình
         $max_user_level = Auth::user()->roles->max('level');
+
+        if (!$max_user_level && Auth::user()['isSystemAccount']) $max_user_level = 0;
 
         $roles = Roles::where([['level', '>',  $max_user_level]])->get();
 

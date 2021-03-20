@@ -11,37 +11,32 @@ class SpecializedController extends Controller
 {
     public function show(Request $request, $khoa)
     {
-        $specialized_list = Specialized::where(["status" => "1"])->orderBy("id", "desc")->paginate(10);
-        $facultylist= Faculty::all();
+        $specialized_list = Specialized::where(["status" => "1", "faculty_id" => $khoa['id']])->orderBy("id", "desc")->paginate(10);
 
         return view('server.pages.specialized.index', [
             'specialized_list' =>  $specialized_list,
-            'facultylist' =>  $facultylist,
             'khoa' =>$khoa
         ]);
     }
     public function create($khoa)
     {
-        $faculty_list = Faculty::all();
+
         return view('server.pages.specialized.create', [
-            'faculty_list' =>  $faculty_list,
+
             'khoa' => $khoa,
         ]);
     }
     public function store(Request $request, $khoa)
     {
         $specialized = new Specialized($request->input());
+
+        abort_if($specialized['faculty_id'] != $khoa['id'], 403);
+
         $request['status'] == "on" ? $specialized['status'] = 1 : $teacher['status'] = 0;
 
         if ($request->file('image') != null) $specialized['image'] = upload_file($request->file('image'), 'dist/upload/image/specialized');
 
         if ($request->file('icons') != null) $specialized['icons'] = upload_file($request->file('icons'), 'dist/upload/image/icons');
-
-        $request->validate([
-            'name' => 'required:specialized,name,' . $specialized->id
-        ], [
-            'name.required' => 'Chưa nhập tên ngành nè!',
-        ]);
 
         $specialized->save();
         return redirect()->route('admin.specialized.show', [$khoa['slug']]);
@@ -49,10 +44,14 @@ class SpecializedController extends Controller
     public function edit(Request $request, $khoa, $id)
     {
         $specialized = Specialized::find($id);
-        $faculty_list = Faculty::all();
+
+        abort_if(!$specialized, 404);
+
+        abort_if($specialized['faculty_id'] != $khoa['id'], 403);
+
         return view('server.pages.specialized.edit', [
             'specialized' => $specialized,
-            'faculty_list' => $faculty_list,
+
             'khoa' => $khoa,
         ]);
     }
@@ -62,6 +61,9 @@ class SpecializedController extends Controller
         $specialized = Specialized::find($id);
 
         abort_if(!$specialized, 404);
+
+        abort_if($specialized['faculty_id'] != $khoa['id'], 403);
+
 
         if ($request->has('status')) $request->merge(['status' => $request['status'] == "on" ? 1 : 0]);
 
@@ -79,8 +81,13 @@ class SpecializedController extends Controller
     }
     public function delete($khoa, $id)
     {
-        Specialized::find($id);
-        Specialized::destroy($id);
+        $specialized = Specialized::find($id);
+
+        abort_if(!$specialized, 404);
+
+        abort_if($specialized['faculty_id'] != $khoa['id'], 403);
+
+        Specialized::destroy($specialized['id']);
         // chuyển hướng về trang faculty list
         return redirect()->route('admin.specialized.show', [$khoa['slug']]);
     }
