@@ -85,5 +85,97 @@ return [
                 'delete' => 'news_delete',
             ]
         ],
+        'about' => [
+            'display_name' => 'Giới thiệu',
+            'access' => [
+                'list' => 'about_list',
+                'create' => 'about_create',
+                'edit' => 'about_edit',
+                'delete' => 'about_delete',
+            ]
+        ],
+        'category' => [
+            'display_name' => 'Chuyên mục',
+            'access' => [
+                'list' => 'category_list',
+                'create' => 'category_create',
+                'edit' => 'category_edit',
+                'delete' => 'category_delete',
+            ]
+        ],
+        'collab' => [
+            'display_name' => 'Logo Hợp Tác',
+            'access' => [
+                'list' => 'collab_list',
+                'create' => 'collab_create',
+                'edit' => 'collab_edit',
+                'delete' => 'collab_delete',
+            ]
+        ],
+        'contact' => [
+            'display_name' => 'Liên hệ',
+            'access' => [
+                'list' => 'contact_list',
+                'edit' => 'contact_edit',
+            ]
+        ],
+        'image' => [
+            'display_name' => 'Hình ảnh',
+            'access' => [
+                'list' => 'image_list',
+                'create' => 'image_create',
+                'edit' => 'image_edit',
+                'delete' => 'image_delete',
+            ]
+        ],
+        'permission' => [
+            'display_name' => 'Quyền',
+            'access' => [
+                'create' => 'permission_create',
+            ]
+        ],
+        'role' => [
+            'display_name' => 'Vai trò',
+            'access' => [
+                'list' => 'role_list',
+                'create' => 'role_create',
+                'edit' => 'role_edit',
+                'delete' => 'role_delete',
+            ]
+        ],
+        'setting' => [
+            'display_name' => 'Cài đặt thông tin',
+            'access' => [
+                'list' => 'setting_list',
+                'edit' => 'setting_edit',
+            ]
+        ],
+        'specialized' => [
+            'display_name' => 'Ngành',
+            'access' => [
+                'list' => 'specialized_list',
+                'create' => 'specialized_create',
+                'edit' => 'specialized_edit',
+                'delete' => 'specialized_delete',
+            ]
+        ],
+        'statistic' => [
+            'display_name' => 'Số liệu',
+            'access' => [
+                'list' => 'statistic_list',
+                'create' => 'statistic_create',
+                'edit' => 'statistic_edit',
+                'delete' => 'statistic_delete',
+            ]
+        ],
+        'video' => [
+            'display_name' => 'Video',
+            'access' => [
+                'list' => 'video_list',
+                'create' => 'video_create',
+                'edit' => 'video_edit',
+                'delete' => 'video_delete',
+            ]
+        ],
     ],
 ];
