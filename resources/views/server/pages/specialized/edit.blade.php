@@ -21,9 +21,12 @@
                 <x-admin.form.input :data="$specialized" :col="3" :type="'text'" :label="'Tên Ngành'" :required="true" :placeholder="'Tên Ngành'" :fieldName="'name'" />
                 <x-admin.form.input :data="$specialized" :col="3" :type="'text'" :label="'Slug'" :required="true" :placeholder="'Slug'" :fieldName="'slug'" />
                 <x-admin.form.input :data="$specialized" :col="3" :type="'text'" :label="'Meta Keyword'" :required="true" :placeholder="'Meta Keyword'" :fieldName="'meta_keywords'" />
+
+
+                <x-admin.form.textarea-mce :data="$specialized" :col="6" :label="'Tóm Tắt Giới Thiệu'" :required="true" :fieldName="'intro_summary'" />
+                <x-admin.form.textarea-mce :data="$specialized" :col="6" :label="'Giới Thiệu'" :required="true" :fieldName="'intro'" />
+
                 <x-admin.form.input :data="$specialized" :col="3" :type="'text'" :label="'Meta Descriptions'" :required="true" :placeholder="'Meta Descriptions'" :fieldName="'meta_descriptions'" />
-                <x-admin.form.input :data="$specialized" :col="3" :type="'text'" :label="'Tóm Tắt Giới Thiệu'" :required="false" :placeholder="'Tóm Tắt Giới Thiệu'" :fieldName="'intro_summary'" />
-                <x-admin.form.input :data="$specialized" :col="3" :type="'text'" :label="'Giới Thiệu'" :required="false" :placeholder="'Giới Thiệu'" :fieldName="'intro'" />
                 <x-admin.form.input :data="$specialized" :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" />
                 <x-admin.form.input :data="$specialized" :col="3" :type="'text'" :label="'Người Đăng'" :required="true" :placeholder="'Người Đăng'" :fieldName="'updated_by'" />
 

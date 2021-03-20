@@ -29,16 +29,13 @@
                     <option value="3"  {{ $slide['browser_target'] == 3 ? 'selected' : '' }} aria-readonly="true" > _top</option>
                 </x-admin.form.select>
 
-                <x-admin.form.input :data="$slide" :col="3" :type="'text'" :label="'Mô Tả'" :required="true" :placeholder="'Mô Tả'" :fieldName="'description'" />
 
-                <x-admin.form.input :data="$slide"  :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" />
-
-                <x-admin.form.input :data="$slide" :col="3" :type="'text'" :label="'Người Cập Nhập'" :required="true" :placeholder="'Người Cập Nhập'" :fieldName="'updated_by'" />
 
                 <x-admin.form.checkbox :data="$slide" :col="3" :label="'Trạng thái'" :required="true" :fieldName="'status'" :labelContent="'Đang hoạt động'" />
-
+                <x-admin.form.input :data="$slide"  :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" />
+                <x-admin.form.input :data="$slide" :col="3" :type="'text'" :label="'Người Cập Nhập'" :required="true" :placeholder="'Người Cập Nhập'" :fieldName="'updated_by'" />
                 <x-admin.form.file :data="$slide" :col="3" :label="'Ảnh đại diện'" :required="false" :fieldName="'link'" />
-
+                <x-admin.form.textarea-mce :data="$slide" :col="6" :label="'Mô Tả'" :required="true" :fieldName="'description'" />
                 <x-admin.form.multi-select :col="6" :label="'Vai trò'" :required="false" :fieldName="'role'">
                     {{-- @foreach ($roles as $role)
                     <option value="{{$role['id']}}" {{ in_array($role['id'], old('role') ?? []) ? "selected" : '' }}>{{$role['display_name']}}</option>

@@ -1,6 +1,6 @@
 @extends('server.index')
-@section('title', 'Quản Trị Khoa')
-@section('page-title', 'Quản Trị Khoa')
+@section('title', 'Quản Trị Giới Thiệu Khoa')
+@section('page-title', 'Quản Trị Giới Thiệu Khoa')
 @section('page-content')
     <div class="content">
         <div class="container-fluid">
@@ -9,14 +9,9 @@
                 <div class="col-12">
                     <div class="card card-primary card-outline">
                         <div class="card-header p-2 d-flex align-items-center justify-content-between">
-                            <a href="{{ route('admin.faculty.create', [$khoa->slug]) }}">
-                                <button class="btn btn-info btn-sm btn-1">
-                                    <i class="fas fa-plus"></i> Thêm Khoa
-                                </button>
-                            </a>
-                            <a href="#">
-                                <button class="btn btn-info btn-sm btn-1">
-                                    <i class="fas fa-plus"></i> Cập Nhật
+                            <a href="{{route('admin.about.create', [$khoa->slug])}}">
+                                <button class="btn btn-info btn-sm">
+                                    <i class="fas fa-plus"></i> Thêm Giới Thiệu
                                 </button>
                             </a>
                             <div class="ml-auto d-inline-block">
@@ -43,32 +38,17 @@
                                         <th style="width:15%" class="text-center">
                                             <input class="form-control" type="text" name="News_Name" value="">
                                         </th>
+                                        <th style="width:15%" class="text-center">
+                                            <input class="form-control" type="text" name="News_Name" value="">
+                                        </th>
                                         <th style="width:20%" class="text-center">
                                             <input class="form-control" type="text" name="News_Name" value="">
                                         </th>
-                                        <th style="width:30%" class="text-center">
-                                            <input class="form-control" type="text" name="News_Name" value="">
-                                        </th>
-                                        <th style="width:10%" class="text-center">
+                                        <th style="width:15%" class="text-center">
                                             <input class="form-control" type="text" name="News_Name" value="">
                                         </th>
                                         <th style="width:15%" class="text-center">
-                                            <div class="input-group input-daterange" data-date-format="yyyy-mm-dd">
-                                                <input type="text" id="News_Datetime_From" name="News_Datetime_From"
-                                                    class="form-control" placeholder="Từ" value="">
-                                                <span class="form-control px-1"><i class="fa fa-chevron-right"></i></span>
-                                                <input type="text" id="News_Datetime_To" name="News_Datetime_To"
-                                                    class="form-control" placeholder="Đến" value="">
-                                            </div>
-                                        </th>
-                                        <th style="width:15%" class="text-center">
-                                            <div class="input-group input-daterange" data-date-format="yyyy-mm-dd">
-                                                <input type="text" id="News_Datetime_From" name="News_Datetime_From"
-                                                    class="form-control" placeholder="Từ" value="">
-                                                <span class="form-control px-1"><i class="fa fa-chevron-right"></i></span>
-                                                <input type="text" id="News_Datetime_To" name="News_Datetime_To"
-                                                    class="form-control" placeholder="Đến" value="">
-                                            </div>
+                                            <input class="form-control" type="text" name="News_Name" value="">
                                         </th>
                                         <th style="width:10%" class="text-center sorting_disabled">
                                             <button type="submit" class="btn btn-effect-ripple btn-primary"
@@ -83,21 +63,18 @@
                                             <a>ID</a>
                                         </th>
                                         <th class="text-center sorting">
-                                            <a> Tên Khoa</a>
+                                            <a>Tiêu Đề</a>
+                                        </th>
+                                        <th class="text-center sorting">
+                                            <a>Thuộc Khoa</a>
                                         </th>
                                         <th class="text-center sorting">
                                             <a>Hình Ảnh</a>
                                         </th>
-                                        <th class="text-center sorting">
-                                            <a>Giới Thiệu Tóm Tắt</a>
+                                        <th class="text-center sorting_desc">
+                                            <a>Ngày Đăng</a>
                                         </th>
                                         <th class="text-center sorting_desc">
-                                            <a>Tên Layout</a>
-                                        </th>
-                                        <th class="text-center sorting">
-                                            <a>Người tạo</a>
-                                        </th>
-                                        <th class="text-center sorting">
                                             <a>Trạng Thái</a>
                                         </th>
                                         <th class="text-center sorting">
@@ -107,18 +84,21 @@
 
                                 </thead>
                                 <tbody>
-                                    @foreach ($facultylist as $key => $faculty)
+                                    @foreach ($about_list as $about)
                                         <tr role="row">
-                                            <td class="text-center">{{ $faculty->id }}</td>
-                                            <td>{{ $faculty->name }}</td>
-
+                                            <td class="text-center">{{ $about->id }}</td>
+                                            <td>{{ $about->title }}</td>
+                                            @foreach ($facultylist as $faculty)
+                                                @if ($faculty->id === $about->faculty_id)
+                                                    <td class="text-center">{{$faculty->name}}</td>
+                                                @break
+                                                @endif
+                                            @endforeach
                                             <td>
-                                                <img width="200px" src="{{ asset($faculty->image) }}" class="thumbnail">
+                                                <img width="200px" src="{{ asset($about->image) }}" class="thumbnail">
                                             </td>
-                                            <td class="text-center">{!! $faculty->intro_summary !!}</td>
-                                            <td class="text-center">{{ $faculty->layout_name }}</td>
-                                            <td class="text-center">{{ $faculty->created_by }}</td>
-                                            @switch($faculty->status)
+                                            <td class="text-center">{{  ConvertDatabaseTimeToDMY($about->created_at) }}</td>
+                                            @switch($about->status)
                                             @case(1)
                                             <td class="text-center">Hoạt Động</td>
                                             @break
@@ -128,22 +108,17 @@
                                             @default
                                             @endswitch
                                             <td class="text-center">
-                                                <label class="status switch switch-primary" data-toggle="tooltip" title=""
-                                                    data-original-title="Xuất bản">
+                                                <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
                                                     <div class="mt-check-garden nutanhien">
-                                                        <input id="{{ $key + 1 }}" type="checkbox">
-                                                        <label for="{{ $key + 1 }}"> </label>
-                                                    </div>
+                                                    <input id="{{$about->id}}" type="checkbox" >
+                                                <label for="{{$about->id}}"> </label></div></label>
                                                     <!-- <input data-id="1579" type="checkbox" checked=""><span></span></label> -->
-                                                    <a href="{{ route('admin.faculty.edit', [$khoa->slug , $faculty->id]) }}"
-                                                        class="btn btn-warning btn-xs">
-                                                        <i class="fa fa-flag" aria-hidden="true"></i>
-                                                        Sửa</a>
-                                                    <a href="{{ route('admin.faculty.delete', [$khoa->slug , $faculty->id]) }}"
-                                                        onclick="return confirm('Bạn có chắc chắn muốn xóa !')"
-                                                        class="btn btn-danger btn-xs"><i class="fa fa-trash"
-                                                            aria-hidden="true"></i>
-                                                        Xóa</a>
+                                                <a href="{{ route('admin.about.edit', [$khoa['slug'], $about['id']]) }}" class="btn btn-warning btn-xs" >
+                                                    <i class="fa fa-flag" aria-hidden="true"></i>
+                                                    Sửa</a>
+                                                <a href="{{ route('admin.about.delete', [$khoa['slug'], $about['id']]) }}"  onclick="return confirm('Bạn có chắc chắn muốn xóa !')" class="btn btn-danger btn-xs"
+                                                ><i class="fa fa-trash" aria-hidden="true"></i>
+                                                    Xóa</a>
                                             </td>
                                         </tr>
                                     @endforeach

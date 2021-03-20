@@ -1,6 +1,6 @@
 @extends('server.index')
 @section('title', 'Quản Trị Sinh Viên')
-@section('page-title', 'Sửa Sinh Viên ')
+@section('page-title', 'Sửa Sinh Viên '.$student['name'])
 @section('page-content')
 <!--/.row-->
 <div class="row">

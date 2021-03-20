@@ -75,7 +75,7 @@
                                             <a>Chức Vụ</a>
                                         </th>
                                         <th class="text-center sorting_desc">
-                                            <a>Người Đăng</a>
+                                            <a>Trạng Thái</a>
                                         </th>
                                         <th class="text-center sorting">
                                             <a><i class="fa fa-bolt"></i></a>
@@ -98,7 +98,15 @@
                                                 @endif
                                             @endforeach
                                             <td class="text-center">{{ $teacher->position }}</td>
-                                            <td class="text-center">{{ $teacher->updated_by }}</td>
+                                            @switch($teacher->status)
+                                            @case(1)
+                                            <td class="text-center">Hoạt Động</td>
+                                            @break
+                                            @case(0)
+                                            <td class="text-center">Không Hoạt Động</td>
+                                            @break
+                                            @default
+                                            @endswitch
                                             <td class="text-center">
                                                 <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
                                                     <div class="mt-check-garden nutanhien">

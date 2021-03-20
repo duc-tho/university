@@ -62,6 +62,12 @@
                         </li>
                         @endcan
                         <li class="nav-item">
+                            <a href="{{ route('admin.about.show', [$khoa['slug']]) }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Giới Thiệu Khoa</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('admin.teacher.show', [$khoa['slug']]) }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Giáo Viên</p>
@@ -94,7 +100,7 @@
                         <li class="nav-item">
                             <a href="{{ route('admin.specialized.show', [$khoa['slug']]) }}" class="nav-link {{ request()->is('admin/demo/demo-2*') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Các Ngành Đào Tạo</p>
+                                <p>Ngành Đào Tạo</p>
                             </a>
                         </li>
 

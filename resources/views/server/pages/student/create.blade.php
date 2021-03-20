@@ -24,11 +24,10 @@
 
                 <x-admin.form.input :col="3" :type="'text'" :label="'Người Cập Nhập'" :required="true" :placeholder="'Người Cập Nhập'" :fieldName="'updated_by'" />
 
-                <x-admin.form.textarea-mce  :col="6" :label="'Giới Thiệu Sinh Viên'" :required="true" :fieldName="'intro'" />
 
-                <x-admin.form.textarea-mce  :col="6" :label="'Đánh Giá Sinh Viên'" :required="true" :fieldName="'evaluate'" />
+                <x-admin.form.textarea-mce :col="6" :label="'Giới Thiệu Về Sinh Viên'" :required="true" :fieldName="'intro'" />
 
-
+                <x-admin.form.textarea-mce :col="6" :label="'Đánh Giá Của Sinh Viên'" :required="true" :fieldName="'evaluate'" />
 
                 <x-admin.form.checkbox :col="3" :label="'Trạng thái'" :required="true" :fieldName="'status'" :labelContent="'Đang hoạt động'" />
 

@@ -84,10 +84,10 @@
                                             <a>Thuộc Khoa </a>
                                         </th>
                                         <th class="text-center sorting_desc">
-                                            <a>Ngày tạo</a>
+                                            <a>Người tạo</a>
                                         </th>
                                         <th class="text-center sorting_desc">
-                                            <a>Ngày đăng</a>
+                                            <a>Trạng Thái</a>
                                         </th>
                                         <th class="text-center sorting">
                                             <a><i class="fa fa-bolt"></i></a>
@@ -110,7 +110,15 @@
                                                 @endif
                                             @endforeach
                                             <td class="text-center">{{ $student->created_by }}</td>
-                                            <td class="text-center">{{ $student->updated_by }}</td>
+                                            @switch($student->status)
+                                            @case(1)
+                                            <td class="text-center">Hoạt Động</td>
+                                            @break
+                                            @case(0)
+                                            <td class="text-center">Không Hoạt Động</td>
+                                            @break
+                                            @default
+                                            @endswitch
                                             <td class="text-center">
                                                 <label class="status switch switch-primary" data-toggle="tooltip" title="" data-original-title="Xuất bản">
                                                     <div class="mt-check-garden nutanhien">

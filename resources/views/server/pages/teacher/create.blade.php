@@ -21,9 +21,13 @@
                 <x-admin.form.input :col="3" :type="'text'" :label="'Tên Giảng Viên'" :required="true" :placeholder="'Tên Giảng Viên'" :fieldName="'name'" />
                 <x-admin.form.input :col="3" :type="'text'" :label="'Chức Vụ'" :required="true" :placeholder="'Chức Vụ'" :fieldName="'position'" />
                 <x-admin.form.input :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" />
+
+
+
+                <x-admin.form.textarea-mce :col="6" :label="'Giới Thiệu Về Giảng Viên'" :required="true" :fieldName="'intro'" />
+                <x-admin.form.textarea-mce :col="6" :label="'Đánh Giá Của Giảng Viên'" :required="true" :fieldName="'evaluate'" />
+
                 <x-admin.form.input :col="3" :type="'text'" :label="'Người Cập Nhập'" :required="true" :placeholder="'Người Cập Nhập'" :fieldName="'updated_by'" />
-                <x-admin.form.input :col="3" :type="'text'" :label="'Giới Thiệu Về Giảng Viên'" :required="false" :placeholder="'Giới Thiệu'" :fieldName="'intro'" />
-                <x-admin.form.input :col="3" :type="'text'" :label="'Đánh Giá Của Giảng Viên'" :required="false" :placeholder="'Đánh Giá'" :fieldName="'evaluate'" />
                 <x-admin.form.checkbox :col="3" :label="'Trạng thái'" :required="true" :fieldName="'status'" :labelContent="'Đang hoạt động'" />
                 <x-admin.form.file :col="3" :label="'Ảnh đại diện'" :required="false" :fieldName="'image'" />
 

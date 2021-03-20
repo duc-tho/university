@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\News_Controller;
 use App\Http\Controllers\Admin\SpecializedController;
 use App\Http\Controllers\Admin\StudentController as AdminStudentController;
+use App\Http\Controllers\Admin\AboutController as AdminAboutController;
 
 use App\Http\Controllers\Client\CourseController;
 use App\Http\Controllers\Client\EducateController;
@@ -171,6 +172,20 @@ Route::name('admin.')->prefix('admin/{khoa}')->middleware(['CheckLogedIn', 'Requ
         Route::post('/edit/{id}', [AdminStudentController::class, 'update'])->name('update')->where(['id' => '[0-9]+']);
         //
         Route::get('/delete/{id}', [AdminStudentController::class, 'delete'])->name('delete')->where(['id' => '[0-9]+']);
+        //
+    });
+
+    Route::name('about.')->prefix('about')->group(function () {
+        //
+        Route::get('/', [AdminAboutController::class, 'show'])->name('show');
+        //
+        Route::get('add',  [AdminAboutController::class, 'create'])->name('create');
+        Route::post('add',  [AdminAboutController::class, 'store'])->name('store');
+        //
+        Route::get('/edit/{id}',  [AdminAboutController::class, 'edit'])->name('edit')->where(['id' => '[0-9]+']);
+        Route::post('/edit/{id}', [AdminAboutController::class, 'update'])->name('update')->where(['id' => '[0-9]+']);
+        //
+        Route::get('/delete/{id}', [AdminAboutController::class, 'delete'])->name('delete')->where(['id' => '[0-9]+']);
         //
     });
 
