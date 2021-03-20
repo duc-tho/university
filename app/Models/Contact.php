@@ -22,14 +22,14 @@ class Contact extends Model
 {
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'contact';
 
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -37,7 +37,7 @@ class Contact extends Model
     /**
      * @var array
      */
-    protected $fillable = ['faculty_id', 'email', 'phone', 'address_info', 'map_embed', 'created_at', 'updated_at', 'created_by', 'updated_by', 'status'];
+    protected $fillable = ['faculty_id', 'email', 'phone', 'address_info', 'map_embed', 'created_at', 'updated_at', 'created_by', 'updated_by', 'status','contact_title','website','hotline'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

@@ -404,12 +404,27 @@ Route::name('admin.')->prefix('admin/{khoa}')->middleware(['CheckLogedIn', 'Requ
     // contact
     Route::name('contact.')->prefix('contact')->group(function () {
         //
-        Route::get('/',  [AdminContactController::class, 'show'])
-            ->middleware('can:contact_list')
+        Route::get('/', [AdminContactController::class, 'show'])
+            ->middleware('can:collab_list')
             ->name('show');
-        Route::post('/',  [AdminContactController::class, 'update'])
-            ->middleware('can:contact_edit')
-            ->name('update');
+        //
+        Route::get('add',  [AdminContactController::class, 'create'])
+            ->middleware('can:collab_create')
+            ->name('create');
+        Route::post('add',  [AdminContactController::class, 'store'])
+            ->middleware('can:collab_create')
+            ->name('store');
+        //
+        Route::get('/edit/{id}',  [AdminContactController::class, 'edit'])
+            ->middleware('can:collab_edit')
+            ->name('edit')->where(['id' => '[0-9]+']);
+        Route::post('/edit/{id}', [AdminContactController::class, 'update'])
+            ->middleware('can:collab_edit')
+            ->name('update')->where(['id' => '[0-9]+']);
+        //
+        Route::get('/delete/{id}', [AdminContactController::class, 'delete'])
+            ->middleware('can:collab_delete')
+            ->name('delete')->where(['id' => '[0-9]+']);
         //
     });
 

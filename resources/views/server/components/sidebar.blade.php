@@ -115,6 +115,15 @@
                             </a>
                         </li>
                         @endcan
+                        
+                        @can('contact_list', Contact::class)
+                        <li class="nav-item">
+                            <a href="{{ route('admin.contact.show', [$khoa['slug']]) }}" class="nav-link {{ request()->is('admin/demo/demo-2*') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thông Tin Liên Hệ</p>
+                            </a>
+                        </li>
+                        @endcan
 
                     </ul>
                 </li>
