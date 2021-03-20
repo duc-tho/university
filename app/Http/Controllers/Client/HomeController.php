@@ -14,6 +14,7 @@ use App\Models\Slide;
 use App\Models\Socials;
 use App\Models\Specialized;
 use App\Models\Statistics;
+use App\Models\Menu;
 use App\Models\StudentRepresentative;
 use App\Models\TeacherRepresentative;
 use Illuminate\Http\Request;
@@ -124,6 +125,10 @@ class HomeController extends Controller
         if (!$menu->isEmpty()) getCategories($menu);
         else $menu = null;
 
+        $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
+
+
+
         // lấy giáo viên tiêu biểu
         $teacher = TeacherRepresentative::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
 
@@ -168,6 +173,8 @@ class HomeController extends Controller
             'all_specialized' => $all_specialized,
             'website' => getSettingValue($settings, 'website'),
             // Trang Chủ
+            'menu_list' => $menu_list,
+
             'phone' => getSettingValue($settings, 'phone'),
             'slogan_top' => getSettingValue($settings, 'slogan_top'),
             'slogan_main' => getSettingValue($settings, 'slogan_main'),
@@ -232,8 +239,10 @@ class HomeController extends Controller
             'category_news' => $category_news,
             'category_notification' => $category_notification,
 
-
+            'ggmap' => $contact['map_embed'],
             'intro_short' => $faculty['intro_summary'],
+            
+
             'intro_statistic' => $statistic,
             'menu' => $menu,
             'slide' => $slide,

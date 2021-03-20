@@ -1,6 +1,6 @@
 @extends('server.index')
-@section('title', 'Thêm vai trò')
-@section('page-title', 'Thêm vai trò')
+@section('title', 'Sửa vai trò')
+@section('page-title', 'Sửa vai trò')
 @section('page-content')
 <div class="row">
     <div class="col-md-12 px-3">
