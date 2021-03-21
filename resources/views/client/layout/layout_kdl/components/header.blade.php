@@ -61,9 +61,9 @@
                         {{-- <a class="nav-link" href="{{ route('tintuc') }}">Tin Tức</a> --}}
                         <a class="nav-link" href="{{ route('tin-tuc', [$faculty['slug']]) }}">TIN TỨC</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('thong-bao', [$faculty['slug']]) }}">THÔNG BÁO</a>
-                    </li>
+                    {{-- <li class="nav-item">
+                        <a class="nav-link" href="{{ route('tin-tuc', [$faculty['slug']]) }}">THÔNG BÁO</a>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('giao-vien', [$faculty['slug']]) }}">GIÁO VIÊN</a>
                     </li>

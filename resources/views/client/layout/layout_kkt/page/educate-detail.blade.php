@@ -19,7 +19,7 @@
                     <h2>TÀI CHÍNH NGÂN HÀNG</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Trâng Chủ</a></li>
+                            <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
                             <li class="breadcrumb-item"><a href="#">Đào Tạo</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Tài Chính Ngân Hàng</li>
                         </ol>
