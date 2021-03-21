@@ -2081,6 +2081,7 @@ div#contact h3 {
 .btn1 {
     padding-left: 1em;
     padding-right: 1em;
+    width: unset;
 }
 
 .header-w3-agileits
