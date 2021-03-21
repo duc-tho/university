@@ -1,6 +1,5 @@
 <!-- Core JavaScript
 ================================================== -->
-<script src="{{ asset('dist/layout/default/js/jquery.min.js') }}"></script>
 <script src="{{ asset('dist/layout/default/js/tether.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="{{ asset('dist/layout/default/js/bootstrap.min.js') }}"></script>

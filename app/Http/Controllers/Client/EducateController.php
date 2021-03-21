@@ -72,6 +72,7 @@ class EducateController extends Controller
 
         $contact = Contact::where(['faculty_id' => $faculty_id])->first();
 
+
         $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
 
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
@@ -80,10 +81,16 @@ class EducateController extends Controller
             $item['url'] = route('trang-chu', [$item['slug']]);
         }
 
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
+
+
         return view('client.layout.' . $layout_name . '.page.educate', [
+            'menu_parents' => $menu_parent,
             'license' => getSettingValue($settings, 'license'),
             'license_content' => getSettingValue($settings, 'license_content'),
             'website' => getSettingValue($settings, 'website'),
+            'website_link' => $contact['website'],
             'phone' => getSettingValue($settings, 'phone'),
             'logo' => getSettingValue($settings, 'logo'),
             'copyright' => getSettingValue($settings, 'copyright'),
@@ -94,7 +101,7 @@ class EducateController extends Controller
             'category' => $category,
             'all_specialized' => $all_specialized,
             'specialized' => $specialized,
-            'address' =>getSettingValue($settings, 'address'),
+            'address' => getSettingValue($settings, 'address'),
             'email' => $contact['email'],
             'menu_list' => $menu_list,
             'all_faculty' => $all_faculty,
@@ -118,6 +125,7 @@ class EducateController extends Controller
             'title_resources_content' => getSettingValue($settings, 'title_resources_content'),
             'title_evaluate_student' => getSettingValue($settings, 'title_evaluate_student'),
             'title_name_uni_footer' => getSettingValue($settings, 'title_name_uni_footer'),
+            'intro_image' => getSettingValue($settings, 'intro_image'),
             'title_license_footer' => getSettingValue($settings, 'title_license_footer'),
             'title_license_content_footer' => getSettingValue($settings, 'title_license_content_footer'),
             'title_support_line' => getSettingValue($settings, 'title_support_line'),

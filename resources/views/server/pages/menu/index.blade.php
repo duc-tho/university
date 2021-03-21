@@ -36,6 +36,7 @@
 
                                         <div class="info-box-content">
                                             <span class="info-box-text font-weight-bold text-dark">{{ $menu['name'] }}</span>
+                                            <span class="info-box-text text-muted">Thứ tự: {{ $menu['display_order'] }}</span>
                                         </div>
                                         <!-- /.info-box-content -->
                                     </div>
@@ -63,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
                 <!-- /.card -->
             </div>

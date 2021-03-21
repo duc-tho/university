@@ -79,7 +79,7 @@ class NewsController extends Controller
         // dd($image_category); // Bỏ comment để xem cấu trúc dữ liệu hình ảnh
 
         // lấy danh mục tin tức
-        $category = Category::where(['status' => 1,'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
+        $category = Category::where(['status' => 1, 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
 
         if (!$category->isEmpty()) foreach ($category as $key => $item) {
             $news = $item->news()->orderBy('id', 'desc')->paginate(6);
@@ -87,7 +87,7 @@ class NewsController extends Controller
             if (!$news->isEmpty()) $item['news'] = $news;
         }
 
-        $category_news = Category::where(['status' => 1, 'show_at_news' => '1','faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
+        $category_news = Category::where(['status' => 1, 'show_at_news' => '1', 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
 
         if (!$category_news->isEmpty()) foreach ($category_news as $key => $item) {
             $news = $item->news()->orderBy('id', 'desc')->paginate(6);
@@ -95,7 +95,7 @@ class NewsController extends Controller
             if (!$news->isEmpty()) $item['news'] = $news;
         }
 
-        $category_notification = Category::where(['status' => 1, 'show_at_notification' => '1','faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
+        $category_notification = Category::where(['status' => 1, 'show_at_notification' => '1', 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
 
         if (!$category_news->isEmpty()) foreach ($category_news as $key => $item) {
             $news = $item->news()->orderBy('id', 'desc')->paginate(6);
@@ -110,12 +110,16 @@ class NewsController extends Controller
 
 
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
+<<<<<<< HEAD
         $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
 
         if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
             $item['url'] = route('trang-chu', [$item['slug']]);
         }
+=======
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+>>>>>>> f017be513c9b978434e79aa8190557d6cd667631
 
 
         return view('client.layout.' . $layout_name . '.page.news', [
@@ -125,9 +129,10 @@ class NewsController extends Controller
             'email' => $contact['email'],
             'hotline' => $contact['hotline'],
             'google_map_link' => $contact['map_embed'],
-            'website_link' => $contact['website_link'],
+            'website_link' => $contact['website'],
             'contact_title' => $contact['contact_title'],
             'address' => $contact['address_info'],
+            'intro_image' => getSettingValue($settings, 'intro_image'),
             'logo' => getSettingValue($settings, 'logo'),
             'intro_video' => getSettingValue($settings, 'intro_video'),
             'copyright' => getSettingValue($settings, 'copyright'),
@@ -141,7 +146,7 @@ class NewsController extends Controller
             'menu_list' => $menu_list,
             'news' => $category_news,
             'news_notification' => $category_notification,
-            
+
             // 'only_news' => $only_news,
 
             'image_category' => $image_category,
@@ -238,7 +243,7 @@ class NewsController extends Controller
         abort_if(!$category, 404);
 
 
-        $news = News::where(['status' => 1, 'slug' => $bai_viet, ])->first();
+        $news = News::where(['status' => 1, 'slug' => $bai_viet,])->first();
         abort_if(!$news, 404);
         $news['view_count'] = $news['view_count'] + 1;
         $news->save();
@@ -255,6 +260,7 @@ class NewsController extends Controller
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
 
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+<<<<<<< HEAD
 
         $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
 
@@ -266,13 +272,20 @@ class NewsController extends Controller
 
         return view('client.layout.' . $layout_name . '.page.news-detail', [
             'all_faculty' => $all_faculty,
+=======
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
+
+        return view('client.layout.' . $layout_name . '.page.news-detail', [
+            'menu_parents' => $menu_parent,
+>>>>>>> f017be513c9b978434e79aa8190557d6cd667631
             'menu_list' => $menu_list,
             'phone' => $contact['phone'],
             'faculty' => $faculty,
             'email' => $contact['email'],
             'hotline' => $contact['hotline'],
             'google_map_link' => $contact['map_embed'],
-            'website_link' => $contact['website_link'],
+            'website_link' => $contact['website'],
             'contact_title' => $contact['contact_title'],
             'address' => $contact['address_info'],
             'logo' => getSettingValue($settings, 'logo'),
@@ -290,6 +303,7 @@ class NewsController extends Controller
             'relate_news' => $relate_news,
             'relate_notification' => $relate_notification,
             'all_category' => $all_category,
+            'intro_image' => getSettingValue($settings, 'intro_image'),
             'website' => getSettingValue($settings, 'website'),
             //Start Khoa
             'logo_travel' => getSettingValue($settings, 'logo_travel'),
@@ -323,7 +337,7 @@ class NewsController extends Controller
 
     public function list(Request $request, $khoa, $danh_muc)
     {
-        
+
         // Lấy thông tin khoa và kiểm tra xem khoa có tồn tại hay không
         $faculty = Faculty::where(['status' => 1, 'slug' => $khoa])->first();
         abort_if(!$faculty, 404);
@@ -363,21 +377,23 @@ class NewsController extends Controller
         $contact = Contact::where(['faculty_id' => $faculty['id']])->first();
 
         // lấy tin tức
-        $category = Category::where(['status' => 1, 'slug' => $danh_muc,'faculty_id' => $faculty_id])->first();
+        $category = Category::where(['status' => 1, 'slug' => $danh_muc, 'faculty_id' => $faculty_id])->first();
         abort_if(!$category, 404);
         $category['news'] = $category->news()->where(['status' => 1])->orderBy('id', 'desc')->paginate(10);
 
         // lấy danh mục tin tức
-        $all_category = Category::where(['status' => 1,'faculty_id' => $faculty_id])->get();
-        $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
-        
-        $category_list = Category::where(['status' => 1, 'show_at_news' => '1','faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
+        $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
+
+        $category_list = Category::where(['status' => 1, 'show_at_news' => '1', 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
 
         if (!$category_list->isEmpty()) foreach ($category_list as $key => $item) {
             $news = $item->news()->orderBy('id', 'desc')->paginate(6);
 
             if (!$news->isEmpty()) $item['news'] = $news;
         }
+<<<<<<< HEAD
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
 
         if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
@@ -386,13 +402,18 @@ class NewsController extends Controller
 
         return view('client.layout.' . $layout_name . '.page.news-list', [
             'all_faculty' => $all_faculty,
+=======
+
+        return view('client.layout.' . $layout_name . '.page.news-list', [
+            'menu_parents' => $menu_parent,
+>>>>>>> f017be513c9b978434e79aa8190557d6cd667631
             'menu_list' => $menu_list,
             'phone' => $contact['phone'],
             'faculty' => $faculty,
             'email' => $contact['email'],
             'hotline' => $contact['hotline'],
             'google_map_link' => $contact['map_embed'],
-            'website_link' => $contact['website_link'],
+            'website_link' => $contact['website'],
             'contact_title' => $contact['contact_title'],
             'address' => $contact['address_info'],
             'logo' => getSettingValue($settings, 'logo'),
@@ -400,6 +421,7 @@ class NewsController extends Controller
             'copyright' => getSettingValue($settings, 'copyright'),
             'intro_short' => $faculty['intro_summary'],
             'menu' => $menu,
+            'intro_image' => getSettingValue($settings, 'intro_image'),
             'footer_link' => $footer_link,
             'socials_icon' => $socials_icon,
             'about' => $about_category,

@@ -69,7 +69,7 @@ class CourseController extends Controller
         // Lấy menu
         $menu = Category::where([
             'status' => '1',
-            
+
         ])->get();
 
         if (!$menu->isEmpty()) getCategories($menu);
@@ -93,6 +93,7 @@ class CourseController extends Controller
 
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty_id])->first();
+
         $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
 
@@ -102,17 +103,24 @@ class CourseController extends Controller
 
         return view('client.layout.' . $layout_name . '.page.course', [
             'all_faculty' => $all_faculty,
+
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
+        return view('client.layout.' . $layout_name . '.page.course', [
+            'menu_parents' => $menu_parent,
+
             'phone' => $contact['phone'],
             'email' => $contact['email'],
             'hotline' => $contact['hotline'],
             'google_map_link' => $contact['map_embed'],
-            'website_link' => $contact['website_link'],
+            'website_link' => $contact['website'],
             'contact_title' => $contact['contact_title'],
 
             'logo' => getSettingValue($settings, 'logo'),
             'slogan_top' => getSettingValue($settings, 'slogan_top'),
             'slogan_main' => getSettingValue($settings, 'slogan_main'),
             'slogan_bottom' => getSettingValue($settings, 'slogan_bottom'),
+            'intro_image' => getSettingValue($settings, 'intro_image'),
             'slogan_route' => getSettingValue($settings, 'slogan_route'), //
             'address' => getSettingValue($settings, 'address'),
             'time' => getSettingValue($settings, 'time'),

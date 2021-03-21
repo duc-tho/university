@@ -59,6 +59,7 @@ class ContactController extends Controller
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
 
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+
         $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
 
@@ -68,6 +69,12 @@ class ContactController extends Controller
 
         return view('client.layout.' . $layout_name . '.page.contact', [
             'all_faculty' => $all_faculty,
+
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
+        return view('client.layout.' . $layout_name . '.page.contact', [
+            'menu_parents' => $menu_parent,
+
             'license' => getSettingValue($settings, 'license'),
             'license_content' => getSettingValue($settings, 'license_content'),
             'website' => getSettingValue($settings, 'website'),
@@ -84,6 +91,7 @@ class ContactController extends Controller
             'copyright' => getSettingValue($settings, 'copyright'),
             'menu' => $menu,
             'footer_link' => $footer_link,
+            'intro_image' => getSettingValue($settings, 'intro_image'),
             'socials_icon' => $socials_icon,
             'faculty' => $faculty,
             //Start

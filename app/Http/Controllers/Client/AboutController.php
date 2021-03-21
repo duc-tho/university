@@ -59,6 +59,7 @@ class AboutController extends Controller
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty['id']])->first();
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+
         $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
 
@@ -69,14 +70,21 @@ class AboutController extends Controller
         return view('client.layout.' . $layout_name . '.page.about', [
             'phone' => $contact['phone'],
             'all_faculty' => $all_faculty,
+
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
+        return view('client.layout.' . $layout_name . '.page.about', [
+            'phone' => $contact['phone'],
+            'menu_parents' => $menu_parent,
+
             'faculty' => $faculty,
             'email' => $contact['email'],
             'hotline' => $contact['hotline'],
             'google_map_link' => $contact['map_embed'],
-            'website_link' => $contact['website_link'],
+            'website_link' => $contact['website'],
             'contact_title' => $contact['contact_title'],
             'address' => $contact['address_info'],
-
+            'intro_image' => getSettingValue($settings, 'intro_image'),
 
             'intro_short' => $faculty['intro_summary'],
             'menu' => $menu,
@@ -165,14 +173,15 @@ class AboutController extends Controller
 
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty['id']])->first();
-
+        $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
         return view('client.layout.' . $layout_name . '.page.about-detail', [
+            'menu_parents' => $menu_parent,
             'phone' => $contact['phone'],
             'faculty' => $faculty,
             'email' => $contact['email'],
             'hotline' => $contact['hotline'],
             'google_map_link' => $contact['map_embed'],
-            'website_link' => $contact['website_link'],
+            'website_link' => $contact['website'],
             'contact_title' => $contact['contact_title'],
             'address' => $contact['address_info'],
             'logo' => getSettingValue($settings, 'logo'),

@@ -6,53 +6,22 @@
             </button>
             <div class="collapse navbar-collapse justify-content-md-center" id="cloapediamenu">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link color-pink-hover" href="{{route('trang-chu', [$faculty['slug']])}}">Trang Chủ</a>
-                    </li>
-                    <!-- #region normal cate -->
-                    <li class="nav-item dropdown has-submenu">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tuyển sinh</a>
+                    @foreach ($menu_parents as $menu_parent)
+                    <li class="nav-item {{ count($menu_parent->childrens) > 0 ? 'dropdown has-submenu' : '' }}">
+                        <a class="nav-link color-pink-hover {{ count($menu_parent->childrens) > 0 ? 'dropdown-toggle' : '' }}" href="{{ $menu_parent['url'] }}">{{ $menu_parent['name'] }}</a>
+
+                        @if (count($menu_parent->childrens) > 0)
                         <ul class="dropdown-menu" aria-labelledby="dropdown02">
-                            <li><a class="dropdown-item" href="{{route('tin-tuc-danh-muc',['trang-chu', 'danh-muc-tin-tuc'])}}"">Cao đẳng <span class=" hidden-md-down hidden-sm-down hidden-xs-down"><i class="fa fa-angle-right"></i></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{{-- route('khoadulich') --}}">Khoa Du Lịch</a></li>
-                                    <li><a class="dropdown-item" href="{{-- route('khoakinhte') --}}">Khoa Kinh Tế</a></li>
-                                    <li><a class="dropdown-item" href="{{-- route('khoangoaingu') --}}">Khoa Ngoại Ngữ</a></li>
-                                    <li><a class="dropdown-item" href="{{-- route('khoanghethuat') --}}">Khoa Nghệ Thuật</a></li>
-
-                                </ul>
-                            </li>
-                            <li><a class="dropdown-item" href="{{route('tin-tuc-danh-muc',['trang-chu', 'danh-muc-tin-tuc'])}}"">Trung Cấp <span class=" hidden-md-down hidden-sm-down hidden-xs-down"><i class="fa fa-angle-right"></i></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{{-- route('khoadulich') --}}">Khoa Du Lịch</a></li>
-                                    <li><a class="dropdown-item" href="{{-- route('khoakinhte') --}}">Khoa Kinh Tế</a></li>
-                                    <li><a class="dropdown-item" href="{{-- route('khoangoaingu') --}}">Khoa Ngoại Ngữ</a></li>
-                                    <li><a class="dropdown-item" href="{{-- route('khoanghethuat') --}}">Khoa Nghệ Thuật</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="blog-author.html">Trực tuyến <span class="hidden-md-down hidden-sm-down hidden-xs-down"><i class="fa fa-angle-right"></i></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{{route('tuyensinh')}}">Đăng ký xét tuyển trực tuyến</a></li>
-                                    <li><a class="dropdown-item" href="{{route('tuyensinh')}}">Tư vấn tuyển sinh trực tuyến</a></li>
-                                </ul>
-                            </li>
+                            @foreach ($menu_parent->childrens as $children)
+                            <a class="dropdown-item" href="{{ $menu_parent['url'] }}">
+                                {{ $children['name'] }}
+                            </a>
+                            @endforeach
                         </ul>
-                    </li>
+                        @endif
 
-                    {{-- <li class="nav-item">
-                        <a class="nav-link color-red-hover" href="javascript:">Tin tức</a>
-                    </li> --}}
-                    <li class="nav-item">
-                        <a class="nav-link color-aqua-hover" href="javascript:">Sinh viên</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link color-green-hover" href="javascript:">Doanh nghiệp</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link color-grey-hover" href="javascript:">Quốc tế</a>
-                    </li>
-                    <!-- #endregion normal cate -->
+                    @endforeach
                 </ul>
             </div>
         </nav>
