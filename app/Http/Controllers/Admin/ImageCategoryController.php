@@ -26,7 +26,7 @@ class ImageCategoryController extends Controller
      */
     public function create($khoa)
     {
-        $image_categorys = ImageCategory::where(['parent_id' => 0])->get();
+        $image_categorys = ImageCategory::where(['parent_id' => 0, 'faculty_id' => $khoa['id']])->get();
 
         return view('server.pages.image_category.create', [
             'khoa' => $khoa,
@@ -91,7 +91,7 @@ class ImageCategoryController extends Controller
         // dừng lại nếu xóa image_category có khoa khác với khoa của image_category đang login trừ admin
         abort_if(!Auth::user()['isAdmin'] && $image_category['faculty_id'] != Auth::user()['faculty_id'], 403);
 
-        $image_categorys = ImageCategory::where(['parent_id' => 0])->get();
+        $image_categorys = ImageCategory::where(['parent_id' => 0, 'faculty_id' => $khoa['id']])->get();
 
         return view('server.pages.image_category.edit', [
             'image_categorys' => $image_categorys,

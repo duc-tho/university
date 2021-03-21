@@ -21,14 +21,14 @@ class Image extends Model
 {
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'image';
 
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -36,7 +36,7 @@ class Image extends Model
     /**
      * @var array
      */
-    protected $fillable = ['image_category_id', 'title', 'description', 'display_order', 'created_at', 'updated_at', 'created_by', 'updated_by', 'status'];
+    protected $fillable = ['image_category_id', 'title', 'description', 'display_order', 'created_at', 'updated_at', 'created_by', 'updated_by', 'status', 'image'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
