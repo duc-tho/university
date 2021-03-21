@@ -46,13 +46,13 @@
                                             <div class="card-body pt-0">
                                                 <div class="row">
                                                     <div class="col-7">
-                                                        <h2 class="lead"><b>{{ $faculty->name }}</b></h2>
-                                                        <p class="text-muted text-sm"><b>Tạo ngày : </b>
+                                                        <h2 class="lead text-max"><b>{{ $faculty->name }}</b></h2>
+                                                        <p class="text-muted text-sm text-max"><b>Tạo ngày : </b>
                                                             {{ ConvertDatabaseTimeToDMY($faculty['created_at']) }}
                                                         </p>
-                                                        <ul class="ml-4 mb-0 fa-ul text-muted">
+                                                        <ul class="ml-4 mb-0 fa-ul text-muted text-max">
                                                             <li class="small"><span class="fa-li"><i
-                                                                        class="fas fa-dice-d20"></i></span>Trạng Thái:
+                                                                class="fas fa-dice-d20"></i></span>Trạng Thái:
                                                                 @switch($faculty->status)
                                                                     @case(1)
                                                                     <span class="text-center">Hoạt Động</span>
@@ -63,15 +63,13 @@
                                                                     @default
                                                                 @endswitch
                                                                 <br><br>
-                                                            <li class="small"><span class="fa-li"><i
-                                                                        class="fas fa-chalkboard-teacher"></i></span>Người
-                                                                Tạo:
+                                                            <li class="small"><span class="fa-li"><i class="fas fa-chalkboard-teacher"></i></span>Người Tạo:
                                                                 {{ $faculty->created_by }}</li>
                                                         </ul>
                                                     </div>
                                                     <div class="col-5 text-center">
                                                         <img src="{{ asset($faculty->image) }}" alt="sdfsdf"
-                                                            class="img-circle img-fluid">
+                                                            class="img-circle img-fluid img-max">
                                                     </div>
                                                 </div>
                                             </div>

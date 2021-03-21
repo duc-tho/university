@@ -64,7 +64,7 @@ class MenuController extends Controller
         if ($request->has('item-per-page')) $item_per_page = $request->query('item-per-page');
 
         $query_condition = [
-            'status' => '1',
+            
             'faculty_id' => $khoa['id']
         ];
 

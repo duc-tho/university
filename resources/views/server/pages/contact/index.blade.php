@@ -46,10 +46,10 @@
                                             <div class="card-body pt-0">
                                                 <div class="row">
                                                     <div class="col-7">
-                                                        <h2 class="lead"><b>{{ $contact->title }}</b></h2>
-                                                        <p class="text-muted text-sm"><b>Tạo ngày : </b>
+                                                        <h2 class="lead text-max"><b>{{ $contact->title }}</b></h2>
+                                                        <p class="text-muted text-sm text-max"><b>Tạo ngày : </b>
                                                             {{ ConvertDatabaseTimeToDMY($contact['created_at']) }} </p>
-                                                        <ul class="ml-4 mb-0 fa-ul text-muted">
+                                                        <ul class="ml-4 mb-0 fa-ul text-muted text-max">
                                                             <li class="small"><span class="fa-li"><i
                                                                         class="fas fa-dice-d20"></i></span>Trạng Thái:
                                                                 @switch($contact->status)
@@ -62,15 +62,13 @@
                                                                     @default
                                                                 @endswitch
                                                                 <br><br>
-                                                            <li class="small"><span class="fa-li"><i
-                                                                        class="fas fa-chalkboard-teacher"></i></span>Người
-                                                                Tạo:
+                                                            <li class="small"><span class="fa-li"><i class="fas fa-chalkboard-teacher"></i></span>Người Tạo:
                                                                 {{ $contact->created_by }}</li>
                                                         </ul>
                                                     </div>
                                                     <div class="col-5 text-center">
                                                         <img src="{{ asset($contact->image ?? 'dist/img/imgdefault.png') }}"
-                                                            alt="sdfsdf" class="img-circle img-fluid">
+                                                            alt="sdfsdf" class="img-circle img-fluid img-max">
                                                     </div>
                                                 </div>
                                             </div>

@@ -32,6 +32,6 @@ class CollabLogo extends Model
     /**
      * @var array
      */
-    protected $fillable = ['title', 'image_url', 'link', 'display_order', 'created_at', 'updated_at'];
+    protected $fillable = ['title', 'image_url', 'link', 'display_order', 'created_at', 'updated_at','status'];
 
 }

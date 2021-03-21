@@ -46,10 +46,11 @@
                                             <div class="card-body pt-0">
                                                 <div class="row">
                                                     <div class="col-7">
-                                                        <h2 class="lead"><b>{{ $collab->title }}</b></h2>
-                                                        <p class="text-muted text-sm"><b>Tạo ngày : </b>
+                                                        <h2 class="lead text-max" ><b>{{ $collab->title }}</b></h2>
+                                                        <p class="text-muted text-sm text-max"><b>Tạo ngày : </b>
                                                             {{ ConvertDatabaseTimeToDMY($collab['created_at']) }} </p>
-                                                        <ul class="ml-4 mb-0 fa-ul text-muted">
+                                                        <ul class="ml-5 mb-1 fa-ul text-muted text-max"
+                                                            style="">
                                                             <li class="small"><span class="fa-li"><i
                                                                         class="fas fa-dice-d20"></i></span>Trạng Thái:
                                                                 @switch($collab->status)
@@ -66,8 +67,7 @@
                                                         </ul>
                                                     </div>
                                                     <div class="col-5 text-center">
-                                                        <img src="{{ asset($collab->image_url ?? 'dist/img/imgdefault.png') }}"
-                                                            alt="sdfsdf" class="img-circle img-fluid">
+                                                        <img src="{{ asset($collab->image_url ?? 'dist/img/imgdefault.png') }}" alt="img" class="img-circle img-fluid img-max">
                                                     </div>
                                                 </div>
                                             </div>
