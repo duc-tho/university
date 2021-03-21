@@ -91,15 +91,18 @@ class TeacherController extends Controller
 
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty_id])->first();
-        
+
         // Lấy footer liệt kê các khoa
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->paginate(4);
 
         $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
-        
+
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
 
+        $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
+
         return view('client.layout.' . $layout_name . '.page.teacher', [
+            'menu_parents' => $menu_parent,
             'menu_list' => $menu_list,
             'all_category' => $all_category,
             'footer_faculty' => $footer_faculty,
@@ -115,7 +118,7 @@ class TeacherController extends Controller
             'email' => $contact['email'],
             'hotline' => $contact['hotline'],
             'google_map_link' => $contact['map_embed'],
-            'website_link' => $contact['website_link'],
+            'website_link' => $contact['website'],
             'contact_title' => $contact['contact_title'],
             'logo' => getSettingValue($settings, 'logo'),
             'slogan_top' => getSettingValue($settings, 'slogan_top'),

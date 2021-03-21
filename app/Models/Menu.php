@@ -26,5 +26,15 @@ class Menu extends Model
     /**
      * @var array
      */
-    protected $fillable = ['id', 'faculty_id','parent_id', 'name', 'url', 'display_order', 'status', 'created_at', 'updated_at'];
+    protected $fillable = ['id', 'faculty_id', 'parent_id', 'name', 'url', 'display_order', 'status', 'created_at', 'updated_at'];
+
+    public function childrens()
+    {
+        return $this->hasMany(Menu::class, 'parent_id');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(Menu::class, 'parent_id');
+    }
 }

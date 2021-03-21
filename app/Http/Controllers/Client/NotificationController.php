@@ -76,8 +76,10 @@ class NotificationController extends Controller
 
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
         $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->orderBy('display_order', 'asc')->get();
 
         return view('client.layout.' . $layout_name . '.page.notification', [
+            'menu_parents' => $menu_parent,
             'menu_list' => $menu_list,
             'license' => getSettingValue($settings, 'license'),
             'license_content' => getSettingValue($settings, 'license_content'),
@@ -87,10 +89,11 @@ class NotificationController extends Controller
             'email' => $contact['email'],
             'hotline' => $contact['hotline'],
             'google_map_link' => $contact['map_embed'],
-            'website_link' => $contact['website_link'],
+            'website_link' => $contact['website'],
             'contact_title' => $contact['contact_title'],
             'address' => $contact['address_info'],
             'logo' => getSettingValue($settings, 'logo'),
+            'intro_image' => getSettingValue($settings, 'intro_image'),
             'intro_video' => getSettingValue($settings, 'intro_video'),
             'copyright' => getSettingValue($settings, 'copyright'),
             'intro_short' => $faculty['intro_summary'],
@@ -199,7 +202,10 @@ class NotificationController extends Controller
 
         $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
 
+        $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->orderBy('display_order', 'asc')->get();
+
         return view('client.layout.' . $layout_name . '.page.notification-detail', [
+            'menu_parents' => $menu_parent,
             'menu_list' => $menu_list,
             'license' => getSettingValue($settings, 'license'),
             'license_content' => getSettingValue($settings, 'license_content'),
@@ -209,7 +215,7 @@ class NotificationController extends Controller
             'email' => $contact['email'],
             'hotline' => $contact['hotline'],
             'google_map_link' => $contact['map_embed'],
-            'website_link' => $contact['website_link'],
+            'website_link' => $contact['website'],
             'contact_title' => $contact['contact_title'],
             'address' => $contact['address_info'],
             'logo' => getSettingValue($settings, 'logo'),

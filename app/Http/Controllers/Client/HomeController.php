@@ -164,14 +164,14 @@ class HomeController extends Controller
 
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty_id])->first();
-
+        $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
 
         return view('client.layout.' . $layout_name . '.page.home', [
             // bảng contact
             'hotline' => $contact['email'],
             'email' => $contact['email'],
             'address' => $contact['address_info'],
-            'website' => $contact['website'],
+            'website_link' => $contact['website'],
             'contact_title' => $contact['contact_title'],
             'google_map_link' => $contact['map_embed'],
             'phone' => $contact['phone'],
@@ -222,6 +222,7 @@ class HomeController extends Controller
             'copyright' => getSettingValue($settings, 'copyright'),
 
             // Biến
+            'menu_parents' => $menu_parent,
             'news' => $category,
             'news_travel' => $category_travel,
             'category_news' => $category_news,

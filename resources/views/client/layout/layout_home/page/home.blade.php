@@ -44,8 +44,9 @@
 
                 <ul class="nav navbar-nav">
                     @foreach ($menu_list as $menu)
-                    {{-- <li data-scroll="top" class="active"><a href="javascript:">Trang chủ</a></li> --}}
-                    <li><a href="{{ $menu->url }}" class="scroll">{{ $menu->name }}</a></li>
+                    @if ($menu['parent_id'] == 0)
+                    <li><a href="{{ $menu->url }}">{{ $menu->name }}</a></li>
+                    @endif
                     @endforeach
                 </ul>
 
