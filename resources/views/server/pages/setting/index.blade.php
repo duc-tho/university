@@ -6,25 +6,26 @@
 <div class="row">
     <div class="col-sm-12 px-3">
         <x-admin.form.form method="POST" :cancelLink="route('admin.setting.show', [$khoa['slug']])" :submitLink="route('admin.setting.update', [$khoa['slug']])">
-            <div class="row">
-                <x-admin.form.alert :col="12" class="bg-olive color-palette">
-                    <b>Lưu ý: </b>Các trường có dấu <span class="text-danger"><b>*</b></span> là bắt buộc!
-                </x-admin.form.alert>
+            <x-admin.form.alert :col="12" class="bg-olive color-palette">
+                <b>Lưu ý: </b>Các trường có dấu <span class="text-danger"><b>*</b></span> là bắt buộc!
+            </x-admin.form.alert>
 
-                @foreach ($settings as $setting)
+            @foreach ($settings as $setting)
 
-                @switch($setting['type'])
-                @case('text')
-                <x-admin.form.input :value="$setting['value']" :col="6" :type="'text'" :label="$setting['display_name']" :required="true" :placeholder="$setting['display_name']" :fieldName="$setting['name']" />
-                @break
-                @case('image')
-                <x-admin.form.file :col="3" :label="$setting['display_name']" :required="true" :fieldName="$setting['name']" :previewSrc="$setting['value']" />
-                @break
-                @default
+            @switch($setting['type'])
+            @case('text')
+            <x-admin.form.input :value="$setting['value']" :col="6" :type="'text'" :label="$setting['display_name']" :required="true" :placeholder="$setting['display_name']" :fieldName="$setting['name']" />
+            @break
+            @case('image')
+            <x-admin.form.file :col="3" :label="$setting['display_name']" :required="true" :fieldName="$setting['name']" :previewSrc="$setting['value']" />
+            @break
+            @case('video')
+            <x-admin.form.video :col="3" :label="$setting['display_name']" :required="true" :fieldName="$setting['name']" :previewSrc="$setting['value']" />
+            @break
+            @default
 
-                @endswitch
-                @endforeach
-            </div>
+            @endswitch
+            @endforeach
         </x-admin.form.form>
     </div>
 </div>

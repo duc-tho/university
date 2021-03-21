@@ -95,12 +95,12 @@ class SettingController extends Controller
 
                         break;
                     case 'video':
-                        $setting['value'] = upload_file($request->file($setting['name']), 'dist/upload/video/setting' . $setting['name']);
+                        $setting['value'] = upload_file($request->file($setting['name']), 'dist/upload/video/setting/' . $setting['name']);
 
                         $setting->save();
                         break;
                     case 'image':
-                        $setting['value'] = upload_file($request->file($setting['name']), 'dist/upload/image/setting' . $setting['name']);
+                        $setting['value'] = upload_file($request->file($setting['name']), 'dist/upload/image/setting/' . $setting['name']);
 
                         $setting->save();
                         break;
