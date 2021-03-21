@@ -13,7 +13,7 @@
                         @if (count($menu_parent->childrens) > 0)
                         <ul class="dropdown-menu" aria-labelledby="dropdown02">
                             @foreach ($menu_parent->childrens as $children)
-                            <a class="dropdown-item" href="{{ $menu_parent['url'] }}">
+                            <a class="dropdown-item" href="{{ $children['url'] }}">
                                 {{ $children['name'] }}
                             </a>
                             @endforeach

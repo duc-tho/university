@@ -13,12 +13,11 @@
                         <li><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span>
                                 {{ $phone }}
                             </a></li>
-                        <li><a href="mailto:corporate-mail@support.com" class="mail"><span
-                                    class="fa fa-envelope-open-o"></span>
+                        <li><a href="mailto:corporate-mail@support.com" class="mail"><span class="fa fa-envelope-open-o"></span>
                                 {{ $email }}
                             </a></li>
                         <li><a href="mailto:corporate-mail@support.com" class="mail"><span class="fa fa-laptop"></span>
-                                {{ $website }}
+                                {{ $website_link }}
                             </a></li>
                     </ul>
                     <div class="main-social-footer-29">
@@ -31,7 +30,7 @@
                         <a href="#google-plus"><span class="fa fa-google-plus"></span></a>
                         <a href="#linkedin" ><span class="fa fa-linkedin"></span></a> --}}
                         @foreach ($socials_icon as $item)
-                            <a href="{{ checkURL($item['link']) }}"><span class="fa fa-{{ $item->fa_icon }}"></span></a>
+                        <a href="{{ checkURL($item['link']) }}"><span class="fa fa-{{ $item->fa_icon }}"></span></a>
                         @endforeach
                     </div>
                 </div>
@@ -66,7 +65,7 @@
                     <ul>
                         <h6 class="footer-title-29">Liên Kết Khác</h6>
                         @foreach ($footer_faculty as $item)
-                            <li><a href="{{ checkURL($item['link']) }}">{{ $item->name }}</a></li>
+                        <li><a href="{{ checkURL($item['link']) }}">{{ $item->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>
