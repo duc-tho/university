@@ -93,11 +93,11 @@
                                 @endif
                                 @endforeach
 
-                                @foreach($all_category as $category)
+                                {{-- @foreach($all_category as $category)
                                     <li class="nav-item">
                                         <a href="{{ route('tin-tuc', [$faculty['slug']]) }}">{{$category->title}}</a>
                                     </li>
-                                @endforeach
+                                @endforeach --}}
 
 
                                 {{-- <li class="nav-item">

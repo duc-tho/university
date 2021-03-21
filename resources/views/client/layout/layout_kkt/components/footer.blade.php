@@ -7,31 +7,44 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-about mt-40">
                         <div class="logo">
-                            <a href="#"><img src="{{ asset($logo) }}" alt="Logo" width="50%"></a>
+                            <a href="/"><img src="{{ asset($logo) }}" alt="Logo" width="50%"></a>
                         </div>
                         <p>{{ $title_name_uni_footer }}</p>
                         <ul class="mt-20">
                             @foreach ($socials_icon as $item)
-                                <li><a href="#"><i class="fa fa-{{ $item->fa_icon }}"></i></a></li>
+                                <li><a href="{{$item->link}}"><i class="fa fa-{{ $item->fa_icon }}"></i></a></li>
                             @endforeach
                         </ul>
                     </div> <!-- footer about -->
                 </div>
-                <div class="col-lg-5 col-md-12 col-sm-12">
+                <div class="col-lg-3 col-md-12 col-sm-12">
                     <div class="footer-link mt-40">
                         <div class="footer-title pb-25">
                             <h6>Thông Tin</h6>
                         </div>
                         <ul>
-                            <li><a href="index-2.html"><i class="fa fa-angle-right"></i>Trang Chủ</a></li>
-                            <li><a href="about.html"><i class="fa fa-angle-right"></i>Giới Thiệu Về Trường</a></li>
-                            <li><a href="courses.html"><i class="fa fa-angle-right"></i>Các Khóa Học</a></li>
-                            <li><a href="blog.html"><i class="fa fa-angle-right"></i>Thông Báo</a></li>
-                            <li><a href="events.html"><i class="fa fa-angle-right"></i>Sự Kiện</a></li>
+                            @foreach ($menu_list as $menu)
+                            @if ($menu->parent_id==0)
+                            <li><a href="{{$menu->url}}"><i class="fa fa-angle-right"></i>{{$menu->name}}</a></li>
+                            @endif
+                            @endforeach
                         </ul>
                     </div> <!-- footer link -->
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-3 col-md-12 col-sm-12">
+                    <div class="footer-link mt-40">
+                        <div class="footer-title pb-25">
+                            <h6>Liên Kết</h6>
+                        </div>
+                        <ul>
+                            @foreach ($all_faculty as $item)
+                            <li><a href="{{ route('trang-chu', [$item['slug']]) }}"><i class="fa fa-angle-right">
+                                </i>{{ $item['name'] }}</a></li>
+                            @endforeach
+                        </ul>
+                    </div> <!-- footer link -->
+                </div>
+                <div class="col-lg-3 col-md-6">
                     <div class="footer-address mt-40">
                         <div class="footer-title pb-25">
                             <h6>Liên Lạc</h6>

@@ -111,9 +111,15 @@ class NewsController extends Controller
 
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
         $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
+        $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
+
+        if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
+            $item['url'] = route('trang-chu', [$item['slug']]);
+        }
 
 
         return view('client.layout.' . $layout_name . '.page.news', [
+            'all_faculty' => $all_faculty,
             'phone' => $contact['phone'],
             'faculty' => $faculty,
             'email' => $contact['email'],
@@ -249,8 +255,17 @@ class NewsController extends Controller
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
 
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+
         $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
+
+        $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
+
+        if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
+            $item['url'] = route('trang-chu', [$item['slug']]);
+        }
+
         return view('client.layout.' . $layout_name . '.page.news-detail', [
+            'all_faculty' => $all_faculty,
             'menu_list' => $menu_list,
             'phone' => $contact['phone'],
             'faculty' => $faculty,
@@ -363,8 +378,14 @@ class NewsController extends Controller
 
             if (!$news->isEmpty()) $item['news'] = $news;
         }
+        $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
+
+        if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
+            $item['url'] = route('trang-chu', [$item['slug']]);
+        }
+
         return view('client.layout.' . $layout_name . '.page.news-list', [
-            
+            'all_faculty' => $all_faculty,
             'menu_list' => $menu_list,
             'phone' => $contact['phone'],
             'faculty' => $faculty,

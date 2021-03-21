@@ -60,8 +60,14 @@ class ContactController extends Controller
 
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
         $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
-        
+        $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
+
+        if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
+            $item['url'] = route('trang-chu', [$item['slug']]);
+        }
+
         return view('client.layout.' . $layout_name . '.page.contact', [
+            'all_faculty' => $all_faculty,
             'license' => getSettingValue($settings, 'license'),
             'license_content' => getSettingValue($settings, 'license_content'),
             'website' => getSettingValue($settings, 'website'),

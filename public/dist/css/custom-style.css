@@ -1,8 +1,9 @@
 .filter th {
-    padding: .3rem !important;
+    padding: 0.3rem !important;
 }
 
-th, td {
+th,
+td {
     padding: 1rem !important;
 }
 
@@ -14,28 +15,28 @@ td {
     background: #fff;
 }
 .bg-primary {
-	color: #1b3548;
-	background-color: #e9ecf2;
+    color: #1b3548;
+    background-color: #e9ecf2;
 }
 a.bg-primary:hover {
-	background-color: #e9ecf2;
+    background-color: #e9ecf2;
 }
-.table>thead>tr>th {
-	border-bottom: 1px solid #e6e7e8;
-	vertical-align: middle;
-	height: 50px;
+.table > thead > tr > th {
+    border-bottom: 1px solid #e6e7e8;
+    vertical-align: middle;
+    height: 50px;
 }
 /*Buttons*/
 
 a.btn:hover,
 button:hover {
-	opacity: 0.8;
+    opacity: 0.8;
 }
 
 a.btn:active,
 button:active {
-	box-shadow: inset 0px 0px 500px rgba(0,0,0,.1);
-	opacity: 1;
+    box-shadow: inset 0px 0px 500px rgba(0, 0, 0, 0.1);
+    opacity: 1;
 }
 
 .btn-default,
@@ -59,9 +60,9 @@ fieldset[disabled] .btn-default:active,
 .btn-default.disabled.active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
-	background-color: #e9ecf2;
-	border-color: #e9ecf2;
-	color: #1b3548;
+    background-color: #e9ecf2;
+    border-color: #e9ecf2;
+    color: #1b3548;
 }
 
 .btn-primary,
@@ -85,10 +86,13 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-	background-color: #30a5ff;
-	border-color: #30a5ff;
+    background-color: #30a5ff;
+    border-color: #30a5ff;
 }
-#editbtn{width: auto;padding: 6px 150px;}
+#editbtn {
+    width: auto;
+    padding: 6px 150px;
+}
 
 .btn-success,
 .btn-success:hover,
@@ -111,8 +115,8 @@ fieldset[disabled] .btn-success:active,
 .btn-success.disabled.active,
 .btn-success[disabled].active,
 fieldset[disabled] .btn-success.active {
-	background-color: #8ad919;
-	border-color: #8ad919;
+    background-color: #8ad919;
+    border-color: #8ad919;
 }
 
 .btn-warning,
@@ -136,11 +140,10 @@ fieldset[disabled] .btn-warning:active,
 .btn-warning.disabled.active,
 .btn-warning[disabled].active,
 fieldset[disabled] .btn-warning.active {
-	background-color: #ffb53e;
-	border-color: #ffb53e;
+    background-color: #ffb53e;
+    border-color: #ffb53e;
     color: #fff;
 }
-
 
 .btn-danger,
 .btn-danger:hover,
@@ -163,11 +166,11 @@ fieldset[disabled] .btn-danger:active,
 .btn-danger.disabled.active,
 .btn-danger[disabled].active,
 fieldset[disabled] .btn-danger.active {
-	background-color: #f9243f;
-	border-color: #f9243f;
+    background-color: #f9243f;
+    border-color: #f9243f;
 }
-.btn-1{
-	margin-left: 8px;
+.btn-1 {
+    margin-left: 8px;
 }
 .optionGroup {
     font-weight: bold;
@@ -189,18 +192,18 @@ fieldset[disabled] .btn-danger.active {
     font-style: italic;
     color: black;
 }
-.img-max{
-	width: 155px; 
-	min-height: 150px; 
-	max-height: 125px; 
-	 float: left; 
-	 margin: 3px;
-	 padding: 3px;"
+.img-max {
+    width: 155px;
+    min-height: 150px;
+    max-height: 125px;
+    float: left;
+    margin: 3px;
+    padding: 3px;
 }
-.text-max{
-	display: inline-block;
-	max-width:130px;
-	 width:130px;
+.text-max {
+    display: inline-block;
+    max-width: 130px;
+    width: 130px;
 }
 /* .optionChild {
     padding-left: 15px;

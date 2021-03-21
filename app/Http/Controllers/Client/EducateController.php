@@ -71,7 +71,15 @@ class EducateController extends Controller
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
 
         $contact = Contact::where(['faculty_id' => $faculty_id])->first();
+
         $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
+
+        $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
+
+        if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
+            $item['url'] = route('trang-chu', [$item['slug']]);
+        }
+
         return view('client.layout.' . $layout_name . '.page.educate', [
             'license' => getSettingValue($settings, 'license'),
             'license_content' => getSettingValue($settings, 'license_content'),
@@ -89,6 +97,7 @@ class EducateController extends Controller
             'address' =>getSettingValue($settings, 'address'),
             'email' => $contact['email'],
             'menu_list' => $menu_list,
+            'all_faculty' => $all_faculty,
             //Start Khoa DU Lich
             'logo_travel' => getSettingValue($settings, 'logo_travel'),
             'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),

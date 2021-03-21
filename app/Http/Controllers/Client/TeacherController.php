@@ -99,7 +99,15 @@ class TeacherController extends Controller
         
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
 
+        $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
+
+        if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
+            $item['url'] = route('trang-chu', [$item['slug']]);
+        }
+
+
         return view('client.layout.' . $layout_name . '.page.teacher', [
+            'all_faculty' => $all_faculty,
             'menu_list' => $menu_list,
             'all_category' => $all_category,
             'footer_faculty' => $footer_faculty,

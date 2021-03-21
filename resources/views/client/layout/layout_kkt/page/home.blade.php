@@ -237,11 +237,11 @@
                                         <ul>
                                             <li><a
                                                     href="{{ route('tin-tuc', [$faculty['slug']]) }}">{{ $category->title }},<b>
-                                                        {{ $item->event_time }}</b></a>
+                                                        {{ ConvertDatabaseTimeToDMY($item['created_at']) }}</b></a>
                                             </li>
                                             {{-- <li><a href="javascription:">{{ $item->event_time }} </a></li> --}}
                                         </ul>
-                                        <p>{{ $item->description }}</p>
+                                        <p>{!! $item->description !!}</p>
                                     </div>
                                 </div>
                             </div>
@@ -264,37 +264,37 @@
 
     <!--====== TEASTIMONIAL PART START ======-->
 
-    <section id="testimonial" class="bg_cover pt-115 pb-115" data-overlay="8"
-        style="background-image: url(/dist/layout/layout_kkt/images/bg-2.jpg)">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-title pb-40">
-                        <h2>{{ $title_evaluate_student }}</h2>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-            <div class="row testimonial-slied mt-40">
-                @foreach ($student as $item)
-                    <div class="col-lg-6">
-                        <div class="singel-testimonial">
-                            <div class="testimonial-thum">
-                                <img src="{{ $item->image }}" alt="Testimonial">
-                                <div class="quote">
-                                    <i class="fa fa-quote-right"></i>
-                                </div>
-                            </div>
-                            <div class="testimonial-cont">
-                                <p>{!! $item->evaluate !!}</p>
-                                <h6>{{ $item->name }}</h6>
-                                <span>{!! $item->intro !!}</span>
-                            </div>
-                        </div> <!-- singel testimonial -->
+    <section id="testimonial" class="bg_cover pt-115 pb-115" data-overlay="8" style="background-image: url(/dist/layout/layout_kkt/images/bg-2.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title pb-40">
+                    <h2>{{ $title_evaluate_student }}</h2>
+                </div> <!-- section title -->
+            </div>
+        </div> <!-- row -->
+        <div class="row testimonial-slied mt-40">
+            @foreach ($student as $item)
+            <div class="col-lg-6">
+                <div class="singel-testimonial">
+                    <div class="testimonial-thum">
+                        <img src="{{ $item->image }}" alt="Testimonial" class="img-max">
+                        <div class="quote">
+                            <i class="fa fa-quote-right"></i>
+                        </div>
                     </div>
-                @endforeach
-            </div> <!-- testimonial slied -->
-        </div> <!-- container -->
-    </section>
+                    <div class="testimonial-cont">
+                        <p>{!! $item->evaluate !!}</p>
+                        <h6>{{ $item->name }}</h6>
+                        <span>{!! $item->intro !!}</span>
+                    </div>
+                </div> <!-- singel testimonial -->
+            </div>
+            @endforeach 
+
+        </div> <!-- testimonial slied -->
+    </div> <!-- container -->
+</section>
 
     <!--====== TEASTIMONIAL PART ENDS ======-->
 
@@ -326,7 +326,7 @@
                                             <a href="{{-- route('khoakinhte-thongtingiaovien') --}}">
                                                 <h6>{{ $item->name }}</h6>
                                             </a>
-                                            <span>{{ $item->evaluate }}</span>
+                                            <span>{{ $item->position }}</span>
                                         </div>
                                     </div> <!-- singel teachers -->
                                 </div>
@@ -355,7 +355,7 @@
                 @foreach ($collab_logo as $item)
                     <div class="col-lg-12">
                         <div class="singel-patnar text-center mt-40">
-                            <img src="{{ asset($item['image_url']) }}" alt="Logo">
+                            <img src="{{ asset($item['image_url']) }}" alt="Logo" class="img-logo">
                         </div>
                     </div>
                 @endforeach

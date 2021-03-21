@@ -94,8 +94,14 @@ class CourseController extends Controller
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty_id])->first();
         $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
-        
+        $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
+
+        if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
+            $item['url'] = route('trang-chu', [$item['slug']]);
+        }
+
         return view('client.layout.' . $layout_name . '.page.course', [
+            'all_faculty' => $all_faculty,
             'phone' => $contact['phone'],
             'email' => $contact['email'],
             'hotline' => $contact['hotline'],

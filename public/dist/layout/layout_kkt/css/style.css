@@ -3803,3 +3803,24 @@ p.form-message.error {
     background-color: #1da1f2;
     border-color:#1da1f2 ;
 }
+.img-max {
+    width: 100px;
+    min-height: 110px;
+    max-height: 125px;
+    float: left;
+    margin: 3px;
+    padding: 3px;
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+}
+.img-logo {
+    width: 170px;
+    min-height: 110px;
+    max-height: 157px;
+    float: left;
+    margin: 3px;
+    padding: 3px;
+    max-width: 100%;
+    height: auto;
+}

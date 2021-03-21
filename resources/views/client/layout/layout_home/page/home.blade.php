@@ -44,8 +44,10 @@
 
                 <ul class="nav navbar-nav">
                     @foreach ($menu_list as $menu)
+                    @if($menu->parent_id == 0)
                     {{-- <li data-scroll="top" class="active"><a href="javascript:">Trang chủ</a></li> --}}
                     <li><a href="{{ $menu->url }}" class="scroll">{{ $menu->name }}</a></li>
+                    @endif
                     @endforeach
                 </ul>
 
@@ -56,7 +58,7 @@
 </div>
 
 <div class="splide" style="max-height: 570px; overflow: hidden;">
-    <a class="hvr-rectangle-out w3_play_icon1" href="{{ route('tuyensinh') }}" style="position: absolute; bottom: 10%; left: 10%; z-index:998;"> Tuyển sinh ngay</a>
+    {{-- <a class="hvr-rectangle-out w3_play_icon1" href="{{ route('tuyensinh') }}" style="position: absolute; bottom: 10%; left: 10%; z-index:998;"> Tuyển sinh ngay</a> --}}
     <div class="splide__track">
         <ul class="splide__list">
             @foreach ($slide as $item)
@@ -346,32 +348,7 @@
     </div>
     <div class="clearfix"></div>
 </div>
-<!-- footer -->
-<!-- bootstrap-modal-pop-up -->
-{{-- <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                Tech Edu
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <img src="{{ asset('dist/layout/layout_home/images/6.jpg') }}" alt=" " class="img-responsive" />
-<p>Ut enim ad minima veniam, quis nostrum
-    exercitationem ullam corporis suscipit laboriosam,
-    nisi ut aliquid ex ea commodi consequatur? Quis autem
-    vel eum iure reprehenderit qui in ea voluptate velit
-    esse quam nihil molestiae consequatur, vel illum qui
-    dolorem eum fugiat quo voluptas nulla pariatur.
-    <i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit
-        esse quam nihil molestiae consequatur.</i>
-</p>
-</div>
-</div>
-</div>
-</div> --}}
-<!-- //bootstrap-modal-pop-up -->
-<!--script for portfolio-->
+
 <script src="{{ asset('dist/layout/layout_home/js/lightbox-plus-jquery.min.js') }}"> </script>
 <script src="{{ asset('dist/layout/layout_home/js/easyResponsiveTabs.js') }}" type="text/javascript"></script>
 <script type="text/javascript">
