@@ -79,14 +79,23 @@
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 @foreach ($menu_list as $menu)
+                                @if ($menu->parent_id==0)
                                     <li class="nav-item">
                                         <a href="{{$menu->url}}">{{$menu->name}}</a>
+                                        <ul class="sub-menu">
+                                        @foreach ($menu_list as $menu2)
+                                            @if ($menu->id == $menu2->parent_id)
+                                                    <li><a href="{{$menu2->url}}">{{$menu2->name}}</a></li>
+                                            @endif
+                                        @endforeach
+                                        </ul>
                                     </li>
+                                @endif
                                 @endforeach
 
                                 @foreach($all_category as $category)
                                     <li class="nav-item">
-                                        <a href="{{ route('gioi-thieu', [$faculty['slug']]) }}">{{$category->title}}</a>
+                                        <a href="{{ route('tin-tuc', [$faculty['slug']]) }}">{{$category->title}}</a>
                                     </li>
                                 @endforeach
 
@@ -130,17 +139,9 @@
                         </div>
                     </nav> <!-- nav -->
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-                    <div class="right-icon text-right">
-                        <ul>
-                            <li><a href="javascript:" id="search"><i class="fa fa-search"></i></a></li>
-                        </ul>
-                    </div> <!-- right icon -->
-                </div>
             </div> <!-- row -->
         </div> <!-- container -->
     </div>
-
 </header>
 
 <!--====== HEADER PART ENDS ======-->

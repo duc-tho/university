@@ -101,7 +101,7 @@
                                                 <h4>{{ $item->title }} </h4>
                                             </a>
                                             <strong> <a
-                                                    href="{{ route('tin-tuc', [$faculty['slug']]) }}">{{ $category->title }},<b>
+                                                    href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category['slug']]) }}">{{ $category->title }},<b>
                                                         {{ $item->event_time }}</b></a></strong>
                                             {{-- <span><i class="fa fa-map-marker"></i> Đại Học Du Lịch Văn Hóa Nghệ Thuật Sài Gòn</span> --}}
                                         </div>
@@ -146,225 +146,6 @@
             </div> <!-- row -->
         </div> <!-- container -->
     </section>
-
-    <!--====== APPLY PART ENDS ======-->
-
-    <!--====== COURSE PART START ======-->
-
-    {{-- <section id="course-part" class="pt-115 pb-120 gray-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-title pb-45">
-                        <h5>Khóa Học</h5>
-                        <h2>Khóa Học Bổ Ích</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row course-slied mt-30">
-                <div class="col-lg-4">
-                    <div class="singel-course">
-                        <div class="thum">
-                            <div class="image">
-                                <img src="/dist/layout/layout_kkt/images/link-dhdl-42735.jpg" alt="Course">
-                            </div>
-
-                        </div>
-                        <div class="cont">
-                            <ul>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                            <span>(120 Đánh Giá)</span>
-                            <a href="">
-                                <h4>Cẩm Nang Về Tốc Độ Tăng Trưởng Kinh Tế</h4>
-                            </a>
-                            <div class="course-teacher">
-                                <div class="thum">
-                                    <a href="javascript:"><img src="/dist/layout/layout_kkt/images/course/teacher/t-1.jpg"
-                                            alt="teacher"></a>
-                                </div>
-                                <div class="name">
-                                    <a href="javascript:">
-                                        <h6>Trần Võ Quang</h6>
-                                    </a>
-                                </div>
-                                <div class="admin">
-                                    <ul>
-                                        <li><a href="javascript:"><i class="fa fa-user"></i><span>31</span></a></li>
-                                        <li><a href="javascript:"><i class="fa fa-heart"></i><span>10</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="singel-course">
-                        <div class="thum">
-                            <div class="image">
-                                <img src="/dist/layout/layout_kkt/images/link-dhdl-76744.png" alt="Course">
-                            </div>
-
-                        </div>
-                        <div class="cont">
-                            <ul>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                            <span>(120 Đánh Giá)</span>
-                            <a href="">
-                                <h4>Thị Trường Kinh Tế Sau Những Biến Động</h4>
-                            </a>
-                            <div class="course-teacher">
-                                <div class="thum">
-                                    <a href="javascript:"><img src="/dist/layout/layout_kkt/images/course/teacher/t-2.jpg"
-                                            alt="teacher"></a>
-                                </div>
-                                <div class="name">
-                                    <a href="javascript:">
-                                        <h6>Ngô Văn Luyến</h6>
-                                    </a>
-                                </div>
-                                <div class="admin">
-                                    <ul>
-                                        <li><a href="javascript:"><i class="fa fa-user"></i><span>31</span></a></li>
-                                        <li><a href="javascript:"><i class="fa fa-heart"></i><span>10</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="singel-course">
-                        <div class="thum">
-                            <div class="image">
-                                <img src="/dist/layout/layout_kkt/images/link-dhdl-95151.jpg" alt="Course">
-                            </div>
-
-                        </div>
-                        <div class="cont">
-                            <ul>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                            <span>(120 Đánh Giá)</span>
-                            <a href="">
-                                <h4>Các Tổ Chức Vận Hành Quản Trị Kinh Doanh</h4>
-                            </a>
-                            <div class="course-teacher">
-                                <div class="thum">
-                                    <a href="javascript:"><img src="/dist/layout/layout_kkt/images/course/teacher/t-3.jpg"
-                                            alt="teacher"></a>
-                                </div>
-                                <div class="name">
-                                    <a href="javascript:">
-                                        <h6>Nguyễn Nhậm </h6>
-                                    </a>
-                                </div>
-                                <div class="admin">
-                                    <ul>
-                                        <li><a href="javascript:"><i class="fa fa-user"></i><span>31</span></a></li>
-                                        <li><a href="javascript:"><i class="fa fa-heart"></i><span>10</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="singel-course">
-                        <div class="thum">
-                            <div class="image">
-                                <img src="/dist/layout/layout_kkt/images/link-dhdl-86243.jpg" alt="Course">
-                            </div>
-
-                        </div>
-                        <div class="cont">
-                            <ul>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                            <span>(120 Đánh Giá)</span>
-                            <a href="">
-                                <h4>Quản Lí Hiệu Quả Về Kế Toán</h4>
-                            </a>
-                            <div class="course-teacher">
-                                <div class="thum">
-                                    <a href="javascript:"><img src="/dist/layout/layout_kkt/images/course/teacher/t-4.jpg"
-                                            alt="teacher"></a>
-                                </div>
-                                <div class="name">
-                                    <a href="javascript:">
-                                        <h6>Lê Linh Vương</h6>
-                                    </a>
-                                </div>
-                                <div class="admin">
-                                    <ul>
-                                        <li><a href="javascript:"><i class="fa fa-user"></i><span>31</span></a></li>
-                                        <li><a href="javascript:"><i class="fa fa-heart"></i><span>10</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="singel-course">
-                        <div class="thum">
-                            <div class="image">
-                                <img src="/dist/layout/layout_kkt/images/link-dhdl-92363.jpg" alt="Course">
-                            </div>
-
-                        </div>
-                        <div class="cont">
-                            <ul>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                            <span>(120 Đánh Giá)</span>
-                            <a href="">
-                                <h4>Kỹ Năng Chuyên Nghành Về Kinh Tế</h4>
-                            </a>
-                            <div class="course-teacher">
-                                <div class="thum">
-                                    <a href="javascript:"><img src="/dist/layout/layout_kkt/images/course/teacher/t-5.jpg"
-                                            alt="teacher"></a>
-                                </div>
-                                <div class="name">
-                                    <a href="javascript:">
-                                        <h6>Nguyễn Ngô Thảo</h6>
-                                    </a>
-                                </div>
-                                <div class="admin">
-                                    <ul>
-                                        <li><a href="javascript:"><i class="fa fa-user"></i><span>31</span></a></li>
-                                        <li><a href="javascript:"><i class="fa fa-heart"></i><span>10</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
 
     <!--====== COURSE PART ENDS ======-->
 
@@ -450,12 +231,12 @@
                                 <div class="col-sm-12">
                                     <div class="news-cont mt-30">
                                         <a
-                                            href="{{ route('thong-bao-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">
+                                            href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">
                                             <h3>{{ $item->title }}</h3>
                                         </a>
                                         <ul>
                                             <li><a
-                                                    href="{{ route('thong-bao', [$faculty['slug']]) }}">{{ $category->title }},<b>
+                                                    href="{{ route('tin-tuc', [$faculty['slug']]) }}">{{ $category->title }},<b>
                                                         {{ $item->event_time }}</b></a>
                                             </li>
                                             {{-- <li><a href="javascription:">{{ $item->event_time }} </a></li> --}}
@@ -471,7 +252,7 @@
             @endforeach
             <br>
             <br>
-            <a href="{{ route('thong-bao', [$faculty['slug']]) }}" class="main-btn">Xem Thêm</a>
+            <a href="{{ route('tin-tuc', [$faculty['slug']]) }}" class="main-btn">Xem Thêm</a>
         </div>
     </section>
 

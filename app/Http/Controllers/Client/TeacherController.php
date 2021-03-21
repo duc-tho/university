@@ -9,6 +9,7 @@ use App\Models\Contact;
 use App\Models\Faculty;
 use App\Models\FooterLinkCategory;
 use App\Models\ImageCategory;
+use App\Models\Menu;
 use App\Models\News;
 use App\Models\Settings;
 use App\Models\Slide;
@@ -93,7 +94,14 @@ class TeacherController extends Controller
         
         // Lấy footer liệt kê các khoa
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->paginate(4);
+
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        
+        $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+
         return view('client.layout.' . $layout_name . '.page.teacher', [
+            'menu_list' => $menu_list,
+            'all_category' => $all_category,
             'footer_faculty' => $footer_faculty,
             'license' => getSettingValue($settings, 'license'),
             'license_content' => getSettingValue($settings, 'license_content'),

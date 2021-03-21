@@ -1,6 +1,6 @@
 @extends('client.layout.layout_kkt.index')
 
-@section('title', 'Tin Tức Khoa Kinh Tế')
+@section('title', 'Tin Tức - Thông Báo Khoa Kinh Tế')
 
 @section('meta')
     <meta name="keywords" content="">
@@ -17,12 +17,12 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="page-banner-cont">
-                        <h2>Tin Tức {{ $faculty->name }}</h2>
+                        <h2>Tin Tức - Thông Báo {{ $faculty->name }}</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ route('trang-chu', ['khoa-kinh-te']) }}">Trang
                                         Chủ</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Tin Tức Sự Kiện</li>
+                                <li class="breadcrumb-item active" aria-current="page">Tin Tức - Thông Báo</li>
                             </ol>
                         </nav>
                     </div> <!-- page banner cont -->
@@ -42,7 +42,9 @@
                     @foreach ($news as $key => $category)
                         <div class="row">
                             @foreach ($category['news'] as $item)
+                            
                                 <div class="col-lg-4 col-md-6">
+                                  
                                     <div class="singel-course mt-30">
                                         <div class="thum">
                                             <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">
@@ -57,13 +59,13 @@
                                                 href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">
                                                 <h4>{{ $item['title'] }}</h4>
                                             </a>
-                                            <p> {{ $item->description }}</p>
+                                            <p> {!! $item->description !!}</p>
                                             <br>
                                             <div class="course-teacher">
                                                 <div class="name">
-                                                    <a href="{{ route('tin-tuc', [$faculty['slug']]) }}"><span>{{ $category['title'] }}
+                                                    <a href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category['slug']]) }}"><span>{{ $category['title'] }}
                                                             , </span></a>
-                                                    <b>{{ $item['event_time'] }}</b>
+                                                    <b>  {{ ConvertDatabaseTimeToDMY($item['created_at']) }}</b>
                                                 </div>
                                                 {{-- <div class="admin">
                                         <ul>
@@ -80,15 +82,41 @@
                     @endforeach
                 </div>
             </div> <!-- tab content -->
-            <br><br>
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-sm-12 ">
-                        {{-- {{ $category['news']->render('vendor.pagination.bootstrap-4') }} --}}
+            <br>
 
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="courses-grid" role="tabpanel" aria-labelledby="courses-grid-tab">
+                    @foreach ($news_notification as $key => $category)
+                    <div class="row">
+                        @foreach ($category['news'] as $item)
+                        <div class="col-lg-12 col-md-6">
+                            <div class="singel-course mt-30">
+                                <div class="cont">
+                                    <a href="{{route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']])}}">
+                                        <h5>{{$item['title']}}</h5>
+                                    </a>
+                                    <p> {!!$item->description!!}</p>
+                                    <div class="course-teacher">
+                                        <div class="name">
+                                            <a href="{{route('tin-tuc-danh-muc', [$faculty['slug'],$category['slug']])}}"> <span >{{ $category['title']}} ,</span></a>
+                                            <b>  {{ ConvertDatabaseTimeToDMY($item['created_at']) }}</b>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
+                    @endforeach
                 </div>
             </div>
+            {{-- <div class="container">
+                <div class="row text-center">
+                    <div class="col-sm-12 ">
+                        {{ $category['news']->render('vendor.pagination.bootstrap-4') }}
+                    </div>
+                </div>
+            </div> --}}
         </div> <!-- container -->
     </section>
 

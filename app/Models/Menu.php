@@ -26,5 +26,5 @@ class Menu extends Model
     /**
      * @var array
      */
-    protected $fillable = ['id', 'faculty_id', 'name', 'url', 'display_order', 'status', 'created_at', 'updated_at'];
+    protected $fillable = ['id', 'faculty_id','parent_id', 'name', 'url', 'display_order', 'status', 'created_at', 'updated_at'];
 }

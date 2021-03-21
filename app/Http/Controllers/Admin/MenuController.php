@@ -26,8 +26,10 @@ class MenuController extends Controller
      */
     public function create(Request $request, $khoa)
     {
+        $menu_list = Menu::all();
         return view('server.pages.menu.create', [
-            'khoa' => $khoa
+            'khoa' => $khoa,
+            'menu_list' => $menu_list,
         ]);
     }
 
@@ -85,6 +87,7 @@ class MenuController extends Controller
     public function edit($khoa, $id)
     {
         // Tìm menus
+        $menu_list = Menu::all();
         $menu = Menu::find($id);
 
         // dừng nếu menu không tồn tại
@@ -94,6 +97,7 @@ class MenuController extends Controller
         abort_if(!Auth::user()['isAdmin'] && $menu['faculty_id'] != Auth::user()['faculty_id'], 403);
 
         return view('server.pages.menu.edit', [
+            'menu_list' => $menu_list,
             'menu' => $menu,
             'khoa' => $khoa
         ]);

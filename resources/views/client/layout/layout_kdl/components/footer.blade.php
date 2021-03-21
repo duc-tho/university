@@ -40,7 +40,7 @@
                         <h6 class="footer-title-29">Đường Dẫn</h6>
                         <li><a href="{{route('tin-tuc', [$faculty['slug']])}}">Tin Tức</a></li>
                         <li><a href="{{route('gioi-thieu', [$faculty['slug']])}}">Giới Thiệu</a></li>
-                        <li><a href="{{route('thong-bao', [$faculty['slug']])}}">Thông Báo</a></li>
+                        <li><a href="{{route('tin-tuc', [$faculty['slug']])}}">Thông Báo</a></li>
                         <li><a href="{{route('giao-vien', [$faculty['slug']])}}">Giáo Viên</a></li>
                         {{-- <li><a href="####">Khác</a></li> --}}
                     </ul>

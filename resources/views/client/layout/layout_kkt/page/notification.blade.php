@@ -52,12 +52,6 @@
                                         <a href="{{route('thong-bao', [$faculty['slug']])}}"> <span >{{ $category['title']}} ,</span></a>
                                         <b>{{$item['event_time']}}</b>
                                     </div>
-                                    {{-- <div class="admin">
-                                        <ul>
-                                            <li><a href="javascript:"><i class="fa fa-user"></i><span>31</span></a></li>
-                                            <li><a href="javascript:"><i class="fa fa-heart"></i><span>10</span></a></li>
-                                        </ul>
-                                    </div> --}}
                                 </div>
                             </div>
                         </div>
