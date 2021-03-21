@@ -17,7 +17,7 @@ class TeacherController extends Controller
         if ($request->has('item-per-page')) $item_per_page = $request->query('item-per-page');
 
         $query_condition = [
-            'status' => '1',
+            
             'faculty_id' => $khoa['id']
         ];
 
@@ -42,9 +42,9 @@ class TeacherController extends Controller
         if ($request->file('image') != null) $teacher['image'] = upload_file($request->file('image'), 'dist/upload/image/teacher');
 
         $request->validate([
-            'name' => 'required|unique:teacher_representative,name,' . $teacher->id
+            'name' => 'required:teacher_representative,name,' . $teacher->id
         ], [
-            'name.unique' => 'Tên giảng viên đã tồn tại, vui lòng nhập một tên khác...',
+           
             'name.required' => 'Chưa nhập tên giảng viên nè!',
         ]);
 
@@ -82,9 +82,9 @@ class TeacherController extends Controller
         $teacher->update($request->input());
 
         $request->validate([
-            'name' => 'required|unique:teacher_representative,name,' . $teacher->id
+            'name' => 'required:teacher_representative,name,' . $teacher->id
         ], [
-            'name.unique' => 'Tên giảng viên đã tồn tại, vui lòng nhập một tên khác...',
+          
             'name.required' => 'Chưa nhập tên giảng viên nè!',
         ]);
         // chuyển hướng về trang teacher list

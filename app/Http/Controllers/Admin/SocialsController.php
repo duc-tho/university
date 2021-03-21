@@ -14,7 +14,7 @@ class SocialsController extends Controller
         if ($request->has('item-per-page')) $item_per_page = $request->query('item-per-page');
 
         $query_condition = [
-            'status' => '1',
+            
         ];
 
         $socials_list = Socials::where($query_condition)->orderBy("id", "desc")->paginate($item_per_page);

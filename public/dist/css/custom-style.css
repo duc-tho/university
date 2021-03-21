@@ -189,6 +189,19 @@ fieldset[disabled] .btn-danger.active {
     font-style: italic;
     color: black;
 }
+.img-max{
+	width: 155px; 
+	min-height: 150px; 
+	max-height: 125px; 
+	 float: left; 
+	 margin: 3px;
+	 padding: 3px;"
+}
+.text-max{
+	display: inline-block;
+	max-width:130px;
+	 width:130px;
+}
 /* .optionChild {
     padding-left: 15px;
 } */
