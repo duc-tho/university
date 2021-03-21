@@ -29,7 +29,7 @@ class FooterLinkCategory extends Model
     /**
      * @var array
      */
-    protected $fillable = ['title', 'status'];
+    protected $fillable = ['title', 'status','created_at','updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

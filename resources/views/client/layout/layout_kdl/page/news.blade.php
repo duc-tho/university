@@ -4,7 +4,7 @@
     <section class="w3l-service-breadcrum">
         <div class="breadcrum-bg py-sm-5 py-4">
             <div class="container py-lg-3">
-                <h2>Tin tức Khoa Du Lịch</h2>
+                <h2>Tin Tức - Thông Báo Khoa Du Lịch</h2>
                 <p><a href="{{ route('trang-chu', ['khoa-du-lich']) }}">Trang Chủ</a> &nbsp; / &nbsp; Tin Tức</p>
                     </div>
                 </div>
@@ -34,13 +34,12 @@
         </div>
     </section>
     <br>
-    <div class="container">
+    {{-- <div class="container">
         <div class="row">
             <div class="col-sm-12 ">
                 {{ $category['news']->render('vendor.pagination.bootstrap-4') }}
-  
             </div>
         </div>
-    </div>
+    </div> --}}
     <br>
 @stop

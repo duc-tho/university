@@ -53,21 +53,19 @@
                                 <div class="cont">
                                     <a href="{{-- route('khoakinhte-chitietkhoahoc') --}}">
                                         <h4>Ngành {{ $specialized->name }}</h4>
-                                        <p>Ngày Đăng : {{ $specialized->created_by }}</p>
+                                        <p>Ngày Đăng : {{ ConvertDatabaseTimeToDMY($specialized['created_at']) }}</p>
                                     </a>
-                                    <div>
-                                        <p>
-                                            {!! $specialized->intro !!}
-                                        </p>
-                                    </div>
+                                    <p>
+                                        {!! $specialized->intro !!}
+                                    </p>
                                 </div>
                             </div> <!-- singel course -->
                         </div>
-                        <div class="col-lg-12 col-md-12">
+                        {{-- <div class="col-lg-12 col-md-12">
                             <div class="singel-course mt-30">
                                 <img src="{{ asset($specialized->image) }}" width="100%" height="auto" alt="">
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div> <!-- row -->
             </div>

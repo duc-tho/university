@@ -68,7 +68,7 @@
                                                         </ul>
                                                     </div>
                                                     <div class="col-5 text-center">
-                                                        <img src="{{ asset($faculty->image) }}" alt="sdfsdf"
+                                                        <img src="{{ asset($faculty->image) }}" alt="image"
                                                             class="img-circle img-fluid img-max">
                                                     </div>
                                                 </div>
