@@ -177,5 +177,32 @@ return [
                 'delete' => 'video_delete',
             ]
         ],
+        'image_category' => [
+            'display_name' => 'Chuyên mục hình ảnh',
+            'access' => [
+                'list' => 'image_category_list',
+                'create' => 'image_category_create',
+                'edit' => 'image_category_edit',
+                'delete' => 'image_category_delete',
+            ]
+        ],
+        'footer_link_category' => [
+            'display_name' => 'Chuyên mục liên kết footer',
+            'access' => [
+                'list' => 'footer_link_category_list',
+                'create' => 'footer_link_category_create',
+                'edit' => 'footer_link_category_edit',
+                'delete' => 'footer_link_category_delete',
+            ]
+        ],
+        'footer_link' => [
+            'display_name' => 'Liên kết footer',
+            'access' => [
+                'list' => 'footer_link_list',
+                'create' => 'footer_link_create',
+                'edit' => 'footer_link_edit',
+                'delete' => 'footer_link_delete',
+            ]
+        ],
     ],
 ];

@@ -22,14 +22,14 @@ class ImageCategory extends Model
 {
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'image_category';
 
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -37,7 +37,7 @@ class ImageCategory extends Model
     /**
      * @var array
      */
-    protected $fillable = ['faculty_id', 'title', 'link', 'display_order', 'created_at', 'updated_at', 'created_by', 'updated_by', 'status'];
+    protected $fillable = ['faculty_id', 'title', 'link', 'slug', 'display_order', 'created_at', 'updated_at', 'created_by', 'updated_by', 'status', 'parent_id'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -53,5 +53,15 @@ class ImageCategory extends Model
     public function images()
     {
         return $this->hasMany('App\Models\Image');
+    }
+
+    public function childrens()
+    {
+        return $this->hasMany(ImageCategory::class, 'parent_id');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(ImageCategory::class, 'parent_id');
     }
 }

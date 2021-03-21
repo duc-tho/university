@@ -22,7 +22,9 @@ use App\Http\Controllers\Admin\SocialsController;
 use App\Http\Controllers\Admin\VideoController as AdminVideoController;
 use App\Http\Controllers\Admin\StudentController as AdminStudentController;
 use App\Http\Controllers\Admin\AboutController as AdminAboutController;
-
+use App\Http\Controllers\Admin\FooterLinkCategoryController;
+use App\Http\Controllers\Admin\FooterLinkController;
+use App\Http\Controllers\Admin\ImageCategoryController;
 use App\Http\Controllers\Client\CourseController;
 use App\Http\Controllers\Client\EducateController;
 use App\Http\Controllers\Client\AboutController;
@@ -560,6 +562,87 @@ Route::name('admin.')->prefix('admin/{khoa}')->middleware(['CheckLogedIn', 'Requ
         //
         Route::get('/delete/{id}', [MenuController::class, 'delete'])
             ->middleware('can:menu_delete')
+            ->name('delete')->where(['id' => '[0-9]+']);
+        //
+    });
+
+    // image_category
+    Route::name('image_category.')->prefix('image_category')->group(function () {
+        //
+        Route::get('/', [ImageCategoryController::class, 'show'])
+            ->middleware('can:image_category_list')
+            ->name('show');
+        //
+        Route::get('add',  [ImageCategoryController::class, 'create'])
+            ->middleware('can:image_category_create')
+            ->name('create');
+        Route::post('add',  [ImageCategoryController::class, 'store'])
+            ->middleware('can:image_category_create')
+            ->name('store');
+        //
+        Route::get('/edit/{id}',  [ImageCategoryController::class, 'edit'])
+            ->middleware('can:image_category_edit')
+            ->name('edit')->where(['id' => '[0-9]+']);
+        Route::post('/edit/{id}', [ImageCategoryController::class, 'update'])
+            ->middleware('can:image_category_edit')
+            ->name('update')->where(['id' => '[0-9]+']);
+        //
+        Route::get('/delete/{id}', [ImageCategoryController::class, 'delete'])
+            ->middleware('can:image_category_delete')
+            ->name('delete')->where(['id' => '[0-9]+']);
+        //
+    });
+
+    // footer_link_category
+    Route::name('footer_link_category.')->prefix('footer_link_category')->group(function () {
+        //
+        Route::get('/', [FooterLinkCategoryController::class, 'show'])
+            ->middleware('can:footer_link_category_list')
+            ->name('show');
+        //
+        Route::get('add',  [FooterLinkCategoryController::class, 'create'])
+            ->middleware('can:footer_link_category_create')
+            ->name('create');
+        Route::post('add',  [FooterLinkCategoryController::class, 'store'])
+            ->middleware('can:footer_link_category_create')
+            ->name('store');
+        //
+        Route::get('/edit/{id}',  [FooterLinkCategoryController::class, 'edit'])
+            ->middleware('can:footer_link_category_edit')
+            ->name('edit')->where(['id' => '[0-9]+']);
+        Route::post('/edit/{id}', [FooterLinkCategoryController::class, 'update'])
+            ->middleware('can:footer_link_category_edit')
+            ->name('update')->where(['id' => '[0-9]+']);
+        //
+        Route::get('/delete/{id}', [FooterLinkCategoryController::class, 'delete'])
+            ->middleware('can:footer_link_category_delete')
+            ->name('delete')->where(['id' => '[0-9]+']);
+        //
+    });
+
+    // footer_link
+    Route::name('footer_link.')->prefix('footer_link')->group(function () {
+        //
+        Route::get('/', [FooterLinkController::class, 'show'])
+            ->middleware('can:footer_link_list')
+            ->name('show');
+        //
+        Route::get('add',  [FooterLinkController::class, 'create'])
+            ->middleware('can:footer_link_create')
+            ->name('create');
+        Route::post('add',  [FooterLinkController::class, 'store'])
+            ->middleware('can:footer_link_create')
+            ->name('store');
+        //
+        Route::get('/edit/{id}',  [FooterLinkController::class, 'edit'])
+            ->middleware('can:footer_link_edit')
+            ->name('edit')->where(['id' => '[0-9]+']);
+        Route::post('/edit/{id}', [FooterLinkController::class, 'update'])
+            ->middleware('can:footer_link_edit')
+            ->name('update')->where(['id' => '[0-9]+']);
+        //
+        Route::get('/delete/{id}', [FooterLinkController::class, 'delete'])
+            ->middleware('can:footer_link_delete')
             ->name('delete')->where(['id' => '[0-9]+']);
         //
     });

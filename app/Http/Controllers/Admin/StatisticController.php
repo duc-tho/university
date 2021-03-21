@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Statistics;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class StatisticController extends Controller
 {
@@ -22,9 +24,11 @@ class StatisticController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($khoa)
     {
-        //
+        return view('server.pages.statistics.create', [
+            'khoa' => $khoa
+        ]);
     }
 
     /**
@@ -33,9 +37,13 @@ class StatisticController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $khoa)
     {
-        //
+        $statistic = new Statistics($request->input());
+
+        $statistic->save();
+
+        return redirect()->route('admin.statistic.show', [$khoa['slug']]);
     }
 
     /**
@@ -44,9 +52,21 @@ class StatisticController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $khoa)
     {
-        //
+        $item_per_page = 12;
+        if ($request->has('item-per-page')) $item_per_page = $request->query('item-per-page');
+
+        $query_condition = [
+            'faculty_id' => $khoa['id']
+        ];
+
+        $statistics = Statistics::where($query_condition)->paginate($item_per_page);
+
+        return view('server.pages.statistics.index', [
+            'statistics' => $statistics,
+            'khoa' => $khoa
+        ]);
     }
 
     /**
@@ -55,9 +75,21 @@ class StatisticController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($khoa, $id)
     {
-        //
+        // Tìm statistic
+        $statistic = Statistics::find($id);
+
+        // dừng nếu statistics không tồn tại
+        abort_if(!$statistic, 404);
+
+        // dừng lại nếu xóa statistics có khoa khác với khoa của statistics đang login trừ admin
+        abort_if(!Auth::user()['isAdmin'] && $statistic['faculty_id'] != Auth::user()['faculty_id'], 403);
+
+        return view('server.pages.statistics.edit', [
+            'statistic' => $statistic,
+            'khoa' => $khoa
+        ]);
     }
 
     /**
@@ -67,9 +99,22 @@ class StatisticController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $khoa, $id)
     {
-        //
+        // Tìm statistics
+        $statistic = Statistics::find($id);
+
+        // dừng nếu statistic không tồn tại
+        abort_if(!$statistic, 404);
+
+        // dừng lại nếu xóa statistic có khoa khác với khoa của statistic đang login trừ admin
+        abort_if(!Auth::user()['isAdmin'] && $statistic['faculty_id'] != Auth::user()['faculty_id'], 403);
+
+        // Cập nhật lại thông tin statistic
+        $statistic->update($request->input());
+
+        // chuyển hướng về trang statistic list
+        return redirect()->route('admin.statistic.show', [$khoa['slug']]);
     }
 
     /**
@@ -78,8 +123,21 @@ class StatisticController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($khoa, $id)
     {
-        //
+        // Tìm statistics
+        $statistic = Statistics::find($id);
+
+        // dừng nếu statistic không tồn tại
+        abort_if(!$statistic, 404);
+
+        // dừng lại nếu cập nhật statistic có khoa khác với khoa của statistic đang login trừ admin
+        abort_if(!Auth::user()['isAdmin'] && $statistic['faculty_id'] != Auth::user()['faculty_id'], 403);
+
+        // xóa statistic
+        Statistics::destroy($id);
+
+        // chuyển hướng về trang statistic list
+        return redirect()->route('admin.statistic.show', [$khoa['slug']]);
     }
 }
