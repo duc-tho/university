@@ -18,11 +18,11 @@
                 @foreach($about as $item)
                 <div class="cwp4-text col-lg-6">
                     <h3>{{ $item->title}}</h3>
-                    <p>{{ $item->intro}}</p>
+                    <p>{!! $item->intro!!}</p>
                 </div>
-                <div class="cwp4-image col-lg-6 pl-lg-5 mt-lg-0 mt-5">
+                {{-- <div class="cwp4-image col-lg-6 pl-lg-5 mt-lg-0 mt-5">
                     <img src="{{asset($item->image)}}" class="img-fluid" alt="" />
-                </div>
+                </div> --}}
                 @endforeach
             </div>
         </div>

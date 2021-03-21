@@ -26,7 +26,7 @@
                     <x-admin.form.input :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" :value="Auth::user()['first_name']" />
                     {{-- <x-admin.form.input :col="3" :type="'text'" :label="'Người Cập Nhập'" :required="true" :placeholder="'Người Cập Nhập'" :fieldName="'updated_by'" /> --}}
 
-                    <x-admin.form.textarea-mce :col="6" :label="'Giới Thiệu'" :required="true" :fieldName="'intro'" />
+                    <x-admin.form.textarea-mce :col="12" :label="'Giới Thiệu'" :required="true" :fieldName="'intro'" />
 
                     <x-admin.form.checkbox :col="3" :label="'Trạng thái'" :required="true" :fieldName="'status'" :labelContent="'Đang hoạt động'" />
                     <x-admin.form.file :col="3" :label="'Ảnh đại diện'" :required="false" :fieldName="'image'" />

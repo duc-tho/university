@@ -46,8 +46,8 @@
                                     title="#">{{ $category['title'] }}</a></span>
                             <h3>{{ $news['title'] }}</h3>
                             <div class="blog-meta big-meta">
-                                <small><a href="single.html" title="">{{ $news['created_at'] }}</a></small>
-                                <small><a href="blog-author.html" title="">Tác giả : {{ $news['updated_by'] }}</a></small>
+                                <small><a href="single.html" title="">Thời Gian : {{ $news['event_time'] }}</a></small>
+                                <small><a href="blog-author.html" title="">Tác giả : {{ $news['created_by'] }}</a></small>
                                 <small><a href="#" title=""><i class="fa fa-eye"></i>
                                         {{ $news['view_count'] }}</a></small>
                             </div><!-- end meta -->
@@ -65,7 +65,7 @@
                         </div><!-- end media -->
                         <div class="blog-content">
                             <div class="pp">
-                                <p>{{ $news['content'] }}</p>
+                                <p>{!! $news['content'] !!}</p>
                             </div><!-- end pp -->
                         </div><!-- end content -->
 

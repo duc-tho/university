@@ -692,8 +692,8 @@ Route::get('/{khoa}/khoa-hoc', [CourseController::class, 'index'])->name('khoa-h
 // Route::get('/{khoa}/chi-tiet-khoa-hoc', [CourseController::class, 'detail'])->name('khoa-hoc-chi-tiet');
 
 // Thông báo
-Route::get('/{khoa}/thong-bao', [NotificationController::class, 'index'])->name('thong-bao');
-Route::get('/{khoa}/thong-bao/{category}/{name}', [NotificationController::class, 'detail'])->name('thong-bao-chi-tiet');
+// Route::get('/{khoa}/thong-bao', [NotificationController::class, 'index'])->name('thong-bao');
+// Route::get('/{khoa}/thong-bao/{category}/{name}', [NotificationController::class, 'detail'])->name('thong-bao-chi-tiet');
 
 // hình ảnh
 Route::get('/{khoa}/hinh-anh', [ImageController::class, 'index'])->name('hinh-anh'); // tạo chức năng lọc :D theo danh mục

@@ -9,6 +9,7 @@ use App\Models\Contact;
 use App\Models\Faculty;
 use App\Models\FooterLinkCategory;
 use App\Models\ImageCategory;
+use App\Models\Menu;
 use App\Models\News;
 use App\Models\Settings;
 use App\Models\Slide;
@@ -92,7 +93,8 @@ class CourseController extends Controller
 
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty_id])->first();
-
+        $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
+        
         return view('client.layout.' . $layout_name . '.page.course', [
             'phone' => $contact['phone'],
             'email' => $contact['email'],
@@ -110,7 +112,7 @@ class CourseController extends Controller
             'time' => getSettingValue($settings, 'time'),
             'hotline' => getSettingValue($settings, 'hotline'),
             'spline' => getSettingValue($settings, 'spline'),
-
+            'menu_list' => $menu_list,
             //Start Khoa Du Lịch
             'logo_travel' => getSettingValue($settings, 'logo_travel'),
             'slogan_main_travel' => getSettingValue($settings, 'slogan_main_travel'),

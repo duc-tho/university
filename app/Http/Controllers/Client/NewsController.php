@@ -10,6 +10,7 @@ use App\Models\Faculty;
 use App\Models\FooterLinkCategory;
 use App\Models\Image;
 use App\Models\ImageCategory;
+use App\Models\Menu;
 use App\Models\News;
 use App\Models\Settings;
 use App\Models\Socials;
@@ -78,7 +79,7 @@ class NewsController extends Controller
         // dd($image_category); // Bỏ comment để xem cấu trúc dữ liệu hình ảnh
 
         // lấy danh mục tin tức
-        $category = Category::where(['status' => 1, 'show_at_news' => '1','faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
+        $category = Category::where(['status' => 1,'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
 
         if (!$category->isEmpty()) foreach ($category as $key => $item) {
             $news = $item->news()->orderBy('id', 'desc')->paginate(6);
@@ -86,6 +87,21 @@ class NewsController extends Controller
             if (!$news->isEmpty()) $item['news'] = $news;
         }
 
+        $category_news = Category::where(['status' => 1, 'show_at_news' => '1','faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
+
+        if (!$category_news->isEmpty()) foreach ($category_news as $key => $item) {
+            $news = $item->news()->orderBy('id', 'desc')->paginate(6);
+
+            if (!$news->isEmpty()) $item['news'] = $news;
+        }
+
+        $category_notification = Category::where(['status' => 1, 'show_at_notification' => '1','faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
+
+        if (!$category_news->isEmpty()) foreach ($category_news as $key => $item) {
+            $news = $item->news()->orderBy('id', 'desc')->paginate(6);
+
+            if (!$news->isEmpty()) $item['news'] = $news;
+        }
 
         // chỉ lấy tin tức trong danh mục tin tức
         // $category_news = Category::where(['status' => 1, 'slug' => 'tin-tuc',  'faculty_id' => $faculty->id])->first();
@@ -94,6 +110,7 @@ class NewsController extends Controller
 
 
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
+        $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
 
 
         return view('client.layout.' . $layout_name . '.page.news', [
@@ -114,8 +131,11 @@ class NewsController extends Controller
             'footer_link' => $footer_link,
             'socials_icon' => $socials_icon,
             'about' => $about_category,
-            'news' => $category,
-
+            'category' => $category,
+            'menu_list' => $menu_list,
+            'news' => $category_news,
+            'news_notification' => $category_notification,
+            
             // 'only_news' => $only_news,
 
             'image_category' => $image_category,
@@ -229,9 +249,9 @@ class NewsController extends Controller
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
 
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
-
+        $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
         return view('client.layout.' . $layout_name . '.page.news-detail', [
-
+            'menu_list' => $menu_list,
             'phone' => $contact['phone'],
             'faculty' => $faculty,
             'email' => $contact['email'],
@@ -288,6 +308,7 @@ class NewsController extends Controller
 
     public function list(Request $request, $khoa, $danh_muc)
     {
+        
         // Lấy thông tin khoa và kiểm tra xem khoa có tồn tại hay không
         $faculty = Faculty::where(['status' => 1, 'slug' => $khoa])->first();
         abort_if(!$faculty, 404);
@@ -327,14 +348,24 @@ class NewsController extends Controller
         $contact = Contact::where(['faculty_id' => $faculty['id']])->first();
 
         // lấy tin tức
-        $category = Category::where(['status' => 1, 'slug' => $danh_muc])->first();
+        $category = Category::where(['status' => 1, 'slug' => $danh_muc,'faculty_id' => $faculty_id])->first();
         abort_if(!$category, 404);
         $category['news'] = $category->news()->where(['status' => 1])->orderBy('id', 'desc')->paginate(10);
 
         // lấy danh mục tin tức
-        $all_category = Category::where(['status' => 1])->get();
+        $all_category = Category::where(['status' => 1,'faculty_id' => $faculty_id])->get();
+        $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
+        
+        $category_list = Category::where(['status' => 1, 'show_at_news' => '1','faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
 
+        if (!$category_list->isEmpty()) foreach ($category_list as $key => $item) {
+            $news = $item->news()->orderBy('id', 'desc')->paginate(6);
+
+            if (!$news->isEmpty()) $item['news'] = $news;
+        }
         return view('client.layout.' . $layout_name . '.page.news-list', [
+            
+            'menu_list' => $menu_list,
             'phone' => $contact['phone'],
             'faculty' => $faculty,
             'email' => $contact['email'],
@@ -352,7 +383,28 @@ class NewsController extends Controller
             'socials_icon' => $socials_icon,
             'about' => $about_category,
             'category' => $category,
-            'all_category' => $all_category
+            'news' => $category_list,
+            'all_category' => $all_category,
+
+            'logo_travel' => getSettingValue($settings, 'logo_travel'),
+            'title_faculty_description' => getSettingValue($settings, 'title_faculty_description'),
+            'title_scholarship' => getSettingValue($settings, 'title_scholarship'),
+            'title_scholarship_content' => getSettingValue($settings, 'title_scholarship_content'),
+            'title_develop' => getSettingValue($settings, 'title_develop'),
+            'title_develop_content' => getSettingValue($settings, 'title_develop_content'),
+            'title_resources' => getSettingValue($settings, 'title_resources'),
+            'title_resources_content' => getSettingValue($settings, 'title_resources_content'),
+            'title_evaluate_student' => getSettingValue($settings, 'title_evaluate_student'),
+            'title_name_uni_footer' => getSettingValue($settings, 'title_name_uni_footer'),
+            'title_license_footer' => getSettingValue($settings, 'title_license_footer'),
+            'title_license_content_footer' => getSettingValue($settings, 'title_license_content_footer'),
+            'title_support_line' => getSettingValue($settings, 'title_support_line'),
+            'number_support_line' => getSettingValue($settings, 'number_support_line'),
+            'title_infor_teacher' => getSettingValue($settings, 'title_infor_teacher'),
+            'title_teacher_faculty' => getSettingValue($settings, 'title_teacher_faculty'),
+            'content_teacher_faculty' => getSettingValue($settings, 'content_teacher_faculty'),
+            'title_hot_line' => getSettingValue($settings, 'title_hot_line'),
+            'number_hot_line' => getSettingValue($settings, 'number_hot_line'),
         ]);
     }
 }

@@ -71,9 +71,7 @@
                                                                             @default
                                                                         @endswitch
                                                                         <br><br>
-                                                                    <li class="small"><span class="fa-li"><i
-                                                                                class="fas fa-chalkboard-teacher"></i></span>Người
-                                                                        Tạo:
+                                                                    <li class="small"><span class="fa-li"><i class="fas fa-chalkboard-teacher"></i></span>Người Tạo:
                                                                         {{ $news->created_by }}</li>
                                                                 </ul>
                                                             </div>

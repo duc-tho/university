@@ -26,7 +26,7 @@
                     <x-admin.form.input :data="$about" :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" />
                     <x-admin.form.input :data="$about" :col="3" :type="'text'" :label="'Người Cập Nhập'" :required="true" :placeholder="'Người Cập Nhập'" :fieldName="'updated_by'"  :value="Auth::user()['first_name']" />
 
-                    <x-admin.form.textarea-mce :data="$about" :col="6" :label="'Giới Thiệu'" :required="true" :fieldName="'intro'" />
+                    <x-admin.form.textarea-mce :data="$about" :col="12" :label="'Giới Thiệu'" :required="true" :fieldName="'intro'" />
 
                     <x-admin.form.checkbox :data="$about" :col="3" :label="'Trạng thái'" :required="true" :fieldName="'status'" :labelContent="'Đang hoạt động'" />
                     <x-admin.form.file  :data="$about" :col="3" :label="'Ảnh đại diện'" :required="false" :fieldName="'image'" />

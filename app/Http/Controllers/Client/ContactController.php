@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Faculty;
 use App\Models\FooterLinkCategory;
+use App\Models\Menu;
 use App\Models\Settings;
 use App\Models\Socials;
 use App\Models\Specialized;
@@ -58,6 +59,8 @@ class ContactController extends Controller
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
 
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+        $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
+        
         return view('client.layout.' . $layout_name . '.page.contact', [
             'license' => getSettingValue($settings, 'license'),
             'license_content' => getSettingValue($settings, 'license_content'),
@@ -68,7 +71,7 @@ class ContactController extends Controller
             'google_map_link' => $contact['map_embed'],
             'website_link' => $contact['website'],
             'contact_title' => $contact['contact_title'],
-
+            'menu_list' => $menu_list,
 
             'address' => $contact['address_info'],
             'logo' => getSettingValue($settings, 'logo'),

@@ -28,12 +28,12 @@
         @foreach ($about as $item)
             <div class="gioithieu">{{$item->title}}</div>
             <br>
-            <p class="loigioithieu">{{$item->intro}} </p>
-                <div class="row">
+            <p class="loigioithieu">{!!$item->intro!!} </p>
+                {{-- <div class="row">
                     <div class="col-sm-12">
                         <img src=" {{asset($item->image)}}" width="100%" alt="">
                     </div>
-                </div>
+                </div> --}}
             <br><br>
         @endforeach
     </div>

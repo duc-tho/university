@@ -10,6 +10,7 @@ use App\Models\Faculty;
 use App\Models\FooterLinkCategory;
 use App\Models\Image;
 use App\Models\ImageCategory;
+use App\Models\Menu;
 use App\Models\News;
 use App\Models\Settings;
 use App\Models\Socials;
@@ -18,7 +19,7 @@ use Illuminate\Http\Request;
 
 class NotificationController extends Controller
 {
-    public function index(Request $request, $khoa )
+    public function index(Request $request, $khoa)
     {
         $faculty = Faculty::where(['status' => 1, 'slug' => $khoa])->first();
         abort_if(!$faculty, 404);
@@ -74,9 +75,10 @@ class NotificationController extends Controller
         // $only_notification = $category_notification->news()->orderBy('id', 'desc',)->paginate(4);
 
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
-
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
 
         return view('client.layout.' . $layout_name . '.page.notification', [
+            'menu_list' => $menu_list,
             'license' => getSettingValue($settings, 'license'),
             'license_content' => getSettingValue($settings, 'license_content'),
             'website' => getSettingValue($settings, 'website'),
@@ -177,7 +179,7 @@ class NotificationController extends Controller
         abort_if(!$category, 404);
 
 
-        $news = News::where(['status' => 1, 'slug' => $bai_viet, ])->first();
+        $news = News::where(['status' => 1, 'slug' => $bai_viet,])->first();
         abort_if(!$news, 404);
         $news['view_count'] = $news['view_count'] + 1;
         $news->save();
@@ -195,7 +197,10 @@ class NotificationController extends Controller
 
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
 
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+
         return view('client.layout.' . $layout_name . '.page.notification-detail', [
+            'menu_list' => $menu_list,
             'license' => getSettingValue($settings, 'license'),
             'license_content' => getSettingValue($settings, 'license_content'),
             'website' => getSettingValue($settings, 'website'),

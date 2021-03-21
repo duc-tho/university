@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Faculty;
 use App\Models\FooterLinkCategory;
+use App\Models\Menu;
 use App\Models\Settings;
 use App\Models\Socials;
 use App\Models\Specialized;
@@ -70,6 +71,7 @@ class EducateController extends Controller
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
 
         $contact = Contact::where(['faculty_id' => $faculty_id])->first();
+        $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
         return view('client.layout.' . $layout_name . '.page.educate', [
             'license' => getSettingValue($settings, 'license'),
             'license_content' => getSettingValue($settings, 'license_content'),
@@ -86,6 +88,7 @@ class EducateController extends Controller
             'specialized' => $specialized,
             'address' =>getSettingValue($settings, 'address'),
             'email' => $contact['email'],
+            'menu_list' => $menu_list,
             //Start Khoa DU Lich
             'logo_travel' => getSettingValue($settings, 'logo_travel'),
             'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),

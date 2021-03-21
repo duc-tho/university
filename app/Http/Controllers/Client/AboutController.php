@@ -10,6 +10,7 @@ use App\Models\Faculty;
 use App\Models\FooterLinkCategory;
 use App\Models\Settings;
 use App\Models\Socials;
+use App\Models\Menu;
 use App\Models\Specialized;
 use Illuminate\Http\Request;
 
@@ -58,6 +59,7 @@ class AboutController extends Controller
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty['id']])->first();
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
+        $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
         return view('client.layout.' . $layout_name . '.page.about', [
             'phone' => $contact['phone'],
 
@@ -69,6 +71,7 @@ class AboutController extends Controller
             'contact_title' => $contact['contact_title'],
             'address' => $contact['address_info'],
 
+
             'intro_short' => $faculty['intro_summary'],
             'menu' => $menu,
             'footer_link' => $footer_link,
@@ -76,6 +79,7 @@ class AboutController extends Controller
             'about' => $about_category,
             'all_specialized' => $all_specialized,
             'specialized' => $specialized,
+            'menu_list' => $menu_list,
 
             'logo' => getSettingValue($settings, 'logo'),
             'license' => getSettingValue($settings, 'license'),

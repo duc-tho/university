@@ -197,7 +197,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
                                                 <h6 class="pricehead"><a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">{{ $item['title']  }} </a></h6>
 
                                                 <p><a
-                                                    href="{{ route('thong-bao', [$faculty['slug']]) }}">{{ $category['title'] }} </a>,
+                                                    href="{{ route('tin-tuc-danh-muc', [$faculty['slug'],$category['slug']]) }}">{{ $category['title'] }} </a>,
                                                     <span>{{ $item->event_time }}</span>
                                                 </p>
                                                 <p>{{ $item->description }}
@@ -211,7 +211,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
                             @endforeach
                         </div>
                         <div class="text-right mt-4">
-                            <a class="btn btn-secondary btn-theme2" href="{{route('tin-tuc', [$faculty['slug']])}}"> Xem tất cả</a>
+                            <a class="btn btn-secondary btn-theme2" href="{{route('tin-tuc-danh-muc', [$faculty['slug'],$category['slug']])}}"> Xem tất cả</a>
                         </div>
                     </div>
                     @endforeach
@@ -243,7 +243,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
                             @endforeach
                         </div>
                         <div class="text-right mt-4">
-                            <a class="btn btn-secondary btn-theme2" href="{{route('thong-bao', [$faculty['slug']])}}"> Xem tất cả</a>
+                            <a class="btn btn-secondary btn-theme2" href="{{route('tin-tuc', [$faculty['slug']])}}"> Xem tất cả</a>
                         </div>
                     </div>
                     @endforeach

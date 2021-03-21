@@ -12,16 +12,13 @@
                 </x-admin.form.alert>
 
                 <x-admin.form.select :required="true" :col="3" :fieldName="'category_id'" :label="'Chọn Danh Mục :'">
-                    <option value="" aria-readonly="true">Chọn Danh Mục </option>
                     @foreach ($category_list as $category)
-                    @if ($category->show_at_news==1 || $category->show_at_notification==1 || $category->show_at_home==1)
-                    @foreach ($faculty_list as $faculty)
-                    @if($faculty->id == $category->faculty_id)
-                    <option value="{{$category->id}}" {{ old('category_id') ?? $news['category_id'] == $category->id ? "selected" : '' }}>{{$category->title}} -- {{$faculty->name}}</option>
-                    @endif
-                    @endforeach
-                    @endif
-                    @endforeach
+                            @if ($category->faculty_id == $khoa->id)
+                                <option value="{{ $category->id }}"
+                                    {{ old('category_id') ?? $news['category_id']  == $category->id ? 'selected' : '' }}>{{ $category->title }}
+                                </option>
+                            @endif
+                        @endforeach
                 </x-admin.form.select>
 
                 <x-admin.form.input :data="$news" :col="3" :type="'text'" :label="'Tiêu Đề '" :required="true" :placeholder="'Tiêu Đề'" :fieldName="'title'" />
