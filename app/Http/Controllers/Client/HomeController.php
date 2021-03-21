@@ -168,13 +168,13 @@ class HomeController extends Controller
 
         return view('client.layout.' . $layout_name . '.page.home', [
             // bảng contact
-            'hotline' => $contact['email'],
-            'email' => $contact['email'],
-            'address' => $contact['address_info'],
-            'website_link' => $contact['website'],
-            'contact_title' => $contact['contact_title'],
-            'google_map_link' => $contact['map_embed'],
-            'phone' => $contact['phone'],
+            'hotline' => $contact['email'] ?? '',
+            'email' => $contact['email'] ?? '',
+            'address' => $contact['address_info'] ?? '',
+            'website_link' => $contact['website'] ?? '',
+            'contact_title' => $contact['contact_title'] ?? '',
+            'google_map_link' => $contact['map_embed'] ?? '',
+            'phone' => $contact['phone'] ?? '',
 
             // Bảng settings
             // Chung
