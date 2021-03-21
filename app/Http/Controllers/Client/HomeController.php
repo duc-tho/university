@@ -125,7 +125,7 @@ class HomeController extends Controller
         if (!$menu->isEmpty()) getCategories($menu);
         else $menu = null;
 
-        $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
 
 
 
@@ -167,28 +167,25 @@ class HomeController extends Controller
 
 
         return view('client.layout.' . $layout_name . '.page.home', [
-            'logo' => getSettingValue($settings, 'logo'),
-            'hotline' => getSettingValue($settings, 'hotline'),
-            'email' => getSettingValue($settings, 'email'),
-            'all_specialized' => $all_specialized,
-            'website' => getSettingValue($settings, 'website'),
-            // Trang Chủ
-            'menu_list' => $menu_list,
+            // bảng contact
+            'hotline' => $contact['email'],
+            'email' => $contact['email'],
+            'address' => $contact['address_info'],
+            'website' => $contact['website'],
+            'contact_title' => $contact['contact_title'],
+            'google_map_link' => $contact['map_embed'],
+            'phone' => $contact['phone'],
 
-            'phone' => getSettingValue($settings, 'phone'),
+            // Bảng settings
+            // Chung
+            'logo' => getSettingValue($settings, 'logo'),
+            // Riêng
             'slogan_top' => getSettingValue($settings, 'slogan_top'),
             'slogan_main' => getSettingValue($settings, 'slogan_main'),
             'slogan_bottom' => getSettingValue($settings, 'slogan_bottom'),
             'slogan_route' => getSettingValue($settings, 'slogan_route'),
             'intro_image' => getSettingValue($settings, 'intro_image'),
             'intro_video' => getSettingValue($settings, 'intro_video'),
-            'intro_route' => getSettingValue($settings, 'intro_route') == null ? route('gioi-thieu', [$faculty['slug']]) : getSettingValue($settings, 'intro_route'),
-            'google_map_link' => getSettingValue($settings, 'map_embed'),
-
-            // End Trang Chủ
-
-            // Khoa Kinh Tế
-            'address' => getSettingValue($settings, 'address'),
             'time' => getSettingValue($settings, 'time'),
             'spline' => getSettingValue($settings, 'spline'),
             'title_faculty_description' => getSettingValue($settings, 'title_faculty_description'),
@@ -213,36 +210,24 @@ class HomeController extends Controller
             'title_welcom_faculty' => getSettingValue($settings, 'title_welcom_faculty'),
             'title_admissions' => getSettingValue($settings, 'title_admissions'),
             'content_admissions' => getSettingValue($settings, 'content_admissions'),
-
-
-            // End Khoa Kinh Tế
-
-            // Khoa Du Lịch
             'slogan_main_travel' => getSettingValue($settings, 'slogan_main_travel'),
             'slogan_main_travel_2' => getSettingValue($settings, 'slogan_main_travel_2'),
             'slogan_intro_travel' => getSettingValue($settings, 'slogan_intro_travel'),
             'slogan_intro_travel_2' => getSettingValue($settings, 'slogan_intro_travel_2'),
             'license' => getSettingValue($settings, 'license'),
             'license_content' => getSettingValue($settings, 'license_content'),
-
-            // End Khoa Du Lịch
-
-            'website_link' => getSettingValue($settings, 'website_link'),
-            'contact_title' => getSettingValue($settings, 'contact_title'),
             'slogan_nn' => getSettingValue($settings, 'slogan_nn'),
             'sub_slogan_nn' => getSettingValue($settings, 'sub_slogan_nn'),
             'time_work' => getSettingValue($settings, 'time_work'),
             'copyright' => getSettingValue($settings, 'copyright'),
 
+            // Biến
             'news' => $category,
             'news_travel' => $category_travel,
             'category_news' => $category_news,
             'category_notification' => $category_notification,
-
-            'ggmap' => $contact['map_embed'],
+            'menu_list' => $menu_list,
             'intro_short' => $faculty['intro_summary'],
-            
-
             'intro_statistic' => $statistic,
             'menu' => $menu,
             'slide' => $slide,
@@ -256,8 +241,7 @@ class HomeController extends Controller
             'collab_logo' => $collab_logo,
             'footer_link' => $footer_link,
             'socials_icon' => $socials_icon,
-
-
+            'all_specialized' => $all_specialized,
         ]);
     }
 
