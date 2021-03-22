@@ -18,7 +18,7 @@
                                 {{ $email }}
                             </a></li>
                         <li><a href="mailto:corporate-mail@support.com" class="mail"><span class="fa fa-laptop"></span>
-                                {{ $website }}
+                                {{-- {{ $website }} --}}
                             </a></li>
                     </ul>
                     <div class="main-social-footer-29">

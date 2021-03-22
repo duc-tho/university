@@ -110,16 +110,16 @@ class NewsController extends Controller
 
 
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
-<<<<<<< HEAD
+
         $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
 
         if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
             $item['url'] = route('trang-chu', [$item['slug']]);
         }
-=======
+
         $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
->>>>>>> f017be513c9b978434e79aa8190557d6cd667631
+
 
 
         return view('client.layout.' . $layout_name . '.page.news', [
@@ -260,7 +260,7 @@ class NewsController extends Controller
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
 
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
-<<<<<<< HEAD
+
 
         $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
 
@@ -270,15 +270,13 @@ class NewsController extends Controller
             $item['url'] = route('trang-chu', [$item['slug']]);
         }
 
-        return view('client.layout.' . $layout_name . '.page.news-detail', [
-            'all_faculty' => $all_faculty,
-=======
+
         $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
         $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
 
         return view('client.layout.' . $layout_name . '.page.news-detail', [
             'menu_parents' => $menu_parent,
->>>>>>> f017be513c9b978434e79aa8190557d6cd667631
+
             'menu_list' => $menu_list,
             'phone' => $contact['phone'],
             'faculty' => $faculty,
@@ -393,20 +391,20 @@ class NewsController extends Controller
 
             if (!$news->isEmpty()) $item['news'] = $news;
         }
-<<<<<<< HEAD
+
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
 
         if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
             $item['url'] = route('trang-chu', [$item['slug']]);
         }
 
-        return view('client.layout.' . $layout_name . '.page.news-list', [
-            'all_faculty' => $all_faculty,
-=======
+      
+            
+
 
         return view('client.layout.' . $layout_name . '.page.news-list', [
             'menu_parents' => $menu_parent,
->>>>>>> f017be513c9b978434e79aa8190557d6cd667631
+            'all_faculty' => $all_faculty,
             'menu_list' => $menu_list,
             'phone' => $contact['phone'],
             'faculty' => $faculty,

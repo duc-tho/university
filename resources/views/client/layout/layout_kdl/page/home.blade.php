@@ -90,7 +90,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
                                 <div class="three-grids-columns">
                                     <span class="{{ $item->icons }}" id="faicon" ></span>
                                     <h4>{{ $item->name }}</h4>
-                                    <p class="text-compact">{{ $item->intro_summary }}
+                                    <p class="text-compact">{!! $item->intro_summary !!}
                                     </p>
                                     <a href="{{ route('dao-tao-chi-tiet', [$faculty['slug'], $item->slug]) }}"
                                         class="btn btn-secondary btn-theme3 mt-4">Đọc thêm </a>
@@ -292,8 +292,9 @@ $slide_str = str_replace('\\', '/', $slide_str);
                                     <img src="{{ asset($item['image']) }}" class="img-responsive" alt="" >
                                 </div>
                                 <h6 class="mt-3">{{ $item->name }}</h6>
-                                <p class="">{{ $item->intro }}</p>
-                                <p> {{ $item->evaluate }}</p>
+                                <p class="">{!! $item->intro !!}</p>
+                                <p> {!! $item->evaluate !!}</p>
+                                
                             @endforeach
 
                         </div>

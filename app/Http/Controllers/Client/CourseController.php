@@ -101,14 +101,14 @@ class CourseController extends Controller
             $item['url'] = route('trang-chu', [$item['slug']]);
         }
 
-        return view('client.layout.' . $layout_name . '.page.course', [
-            'all_faculty' => $all_faculty,
+      
+            
 
         $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
         $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
         return view('client.layout.' . $layout_name . '.page.course', [
             'menu_parents' => $menu_parent,
-
+            'all_faculty' => $all_faculty,
             'phone' => $contact['phone'],
             'email' => $contact['email'],
             'hotline' => $contact['hotline'],
