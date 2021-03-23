@@ -11,7 +11,7 @@
                 </div>
                 @if ($deleteLink ?? false)
                 <div>
-                    <a href="{{ $deleteLink ?? 'javascript:' }}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Xóa</a>
+                    <a href="{{ $deleteLink ?? 'javascript:' }}" onclick="return confirm('Bạn có chắc chắn muốn xóa !')" class="btn btn-danger btn-sm"><i class="fas fa-trash" ></i> Xóa</a>
                 </div>
                 @endif
             </div>

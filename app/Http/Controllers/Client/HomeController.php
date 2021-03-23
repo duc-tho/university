@@ -143,7 +143,7 @@ class HomeController extends Controller
         }
 
         // lấy danh sách tin tức kèm danh mục của khoa kinh tế
-        $category_news = Category::where(['status' => 1, 'show_at_news' => '1', 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
+        $category_news = Category::where(['status' => 1, 'show_at_home' => '1','show_at_news' => '1' ,'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
         if (!$category->isEmpty()) foreach ($category as $key => $item) {
             $news = $item->news()->orderBy('id', 'desc')->paginate(6);
 
@@ -151,7 +151,7 @@ class HomeController extends Controller
         }
 
         // lấy danh sách thông báo kèm danh mục của khoa kinh tế
-        $category_notification = Category::where(['status' => 1, 'show_at_notification' => '1', 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
+        $category_notification = Category::where(['status' => 1, 'show_at_notification' => '1', 'show_at_home' => '1','faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
         if (!$category->isEmpty()) foreach ($category as $key => $item) {
             $news = $item->news()->orderBy('id', 'desc')->paginate(6);
 

@@ -19,7 +19,8 @@
 
                 <x-admin.form.input :col="3" :type="'text'" :label="'Tên Sinh Viên'" :required="true" :placeholder="'Tên Sinh Viên'" :fieldName="'name'" />
 
-                <x-admin.form.input :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'":value="Auth::user()['first_name']" />
+                <x-admin.form.input :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" :value="Auth::user()['first_name']" />
+
 
                 {{-- <x-admin.form.input :col="3" :type="'text'" :label="'Người Cập Nhập'" :required="true" :placeholder="'Người Cập Nhập'" :fieldName="'updated_by'" /> --}}
 

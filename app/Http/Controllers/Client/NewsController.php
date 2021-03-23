@@ -274,9 +274,10 @@ class NewsController extends Controller
         $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
         $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
 
+
         return view('client.layout.' . $layout_name . '.page.news-detail', [
             'menu_parents' => $menu_parent,
-
+            'all_faculty' => $all_faculty,
             'menu_list' => $menu_list,
             'phone' => $contact['phone'],
             'faculty' => $faculty,
@@ -381,7 +382,9 @@ class NewsController extends Controller
 
         // lấy danh mục tin tức
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        
         $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+
         $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
 
         $category_list = Category::where(['status' => 1, 'show_at_news' => '1', 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
@@ -398,8 +401,8 @@ class NewsController extends Controller
             $item['url'] = route('trang-chu', [$item['slug']]);
         }
 
-      
-            
+
+
 
 
         return view('client.layout.' . $layout_name . '.page.news-list', [

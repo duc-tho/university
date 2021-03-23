@@ -1,6 +1,6 @@
 
 @extends('server.index')
-@section('title', 'Quản Trị Khoa')
+@section('title', 'Thông Tin Khoa')
 @section('page-title', 'Thêm Khoa')
 @section('page-content')
 <!--/.row-->

@@ -36,7 +36,16 @@
 
                                         <div class="info-box-content">
                                             <span class="info-box-text font-weight-bold text-dark">{{ $menu['name'] }}</span>
-                                            <span class="info-box-text text-muted">Thứ tự: {{ $menu['display_order'] }}</span>
+                                            @if($menu->parent_id == 0)
+                                                <span class="info-box-text text-muted">Không Thuộc Menu Nào</span>
+                                            @else
+                                            @foreach ($menus as $menu2)
+                                                @if ($menu->parent_id==$menu2->id)
+                                                <span class="info-box-text text-muted"> Thuộc Menu : {{$menu2->name}}</span>
+                                                @endif
+                                            @endforeach
+
+                                            @endif
                                         </div>
                                         <!-- /.info-box-content -->
                                     </div>

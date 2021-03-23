@@ -114,7 +114,7 @@
                             </a>
                         </li>
                         @endcan
-                        @can('video_list', VideoPolicy::class)
+                        {{-- @can('video_list', VideoPolicy::class)
                         <li class="nav-item">
                             <a href="{{route('admin.video.show', [$khoa['slug']])}}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
                                 <i class="nav-icon far fa-file-alt"></i>
@@ -123,7 +123,7 @@
                                 </p>
                             </a>
                         </li>
-                        @endcan
+                        @endcan --}}
                     </ul>
                 </li>
                 <li class="nav-item {{ request()->is('admin/demo*') ? 'menu-open' : '' }}">

@@ -1,6 +1,6 @@
 @extends('server.index')
-@section('title', 'Quản Trị Danh Mục')
-@section('page-title', 'Thêm Danh Mục')
+@section('title', 'Quản Trị Chuyên Mục')
+@section('page-title', 'Thêm Chuyên Mục')
 @section('page-content')
 <!--/.row-->
 <div class="row">
@@ -24,7 +24,7 @@
                     </option>
                     @isset($category_list )
                     @foreach ($category_list as $item)
-                    @if ( $item->parent_id != 0 && $item->faculty_id == $khoa->id )
+                    @if ( $item->parent_id == 0 && $item->faculty_id == $khoa->id )
                     <option value="{{ $item->id }}" {{ old('parent_id') == $item->id ? 'selected' : '' }}>
                         {{ $item->title }}
                     </option>

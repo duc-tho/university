@@ -58,7 +58,7 @@
 </div>
 
 <div class="splide" style="max-height: 570px; overflow: hidden;">
-    {{-- <a class="hvr-rectangle-out w3_play_icon1" href="{{ route('tuyensinh') }}" style="position: absolute; bottom: 10%; left: 10%; z-index:998;"> Tuyển sinh ngay</a> --}}
+    <a class="hvr-rectangle-out w3_play_icon1" href="{{ route('tuyensinh') }}" style="position: absolute; bottom: 10%; left: 46%; z-index:998;"> Tuyển sinh ngay</a>
     <div class="splide__track">
         <ul class="splide__list">
             @foreach ($slide as $item)

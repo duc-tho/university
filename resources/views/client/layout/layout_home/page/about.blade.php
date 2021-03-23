@@ -28,28 +28,31 @@
 <div class="container" style="padding-bottom: 4rem;">
     <div class="row">
         <div class="col-9 mx-auto">
-            {!! $intro_short !!}
+
+            @foreach ($about as $item)
+            {!! $item['intro'] !!}
+            {{-- <img class="card-img-top img-fluid" src="{{ asset($item['image']) }}" alt="{{ $item['title'] }}" style="height: 228px;"> --}}
+            @endforeach
         </div>
     </div>
     <div class="row justify-content-center" style="row-gap: 2rem;">
-        <div class="col-lg-6">
+        {{-- <div class="col-lg-6">
             <video controls class="img-responsive" autoplay muted style="height: 284px; width: 100%;">
                 <source src="{{ asset($intro_video) }}" type="video/mp4">
-                {{-- Your browser does not support the video tag. --}}
             </video>
-        </div>
-        @foreach ($about as $item)
-        <div class="col-md-6 col-lg-4">
+        </div> --}}
+
+        {{-- <div class="col-md-6 col-lg-4">
             <a href="{{ $item['link'] }}">
                 <div class="card">
-                    <img class="card-img-top img-fluid" src="{{ asset($item['image']) }}" alt="{{ $item['title'] }}" style="height: 228px;">
+
                     <div class="card-body py-0">
-                        <h4 class="card-title text-center pt-3">{{ $item['title'] }}</h4>
+                        <h4 class="card-title text-center pt-3">{!! $item['intro'] !!}</h4>
                     </div>
                 </div>
             </a>
-        </div>
-        @endforeach
+        </div> --}}
+
     </div>
 
     {{-- <div class="row my-5">

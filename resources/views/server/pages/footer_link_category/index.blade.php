@@ -11,7 +11,7 @@
                     <div class="card-header p-2 d-flex align-items-center justify-content-between">
                         <a href="{{route('admin.footer_link_category.create', [$khoa->slug])}}">
                             <button class="btn btn-info btn-sm">
-                                <i class="fas fa-plus"></i> Thêm số liệu
+                                <i class="fas fa-plus"></i> Thêm Danh Mục Footer
                             </button>
                         </a>
                         <div class="ml-auto d-inline-block">

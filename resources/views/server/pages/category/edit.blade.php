@@ -1,11 +1,11 @@
 @extends('server.index')
-@section('title', 'Quản Trị Danh Mục')
-@section('page-title', 'Sửa Danh Mục ' . $category['title'])
+@section('title', 'Quản Trị Chuyên Mục')
+@section('page-title', 'Sửa Chuyên Mục ' . $category['title'])
 @section('page-content')
 <!--/.row-->
 <div class="row">
     <div class="col-sm-12 px-3">
-        <x-admin.form.form method="POST" :cancelLink="route('admin.category.show', [$khoa['slug']])" :submitLink="route('admin.category.update', [$khoa['slug'],$category['id']])">
+        <x-admin.form.form method="POST" :cancelLink="route('admin.category.show', [$khoa['slug']])" :submitLink="route('admin.category.update', [$khoa['slug'],$category['id']])" :deleteLink="route('admin.category.delete', [$khoa['slug'], $category['id']])">
             <div class="row">
                 <x-admin.form.alert :col="12" class="bg-olive color-palette">
                     <b>Lưu ý: </b>Các trường có dấu <span class="text-danger"><b>*</b></span> là bắt buộc!
@@ -25,7 +25,7 @@
                     </option>
                     @isset($category_list )
                     @foreach ($category_list as $item)
-                    @if ( $item->parent_id != 0 && $item->faculty_id == $khoa->id )
+                    @if ( $item->parent_id == 0 && $item->faculty_id == $khoa->id )
                     <option value="{{ $item->id }}" {{ old('parent_id') ?? $category['parent_id'] == $item->id ? 'selected' : '' }}>
                         {{ $item->title }}
                     </option>
@@ -67,16 +67,7 @@
 </div>
 </div>
 
-{{-- <script>
-        let url = document.querySelector('input[base_url]').attributes['base_url'].value;
-        let faculty = document.getElementById('faculty_id');
-        let category = document.getElementById('parent_id');
-        faculty.addEventListener('change', () => {
-            category.innerHTML = '<option value="" aria-readonly="true">Chọn Danh Mục</option>';
-            if (!faculty.value) return;
-            getCategoryByFaculty(faculty.value, url).then(html => category.innerHTML = html);
-        });
-    </script> --}}
+
 
 <script>
     $('input#title').keyup(function(event) {

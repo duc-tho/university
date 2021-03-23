@@ -1,6 +1,6 @@
 @extends('server.index')
 @section('title', 'Quản Trị hình ảnh')
-@section('page-title', 'Các hình ảnh')
+@section('page-title', 'Quản Trị hình ảnh')
 @section('page-content')
 <div class="content">
     <div class="container-fluid">

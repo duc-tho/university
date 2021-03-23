@@ -1,6 +1,6 @@
 @extends('server.index')
-@section('title', 'Quản Trị Danh Mục')
-@section('page-title', 'Quản Trị Danh Mục')
+@section('title', 'Quản Trị Chuyên Mục')
+@section('page-title', 'Quản Trị Chuyên Mục')
 @section('page-content')
     <div class="content">
         <div class="container-fluid">
@@ -39,6 +39,44 @@
                         <div class="card-body pb-0">
                             <div class="row d-flex align-items-stretch">
                                 @foreach ($category_list as $category)
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <a href="{{ route('admin.category.edit', [$khoa['slug'], $category['id']]) }}">
+                                        <div class="info-box bg-success">
+                                            <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="info-box-number">{{ $category->title }}</span>
+                                                <span class="info-box-text">Tạo ngày :
+                                                    {{ ConvertDatabaseTimeToDMY($category['created_at']) }}</span>
+                                                <span class="info-box-text">
+                                                    Trạng Thái:
+                                                    @switch($category->status)
+                                                        @case(1)
+                                                        <span class="text-center">Hoạt Động</span>
+                                                        @break
+                                                        @case(0)
+                                                        <span class="text-center">Không Hoạt Động</span>
+                                                        @break
+                                                        @default
+                                                    @endswitch
+                                                </span>
+                                                <span class="progress-description">
+                                                    Người Tạo: {{ $category->created_by }}
+                                                </span>
+                                                @if($category->parent_id==0)
+                                                <span class="progress-description">Không thuộc mục nào</span>
+                                                @else
+                                                @foreach ($category_list as $category2)
+                                                @if ($category->parent_id == $category2->id)
+                                                <span class="progress-description">Thuộc mục : {{$category2->title}}</span>
+                                                @endif
+                                                @endforeach
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </a>
+                                    </div>
+                                @endforeach
+                                {{-- @foreach ($category_list as $category)
                                     <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
                                         <div class="card bg-light">
                                             <div class="card-header text-muted border-bottom-0">
@@ -89,7 +127,7 @@
 
                                         </div>
                                     </div>
-                                @endforeach
+                                @endforeach --}}
 
                             </div>
                             <!-- /.card -->

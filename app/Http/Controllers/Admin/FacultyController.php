@@ -18,7 +18,7 @@ class FacultyController extends Controller
         if ($request->has('item-per-page')) $item_per_page = $request->query('item-per-page');
 
         $query_condition = [
-      
+
             'id' => $khoa['id']
         ];
 
@@ -46,8 +46,6 @@ class FacultyController extends Controller
     public function store(AddFacultyRequest $request, $khoa)
     {
         $faculty = new Faculty($request->input());
-
-        abort_if($faculty['id'] != $khoa['id'], 403);
 
         $request['status'] == "on" ? $faculty['status'] = 1 : $faculty['status'] = 0;
 
@@ -99,7 +97,7 @@ class FacultyController extends Controller
 
         abort_if(!$faculty, 404);
 
-        abort_if($faculty['id'] != $khoa['id'], 403);
+
 
         if ($request->has('status')) $request->merge(['status' => $request['status'] == "on" ? 1 : 0]);
 

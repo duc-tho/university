@@ -51,7 +51,7 @@
                 </x-admin.form.multi-select>
 
                 @if (Auth::user()['isAdmin'] && Auth::user()['id'] != $user['id'])
-                <x-admin.form.checkbox :data="$user" :col="3" :label="'Quản trị viên'" :required="false" :fieldName="'isAdmin'" :labelContent="'Administrator'" />
+                    <x-admin.form.checkbox :data="$user" :col="3" :label="'Quản trị viên'" :required="false" :fieldName="'isAdmin'" :labelContent="'Administrator'" />
                 @endif
             </div>
         </x-admin.form.form>

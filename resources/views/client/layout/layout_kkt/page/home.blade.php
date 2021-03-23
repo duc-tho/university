@@ -102,7 +102,7 @@
                                             </a>
                                             <strong> <a
                                                     href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category['slug']]) }}">{{ $category->title }},<b>
-                                                        {{ $item->event_time }}</b></a></strong>
+                                                        {{ ConvertDatabaseTimeToDMY($item['created_at']) }}</b></a></strong>
                                             {{-- <span><i class="fa fa-map-marker"></i> Đại Học Du Lịch Văn Hóa Nghệ Thuật Sài Gòn</span> --}}
                                         </div>
                                     @endforeach
@@ -290,7 +290,7 @@
                     </div>
                 </div> <!-- singel testimonial -->
             </div>
-            @endforeach 
+            @endforeach
 
         </div> <!-- testimonial slied -->
     </div> <!-- container -->

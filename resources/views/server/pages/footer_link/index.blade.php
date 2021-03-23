@@ -11,7 +11,7 @@
                     <div class="card-header p-2 d-flex align-items-center justify-content-between">
                         <a href="{{route('admin.footer_link.create', [$khoa->slug])}}">
                             <button class="btn btn-info btn-sm">
-                                <i class="fas fa-plus"></i> Thêm số liệu
+                                <i class="fas fa-plus"></i> Thêm liên kết footer
                             </button>
                         </a>
                         <div class="ml-auto d-inline-block">
@@ -41,7 +41,7 @@
                                                 <span class="info-box-text font-weight-bold text-dark">Danh mục : {{ $item['title'] }}</span>
                                                 @endif
                                             @endforeach
-                                            
+
                                         </div>
                                         <!-- /.info-box-content -->
                                     </div>

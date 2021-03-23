@@ -38,23 +38,23 @@
                     <div class="support-button float-right d-none d-md-block">
                         <div class="support float-left">
                             <div class="icon">
-                                <img src="{{ asset('dist/layout/layout_kkt/images/all-icon/support.png') }}"
-                                    alt="icon">
+                                {{-- <img src="{{ asset('dist/layout/layout_kkt/images/all-icon/support.png') }}"
+                                    alt="icon"> --}}
                             </div>
                             <div class="cont">
-                                <p>{{ $title_support_line }}</p>
-                                <span>{{ $number_support_line }} </span>
+                                <p>{{ $title_support_line }} : <span>{{ $number_support_line }} </span></p>
+
                             </div>
                         </div>
                         <br>
                         <div class="support float-left">
                             <div class="icon">
-                                <img src="{{ asset('dist/layout/layout_kkt/images/all-icon/support.png') }}"
-                                    alt="icon">
+                                {{-- <img src="{{ asset('dist/layout/layout_kkt/images/all-icon/support.png') }}"
+                                    alt="icon"> --}}
                             </div>
                             <div class="cont">
-                                <p>{{ $title_hot_line }}</p>
-                                <span>{{ $number_hot_line }}</span>
+                                <p>{{ $title_hot_line }} : <span>{{ $number_hot_line }}</span></p>
+
                             </div>
                         </div>
                     </div>

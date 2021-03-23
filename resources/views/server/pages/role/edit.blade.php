@@ -1,6 +1,6 @@
 @extends('server.index')
 @section('title', 'Sửa vai trò')
-@section('page-title', 'Sửa vai trò')
+@section('page-title', 'Sửa vai trò -' .$role['display_name'])
 @section('page-content')
 <div class="row">
     <div class="col-md-12 px-3">

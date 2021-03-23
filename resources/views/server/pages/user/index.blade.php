@@ -54,7 +54,7 @@
                                             <div class="col-sm-6">
                                                 <div class="description-block">
                                                     <div class="description-block">
-                                                        <a href="{{ route('admin.user.delete', [$khoa['slug'], $user['id']]) }}" class="btn btn-danger w-100"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
+                                                        <a href="{{ route('admin.user.delete', [$khoa['slug'], $user['id']]) }}" class="btn btn-danger w-100" ><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                                     </div>
                                                 </div>
                                                 <!-- /.description-block -->

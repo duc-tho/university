@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                <h2><i class="fa fa-car bg-green"></i> Tin Tức <small class="hidden-xs-down hidden-sm-down"></small></h2>
+                <h2><i class="fa fa-car bg-green"></i> {{ $category['title'] }} <small class="hidden-xs-down hidden-sm-down"></small></h2>
             </div><!-- end col -->
             <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
                 <ol class="breadcrumb">
@@ -51,7 +51,7 @@
                                         </div><!-- end media -->
                                         <div class="blog-meta big-meta">
                                             <h4><a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}" title=""> {{ $item['title'] }}</a></h4>
-                                            <p>{{ $item['description'] }}</p>
+                                            <p>{!! $item['description'] !!}</p>
                                             <small><a href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category['slug']]) }}" title="">{{ $category['title'] }}</a></small>
                                             <small><a href="javascript:" title="">{{ ConvertDatabaseTimeToDMY($item['created_at']) }}</a> </small> <small><a href="javascript:" title="">Tác giả: {{ $item['created_by'] }}</a></small>
                                         </div><!-- end meta -->

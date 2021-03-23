@@ -1,6 +1,6 @@
 @extends('server.index')
 @section('title', 'Quản Trị Sinh Viên')
-@section('page-title', 'Sửa Sinh Viên '.$student['name'])
+@section('page-title', 'Sửa Sinh Viên - '.$student['name'])
 @section('page-content')
 <!--/.row-->
 <div class="row">
@@ -34,7 +34,7 @@
 
                 <x-admin.form.file :data="$student" :col="3" :label="'Ảnh đại diện'" :required="false" :fieldName="'image'" />
 
-        
+
             </div>
         </x-admin.form.form>
     </div>

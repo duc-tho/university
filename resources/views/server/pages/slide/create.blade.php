@@ -20,10 +20,10 @@
                 <x-admin.form.input :col="3" :type="'number'" :label="'Display Order'" :required="true" :placeholder="'Display Order'" :fieldName="'display_order'" :value="0" />
 
                 <x-admin.form.select :required="true" :col="3" :fieldName="'browser_target'" :label="'Browser_Target'">
-                    <option value="0" aria-readonly="true"> _blank </option>
-                    <option value="1" aria-readonly="true"> _self</option>
-                    <option value="2" aria-readonly="true"> _parent</option>
-                    <option value="3" aria-readonly="true"> _top</option>
+                    <option value="_blank" aria-readonly="true"> _blank </option>
+                    <option value="_self" aria-readonly="true"> _self</option>
+                    <option value="_parent" aria-readonly="true"> _parent</option>
+                    <option value="_top" aria-readonly="true"> _top</option>
                 </x-admin.form.select>
 
                 <x-admin.form.input :col="3" :type="'text'" :label="'Mô Tả'" :required="false" :placeholder="'Mô Tả'" :fieldName="'description'" />

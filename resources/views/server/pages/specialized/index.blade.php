@@ -1,6 +1,6 @@
 @extends('server.index')
-@section('title', 'Quản Trị Nghành Đào Tạo')
-@section('page-title', 'Quản Trị Nghành Đào Tạo')
+@section('title', 'Quản Trị Ngành Đào Tạo')
+@section('page-title', 'Quản Trị Ngành Đào Tạo')
 @section('page-content')
     <div class="content">
         <div class="container-fluid">
@@ -11,7 +11,7 @@
                         <div class="card-header p-2 d-flex align-items-center justify-content-between">
                             <a href="{{ route('admin.specialized.create', [$khoa->slug]) }}">
                                 <button class="btn btn-info btn-sm">
-                                    <i class="fas fa-plus"></i> Thêm Giới Thiệu
+                                    <i class="fas fa-plus"></i> Thêm Ngành Đào Tạo
                                 </button>
                             </a>
                             <div class="ml-auto d-inline-block">

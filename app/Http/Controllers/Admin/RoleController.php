@@ -116,7 +116,7 @@ class RoleController extends Controller
         $role->update($request->input());
 
         // chuyển hướng về trang role list
-        return redirect()->route('admin.role.edit', [$khoa['slug'], $id]);
+        return redirect()->route('admin.role.show', [$khoa['slug'], $id]);
     }
 
     public function delete(Request $request, $khoa, $id)

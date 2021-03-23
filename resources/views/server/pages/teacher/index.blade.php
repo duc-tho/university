@@ -80,8 +80,7 @@
                                                         <i class="fas fa-user-edit"></i> Sửa
                                                     </a>
                                                     <a href="{{ route('admin.teacher.delete', [$khoa['slug'], $teacher['id']]) }}"
-                                                        class="btn btn-sm btn-danger"
-                                                        onclick="return confirm('Bạn có chắc chắn muốn xóa !')">
+                                                        class="btn btn-sm btn-danger">
                                                         <i class="fas fa-exclamation-triangle"></i> Xóa
                                                     </a>
                                                 </div>
