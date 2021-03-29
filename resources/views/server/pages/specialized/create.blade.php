@@ -26,9 +26,9 @@
                         :placeholder="'Meta Keyword'" :fieldName="'meta_keywords'" />
 
 
-                    <x-admin.form.textarea-mce :col="6" :label="'Tóm Tắt Giới Thiệu'" :required="true"
+                    <x-admin.form.textarea-mce :col="12" :label="'Tóm Tắt Giới Thiệu'" :required="true"
                         :fieldName="'intro_summary'" />
-                    <x-admin.form.textarea-mce :col="6" :label="'Giới Thiệu'" :required="true" :fieldName="'intro'" />
+                    <x-admin.form.textarea-mce :col="12" :label="'Giới Thiệu'" :required="true" :fieldName="'intro'" />
 
                     <x-admin.form.input :col="3" :type="'text'" :label="'Meta Descriptions'" :required="true"
                         :placeholder="'Meta Descriptions'" :fieldName="'meta_descriptions'" />

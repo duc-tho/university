@@ -37,24 +37,18 @@
                 <div class="footer-list-29 footer-2">
                     <ul>
                         <h6 class="footer-title-29">Đường Dẫn</h6>
-                        <li><a href="{{route('tin-tuc', [$faculty['slug']])}}">Tin Tức</a></li>
+                        @foreach ($menu_parents as $item)
+                            <li><a href="{{$item->url}}">{{$item->name}}</a></li>
+                        @endforeach
+                        {{-- <li><a href="{{route('tin-tuc', [$faculty['slug']])}}">Tin Tức</a></li>
                         <li><a href="{{route('gioi-thieu', [$faculty['slug']])}}">Giới Thiệu</a></li>
                         <li><a href="{{route('tin-tuc', [$faculty['slug']])}}">Thông Báo</a></li>
-                        <li><a href="{{route('giao-vien', [$faculty['slug']])}}">Giáo Viên</a></li>
-                        {{-- <li><a href="####">Khác</a></li> --}}
+                        <li><a href="{{route('giao-vien', [$faculty['slug']])}}">Giáo Viên</a></li> --}}
                     </ul>
                 </div>
                 <div class="footer-list-29 footer-3">
 
                     <h6 class="footer-title-29">Nghành Đào Tạo </h6>
-                    {{-- <form action="#" class="subscribe" method="post">
-                        <input type="email" name="email" placeholder="Email" required="">
-                        <p></p>
-                        <button><span class="fa fa-envelope-o"></span></button>
-
-                    </form>
-                    <p>Chúng tôi luôn lắng nghe ý kiến của bạn</p>
-                    <p>Luông lắng nghe đóng góp để cùng phát triển</p> --}}
                     <ul>
                         @foreach ($all_specialized as $item)
                         <li><a href="{{route('dao-tao-chi-tiet', [$faculty['slug'],$item->slug])}}">{{$item->name}}</a></li>

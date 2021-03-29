@@ -655,10 +655,13 @@ Route::name('admin.')->prefix('admin/{khoa}')->middleware(['CheckLogedIn', 'Requ
 Route::group(['prefix' => 'tuyen-sinh'], function () {
     Route::get('/', [HomeController::class, 'getAdmissions'])->name('tuyensinh');
     Route::post('/', [HomeController::class, 'postAdmissionsRegister'])->name('formregister');
-    Route::get('/thong-bao', [HomeController::class, 'getNotification'])->name('thongbaotuyensinh');
-    Route::get('/chi-tiet-thong-bao', [HomeController::class, 'getNotificationDetail'])->name('chitietthongbaotuyensinh');
+    // Route::get('/thong-bao', [HomeController::class, 'getNotification'])->name('thongbaotuyensinh');
+    // Route::get('/chi-tiet-thong-bao', [HomeController::class, 'getNotificationDetail'])->name('chitietthongbaotuyensinh');
 });
+
+
 Route::get('complete', [HomeController::class, 'getComplete']);
+Route::get('complete_home', [HomeController::class, 'getCompleteHome']);
 
 // Giáo Viên
 Route::get('/{khoa}/giao-vien', [TeacherController::class, 'index'])->name('giao-vien');
@@ -667,6 +670,9 @@ Route::get('/giao-vien/thong-tin-giao-vien', [TeacherController::class, 'detail'
 // Home
 Route::get('/', [HomeController::class, 'redirect'])->name('trang-chu-chuyen-huong');
 Route::get('/{khoa}', [HomeController::class, 'index'])->name('trang-chu');
+
+
+Route::post('/{khoa}', [HomeController::class, 'postComplete']);
 
 // Tin Tức
 Route::get('/{khoa}/tin-tuc', [NewsController::class, 'index'])->name('tin-tuc');

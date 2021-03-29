@@ -20,7 +20,7 @@
                 <div class="col-lg-3 col-md-12 col-sm-12">
                     <div class="footer-link mt-40">
                         <div class="footer-title pb-25">
-                            <h6>Thông Tin</h6>
+                            <h6>{{$menu_item}}</h6>
                         </div>
                         <ul>
                             @foreach ($menu_list as $menu)
@@ -34,7 +34,7 @@
                 <div class="col-lg-3 col-md-12 col-sm-12">
                     <div class="footer-link mt-40">
                         <div class="footer-title pb-25">
-                            <h6>Liên Kết</h6>
+                            <h6>{{$link_faculty}}</h6>
                         </div>
                         <ul>
                             @foreach ($all_faculty as $item)
@@ -47,7 +47,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-address mt-40">
                         <div class="footer-title pb-25">
-                            <h6>Liên Lạc</h6>
+                            <h6>{{$about_contact}}</h6>
                         </div>
                         <ul>
                             <li>
@@ -88,23 +88,6 @@
         </div>
         <!-- container -->
     </div> <!-- footer top -->
-
-    <!--<div class="footer-copyright pt-10 pb-25">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="copyright text-md-left text-center pt-15">
-                        <p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a> </p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="copyright text-md-right text-center pt-15">
-
-                    </div>
-                </div>
-            </div> <!-- row -->
-    <!--</div> <!-- container -->
-    <!--</div> footer copyright -->
 </footer>
 
 <!--====== FOOTER PART ENDS ======-->

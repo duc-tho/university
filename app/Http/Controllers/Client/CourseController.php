@@ -94,17 +94,17 @@ class CourseController extends Controller
         // lấy thông tin liên hệ
         $contact = Contact::where(['faculty_id' => $faculty_id])->first();
 
-        $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
+        $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
 
         if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
             $item['url'] = route('trang-chu', [$item['slug']]);
         }
 
-      
-            
 
-        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+
+
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
         $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
         return view('client.layout.' . $layout_name . '.page.course', [
             'menu_parents' => $menu_parent,
@@ -116,6 +116,14 @@ class CourseController extends Controller
             'website_link' => $contact['website'],
             'contact_title' => $contact['contact_title'],
 
+            'intro_video_khoakinhte' => getSettingValue($settings, 'intro_video_khoakinhte'),
+            'image_background' => getSettingValue($settings, 'image_background'),
+            'image_background_home' => getSettingValue($settings, 'image_background_home'),
+            'image_background_student' => getSettingValue($settings, 'image_background_student'),
+            'menu_item' => getSettingValue($settings, 'menu_item'),
+            'link_faculty' => getSettingValue($settings, 'link_faculty'),
+            'about_contact' => getSettingValue($settings, 'about_contact'),
+            
             'logo' => getSettingValue($settings, 'logo'),
             'slogan_top' => getSettingValue($settings, 'slogan_top'),
             'slogan_main' => getSettingValue($settings, 'slogan_main'),

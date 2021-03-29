@@ -73,7 +73,7 @@ class EducateController extends Controller
         $contact = Contact::where(['faculty_id' => $faculty_id])->first();
 
 
-        $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
+        $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
 
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
 
@@ -81,7 +81,7 @@ class EducateController extends Controller
             $item['url'] = route('trang-chu', [$item['slug']]);
         }
 
-        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
         $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
 
 
@@ -105,6 +105,15 @@ class EducateController extends Controller
             'email' => $contact['email'],
             'menu_list' => $menu_list,
             'all_faculty' => $all_faculty,
+            
+            'intro_video_khoakinhte' => getSettingValue($settings, 'intro_video_khoakinhte'),
+            'image_background' => getSettingValue($settings, 'image_background'),
+            'image_background_home' => getSettingValue($settings, 'image_background_home'),
+            'image_background_student' => getSettingValue($settings, 'image_background_student'),
+            'menu_item' => getSettingValue($settings, 'menu_item'),
+            'link_faculty' => getSettingValue($settings, 'link_faculty'),
+            'about_contact' => getSettingValue($settings, 'about_contact'),
+
             //Start Khoa DU Lich
             'logo_travel' => getSettingValue($settings, 'logo_travel'),
             'footer_phone_travel' => getSettingValue($settings, 'footer_phone_travel'),

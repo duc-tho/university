@@ -77,13 +77,14 @@ style="background-image: url(/dist/layout/layout_kkt/images/page-banner-2.jpg)">
 <div id="teacher-modal" data-model-id="{{ $item->id }}" class="modal">
     <div class="modal-content p-0">
         <div class="modal-header" style="background: #067186;">
-            <h5 class="modal-title text-light">Lý lịch khoa học tóm tắt</h5>
+            <h5 class="modal-title text-light">Lý lịch khoa học tóm tắt - {{$item->position}} {{$item->name}}</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="text-light">&times;</span>
             </button>
         </div>
         <div class="modal-body">
             <div class="row">
-                <div class="col-lg-12">
+                {!!$item->intro!!}
+                {{-- <div class="col-lg-12">
                     <h3 class="h3" style="color: #067186;">THÔNG TIN</h3>
                 </div>
                 <div class="col-lg-3 my-3">
@@ -121,7 +122,7 @@ style="background-image: url(/dist/layout/layout_kkt/images/page-banner-2.jpg)">
                         <li>Hình họa 1,2,3; Luật Xa Gần; Coreldraw; Poster Chính trị XH &amp; Quảng cáo; Catalogue
                             &amp; Brochure; …</li>
                     </ul>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

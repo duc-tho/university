@@ -3,10 +3,10 @@
 @section('main')
     <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
         <div class="container" data-aos="fade-in">
-            <h1 class="h1-banner">TUYỂN SINH 2021</h1>
+            {{-- <h1 class="h1-banner">TUYỂN SINH 2021</h1>
 
             <h2 class="h2-banner">Hệ Cao Đẳng Và Trung Cấp dành cho học sinh tốt nghiệp THCS học song song văn hóa lớp 10,
-                11, 12 để lấy bằng tốt nghiệp THPT (Chương trình 9+3+1)</h2>
+                11, 12 để lấy bằng tốt nghiệp THPT (Chương trình 9+3+1)</h2> --}}
             {{-- <h2>SAIGON-ACT DẪN ĐẦU XU THẾ VỀ NGHÀNH DU LỊCH</h2> --}}
 
             {{-- <div class="d-flex align-items-center">
@@ -32,7 +32,7 @@
               </div> --}}
                     {{-- </div>
                 </div> --}}
-                    <div class="col-xl-12 col-lg-7 d-flex">
+                    <div class="col-xl-12 col-lg-7 d-flex margin-top">
                         <div class="icon-boxes d-flex flex-column justify-content-center">
                             <div class="row">
                                 <div class="col-xl-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
@@ -857,12 +857,21 @@
                             <div class="form-row">
                                 <div class="col-md-12 form-group">
                                     <select required name="majors" class="form-control">
-                                        <option value="Du Lịch">Du Lịch</option>
-                                        <option value="Ngoại Ngữ">Ngoại Ngữ</option>
-                                        <option value="Công Nghệ Thông Tin">Công Nghệ Thông Tin</option>
-                                        <option value="Kinh Tế">Kinh Tế</option>
-                                        <option value="Kỹ Thuật">Kỹ Thuật</option>
-                                        <option value="Nghệ Thuật Và Mỹ Thuật">Nghệ Thuật Và Mỹ Thuật</option>
+                                        <option value="Khoa Du Lịch">Khoa Du Lịch</option>
+                                        <option value="Khoa Ngoại Ngữ">Khoa Ngoại Ngữ</option>
+                                        <option value="Khoa Công Nghệ Thông Tin">Khoa Công Nghệ Thông Tin</option>
+                                        <option value="Khoa Kinh Tế">Khoa Kinh Tế</option>
+                                        <option value="Khoa Nghệ Thuật"> Khoa Nghệ Thuật</option>
+                                        <option value="Khoa Dược Thực Phẩm">Khoa Dược Thực Phẩm</option>
+                                        <option value="Khoa Công Nghệ Điện">Khoa Công Nghệ Điện</option>
+                                        <option value="Khoa Môn Mỹ Thuật Và May Thời Trang">Khoa Môn Mỹ Thuật Và May Thời Trang</option>
+                                        <option value="Khoa Y">Khoa Y</option>
+                                        <option value="Khoa Công Nghệ Cơ Khí">Khoa Công Nghệ Cơ Khí</option>
+                                        <option value="Khoa Âm Nhạc">Khoa Âm Nhạc</option>
+                                        <option value="Khoa Chăm Sóc Sắc Đẹp">Khoa Chăm Sóc Sắc Đẹp</option>
+                                        <option value="Khoa Công Nghệ Điện Tử">Khoa Công Nghệ Điện Tử</option>
+                                        <option value="Khoa Công Nghệ Ô Tô">Khoa Công Nghệ Ô Tô</option>
+                                        <option value="Khoa Ngoại Ngữ">Khoa Ngoại Ngữ</option>
                                     </select>
                                     <div class="validate"></div>
                                 </div>
@@ -911,6 +920,7 @@
             </div>
         </section><!-- End Contact Section -->
         <!-- //comment fb -->
+
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -920,6 +930,7 @@
                 </div>
             </div>
         </div>
+
     </main><!-- End #main -->
 
     <!--Start of Tawk.to Script-->
@@ -935,7 +946,6 @@
             s1.setAttribute('crossorigin', '*');
             s0.parentNode.insertBefore(s1, s0);
         })();
-
     </script>
     <!--End of Tawk.to Script-->
     <!-- Modal -->
@@ -943,7 +953,6 @@
         <div class="modal-dialog">
             <img src="{{ asset('dist/layout/layout_tuyensinh/img/z2273728659739_4388ed7cd00c760a40ea47af77f43c99.jpg') }}"
                 width="120%">
-
         </div>
     </div>
 @stop

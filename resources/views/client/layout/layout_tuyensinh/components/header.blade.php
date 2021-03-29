@@ -28,9 +28,8 @@
                 <li><a href="#about">Phương Thức Tuyển Sinh</a></li>
                 <li><a href="#services">Nghành Đào Tạo</a></li>
                 <li><a href="#pricing">Học Bổng</a></li>
-
             </ul>
-        </nav><!-- .nav-menu --> --}}
+        </nav> --}}
 
     </div>
 </header>

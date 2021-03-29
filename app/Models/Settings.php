@@ -24,7 +24,7 @@ class Settings extends Model
     /**
      * @var array
      */
-    protected $fillable = ['faculty_id', 'name', 'value', 'status'];
+    protected $fillable = ['faculty_id', 'name', 'value', 'status',];
 
 
     // created, updated

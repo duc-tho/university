@@ -1,5 +1,5 @@
 @extends('client.layout.layout_kkt.index')
-@section('title', 'kkt tin tức theo nhóm')
+@section('title', 'Danh Mục ' . $category['title'])
 @section('meta')
 <meta name="keywords" content="">
 <meta name="description" content="">
@@ -14,12 +14,12 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="page-banner-cont">
-                        <h2>{{$category['title']}} {{ $faculty->name }}</h2>
+                        <h2>Danh Mục {{$category['title']}} {{ $faculty->name }}</h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ route('trang-chu', ['khoa-kinh-te']) }}">Trang
                                         Chủ</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">{{$category['title']}}</li>
+                                <li class="breadcrumb-item active" aria-current="page">Danh Mục {{$category['title']}}</li>
                             </ol>
                         </nav>
                     </div> <!-- page banner cont -->
@@ -54,12 +54,12 @@
                                     <small><a href="#" title="">{{ $item['event_time'] }}</a></small>
                                 </div><!-- end meta -->
                             </div><!-- end blog-box -->
-                            
+
                         </div>
                         @endforeach
                         {{-- @endforeach --}}
 
-                        
+
 
                         <!-- end col -->
                 </div><!-- end portfolio -->

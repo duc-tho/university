@@ -29,9 +29,9 @@
                 <x-admin.form.input :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'"  :value="Auth::user()['first_name']"/>
 
 
-                <x-admin.form.textarea-mce  :col="6" :label="'Nội Dung Giới Thiệu'" :required="true" :fieldName="'intro'" />
+                <x-admin.form.textarea-mce  :col="12" :label="'Nội Dung Giới Thiệu'" :required="true" :fieldName="'intro'" />
 
-                <x-admin.form.textarea-mce  :col="6" :label="'Tóm Tắt Giới Thiệu'" :required="true" :fieldName="'intro'" />
+                <x-admin.form.textarea-mce  :col="12" :label="'Tóm Tắt Giới Thiệu'" :required="true" :fieldName="'intro'" />
 
                 {{-- <x-admin.form.input :col="3" :type="'text'" :label="'Người Đăng'" :required="true" :placeholder="'Người Đăng'" :fieldName="'updated_by'" /> --}}
 

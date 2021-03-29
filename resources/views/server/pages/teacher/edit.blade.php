@@ -23,8 +23,8 @@
 
 
 
-                <x-admin.form.textarea-mce :data="$teacher" :col="6" :label="'Giới Thiệu Về Giảng Viên'" :required="true" :fieldName="'intro'" />
-                <x-admin.form.textarea-mce :data="$teacher" :col="6" :label="'Đánh Giá Của Giảng Viên'" :required="true" :fieldName="'evaluate'" />
+                <x-admin.form.textarea-mce :data="$teacher" :col="12" :label="'Giới Thiệu Về Giảng Viên'" :required="true" :fieldName="'intro'" />
+                <x-admin.form.textarea-mce :data="$teacher" :col="12" :label="'Đánh Giá Của Giảng Viên'" :required="true" :fieldName="'evaluate'" />
 
                 <x-admin.form.input :data="$teacher" :col="3" :type="'text'" :label="'Người Cập Nhập'" :required="true" :placeholder="'Người Cập Nhập'" :fieldName="'updated_by'" :value="Auth::user()['first_name']" />
                 <x-admin.form.checkbox :data="$teacher" :col="3" :label="'Trạng thái'" :required="false" :fieldName="'status'" :labelContent="'Đang hoạt động'" />

@@ -25,8 +25,8 @@
                 <x-admin.form.input :data="$news" :col="3" :type="'text'" :label="'Slug tiêu đề'" :required="true" :placeholder="'Slug tiêu đề'" :fieldName="'slug'" />
                 <x-admin.form.input :data="$news" :col="3" :type="'date'" :label="'Thời Gian'" :required="true" :placeholder="'Thời Gian'" :fieldName="'event_time'" />
 
-                <x-admin.form.textarea-mce :data="$news" :col="6" :label="'Nội Dung '" :required="true" :fieldName="'content'" />
-                <x-admin.form.textarea-mce :data="$news" :col="6" :label="'Mô Tả'" :required="true" :fieldName="'description'" />
+                <x-admin.form.textarea-mce :data="$news" :col="12" :label="'Nội Dung '" :required="true" :fieldName="'content'" />
+                <x-admin.form.textarea-mce :data="$news" :col="12" :label="'Mô Tả'" :required="true" :fieldName="'description'" />
 
                 <x-admin.form.input :data="$news" :col="3" :type="'text'" :label="'Vị Trí'" :required="false" :placeholder="'Vị Trí'" :fieldName="'location'" />
                 <x-admin.form.input :data="$news" :col="3" :type="'text'" :label="'Tạo Bởi'" :required="false" :placeholder="'Tạo Bởi'" :fieldName="'created_by'" />

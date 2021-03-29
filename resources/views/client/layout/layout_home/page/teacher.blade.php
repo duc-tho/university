@@ -9,25 +9,7 @@
         </div>
     </div>
 </section>
-<!-- content-with-photo4 block -->
-{{-- <section class="w3l-content-with-photo-4">
-        <div id="content-with-photo4-block" class="pt-5">
-            <div class="container py-md-5">
-                <div class="cwp4-two row">
-                    <div class="cwp4-image col-lg-6 pl-lg-5 mt-lg-0 mt-5">
-                        <img src="{{ asset($specialized->image) }}"
-width="100%" height="auto" class="img-fluid" alt="" />
-<hr>
-<img src=" {{ asset($specialized->image2) }}" width="100%" height="auto" class="img-fluid" alt="" />
-</div>
-<div class="cwp4-text col-lg-6">
-    <h2 id="titleqtks">{{ $specialized->name }}</h2>
-    <p id="des"> {!! $specialized->intro !!}</p>
-</div>
-</div>
-</div>
-</div>
-</section> --}}
+
 <section class="teams-1">
     <section class="teams text-center py-5" id="team">
         <div class="container py-xl-5 py-lg-3">

@@ -87,7 +87,7 @@ class NewsController extends Controller
             if (!$news->isEmpty()) $item['news'] = $news;
         }
 
-        $category_news = Category::where(['status' => 1, 'show_at_news' => '1', 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
+        $category_news = Category::where(['status' => 1, 'show_at_news' => '1', 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->paginate(6);
 
         if (!$category_news->isEmpty()) foreach ($category_news as $key => $item) {
             $news = $item->news()->orderBy('id', 'desc')->paginate(6);
@@ -95,7 +95,7 @@ class NewsController extends Controller
             if (!$news->isEmpty()) $item['news'] = $news;
         }
 
-        $category_notification = Category::where(['status' => 1, 'show_at_notification' => '1', 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
+        $category_notification = Category::where(['status' => 1, 'show_at_notification' => '1', 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->paginate(6);
 
         if (!$category_news->isEmpty()) foreach ($category_news as $key => $item) {
             $news = $item->news()->orderBy('id', 'desc')->paginate(6);
@@ -111,18 +111,21 @@ class NewsController extends Controller
 
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
 
-        $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
+        $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
+
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
 
         if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
             $item['url'] = route('trang-chu', [$item['slug']]);
         }
 
-        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        // $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
 
+        $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
 
 
         return view('client.layout.' . $layout_name . '.page.news', [
+            'menu_parents' => $menu_parent,
             'all_faculty' => $all_faculty,
             'phone' => $contact['phone'],
             'faculty' => $faculty,
@@ -137,6 +140,16 @@ class NewsController extends Controller
             'intro_video' => getSettingValue($settings, 'intro_video'),
             'copyright' => getSettingValue($settings, 'copyright'),
             'website' => getSettingValue($settings, 'website'),
+
+
+            'intro_video_khoakinhte' => getSettingValue($settings, 'intro_video_khoakinhte'),
+            'image_background' => getSettingValue($settings, 'image_background'),
+            'image_background_home' => getSettingValue($settings, 'image_background_home'),
+            'image_background_student' => getSettingValue($settings, 'image_background_student'),
+            'menu_item' => getSettingValue($settings, 'menu_item'),
+            'link_faculty' => getSettingValue($settings, 'link_faculty'),
+            'about_contact' => getSettingValue($settings, 'about_contact'),
+
             'intro_short' => $faculty['intro_summary'],
             'menu' => $menu,
             'footer_link' => $footer_link,
@@ -271,7 +284,7 @@ class NewsController extends Controller
         }
 
 
-        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
         $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
 
 
@@ -293,6 +306,15 @@ class NewsController extends Controller
             'intro_short' => $faculty['intro_summary'],
             'license' => getSettingValue($settings, 'license'),
             'license_content' => getSettingValue($settings, 'license_content'),
+
+            'intro_video_khoakinhte' => getSettingValue($settings, 'intro_video_khoakinhte'),
+            'image_background' => getSettingValue($settings, 'image_background'),
+            'image_background_home' => getSettingValue($settings, 'image_background_home'),
+            'image_background_student' => getSettingValue($settings, 'image_background_student'),
+            'menu_item' => getSettingValue($settings, 'menu_item'),
+            'link_faculty' => getSettingValue($settings, 'link_faculty'),
+            'about_contact' => getSettingValue($settings, 'about_contact'),
+
             'menu' => $menu,
             'footer_link' => $footer_link,
             'socials_icon' => $socials_icon,
@@ -382,8 +404,8 @@ class NewsController extends Controller
 
         // lấy danh mục tin tức
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
-        
-        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
 
         $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
 
@@ -420,6 +442,15 @@ class NewsController extends Controller
             'logo' => getSettingValue($settings, 'logo'),
             'intro_video' => getSettingValue($settings, 'intro_video'),
             'copyright' => getSettingValue($settings, 'copyright'),
+
+            'intro_video_khoakinhte' => getSettingValue($settings, 'intro_video_khoakinhte'),
+            'image_background' => getSettingValue($settings, 'image_background'),
+            'image_background_home' => getSettingValue($settings, 'image_background_home'),
+            'image_background_student' => getSettingValue($settings, 'image_background_student'),
+            'menu_item' => getSettingValue($settings, 'menu_item'),
+            'link_faculty' => getSettingValue($settings, 'link_faculty'),
+            'about_contact' => getSettingValue($settings, 'about_contact'),
+
             'intro_short' => $faculty['intro_summary'],
             'menu' => $menu,
             'intro_image' => getSettingValue($settings, 'intro_image'),

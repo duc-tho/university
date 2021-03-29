@@ -14,11 +14,11 @@ class News_Controller extends Controller
 {
     public function show(Request $request, $khoa)
     {
-        $item_per_page = 12;
+        $item_per_page = 13;
         if ($request->has('item-per-page')) $item_per_page = $request->query('item-per-page');
 
         $query_condition = [
-            
+
         ];
 
         $category_list= Category::where(["status" => "1", "faculty_id" => $khoa['id']])->get();

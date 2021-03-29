@@ -19,60 +19,17 @@ $slide_str = str_replace('\\', '/', $slide_str);
                         <div class="slider-info banner-view bg bg2" style="background-image: url(../{{ $item->link }})">
                             <div class="banner-info">
                                 <div class="container">
-                                    <div class="banner-info-bg mx-auto text-center">
+                                    {{-- <div class="banner-info-bg mx-auto text-center">
                                         <h5>KHOA DU LỊCH ĐỒNG HÀNH CÙNG SINH VIÊN</h5>
-                                        <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" {{-- href="{{ route('gioithieu') }}">Tìm Hiểu</a> --}}
+                                        <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4"
                                             href="{{ route('gioi-thieu', [$faculty['slug']]) }}">Tìm Hiểu</a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
                     </li>
                 </div>
                 @endforeach
-                {{-- <div class="item">
-                    <li>
-                        <div class="slider-info  banner-view banner-top1 bg bg2" data-selector=".bg.bg2">
-                            <div class="banner-info">
-                                <div class="container">
-                                    <div class="banner-info-bg mx-auto text-center">
-                                        <h5>#</h5>
-                                        <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="#">Tìm Hiểu</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </div>
-                <div class="item">
-                    <li>
-                        <div class="slider-info banner-view banner-top2 bg bg2" data-selector=".bg.bg2">
-                            <div class="banner-info">
-                                <div class="container">
-                                    <div class="banner-info-bg mx-auto text-center">
-                                        <h5>#</h5>
-                                        <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4"
-                                            href="{{ route('gioi-thieu', [$faculty['slug']]) }}">Tìm Hiểu</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </div>
-                <div class="item">
-                    <li>
-                        <div class="slider-info banner-view banner-top3 bg bg2" data-selector=".bg.bg2">
-                            <div class="banner-info">
-                                <div class="container">
-                                    <div class="banner-info-bg mx-auto text-center">
-                                        <h5>#</h5>
-                                        <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="#">Tìm Hiểu</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </div> --}}
             </div>
         </div>
 
@@ -137,45 +94,14 @@ $slide_str = str_replace('\\', '/', $slide_str);
                         </div>
                     </div>
                     <div class="column2">
-                        {{-- <a class="btn btn-secondary btn-theme2 mt-3" href="{{ route('tuyensinh') }}"> Ứng Tuyển</a> --}}
                         <a class="btn btn-secondary btn-theme2 mt-3" href="{{ route('tuyensinh') }}"> Đăng Kí Tuyển
                             Sinh</a>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!--  form-12 -->
-    {{-- <section class="w3l-form-12">
-        <div class="form-12-content py-5" id="services">
-            <div class="container py-md-3">
-                <div class="grid grid-column-12 py-md-5">
-                    <div class="column1">
-                        <h4 class="tagline">Tìm kiếm </h4>
-                        <p>Những địa điểm du lịch lí tưởng của khoa trong năm 2021</p>
-                        <form action="/" method="Get">
-                            <div class="">
-                                <input type="text" name="name" class="form-input" placeholder="Tên Địa Điểm">
-                            </div>
-                            <div class="">
-                                <select id="sel1">
-                                    <option>Miền Bắc</option>
-                                    <option>Miền Trung</option>
-                                    <option>Miền Nam</option>
-                                    <option>Biển</option>
-                                    <option>Núi</option>
-                                </select>
-                            </div>
-                            <button type="button" class="btn btn-secondary btn-theme2">Tìm Kiếm</button>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section> --}}
     <section class="w3l-price-2" id="news">
         <div class="price-main py-5">
             <div class="container py-md-3">
@@ -200,7 +126,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
                                                     href="{{ route('tin-tuc-danh-muc', [$faculty['slug'],$category['slug']]) }}">{{ $category['title'] }} </a>,
                                                     <span>{{ $item->event_time }}</span>
                                                 </p>
-                                                <p>{{ $item->description }}
+                                                <p>{!! $item->description !!}
                                                 </p>
                                             </div>
                                         </div>
@@ -232,7 +158,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
                                                     href="{{ route('tin-tuc', [$faculty['slug']]) }}">{{ $category['title'] }}</a> ,
                                                 <span>{{ $item->event_time }}</span>
                                             </p>
-                                                <p>{{ $item->description }}
+                                                <p>{!!$item->description !!}
                                                 </p>
                                             </div>
                                         </div>
@@ -294,7 +220,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
                                 <h6 class="mt-3">{{ $item->name }}</h6>
                                 <p class="">{!! $item->intro !!}</p>
                                 <p> {!! $item->evaluate !!}</p>
-                                
+
                             @endforeach
 
                         </div>
@@ -312,7 +238,7 @@ $slide_str = str_replace('\\', '/', $slide_str);
             <br>
             <div id="owl-congtac" class="owl-carousel owl-theme" data-interval="50" data-delay="100" data-ride="carousel">
                 @foreach ($collab_logo as $item)
-                    <img src="{{ asset($item['image_url']) }}" width="50%" alt="{{ $item['title'] }}">
+                    <img src="{{ asset($item['image_url']) }}" style="max-width: 500px; width: 170px; max-height: 500px; height: auto" alt="{{ $item['title'] }}">
                 @endforeach
             </div>
         </div>

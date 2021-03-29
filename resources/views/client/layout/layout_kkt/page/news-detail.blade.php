@@ -38,7 +38,7 @@
                                 <li class="breadcrumb-item"><a href="{{ route('trang-chu', ['khoa-kinh-te']) }}">Trang
                                         Chủ</a></li>
                                 <li class="breadcrumb-item"><a
-                                        href="{{ route('tin-tuc', [$faculty['slug'], $category['slug']]) }}">{{ $category['title'] }}</a>
+                                        href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category['slug']]) }}">{{ $category['title'] }}</a>
                                 </li>
                             </ol>
                             <span class="color-aqua"><a
@@ -60,9 +60,9 @@
                                 </ul>
                             </div>
                         </div><!-- end title -->
-                        <div class="single-post-media">
+                        {{-- <div class="single-post-media">
                             <img src="{{ asset($news['image']) }}" alt="" class="img-fluid">
-                        </div><!-- end media -->
+                        </div> --}}
                         <div class="blog-content">
                             <div class="pp">
                                 <p>{!! $news['content'] !!}</p>
@@ -132,7 +132,7 @@
                                         <a href="single.html"
                                             class="list-group-item list-group-item-action flex-column align-items-start">
                                             <div class="w-100 justify-content-between">
-                                              
+
                                                 <h5 class="mb-1">
                                                     {{ $item['title'] }}</h5>
                                                 <small>{{ $item['created_at'] }}</small>

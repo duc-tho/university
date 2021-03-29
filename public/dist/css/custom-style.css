@@ -202,8 +202,8 @@ fieldset[disabled] .btn-danger.active {
 }
 .text-max {
     display: inline-block;
-    max-width: 130px;
-    width: 130px;
+    max-width: 200px;
+    width: 190px;
 }
 /* .optionChild {
     padding-left: 15px;

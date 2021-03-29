@@ -34,9 +34,13 @@
 <body>
 					<div id="wrap-inner">
 						<div id="khach-hang">
-							<h3>Thông tin sinh viên</h3>
+							<h3>Thông tin </h3>
 							<p>
-								<span class="info">Họ Và Tên: </span>
+								<span class="info">Họ : </span>
+								{{$info['surname']}}
+							</p>
+                            <p>
+								<span class="info">Tên : </span>
 								{{$info['name']}}
 							</p>
 							<p>
@@ -44,25 +48,18 @@
 								{{$info['email']}}
 							</p>
 							<p>
-								<span class="info">Điện thoại: </span>
-								{{$info['phone']}}
-							</p>
-							<p>
-								<span class="info">Địa chỉ: </span>
-								{{$info['address']}}
-							</p>
-                            <p>
-								<span class="info">Nghành Sinh Viên  đăng kí : </span>
-								{{$info['majors']}}
+								<span class="info">Nội Dung: </span>
+								{{$info['content']}}
 							</p>
 						</div>
+
 						<div id="xac-nhan">
 							<br>
 							<p align = "justify">
-								<b>Sinh viên đã đăng kí thành công!</b><br />
-								• Thông tin của sinh viên đã được tiếp nhận.<br />
-								• Nhân sự bên trường sẽ xem xét và phản hồi lại email sớm nhất.<br />
-								<b><br />Cám ơn bạn đã đăng kí tại SAIGON_ACT</b>
+								<b>Đã xác nhận nội dung :</b><br />
+								• Thông tin đã được tiếp nhận.<br />
+								• Nhân sự bên trường sẽ xem xét.<br />
+								<b><br />Cám ơn bạn đã liên hệ tại SAIGON_ACT</b>
 							</p>
 						</div>
 					</div>

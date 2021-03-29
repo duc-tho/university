@@ -75,7 +75,7 @@ class NotificationController extends Controller
         // $only_notification = $category_notification->news()->orderBy('id', 'desc',)->paginate(4);
 
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->get();
-        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
         $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->orderBy('display_order', 'asc')->get();
 
         return view('client.layout.' . $layout_name . '.page.notification', [
@@ -125,6 +125,14 @@ class NotificationController extends Controller
             'title_hot_line' => getSettingValue($settings, 'title_hot_line'),
             'number_hot_line' => getSettingValue($settings, 'number_hot_line'),
 
+            'intro_video_khoakinhte' => getSettingValue($settings, 'intro_video_khoakinhte'),
+            'image_background' => getSettingValue($settings, 'image_background'),
+            'image_background_home' => getSettingValue($settings, 'image_background_home'),
+            'image_background_student' => getSettingValue($settings, 'image_background_student'),
+            'menu_item' => getSettingValue($settings, 'menu_item'),
+            'link_faculty' => getSettingValue($settings, 'link_faculty'),
+            'about_contact' => getSettingValue($settings, 'about_contact'),
+            
             'all_specialized' => $all_specialized,
             'all_category' => $all_category,
             'footer_faculty' => $footer_faculty,
@@ -200,7 +208,7 @@ class NotificationController extends Controller
 
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
 
-        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
 
         $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->orderBy('display_order', 'asc')->get();
 
@@ -231,6 +239,14 @@ class NotificationController extends Controller
             'relate_news' => $relate_news,
             'relate_notification' => $relate_notification,
             'all_category' => $all_category,
+
+            'intro_video_khoakinhte' => getSettingValue($settings, 'intro_video_khoakinhte'),
+            'image_background' => getSettingValue($settings, 'image_background'),
+            'image_background_home' => getSettingValue($settings, 'image_background_home'),
+            'image_background_student' => getSettingValue($settings, 'image_background_student'),
+            'menu_item' => getSettingValue($settings, 'menu_item'),
+            'link_faculty' => getSettingValue($settings, 'link_faculty'),
+            'about_contact' => getSettingValue($settings, 'about_contact'),
 
             //Start Khoa
             'logo_travel' => getSettingValue($settings, 'logo_travel'),

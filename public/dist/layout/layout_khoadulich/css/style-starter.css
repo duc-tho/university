@@ -10519,7 +10519,7 @@ h4.sub-title {
 
 .w3l-main-slider .banner-view:before {
   content: "";
-  background: rgba(7, 10, 12, 0.45);
+  /* background: rgba(7, 10, 12, 0.45); */
   position: absolute;
   top: 0;
   min-height: 100%;
@@ -11121,7 +11121,7 @@ button.owl-next {
   /*--responsive--*/
   /*--//responsive--*/ }
   .w3l-feature-3 .grid.top-bottom {
-    margin-top: -100px;
+    margin-top: 0px;
     z-index: 10;
     position: relative; }
   .w3l-feature-3 span.number img {

@@ -382,7 +382,7 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
     height: 60vh;
-    background: url(https://daihocdulich.edu.vn:443/upload/slide/slide-sai-gon-c-68446.jpg)
+    background: url(https://daihocdulich.edu.vn:443/upload/slide/slide-sai-gon-c-45186.png)
         no-repeat 100%;
     background-size: cover;
     position: relative;
@@ -393,7 +393,7 @@ h6 {
 
 #hero:before {
     content: "";
-    background: rgba(0, 0, 0, 0.4);
+    /* background: rgba(0, 0, 0, 0.4); */
     position: absolute;
     bottom: 0;
     top: 0;
@@ -2413,7 +2413,7 @@ section {
     color: white;
 }
 #box {
-    background-color: rgb(105, 105, 245);
+    background-color: rgb(255 99 0);
 }
 #box2 {
     background-color: #49d13e;
@@ -2606,4 +2606,7 @@ section {
     .navbar .nav-item .dropdown-menu {
         margin-top: 0;
     }
+}
+.margin-top{
+    margin-top: 125px;
 }

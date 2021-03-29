@@ -60,7 +60,7 @@ class AboutController extends Controller
         $contact = Contact::where(['faculty_id' => $faculty['id']])->first();
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
 
-        $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->get();
+        $menu_list = Menu::where(['status' => 1,'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
 
         if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {
@@ -68,9 +68,9 @@ class AboutController extends Controller
         }
 
 
-            
 
-        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
         $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
         return view('client.layout.' . $layout_name . '.page.about', [
             'phone' => $contact['phone'],
@@ -86,6 +86,14 @@ class AboutController extends Controller
             'address' => $contact['address_info'],
             'intro_image' => getSettingValue($settings, 'intro_image'),
 
+            'intro_video_khoakinhte' => getSettingValue($settings, 'intro_video_khoakinhte'),
+            'image_background' => getSettingValue($settings, 'image_background'),
+            'image_background_home' => getSettingValue($settings, 'image_background_home'),
+            'image_background_student' => getSettingValue($settings, 'image_background_student'),
+            'menu_item' => getSettingValue($settings, 'menu_item'),
+            'link_faculty' => getSettingValue($settings, 'link_faculty'),
+            'about_contact' => getSettingValue($settings, 'about_contact'),
+            
             'intro_short' => $faculty['intro_summary'],
             'menu' => $menu,
             'footer_link' => $footer_link,

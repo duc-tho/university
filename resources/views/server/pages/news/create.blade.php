@@ -29,14 +29,14 @@
                     <x-admin.form.input :col="3" :type="'date'" :label="'Thời Gian'" :required="true"
                         :placeholder="'Thời Gian'" :fieldName="'event_time'" />
 
-                    <x-admin.form.textarea-mce :col="6" :label="'Nội Dung '" :required="true" :fieldName="'content'" />
-                    <x-admin.form.textarea-mce :col="6" :label="'Mô Tả'" :required="true" :fieldName="'description'" />
+                    <x-admin.form.textarea-mce :col="12" :label="'Nội Dung '" :required="true" :fieldName="'content'" />
+                    <x-admin.form.textarea-mce :col="12" :label="'Mô Tả'" :required="true" :fieldName="'description'" />
 
 
                     <x-admin.form.input :col="3" :type="'text'" :label="'Vị Trí'" :required="false" :placeholder="'Vị Trí'"
                         :fieldName="'location'" />
                     <x-admin.form.input :col="3" :type="'text'" :label="'Tạo Bởi'" :required="false"
-                        :placeholder="'Tạo Bởi'" :fieldName="'created_by'" />
+                        :placeholder="'Tạo Bởi'" :fieldName="'created_by'"  :value="Auth::user()['last_name']" :readonly="true" />
                     <x-admin.form.input :col="3" :type="'text'" :label="'Đăng Bởi'" :required="false"
                         :placeholder="'Đăng Bởi'" :fieldName="'updated_by'" />
                     <x-admin.form.input :col="3" :type="'text'" :label="'Meta_Descriptions'" :required="false"

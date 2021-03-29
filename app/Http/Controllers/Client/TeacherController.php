@@ -95,7 +95,7 @@ class TeacherController extends Controller
         // Lấy footer liệt kê các khoa
         $footer_faculty = Faculty::where(['status' => 1, ['id', '!=', '1']])->paginate(4);
 
-        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
 
         $all_category = Category::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
 
@@ -105,8 +105,9 @@ class TeacherController extends Controller
             $item['url'] = route('trang-chu', [$item['slug']]);
         }
 
-
+        $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
         return view('client.layout.' . $layout_name . '.page.teacher', [
+            'menu_parents' => $menu_parent,
             'all_faculty' => $all_faculty,
             'menu_list' => $menu_list,
             'all_category' => $all_category,
@@ -126,6 +127,16 @@ class TeacherController extends Controller
             'website_link' => $contact['website'],
             'contact_title' => $contact['contact_title'],
             'logo' => getSettingValue($settings, 'logo'),
+
+            'intro_video_khoakinhte' => getSettingValue($settings, 'intro_video_khoakinhte'),
+            'image_background' => getSettingValue($settings, 'image_background'),
+            'image_background_home' => getSettingValue($settings, 'image_background_home'),
+            'image_background_student' => getSettingValue($settings, 'image_background_student'),
+            'menu_item' => getSettingValue($settings, 'menu_item'),
+            'link_faculty' => getSettingValue($settings, 'link_faculty'),
+            'about_contact' => getSettingValue($settings, 'about_contact'),
+
+
             'slogan_top' => getSettingValue($settings, 'slogan_top'),
             'slogan_main' => getSettingValue($settings, 'slogan_main'),
             'slogan_bottom' => getSettingValue($settings, 'slogan_bottom'),

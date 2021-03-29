@@ -17,7 +17,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12 ">
-                            <div class="slider-cont">
+                            {{-- <div class="slider-cont">
                                 <h1 data-animation="bounceInLeft" data-delay="1s">QUẢN TRỊ KINH DOANH</h1>
                                 <ul>
                                     <li><a data-animation="fadeInUp" data-delay="1.6s" class="main-btn" href="">Đọc Thêm</a>
@@ -25,7 +25,7 @@
                                     <li><a data-animation="fadeInUp" data-delay="1.9s" class="main-btn main-btn-2"
                                             href="javascript:">Tư vấn</a></li>
                                 </ul>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="category-text pt-40">
-                            <h2>Ngành Đào Tạo Của Khoa Kinh Tế</h2>
+                            <h2>{{$title_spcialized}}</h2>
                         </div>
                     </div>
                     <div class="col-lg-6 offset-lg-1 col-md-8 offset-md-2 col-sm-8 offset-sm-2 col-8 offset-2">
@@ -90,7 +90,7 @@
                     <div class="about-event mt-50">
                         @foreach ($category_news as $key => $category)
                             <div class="event-title">
-                                <h3>{{$category->title}}</h3>
+                                <h3>{{ $category->title }}</h3>
                             </div>
                             <ul>
                                 <li>
@@ -100,22 +100,23 @@
                                                 href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">
                                                 <h4>{{ $item->title }} </h4>
                                             </a>
-                                            <strong> <a
-                                                    href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category['slug']]) }}">{{ $category->title }},<b>
-                                                        {{ ConvertDatabaseTimeToDMY($item['created_at']) }}</b></a></strong>
-                                            {{-- <span><i class="fa fa-map-marker"></i> Đại Học Du Lịch Văn Hóa Nghệ Thuật Sài Gòn</span> --}}
+                                            <strong>
+                                            <a href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category['slug']]) }}">{{ $category->title }},<b>
+                                            {{ ConvertDatabaseTimeToDMY($item['created_at']) }}</b></a></strong>
                                         </div>
                                     @endforeach
                                 </li>
                             </ul>
                         @endforeach
-                        <a href="{{ route('tin-tuc', [$faculty['slug']]) }}" class="main-btn">Xem Thêm</a>
+                        <a href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category['slug']]) }}"
+                            class="main-btn">Xem Thêm</a>
                     </div> <!-- about event -->
                 </div>
             </div> <!-- row -->
         </div> <!-- container -->
         <div class="about-bg">
-            <img src="/dist/layout/layout_kkt/images/about/bg-1.png" alt="About">
+            <img src="{{$image_background_home}}" alt="About">
+            {{-- /dist/layout/layout_kkt/images/about/bg-1.png --}}
         </div>
     </section>
 
@@ -152,14 +153,19 @@
     <!--====== VIDEO FEATURE PART START ======-->
 
     <section id="video-feature" class="bg_cover pt-60 pb-110"
-        style="background-image: url(/dist/layout/layout_kkt/images/bg-1.jpg)">
+        style="background-image: url(../{{$image_background}})">
+        {{-- {{$image_background}} --}}
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 order-last order-lg-first">
                     <div class="video text-lg-left text-center pt-50">
-                        <a class="Video-popup"
-                            href="videos/Giới thiệu về Trường Đại Học Du Lịch Sài Gòn ( SAIGONTU ).mp4"><i
-                                class="fa fa-play"></i></a>
+                        {{-- <a class="Video-popup"
+                            href="{{asset($intro_video_khoakinhte)}}" type="video/mp4"><i
+                                class="fa fa-play" ></i></a> --}}
+                                <video controls class="img-responsive" style="max-width: 100%;" >
+                                    <source src="{{ asset($intro_video_khoakinhte) }}" type="video/mp4">
+                                    Trình duyệt cùa bạn không hỗ trợ xem loại video này!
+                                </video>
                     </div> <!-- row -->
                 </div>
                 <div class="col-lg-5 offset-lg-1 order-first order-lg-last">
@@ -216,43 +222,41 @@
     <section id="news-part" class="pt-115 pb-110">
         <div class="container">
             @foreach ($category_notification as $key => $category)
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-title pb-50">
-                        <h5>{{$category->title}}</h5>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="section-title pb-50">
+                            <h5>{{ $category->title }}</h5>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                @foreach ($category['news'] as $key => $item)
-                    <div class="col-lg-12">
-                        <div class="singel-news news-list">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="news-cont mt-30">
-                                        <a
-                                            href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">
-                                            <h3>{{ $item->title }}</h3>
-                                        </a>
-                                        <ul>
-                                            <li><a
-                                                    href="{{ route('tin-tuc', [$faculty['slug']]) }}">{{ $category->title }},<b>
+                <div class="row">
+                    @foreach ($category['news'] as $key => $item)
+                        <div class="col-lg-4">
+                            <div class="singel-news news-list">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="news-cont mt-30">
+                                            <a
+                                                href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">
+                                                <h3>{{ $item->title }}</h3>
+                                            </a>
+                                            <p> <a href="{{ route('tin-tuc', [$faculty['slug']]) }}">{{ $category->title }},<b>
                                                         {{ ConvertDatabaseTimeToDMY($item['created_at']) }}</b></a>
-                                            </li>
-                                            {{-- <li><a href="javascription:">{{ $item->event_time }} </a></li> --}}
-                                        </ul>
-                                        <p>{!! $item->description !!}</p>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
-            </div>
+                    @endforeach
+                </div>
             @endforeach
+
+
             <br>
             <br>
-            <a href="{{ route('tin-tuc', [$faculty['slug']]) }}" class="main-btn">Xem Thêm</a>
+            <a href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category['slug']]) }}" class="main-btn">Xem
+                Thêm</a>
         </div>
     </section>
 
@@ -264,37 +268,39 @@
 
     <!--====== TEASTIMONIAL PART START ======-->
 
-    <section id="testimonial" class="bg_cover pt-115 pb-115" data-overlay="8" style="background-image: url(/dist/layout/layout_kkt/images/bg-2.jpg)">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="section-title pb-40">
-                    <h2>{{ $title_evaluate_student }}</h2>
-                </div> <!-- section title -->
-            </div>
-        </div> <!-- row -->
-        <div class="row testimonial-slied mt-40">
-            @foreach ($student as $item)
-            <div class="col-lg-6">
-                <div class="singel-testimonial">
-                    <div class="testimonial-thum">
-                        <img src="{{ $item->image }}" alt="Testimonial" class="img-max">
-                        <div class="quote">
-                            <i class="fa fa-quote-right"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-cont">
-                        <p>{!! $item->evaluate !!}</p>
-                        <h6>{{ $item->name }}</h6>
-                        <span>{!! $item->intro !!}</span>
-                    </div>
-                </div> <!-- singel testimonial -->
-            </div>
-            @endforeach
+    <section id="testimonial" class="bg_cover pt-115 pb-115" data-overlay="8"
+        style="background-image: url(../{{$image_background_student}})">
 
-        </div> <!-- testimonial slied -->
-    </div> <!-- container -->
-</section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-title pb-40">
+                        <h2>{{ $title_evaluate_student }}</h2>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row testimonial-slied mt-40">
+                @foreach ($student as $item)
+                    <div class="col-lg-6">
+                        <div class="singel-testimonial">
+                            <div class="testimonial-thum">
+                                {{-- <img src="{{ $item->image }}" alt="Testimonial" class="img-max"> --}}
+                                <div class="quote">
+                                    <i class="fa fa-quote-right"></i>
+                                </div>
+                            </div>
+                            <div class="testimonial-cont">
+                                <p>{!! $item->evaluate !!}</p>
+                                <h6>{{ $item->name }}</h6>
+                                <span>{!! $item->intro !!}</span>
+                            </div>
+                        </div> <!-- singel testimonial -->
+                    </div>
+                @endforeach
+
+            </div> <!-- testimonial slied -->
+        </div> <!-- container -->
+    </section>
 
     <!--====== TEASTIMONIAL PART ENDS ======-->
 
@@ -310,7 +316,8 @@
                     </div> <!-- section title -->
                     <div class="teachers-cont">
                         <p>{{ $content_teacher_faculty }}</p>
-                        <a href="{{route('giao-vien', [$faculty['slug']])}}" class="main-btn mt-55">Danh sách đội ngũ giảng viên </a>
+                        <a href="{{ route('giao-vien', [$faculty['slug']]) }}" class="main-btn mt-55">Danh sách đội ngũ
+                            giảng viên </a>
                     </div> <!-- teachers cont -->
                 </div>
                 <div class="col-lg-6 offset-lg-1">

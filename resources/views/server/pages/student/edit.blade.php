@@ -24,9 +24,9 @@
 
                 <x-admin.form.input :data="$student" :col="3" :type="'text'" :label="'Người Cập Nhập'" :required="true" :placeholder="'Người Cập Nhập'" :fieldName="'updated_by'" :value="Auth::user()['first_name']"/>
 
-                <x-admin.form.textarea-mce  :data="$student" :col="6" :label="'Giới Thiệu Sinh Viên'" :required="true" :fieldName="'intro'" />
+                <x-admin.form.textarea-mce  :data="$student" :col="12" :label="'Giới Thiệu Sinh Viên'" :required="true" :fieldName="'intro'" />
 
-                <x-admin.form.textarea-mce  :data="$student" :col="6" :label="'Đánh Giá Sinh Viên'" :required="true" :fieldName="'evaluate'" />
+                <x-admin.form.textarea-mce  :data="$student" :col="12" :label="'Đánh Giá Sinh Viên'" :required="true" :fieldName="'evaluate'" />
 
 
 

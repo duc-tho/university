@@ -1082,7 +1082,7 @@ div#contact h3 {
     background: rgba(70, 69, 69, 0.43);
     outline: none;
     padding: 0.5em;
-    width: 48.5%;
+    width: 100%;
     margin-bottom: 1em;
     color: #fff;
 }
@@ -2156,4 +2156,10 @@ video {
 
 a.w3_play_icon1 {
     background-color: #f7a91f;
+}
+.image-size {
+    width: 1700px;
+    height: auto;
+    max-width: 1800px;
+    max-height: 1500px;
 }

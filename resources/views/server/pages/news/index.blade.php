@@ -16,7 +16,7 @@
                             </a>
                             <div class="ml-auto d-inline-block">
                                 <div class="input-group input-group-sm">
-                                    <form action="{{ route('admin.news.show', [$khoa['slug']]) }}" method="get">
+                                    {{-- <form action="{{ route('admin.news.show', [$khoa['slug']]) }}" method="get">
                                         <select class="form-control custon-select" style="width:auto !important"
                                             data-toggle="tooltip" name="item-per-page"
                                             onchange="this.parentElement.submit();">
@@ -30,7 +30,7 @@
                                                 {{ $news_list->perPage() == 12 ? 'selected disabled' : '' }}>Hiện 12 mục
                                             </option>
                                         </select>
-                                    </form>
+                                    </form> --}}
                                 </div>
                             </div>
                         </div>
@@ -40,7 +40,7 @@
                             <div class="row d-flex align-items-stretch">
                                 @foreach ($category_list as $category)
                                     @foreach ($news_list as $news)
-                                        @if ($category->id == $news->category_id)
+                                     @if ($category->id == $news->category_id)
                                             <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
                                                 <div class="card bg-light">
                                                     <div class="card-header text-muted border-bottom-0">

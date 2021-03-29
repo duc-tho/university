@@ -3,77 +3,82 @@
 @section('title', 'Trang chủ')
 
 @section('meta')
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
 @endsection
 
 @section('main')
-<div id="scrollzipPoint"></div>
-<!--/banner-bottom-->
-<div class="w3_agilits_banner_bootm">
-    <div class="w3_agilits_inner_bottom">
-        <div class="wthree_agile_login">
-            <ul>
-                <li><i class="fa fa-phone" aria-hidden="true"></i> {{ $phone }}</li>
-                <li><i class="fa fa-envelope-o list-icon" aria-hidden="true"></i><a href="mailto:{{ $email }}">{{ $email }}</a></li>
-            </ul>
-        </div>
-
-    </div>
-</div>
-<!--//banner-bottom-->
-<!--/banner-section-->
-
-<!--/header-w3l-->
-<div class="header-w3-agileits" id="home">
-    <div class="inner-header-agile">
-        <nav class="navbar navbar-default">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- <h1><a href="index.html"><span>Đ</span>ại <span>H</span>ọc</span> <span>D</span>u <span>L</span>ịch</a></h1> -->
-                <a href="/"><img class="logo-background visible hidden-md" src="{{ asset($logo) }}" alt="img" height="50px"></a>
-            </div>
-            <!-- navbar-header -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                <ul class="nav navbar-nav">
-                    @foreach ($menu_list as $menu)
-                    @if($menu->parent_id == 0)
-                    {{-- <li data-scroll="top" class="active"><a href="javascript:">Trang chủ</a></li> --}}
-                    <li><a href="{{ $menu->url }}" class="scroll">{{ $menu->name }}</a></li>
-                    @endif
-                    @endforeach
+    <div id="scrollzipPoint"></div>
+    <!--/banner-bottom-->
+    <div class="w3_agilits_banner_bootm">
+        <div class="w3_agilits_inner_bottom">
+            <div class="wthree_agile_login">
+                <ul>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i> {{ $phone }}</li>
+                    <li><i class="fa fa-envelope-o list-icon" aria-hidden="true"></i><a
+                            href="mailto:{{ $email }}">{{ $email }}</a></li>
                 </ul>
-
             </div>
-            <div class="clearfix"> </div>
-        </nav>
-    </div>
-</div>
 
-<div class="splide" style="max-height: 570px; overflow: hidden;">
-    <a class="hvr-rectangle-out w3_play_icon1" href="{{ route('tuyensinh') }}" style="position: absolute; bottom: 10%; left: 46%; z-index:998;"> Tuyển sinh ngay</a>
-    <div class="splide__track">
-        <ul class="splide__list">
-            @foreach ($slide as $item)
-            <li class="splide__slide">
-                <img src="{{ $item->link }}" alt="" width="100%" height="auto">
-            </li>
-            @endforeach
+        </div>
     </div>
-</div>
+    <!--//banner-bottom-->
+    <!--/banner-section-->
 
-<!--/banner-section-->
-<!--about -->
-<div id="about" class="wthree-about w3ls-section">
-    <div class="container">
-        {{-- <div class="agileits-banner-grids text-center">
+    <!--/header-w3l-->
+    <div class="header-w3-agileits" id="home">
+        <div class="inner-header-agile">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- <h1><a href="index.html"><span>Đ</span>ại <span>H</span>ọc</span> <span>D</span>u <span>L</span>ịch</a></h1> -->
+                    <a href="/"><img class="logo-background visible hidden-md" src="{{ asset($logo) }}" alt="img"
+                            height="50px"></a>
+                </div>
+                <!-- navbar-header -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                    <ul class="nav navbar-nav">
+                        @foreach ($menu_list as $menu)
+                            @if ($menu->parent_id == 0)
+                                {{-- <li data-scroll="top" class="active"><a href="javascript:">Trang chủ</a></li> --}}
+                                <li><a href="{{ $menu->url }}" class="scroll">{{ $menu->name }}</a></li>
+                            @endif
+                        @endforeach
+                    </ul>
+
+                </div>
+                <div class="clearfix"> </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="splide" style="max-height: 570px; overflow: hidden;">
+        {{-- <a class="hvr-rectangle-out w3_play_icon1" href="{{ route('tuyensinh') }}" style="position: absolute; bottom: 10%; left: 46%; z-index:998;"> Tuyển sinh ngay</a> --}}
+        <div class="splide__track">
+            <ul class="splide__list">
+                @foreach ($slide as $item)
+                    <li class="splide__slide">
+                        <a href="{{ route('tuyensinh') }}">
+                            <img src="{{ $item->link }}" alt="image" class="image-size">
+                        </a>
+                    </li>
+                @endforeach
+        </div>
+    </div>
+
+    <!--/banner-section-->
+    <!--about -->
+    <div id="about" class="wthree-about w3ls-section">
+        <div class="container">
+            {{-- <div class="agileits-banner-grids text-center">
                 <div class="banner-bottom-girds">
                     <div class="agileits-banner-grid bg-w3ls-active">
                         <span class="fa fa-university banner-icon" aria-hidden="true"></span>
@@ -94,24 +99,24 @@
 </div> --}}
 
 
-<h2 class="w3ls-title">Giới thiệu</h2>
-{{-- <h5>Roin vel enim nec ipsum finibus.Duis euismod massa utab.</h5> --}}
-<br>
-<div class="col-md-7  w3ls-about-left">
-    {!! $intro_short !!}
+            <h2 class="w3ls-title">Giới thiệu</h2>
+            {{-- <h5>Roin vel enim nec ipsum finibus.Duis euismod massa utab.</h5> --}}
+            <br>
+            <div class="col-md-7  w3ls-about-left">
+                {!! $intro_short !!}
 
-</div>
-<div class="col-md-5 w3ls-row">
-    <div class="col-md-12 col-sm-12 w3ls-row alert">
-        <video controls class="img-responsive" style="max-width: 100%;" autoplay muted>
-            <source src="{{ asset($intro_video) }}" type="video/mp4">
-            Trình duyệt cùa bạn không hỗ trợ xem loại video này!
-        </video>
-    </div>
-    <div class="clearfix"> </div>
-</div>
-<div class="clearfix"> </div>
-{{-- <div class="stats-info agileits-w3layouts">
+            </div>
+            <div class="col-md-5 w3ls-row">
+                <div class="col-md-12 col-sm-12 w3ls-row alert">
+                    <video controls class="img-responsive" style="max-width: 100%;" autoplay muted>
+                        <source src="{{ asset($intro_video) }}" type="video/mp4">
+                        Trình duyệt cùa bạn không hỗ trợ xem loại video này!
+                    </video>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+            {{-- <div class="stats-info agileits-w3layouts">
     @foreach ($intro_statistic as $item)
     <div class="col-sm-3 col-xs-6 stats-grid">
         <div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='{{ $item['value'] }}' data-delay='.5' data-increment="{{ ceil($item['value'] / 120) }}">{{ $item['value'] }}</div>
@@ -122,160 +127,173 @@
 @endforeach
 <div class="clearfix"></div>
 </div> --}}
-</div>
-<div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{ route('gioi-thieu', [$faculty['slug']]) }}">
-        Tìm hiểu thêm</a></div>
-</div>
-<!-- //about -->
-<!--services-->
-<div class="agileits-services w3ls-section" id="agileits-services">
-    <div class="container">
-        <h3 class="w3ls-title">Các khoa </h3>
-        <div class="agileits-services-row">
-            <div id="owl-faculty" class="owl-carousel">
-                @foreach ($all_faculty as $item)
-                <div class="agileits-services-grids">
-                    <a href="{{ route('trang-chu', [$item['slug']]) }}" target="_blank">
-                        {{-- <span class="glyphicon glyphicon-stats effect-1" aria-hidden="true"></span> --}}
-                        <img class="boder-radius-img" src="{{ asset($item['image']) }}" width="40%" alt="" style="height: unset;">
-                        <h4>{{ $item['name'] }}</h4>
-                    </a>
-                    {{-- <p class="khoa-p">{!! $item['intro_summary'] !!}</p> --}}
-                </div>
-                @endforeach
-            </div>
-            <div class="clearfix"> </div>
         </div>
-        {{-- <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="#"> Xem thêm về các khoa</a></div> --}}
+        <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1"
+                href="{{ route('gioi-thieu', [$faculty['slug']]) }}">
+                Tìm hiểu thêm</a></div>
     </div>
-</div>
-<!--//agileits-services-->
-<!--portfolio-->
-<div id="portfolio" class="portfolio w3ls-section">
-    <div class="container">
-        <h3 class="w3ls-title">Đời sống sinh viên</h3>
-        <div class="sap_tabs">
-            <div id="horizontalTab">
-                <ul class="resp-tabs-list">
-                    @foreach ($image as $item)
-                    <li class="resp-tab-item"><span>{{ $item->title }}</span></li>
-                    @endforeach
-                </ul>
-                <div class="clearfix"></div>
-                <div class="resp-tabs-container">
-                    @foreach ($image as $image_category)
-                    <div class="tab-1 resp-tab-content">
-                        @foreach ($image_category['image_group'] as $image_group)
-                        @foreach ($image_group['images'] as $image_item)
-                        <div class="col-md-3 portfolio-grids">
-                            <a href="{{ asset($image_item['image']) }}" data-lightbox="example-set" data-title="{{ $image_item['description'] }}">
-                                <img src="{{ asset($image_item['image']) }}" class="img-responsive zoom-img" alt="" />
-                                <div class="b-wrapper">
-                                    <h5>{{ $image_item['title'] }}</h5>
-                                </div>
-                            </a>
-                        </div>
-                        @endforeach
-                        @endforeach
-                        <div class="clearfix"></div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-        {{-- <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="#"> Các hình ảnh khác</a></div> --}}
-    </div>
-</div>
-<!--//portfolio-->
-<!--//main-header-->
-<script type="text/javascript" src="{{ asset('dist/layout/layout_home/js/jquery.zoomslider.min.js') }}"></script>
-<!-- testimonial -->
-@foreach ($news as $key => $category)
-<div class="testimonials w3ls-section" id="team">
-    <div class="container">
-        <h3 class="w3ls-title">{{ $category['title'] }}</h3>
-        <div class="w3_testimonials_grids w3_testimonials_grids">
-            <d iv id="owl-news-{{ $key }}" class="owl-carousel">
-                @foreach ($category['news'] as $item)
-                <div class="item w3_agileits_testimonials_grid">
-                    <a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}"><img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="img-responsive" /></a>
-                    <h4><a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">{{ $item['title'] }}</a>
-                    </h4>
-                    <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
-                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                        {{ date('d-m-Y', strtotime($item['created_at'])) }} &nbsp;<i class="fa fa-eye" aria-hidden="true"></i> {{ $item['view_count'] }}
-                    </div>
-                    <p>{!! $item['description'] !!}</p>
-                </div>
-                @endforeach
-            </d>
-        </div>
-        <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category['slug']]) }}"> Các {{ $category['title'] }} khác</a></div>
-    </div>
-</div>
-@endforeach
-
-<div class="contact-bottom w3ls-section">
-    <div class="container">
-        <h3 class="w3ls-title">Hợp Tác</h3>
+    <!-- //about -->
+    <!--services-->
+    <div class="agileits-services w3ls-section" id="agileits-services">
         <div class="container">
-            <div id="owl-collab" class="owl-carousel owl-theme" data-interval="50" data-delay="100" data-ride="carousel">
-                @foreach ($collab_logo as $item)
-                <img src="{{ asset($item['image_url']) }}" height="100%" style="padding: 50px;" alt="{{ $item['title'] }}">
-                @endforeach
+            <h3 class="w3ls-title">Các khoa </h3>
+            <div class="agileits-services-row">
+                <div id="owl-faculty" class="owl-carousel">
+                    @foreach ($all_faculty as $item)
+                        <div class="agileits-services-grids">
+                            <a href="{{ route('trang-chu', [$item['slug']]) }}" target="_blank">
+                                {{-- <span class="glyphicon glyphicon-stats effect-1" aria-hidden="true"></span> --}}
+                                <img class="boder-radius-img" src="{{ asset($item['image']) }}" width="40%" alt=""
+                                    style="height: unset;">
+                                <h4>{{ $item['name'] }}</h4>
+                            </a>
+                            {{-- <p class="khoa-p">{!! $item['intro_summary'] !!}</p> --}}
+                        </div>
+                    @endforeach
+                </div>
+                <div class="clearfix"> </div>
             </div>
+            {{-- <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="#"> Xem thêm về các khoa</a></div> --}}
         </div>
     </div>
-</div>
-
-{{-- <img src="" alt=""> --}}
-<div class="wthree-testi w3ls-section" id="testimonials">
-    <!-- container -->
-    <div class="container">
-        <h3 class="w3ls-title">Giảng Viên</h3>
-        <div class="w3_wthree-testi_grids text-center">
-            <section class="slider">
-                <div class="flexslider">
-                    <ul class="slides">
-                        @foreach ($teacher as $item)
-                        <li>
-                            <div class="wthree-testi_grid">
-                                <div class="testimonial-left">
-                                    <img src="{{ $item['image'] }}" style="height: 200px;">
-                                </div>
-                                <p>{{ $item['position'] }}</p>
-                                <h5>{{ $item['name'] }}</h5>
-                                <p>{!! $item['intro'] !!}</p>
-                            </div>
-                        </li>
+    <!--//agileits-services-->
+    <!--portfolio-->
+    <div id="portfolio" class="portfolio w3ls-section">
+        <div class="container">
+            <h3 class="w3ls-title">Đời sống sinh viên</h3>
+            <div class="sap_tabs">
+                <div id="horizontalTab">
+                    <ul class="resp-tabs-list">
+                        @foreach ($image as $item)
+                            <li class="resp-tab-item"><span>{{ $item->title }}</span></li>
                         @endforeach
                     </ul>
+                    <div class="clearfix"></div>
+                    <div class="resp-tabs-container">
+                        @foreach ($image as $image_category)
+                            <div class="tab-1 resp-tab-content">
+                                @foreach ($image_category['image_group'] as $image_group)
+                                    @foreach ($image_group['images'] as $image_item)
+                                        <div class="col-md-3 portfolio-grids">
+                                            <a href="{{ asset($image_item['image']) }}" data-lightbox="example-set"
+                                                data-title="{{ $image_item['description'] }}">
+                                                <img src="{{ asset($image_item['image']) }}"
+                                                    class="img-responsive zoom-img" alt="" />
+                                                <div class="b-wrapper">
+                                                    <h5>{{ $image_item['title'] }}</h5>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    @endforeach
+                                @endforeach
+                                <div class="clearfix"></div>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
-            </section>
-            <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{ route('giao-vien', [$faculty['slug']]) }}"> Cán Bộ Giảng Viên</a></div>
+            </div>
+            {{-- <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="#"> Các hình ảnh khác</a></div> --}}
         </div>
     </div>
-</div>
-<!-- //testimonial -->
-<!-- team -->
+    <!--//portfolio-->
+    <!--//main-header-->
+    <script type="text/javascript" src="{{ asset('dist/layout/layout_home/js/jquery.zoomslider.min.js') }}"></script>
+    <!-- testimonial -->
+    @foreach ($news as $key => $category)
+        <div class="testimonials w3ls-section" id="team">
+            <div class="container">
+                <h3 class="w3ls-title">{{ $category['title'] }}</h3>
+                <div class="w3_testimonials_grids w3_testimonials_grids">
+                    <d iv id="owl-news-{{ $key }}" class="owl-carousel">
+                        @foreach ($category['news'] as $item)
+                            <div class="item w3_agileits_testimonials_grid">
+                                <a
+                                    href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}"><img
+                                        src="{{ $item['image'] }}" alt="{{ $item['title'] }}"
+                                        class="img-responsive" /></a>
+                                <h4><a
+                                        href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category['slug'], $item['slug']]) }}">{{ $item['title'] }}</a>
+                                </h4>
+                                <div style="text-align: left; color: rgba(0, 0, 0, 0.459)">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    {{ date('d-m-Y', strtotime($item['created_at'])) }} &nbsp;<i class="fa fa-eye"
+                                        aria-hidden="true"></i> {{ $item['view_count'] }}
+                                </div>
+                                <p>{!! $item['description'] !!}</p>
+                            </div>
+                        @endforeach
+                    </d>
+                </div>
+                <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1"
+                        href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category['slug']]) }}"> Các
+                        {{ $category['title'] }} khác</a></div>
+            </div>
+        </div>
+    @endforeach
 
-<!-- //team -->
-<!-- contact -->
-<div class="contact-bottom w3ls-section" id="contact">
-    <div class="container">
-        <h3 class="w3ls-title">
-            <a href="{{ route('lien-he', [$faculty['slug']]) }}">Liên Hệ</a>
-            <small style="text-align: right;">
-                {{-- <a href="{{ route('lien-he', [$faculty['slug']]) }}">Xem thêm &gt;&gt;</a> --}}
-            </small>
-        </h3>
-        {{-- <p>SAIGONTU - BQLĐATL Trường Đại học Du lịch Sài Gòn </p>
-                    <p> Cơ sở: 70 Đường Tân Thới Nhất 8 - Khu phố 5 - P.Tân Thới Nhất - Q.12 - Tp.HCM. </p> --}}
-
+    <div class="contact-bottom w3ls-section">
+        <div class="container">
+            <h3 class="w3ls-title">Hợp Tác</h3>
+            <div class="container">
+                <div id="owl-collab" class="owl-carousel owl-theme" data-interval="50" data-delay="100"
+                    data-ride="carousel">
+                    @foreach ($collab_logo as $item)
+                        <img src="{{ asset($item['image_url']) }}" height="100%" style="padding: 50px;"
+                            alt="{{ $item['title'] }}">
+                    @endforeach
+                </div>
+            </div>
+        </div>
     </div>
 
+    {{-- <img src="" alt=""> --}}
+    <div class="wthree-testi w3ls-section" id="testimonials">
+        <!-- container -->
+        <div class="container">
+            <h3 class="w3ls-title">Giảng Viên</h3>
+            <div class="w3_wthree-testi_grids text-center">
+                <section class="slider">
+                    <div class="flexslider">
+                        <ul class="slides">
+                            @foreach ($teacher as $item)
+                                <li>
+                                    <div class="wthree-testi_grid">
+                                        <div class="testimonial-left">
+                                            <img src="{{ $item['image'] }}" style="height: 200px;">
+                                        </div>
+                                        <p>{{ $item['position'] }}</p>
+                                        <h5>{{ $item['name'] }}</h5>
+                                        <p>{!! $item['intro'] !!}</p>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </section>
+                {{-- <div style="display: flex; justify-content: center; padding-top: 3em;"><a class="btn1" href="{{ route('giao-vien', [$faculty['slug']]) }}"> Cán Bộ Giảng Viên</a></div> --}}
+            </div>
+        </div>
+    </div>
+    <!-- //testimonial -->
+    <!-- team -->
 
-    {{-- <div class="w3layouts-list">
+    <!-- //team -->
+    <!-- contact -->
+    <div class="contact-bottom w3ls-section" id="contact">
+        <div class="container">
+            <h3 class="w3ls-title">
+                <a href="{{ route('lien-he', [$faculty['slug']]) }}">Liên Hệ</a>
+                <small style="text-align: right;">
+                    {{-- <a href="{{ route('lien-he', [$faculty['slug']]) }}">Xem thêm &gt;&gt;</a> --}}
+                </small>
+            </h3>
+            {{-- <p>SAIGONTU - BQLĐATL Trường Đại học Du lịch Sài Gòn </p>
+                    <p> Cơ sở: 70 Đường Tân Thới Nhất 8 - Khu phố 5 - P.Tân Thới Nhất - Q.12 - Tp.HCM. </p> --}}
+
+        </div>
+
+
+        {{-- <div class="w3layouts-list">
         <div class="col-md-4 li"><span class="fa fa-envelope-o list-icon" aria-hidden="true"></span>
             <a href="javascript:">{{ $email }}</a>
 </div>
@@ -286,73 +304,76 @@
 <div class="clearfix"></div>
 </div> --}}
 
-<div class="col-md-6 col-sm-6  col-xs-6 agileits_w3layouts-map">
-    <iframe src="{{ $google_map_link }}" style="border:0;" allowfullscreen></iframe>
-</div>
-<div class="col-md-6 col-sm-6 col-xs-6 contact-right-w3l">
-    <form action="#" method="post">
-        <input type="text" class="name" name="name" placeholder="Tên" required>
-        <input type="text" class="name" name="name" placeholder="Họ" required>
-        <input type="email" class="name" name="name" placeholder="Email" required>
-        <input type="text" class="name" name="name" placeholder="Chủ đề" required>
-        <textarea placeholder="Nội Dung" required=""></textarea>
-        <input type="submit" value="Gửi">
-    </form>
-</div>
-<div class="clearfix"></div>
-</div>
-</div>
+        <div class="col-md-6 col-sm-6  col-xs-6 agileits_w3layouts-map">
+            {{-- <iframe src="{{ $google_map_link }}" style="border:0;" allowfullscreen></iframe> --}}
+            <iframe src="{{ $google_map_link }}" width="600" height="455" style="border:0;" allowfullscreen=""
+                loading="lazy"></iframe>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 contact-right-w3l">
+            <form action="#" method="post">
+                <input type="text" class="name" name="name" placeholder="Họ" required>
+                <input type="text" class="surname" name="surname" placeholder="Tên" required>
+                <input type="email" class="email" name="email" placeholder="Email" required>
+                <textarea placeholder="Nội Dung" required="" class="content" name="content"></textarea>
+                <input type="submit" value="Gửi">
+                @csrf
+            </form>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    </div>
 
-<!-- subscribe -->
-<!--div class="w3ls-section subscribe text-center">
+    <!-- subscribe -->
+    <!--div class="w3ls-section subscribe text-center">
+            <div class="container">
+                <h3 class="w3ls-title">Đăng ký tư vấn tuyển sinh!</h3>
+                {{-- <p>Nhập Email để nhận tư vấn tuyển sinh.</p> --}}
+                <div class="subscribe-grid">
+                    {{-- <input type="email" placeholder="Email" name="Subscribe" required=""> --}}
+                    <a href="{{ route('tuyensinh') }}">
+                        <button class="btn1">Đăng ký</button>
+                    </a>
+                </div>
+            </div>
+        </div-->
+    <div class="ndt__footer">
         <div class="container">
-            <h3 class="w3ls-title">Đăng ký tư vấn tuyển sinh!</h3>
-            {{-- <p>Nhập Email để nhận tư vấn tuyển sinh.</p> --}}
-            <div class="subscribe-grid">
-                {{-- <input type="email" placeholder="Email" name="Subscribe" required=""> --}}
-                <a href="{{ route('tuyensinh') }}">
-                    <button class="btn1">Đăng ký</button>
-                </a>
+            <div class="row">
+                @foreach ($footer_link as $footer_category)
+                    <div class="col-sm-4 col-md-3">
+                        <h4 class="ndt__footer__title">{{ $footer_category['title'] }}</h4>
+                        <ul class="ndt__footer__link">
+                            @foreach ($footer_category['child'] as $footer_item)
+                                <li> <a href="{{ checkURL($footer_item['link']) }}">{{ $footer_item['title'] }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endforeach
             </div>
         </div>
-    </div-->
-<div class="ndt__footer">
-    <div class="container">
-        <div class="row">
-            @foreach ($footer_link as $footer_category)
-            <div class="col-sm-4 col-md-3">
-                <h4 class="ndt__footer__title">{{ $footer_category['title'] }}</h4>
-                <ul class="ndt__footer__link">
-                    @foreach ($footer_category['child'] as $footer_item)
-                    <li> <a href="{{ checkURL($footer_item['link']) }}">{{ $footer_item['title'] }}</a>
-                    </li>
-                    @endforeach
-                </ul>
-            </div>
-            @endforeach
+    </div>
+    <!-- //subscribe -->
+    <!-- footer -->
+    <div class="agileits_w3layouts-footer">
+        <div class="col-md-6 col-sm-8 agileinfo-copyright">
+            <p>{{ $copyright }}</p>
         </div>
+        <div class="col-md-6 col-sm-4 agileinfo-icons">
+            <ul>
+                @foreach ($socials_icon as $item)
+                    <li><a class="icon" href="{{ checkURL($item['link']) }}"><i
+                                class="fa fa-{{ $item['fa_icon'] }}"></i></a></li>
+                @endforeach
+            </ul>
+        </div>
+        <div class="clearfix"></div>
     </div>
-</div>
-<!-- //subscribe -->
-<!-- footer -->
-<div class="agileits_w3layouts-footer">
-    <div class="col-md-6 col-sm-8 agileinfo-copyright">
-        <p>{{ $copyright }}</p>
-    </div>
-    <div class="col-md-6 col-sm-4 agileinfo-icons">
-        <ul>
-            @foreach ($socials_icon as $item)
-            <li><a class="icon" href="{{ checkURL($item['link']) }}"><i class="fa fa-{{ $item['fa_icon'] }}"></i></a></li>
-            @endforeach
-        </ul>
-    </div>
-    <div class="clearfix"></div>
-</div>
 
-<script src="{{ asset('dist/layout/layout_home/js/lightbox-plus-jquery.min.js') }}"> </script>
-<script src="{{ asset('dist/layout/layout_home/js/easyResponsiveTabs.js') }}" type="text/javascript"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
+    <script src="{{ asset('dist/layout/layout_home/js/lightbox-plus-jquery.min.js') }}"> </script>
+    <script src="{{ asset('dist/layout/layout_home/js/easyResponsiveTabs.js') }}" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
             $('#horizontalTab').easyResponsiveTabs({
                 type: 'default', //Types: default, vertical, accordion
                 width: 'auto', //auto or any width like 600px
@@ -360,13 +381,13 @@
             });
         });
 
-</script>
-<!--//script for portfolio-->
+    </script>
+    <!--//script for portfolio-->
 
 
-<script src="{{ asset('dist/layout/layout_home/js/owl.carousel.js') }}"></script>
-<script>
-    $(document).ready(function() {
+    <script src="{{ asset('dist/layout/layout_home/js/owl.carousel.js') }}"></script>
+    <script>
+        $(document).ready(function() {
             document.querySelectorAll('[id^=owl-news-]').forEach(item => {
                 $(`#${item.id}`).owlCarousel({
                     autoPlay: true, //Set AutoPlay to 3 seconds
@@ -427,11 +448,11 @@
 
         });
 
-</script>
+    </script>
 
-<!-- here starts scrolling icon -->
-<script type="text/javascript">
-    $(document).ready(function() {
+    <!-- here starts scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function() {
 
             var defaults = {
                 containerID: 'toTop', // fading element id
@@ -445,12 +466,13 @@
             });
         });
 
-</script>
-<!-- flexSlider -->
-<link rel="stylesheet" href="{{ asset('dist/layout/layout_home/css/flexslider.css') }}" type="text/css" media="screen" property="" />
-<script defer src="{{ asset('dist/layout/layout_home/js/jquery.flexslider.js') }}"></script>
-<script type="text/javascript">
-    $(window).load(function() {
+    </script>
+    <!-- flexSlider -->
+    <link rel="stylesheet" href="{{ asset('dist/layout/layout_home/css/flexslider.css') }}" type="text/css"
+        media="screen" property="" />
+    <script defer src="{{ asset('dist/layout/layout_home/js/jquery.flexslider.js') }}"></script>
+    <script type="text/javascript">
+        $(window).load(function() {
             $('.flexslider').flexslider({
                 animation: "slide",
                 start: function(slider) {
@@ -459,14 +481,14 @@
             });
         });
 
-</script>
-<!-- //flexSlider -->
+    </script>
+    <!-- //flexSlider -->
 
-<!-- start-smoth-scrolling -->
-<script type="text/javascript" src="{{ asset('dist/layout/layout_home/js/move-top.js') }}"></script>
-<script type="text/javascript" src="{{ asset('dist/layout/layout_home/js/easing.js') }}"></script>
-<script type="text/javascript">
-    jQuery(document).ready(function($) {
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="{{ asset('dist/layout/layout_home/js/move-top.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('dist/layout/layout_home/js/easing.js') }}"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
             $(".scroll").click(function(event) {
                 event.preventDefault();
                 $('html,body').animate({
@@ -475,16 +497,16 @@
             });
         });
 
-</script>
-<!-- /ends-smoth-scrolling -->
-<!-- //here ends scrolling icon -->
+    </script>
+    <!-- /ends-smoth-scrolling -->
+    <!-- //here ends scrolling icon -->
 
-<script type="text/javascript" src="{{ asset('dist/layout/layout_home/js/numscroller-1.0.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
+    <script type="text/javascript" src="{{ asset('dist/layout/layout_home/js/numscroller-1.0.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
 
-<script src="{{ asset('dist/layout/layout_home/js/SmoothScroll.min.js') }}"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
+    <script src="{{ asset('dist/layout/layout_home/js/SmoothScroll.min.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
             new Splide('.splide', {
                 type: 'loop',
                 perPage: 1,
@@ -528,5 +550,5 @@
 
         })
 
-</script>
+    </script>
 @endSection

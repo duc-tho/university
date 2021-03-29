@@ -950,13 +950,17 @@ p {
 .category-text h2{
     font-size: 36px;
     color: #fff;
-    padding: 0 50px;
+    padding: 85px 50px;
 }
 
 .singel-category {
 	padding: 20px 0;
 	border-radius: 5px;
 	display: block;
+    max-width: 175px;
+    width: 182px;
+    height: 204px;
+    max-height: 203px;
 }
 .singel-category .icon{
     display: inline-block;
@@ -1569,8 +1573,12 @@ p {
     padding-left: 140px;
 }
 .singel-testimonial .testimonial-cont p {
-    color: #fff;
-    padding-bottom: 32px;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    padding-bottom: 0px;
+    	/* background: #07294d none repeat scroll 0 0; */
+
 }
 .singel-testimonial .testimonial-cont h6 {
     color: #fff;

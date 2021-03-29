@@ -48,7 +48,7 @@
                                                     {{ $item['title'] }}
                                                 </a>
                                             </h4>
-                                            <p>{{ $item['description'] }}</p>
+                                            <p>{!! $item['description'] !!}</p>
                                             <small>
                                                 <a href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category[0]['slug']]) }}"
                                                     title="{{ $category[0]['title'] }}">
@@ -108,7 +108,7 @@
                                             <h4><a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category[1]['slug'], $item['slug']]) }}"
                                                     title="{{ $item['title'] }}">{{ $item['title'] }}</a>
                                             </h4>
-                                            <p>{{ $item['description'] }}</p>
+                                            <p>{!! $item['description'] !!}</p>
                                             <small><a
                                                     href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category[1]['slug']]) }}"
                                                     title="">{{ $category[1]['title'] }}</a></small>
@@ -141,7 +141,7 @@
                                             <h4><a href="{{ route('tin-tuc-chi-tiet', [$faculty['slug'], $category[1]['slug'], $item['slug']]) }}"
                                                     title="{{ $item['title'] }}">{{ $item['title'] }}</a>
                                             </h4>
-                                            <p>{{ $item['description'] }}</p>
+                                            <p>{!! $item['description'] !!}</p>
                                             <small><a
                                                     href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category[1]['slug']]) }}"
                                                     title="">{{ $category[1]['title'] }}</a></small>
@@ -216,7 +216,7 @@
                                                 </a>
                                             </h4>
                                             <p>
-                                                {{ $news_item['description'] }}
+                                                {!! $news_item['description'] !!}
                                             </p>
                                             <small>
                                                 <a

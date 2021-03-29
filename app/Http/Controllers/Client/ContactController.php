@@ -67,9 +67,9 @@ class ContactController extends Controller
             $item['url'] = route('trang-chu', [$item['slug']]);
         }
 
-        
 
-        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+
+        $menu_list = Menu::where(['status' => 1, 'faculty_id' => $faculty_id])->orderBy('display_order', 'asc')->get();
         $menu_parent = Menu::where(['status' => 1, 'faculty_id' => $faculty_id, 'parent_id' => 0])->orderBy('display_order', 'asc')->get();
         return view('client.layout.' . $layout_name . '.page.contact', [
             'menu_parents' => $menu_parent,
@@ -85,6 +85,14 @@ class ContactController extends Controller
             'contact_title' => $contact['contact_title'],
             'menu_list' => $menu_list,
 
+            'intro_video_khoakinhte' => getSettingValue($settings, 'intro_video_khoakinhte'),
+            'image_background' => getSettingValue($settings, 'image_background'),
+            'image_background_home' => getSettingValue($settings, 'image_background_home'),
+            'image_background_student' => getSettingValue($settings, 'image_background_student'),
+            'menu_item' => getSettingValue($settings, 'menu_item'),
+            'link_faculty' => getSettingValue($settings, 'link_faculty'),
+            'about_contact' => getSettingValue($settings, 'about_contact'),
+            
             'address' => $contact['address_info'],
             'logo' => getSettingValue($settings, 'logo'),
             'copyright' => getSettingValue($settings, 'copyright'),
