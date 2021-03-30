@@ -92,6 +92,7 @@
                             <div class="event-title">
                                 <h3>{{ $category->title }}</h3>
                             </div>
+                            
                             <ul>
                                 <li>
                                     @foreach ($category['news'] as $key => $item)
@@ -107,6 +108,7 @@
                                     @endforeach
                                 </li>
                             </ul>
+                      
                         @endforeach
                         <a href="{{ route('tin-tuc-danh-muc', [$faculty['slug'], $category['slug']]) }}"
                             class="main-btn">Xem Thêm</a>
@@ -290,9 +292,9 @@
                                 </div>
                             </div>
                             <div class="testimonial-cont">
-                                <p>{!! $item->evaluate !!}</p>
+                               {!! $item->evaluate !!}
                                 <h6>{{ $item->name }}</h6>
-                                <span>{!! $item->intro !!}</span>
+                                <h6>{!! $item->intro !!}</h6>
                             </div>
                         </div> <!-- singel testimonial -->
                     </div>

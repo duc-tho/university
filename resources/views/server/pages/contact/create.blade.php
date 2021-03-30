@@ -17,12 +17,12 @@
 
 
                     <x-admin.form.input :col="3" :type="'email'" :label="'Email'" :required="true" :placeholder="'Email'" :fieldName="'email'" />
-                    <x-admin.form.input :col="3" :type="'number'" :label="'Phone'" :required="true" :placeholder="'Phone'" :fieldName="'phone'" />
+                    <x-admin.form.input :col="3" :type="'text'" :label="'Phone'" :required="true" :placeholder="'Phone'" :fieldName="'phone'" />
                     <x-admin.form.input :col="3" :type="'text'" :label="'Địa Chỉ'" :required="true" :placeholder="'Địa Chỉ'" :fieldName="'address_info'" />
                     <x-admin.form.input :col="3" :type="'text'" :label="'Bản Đồ - Nhúng iframe '" :required="true" :placeholder="'Bản Đồ - Nhúng iframe'" :fieldName="'map_embed'"  />
                     <x-admin.form.input :col="3" :type="'text'" :label="'Tiêu Đề Liên Hệ'" :required="true" :placeholder="'Tiêu Đề Liên Hệ'" :fieldName="'contact_title'" />
                     <x-admin.form.input :col="3" :type="'text'" :label="'Website'" :required="true" :placeholder="'Website'" :fieldName="'website'" />
-                    <x-admin.form.input :col="3" :type="'number'" :label="'Hotline'" :required="true" :placeholder="'Hotline'" :fieldName="'hotline'" />
+                    <x-admin.form.input :col="3" :type="'text'" :label="'Hotline'" :required="true" :placeholder="'Hotline'" :fieldName="'hotline'" />
                     <x-admin.form.input :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" :value="Auth::user()['first_name']" />
                     <x-admin.form.checkbox :col="3" :label="'Trạng thái'" :required="true" :fieldName="'status'" :labelContent="'Đang hoạt động'" />
 

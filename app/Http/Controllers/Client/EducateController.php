@@ -26,7 +26,7 @@ class EducateController extends Controller
 
         $layout_name = $faculty['layout_name'];
 
-        $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty['id']])->get();
+        $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty['id']])->orWhere(['greneral' => true])->get();
         $teacher = TeacherRepresentative::where(['status' => 1])->get();
         $all_faculty = Faculty::where(['status' => 1, ['id', '!=', $faculty_id]])->get();
         if (!$all_faculty->isEmpty()) foreach ($all_faculty as $key => $item) {

@@ -28,7 +28,7 @@ class NewsController extends Controller
 
         $layout_name = $faculty['layout_name'];
 
-        $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty['id']])->get();
+        $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty['id']])->orWhere(['greneral' => true])->get();
 
         // Lấy menu
         $menu = Category::where([
@@ -220,7 +220,7 @@ class NewsController extends Controller
 
         $layout_name = $faculty['layout_name'];
 
-        $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty['id']])->get();
+        $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty['id']])->orWhere(['greneral' => true])->get();
 
         // Lấy menu
         $menu = Category::where([
@@ -366,7 +366,7 @@ class NewsController extends Controller
 
         $layout_name = $faculty['layout_name'];
 
-        $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty['id']])->get();
+        $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty['id']])->orWhere(['greneral' => true])->get();
 
         // Lấy menu
         $menu = Category::where([

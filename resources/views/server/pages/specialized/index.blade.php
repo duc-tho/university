@@ -69,7 +69,7 @@
                                                     </div>
                                                     <div class="col-5 text-center">
                                                         <img src="{{ asset($specialized->image ?? 'dist/img/imgdefault.png') }}"
-                                                            alt="sdfsdf" class="img-circle img-fluid img-max">
+                                                            alt="image" class="img-circle img-fluid img-max">
                                                     </div>
                                                 </div>
                                             </div>

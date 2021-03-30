@@ -48,7 +48,7 @@ class TeacherController extends Controller
         $all_specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
 
         // Lấy data từ các bảng cần thiết
-        $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
+        $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty_id])->orWhere(['greneral' => true])->get();
         $slide = Slide::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
         $statistic = Statistics::where(['faculty_id' => $faculty_id])->get();
         $collab_logo = CollabLogo::all();

@@ -15,12 +15,13 @@
             <div class="container py-md-5">
                 <div class="cwp4-two row">
                     <div class="cwp4-image col-lg-6 pl-lg-5 mt-lg-0 mt-5">
-                        <img src="{{ asset($specialized->image) }}"
-                            width="100%" height="auto" class="img-fluid" alt="" />
+                        {{-- <img src="{{ asset($specialized->image) }}"
+                            width="100%" height="auto" class="img-fluid" alt="" /> --}}
                         <hr>
                     </div>
-                    <div class="cwp4-text col-lg-6">
+                    <div class="cwp4-text col-lg-12">
                                 <h2 id="titleqtks">{{ $specialized->name }}</h2>
+                                <h6>Ngày Đăng : {{ ConvertDatabaseTimeToDMY($specialized->created_at) }}</h6>
                                 <p id="des"> {!! $specialized->intro !!}</p>
                                 {{-- <ul class="cont-4">
                                 <li><span class="fa fa-check"></span> <span id="con">Trình độ đào tạo :</span> Đại học</li>

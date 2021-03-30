@@ -16,7 +16,7 @@
         <div class="container py-md-5">
             <div class="cwp4-two row">
                 @foreach($about as $item)
-                <div class="cwp4-text col-lg-6">
+                <div class="cwp4-text col-lg-12">
                     <h3>{{ $item->title}}</h3>
                     <p>{!! $item->intro!!}</p>
                 </div>

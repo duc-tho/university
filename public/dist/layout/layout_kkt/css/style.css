@@ -1530,7 +1530,7 @@ p {
 }
 #testimonial .section-title h5,
 #testimonial .section-title h2{
-    color: #fff;
+    color: #ffc600;
 }
 #testimonial .section-title h5::before{
     background-color: #fff;
@@ -1570,13 +1570,17 @@ p {
     font-size: 18px;
 }
 .singel-testimonial .testimonial-cont {
-    padding-left: 140px;
+    padding-left: 25px;
+    padding-top: 25px;
+    background-color: #07294c;
+
 }
 .singel-testimonial .testimonial-cont p {
     font-size: 20px;
-    color: #ffffff;
+    color: #fec500;
     font-weight: bold;
-    padding-bottom: 0px;
+    padding-bottom: 25px;
+   
     	/* background: #07294d none repeat scroll 0 0; */
 
 }

@@ -4736,7 +4736,8 @@ input[type="button"].btn-block {
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
-  color: #212529;
+  color: #067187;
+  font-weight : bold;
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
@@ -9915,6 +9916,7 @@ h4.sub-title {
   color:  #067187; }
 
 .w3l-bootstrap-header .navbar-light .navbar-nav .nav-link {
+  font-weight: bold;
   color:  #067187;
   text-transform: capitalize; }
 
@@ -11121,7 +11123,7 @@ button.owl-next {
   /*--responsive--*/
   /*--//responsive--*/ }
   .w3l-feature-3 .grid.top-bottom {
-    margin-top: 0px;
+    margin-top: -50px;
     z-index: 10;
     position: relative; }
   .w3l-feature-3 span.number img {
@@ -11146,6 +11148,11 @@ button.owl-next {
     padding-top: 25px;
     font-weight: 600; }
   .w3l-feature-3 .three-grids-columns p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
     padding-top: 15px;
     font-size: 16px;
     line-height: 24px;
@@ -12857,6 +12864,6 @@ button.owl-next {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4; /* number of lines to show */
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
  }

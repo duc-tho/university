@@ -25,7 +25,7 @@ class AboutController extends Controller
 
         $layout_name = $faculty['layout_name'];
 
-        $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty['id']])->get();
+        $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty['id']])->orWhere(['greneral' => true])->get();
         $specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty_id])->get();
         $all_specialized = Specialized::where(['status' => 1, 'faculty_id' => $faculty->id])->get();
         // Lấy menu
@@ -106,7 +106,7 @@ class AboutController extends Controller
             'logo' => getSettingValue($settings, 'logo'),
             'license' => getSettingValue($settings, 'license'),
             'license_content' => getSettingValue($settings, 'license_content'),
-            'logo' => getSettingValue($settings, 'logo'),
+            // 'logo' => getSettingValue($settings, 'logo'),
             'intro_video' => getSettingValue($settings, 'intro_video'),
             'copyright' => getSettingValue($settings, 'copyright'),
             'website' => getSettingValue($settings, 'website'),
@@ -144,7 +144,7 @@ class AboutController extends Controller
 
         $layout_name = $faculty['layout_name'];
 
-        $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty['id']])->get();
+        $settings = Settings::where(['status' => 1, 'faculty_id' => $faculty['id']])->orWhere(['greneral' => true])->get();
 
         // Lấy menu
         $menu = Category::where([
