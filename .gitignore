@@ -20,6 +20,12 @@ yarn-error.log
 # ignore layout resource
 # /public/dist/layout
 
+# ignore sql file
+*.sql
+
+#ignore PHP storm IDE
+.idea
+
 # ignore upload files
 /public/dist/upload/*
 /public/dist/admin/cssLoginAdmin

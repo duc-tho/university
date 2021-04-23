@@ -98,13 +98,13 @@ return [
     | Migration Repository Table
     |--------------------------------------------------------------------------
     |
-    | This table keeps track of all the migrations that have already run for
+    | This table keeps track of all the migrations_bak that have already run for
     | your application. Using this information, we can determine which of
-    | the migrations on disk haven't actually been run in the database.
+    | the migrations_bak on disk haven't actually been run in the database.
     |
     */
 
-    'migrations' => 'migrations',
+    'migrations_bak' => 'migrations_bak',
 
     /*
     |--------------------------------------------------------------------------
