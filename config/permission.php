@@ -168,15 +168,6 @@ return [
                 'delete' => 'statistic_delete',
             ]
         ],
-        'video' => [
-            'display_name' => 'Video',
-            'access' => [
-                'list' => 'video_list',
-                'create' => 'video_create',
-                'edit' => 'video_edit',
-                'delete' => 'video_delete',
-            ]
-        ],
         'image_category' => [
             'display_name' => 'Chuyên mục hình ảnh',
             'access' => [

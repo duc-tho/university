@@ -5,12 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property integer $id
+ * @property int $id
  * @property integer $faculty_id
+ * @property integer $parent_id
  * @property string $name
  * @property string $url
- * @property int $display_order
- * @property int $status
+ * @property boolean $display_order
+ * @property boolean $status
  * @property string $created_at
  * @property string $updated_at
  */
@@ -18,7 +19,7 @@ class Menu extends Model
 {
     /**
      * The table associated with the model.
-     *
+     * 
      * @var string
      */
     protected $table = 'menu';
@@ -26,7 +27,7 @@ class Menu extends Model
     /**
      * @var array
      */
-    protected $fillable = ['id', 'faculty_id', 'parent_id', 'name', 'url', 'display_order', 'status', 'created_at', 'updated_at'];
+    protected $fillable = ['faculty_id', 'parent_id', 'name', 'url', 'display_order', 'status', 'created_at', 'updated_at'];
 
     public function childrens()
     {
@@ -37,4 +38,5 @@ class Menu extends Model
     {
         return $this->belongsTo(Menu::class, 'parent_id');
     }
+
 }

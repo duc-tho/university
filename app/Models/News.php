@@ -12,16 +12,14 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $image
  * @property string $content
  * @property string $location
- * @property string $event_time
  * @property string $description
- * @property string $created_at
- * @property string $updated_at
- * @property string $created_by
- * @property string $updated_by
  * @property string $meta_keywords
  * @property string $meta_descriptions
+ * @property string $event_time
  * @property int $view_count
  * @property boolean $status
+ * @property string $created_at
+ * @property string $updated_at
  * @property Category $category
  */
 class News extends Model
@@ -36,7 +34,7 @@ class News extends Model
     /**
      * @var array
      */
-    protected $fillable = ['category_id', 'title', 'slug', 'image', 'content', 'location', 'event_time', 'description', 'created_at', 'updated_at', 'created_by', 'updated_by', 'meta_keywords', 'meta_descriptions', 'view_count', 'status'];
+    protected $fillable = ['category_id', 'title', 'slug', 'image', 'content', 'location', 'description', 'meta_keywords', 'meta_descriptions', 'event_time', 'view_count', 'status', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

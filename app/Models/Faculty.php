@@ -7,21 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property integer $id
  * @property string $name
+ * @property string $slug
  * @property string $meta_keywords
  * @property string $meta_descriptions
- * @property string $slug
  * @property string $intro_summary
  * @property string $intro
- * @property string $layout_name
- * @property string $layout_page
+ * @property string $layout
  * @property string $image
+ * @property boolean $status
  * @property string $created_at
  * @property string $updated_at
- * @property string $created_by
- * @property string $updated_by
- * @property boolean $status
- * @property AboutCategory[] $aboutCategories
- * @property Box[] $boxes
+ * @property About[] $abouts
  * @property Category[] $categories
  * @property Contact[] $contacts
  * @property ImageCategory[] $imageCategories
@@ -29,24 +25,21 @@ use Illuminate\Database\Eloquent\Model;
  * @property Slide[] $slides
  * @property Specialized[] $specializeds
  * @property Statistic[] $statistics
- * @property StudentRepresentative[] $studentRepresentatives
- * @property TeacherRepresentative[] $teacherRepresentatives
- * @property VideoCategory[] $videoCategories
+ * @property Student[] $students
+ * @property Teacher[] $teachers
  */
 class Faculty extends Model
 {
     /**
      * The table associated with the model.
-     *
+     * 
      * @var string
      */
-    protected $table = "faculty";
-    protected $primaryKey = "id";
-    protected $guarded =[];
+    protected $table = 'faculty';
 
     /**
      * The "type" of the auto-incrementing ID.
-     *
+     * 
      * @var string
      */
     protected $keyType = 'integer';
@@ -54,22 +47,14 @@ class Faculty extends Model
     /**
      * @var array
      */
-    protected $fillable = ['name', 'meta_keywords', 'meta_descriptions', 'slug', 'intro_summary', 'intro', 'layout_name', 'layout_page', 'image', 'created_at', 'updated_at', 'created_by', 'updated_by', 'status'];
+    protected $fillable = ['name', 'slug', 'meta_keywords', 'meta_descriptions', 'intro_summary', 'intro', 'layout', 'image', 'status', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function aboutCategories()
+    public function abouts()
     {
-        return $this->hasMany('App\Models\AboutCategory');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function boxes()
-    {
-        return $this->hasMany('App\Models\Box');
+        return $this->hasMany('App\Models\About');
     }
 
     /**
@@ -131,24 +116,16 @@ class Faculty extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function studentRepresentatives()
+    public function students()
     {
-        return $this->hasMany('App\Models\StudentRepresentative');
+        return $this->hasMany('App\Models\Student');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function teacherRepresentatives()
+    public function teachers()
     {
-        return $this->hasMany('App\Models\TeacherRepresentative');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function videoCategories()
-    {
-        return $this->hasMany('App\Models\VideoCategory');
+        return $this->hasMany('App\Models\Teacher');
     }
 }

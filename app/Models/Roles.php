@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property integer $id
  * @property string $name
  * @property string $display_name
+ * @property int $level
  * @property PermissionRole[] $permissionRoles
  * @property RoleUser[] $roleUsers
  */
@@ -15,7 +16,7 @@ class Roles extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
-     *
+     * 
      * @var string
      */
     protected $keyType = 'integer';

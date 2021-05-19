@@ -6,22 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property integer $id
- * @property integer $about_category_id
- * @property string $content
+ * @property integer $faculty_id
  * @property string $title
- * @property string $description
- * @property string $meta_keywords
- * @property string $meta_descriptions
  * @property string $slug
  * @property string $image
+ * @property string $intro
+ * @property string $meta_keywords
+ * @property string $meta_descriptions
+ * @property boolean $display_order
+ * @property int $view_count
+ * @property boolean $status
  * @property string $created_at
  * @property string $updated_at
- * @property string $created_by
- * @property string $updated_by
- * @property int $view_count
- * @property boolean $show_in_home
- * @property boolean $status
- * @property AboutCategory $aboutCategory
+ * @property Faculty $faculty
  */
 class About extends Model
 {
@@ -42,13 +39,13 @@ class About extends Model
     /**
      * @var array
      */
-    protected $fillable = ['about_category_id', 'content', 'title', 'description', 'meta_keywords', 'meta_descriptions', 'slug', 'image', 'created_at', 'updated_at', 'created_by', 'updated_by', 'view_count', 'show_in_home', 'status'];
+    protected $fillable = ['faculty_id', 'title', 'slug', 'image', 'intro', 'meta_keywords', 'meta_descriptions', 'display_order', 'view_count', 'status', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function aboutCategory()
+    public function faculty()
     {
-        return $this->belongsTo('App\Models\AboutCategory');
+        return $this->belongsTo('App\Models\Faculty');
     }
 }

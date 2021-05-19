@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property integer $id
  * @property integer $footer_link_category_id
  * @property string $title
- * @property string $link
+ * @property string $url
  * @property boolean $status
+ * @property string $created_at
+ * @property string $updated_at
  * @property FooterLinkCategory $footerLinkCategory
  */
 class FooterLink extends Model
@@ -31,7 +33,7 @@ class FooterLink extends Model
     /**
      * @var array
      */
-    protected $fillable = ['footer_link_category_id', 'title', 'link', 'status'];
+    protected $fillable = ['footer_link_category_id', 'title', 'url', 'status', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

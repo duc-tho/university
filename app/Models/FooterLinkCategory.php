@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property integer $id
  * @property string $title
  * @property boolean $status
+ * @property string $created_at
+ * @property string $updated_at
  * @property FooterLink[] $footerLinks
  */
 class FooterLinkCategory extends Model
@@ -29,7 +31,7 @@ class FooterLinkCategory extends Model
     /**
      * @var array
      */
-    protected $fillable = ['title', 'status','created_at','updated_at'];
+    protected $fillable = ['title', 'status', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

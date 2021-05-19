@@ -10,16 +10,16 @@ use Illuminate\Database\Eloquent\Model;
  * @property integer $parent_id
  * @property string $title
  * @property string $slug
- * @property boolean $show_on_menu
- * @property string $created_at
- * @property string $updated_at
- * @property string $created_by
- * @property string $updated_by
  * @property string $meta_keywords
  * @property string $meta_descriptions
+ * @property boolean $show_at_home
+ * @property boolean $show_at_notification
+ * @property boolean $show_at_news
+ * @property boolean $display_order
  * @property boolean $status
+ * @property string $created_at
+ * @property string $updated_at
  * @property Faculty $faculty
- * @property Box[] $boxes
  * @property News[] $news
  */
 class Category extends Model
@@ -41,7 +41,7 @@ class Category extends Model
     /**
      * @var array
      */
-    protected $fillable = ['faculty_id', 'parent_id', 'title', 'slug', 'show_on_menu', 'created_at', 'updated_at', 'created_by', 'updated_by', 'meta_keywords', 'meta_descriptions', 'status'];
+    protected $fillable = ['faculty_id', 'parent_id', 'title', 'slug', 'meta_keywords', 'meta_descriptions', 'show_at_home', 'show_at_notification', 'show_at_news', 'display_order', 'status', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -49,14 +49,6 @@ class Category extends Model
     public function faculty()
     {
         return $this->belongsTo('App\Models\Faculty');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function boxes()
-    {
-        return $this->hasMany('App\Models\Box');
     }
 
     /**

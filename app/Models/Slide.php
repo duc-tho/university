@@ -8,15 +8,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property integer $id
  * @property integer $faculty_id
  * @property string $name
- * @property int $display_order
- * @property string $link
- * @property string $browser_target
+ * @property boolean $display_order
+ * @property string $url
+ * @property string $target
  * @property string $description
+ * @property boolean $status
  * @property string $created_at
  * @property string $updated_at
- * @property string $created_by
- * @property string $updated_by
- * @property boolean $status
  * @property Faculty $faculty
  */
 class Slide extends Model
@@ -38,7 +36,7 @@ class Slide extends Model
     /**
      * @var array
      */
-    protected $fillable = ['faculty_id', 'name', 'display_order', 'link', 'browser_target', 'description', 'created_at', 'updated_at', 'created_by', 'updated_by', 'status'];
+    protected $fillable = ['faculty_id', 'name', 'display_order', 'url', 'target', 'description', 'status', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

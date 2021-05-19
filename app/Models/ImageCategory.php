@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property integer $id
  * @property integer $faculty_id
+ * @property integer $parent_id
  * @property string $title
- * @property string $link
- * @property int $display_order
+ * @property string $slug
+ * @property string $url
+ * @property boolean $display_order
+ * @property boolean $status
  * @property string $created_at
  * @property string $updated_at
- * @property string $created_by
- * @property string $updated_by
- * @property boolean $status
  * @property Faculty $faculty
  * @property Image[] $images
  */
@@ -22,14 +22,14 @@ class ImageCategory extends Model
 {
     /**
      * The table associated with the model.
-     *
+     * 
      * @var string
      */
     protected $table = 'image_category';
 
     /**
      * The "type" of the auto-incrementing ID.
-     *
+     * 
      * @var string
      */
     protected $keyType = 'integer';
@@ -37,7 +37,7 @@ class ImageCategory extends Model
     /**
      * @var array
      */
-    protected $fillable = ['faculty_id', 'title', 'link', 'slug', 'display_order', 'created_at', 'updated_at', 'created_by', 'updated_by', 'status', 'parent_id'];
+    protected $fillable = ['faculty_id', 'parent_id', 'title', 'slug', 'url', 'display_order', 'status', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -52,7 +52,7 @@ class ImageCategory extends Model
      */
     public function images()
     {
-        return $this->hasMany('App\Models\Image');
+        return $this->hasMany('App\Image');
     }
 
     public function childrens()

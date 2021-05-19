@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property integer $id
  * @property string $name
- * @property string $link
+ * @property string $url
  * @property string $fa_icon
  * @property boolean $status
  * @property string $created_at
@@ -25,6 +25,6 @@ class Socials extends Model
     /**
      * @var array
      */
-    protected $fillable = ['name', 'link', 'fa_icon', 'status', 'created_at', 'updated_at'];
+    protected $fillable = ['name', 'url', 'fa_icon', 'status', 'created_at', 'updated_at'];
 
 }

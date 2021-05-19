@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property integer $id
  * @property string $title
  * @property string $image_url
- * @property string $link
- * @property int $display_order
+ * @property string $url
+ * @property boolean $display_order
+ * @property boolean $status
  * @property string $created_at
  * @property string $updated_at
  */
@@ -32,6 +33,6 @@ class CollabLogo extends Model
     /**
      * @var array
      */
-    protected $fillable = ['title', 'image_url', 'link', 'display_order', 'created_at', 'updated_at','status'];
+    protected $fillable = ['title', 'image_url', 'url', 'display_order', 'status', 'created_at', 'updated_at'];
 
 }
