@@ -22,6 +22,7 @@ class CreateSettingsTable extends Migration
             $table->mediumText('value')->nullable();
             $table->boolean('greneral')->default(0)->comment('Cài đặt chung');
             $table->boolean('status')->default(0);
+            $table->softDeletes();
         });
     }
 

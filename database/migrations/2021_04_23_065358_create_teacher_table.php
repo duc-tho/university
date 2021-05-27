@@ -24,6 +24,7 @@ class CreateTeacherTable extends Migration
             $table->boolean('representative')->default(0)->comment('Sinh Viên Tiêu Biểu');
             $table->boolean('status')->nullable()->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

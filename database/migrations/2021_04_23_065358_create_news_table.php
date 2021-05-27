@@ -28,6 +28,7 @@ class CreateNewsTable extends Migration
             $table->unsignedInteger('view_count')->default(0);
             $table->boolean('status')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

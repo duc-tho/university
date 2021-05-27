@@ -18,6 +18,7 @@ class CreateStatisticsTable extends Migration
             $table->bigInteger('faculty_id')->nullable()->index('faculty_id');
             $table->string('name', 50);
             $table->string('value', 50);
+            $table->softDeletes();
         });
     }
 

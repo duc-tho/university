@@ -23,6 +23,7 @@ class CreateStudentTable extends Migration
             $table->boolean('representative')->default(0)->comment('Sinh Viên Tiêu Biểu');
             $table->boolean('status')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

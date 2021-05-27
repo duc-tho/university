@@ -20,6 +20,7 @@ class CreateSocialsTable extends Migration
             $table->string('fa_icon', 20)->comment('Font Awsome Icon');
             $table->boolean('status')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

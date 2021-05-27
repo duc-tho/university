@@ -18,6 +18,7 @@ class CreateRolesTable extends Migration
             $table->string('name')->nullable();
             $table->string('display_name')->nullable();
             $table->integer('level')->default(1);
+            $table->softDeletes();
         });
     }
 

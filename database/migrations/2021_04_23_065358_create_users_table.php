@@ -29,6 +29,7 @@ class CreateUsersTable extends Migration
             $table->boolean('isAdmin')->default(0)->comment('Quản trị viên');
             $table->boolean('isSystemAccount')->default(0)->comment('Quyền cao nhất trong hệ thống');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -30,6 +30,7 @@ class CreateSpecializedTable extends Migration
             $table->string('meta_descriptions')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

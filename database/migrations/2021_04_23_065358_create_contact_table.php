@@ -25,6 +25,7 @@ class CreateContactTable extends Migration
             $table->text('map_embed')->nullable()->comment('Link nhúng bản đồ Google map');
             $table->boolean('status')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

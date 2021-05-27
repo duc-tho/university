@@ -25,6 +25,7 @@ class CreateFacultyTable extends Migration
             $table->string('image', 2048)->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

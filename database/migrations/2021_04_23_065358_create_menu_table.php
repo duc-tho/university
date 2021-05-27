@@ -22,6 +22,7 @@ class CreateMenuTable extends Migration
             $table->unsignedTinyInteger('display_order')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

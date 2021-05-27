@@ -20,6 +20,7 @@ class CreateFooterLinkTable extends Migration
             $table->string('url', 2048)->nullable()->default(':javascript');
             $table->boolean('status')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

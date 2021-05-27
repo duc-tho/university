@@ -18,6 +18,7 @@ class CreateFooterLinkCategoryTable extends Migration
             $table->string('title')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

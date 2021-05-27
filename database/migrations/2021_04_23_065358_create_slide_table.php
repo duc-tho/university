@@ -23,6 +23,7 @@ class CreateSlideTable extends Migration
             $table->string('description', 500)->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
