@@ -1,44 +1,43 @@
-@extends('server.index')
+@extends('admin::index')
 @section('title', 'Quản Trị Giới Thiệu Khoa')
 @section('page-title', 'Sửa Giới Thiệu Khoa')
 @section('page-content')
-    <!--/.row-->
-    <div class="row">
-        <div class="col-sm-12 px-3">
-            <x-admin.form.form method="POST" :cancelLink="route('admin.about.show', [$khoa['slug']])"
-                :submitLink="route('admin.about.update', [$khoa['slug'], $about['id']])">
-                <div class="row">
-                    <x-admin.form.alert :col="12" class="bg-olive color-palette">
-                        <b>Lưu ý: </b>Các trường có dấu <span class="text-danger"><b>*</b></span> là bắt buộc!
-                    </x-admin.form.alert>
-                    <x-admin.form.select :required="true" :col="3" :fieldName="'faculty_id'" :label="'Khoa'">
-                        <option value="{{$khoa->id}}" {{ old('faculty_id') == $khoa->id ? "selected" : '' }} selected>{{$khoa->name}}</option>
-                    </x-admin.form.select>
+<!--/.row-->
+<div class="row">
+    <div class="col-sm-12 px-3">
+        <x-admin.form.form method="POST" :cancelLink="route('admin.about.show', [$khoa['slug']])" :submitLink="route('admin.about.update', [$khoa['slug'], $about['id']])">
+            <div class="row">
+                <x-admin.form.alert :col="12" class="bg-olive color-palette">
+                    <b>Lưu ý: </b>Các trường có dấu <span class="text-danger"><b>*</b></span> là bắt buộc!
+                </x-admin.form.alert>
+                <x-admin.form.select :required="true" :col="3" :fieldName="'faculty_id'" :label="'Khoa'">
+                    <option value="{{$khoa->id}}" {{ old('faculty_id') == $khoa->id ? "selected" : '' }} selected>{{$khoa->name}}</option>
+                </x-admin.form.select>
 
 
-                    <x-admin.form.input :data="$about" :col="3" :type="'text'" :label="'Tiêu Đề Giới Thiệu'" :required="true" :placeholder="'Tiêu Đề Giới Thiệu'" :fieldName="'title'" />
-                    <x-admin.form.input :data="$about" :col="3" :type="'text'" :label="'Slug'" :required="true" :placeholder="'Slug'" :fieldName="'slug'" />
-                    <x-admin.form.input :data="$about" :col="3" :type="'text'" :label="'Meta Descriptions'" :required="true" :placeholder="'Meta Descriptions'" :fieldName="'meta_descriptions'" />
-                    <x-admin.form.input :data="$about" :col="3" :type="'text'" :label="'Meta Keywords'" :required="true" :placeholder="'Meta Keywords'" :fieldName="'meta_keywords'" />
+                <x-admin.form.input :data="$about" :col="3" :type="'text'" :label="'Tiêu Đề Giới Thiệu'" :required="true" :placeholder="'Tiêu Đề Giới Thiệu'" :fieldName="'title'" />
+                <x-admin.form.input :data="$about" :col="3" :type="'text'" :label="'Slug'" :required="true" :placeholder="'Slug'" :fieldName="'slug'" />
+                <x-admin.form.input :data="$about" :col="3" :type="'text'" :label="'Meta Descriptions'" :required="true" :placeholder="'Meta Descriptions'" :fieldName="'meta_descriptions'" />
+                <x-admin.form.input :data="$about" :col="3" :type="'text'" :label="'Meta Keywords'" :required="true" :placeholder="'Meta Keywords'" :fieldName="'meta_keywords'" />
 
-                    <x-admin.form.input :data="$about" :col="3" :type="'number'" :label="'Display Order'" :required="true" :placeholder="'Display Order'" :fieldName="'display_order'" :value="0" />
+                <x-admin.form.input :data="$about" :col="3" :type="'number'" :label="'Display Order'" :required="true" :placeholder="'Display Order'" :fieldName="'display_order'" :value="0" />
 
-                    <x-admin.form.input :data="$about" :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" />
-                    <x-admin.form.input :data="$about" :col="3" :type="'text'" :label="'Người Cập Nhập'" :required="true" :placeholder="'Người Cập Nhập'" :fieldName="'updated_by'"  :value="Auth::user()['first_name']" />
+                <x-admin.form.input :data="$about" :col="3" :type="'text'" :label="'Người Tạo'" :required="true" :placeholder="'Người Tạo'" :fieldName="'created_by'" />
+                <x-admin.form.input :data="$about" :col="3" :type="'text'" :label="'Người Cập Nhập'" :required="true" :placeholder="'Người Cập Nhập'" :fieldName="'updated_by'" :value="Auth::user()['first_name']" />
 
-                    <x-admin.form.textarea-mce :data="$about" :col="12" :label="'Giới Thiệu'" :required="true" :fieldName="'intro'" />
+                <x-admin.form.textarea-mce :data="$about" :col="12" :label="'Giới Thiệu'" :required="true" :fieldName="'intro'" />
 
-                    <x-admin.form.checkbox :data="$about" :col="3" :label="'Trạng thái'" :required="true" :fieldName="'status'" :labelContent="'Đang hoạt động'" />
-                    <x-admin.form.file  :data="$about" :col="3" :label="'Ảnh đại diện'" :required="false" :fieldName="'image'" />
+                <x-admin.form.checkbox :data="$about" :col="3" :label="'Trạng thái'" :required="true" :fieldName="'status'" :labelContent="'Đang hoạt động'" />
+                <x-admin.form.file :data="$about" :col="3" :label="'Ảnh đại diện'" :required="false" :fieldName="'image'" />
 
 
-                </div>
-            </x-admin.form.form>
-        </div>
+            </div>
+        </x-admin.form.form>
     </div>
-    </div>
+</div>
+</div>
 
-    {{-- <script>
+{{-- <script>
         let url = document.querySelector('input[base_url]').attributes['base_url'].value;
         let faculty = document.getElementById('faculty_id');
         let category = document.getElementById('parent_id');
@@ -49,8 +48,8 @@
         });
     </script> --}}
 
-    <script>
-        $('input#title').keyup(function(event) {
+<script>
+    $('input#title').keyup(function(event) {
             /* Act on the event */
             var title, slug;
             //Lấy text từ thẻ input title
@@ -84,5 +83,5 @@
             $('input#slug').val(slug);
         });
 
-    </script>
+</script>
 @endsection

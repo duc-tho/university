@@ -76,35 +76,33 @@
 
 {{-- Script upload ảnh --}}
 <script type="text/javascript">
-    $(document).ready(function() {
-        // Chang Image add product
-        function changeImg(input) {
+    // Chang Image add product
+    function changeImg(input) {
 
-            //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
+        //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
-                //Sự kiện file đã được load vào website
-                reader.onload = function (e) {
+            //Sự kiện file đã được load vào website
+            reader.onload = function (e) {
 
-                    //Thay đổi đường dẫn ảnh
-                    $($(input).parent().parent()[0].querySelector("img[data-name='preview-image']")).attr('src', e.target.result);
-                }
-                
-                reader.readAsDataURL(input.files[0]);
+                //Thay đổi đường dẫn ảnh
+                $($(input).parent().parent()[0].querySelector("img[data-name='preview-image']")).attr('src', e.target.result);
             }
+
+            reader.readAsDataURL(input.files[0]);
         }
-    });
+    }
 </script>
 
 {{-- init tiny mce --}}
 <script type="text/javascript">
     $(document).ready(function() {
-        tinymce.baseURL = "{{ asset('plugins/tinymce') }}";
+        tinymce.baseURL = "{{ asset('vendor/tinymce') }}";
         tinymce.init({
             selector: "textarea[data-name='tinymce']",
             language: 'vi',
-            height: 400,
+            height: 230,
             plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern help image imagetools',
             toolbar: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat | image',
             file_picker_callback: function (callback, value, meta) {

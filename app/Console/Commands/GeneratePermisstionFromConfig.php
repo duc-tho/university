@@ -19,7 +19,7 @@ class GeneratePermisstionFromConfig extends Command
      *
      * @var string
      */
-    protected $description = 'Generate Permission From Config Module File!';
+    protected $description = 'Generate/Update Permission From Config Module File!';
 
     /**
      * Create a new command instance.

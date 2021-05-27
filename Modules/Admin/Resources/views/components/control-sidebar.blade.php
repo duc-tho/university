@@ -2,7 +2,7 @@
 <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
     <div class="p-3">
-        <a href="{{ route('admin.user.edit', [\App\Models\Faculty::find(Auth::user()['faculty_id'])['slug'], Auth::user()['id']]) }}" class="dropdown-item text-info">
+        <a href="{{ route('admin.user.edit', [\App\Models\Faculty::find(Auth::user()['faculty_id'])['slug'] ?? 'trang-chu', Auth::user()['id']]) }}" class="dropdown-item text-info">
             <i class="fas fa-user"></i>
             Sửa thông tin
         </a>

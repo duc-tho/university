@@ -21,6 +21,7 @@ class InitUserSeeder extends Seeder
             'last_name' => 'Admin',
             'email' => 'admin@domain.ad',
             'phone' => '0123456789',
+            'isAdmin' => true,
             'password' => bcrypt('123123123'),
             'status' => '1',
             'isSystemAccount' => true

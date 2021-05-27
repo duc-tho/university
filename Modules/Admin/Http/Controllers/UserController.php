@@ -65,7 +65,6 @@ class UserController extends Controller
         // Tạo mới user
         $user = new User($request->input());
 
-
         // dừng lại nếu tạo user có khoa khác với khoa của user đang login trừ admin
         if ($user->roles->max('level') != null) abort_if(!Auth::user()['isAdmin'] && $user['faculty_id'] != Auth::user()['faculty_id'], 403);
 
@@ -78,7 +77,6 @@ class UserController extends Controller
 
         // chuyển status sang dạng 1, 0
         $request['status'] == "on" ? $user['status'] = 1 : $user['status'] = 0;
-
 
         // chuyển isAdmin sang dạng 1, 0
         $request['isAdmin'] == "on" ? $user['isAdmin'] = 1 : $user['isAdmin'] = 0;
