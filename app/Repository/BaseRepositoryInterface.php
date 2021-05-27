@@ -7,8 +7,6 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 interface BaseRepositoryInterface
 {
 
-
-
     /**
      * Get all record
      *
@@ -16,6 +14,16 @@ interface BaseRepositoryInterface
      * @param int $faculty
      */
     public function all(array $collumn = ['*']);
+
+
+
+    /**
+     * Filter Request
+     *
+     * @param [type] $query
+     * @param [type] $request
+     */
+    public function scopeFilter();
 
 
 
@@ -111,11 +119,38 @@ interface BaseRepositoryInterface
 
 
     /**
-     * Delete Record
+     * Delete Record (soft delete)
      *
      * @param int $id
      */
     public function delete(int $id);
+
+
+
+    /**
+     * Get all trashed item
+     *
+     * @param array $columns
+     */
+    public function getDeletedItem(array $columns = ['*']);
+
+
+
+    /**
+     * Restore trashed record
+     *
+     * @param array $columns
+     */
+    public function restore(int $id);
+
+
+
+    /**
+     * Destroy record (force delete)
+     *
+     * @param integer $id
+     */
+    public function destroy(int $id);
 
 
 

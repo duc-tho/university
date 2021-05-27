@@ -10,6 +10,8 @@ abstract class BaseRepository implements BaseRepositoryInterface
 {
 
     protected $model = null;
+    protected $request = null;
+    public $fillterable = ['title', 'created_at', 'display_order', 'view_count', 'status'];
 
     public function __construct(Request $request)
     {
@@ -30,6 +32,83 @@ abstract class BaseRepository implements BaseRepositoryInterface
     }
 
 
+
+    /**
+     * Filter Request
+     *
+     * @param [type] $query
+     * @param [type] $request
+     */
+    public function scopeFilter()
+    {
+        // E.x: /?sort=status:desc&q=first_name:admin&filter=price:300,500:in;date:30-05-2000,20-11-2000:between
+
+        $fillterable = $this->fillterable ?? [];
+
+        // [$column, $direction]
+        $sortParam = $this->request->filled('sort')
+            ? $this->request->input('sort') : '';
+        $sortFilter = explode(':', $sortParam);
+
+
+
+        // [[$column, [$value, ...], $where],...]
+        $filterParam = $this->request->filled('filter')
+            ? $this->request->input('filter') : '';
+        $filters = explode(';', $filterParam);
+
+
+
+        // [$column, $value]
+        $searchParam = $this->request->filled('q')
+            ? $this->request->input('q') : '';
+        $searchFilter = explode(':', $searchParam);
+
+
+
+        if (count($sortFilter) == 2) {
+            $sortField = $sortFilter[0];
+            $sortDirection = $sortFilter[1];
+
+            if (in_array($sortField, $fillterable))
+                $this->model = $this->model->orderBy($sortField, $sortDirection);
+        }
+
+
+        if (count($searchFilter) == 2) {
+            $searchField = $searchFilter[0];
+            $searchValue = $searchFilter[1];
+
+            if (in_array($searchField, $fillterable))
+                $this->model = $this->model->where($searchField, 'LIKE', '%' . $searchValue . '%');
+        }
+
+
+        foreach ($filters as $filter) {
+            $filterItem = explode(':', $filter);
+            if (count($filterItem) >= 2 && count($filterItem) < 4) {
+                $filterColumn = $filterItem[0];
+                $filterValue = explode(',', $filterItem[1]);
+                $filterWhere = isset($filterItem[2]) ? $filterItem[2] : null;
+
+                if (in_array($filterColumn, $fillterable))
+                    switch (strtolower($filterWhere)) {
+                        case 'between':
+                            $this->model = $this->model->whereBetween($filterColumn, $filterValue);
+                            break;
+                        case 'notin':
+                            $this->model = $this->model->whereNotIn($filterColumn, $filterValue);
+                            break;
+                        default:
+                            $this->model = $this->model->whereIn($filterColumn, $filterValue);
+                            break;
+                    }
+            }
+        }
+    }
+
+
+
     /**
      * Get all record
      *
@@ -38,7 +117,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
      */
     public function all(array $columns = ['*'])
     {
-        return $this->model::select($columns)->all();
+        return $this->model->select($columns)->all();
     }
 
 
@@ -50,7 +129,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
      */
     public function first(array $columns = ['*'])
     {
-        return $this->model::select($columns)->first();
+        return $this->model->select($columns)->first();
     }
 
 
@@ -63,7 +142,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
      */
     public function paginate(int $limit = null, array $columns = ['*'])
     {
-        return $this->model::select($columns)->paginate($limit);
+        return $this->model->select($columns)->paginate($limit);
     }
 
 
@@ -76,7 +155,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
      */
     public function find(int $id, array $columns = ['*'])
     {
-        return $this->model::select($columns)->findOrFail($id);
+        return $this->model->select($columns)->findOrFail($id);
     }
 
 
@@ -90,7 +169,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
      */
     public function findByField(string $field, $value, array $columns = ['*'])
     {
-        return $this->model::select($columns)
+        return $this->model->select($columns)
             ->where([$field => $value])
             ->first();
     }
@@ -105,7 +184,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
      */
     public function where(array $where, array $columns = ['*'])
     {
-        return $this->model::select($columns)
+        return $this->model->select($columns)
             ->where($where)
             ->first();
     }
@@ -121,7 +200,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
      */
     public function whereIn(string $field, array $where, array $columns = ['*'])
     {
-        return $this->model::select($columns)
+        return $this->model->select($columns)
             ->whereIn($where)
             ->first();
     }
@@ -137,7 +216,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
      */
     public function whereNotIn(string $field, array $where, array $columns = ['*'])
     {
-        return $this->model::select($columns)
+        return $this->model->select($columns)
             ->whereNotIn($where)
             ->first();
     }
@@ -179,7 +258,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
 
 
     /**
-     * Delete Record
+     * Delete Record (soft delete)
      *
      * @param int $id
      */
@@ -187,9 +266,49 @@ abstract class BaseRepository implements BaseRepositoryInterface
     {
         $record = $this->find($id);
 
-        $record->save();
+        $record->delete();
 
         return $record;
+    }
+
+
+
+    /**
+     * Get all trashed item
+     *
+     * @param array $columns
+     */
+    public function getDeletedItem(array $columns = ['*'])
+    {
+        return $this->model->select($columns)
+            ->onlyTrashed()
+            ->get();
+    }
+
+
+
+    /**
+     * Restore trashed record
+     *
+     * @param array $columns
+     */
+    public function restore(int $id)
+    {
+        return $this->model::withTrashed()
+            ->where('id', $id)
+            ->restore();
+    }
+
+
+
+    /**
+     * Destroy record (force delete)
+     *
+     * @param integer $id
+     */
+    public function destroy(int $id)
+    {
+        $this->model::destroy($id);
     }
 
 
@@ -202,7 +321,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
      */
     public function orderBy(string $column, string $direction = 'asc')
     {
-        return $this->model->orderBy($column, $direction);
+        return $this->model::orderBy($column, $direction);
     }
 
 
@@ -232,8 +351,7 @@ abstract class BaseRepository implements BaseRepositoryInterface
         $listRecord = [];
 
         try {
-            $listRecord = $this->model
-                ->select($collumns)
+            $listRecord = $this->model->select($collumns)
                 ->where($where)
                 ->orderBy($order['column'], $order['direction'])
                 ->paginate($paginate['limit']);
