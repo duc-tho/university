@@ -17,6 +17,7 @@ class CreateRoleUserTable extends Migration
             $table->bigInteger('id', true);
             $table->bigInteger('role_id')->nullable()->index('role_id');
             $table->bigInteger('user_id')->nullable()->index('user_id');
+            $table->softDeletes();
         });
     }
 

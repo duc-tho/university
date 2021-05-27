@@ -17,6 +17,7 @@ class CreatePermissionRoleTable extends Migration
             $table->bigInteger('id', true);
             $table->bigInteger('permission_id')->nullable()->index('permission_id');
             $table->bigInteger('role_id')->nullable()->index('role_id');
+            $table->softDeletes();
         });
     }
 

@@ -18,6 +18,7 @@ class CreatePermissionTable extends Migration
             $table->string('name')->nullable();
             $table->string('display_name')->nullable();
             $table->integer('parent_id')->nullable();
+            $table->softDeletes();
         });
     }
 
